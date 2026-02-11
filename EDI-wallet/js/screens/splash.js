@@ -6,15 +6,21 @@ export function renderSplash(container) {
   container.innerHTML = `
     <div class="splash-logo">
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="6" y="10" width="36" height="28" rx="4" fill="#383EDE"/>
-        <rect x="10" y="14" width="16" height="4" rx="1" fill="#fff" opacity="0.9"/>
-        <rect x="10" y="21" width="28" height="3" rx="1" fill="#fff" opacity="0.5"/>
-        <rect x="10" y="27" width="20" height="3" rx="1" fill="#fff" opacity="0.5"/>
-        <circle cx="36" cy="16" r="4" fill="#fff" opacity="0.8"/>
+        <!-- Wallet body — triangles -->
+        <polygon points="6,38 24,18 42,38" fill="#383EDE"/>
+        <polygon points="10,38 24,22 38,38" fill="#2D32B3"/>
+        <!-- Flap -->
+        <polygon points="12,24 24,10 36,24" fill="#383EDE" opacity="0.85"/>
+        <polygon points="16,24 24,14 32,24" fill="#5781A1" opacity="0.5"/>
+        <!-- Card chip -->
+        <polygon points="20,32 24,28 28,32" fill="#FFA92D" opacity="0.8"/>
+        <polygon points="20,32 24,36 28,32" fill="#E5942A" opacity="0.6"/>
+        <!-- Shield accent -->
+        <polygon points="34,20 37,15 40,20" fill="#00914B" opacity="0.7"/>
       </svg>
     </div>
-    <div class="splash-title">NL Wallet</div>
-    <div class="splash-subtitle">Jouw digitale identiteit</div>
+    <div class="splash-title">EDI Wallet</div>
+    <div class="splash-subtitle">Your European Digital Identity</div>
   `;
 
   setTimeout(() => {
