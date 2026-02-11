@@ -3,9 +3,9 @@
   "demos": [
     {
       "id": "nlwallet",
-      "name": "NL Wallet",
-      "subtitle": "Digital Identity Wallet",
-      "description": "Experience a prototype Dutch digital identity wallet with credential management, QR scanning, and selective disclosure flows.",
+      "name": "EDI Wallet",
+      "subtitle": "European Digital Identity Wallet",
+      "description": "Experience a prototype European digital identity wallet with credential management, QR scanning, and selective disclosure flows.",
       "category": "Digital Society",
       "tags": ["Digital Identity", "Privacy", "Government"],
       "preview": "assets/images/previews/nlwallet.png",
