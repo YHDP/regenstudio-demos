@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1B2833"/>
+      <stop offset="100%" stop-color="#243644"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- Scattered background triangles (subtle, low opacity) -->
+  <polygon points="50,80 90,30 130,80" fill="#009BBB" opacity="0.08"/>
+  <polygon points="700,60 740,20 760,70" fill="#00914B" opacity="0.07"/>
+  <polygon points="620,420 670,380 680,440" fill="#93093F" opacity="0.08"/>
+  <polygon points="80,400 120,360 140,420" fill="#FFA92D" opacity="0.07"/>
+  <polygon points="180,50 210,10 240,50" fill="#E71846" opacity="0.06"/>
+  <polygon points="720,250 760,210 770,270" fill="#65DD35" opacity="0.07"/>
+  <polygon points="30,250 60,220 70,270" fill="#009BBB" opacity="0.06"/>
+  <polygon points="750,150 780,120 790,170" fill="#FFA92D" opacity="0.06"/>
+  <polygon points="650,50 680,20 700,60" fill="#383EDE" opacity="0.08"/>
+  <polygon points="100,450 140,420 150,470" fill="#009BBB" opacity="0.06"/>
+
+  <!-- === WALLET SHAPE — built from triangles === -->
+  <!-- Wallet body — main rectangular area composed of triangles -->
+
+  <!-- Bottom-left foundation row -->
+  <polygon points="240,340 310,340 275,290" fill="#243644" opacity="0.5"/>
+  <polygon points="310,340 380,340 345,290" fill="#1B2833" opacity="0.4"/>
+  <polygon points="380,340 450,340 415,290" fill="#243644" opacity="0.45"/>
+  <polygon points="450,340 520,340 485,290" fill="#1B2833" opacity="0.4"/>
+
+  <!-- Main wallet body — left side (dark navy/teal) -->
+  <polygon points="240,340 275,290 210,290" fill="#009BBB" opacity="0.6"/>
+  <polygon points="210,290 275,290 240,240" fill="#009BBB" opacity="0.45"/>
+  <polygon points="240,240 275,290 310,240" fill="#00914B" opacity="0.55"/>
+  <polygon points="275,290 345,290 310,240" fill="#006937" opacity="0.5"/>
+  <polygon points="275,290 310,340 345,290" fill="#00914B" opacity="0.4"/>
+
+  <!-- Main wallet body — center (emerald/teal blend) -->
+  <polygon points="310,240 345,290 380,240" fill="#009BBB" opacity="0.5"/>
+  <polygon points="345,290 415,290 380,240" fill="#00914B" opacity="0.6"/>
+  <polygon points="345,290 380,340 415,290" fill="#009BBB" opacity="0.35"/>
+  <polygon points="380,240 415,290 450,240" fill="#65DD35" opacity="0.45"/>
+  <polygon points="415,290 485,290 450,240" fill="#00914B" opacity="0.55"/>
+  <polygon points="415,290 450,340 485,290" fill="#006937" opacity="0.3"/>
+
+  <!-- Main wallet body — right side (emerald fading) -->
+  <polygon points="450,240 485,290 520,240" fill="#009BBB" opacity="0.5"/>
+  <polygon points="485,290 555,290 520,240" fill="#00914B" opacity="0.4"/>
+  <polygon points="485,290 520,340 555,290" fill="#243644" opacity="0.4"/>
+  <polygon points="520,240 555,290 560,240" fill="#009BBB" opacity="0.35"/>
+
+  <!-- Wallet top edge — row of triangles -->
+  <polygon points="210,290 240,240 200,240" fill="#383EDE" opacity="0.5"/>
+  <polygon points="200,240 240,240 220,195" fill="#383EDE" opacity="0.65"/>
+  <polygon points="240,240 310,240 275,195" fill="#383EDE" opacity="0.7"/>
+  <polygon points="310,240 380,240 345,195" fill="#2D32B3" opacity="0.75"/>
+  <polygon points="380,240 450,240 415,195" fill="#383EDE" opacity="0.8"/>
+  <polygon points="450,240 520,240 485,195" fill="#2D32B3" opacity="0.7"/>
+  <polygon points="520,240 560,240 540,195" fill="#383EDE" opacity="0.55"/>
+
+  <!-- Wallet top — upward pointing (forming the flap) -->
+  <polygon points="220,195 275,195 248,155" fill="#383EDE" opacity="0.8"/>
+  <polygon points="275,195 345,195 310,155" fill="#5781A1" opacity="0.6"/>
+  <polygon points="345,195 415,195 380,155" fill="#383EDE" opacity="0.75"/>
+  <polygon points="415,195 485,195 450,155" fill="#2D32B3" opacity="0.65"/>
+  <polygon points="485,195 540,195 510,155" fill="#383EDE" opacity="0.5"/>
+
+  <!-- Flap top row -->
+  <polygon points="248,155 310,155 280,120" fill="#2D32B3" opacity="0.7"/>
+  <polygon points="310,155 380,155 345,120" fill="#383EDE" opacity="0.85"/>
+  <polygon points="380,155 450,155 415,120" fill="#2D32B3" opacity="0.75"/>
+  <polygon points="450,155 510,155 480,120" fill="#383EDE" opacity="0.6"/>
+
+  <!-- Flap peak -->
+  <polygon points="280,120 345,120 310,90" fill="#383EDE" opacity="0.9"/>
+  <polygon points="345,120 415,120 380,90" fill="#2D32B3" opacity="0.85"/>
+  <polygon points="415,120 480,120 445,90" fill="#383EDE" opacity="0.7"/>
+
+  <!-- Top triangle accent -->
+  <polygon points="310,90 380,90 345,65" fill="#383EDE" opacity="0.95"/>
+  <polygon points="380,90 445,90 410,65" fill="#2D32B3" opacity="0.8"/>
+
+  <!-- === Card/chip detail inside wallet (golden accent) === -->
+  <polygon points="310,270 340,250 370,270" fill="#FFA92D" opacity="0.7"/>
+  <polygon points="310,270 340,290 370,270" fill="#FFA92D" opacity="0.55"/>
+  <polygon points="340,250 370,270 375,248" fill="#FFD580" opacity="0.5"/>
+  <polygon points="340,290 370,270 378,292" fill="#E5942A" opacity="0.45"/>
+
+  <!-- === Shield/lock icon accent (small, top-right of wallet) === -->
+  <polygon points="500,170 520,140 540,170" fill="#00914B" opacity="0.8"/>
+  <polygon points="500,170 520,200 540,170" fill="#006937" opacity="0.7"/>
+  <polygon points="520,140 535,155 540,170" fill="#65DD35" opacity="0.5"/>
+
+  <!-- === Floating accent triangles (decorative, medium opacity) === -->
+  <!-- Top left cluster -->
+  <polygon points="130,150 165,110 200,150" fill="#93093F" opacity="0.35"/>
+  <polygon points="145,175 130,150 170,160" fill="#FDB6D2" opacity="0.2"/>
+
+  <!-- Top right cluster -->
+  <polygon points="600,130 635,95 665,135" fill="#FFA92D" opacity="0.3"/>
+  <polygon points="630,160 600,130 645,140" fill="#FFEEC8" opacity="0.15"/>
+
+  <!-- Bottom right accent -->
+  <polygon points="600,350 640,310 670,360" fill="#009BBB" opacity="0.25"/>
+  <polygon points="620,380 600,350 650,365" fill="#BBF0F8" opacity="0.15"/>
+
+  <!-- Bottom left accent -->
+  <polygon points="140,310 175,275 205,315" fill="#65DD35" opacity="0.25"/>
+  <polygon points="155,340 140,310 190,325" fill="#DFFACA" opacity="0.12"/>
+
+  <!-- Mid-left floating -->
+  <polygon points="100,220 125,190 150,225" fill="#E71846" opacity="0.2"/>
+
+  <!-- Mid-right floating -->
+  <polygon points="660,230 685,200 705,235" fill="#00914B" opacity="0.2"/>
+
+  <!-- Small sparkle triangles -->
+  <polygon points="350,50 360,35 370,50" fill="#FFFFFF" opacity="0.15"/>
+  <polygon points="580,400 590,385 600,400" fill="#FFFFFF" opacity="0.12"/>
+  <polygon points="200,380 210,365 220,380" fill="#FFFFFF" opacity="0.1"/>
+  <polygon points="680,100 688,88 696,100" fill="#FFFFFF" opacity="0.12"/>
+</svg>

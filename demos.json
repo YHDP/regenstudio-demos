@@ -8,7 +8,7 @@
       "description": "Experience a prototype European digital identity wallet with credential management, QR scanning, and selective disclosure flows.",
       "category": "Digital Society",
       "tags": ["Digital Identity", "Privacy", "Government"],
-      "preview": "assets/images/previews/EDI-wallet.png",
+      "preview": "assets/images/previews/EDI-wallet.svg",
       "accentColor": "#383EDE",
       "path": "/EDI-wallet/"
     }
