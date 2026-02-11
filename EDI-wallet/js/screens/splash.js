@@ -24,6 +24,6 @@ export function renderSplash(container) {
   `;
 
   setTimeout(() => {
-    navigate('pin');
+    navigate('language');
   }, 2000);
 }

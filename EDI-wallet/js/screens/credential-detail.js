@@ -3,6 +3,8 @@ import { getState, setState } from '../data/state.js';
 import { getCredentialById } from '../data/credentials.js';
 import { getVerifiersForCredential } from '../data/verifiers.js';
 import { createAppBar } from '../components/app-bar.js';
+import { t } from '../data/translations.js';
+import { td } from '../data/data-i18n.js';
 
 export function renderCredentialDetail(container) {
   container.classList.add('detail-screen');
@@ -11,7 +13,7 @@ export function renderCredentialDetail(container) {
   if (!cred) return;
 
   // App bar
-  container.appendChild(createAppBar(cred.title, () => navigate('dashboard', 'back')));
+  container.appendChild(createAppBar(td(cred.title), () => navigate('dashboard', 'back')));
 
   const content = document.createElement('div');
   content.className = 'screen-content';
@@ -21,15 +23,15 @@ export function renderCredentialDetail(container) {
   const statusBadge = cred.status
     ? `<div style="display:inline-flex;align-items:center;gap:4px;margin-top:8px;padding:4px 10px;background:rgba(255,255,255,0.2);border-radius:20px;font-size:12px;font-weight:600;">
         <span style="width:8px;height:8px;border-radius:50%;background:${cred.statusColor || '#fff'}"></span>
-        ${cred.status}
+        ${td(cred.status)}
       </div>`
     : '';
 
   let headerHtml = `
     <div class="detail-header-card" style="background: ${cred.color}">
-      <div class="detail-issuer">${cred.issuer}</div>
-      <div class="detail-title">${cred.title}</div>
-      <div class="detail-subtitle">${cred.subtitle}</div>
+      <div class="detail-issuer">${td(cred.issuer)}</div>
+      <div class="detail-title">${td(cred.title)}</div>
+      <div class="detail-subtitle">${td(cred.subtitle)}</div>
       ${statusBadge}
     </div>
   `;
@@ -39,10 +41,10 @@ export function renderCredentialDetail(container) {
 
   if (cred.type === 'pid') {
     // PID: simple attribute list
-    modulesHtml += '<div class="accordion"><button type="button" class="accordion-header open" data-accordion="pid-attrs">Persoonsgegevens<span class="material-icons">expand_more</span></button>';
+    modulesHtml += `<div class="accordion"><button type="button" class="accordion-header open" data-accordion="pid-attrs">${t('detail.personalData')}<span class="material-icons">expand_more</span></button>`;
     modulesHtml += '<div class="accordion-body open"><div class="accordion-content">';
     for (const [key, val] of Object.entries(cred.attributes)) {
-      modulesHtml += `<div class="attr-row"><span class="attr-label">${key}</span><span class="attr-value">${val}</span></div>`;
+      modulesHtml += `<div class="attr-row"><span class="attr-label">${td(key)}</span><span class="attr-value">${td(val)}</span></div>`;
     }
     modulesHtml += '</div></div></div>';
   } else if (cred.modules) {
@@ -56,7 +58,7 @@ export function renderCredentialDetail(container) {
           <button type="button" class="accordion-header${isFirst ? ' open' : ''}" data-accordion="${modKey}">
             <span style="display:flex;align-items:center;gap:8px;">
               <span class="material-icons" style="font-size:20px;color:${cred.color}">${mod.icon}</span>
-              ${mod.label}
+              ${td(mod.label)}
             </span>
             <span class="material-icons">expand_more</span>
           </button>
@@ -80,7 +82,7 @@ export function renderCredentialDetail(container) {
           modulesHtml += `
             <div style="margin-bottom:8px;">
               <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px;">
-                <span style="color:var(--color-text-secondary)">${bar.label}</span>
+                <span style="color:var(--color-text-secondary)">${td(bar.label)}</span>
                 <span style="font-weight:600;color:var(--color-text)">${bar.value}%</span>
               </div>
               <div class="progress-bar">
@@ -99,8 +101,8 @@ export function renderCredentialDetail(container) {
             <div class="timeline-item">
               <div class="timeline-dot" style="background:${cred.color}"></div>
               <div class="timeline-content">
-                <div class="timeline-title">${item.title}</div>
-                <div class="timeline-desc">${item.desc}</div>
+                <div class="timeline-title">${td(item.title)}</div>
+                <div class="timeline-desc">${td(item.desc)}</div>
               </div>
             </div>
           `;
@@ -111,7 +113,7 @@ export function renderCredentialDetail(container) {
       // Attributes table
       if (mod.attrs) {
         for (const [key, val] of Object.entries(mod.attrs)) {
-          modulesHtml += `<div class="attr-row"><span class="attr-label">${key}</span><span class="attr-value">${val}</span></div>`;
+          modulesHtml += `<div class="attr-row"><span class="attr-label">${td(key)}</span><span class="attr-value">${td(val)}</span></div>`;
         }
       }
 
@@ -139,7 +141,7 @@ export function renderCredentialDetail(container) {
     fab.className = 'detail-share-fab';
     fab.innerHTML = `<button type="button" class="btn btn-primary btn-full">
       <span class="material-icons">share</span>
-      Delen
+      ${t('detail.share')}
     </button>`;
     fab.querySelector('button').addEventListener('click', () => {
       showVerifierSelection(container, cred);
@@ -156,7 +158,7 @@ function showVerifierSelection(container, cred) {
   overlay.style.background = 'var(--color-surface)';
   overlay.style.zIndex = '60';
 
-  overlay.appendChild(createAppBar(`${cred.title} delen`, () => {
+  overlay.appendChild(createAppBar(`${td(cred.title)} — ${t('detail.share')}`, () => {
     overlay.classList.remove('slide-up');
     overlay.classList.add('slide-down');
     setTimeout(() => overlay.remove(), 400);
@@ -171,8 +173,8 @@ function showVerifierSelection(container, cred) {
         <span class="material-icons" style="color:#fff;font-size:18px">${cred.icon}</span>
       </div>
       <div style="flex:1">
-        <div style="font-size:14px;font-weight:600;color:var(--color-text)">${cred.title}</div>
-        <div style="font-size:12px;color:var(--color-text-secondary)">Delen met...</div>
+        <div style="font-size:14px;font-weight:600;color:var(--color-text)">${td(cred.title)}</div>
+        <div style="font-size:12px;color:var(--color-text-secondary)">${t('detail.shareWith')}</div>
       </div>
     </div>
 
@@ -180,14 +182,14 @@ function showVerifierSelection(container, cred) {
     <div class="add-search-section">
       <div class="add-search-bar">
         <span class="material-icons add-search-icon">search</span>
-        <input type="text" class="add-search-input" id="verifier-search" placeholder="Zoek verificateur..." autocomplete="off">
+        <input type="text" class="add-search-input" id="verifier-search" placeholder="${t('detail.searchVerifier')}" autocomplete="off">
         <button type="button" class="add-search-clear hidden" id="verifier-search-clear">
           <span class="material-icons">close</span>
         </button>
       </div>
     </div>
 
-    <div style="padding:8px 24px 8px;font-size:13px;font-weight:600;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.5px;" id="verifier-label">Beschikbare verificateurs</div>
+    <div style="padding:8px 24px 8px;font-size:13px;font-weight:600;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.5px;" id="verifier-label">${t('detail.availableVerifiers')}</div>
   `;
 
   const list = document.createElement('div');
@@ -197,7 +199,7 @@ function showVerifierSelection(container, cred) {
   emptyEl.className = 'add-empty hidden';
   emptyEl.innerHTML = `
     <span class="material-icons" style="font-size:40px;color:var(--color-border)">search_off</span>
-    <p style="margin-top:8px;color:var(--color-text-secondary);font-size:13px">Geen verificateurs gevonden</p>
+    <p style="margin-top:8px;color:var(--color-text-secondary);font-size:13px">${t('detail.noVerifiers')}</p>
   `;
 
   function renderVerifierCards(items) {
@@ -210,8 +212,8 @@ function showVerifierSelection(container, cred) {
           <span class="material-icons">${v.icon}</span>
         </div>
         <div class="verifier-info">
-          <div class="verifier-name">${v.name}</div>
-          <div class="verifier-desc">${v.purpose}</div>
+          <div class="verifier-name">${td(v.name)}</div>
+          <div class="verifier-desc">${td(v.purpose)}</div>
         </div>
         <span class="material-icons" style="color:var(--color-text-secondary)">chevron_right</span>
       `;
@@ -243,9 +245,9 @@ function showVerifierSelection(container, cred) {
         );
 
     labelEl.textContent = q.length === 0
-      ? 'Beschikbare verificateurs'
+      ? t('detail.availableVerifiers')
       : filtered.length > 0
-        ? `${filtered.length} resultaten`
+        ? `${filtered.length} ${t('results')}`
         : '';
 
     renderVerifierCards(filtered);
@@ -255,7 +257,7 @@ function showVerifierSelection(container, cred) {
   clearBtn.addEventListener('click', () => {
     searchInput.value = '';
     clearBtn.classList.add('hidden');
-    labelEl.textContent = 'Beschikbare verificateurs';
+    labelEl.textContent = t('detail.availableVerifiers');
     renderVerifierCards(allVerifiers);
     emptyEl.classList.add('hidden');
   });

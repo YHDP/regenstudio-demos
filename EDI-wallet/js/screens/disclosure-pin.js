@@ -2,6 +2,8 @@ import { navigate } from '../app.js';
 import { getState } from '../data/state.js';
 import { getVerifierById } from '../data/verifiers.js';
 import { createPinKeyboard } from '../components/pin-keyboard.js';
+import { t } from '../data/translations.js';
+import { td } from '../data/data-i18n.js';
 
 const PIN_LENGTH = 5;
 
@@ -14,8 +16,8 @@ export function renderDisclosurePin(container) {
 
   container.innerHTML = `
     <div class="pin-header">
-      <h2>Bevestig delen</h2>
-      <p>Voer je pincode in om gegevens te delen${verifier ? ' met ' + verifier.name : ''}</p>
+      <h2>${t('disclosure.confirmShare')}</h2>
+      <p>${t('disclosure.pinToShare')}${verifier ? t('disclosure.pinToShareWith') + td(verifier.name) : ''}</p>
     </div>
     <div class="pin-body">
       <div class="pin-dots" id="pin-dots"></div>

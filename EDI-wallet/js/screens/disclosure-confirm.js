@@ -4,6 +4,8 @@ import { getCredentialById } from '../data/credentials.js';
 import { getVerifierById, resolveAttributes } from '../data/verifiers.js';
 import { createAppBar } from '../components/app-bar.js';
 import { createToggleAttribute } from '../components/toggle-attribute.js';
+import { t } from '../data/translations.js';
+import { td } from '../data/data-i18n.js';
 
 export function renderDisclosureConfirm(container) {
   const { selectedVerifier, selectedCredential } = getState();
@@ -11,7 +13,7 @@ export function renderDisclosureConfirm(container) {
   const cred = getCredentialById(selectedCredential);
   if (!verifier || !cred) return;
 
-  container.appendChild(createAppBar('Gegevens kiezen', () => navigate('disclosure-request', 'back')));
+  container.appendChild(createAppBar(t('disclosure.chooseData'), () => navigate('disclosure-request', 'back')));
 
   const resolved = resolveAttributes(verifier, cred);
 
@@ -30,7 +32,7 @@ export function renderDisclosureConfirm(container) {
   banner.style.cssText = 'margin:0 16px 16px;padding:12px 16px;background:var(--color-primary-light);border-radius:12px;display:flex;align-items:center;gap:12px;';
   banner.innerHTML = `
     <span class="material-icons" style="color:var(--color-primary);font-size:20px">info</span>
-    <span style="font-size:13px;color:var(--color-text)">Je kunt optionele gegevens aan- of uitzetten</span>
+    <span style="font-size:13px;color:var(--color-text)">${t('disclosure.toggleHint')}</span>
   `;
   content.appendChild(banner);
 
@@ -42,8 +44,8 @@ export function renderDisclosureConfirm(container) {
       <span class="material-icons" style="color:#fff;font-size:18px">${cred.icon}</span>
     </div>
     <div>
-      <div style="font-size:14px;font-weight:600;color:var(--color-text)">${cred.title}</div>
-      <div style="font-size:12px;color:var(--color-text-secondary)">${cred.issuer}</div>
+      <div style="font-size:14px;font-weight:600;color:var(--color-text)">${td(cred.title)}</div>
+      <div style="font-size:12px;color:var(--color-text-secondary)">${td(cred.issuer)}</div>
     </div>
   `;
   content.appendChild(source);
@@ -53,7 +55,7 @@ export function renderDisclosureConfirm(container) {
     const reqTitle = document.createElement('div');
     reqTitle.className = 'disclosure-section-title';
     reqTitle.style.cssText = 'padding:0 16px;';
-    reqTitle.textContent = 'Vereiste gegevens';
+    reqTitle.textContent = t('disclosure.requiredData');
     content.appendChild(reqTitle);
 
     const reqList = document.createElement('div');
@@ -70,7 +72,7 @@ export function renderDisclosureConfirm(container) {
     const optTitle = document.createElement('div');
     optTitle.className = 'disclosure-section-title';
     optTitle.style.cssText = 'padding:0 16px;';
-    optTitle.textContent = 'Optionele gegevens';
+    optTitle.textContent = t('disclosure.optionalDataTitle');
     content.appendChild(optTitle);
 
     const optList = document.createElement('div');
@@ -98,10 +100,10 @@ export function renderDisclosureConfirm(container) {
   footer.innerHTML = `
     <button type="button" class="btn btn-primary btn-full" id="confirm-share">
       <span class="material-icons">lock</span>
-      Bevestig met pincode
+      ${t('disclosure.confirmPin')}
     </button>
     <button type="button" class="btn btn-text btn-full" id="confirm-cancel">
-      Annuleer
+      ${t('disclosure.cancel')}
     </button>
   `;
 

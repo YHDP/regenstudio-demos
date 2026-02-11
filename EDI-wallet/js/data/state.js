@@ -10,6 +10,7 @@ let state = {
   disclosureToggles: {},
   qrMode: 'share',
   navTab: 'cards',
+  language: 'en',
   addedCredentials: [],
 };
 

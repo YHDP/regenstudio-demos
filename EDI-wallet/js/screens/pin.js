@@ -1,6 +1,7 @@
 import { navigate } from '../app.js';
 import { setState } from '../data/state.js';
 import { createPinKeyboard } from '../components/pin-keyboard.js';
+import { t } from '../data/translations.js';
 
 const PIN_LENGTH = 5;
 
@@ -10,8 +11,8 @@ export function renderPin(container) {
 
   container.innerHTML = `
     <div class="pin-header">
-      <h2>Welkom terug</h2>
-      <p>Voer je pincode in</p>
+      <h2>${t('pin.welcome')}</h2>
+      <p>${t('pin.enter')}</p>
     </div>
     <div class="pin-body">
       <div class="pin-dots" id="pin-dots"></div>

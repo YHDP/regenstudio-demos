@@ -3,6 +3,7 @@ import { setState } from '../data/state.js';
 import { getAllCredentials } from '../data/credentials.js';
 import { createCredentialCard } from '../components/credential-card.js';
 import { createBottomNav } from '../components/bottom-nav.js';
+import { t } from '../data/translations.js';
 
 export function renderDashboard(container) {
   container.classList.add('dashboard-screen');
@@ -11,7 +12,7 @@ export function renderDashboard(container) {
   content.className = 'screen-content';
   content.innerHTML = `
     <div class="dashboard-header">
-      <div class="dashboard-greeting">Goedendag,</div>
+      <div class="dashboard-greeting">${t('dashboard.greeting')}</div>
       <h2 class="dashboard-title">Jan de Vries</h2>
     </div>
     <div class="dashboard-grid" id="dashboard-grid"></div>

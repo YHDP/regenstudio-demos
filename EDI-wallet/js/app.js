@@ -1,6 +1,8 @@
 import { getState, setState, subscribe } from './data/state.js';
 import { renderSplash } from './screens/splash.js';
+import { renderLanguage } from './screens/language.js';
 import { renderPin } from './screens/pin.js';
+import { getLanguage } from './data/translations.js';
 import { renderDashboard } from './screens/dashboard.js';
 import { renderCredentialDetail } from './screens/credential-detail.js';
 import { renderQRScanner } from './screens/qr-scanner.js';
@@ -16,6 +18,7 @@ const screenContainer = document.getElementById('screen-container');
 
 const screenRenderers = {
   splash: renderSplash,
+  language: renderLanguage,
   pin: renderPin,
   dashboard: renderDashboard,
   'credential-detail': renderCredentialDetail,
@@ -31,7 +34,7 @@ const screenRenderers = {
 
 // Forward navigation transitions
 const forwardScreens = new Set([
-  'pin', 'credential-detail', 'qr-scanner',
+  'language', 'pin', 'credential-detail', 'qr-scanner',
   'disclosure-request', 'disclosure-confirm', 'disclosure-pin',
   'disclosure-success', 'receive-credential',
 ]);
@@ -66,7 +69,7 @@ function renderScreen(screenName, direction = 'forward') {
     const outClass = direction === 'forward' ? 'slide-out-left' : 'slide-out-right';
     const inClass = direction === 'forward' ? 'slide-in-right' : 'slide-in-left';
 
-    if (screenName === 'splash' || screenName === 'dashboard' && getState().previousScreen === 'pin') {
+    if (screenName === 'splash' || screenName === 'language' || screenName === 'dashboard' && getState().previousScreen === 'pin') {
       newScreen.classList.add('fade-in', 'active');
       currentScreenEl.classList.add('fade-out');
     } else {
@@ -91,7 +94,8 @@ function updateTime() {
   const timeEl = document.getElementById('status-time');
   if (timeEl) {
     const now = new Date();
-    timeEl.textContent = now.toLocaleTimeString('nl-NL', { hour: '2-digit', minute: '2-digit' });
+    const locales = { en: 'en-GB', nl: 'nl-NL', pt: 'pt-PT' };
+    timeEl.textContent = now.toLocaleTimeString(locales[getLanguage()] || 'en-GB', { hour: '2-digit', minute: '2-digit' });
   }
 }
 

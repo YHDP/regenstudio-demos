@@ -3,6 +3,8 @@ import { getState } from '../data/state.js';
 import { addCredentialToWallet, getPIDCredential } from '../data/credentials.js';
 import { createAppBar } from '../components/app-bar.js';
 import { createCredentialCard } from '../components/credential-card.js';
+import { t } from '../data/translations.js';
+import { td } from '../data/data-i18n.js';
 
 // The credential that will be issued
 const buurtbewoner = {
@@ -31,15 +33,15 @@ const buurtbewoner = {
   },
 };
 
-// PID attributes the gemeente requests
-const pidRequired = ['Voornaam', 'Achternaam', 'BSN'];
-const pidOptional = ['Geboortedatum'];
+// PID attributes the gemeente requests — resolved at render time for i18n
+function getPidRequired() { return [t('pid.firstName'), t('pid.lastName'), t('pid.bsn')]; }
+function getPidOptional() { return [t('pid.dateOfBirth')]; }
 
 export function renderReceiveCredential(container) {
   container.classList.add('receive-screen');
 
   const prev = getState().previousScreen;
-  container.appendChild(createAppBar('Credential ontvangen', () => navigate(prev || 'dashboard', 'back')));
+  container.appendChild(createAppBar(t('receive.title'), () => navigate(prev || 'dashboard', 'back')));
 
   // Step 1: PID disclosure request
   showPidDisclosure(container, () => {
@@ -61,15 +63,15 @@ function showPidDisclosure(container, onAccept) {
         <span class="material-icons">account_balance</span>
       </div>
       <div>
-        <div class="receive-issuer-name">Gemeente Den Haag</div>
-        <div class="receive-issuer-label">Geverifieerde uitgever</div>
+        <div class="receive-issuer-name">${td('Gemeente Den Haag')}</div>
+        <div class="receive-issuer-label">${t('add.verifiedIssuer')}</div>
       </div>
     </div>
     <p style="text-align:center;margin-bottom:8px;font-size:15px;font-weight:600;color:var(--color-text)">
-      Identiteitsverificatie vereist
+      ${t('add.identityVerificationRequired')}
     </p>
     <p style="text-align:center;margin-bottom:24px;font-size:13px;color:var(--color-text-secondary)">
-      Om je buurtbewonerschap te bevestigen vraagt de gemeente je persoonsgegevens uit je PID.
+      ${t('add.pidRequestMessage')}
     </p>
   `;
 
@@ -92,18 +94,18 @@ function showPidDisclosure(container, onAccept) {
   // Required attributes
   const reqSection = document.createElement('div');
   reqSection.style.cssText = 'width:100%;margin-bottom:12px;';
-  reqSection.innerHTML = `<div style="font-size:12px;font-weight:600;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">Vereiste gegevens</div>`;
+  reqSection.innerHTML = `<div style="font-size:12px;font-weight:600;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">${t('disclosure.requiredData')}</div>`;
 
   const reqList = document.createElement('div');
   reqList.style.cssText = 'width:100%;background:var(--color-white);border-radius:12px;border:1px solid var(--color-border);overflow:hidden;';
-  pidRequired.forEach(key => {
+  getPidRequired().forEach(key => {
     const val = pid?.attributes?.[key] || '—';
     reqList.innerHTML += `
       <div class="disclosure-attr">
         <div class="disclosure-attr-info">
           <div class="disclosure-attr-name">${key}</div>
           <div class="disclosure-attr-value">${val}</div>
-          <div class="disclosure-attr-required">Vereist</div>
+          <div class="disclosure-attr-required">${t('disclosure.required')}</div>
         </div>
         <span class="material-icons" style="color:var(--color-primary);font-size:20px">lock</span>
       </div>
@@ -115,11 +117,11 @@ function showPidDisclosure(container, onAccept) {
   // Optional attributes with toggles
   const optSection = document.createElement('div');
   optSection.style.cssText = 'width:100%;margin-bottom:16px;';
-  optSection.innerHTML = `<div style="font-size:12px;font-weight:600;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">Optionele gegevens</div>`;
+  optSection.innerHTML = `<div style="font-size:12px;font-weight:600;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">${t('disclosure.optionalDataTitle')}</div>`;
 
   const optList = document.createElement('div');
   optList.style.cssText = 'width:100%;background:var(--color-white);border-radius:12px;border:1px solid var(--color-border);overflow:hidden;';
-  pidOptional.forEach(key => {
+  getPidOptional().forEach(key => {
     const val = pid?.attributes?.[key] || '—';
     optList.innerHTML += `
       <div class="disclosure-attr">
@@ -154,17 +156,17 @@ function showPidDisclosure(container, onAccept) {
   footer.innerHTML = `
     <button type="button" class="btn btn-primary btn-full" id="pid-share-accept">
       <span class="material-icons">share</span>
-      Delen en doorgaan
+      ${t('add.shareAndContinue')}
     </button>
     <button type="button" class="btn btn-text btn-full" id="pid-share-decline">
-      Weigeren
+      ${t('disclosure.decline')}
     </button>
   `;
 
   footer.querySelector('#pid-share-accept').addEventListener('click', () => {
     // Brief confirmation animation
     const btn = footer.querySelector('#pid-share-accept');
-    btn.innerHTML = '<span class="material-icons">check</span> Gedeeld!';
+    btn.innerHTML = `<span class="material-icons">check</span> ${t('add.shared')}`;
     btn.style.background = 'var(--color-success)';
     btn.disabled = true;
     setTimeout(() => {
@@ -193,12 +195,12 @@ function showCredentialOffer(container) {
         <span class="material-icons">account_balance</span>
       </div>
       <div>
-        <div class="receive-issuer-name">${buurtbewoner.issuer}</div>
-        <div class="receive-issuer-label">Geverifieerde uitgever</div>
+        <div class="receive-issuer-name">${td(buurtbewoner.issuer)}</div>
+        <div class="receive-issuer-label">${t('add.verifiedIssuer')}</div>
       </div>
     </div>
     <p style="text-align:center;margin-bottom:24px;font-size:15px;color:var(--color-text)">
-      Je identiteit is bevestigd. Wil je deze credential toevoegen aan je wallet?
+      ${t('add.identityConfirmed')}
     </p>
   `;
 
@@ -210,7 +212,7 @@ function showCredentialOffer(container) {
   const attrList = document.createElement('div');
   attrList.style.cssText = 'width:100%;background:var(--color-white);border-radius:12px;border:1px solid var(--color-border);overflow:hidden;margin-top:16px;';
   for (const [key, val] of Object.entries(attrs)) {
-    attrList.innerHTML += `<div class="attr-row" style="padding:12px 16px"><span class="attr-label">${key}</span><span class="attr-value">${val}</span></div>`;
+    attrList.innerHTML += `<div class="attr-row" style="padding:12px 16px"><span class="attr-label">${td(key)}</span><span class="attr-value">${td(val)}</span></div>`;
   }
   body.appendChild(attrList);
   container.appendChild(body);
@@ -220,10 +222,10 @@ function showCredentialOffer(container) {
   footer.innerHTML = `
     <button type="button" class="btn btn-primary btn-full" id="receive-accept">
       <span class="material-icons">add_card</span>
-      Toevoegen aan wallet
+      ${t('add.addToWallet')}
     </button>
     <button type="button" class="btn btn-text btn-full" id="receive-decline">
-      Weigeren
+      ${t('disclosure.decline')}
     </button>
   `;
 
@@ -231,7 +233,7 @@ function showCredentialOffer(container) {
     addCredentialToWallet(buurtbewoner);
 
     const btn = footer.querySelector('#receive-accept');
-    btn.innerHTML = '<span class="material-icons">check</span> Toegevoegd!';
+    btn.innerHTML = `<span class="material-icons">check</span> ${t('add.added')}`;
     btn.style.background = 'var(--color-success)';
     btn.disabled = true;
     setTimeout(() => {

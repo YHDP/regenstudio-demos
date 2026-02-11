@@ -1,3 +1,6 @@
+import { t } from '../data/translations.js';
+import { td } from '../data/data-i18n.js';
+
 export function createToggleAttribute(attr, isOn, isLocked, onToggle) {
   const row = document.createElement('div');
   row.className = 'disclosure-attr';
@@ -5,9 +8,9 @@ export function createToggleAttribute(attr, isOn, isLocked, onToggle) {
   const info = document.createElement('div');
   info.className = 'disclosure-attr-info';
   info.innerHTML = `
-    <div class="disclosure-attr-name">${attr.key}</div>
-    <div class="disclosure-attr-value">${attr.value}</div>
-    ${isLocked ? '<div class="disclosure-attr-required">Vereist</div>' : ''}
+    <div class="disclosure-attr-name">${td(attr.key)}</div>
+    <div class="disclosure-attr-value">${td(attr.value)}</div>
+    ${isLocked ? `<div class="disclosure-attr-required">${t('disclosure.required')}</div>` : ''}
   `;
 
   const toggle = document.createElement('div');

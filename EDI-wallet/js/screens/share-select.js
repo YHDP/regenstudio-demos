@@ -5,6 +5,8 @@ import { getVerifiersForCredential } from '../data/verifiers.js';
 import { createBottomNav } from '../components/bottom-nav.js';
 import { createAppBar } from '../components/app-bar.js';
 import { createCredentialCard } from '../components/credential-card.js';
+import { t } from '../data/translations.js';
+import { td } from '../data/data-i18n.js';
 
 export function renderShareSelect(container) {
   container.classList.add('dashboard-screen');
@@ -13,8 +15,8 @@ export function renderShareSelect(container) {
   content.className = 'screen-content';
   content.innerHTML = `
     <div class="dashboard-header">
-      <h2 class="dashboard-title">Delen</h2>
-      <p style="margin-top:4px;font-size:13px;color:var(--color-text-secondary)">Kies een kaart om gegevens te delen</p>
+      <h2 class="dashboard-title">${t('share.title')}</h2>
+      <p style="margin-top:4px;font-size:13px;color:var(--color-text-secondary)">${t('share.chooseCard')}</p>
     </div>
     <div class="share-methods" id="share-methods"></div>
     <div class="share-section-label" id="cred-label"></div>
@@ -28,12 +30,12 @@ export function renderShareSelect(container) {
     <div style="padding:0 24px 8px;">
       <button type="button" class="btn btn-primary btn-full" id="share-qr-scan">
         <span class="material-icons">qr_code_scanner</span>
-        Scan verificatie QR-code
+        ${t('share.scanQR')}
       </button>
     </div>
     <div style="padding:8px 24px 16px;display:flex;align-items:center;gap:12px;">
       <div style="flex:1;height:1px;background:var(--color-border)"></div>
-      <span style="font-size:13px;color:var(--color-text-secondary)">of kies een kaart</span>
+      <span style="font-size:13px;color:var(--color-text-secondary)">${t('share.orChooseCard')}</span>
       <div style="flex:1;height:1px;background:var(--color-border)"></div>
     </div>
   `;
@@ -80,8 +82,8 @@ function createShareCard(cred) {
       <span class="material-icons">${cred.icon}</span>
     </div>
     <div class="verifier-info">
-      <div class="verifier-name">${cred.title}</div>
-      <div class="verifier-desc">${cred.issuer}</div>
+      <div class="verifier-name">${td(cred.title)}</div>
+      <div class="verifier-desc">${td(cred.issuer)}</div>
     </div>
     <span class="material-icons" style="color:var(--color-text-secondary)">chevron_right</span>
   `;
@@ -96,7 +98,7 @@ function showVerifierPicker(parentContainer, cred) {
   overlay.style.background = 'var(--color-surface)';
   overlay.style.zIndex = '60';
 
-  overlay.appendChild(createAppBar('Selecteer verificateur', () => {
+  overlay.appendChild(createAppBar(t('share.selectVerifier'), () => {
     overlay.classList.remove('slide-up');
     overlay.classList.add('slide-down');
     setTimeout(() => overlay.remove(), 400);
@@ -112,8 +114,8 @@ function showVerifierPicker(parentContainer, cred) {
         <span class="material-icons" style="color:#fff;font-size:18px">${cred.icon}</span>
       </div>
       <div style="flex:1">
-        <div style="font-size:14px;font-weight:600;color:var(--color-text)">${cred.title}</div>
-        <div style="font-size:12px;color:var(--color-text-secondary)">Delen met...</div>
+        <div style="font-size:14px;font-weight:600;color:var(--color-text)">${td(cred.title)}</div>
+        <div style="font-size:12px;color:var(--color-text-secondary)">${t('detail.shareWith')}</div>
       </div>
     </div>
 
@@ -121,14 +123,14 @@ function showVerifierPicker(parentContainer, cred) {
     <div class="add-search-section">
       <div class="add-search-bar">
         <span class="material-icons add-search-icon">search</span>
-        <input type="text" class="add-search-input" id="verifier-search" placeholder="Zoek verificateur..." autocomplete="off">
+        <input type="text" class="add-search-input" id="verifier-search" placeholder="${t('detail.searchVerifier')}" autocomplete="off">
         <button type="button" class="add-search-clear hidden" id="verifier-search-clear">
           <span class="material-icons">close</span>
         </button>
       </div>
     </div>
 
-    <div style="padding:8px 24px 8px;font-size:13px;font-weight:600;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.5px;" id="verifier-label">Beschikbare verificateurs</div>
+    <div style="padding:8px 24px 8px;font-size:13px;font-weight:600;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.5px;" id="verifier-label">${t('detail.availableVerifiers')}</div>
   `;
 
   const list = document.createElement('div');
@@ -140,7 +142,7 @@ function showVerifierPicker(parentContainer, cred) {
   emptyEl.id = 'verifier-empty';
   emptyEl.innerHTML = `
     <span class="material-icons" style="font-size:40px;color:var(--color-border)">search_off</span>
-    <p style="margin-top:8px;color:var(--color-text-secondary);font-size:13px">Geen verificateurs gevonden</p>
+    <p style="margin-top:8px;color:var(--color-text-secondary);font-size:13px">${t('detail.noVerifiers')}</p>
   `;
 
   function renderVerifierCards(items) {
@@ -153,8 +155,8 @@ function showVerifierPicker(parentContainer, cred) {
           <span class="material-icons">${v.icon}</span>
         </div>
         <div class="verifier-info">
-          <div class="verifier-name">${v.name}</div>
-          <div class="verifier-desc">${v.purpose}</div>
+          <div class="verifier-name">${td(v.name)}</div>
+          <div class="verifier-desc">${td(v.purpose)}</div>
         </div>
         <span class="material-icons" style="color:var(--color-text-secondary)">chevron_right</span>
       `;
@@ -186,9 +188,9 @@ function showVerifierPicker(parentContainer, cred) {
         );
 
     labelEl.textContent = q.length === 0
-      ? 'Beschikbare verificateurs'
+      ? t('detail.availableVerifiers')
       : filtered.length > 0
-        ? `${filtered.length} resultaten`
+        ? `${filtered.length} ${t('results')}`
         : '';
 
     renderVerifierCards(filtered);
@@ -198,7 +200,7 @@ function showVerifierPicker(parentContainer, cred) {
   clearBtn.addEventListener('click', () => {
     searchInput.value = '';
     clearBtn.classList.add('hidden');
-    labelEl.textContent = 'Beschikbare verificateurs';
+    labelEl.textContent = t('detail.availableVerifiers');
     renderVerifierCards(allVerifiers);
     emptyEl.classList.add('hidden');
   });

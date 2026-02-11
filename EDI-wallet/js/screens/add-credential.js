@@ -3,6 +3,8 @@ import { createBottomNav } from '../components/bottom-nav.js';
 import { createAppBar } from '../components/app-bar.js';
 import { createCredentialCard } from '../components/credential-card.js';
 import { addCredentialToWallet, getPIDCredential } from '../data/credentials.js';
+import { t } from '../data/translations.js';
+import { td } from '../data/data-i18n.js';
 
 const issuers = [
   {
@@ -334,7 +336,7 @@ export function renderAddCredential(container) {
 
   content.innerHTML = `
     <div class="dashboard-header">
-      <h2 class="dashboard-title">Toevoegen</h2>
+      <h2 class="dashboard-title">${t('add.title')}</h2>
     </div>
 
     <!-- QR Scan primary action -->
@@ -344,8 +346,8 @@ export function renderAddCredential(container) {
           <span class="material-icons">qr_code_scanner</span>
         </div>
         <div class="add-qr-btn-text">
-          <span class="add-qr-btn-title">Scan QR-code</span>
-          <span class="add-qr-btn-desc">Scan een QR-code van een uitgever om een credential te ontvangen</span>
+          <span class="add-qr-btn-title">${t('add.scanQR')}</span>
+          <span class="add-qr-btn-desc">${t('add.scanDesc')}</span>
         </div>
         <span class="material-icons" style="color:var(--color-text-secondary)">chevron_right</span>
       </button>
@@ -354,7 +356,7 @@ export function renderAddCredential(container) {
     <!-- Divider -->
     <div class="add-divider">
       <div class="add-divider-line"></div>
-      <span class="add-divider-text">of zoek een uitgever</span>
+      <span class="add-divider-text">${t('add.orSearchIssuer')}</span>
       <div class="add-divider-line"></div>
     </div>
 
@@ -362,7 +364,7 @@ export function renderAddCredential(container) {
     <div class="add-search-section">
       <div class="add-search-bar">
         <span class="material-icons add-search-icon">search</span>
-        <input type="text" class="add-search-input" id="issuer-search" placeholder="Zoek op naam, organisatie of type..." autocomplete="off">
+        <input type="text" class="add-search-input" id="issuer-search" placeholder="${t('add.searchPlaceholder')}" autocomplete="off">
         <button type="button" class="add-search-clear hidden" id="search-clear">
           <span class="material-icons">close</span>
         </button>
@@ -373,13 +375,13 @@ export function renderAddCredential(container) {
     <div class="add-bid-section">
       <button type="button" class="add-bid-btn" id="add-bid">
         <span class="material-icons" style="font-size:20px;color:var(--color-primary)">pin</span>
-        <span>Voer een organisatie-identificatie in (KVK, OIN, EORI)</span>
+        <span>${t('add.enterOrgId')}</span>
         <span class="material-icons" style="color:var(--color-text-secondary);font-size:18px">chevron_right</span>
       </button>
     </div>
 
     <!-- Section label -->
-    <div class="add-section-label" id="section-label">Alle uitgevers</div>
+    <div class="add-section-label" id="section-label">${t('add.allIssuers')}</div>
 
     <!-- Issuer list -->
     <div class="add-issuer-list" id="issuer-list"></div>
@@ -387,7 +389,7 @@ export function renderAddCredential(container) {
     <!-- Empty state -->
     <div class="add-empty hidden" id="empty-state">
       <span class="material-icons" style="font-size:40px;color:var(--color-border)">search_off</span>
-      <p style="margin-top:8px;color:var(--color-text-secondary);font-size:13px">Geen uitgevers gevonden</p>
+      <p style="margin-top:8px;color:var(--color-text-secondary);font-size:13px">${t('add.noIssuers')}</p>
     </div>
   `;
 
@@ -414,15 +416,15 @@ export function renderAddCredential(container) {
 
     if (q.length === 0) {
       filteredIssuers = [...issuers];
-      labelEl.textContent = 'Alle uitgevers';
+      labelEl.textContent = t('add.allIssuers');
     } else {
       filteredIssuers = issuers.filter(i =>
         i.name.toLowerCase().includes(q) ||
         i.desc.toLowerCase().includes(q) ||
-        i.tags.some(t => t.includes(q))
+        i.tags.some(tag => tag.includes(q))
       );
       labelEl.textContent = filteredIssuers.length > 0
-        ? `${filteredIssuers.length} resultaten`
+        ? `${filteredIssuers.length} ${t('results')}`
         : '';
     }
 
@@ -434,7 +436,7 @@ export function renderAddCredential(container) {
     searchInput.value = '';
     clearBtn.classList.add('hidden');
     filteredIssuers = [...issuers];
-    labelEl.textContent = 'Alle uitgevers';
+    labelEl.textContent = t('add.allIssuers');
     renderIssuerList(listEl, container, filteredIssuers);
     emptyEl.classList.add('hidden');
   });
@@ -456,8 +458,8 @@ function renderIssuerList(listEl, parentContainer, items) {
         <span class="material-icons">${issuer.icon}</span>
       </div>
       <div class="verifier-info">
-        <div class="verifier-name">${issuer.name}</div>
-        <div class="verifier-desc">${issuer.desc}</div>
+        <div class="verifier-name">${td(issuer.name)}</div>
+        <div class="verifier-desc">${td(issuer.desc)}</div>
       </div>
       <span class="material-icons" style="color:var(--color-text-secondary)">chevron_right</span>
     `;
@@ -494,7 +496,7 @@ function showSubCredentialPicker(parentContainer, issuer) {
   overlay.style.zIndex = '60';
   overlay.style.background = 'var(--color-surface)';
 
-  overlay.appendChild(createAppBar(issuer.name, () => {
+  overlay.appendChild(createAppBar(td(issuer.name), () => {
     overlay.classList.remove('slide-up');
     overlay.classList.add('slide-down');
     setTimeout(() => overlay.remove(), 400);
@@ -509,11 +511,11 @@ function showSubCredentialPicker(parentContainer, issuer) {
         <span class="material-icons">${issuer.icon}</span>
       </div>
       <div>
-        <div style="font-size:16px;font-weight:600;color:var(--color-text)">${issuer.name}</div>
-        <div style="font-size:13px;color:var(--color-text-secondary)">Geverifieerde uitgever</div>
+        <div style="font-size:16px;font-weight:600;color:var(--color-text)">${td(issuer.name)}</div>
+        <div style="font-size:13px;color:var(--color-text-secondary)">${t('add.verifiedIssuer')}</div>
       </div>
     </div>
-    <div style="font-size:13px;font-weight:600;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px;">Beschikbare credentials</div>
+    <div style="font-size:13px;font-weight:600;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px;">${t('add.availableCredentials')}</div>
   `;
 
   const list = document.createElement('div');
@@ -527,8 +529,8 @@ function showSubCredentialPicker(parentContainer, issuer) {
         <span class="material-icons">${sub.icon}</span>
       </div>
       <div class="verifier-info">
-        <div class="verifier-name">${sub.label || sub.title}</div>
-        <div class="verifier-desc">${sub.description || sub.subtitle}</div>
+        <div class="verifier-name">${td(sub.label || sub.title)}</div>
+        <div class="verifier-desc">${td(sub.description || sub.subtitle)}</div>
       </div>
       <span class="material-icons" style="color:var(--color-text-secondary)">chevron_right</span>
     `;
@@ -551,25 +553,25 @@ function showCredentialOffer(parentContainer, issuer, credentialObj, attrs) {
   // For buurtbewonerschap: first require PID disclosure
   if (credentialObj.id === 'cred-buurtbewoner') {
     showPidDisclosureOverlay(parentContainer, issuer, () => {
-      renderCredentialOfferOverlay(parentContainer, issuer, credentialObj, attrs, 'Je identiteit is bevestigd. Wil je deze credential toevoegen aan je wallet?');
+      renderCredentialOfferOverlay(parentContainer, issuer, credentialObj, attrs, t('add.identityConfirmed'));
     });
     return;
   }
 
-  renderCredentialOfferOverlay(parentContainer, issuer, credentialObj, attrs, 'Wil je deze credential toevoegen aan je wallet?');
+  renderCredentialOfferOverlay(parentContainer, issuer, credentialObj, attrs, t('add.wantToAdd'));
 }
 
 function showPidDisclosureOverlay(parentContainer, issuer, onAccept) {
   const pid = getPIDCredential();
-  const pidRequired = ['Voornaam', 'Achternaam', 'BSN'];
-  const pidOptional = ['Geboortedatum'];
+  const pidRequired = [t('pid.firstName'), t('pid.lastName'), t('pid.bsn')];
+  const pidOptional = [t('pid.dateOfBirth')];
 
   const overlay = document.createElement('div');
   overlay.className = 'screen active slide-up receive-screen';
   overlay.style.zIndex = '60';
   overlay.style.background = 'var(--color-surface)';
 
-  overlay.appendChild(createAppBar('Identiteitsverificatie', () => {
+  overlay.appendChild(createAppBar(t('add.identityVerification'), () => {
     overlay.classList.remove('slide-up');
     overlay.classList.add('slide-down');
     setTimeout(() => overlay.remove(), 400);
@@ -584,15 +586,15 @@ function showPidDisclosureOverlay(parentContainer, issuer, onAccept) {
         <span class="material-icons">${issuer.icon}</span>
       </div>
       <div>
-        <div class="receive-issuer-name">${issuer.name}</div>
-        <div class="receive-issuer-label">Geverifieerde uitgever</div>
+        <div class="receive-issuer-name">${td(issuer.name)}</div>
+        <div class="receive-issuer-label">${t('add.verifiedIssuer')}</div>
       </div>
     </div>
     <p style="text-align:center;margin-bottom:8px;font-size:15px;font-weight:600;color:var(--color-text)">
-      Identiteitsverificatie vereist
+      ${t('add.identityVerificationRequired')}
     </p>
     <p style="text-align:center;margin-bottom:24px;font-size:13px;color:var(--color-text-secondary)">
-      Om je buurtbewonerschap te bevestigen vraagt de gemeente je persoonsgegevens uit je PID.
+      ${t('add.pidRequestMessage')}
     </p>
   `;
 
@@ -615,7 +617,7 @@ function showPidDisclosureOverlay(parentContainer, issuer, onAccept) {
   // Required attributes
   const reqSection = document.createElement('div');
   reqSection.style.cssText = 'width:100%;margin-bottom:12px;';
-  reqSection.innerHTML = `<div style="font-size:12px;font-weight:600;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">Vereiste gegevens</div>`;
+  reqSection.innerHTML = `<div style="font-size:12px;font-weight:600;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">${t('disclosure.requiredData')}</div>`;
   const reqList = document.createElement('div');
   reqList.style.cssText = 'width:100%;background:var(--color-white);border-radius:12px;border:1px solid var(--color-border);overflow:hidden;';
   pidRequired.forEach(key => {
@@ -625,7 +627,7 @@ function showPidDisclosureOverlay(parentContainer, issuer, onAccept) {
         <div class="disclosure-attr-info">
           <div class="disclosure-attr-name">${key}</div>
           <div class="disclosure-attr-value">${val}</div>
-          <div class="disclosure-attr-required">Vereist</div>
+          <div class="disclosure-attr-required">${t('disclosure.required')}</div>
         </div>
         <span class="material-icons" style="color:var(--color-primary);font-size:20px">lock</span>
       </div>
@@ -637,7 +639,7 @@ function showPidDisclosureOverlay(parentContainer, issuer, onAccept) {
   // Optional attributes with toggles
   const optSection = document.createElement('div');
   optSection.style.cssText = 'width:100%;margin-bottom:16px;';
-  optSection.innerHTML = `<div style="font-size:12px;font-weight:600;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">Optionele gegevens</div>`;
+  optSection.innerHTML = `<div style="font-size:12px;font-weight:600;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">${t('disclosure.optionalDataTitle')}</div>`;
   const optList = document.createElement('div');
   optList.style.cssText = 'width:100%;background:var(--color-white);border-radius:12px;border:1px solid var(--color-border);overflow:hidden;';
   pidOptional.forEach(key => {
@@ -673,16 +675,16 @@ function showPidDisclosureOverlay(parentContainer, issuer, onAccept) {
   footer.innerHTML = `
     <button type="button" class="btn btn-primary btn-full" id="pid-offer-accept">
       <span class="material-icons">share</span>
-      Delen en doorgaan
+      ${t('add.shareAndContinue')}
     </button>
     <button type="button" class="btn btn-text btn-full" id="pid-offer-decline">
-      Weigeren
+      ${t('disclosure.decline')}
     </button>
   `;
 
   footer.querySelector('#pid-offer-accept').addEventListener('click', () => {
     const btn = footer.querySelector('#pid-offer-accept');
-    btn.innerHTML = '<span class="material-icons">check</span> Gedeeld!';
+    btn.innerHTML = `<span class="material-icons">check</span> ${t('add.shared')}`;
     btn.style.background = 'var(--color-success)';
     btn.disabled = true;
     setTimeout(() => {
@@ -707,7 +709,7 @@ function renderCredentialOfferOverlay(parentContainer, issuer, credentialObj, at
   overlay.style.zIndex = '60';
   overlay.style.background = 'var(--color-surface)';
 
-  overlay.appendChild(createAppBar('Credential ontvangen', () => {
+  overlay.appendChild(createAppBar(t('add.receiveCredential'), () => {
     overlay.classList.remove('slide-up');
     overlay.classList.add('slide-down');
     setTimeout(() => overlay.remove(), 400);
@@ -722,8 +724,8 @@ function renderCredentialOfferOverlay(parentContainer, issuer, credentialObj, at
         <span class="material-icons">${issuer.icon}</span>
       </div>
       <div>
-        <div class="receive-issuer-name">${issuer.name}</div>
-        <div class="receive-issuer-label">Geverifieerde uitgever</div>
+        <div class="receive-issuer-name">${td(issuer.name)}</div>
+        <div class="receive-issuer-label">${t('add.verifiedIssuer')}</div>
       </div>
     </div>
     <p style="text-align:center;margin-bottom:24px;font-size:15px;color:var(--color-text)">
@@ -742,7 +744,7 @@ function renderCredentialOfferOverlay(parentContainer, issuer, credentialObj, at
   attrList.style.cssText = 'width:100%;background:var(--color-white);border-radius:12px;border:1px solid var(--color-border);overflow:hidden;margin-top:16px;';
   if (attrs) {
     for (const [key, val] of Object.entries(attrs)) {
-      attrList.innerHTML += `<div class="attr-row" style="padding:12px 16px"><span class="attr-label">${key}</span><span class="attr-value">${val}</span></div>`;
+      attrList.innerHTML += `<div class="attr-row" style="padding:12px 16px"><span class="attr-label">${td(key)}</span><span class="attr-value">${td(val)}</span></div>`;
     }
   }
   body.appendChild(attrList);
@@ -753,10 +755,10 @@ function renderCredentialOfferOverlay(parentContainer, issuer, credentialObj, at
   footer.innerHTML = `
     <button type="button" class="btn btn-primary btn-full" id="offer-accept">
       <span class="material-icons">add_card</span>
-      Toevoegen aan wallet
+      ${t('add.addToWallet')}
     </button>
     <button type="button" class="btn btn-text btn-full" id="offer-decline">
-      Weigeren
+      ${t('disclosure.decline')}
     </button>
   `;
 
@@ -764,7 +766,7 @@ function renderCredentialOfferOverlay(parentContainer, issuer, credentialObj, at
     addCredentialToWallet(credentialObj);
 
     const btn = footer.querySelector('#offer-accept');
-    btn.innerHTML = '<span class="material-icons">check</span> Toegevoegd!';
+    btn.innerHTML = `<span class="material-icons">check</span> ${t('add.added')}`;
     btn.style.background = 'var(--color-success)';
     btn.disabled = true;
     setTimeout(() => {
@@ -789,7 +791,7 @@ function showBusinessIdInput(parentContainer) {
   overlay.style.zIndex = '60';
   overlay.style.background = 'var(--color-surface)';
 
-  overlay.appendChild(createAppBar('Organisatie opzoeken', () => {
+  overlay.appendChild(createAppBar(t('add.lookupOrg'), () => {
     overlay.classList.remove('slide-up');
     overlay.classList.add('slide-down');
     setTimeout(() => overlay.remove(), 400);
@@ -800,20 +802,20 @@ function showBusinessIdInput(parentContainer) {
 
   body.innerHTML = `
     <p style="font-size:15px;color:var(--color-text);margin-bottom:20px;">
-      Voer een organisatie-identificatiecode in om credentials van die organisatie op te halen.
+      ${t('add.lookupOrgDesc')}
     </p>
 
     <!-- ID type selector -->
     <div class="bid-type-tabs" id="bid-type-tabs">
-      <button type="button" class="bid-type-tab active" data-type="kvk">KVK-nummer</button>
+      <button type="button" class="bid-type-tab active" data-type="kvk">${t('add.kvkNumber')}</button>
       <button type="button" class="bid-type-tab" data-type="oin">OIN</button>
       <button type="button" class="bid-type-tab" data-type="eori">EORI</button>
     </div>
 
     <div style="margin-top:16px;">
-      <label style="font-size:13px;font-weight:600;color:var(--color-text);display:block;margin-bottom:6px;" id="bid-label">KVK-nummer</label>
+      <label style="font-size:13px;font-weight:600;color:var(--color-text);display:block;margin-bottom:6px;" id="bid-label">${t('add.kvkNumber')}</label>
       <input type="text" class="input" id="bid-input" placeholder="Bijv. 87654321" autocomplete="off" inputmode="text">
-      <p style="font-size:12px;color:var(--color-text-secondary);margin-top:6px;" id="bid-hint">8-cijferig nummer uit het Handelsregister</p>
+      <p style="font-size:12px;color:var(--color-text-secondary);margin-top:6px;" id="bid-hint">${t('add.kvkHint')}</p>
     </div>
 
     <div class="bid-result hidden" id="bid-result">
@@ -822,20 +824,20 @@ function showBusinessIdInput(parentContainer) {
 
     <button type="button" class="btn btn-primary btn-full" style="margin-top:20px;" id="bid-search">
       <span class="material-icons">search</span>
-      Zoeken
+      ${t('add.search')}
     </button>
   `;
 
   // Tab switching
   const typeConfig = {
-    kvk: { label: 'KVK-nummer', placeholder: 'Bijv. 87654321', hint: '8-cijferig nummer uit het Handelsregister' },
-    oin: { label: 'OIN', placeholder: 'Bijv. 00000001234567890000', hint: '20-cijferig Overheids Identificatie Nummer' },
-    eori: { label: 'EORI-nummer', placeholder: 'Bijv. NL123456789', hint: 'EU Economic Operators Registration and Identification' },
+    kvk: { label: t('add.kvkNumber'), placeholder: 'Bijv. 87654321', hint: t('add.kvkHint') },
+    oin: { label: 'OIN', placeholder: 'Bijv. 00000001234567890000', hint: t('add.oinHint') },
+    eori: { label: t('add.eoriNumber'), placeholder: 'Bijv. NL123456789', hint: t('add.eoriHint') },
   };
 
   body.querySelectorAll('.bid-type-tab').forEach(tab => {
     tab.addEventListener('click', () => {
-      body.querySelectorAll('.bid-type-tab').forEach(t => t.classList.remove('active'));
+      body.querySelectorAll('.bid-type-tab').forEach(btn => btn.classList.remove('active'));
       tab.classList.add('active');
       const type = tab.dataset.type;
       const cfg = typeConfig[type];

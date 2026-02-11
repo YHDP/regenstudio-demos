@@ -1,4 +1,5 @@
 import { getState, setState } from './state.js';
+import { t } from './translations.js';
 
 // ============================================================
 // DPP TEMPLATES — bewaard voor later gebruik
@@ -634,7 +635,21 @@ export function getPermitCredentials() {
 }
 
 export function getPIDCredential() {
-  return credentials.find(c => c.type === 'pid');
+  const pid = credentials.find(c => c.type === 'pid');
+  if (!pid) return null;
+  return {
+    ...pid,
+    title: t('pid.title'),
+    issuer: t('pid.issuer'),
+    attributes: {
+      [t('pid.firstName')]: 'Jan',
+      [t('pid.lastName')]: 'de Vries',
+      [t('pid.dateOfBirth')]: t('pid.dateOfBirthValue'),
+      [t('pid.bsn')]: '\u2022\u2022\u2022\u2022\u2022\u2022289',
+      [t('pid.nationality')]: t('pid.nationalityValue'),
+      [t('pid.validUntil')]: t('pid.validUntilValue'),
+    },
+  };
 }
 
 // Legacy — voor eventueel DPP-hergebruik

@@ -1,14 +1,15 @@
 import { navigate } from '../app.js';
+import { t } from '../data/translations.js';
 
 export function createBottomNav(activeTab = 'cards') {
   const nav = document.createElement('div');
   nav.className = 'bottom-nav';
 
   const tabs = [
-    { id: 'cards', icon: 'credit_card', label: 'Kaarten', screen: 'dashboard' },
-    { id: 'add', icon: 'add_circle_outline', label: 'Toevoegen', screen: 'add-credential' },
-    { id: 'share', icon: 'share', label: 'Delen', screen: 'share-select' },
-    { id: 'history', icon: 'history', label: 'Activiteit', screen: null },
+    { id: 'cards', icon: 'credit_card', label: t('nav.cards'), screen: 'dashboard' },
+    { id: 'add', icon: 'add_circle_outline', label: t('nav.add'), screen: 'add-credential' },
+    { id: 'share', icon: 'share', label: t('nav.share'), screen: 'share-select' },
+    { id: 'history', icon: 'history', label: t('nav.activity'), screen: null },
   ];
 
   tabs.forEach(tab => {
