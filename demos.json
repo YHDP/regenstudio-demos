@@ -2,15 +2,15 @@
   "passwordHash": "ef4f43390844485c01a882243c9caee6c67fc4e1bdb972d7da24bb177568d536",
   "demos": [
     {
-      "id": "nlwallet",
+      "id": "EDI-wallet",
       "name": "EDI Wallet",
       "subtitle": "European Digital Identity Wallet",
       "description": "Experience a prototype European digital identity wallet with credential management, QR scanning, and selective disclosure flows.",
       "category": "Digital Society",
       "tags": ["Digital Identity", "Privacy", "Government"],
-      "preview": "assets/images/previews/nlwallet.png",
+      "preview": "assets/images/previews/EDI-wallet.png",
       "accentColor": "#383EDE",
-      "path": "/nlwallet/"
+      "path": "/EDI-wallet/"
     }
   ]
 }
