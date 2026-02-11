@@ -1,0 +1,73 @@
+:root {
+  /* Primary Colors */
+  --color-primary: #383EDE;
+  --color-primary-dark: #2D32B3;
+  --color-primary-light: #E8E9FB;
+  --color-government-blue: #154273;
+  --color-text: #152A62;
+  --color-text-secondary: #5B6B8C;
+  --color-surface: #FCFCFC;
+  --color-surface-variant: #F0F2F7;
+  --color-background: #E8EAF0;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-border: #D8DCE6;
+  --color-error: #D32F2F;
+  --color-success: #2E7D32;
+  --color-success-light: #E8F5E9;
+
+  /* DPP Card Colors */
+  --color-card-blue: #1565C0;
+  --color-card-green: #2E7D32;
+  --color-card-orange: #E65100;
+  --color-card-gov: #154273;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-size-xs: 11px;
+  --font-size-sm: 13px;
+  --font-size-md: 15px;
+  --font-size-lg: 18px;
+  --font-size-xl: 22px;
+  --font-size-xxl: 28px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(21, 42, 98, 0.08);
+  --shadow-md: 0 4px 12px rgba(21, 42, 98, 0.12);
+  --shadow-lg: 0 8px 24px rgba(21, 42, 98, 0.16);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-screen: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Phone Frame */
+  --phone-width: 375px;
+  --phone-height: 812px;
+  --phone-radius: 44px;
+  --safe-area-top: 59px;
+  --safe-area-bottom: 34px;
+  --bottom-nav-height: 56px;
+  --app-bar-height: 56px;
+}

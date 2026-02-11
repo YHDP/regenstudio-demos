@@ -1,0 +1,161 @@
+/* Screen Transitions */
+.screen.slide-in-right {
+  animation: slideInRight var(--transition-screen) forwards;
+}
+
+.screen.slide-out-left {
+  animation: slideOutLeft var(--transition-screen) forwards;
+}
+
+.screen.slide-in-left {
+  animation: slideInLeft var(--transition-screen) forwards;
+}
+
+.screen.slide-out-right {
+  animation: slideOutRight var(--transition-screen) forwards;
+}
+
+.screen.fade-in {
+  animation: fadeIn var(--transition-screen) forwards;
+}
+
+.screen.fade-out {
+  animation: fadeOut var(--transition-screen) forwards;
+}
+
+.screen.slide-up {
+  animation: slideUp var(--transition-screen) forwards;
+}
+
+.screen.slide-down {
+  animation: slideDown var(--transition-screen) forwards;
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideOutLeft {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(-30%); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30%); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideOutRight {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(100%); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(100%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(100%); }
+}
+
+/* Shake for wrong PIN */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
+}
+
+/* QR Scanner line */
+@keyframes qr-scan {
+  0% { top: -3px; }
+  50% { top: calc(100% - 3px); }
+  100% { top: -3px; }
+}
+
+/* Pulse animation for splash */
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.splash-logo {
+  animation: pulse 0.8s ease-out;
+}
+
+.splash-title {
+  animation: fadeIn 0.6s ease-out 0.3s both;
+}
+
+.splash-subtitle {
+  animation: fadeIn 0.6s ease-out 0.5s both;
+}
+
+/* Success checkmark animation */
+@keyframes scaleIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes checkDraw {
+  from { stroke-dashoffset: 48; }
+  to { stroke-dashoffset: 0; }
+}
+
+.success-checkmark {
+  animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Card entrance */
+@keyframes cardEnter {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.credential-card-animate {
+  animation: cardEnter 0.4s ease-out both;
+}
+
+/* Staggered card entrance */
+.dashboard-grid .credential-card:nth-child(1) { animation-delay: 0.03s; }
+.dashboard-grid .credential-card:nth-child(2) { animation-delay: 0.06s; }
+.dashboard-grid .credential-card:nth-child(3) { animation-delay: 0.09s; }
+.dashboard-grid .credential-card:nth-child(4) { animation-delay: 0.12s; }
+.dashboard-grid .credential-card:nth-child(5) { animation-delay: 0.15s; }
+.dashboard-grid .credential-card:nth-child(6) { animation-delay: 0.18s; }
+.dashboard-grid .credential-card:nth-child(7) { animation-delay: 0.21s; }
+.dashboard-grid .credential-card:nth-child(8) { animation-delay: 0.24s; }
+
+/* Dot fill animation */
+@keyframes dotFill {
+  from { transform: scale(0.5); }
+  to { transform: scale(1.1); }
+}
+
+.pin-dot.filling {
+  animation: dotFill 0.15s ease-out;
+}
+
+/* Progress bar animation */
+@keyframes progressGrow {
+  from { width: 0; }
+}
+
+.progress-fill.animate {
+  animation: progressGrow 0.8s ease-out;
+}

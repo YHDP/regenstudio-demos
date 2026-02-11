@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NL Wallet Demo — Digital Product Passport</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/screens.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+  <div class="phone-frame">
+    <!-- Dynamic Island -->
+    <div class="dynamic-island"></div>
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span class="status-bar-time" id="status-time">9:41</span>
+      <div class="status-bar-icons">
+        <span class="material-icons" style="font-size:16px">signal_cellular_alt</span>
+        <span class="material-icons" style="font-size:16px">wifi</span>
+        <span class="material-icons" style="font-size:16px">battery_full</span>
+      </div>
+    </div>
+
+    <!-- Screen Container -->
+    <div class="screen-container" id="screen-container"></div>
+  </div>
+
+  <!-- App Module -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
