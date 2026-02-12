@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting…</title>
+    <script>
+      // GitHub Pages SPA redirect for client-side routed demos
+      // Preserves the path as a query parameter so the demo's index.html can restore it
+      var l = window.location;
+      var pathParts = l.pathname.split('/').filter(Boolean);
+
+      // Only redirect if this looks like a demo sub-route (e.g. /dpp-system/dpp/123)
+      if (pathParts.length >= 2) {
+        var demoBase = '/' + pathParts[0] + '/';
+        var subPath = pathParts.slice(1).join('/');
+        l.replace(
+          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          demoBase + '?/' + subPath.replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash
+        );
+      }
+    </script>
+  </head>
+  <body>
+    Redirecting&hellip;
+  </body>
+</html>
