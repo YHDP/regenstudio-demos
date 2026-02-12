@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#FFFFFF"/>
+
+  <!-- ==========================================
+       AI TAX → UBI — tessellated triangles
+       Left: AI/companies cluster, Center: tax funnel, Right: citizens/UBI
+       ========================================== -->
+
+  <!-- Node 1: AI / Companies (left) -->
+  <polygon points="80,220 140,170 140,220" fill="#4F46E5" opacity="0.9"/>
+  <polygon points="80,220 140,220 140,270" fill="#6366F1" opacity="0.8"/>
+  <polygon points="140,170 200,220 140,220" fill="#6366F1" opacity="0.85"/>
+  <polygon points="140,220 200,220 140,270" fill="#4F46E5" opacity="0.75"/>
+  <polygon points="140,170 200,170 200,220" fill="#818CF8" opacity="0.7"/>
+  <polygon points="140,270 200,220 200,270" fill="#818CF8" opacity="0.65"/>
+  <!-- Circuit/AI detail -->
+  <polygon points="130,200 140,185 150,200" fill="#FFFFFF" opacity="0.5"/>
+  <polygon points="155,195 165,180 175,195" fill="#FFFFFF" opacity="0.4"/>
+  <polygon points="120,240 140,225 160,240" fill="#FFFFFF" opacity="0.3"/>
+
+  <!-- Second company cluster (below-left) -->
+  <polygon points="100,310 150,280 150,340" fill="#4F46E5" opacity="0.6"/>
+  <polygon points="150,280 200,310 150,340" fill="#6366F1" opacity="0.5"/>
+  <polygon points="150,280 200,280 200,310" fill="#818CF8" opacity="0.45"/>
+
+  <!-- Third company cluster (above-left) -->
+  <polygon points="120,120 170,90 170,150" fill="#6366F1" opacity="0.5"/>
+  <polygon points="170,90 210,120 170,150" fill="#4F46E5" opacity="0.45"/>
+
+  <!-- Flow arrows: Companies → Tax Fund -->
+  <polygon points="210,230 260,224 260,236" fill="#6366F1" opacity="0.5"/>
+  <polygon points="260,220 300,230 260,240" fill="#6366F1" opacity="0.6"/>
+  <polygon points="300,224 340,218 340,230" fill="#6366F1" opacity="0.5"/>
+  <polygon points="340,215 370,225 340,235" fill="#6366F1" opacity="0.6"/>
+
+  <!-- Node 2: Tax Fund / Collection (center) -->
+  <polygon points="370,190 430,160 430,220" fill="#F59E0B" opacity="0.9"/>
+  <polygon points="370,260 430,220 430,290" fill="#D97706" opacity="0.8"/>
+  <polygon points="370,190 370,260 430,220" fill="#FBBF24" opacity="0.85"/>
+  <polygon points="430,160 490,190 490,230" fill="#D97706" opacity="0.75"/>
+  <polygon points="430,220 490,230 490,270" fill="#F59E0B" opacity="0.7"/>
+  <polygon points="430,160 430,220 490,190" fill="#FBBF24" opacity="0.65"/>
+  <polygon points="430,220 430,290 490,270" fill="#D97706" opacity="0.7"/>
+  <!-- Coin/currency detail -->
+  <polygon points="415,210 430,195 445,210" fill="#FFFFFF" opacity="0.5"/>
+  <polygon points="415,230 430,245 445,230" fill="#FFFFFF" opacity="0.4"/>
+  <polygon points="410,220 430,210 430,230" fill="#FFFFFF" opacity="0.45"/>
+  <polygon points="450,220 430,210 430,230" fill="#FFFFFF" opacity="0.45"/>
+
+  <!-- Flow arrows: Tax Fund → Citizens -->
+  <polygon points="490,230 540,224 540,236" fill="#F59E0B" opacity="0.5"/>
+  <polygon points="540,220 570,230 540,240" fill="#F59E0B" opacity="0.6"/>
+  <polygon points="570,224 610,218 610,230" fill="#10B981" opacity="0.5"/>
+  <polygon points="610,215 640,225 610,235" fill="#10B981" opacity="0.6"/>
+
+  <!-- Node 3: Citizens / UBI (right) -->
+  <polygon points="640,210 700,180 700,240" fill="#10B981" opacity="0.9"/>
+  <polygon points="640,280 700,250 700,310" fill="#0D6B3E" opacity="0.8"/>
+  <polygon points="640,210 640,280 700,250" fill="#059669" opacity="0.85"/>
+  <polygon points="700,180 760,210 760,250" fill="#0D6B3E" opacity="0.7"/>
+  <polygon points="700,250 760,250 760,290" fill="#10B981" opacity="0.75"/>
+  <polygon points="700,180 700,240 760,210" fill="#059669" opacity="0.65"/>
+  <polygon points="700,250 700,310 760,290" fill="#047857" opacity="0.7"/>
+  <!-- People detail -->
+  <polygon points="690,235 700,220 710,235" fill="#FFFFFF" opacity="0.5"/>
+  <polygon points="680,255 700,245 720,255" fill="#FFFFFF" opacity="0.35"/>
+  <polygon points="715,225 725,215 735,225" fill="#FFFFFF" opacity="0.4"/>
+
+  <!-- Second citizens cluster (below-right) -->
+  <polygon points="660,330 710,300 710,360" fill="#10B981" opacity="0.5"/>
+  <polygon points="710,300 750,330 710,360" fill="#059669" opacity="0.45"/>
+
+  <!-- Third citizens cluster (above-right) -->
+  <polygon points="680,120 720,100 720,150" fill="#059669" opacity="0.45"/>
+  <polygon points="720,100 750,130 720,150" fill="#10B981" opacity="0.4"/>
+
+  <!-- Decorative accent triangles -->
+  <polygon points="40,100 65,75 85,105" fill="#4F46E5" opacity="0.12"/>
+  <polygon points="60,370 85,345 105,375" fill="#6366F1" opacity="0.1"/>
+  <polygon points="350,60 375,35 395,65" fill="#F59E0B" opacity="0.12"/>
+  <polygon points="420,420 445,395 465,425" fill="#D97706" opacity="0.1"/>
+  <polygon points="750,380 770,360 785,385" fill="#10B981" opacity="0.12"/>
+  <polygon points="30,300 38,288 46,300" fill="#818CF8" opacity="0.1"/>
+  <polygon points="770,100 778,88 786,100" fill="#059669" opacity="0.1"/>
+  <polygon points="250,420 258,410 266,420" fill="#4F46E5" opacity="0.08"/>
+  <polygon points="550,80 558,68 566,80" fill="#F59E0B" opacity="0.1"/>
+</svg>

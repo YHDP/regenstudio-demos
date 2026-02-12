@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tax → Universal Basic Income Demo</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --bg: #0f172a;
+            --bg-card: #1e293b;
+            --bg-card-hover: #334155;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--success));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .stat-card h3 {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .stat-card .change {
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+
+        .positive { color: var(--success); }
+        .negative { color: var(--danger); }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .panel {
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-header h2 {
+            font-size: 1.125rem;
+        }
+
+        .panel-body {
+            padding: 1.5rem;
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .control-group label {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .control-group label span {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: var(--border);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+        }
+
+        /* Companies */
+        .companies-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .company-card {
+            background: var(--bg);
+            border-radius: 8px;
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .company-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+
+        .company-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .company-info p {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+        }
+
+        .company-stats {
+            text-align: right;
+        }
+
+        .company-stats .revenue {
+            font-weight: 600;
+            color: var(--success);
+        }
+
+        .company-stats .tax {
+            font-size: 0.875rem;
+            color: var(--warning);
+        }
+
+        .ai-level {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.25rem;
+        }
+
+        .ai-bar {
+            flex: 1;
+            height: 6px;
+            background: var(--border);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .ai-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--success), var(--warning), var(--danger));
+            transition: width 0.3s;
+        }
+
+        .ai-percentage {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            min-width: 40px;
+        }
+
+        /* Citizens */
+        .citizens-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.75rem;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .citizen {
+            background: var(--bg);
+            border-radius: 8px;
+            padding: 0.75rem;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .citizen:hover {
+            transform: translateY(-2px);
+        }
+
+        .citizen-avatar {
+            font-size: 2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .citizen-name {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 0.25rem;
+        }
+
+        .citizen-ubi {
+            font-weight: 600;
+            color: var(--success);
+            font-size: 0.875rem;
+        }
+
+        /* Flow Visualization */
+        .flow-container {
+            grid-column: span 2;
+        }
+
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .flow-node {
+            background: var(--bg);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            min-width: 200px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .flow-node h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .flow-node .amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .flow-arrow {
+            flex: 1;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--success));
+            position: relative;
+            margin: 0 -10px;
+        }
+
+        .flow-arrow::after {
+            content: '→';
+            position: absolute;
+            right: -5px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--success);
+            font-size: 1.5rem;
+        }
+
+        .flow-particles {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: flowParticle 2s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes flowParticle {
+            0% { left: 0; opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { left: 100%; opacity: 0; }
+        }
+
+        /* Simulation Controls */
+        .sim-controls {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        button {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background: var(--bg);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-card-hover);
+        }
+
+        /* Year Display */
+        .year-display {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .year {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .year-label {
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .dashboard {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            .flow-container {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+            .citizens-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+
+        .info-tooltip {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: var(--border);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 16px;
+            font-size: 10px;
+            cursor: help;
+            margin-left: 0.5rem;
+        }
+
+        .description {
+            background: var(--bg);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Tax → Universal Basic Income</h1>
+            <p class="subtitle">A simulation of funding UBI through taxation on AI-driven automation</p>
+        </header>
+
+        <div class="year-display">
+            <div class="year" id="currentYear">2026</div>
+            <div class="year-label">Simulation Year</div>
+        </div>
+
+        <div class="dashboard">
+            <div class="stat-card">
+                <h3>Total AI Tax Revenue</h3>
+                <div class="value positive" id="totalTaxRevenue">$0</div>
+                <div class="change positive" id="taxRevenueChange">+0% from last year</div>
+            </div>
+            <div class="stat-card">
+                <h3>Monthly UBI Payment</h3>
+                <div class="value" id="ubiPayment">$0</div>
+                <div class="change" id="ubiPaymentChange">per citizen</div>
+            </div>
+            <div class="stat-card">
+                <h3>Citizens Covered</h3>
+                <div class="value" id="citizensCovered">0</div>
+                <div class="change" id="citizensCoveredChange">adults receiving UBI</div>
+            </div>
+            <div class="stat-card">
+                <h3>Avg AI Automation</h3>
+                <div class="value" id="avgAutomation">0%</div>
+                <div class="change" id="automationChange">across all companies</div>
+            </div>
+        </div>
+
+        <div class="main-grid">
+            <div class="panel">
+                <div class="panel-header">
+                    <h2>Policy Controls</h2>
+                </div>
+                <div class="panel-body">
+                    <div class="description">
+                        Adjust the AI tax rate and other parameters to see how they affect UBI distribution.
+                        The tax is calculated based on each company's AI automation level and revenue.
+                    </div>
+                    <div class="controls">
+                        <div class="control-group">
+                            <label>
+                                Base AI Tax Rate
+                                <span id="taxRateValue">15%</span>
+                            </label>
+                            <input type="range" id="taxRate" min="5" max="50" value="15">
+                        </div>
+                        <div class="control-group">
+                            <label>
+                                Automation Threshold (tax kicks in above this)
+                                <span id="thresholdValue">20%</span>
+                            </label>
+                            <input type="range" id="automationThreshold" min="0" max="50" value="20">
+                        </div>
+                        <div class="control-group">
+                            <label>
+                                Progressive Tax Multiplier
+                                <span id="progressiveValue">1.5x</span>
+                            </label>
+                            <input type="range" id="progressiveMultiplier" min="1" max="3" step="0.1" value="1.5">
+                        </div>
+                        <div class="control-group">
+                            <label>
+                                Population (millions)
+                                <span id="populationValue">50</span>
+                            </label>
+                            <input type="range" id="population" min="10" max="350" value="50">
+                        </div>
+                        <div class="sim-controls">
+                            <button class="btn-primary" id="simulateYear">Simulate Next Year</button>
+                            <button class="btn-secondary" id="resetSim">Reset Simulation</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <h2>AI-Powered Companies</h2>
+                    <span style="color: var(--text-muted); font-size: 0.875rem;">Taxable Entities</span>
+                </div>
+                <div class="panel-body">
+                    <div class="companies-list" id="companiesList">
+                        <!-- Companies will be inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel flow-container">
+                <div class="panel-header">
+                    <h2>Money Flow Visualization</h2>
+                </div>
+                <div class="panel-body">
+                    <div class="flow-diagram">
+                        <div class="flow-node">
+                            <h4>AI Companies</h4>
+                            <div class="amount" id="flowCompanyRevenue">$0B</div>
+                            <p style="color: var(--text-muted); font-size: 0.75rem;">Annual AI Revenue</p>
+                        </div>
+                        <div class="flow-arrow">
+                            <div class="flow-particles">
+                                <div class="particle" style="animation-delay: 0s;"></div>
+                                <div class="particle" style="animation-delay: 0.4s;"></div>
+                                <div class="particle" style="animation-delay: 0.8s;"></div>
+                                <div class="particle" style="animation-delay: 1.2s;"></div>
+                                <div class="particle" style="animation-delay: 1.6s;"></div>
+                            </div>
+                        </div>
+                        <div class="flow-node">
+                            <h4>AI Tax Fund</h4>
+                            <div class="amount" id="flowTaxFund">$0B</div>
+                            <p style="color: var(--text-muted); font-size: 0.75rem;">Collected Revenue</p>
+                        </div>
+                        <div class="flow-arrow">
+                            <div class="flow-particles">
+                                <div class="particle" style="animation-delay: 0.2s;"></div>
+                                <div class="particle" style="animation-delay: 0.6s;"></div>
+                                <div class="particle" style="animation-delay: 1.0s;"></div>
+                                <div class="particle" style="animation-delay: 1.4s;"></div>
+                                <div class="particle" style="animation-delay: 1.8s;"></div>
+                            </div>
+                        </div>
+                        <div class="flow-node">
+                            <h4>Citizens</h4>
+                            <div class="amount" id="flowUBI">$0/mo</div>
+                            <p style="color: var(--text-muted); font-size: 0.75rem;">Per Person UBI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel" style="grid-column: span 2;">
+                <div class="panel-header">
+                    <h2>UBI Recipients Sample</h2>
+                    <span style="color: var(--text-muted); font-size: 0.875rem;" id="recipientCount">Showing 20 of 50,000,000</span>
+                </div>
+                <div class="panel-body">
+                    <div class="citizens-grid" id="citizensGrid">
+                        <!-- Citizens will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initial data
+        const companies = [
+            { name: "AutoMind AI", icon: "🤖", sector: "General AI", revenue: 85, aiLevel: 92 },
+            { name: "RoboManufact", icon: "🏭", sector: "Manufacturing", revenue: 120, aiLevel: 78 },
+            { name: "DataFlow Inc", icon: "📊", sector: "Data Analytics", revenue: 45, aiLevel: 85 },
+            { name: "SmartLogistics", icon: "🚚", sector: "Transportation", revenue: 67, aiLevel: 65 },
+            { name: "HealthAI Corp", icon: "🏥", sector: "Healthcare", revenue: 95, aiLevel: 55 },
+            { name: "FinanceBot", icon: "💰", sector: "Financial Services", revenue: 150, aiLevel: 72 },
+            { name: "RetailGenius", icon: "🛒", sector: "Retail", revenue: 78, aiLevel: 48 },
+            { name: "AgriTech AI", icon: "🌾", sector: "Agriculture", revenue: 35, aiLevel: 60 },
+            { name: "EduMind", icon: "📚", sector: "Education", revenue: 28, aiLevel: 45 },
+            { name: "SecureAI", icon: "🔒", sector: "Cybersecurity", revenue: 55, aiLevel: 88 }
+        ];
+
+        const firstNames = ["Emma", "Liam", "Olivia", "Noah", "Ava", "James", "Sophia", "Oliver", "Isabella", "William",
+                          "Mia", "Benjamin", "Charlotte", "Lucas", "Amelia", "Mason", "Harper", "Ethan", "Evelyn", "Alexander"];
+        const avatars = ["👩", "👨", "👩‍🦱", "👨‍🦱", "👩‍🦰", "👨‍🦰", "👱‍♀️", "👱", "👩‍🦳", "👨‍🦳",
+                        "🧑", "👧", "🧒", "👴", "👵", "🧓", "👩‍🦲", "👨‍🦲", "🧔", "👸"];
+
+        let state = {
+            year: 2026,
+            taxRate: 15,
+            automationThreshold: 20,
+            progressiveMultiplier: 1.5,
+            population: 50,
+            companies: JSON.parse(JSON.stringify(companies)),
+            previousTaxRevenue: 0
+        };
+
+        // Calculate tax for a company
+        function calculateCompanyTax(company) {
+            if (company.aiLevel <= state.automationThreshold) return 0;
+
+            const taxableAutomation = company.aiLevel - state.automationThreshold;
+            const progressiveFactor = 1 + (taxableAutomation / 100) * (state.progressiveMultiplier - 1);
+            const effectiveRate = (state.taxRate / 100) * progressiveFactor;
+
+            return company.revenue * (taxableAutomation / 100) * effectiveRate;
+        }
+
+        // Calculate total tax revenue
+        function calculateTotalTax() {
+            return state.companies.reduce((sum, company) => sum + calculateCompanyTax(company), 0);
+        }
+
+        // Calculate UBI payment
+        function calculateUBI() {
+            const totalTax = calculateTotalTax();
+            const annualPerPerson = (totalTax * 1000000000) / (state.population * 1000000);
+            return annualPerPerson / 12;
+        }
+
+        // Calculate average automation
+        function calculateAvgAutomation() {
+            return state.companies.reduce((sum, c) => sum + c.aiLevel, 0) / state.companies.length;
+        }
+
+        // Format currency
+        function formatCurrency(amount, decimals = 0) {
+            if (amount >= 1000000000) {
+                return '$' + (amount / 1000000000).toFixed(1) + 'T';
+            } else if (amount >= 1000000) {
+                return '$' + (amount / 1000000).toFixed(1) + 'B';
+            } else if (amount >= 1000) {
+                return '$' + (amount / 1000).toFixed(1) + 'K';
+            }
+            return '$' + amount.toFixed(decimals);
+        }
+
+        // Render companies
+        function renderCompanies() {
+            const container = document.getElementById('companiesList');
+            container.innerHTML = state.companies.map(company => {
+                const tax = calculateCompanyTax(company);
+                return `
+                    <div class="company-card">
+                        <div class="company-icon">${company.icon}</div>
+                        <div class="company-info">
+                            <h4>${company.name}</h4>
+                            <p>${company.sector}</p>
+                            <div class="ai-level">
+                                <div class="ai-bar">
+                                    <div class="ai-bar-fill" style="width: ${company.aiLevel}%"></div>
+                                </div>
+                                <span class="ai-percentage">${company.aiLevel}% AI</span>
+                            </div>
+                        </div>
+                        <div class="company-stats">
+                            <div class="revenue">$${company.revenue}B</div>
+                            <div class="tax">Tax: ${formatCurrency(tax * 1000000000)}</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Render citizens
+        function renderCitizens() {
+            const container = document.getElementById('citizensGrid');
+            const ubi = calculateUBI();
+            let citizens = [];
+
+            for (let i = 0; i < 20; i++) {
+                const name = firstNames[Math.floor(Math.random() * firstNames.length)];
+                const avatar = avatars[Math.floor(Math.random() * avatars.length)];
+                citizens.push(`
+                    <div class="citizen">
+                        <div class="citizen-avatar">${avatar}</div>
+                        <div class="citizen-name">${name}</div>
+                        <div class="citizen-ubi">${formatCurrency(ubi)}/mo</div>
+                    </div>
+                `);
+            }
+
+            container.innerHTML = citizens.join('');
+            document.getElementById('recipientCount').textContent =
+                `Showing 20 of ${(state.population * 1000000).toLocaleString()}`;
+        }
+
+        // Update dashboard
+        function updateDashboard() {
+            const totalTax = calculateTotalTax();
+            const ubi = calculateUBI();
+            const avgAutomation = calculateAvgAutomation();
+            const totalRevenue = state.companies.reduce((sum, c) => sum + c.revenue, 0);
+
+            document.getElementById('currentYear').textContent = state.year;
+            document.getElementById('totalTaxRevenue').textContent = formatCurrency(totalTax * 1000000000);
+            document.getElementById('ubiPayment').textContent = formatCurrency(ubi);
+            document.getElementById('citizensCovered').textContent = (state.population * 1000000).toLocaleString();
+            document.getElementById('avgAutomation').textContent = avgAutomation.toFixed(1) + '%';
+
+            // Calculate change
+            if (state.previousTaxRevenue > 0) {
+                const change = ((totalTax - state.previousTaxRevenue) / state.previousTaxRevenue * 100);
+                document.getElementById('taxRevenueChange').textContent =
+                    (change >= 0 ? '+' : '') + change.toFixed(1) + '% from last year';
+                document.getElementById('taxRevenueChange').className = 'change ' + (change >= 0 ? 'positive' : 'negative');
+            }
+
+            // Update flow diagram
+            document.getElementById('flowCompanyRevenue').textContent = '$' + totalRevenue + 'B';
+            document.getElementById('flowTaxFund').textContent = formatCurrency(totalTax * 1000000000);
+            document.getElementById('flowUBI').textContent = formatCurrency(ubi) + '/mo';
+
+            // Update control values
+            document.getElementById('taxRateValue').textContent = state.taxRate + '%';
+            document.getElementById('thresholdValue').textContent = state.automationThreshold + '%';
+            document.getElementById('progressiveValue').textContent = state.progressiveMultiplier.toFixed(1) + 'x';
+            document.getElementById('populationValue').textContent = state.population + 'M';
+        }
+
+        // Simulate next year
+        function simulateYear() {
+            state.previousTaxRevenue = calculateTotalTax();
+            state.year++;
+
+            // Evolve companies
+            state.companies.forEach(company => {
+                // AI levels tend to increase
+                const aiChange = Math.random() * 8 - 2; // -2 to +6
+                company.aiLevel = Math.max(0, Math.min(100, company.aiLevel + aiChange));
+
+                // Revenue changes based on AI adoption
+                const revenueChange = (company.aiLevel / 100) * (Math.random() * 0.15 + 0.02);
+                company.revenue = company.revenue * (1 + revenueChange);
+            });
+
+            // Small population growth
+            state.population *= 1.005;
+
+            updateAll();
+        }
+
+        // Reset simulation
+        function resetSimulation() {
+            state = {
+                year: 2026,
+                taxRate: 15,
+                automationThreshold: 20,
+                progressiveMultiplier: 1.5,
+                population: 50,
+                companies: JSON.parse(JSON.stringify(companies)),
+                previousTaxRevenue: 0
+            };
+
+            document.getElementById('taxRate').value = 15;
+            document.getElementById('automationThreshold').value = 20;
+            document.getElementById('progressiveMultiplier').value = 1.5;
+            document.getElementById('population').value = 50;
+
+            updateAll();
+        }
+
+        // Update everything
+        function updateAll() {
+            renderCompanies();
+            renderCitizens();
+            updateDashboard();
+        }
+
+        // Event listeners
+        document.getElementById('taxRate').addEventListener('input', (e) => {
+            state.taxRate = parseInt(e.target.value);
+            updateAll();
+        });
+
+        document.getElementById('automationThreshold').addEventListener('input', (e) => {
+            state.automationThreshold = parseInt(e.target.value);
+            updateAll();
+        });
+
+        document.getElementById('progressiveMultiplier').addEventListener('input', (e) => {
+            state.progressiveMultiplier = parseFloat(e.target.value);
+            updateAll();
+        });
+
+        document.getElementById('population').addEventListener('input', (e) => {
+            state.population = parseInt(e.target.value);
+            updateAll();
+        });
+
+        document.getElementById('simulateYear').addEventListener('click', simulateYear);
+        document.getElementById('resetSim').addEventListener('click', resetSimulation);
+
+        // Initial render
+        updateAll();
+    </script>
+</body>
+</html>

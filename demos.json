@@ -22,6 +22,18 @@
       "preview": "assets/images/previews/dpp-system.svg",
       "accentColor": "#10B981",
       "path": "/dpp-system/"
+    },
+    {
+      "id": "ai-tax-ubi",
+      "name": "AI Tax \u2192 UBI",
+      "subtitle": "Universal Basic Income Simulator",
+      "description": "Interactive simulation showing how Universal Basic Income could be funded through taxation on AI-driven automation, with real-time policy controls and animated money flow visualization.",
+      "category": "Economic Policy",
+      "tags": ["AI Tax", "Universal Basic Income", "Economic Simulation", "Policy"],
+      "preview": "assets/images/previews/ai-tax-ubi.svg",
+      "accentColor": "#6366F1",
+      "path": "/ai-tax-ubi/",
+      "public": true
     }
   ]
 }

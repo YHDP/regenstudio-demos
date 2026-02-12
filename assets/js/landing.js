@@ -10,7 +10,7 @@
 
     data.demos.forEach(demo => {
       const card = document.createElement('a');
-      card.href = demo.path + 'gate.html';
+      card.href = demo.public ? demo.path + 'index.html' : demo.path + 'gate.html';
       card.className = 'demo-card';
 
       card.innerHTML = `
@@ -18,6 +18,7 @@
           <img src="${demo.preview}" alt="${demo.name} preview"
                onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=\\'placeholder-icon\\'>&#9670;</div>'">
           <span class="demo-card-category">${demo.category}</span>
+          ${demo.public ? '<span class="demo-card-badge">Free Access</span>' : ''}
         </div>
         <div class="demo-card-body">
           <h3>${demo.name}</h3>
