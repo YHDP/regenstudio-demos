@@ -11,5 +11,20 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- GitHub Pages SPA redirect handler -->
+    <script>
+      (function(){
+        var redirect = window.location.search.match(/^\?\/(.*)/);
+        if (redirect) {
+          var decoded = redirect[1].replace(/~and~/g, '&');
+          var path = decoded.split('&');
+          window.history.replaceState(null, null,
+            '/dpp-system/' + path[0] +
+            (path.length > 1 ? '?' + path.slice(1).join('&') : '') +
+            window.location.hash
+          );
+        }
+      })();
+    </script>
   </body>
 </html>
