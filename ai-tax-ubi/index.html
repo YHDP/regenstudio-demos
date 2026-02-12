@@ -4,19 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Tax → Universal Basic Income Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            --bg: #0f172a;
-            --bg-card: #1e293b;
-            --bg-card-hover: #334155;
-            --text: #f1f5f9;
-            --text-muted: #94a3b8;
-            --border: #334155;
+            --primary: #00914B;
+            --primary-dark: #006937;
+            --primary-light: #AFF9D7;
+            --accent: #009BBB;
+            --accent-light: #BBF0F8;
+            --success: #00914B;
+            --warning: #FFA92D;
+            --danger: #93093F;
+            --navy: #243644;
+            --navy-light: #5781A1;
+            --bg: #FAFBFC;
+            --bg-card: #FFFFFF;
+            --bg-subtle: #F0F0F0;
+            --text: #243644;
+            --text-muted: #5781A1;
+            --border: rgba(36, 54, 68, 0.1);
+            --border-hover: rgba(36, 54, 68, 0.2);
+            --shadow-sm: 0 1px 3px rgba(36, 54, 68, 0.06), 0 1px 2px rgba(36, 54, 68, 0.04);
+            --shadow-md: 0 4px 16px rgba(36, 54, 68, 0.08), 0 2px 4px rgba(36, 54, 68, 0.04);
+            --shadow-lg: 0 12px 40px rgba(36, 54, 68, 0.1), 0 4px 12px rgba(36, 54, 68, 0.04);
+            --radius: 16px;
+            --radius-sm: 8px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -26,11 +41,12 @@
         }
 
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: var(--bg);
             color: var(--text);
             min-height: 100vh;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
@@ -45,11 +61,9 @@
         }
 
         h1 {
+            font-family: 'Playfair Display', Georgia, serif;
             font-size: 2.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--success));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--navy);
             margin-bottom: 0.5rem;
         }
 
@@ -67,22 +81,30 @@
 
         .stat-card {
             background: var(--bg-card);
-            border-radius: 12px;
+            border-radius: var(--radius);
             padding: 1.5rem;
             border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow var(--transition);
+        }
+
+        .stat-card:hover {
+            box-shadow: var(--shadow-md);
         }
 
         .stat-card h3 {
             color: var(--text-muted);
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         .stat-card .value {
             font-size: 2rem;
             font-weight: 700;
+            color: var(--navy);
         }
 
         .stat-card .change {
@@ -101,9 +123,15 @@
 
         .panel {
             background: var(--bg-card);
-            border-radius: 12px;
+            border-radius: var(--radius);
             border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
             overflow: hidden;
+            transition: box-shadow var(--transition);
+        }
+
+        .panel:hover {
+            box-shadow: var(--shadow-md);
         }
 
         .panel-header {
@@ -116,6 +144,8 @@
 
         .panel-header h2 {
             font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--navy);
         }
 
         .panel-body {
@@ -143,15 +173,15 @@
         }
 
         .control-group label span {
-            color: var(--text);
+            color: var(--navy);
             font-weight: 600;
         }
 
         input[type="range"] {
             width: 100%;
-            height: 8px;
-            border-radius: 4px;
-            background: var(--border);
+            height: 6px;
+            border-radius: 3px;
+            background: var(--bg-subtle);
             outline: none;
             -webkit-appearance: none;
         }
@@ -164,10 +194,11 @@
             background: var(--primary);
             cursor: pointer;
             transition: transform 0.2s;
+            box-shadow: 0 2px 6px rgba(0, 145, 75, 0.3);
         }
 
         input[type="range"]::-webkit-slider-thumb:hover {
-            transform: scale(1.1);
+            transform: scale(1.15);
         }
 
         /* Companies */
@@ -181,28 +212,35 @@
 
         .company-card {
             background: var(--bg);
-            border-radius: 8px;
+            border-radius: var(--radius-sm);
             padding: 1rem;
             display: grid;
             grid-template-columns: auto 1fr auto;
             gap: 1rem;
             align-items: center;
+            border: 1px solid var(--border);
+            transition: border-color var(--transition);
+        }
+
+        .company-card:hover {
+            border-color: var(--border-hover);
         }
 
         .company-icon {
             width: 48px;
             height: 48px;
-            border-radius: 8px;
+            border-radius: var(--radius-sm);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            background: linear-gradient(135deg, var(--primary-light), var(--accent-light));
         }
 
         .company-info h4 {
             font-size: 1rem;
             margin-bottom: 0.25rem;
+            color: var(--navy);
         }
 
         .company-info p {
@@ -216,7 +254,7 @@
 
         .company-stats .revenue {
             font-weight: 600;
-            color: var(--success);
+            color: var(--primary);
         }
 
         .company-stats .tax {
@@ -234,14 +272,14 @@
         .ai-bar {
             flex: 1;
             height: 6px;
-            background: var(--border);
+            background: var(--bg-subtle);
             border-radius: 3px;
             overflow: hidden;
         }
 
         .ai-bar-fill {
             height: 100%;
-            background: linear-gradient(90deg, var(--success), var(--warning), var(--danger));
+            background: linear-gradient(90deg, var(--accent), var(--warning), var(--danger));
             transition: width 0.3s;
         }
 
@@ -262,14 +300,16 @@
 
         .citizen {
             background: var(--bg);
-            border-radius: 8px;
+            border-radius: var(--radius-sm);
             padding: 0.75rem;
             text-align: center;
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--border);
         }
 
         .citizen:hover {
             transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
         }
 
         .citizen-avatar {
@@ -285,7 +325,7 @@
 
         .citizen-ubi {
             font-weight: 600;
-            color: var(--success);
+            color: var(--primary);
             font-size: 0.875rem;
         }
 
@@ -304,16 +344,18 @@
 
         .flow-node {
             background: var(--bg);
-            border-radius: 12px;
+            border-radius: var(--radius);
             padding: 1.5rem 2rem;
             text-align: center;
             min-width: 200px;
             position: relative;
             z-index: 2;
+            border: 1px solid var(--border);
         }
 
         .flow-node h4 {
             margin-bottom: 0.5rem;
+            color: var(--navy);
         }
 
         .flow-node .amount {
@@ -325,18 +367,18 @@
         .flow-arrow {
             flex: 1;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--success));
+            background: linear-gradient(90deg, var(--accent), var(--primary));
             position: relative;
             margin: 0 -10px;
         }
 
         .flow-arrow::after {
-            content: '→';
+            content: '\2192';
             position: absolute;
             right: -5px;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--success);
+            color: var(--primary);
             font-size: 1.5rem;
         }
 
@@ -353,16 +395,16 @@
             position: absolute;
             width: 10px;
             height: 10px;
-            background: var(--success);
+            background: var(--primary);
             border-radius: 50%;
             animation: flowParticle 2s linear infinite;
-            opacity: 0.8;
+            opacity: 0.7;
         }
 
         @keyframes flowParticle {
             0% { left: 0; opacity: 0; }
-            10% { opacity: 0.8; }
-            90% { opacity: 0.8; }
+            10% { opacity: 0.7; }
+            90% { opacity: 0.7; }
             100% { left: 100%; opacity: 0; }
         }
 
@@ -375,9 +417,11 @@
 
         button {
             padding: 0.75rem 1.5rem;
-            border-radius: 8px;
+            border-radius: var(--radius-sm);
             border: none;
+            font-family: 'Inter', sans-serif;
             font-weight: 600;
+            font-size: 0.875rem;
             cursor: pointer;
             transition: all 0.2s;
         }
@@ -398,7 +442,7 @@
         }
 
         .btn-secondary:hover {
-            background: var(--bg-card-hover);
+            background: var(--bg-subtle);
         }
 
         /* Year Display */
@@ -408,13 +452,17 @@
         }
 
         .year {
+            font-family: 'Playfair Display', Georgia, serif;
             font-size: 3rem;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--navy);
         }
 
         .year-label {
             color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.8rem;
         }
 
         /* Responsive */
@@ -449,7 +497,7 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: var(--border);
+            background: var(--bg-subtle);
             border-radius: 4px;
         }
 
@@ -461,23 +509,25 @@
             display: inline-block;
             width: 16px;
             height: 16px;
-            background: var(--border);
+            background: var(--bg-subtle);
             border-radius: 50%;
             text-align: center;
             line-height: 16px;
             font-size: 10px;
             cursor: help;
             margin-left: 0.5rem;
+            color: var(--text-muted);
         }
 
         .description {
             background: var(--bg);
-            border-radius: 8px;
+            border-radius: var(--radius-sm);
             padding: 1rem;
             margin-bottom: 1.5rem;
             font-size: 0.875rem;
             color: var(--text-muted);
             line-height: 1.6;
+            border: 1px solid var(--border);
         }
     </style>
 </head>
