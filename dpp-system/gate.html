@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access — DPP System Demo — Regen Studio</title>
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="gate-page">
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="https://www.regenstudio.world" class="header-logo">
+        <img src="../assets/images/logo.svg" alt="Regen Studio">
+      </a>
+      <nav class="header-nav">
+        <a href="https://www.regenstudio.world/#focus">Focus</a>
+        <a href="https://www.regenstudio.world/#vision">Vision</a>
+        <a href="https://www.regenstudio.world/blog.html">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Gate -->
+  <div class="gate-wrapper">
+    <div class="gate-card">
+
+      <a href="../" class="gate-back">&larr; Back to Demos</a>
+
+      <div class="gate-header">
+        <div class="gate-lock-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2"/>
+            <path d="M7 11V7a5 5 0 0110 0v4"/>
+          </svg>
+        </div>
+        <h1>DPP System Demo</h1>
+        <p>This demonstration requires access credentials.</p>
+      </div>
+
+      <form id="gate-form" class="gate-form">
+        <label for="gate-password">Password</label>
+        <div class="gate-input-group">
+          <input type="password" id="gate-password" placeholder="Enter access password" autocomplete="off" required>
+          <button type="submit" class="gate-submit">Access</button>
+        </div>
+        <p id="gate-error" class="gate-error">Incorrect password. Please try again or request access below.</p>
+      </form>
+
+      <hr class="gate-divider">
+
+      <div class="gate-access">
+        <p>To obtain access, file a request through:</p>
+        <div class="email-pill">
+          <span class="email-address">info@regenstudio.world</span>
+          <button class="copy-btn" type="button" data-email="info@regenstudio.world">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+        <p class="note">Include your name, organization, and interest in the demo.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Regen Studio &middot; <a href="https://www.regenstudio.world">www.regenstudio.world</a></p>
+  </footer>
+
+  <script>
+    window.DEMO_CONFIG = { demoId: 'dpp-system', demoPath: './index.html' };
+  </script>
+  <script src="../assets/js/gate.js"></script>
+</body>
+</html>

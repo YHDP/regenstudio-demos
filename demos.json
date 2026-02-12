@@ -11,6 +11,17 @@
       "preview": "assets/images/previews/EDI-wallet.svg",
       "accentColor": "#383EDE",
       "path": "/EDI-wallet/"
+    },
+    {
+      "id": "dpp-system",
+      "name": "DPP System",
+      "subtitle": "Digital Product Passport Platform",
+      "description": "Explore a full Digital Product Passport system tracking Brazilian hardwood furniture from sustainable forest harvest through manufacturing, with UNTP verifiable credentials, ESPR compliance data, and supply chain traceability.",
+      "category": "Supply Chain",
+      "tags": ["Digital Product Passport", "Sustainability", "Supply Chain", "ESPR"],
+      "preview": "assets/images/previews/dpp-system.svg",
+      "accentColor": "#10B981",
+      "path": "/dpp-system/"
     }
   ]
 }
