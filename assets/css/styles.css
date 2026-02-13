@@ -159,6 +159,12 @@ img {
   margin: 0 auto;
 }
 
+.hero-logo {
+  width: 80px;
+  height: auto;
+  margin: 0 auto var(--space-lg);
+}
+
 .hero-label {
   display: inline-block;
   font-size: 0.8rem;
@@ -226,8 +232,37 @@ img {
   gap: var(--space-3xl);
 }
 
-.demos-group__header {
+.demos-group__header,
+.demos-group-header {
   margin-bottom: var(--space-lg);
+}
+
+.demos-group-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-sm);
+}
+
+.demos-group-header h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.demos-group-header p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 .demos-group__title {
@@ -244,7 +279,8 @@ img {
   line-height: 1.6;
 }
 
-.demos-group__cards {
+.demos-group__cards,
+.demos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: var(--space-xl);
@@ -774,7 +810,8 @@ img {
     font-size: 1rem;
   }
 
-  .demos-group__cards {
+  .demos-group__cards,
+  .demos-grid {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
   }

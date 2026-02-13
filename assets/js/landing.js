@@ -3,9 +3,6 @@
 const EDGE_FUNCTION_URL = 'https://uemspezaqxmkhenimwuf.supabase.co/functions/v1/contact-form';
 
 (async function () {
-  const grid = document.getElementById('demos-grid');
-  if (!grid) return;
-
   try {
     const res = await fetch('demos.json');
     const data = await res.json();
@@ -13,18 +10,11 @@ const EDGE_FUNCTION_URL = 'https://uemspezaqxmkhenimwuf.supabase.co/functions/v1
     const restricted = data.demos.filter(d => !d.public);
     const free = data.demos.filter(d => d.public);
 
-    function renderSection(title, subtitle, demos) {
-      const section = document.createElement('div');
-      section.className = 'demos-group';
-      section.innerHTML = `
-        <div class="demos-group__header">
-          <h2 class="demos-group__title">${title}</h2>
-          <p class="demos-group__subtitle">${subtitle}</p>
-        </div>
-      `;
-      const cards = document.createElement('div');
-      cards.className = 'demos-group__cards';
+    const gridRestricted = document.getElementById('demos-grid-restricted');
+    const gridFree = document.getElementById('demos-grid-free');
 
+    function renderCards(container, demos) {
+      if (!container || !demos.length) return;
       demos.forEach(demo => {
         const card = document.createElement('a');
         card.href = demo.public ? demo.path + 'index.html' : demo.path + 'gate.html';
@@ -48,24 +38,28 @@ const EDGE_FUNCTION_URL = 'https://uemspezaqxmkhenimwuf.supabase.co/functions/v1
           </div>
         `;
 
-        cards.appendChild(card);
+        container.appendChild(card);
       });
-
-      section.appendChild(cards);
-      grid.appendChild(section);
     }
 
-    if (restricted.length) {
-      renderSection('Client Demos', 'Password-protected demonstrations built for our partners and clients.', restricted);
+    renderCards(gridRestricted, restricted);
+    renderCards(gridFree, free);
+
+    // Hide empty sections
+    if (!restricted.length) {
+      document.getElementById('demos-restricted')?.remove();
     }
-    if (free.length) {
-      renderSection('Open Demos', 'Freely accessible demonstrations and interactive tools.', free);
+    if (!free.length) {
+      document.getElementById('demos-free')?.remove();
     }
   } catch (e) {
-    grid.innerHTML = '<p style="color: var(--text-muted); text-align: center;">Unable to load demos.</p>';
+    const section = document.querySelector('.demos-section');
+    if (section) {
+      section.innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 48px 0;">Unable to load demos.</p>';
+    }
   }
 
-  // Contact form
+  // Contact form — always init regardless of demo loading
   initContactForm();
 })();
 
