@@ -108,7 +108,7 @@ Deno.serve(async (req) => {
                <td style="padding:0 6px;width:20%"><a href="https://demos.regenstudio.space" style="display:block;padding:8px 0;text-align:center;background:#00914B;color:white;border-radius:6px;font-size:11px;font-weight:600;text-decoration:none">Demos</a></td>
                <td style="padding:0 0 0 6px;width:20%"><a href="https://www.regenstudio.space/blog.html" style="display:block;padding:8px 0;text-align:center;background:#243644;color:white;border-radius:6px;font-size:11px;font-weight:600;text-decoration:none">Blog</a></td>
              </tr></table>
-             <div style="margin-top:16px">
+             <div style="margin-top:16px;text-align:center">
                <span style="display:inline-block;margin:0 6px 8px 0;padding:5px 12px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:99px;font-size:11px;font-weight:600;color:#00914B;white-space:nowrap">&#9650; Energy Transition</span>
                <span style="display:inline-block;margin:0 6px 8px 0;padding:5px 12px;background:#f0fdfa;border:1px solid #b2f0e8;border-radius:99px;font-size:11px;font-weight:600;color:#009BBB;white-space:nowrap">&#9650; Circular Economy</span>
                <span style="display:inline-block;margin:0 6px 8px 0;padding:5px 12px;background:#eef2ff;border:1px solid #c7d2fe;border-radius:99px;font-size:11px;font-weight:600;color:#6366F1;white-space:nowrap">&#9650; Digital Society</span>
@@ -195,7 +195,7 @@ Deno.serve(async (req) => {
           },
           body: JSON.stringify({
             from: fromAddress,
-            to: ["info@regenstudio.space"],
+            to: ["info@regenstudio.world"],
             subject: notifSubject,
             text: notifBody,
             html: notifHtml,
@@ -238,34 +238,31 @@ function emailLayout(content: string, isExternal: boolean): string {
     <tr><td align="center">
       <table width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#FFFFFF;border-radius:16px;border:1px solid #E4E2E2;overflow:hidden">
 
-        <!-- Header with SVG triangle pattern -->
-        <tr><td style="background:#243644;padding:0;text-align:center;height:80px;position:relative">
-          <table width="100%" cellpadding="0" cellspacing="0" style="height:80px"><tr><td style="vertical-align:middle;text-align:center;position:relative">
-            <!-- SVG triangle field -->
-            <div style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden">
-              <svg width="100%" height="80" viewBox="0 0 560 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block">
-                <!-- Large triangles -->
-                <polygon points="45,12 60,40 30,40" fill="#00914B" opacity="0.35"/>
-                <polygon points="480,8 500,42 460,42" fill="#009BBB" opacity="0.3"/>
-                <polygon points="140,50 158,76 122,76" fill="#6366F1" opacity="0.25"/>
-                <polygon points="520,52 535,74 505,74" fill="#FFA92D" opacity="0.35"/>
-                <polygon points="320,6 340,36 300,36" fill="#93093F" opacity="0.2"/>
-                <!-- Medium triangles -->
-                <polygon points="85,55 96,72 74,72" fill="#009BBB" opacity="0.2"/>
-                <polygon points="410,15 424,38 396,38" fill="#00914B" opacity="0.2"/>
-                <polygon points="230,58 244,78 216,78" fill="#FFA92D" opacity="0.25"/>
-                <polygon points="195,8 206,28 184,28" fill="#93093F" opacity="0.15"/>
-                <!-- Small triangles -->
-                <polygon points="370,48 378,62 362,62" fill="#6366F1" opacity="0.3"/>
-                <polygon points="15,60 22,72 8,72" fill="#FFA92D" opacity="0.2"/>
-                <polygon points="270,14 278,28 262,28" fill="#00914B" opacity="0.18"/>
-                <polygon points="540,28 546,38 534,38" fill="#009BBB" opacity="0.25"/>
-                <polygon points="160,18 166,28 154,28" fill="#00914B" opacity="0.15"/>
-                <polygon points="450,60 457,72 443,72" fill="#93093F" opacity="0.2"/>
-              </svg>
-            </div>
-            <span style="position:relative;color:white;font-size:18px;font-weight:600;letter-spacing:0.5px">REGEN STUDIO</span>
-          </td></tr></table>
+        <!-- Header with scattered triangle characters -->
+        <tr><td style="background:#243644;padding:0;text-align:center;height:80px">
+          <table width="100%" cellpadding="0" cellspacing="0" style="height:80px"><tr>
+            <td style="vertical-align:middle;text-align:center">
+              <!-- Top scatter row -->
+              <div style="font-size:0;line-height:0;height:16px;text-align:left;padding:0 12px">
+                <span style="font-size:14px;color:rgba(0,145,75,0.45);padding-left:8px">&#9650;</span>
+                <span style="font-size:8px;color:rgba(0,155,187,0.35);padding-left:60px">&#9650;</span>
+                <span style="font-size:11px;color:rgba(99,102,241,0.3);padding-left:90px">&#9650;</span>
+                <span style="font-size:6px;color:rgba(255,169,45,0.4);padding-left:40px">&#9650;</span>
+                <span style="font-size:10px;color:rgba(147,9,63,0.3);padding-left:50px">&#9650;</span>
+                <span style="font-size:7px;color:rgba(0,145,75,0.25);padding-left:30px">&#9650;</span>
+              </div>
+              <!-- Title -->
+              <span style="color:white;font-size:18px;font-weight:600;letter-spacing:0.5px">REGEN STUDIO</span>
+              <!-- Bottom scatter row -->
+              <div style="font-size:0;line-height:0;height:18px;text-align:right;padding:2px 16px 0">
+                <span style="font-size:7px;color:rgba(0,155,187,0.35);padding-right:120px">&#9650;</span>
+                <span style="font-size:12px;color:rgba(255,169,45,0.4);padding-right:40px">&#9650;</span>
+                <span style="font-size:9px;color:rgba(0,145,75,0.3);padding-right:70px">&#9650;</span>
+                <span style="font-size:6px;color:rgba(99,102,241,0.35);padding-right:20px">&#9650;</span>
+                <span style="font-size:13px;color:rgba(0,155,187,0.25);padding-right:8px">&#9650;</span>
+              </div>
+            </td>
+          </tr></table>
         </td></tr>
 
         <!-- Multi-color accent line -->
