@@ -34,6 +34,18 @@
       "accentColor": "#6366F1",
       "path": "/ai-tax-ubi/",
       "public": true
+    },
+    {
+      "id": "battery-questionnaire",
+      "name": "Battery Passport Checker",
+      "subtitle": "EU Battery Regulation Compliance",
+      "description": "Interactive questionnaire to determine if you need a Digital Battery Passport under EU Regulation 2023/1542. Covers all supply chain roles, battery types, and provides a downloadable PDF compliance report.",
+      "category": "Circular Economy",
+      "tags": ["Battery Passport", "EU Regulation", "Compliance", "DPP"],
+      "preview": "assets/images/previews/battery-questionnaire.svg",
+      "accentColor": "#00914B",
+      "path": "/battery-questionnaire/",
+      "public": true
     }
   ]
 }

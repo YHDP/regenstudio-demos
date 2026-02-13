@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#FFFFFF"/>
+
+  <!-- Battery shape - tessellated triangles in emerald/navy -->
+  <!-- Battery body -->
+  <polygon points="280,140 520,140 520,360 280,360" fill="none" stroke="#00914B" stroke-width="3" opacity="0.3"/>
+
+  <!-- Battery terminal -->
+  <polygon points="360,120 440,120 440,140 360,140" fill="#00914B" opacity="0.4"/>
+
+  <!-- Tessellated fill - row 1 -->
+  <polygon points="280,140 340,140 310,190" fill="#00914B" opacity="0.9"/>
+  <polygon points="340,140 310,190 370,190" fill="#10B981" opacity="0.8"/>
+  <polygon points="340,140 400,140 370,190" fill="#059669" opacity="0.85"/>
+  <polygon points="400,140 370,190 430,190" fill="#00914B" opacity="0.75"/>
+  <polygon points="400,140 460,140 430,190" fill="#10B981" opacity="0.7"/>
+  <polygon points="460,140 430,190 490,190" fill="#059669" opacity="0.8"/>
+  <polygon points="460,140 520,140 490,190" fill="#00914B" opacity="0.65"/>
+
+  <!-- Row 2 -->
+  <polygon points="280,140 310,190 280,240" fill="#10B981" opacity="0.7"/>
+  <polygon points="310,190 280,240 340,240" fill="#059669" opacity="0.85"/>
+  <polygon points="310,190 370,190 340,240" fill="#00914B" opacity="0.8"/>
+  <polygon points="370,190 340,240 400,240" fill="#10B981" opacity="0.75"/>
+  <polygon points="370,190 430,190 400,240" fill="#059669" opacity="0.7"/>
+  <polygon points="430,190 400,240 460,240" fill="#00914B" opacity="0.85"/>
+  <polygon points="430,190 490,190 460,240" fill="#10B981" opacity="0.65"/>
+  <polygon points="490,190 460,240 520,240" fill="#059669" opacity="0.8"/>
+  <polygon points="490,190 520,140 520,240" fill="#00914B" opacity="0.7"/>
+
+  <!-- Row 3 - lighter (charge level indicator) -->
+  <polygon points="280,240 340,240 310,290" fill="#243644" opacity="0.15"/>
+  <polygon points="340,240 310,290 370,290" fill="#243644" opacity="0.1"/>
+  <polygon points="340,240 400,240 370,290" fill="#243644" opacity="0.12"/>
+  <polygon points="400,240 370,290 430,290" fill="#243644" opacity="0.08"/>
+  <polygon points="400,240 460,240 430,290" fill="#243644" opacity="0.15"/>
+  <polygon points="460,240 430,290 490,290" fill="#243644" opacity="0.1"/>
+  <polygon points="460,240 520,240 490,290" fill="#243644" opacity="0.12"/>
+  <polygon points="490,290 520,240 520,290" fill="#243644" opacity="0.08"/>
+
+  <!-- Row 4 -->
+  <polygon points="280,240 310,290 280,340" fill="#243644" opacity="0.1"/>
+  <polygon points="310,290 280,340 340,340" fill="#243644" opacity="0.08"/>
+  <polygon points="310,290 370,290 340,340" fill="#243644" opacity="0.12"/>
+  <polygon points="370,290 340,340 400,340" fill="#243644" opacity="0.1"/>
+  <polygon points="370,290 430,290 400,340" fill="#243644" opacity="0.08"/>
+  <polygon points="430,290 400,340 460,340" fill="#243644" opacity="0.12"/>
+  <polygon points="430,290 490,290 460,340" fill="#243644" opacity="0.1"/>
+  <polygon points="490,290 460,340 520,340" fill="#243644" opacity="0.08"/>
+  <polygon points="490,290 520,290 520,340" fill="#243644" opacity="0.12"/>
+
+  <!-- Bottom row -->
+  <polygon points="280,340 340,340 310,360" fill="#243644" opacity="0.06"/>
+  <polygon points="340,340 310,360 370,360" fill="#243644" opacity="0.08"/>
+  <polygon points="340,340 400,340 370,360" fill="#243644" opacity="0.06"/>
+  <polygon points="400,340 370,360 430,360" fill="#243644" opacity="0.08"/>
+  <polygon points="400,340 460,340 430,360" fill="#243644" opacity="0.06"/>
+  <polygon points="460,340 430,360 490,360" fill="#243644" opacity="0.08"/>
+  <polygon points="460,340 520,340 490,360" fill="#243644" opacity="0.06"/>
+  <polygon points="520,340 490,360 520,360" fill="#243644" opacity="0.08"/>
+
+  <!-- Checkmark overlay -->
+  <circle cx="460" cy="310" r="40" fill="#00914B" opacity="0.9"/>
+  <polyline points="440,310 455,325 480,295" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Decorative scattered triangles -->
+  <polygon points="160,180 190,160 180,200" fill="#00914B" opacity="0.3"/>
+  <polygon points="600,200 640,180 630,220" fill="#10B981" opacity="0.25"/>
+  <polygon points="180,320 210,300 200,340" fill="#059669" opacity="0.2"/>
+  <polygon points="620,300 650,280 640,320" fill="#00914B" opacity="0.2"/>
+  <polygon points="140,250 170,240 160,270" fill="#10B981" opacity="0.15"/>
+  <polygon points="650,250 680,240 670,270" fill="#059669" opacity="0.15"/>
+
+  <!-- "EU" text badge -->
+  <circle cx="340" cy="310" r="22" fill="#243644" opacity="0.85"/>
+  <text x="340" y="316" text-anchor="middle" fill="white" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="16">EU</text>
+</svg>
