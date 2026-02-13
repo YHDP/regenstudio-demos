@@ -550,6 +550,39 @@ img {
   margin: 0;
 }
 
+.contact-disclaimer a {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  transition: color var(--duration) var(--ease);
+}
+
+.contact-disclaimer a:hover {
+  color: var(--emerald);
+}
+
+/* --- "or" Divider --- */
+.cta-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin: var(--space-lg) auto;
+  max-width: 520px;
+}
+
+.cta-divider::before,
+.cta-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.cta-divider span {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
 .contact-success {
   display: flex;
   flex-direction: column;
@@ -599,6 +632,72 @@ img {
 .gate-input:focus {
   border-color: var(--emerald);
   box-shadow: 0 0 0 3px rgba(0, 145, 75, 0.1);
+}
+
+/* --- Prose Page (Privacy Policy etc.) --- */
+.prose-page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-lg) var(--space-3xl);
+  line-height: 1.7;
+}
+
+.prose-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+  transition: color var(--duration) var(--ease);
+}
+
+.prose-back:hover {
+  color: var(--text-primary);
+}
+
+.prose-page h1 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.prose-updated {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-xl);
+}
+
+.prose-page h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-sm);
+}
+
+.prose-page p {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.prose-page ul {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+  padding-left: var(--space-lg);
+}
+
+.prose-page li {
+  margin-bottom: var(--space-xs);
+}
+
+.prose-page a {
+  color: var(--emerald);
+  text-decoration: underline;
+}
+
+.prose-page a:hover {
+  color: var(--emerald-hover);
 }
 
 /* --- Footer --- */

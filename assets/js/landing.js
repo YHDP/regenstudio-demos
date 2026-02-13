@@ -59,9 +59,40 @@ const EDGE_FUNCTION_URL = 'https://uemspezaqxmkhenimwuf.supabase.co/functions/v1
     }
   }
 
-  // Contact form — always init regardless of demo loading
+  // Contact form + copy buttons — always init regardless of demo loading
   initContactForm();
+  initCopyButtons();
 })();
+
+function initCopyButtons() {
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const email = btn.dataset.email || 'info@regenstudio.world';
+      try {
+        await navigator.clipboard.writeText(email);
+        const original = btn.innerHTML;
+        btn.classList.add('copied');
+        btn.innerHTML = `
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Copied!
+        `;
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = original;
+        }, 2000);
+      } catch {
+        const addressEl = btn.closest('.email-pill')?.querySelector('.email-address');
+        if (addressEl) {
+          const range = document.createRange();
+          range.selectNodeContents(addressEl);
+          window.getSelection()?.removeAllRanges();
+          window.getSelection()?.addRange(range);
+        }
+      }
+    });
+  });
+}
 
 function initContactForm() {
   const form = document.getElementById('contact-form');
