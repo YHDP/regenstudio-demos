@@ -317,8 +317,8 @@ function emailLayout(content: string, isExternal: boolean): string {
           <p style="margin:0;font-size:12px;color:#9B9B9B">
             <span style="color:#00914B">&#9650;</span> &nbsp;
             ${isExternal
-              ? 'You received this because you submitted a form on <a href="https://demos.regenstudio.space" style="color:#5781A1;text-decoration:none">demos.regenstudio.space</a>'
-              : 'Internal notification from <a href="https://demos.regenstudio.space" style="color:#5781A1;text-decoration:none">demos.regenstudio.space</a>'}
+              ? 'You received this because you submitted a form on the website of Regen Studio'
+              : 'Internal notification from the website of Regen Studio'}
           </p>
           <p style="margin:8px 0 0;font-size:11px;color:#9B9B9B">&copy; ${new Date().getFullYear()} Regen Studio &middot; Innovations that regenerate</p>
         </td></tr>
