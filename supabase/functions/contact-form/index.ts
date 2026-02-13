@@ -108,15 +108,13 @@ Deno.serve(async (req) => {
                <td style="padding:0 6px;width:20%"><a href="https://demos.regenstudio.space" style="display:block;padding:8px 0;text-align:center;background:#00914B;color:white;border-radius:6px;font-size:11px;font-weight:600;text-decoration:none">Demos</a></td>
                <td style="padding:0 0 0 6px;width:20%"><a href="https://www.regenstudio.space/blog.html" style="display:block;padding:8px 0;text-align:center;background:#243644;color:white;border-radius:6px;font-size:11px;font-weight:600;text-decoration:none">Blog</a></td>
              </tr></table>
-             <table cellpadding="0" cellspacing="0" style="width:100%;margin-top:16px"><tr>
-               <td style="font-size:12px;color:#5781A1;line-height:1.5">
-                 <span style="color:#00914B;font-weight:600">&#9650;</span> Energy Transition &nbsp;
-                 <span style="color:#009BBB;font-weight:600">&#9650;</span> Circular Economy &nbsp;
-                 <span style="color:#6366F1;font-weight:600">&#9650;</span> Digital Society &nbsp;
-                 <span style="color:#FFA92D;font-weight:600">&#9650;</span> Liveable Cities &nbsp;
-                 <span style="color:#93093F;font-weight:600">&#9650;</span> Resilient Nature
-               </td>
-             </tr></table>
+             <div style="margin-top:16px">
+               <span style="display:inline-block;margin:0 6px 8px 0;padding:5px 12px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:99px;font-size:11px;font-weight:600;color:#00914B;white-space:nowrap">&#9650; Energy Transition</span>
+               <span style="display:inline-block;margin:0 6px 8px 0;padding:5px 12px;background:#f0fdfa;border:1px solid #b2f0e8;border-radius:99px;font-size:11px;font-weight:600;color:#009BBB;white-space:nowrap">&#9650; Circular Economy</span>
+               <span style="display:inline-block;margin:0 6px 8px 0;padding:5px 12px;background:#eef2ff;border:1px solid #c7d2fe;border-radius:99px;font-size:11px;font-weight:600;color:#6366F1;white-space:nowrap">&#9650; Digital Society</span>
+               <span style="display:inline-block;margin:0 6px 8px 0;padding:5px 12px;background:#fffbeb;border:1px solid #fde68a;border-radius:99px;font-size:11px;font-weight:600;color:#d97706;white-space:nowrap">&#9650; Liveable Cities</span>
+               <span style="display:inline-block;margin:0 6px 8px 0;padding:5px 12px;background:#fdf2f8;border:1px solid #f9a8d4;border-radius:99px;font-size:11px;font-weight:600;color:#93093F;white-space:nowrap">&#9650; Resilient Nature</span>
+             </div>
            </div>`;
 
       const confirmationContent = isAccessRequest
@@ -240,16 +238,37 @@ function emailLayout(content: string, isExternal: boolean): string {
     <tr><td align="center">
       <table width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#FFFFFF;border-radius:16px;border:1px solid #E4E2E2;overflow:hidden">
 
-        <!-- Header bar with triangle accents -->
-        <tr><td style="background:#243644;padding:28px 32px 20px;text-align:center;position:relative">
-          <!-- Subtle decorative triangles -->
-          <div style="position:absolute;top:8px;left:12px;width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:14px solid rgba(0,145,75,0.15)"></div>
-          <div style="position:absolute;top:14px;right:24px;width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:10px solid rgba(0,155,187,0.15)"></div>
-          <div style="position:absolute;bottom:10px;left:40px;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:9px solid rgba(99,102,241,0.15)"></div>
-          <span style="color:white;font-size:18px;font-weight:600;letter-spacing:0.5px">REGEN STUDIO</span>
+        <!-- Header with SVG triangle pattern -->
+        <tr><td style="background:#243644;padding:0;text-align:center;height:80px;position:relative">
+          <table width="100%" cellpadding="0" cellspacing="0" style="height:80px"><tr><td style="vertical-align:middle;text-align:center;position:relative">
+            <!-- SVG triangle field -->
+            <div style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden">
+              <svg width="100%" height="80" viewBox="0 0 560 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block">
+                <!-- Large triangles -->
+                <polygon points="45,12 60,40 30,40" fill="#00914B" opacity="0.35"/>
+                <polygon points="480,8 500,42 460,42" fill="#009BBB" opacity="0.3"/>
+                <polygon points="140,50 158,76 122,76" fill="#6366F1" opacity="0.25"/>
+                <polygon points="520,52 535,74 505,74" fill="#FFA92D" opacity="0.35"/>
+                <polygon points="320,6 340,36 300,36" fill="#93093F" opacity="0.2"/>
+                <!-- Medium triangles -->
+                <polygon points="85,55 96,72 74,72" fill="#009BBB" opacity="0.2"/>
+                <polygon points="410,15 424,38 396,38" fill="#00914B" opacity="0.2"/>
+                <polygon points="230,58 244,78 216,78" fill="#FFA92D" opacity="0.25"/>
+                <polygon points="195,8 206,28 184,28" fill="#93093F" opacity="0.15"/>
+                <!-- Small triangles -->
+                <polygon points="370,48 378,62 362,62" fill="#6366F1" opacity="0.3"/>
+                <polygon points="15,60 22,72 8,72" fill="#FFA92D" opacity="0.2"/>
+                <polygon points="270,14 278,28 262,28" fill="#00914B" opacity="0.18"/>
+                <polygon points="540,28 546,38 534,38" fill="#009BBB" opacity="0.25"/>
+                <polygon points="160,18 166,28 154,28" fill="#00914B" opacity="0.15"/>
+                <polygon points="450,60 457,72 443,72" fill="#93093F" opacity="0.2"/>
+              </svg>
+            </div>
+            <span style="position:relative;color:white;font-size:18px;font-weight:600;letter-spacing:0.5px">REGEN STUDIO</span>
+          </td></tr></table>
         </td></tr>
 
-        <!-- Multi-color accent line (triangle-inspired segments) -->
+        <!-- Multi-color accent line -->
         <tr><td style="height:0;font-size:0;line-height:0">
           <table width="100%" cellpadding="0" cellspacing="0"><tr>
             <td style="width:30%;height:3px;background:#00914B"></td>
