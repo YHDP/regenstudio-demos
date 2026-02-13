@@ -1,0 +1,1823 @@
+[
+  {
+    "id": "eu-battery-reg-dpp",
+    "name": "Digital Battery Passport",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "Digital Battery Passport (Article 77, Annex XIII)",
+    "description": "A digital record accessible via QR code containing detailed information about the battery's composition, carbon footprint, supply chain, performance, and circularity. Must include ~80 mandatory data attributes across seven clusters.",
+    "plainLanguage": "You must create an electronic passport for each battery, accessible via a QR code physically attached to the battery. This passport must contain comprehensive data about the battery's identity, materials, carbon footprint, supply chain due diligence, and performance characteristics.",
+    "applicableTo": {
+      "batteryTypes": [
+        "ev",
+        "industrial_2kwh_plus",
+        "lmt"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2027-02-18",
+      "label": "18 February 2027"
+    },
+    "status": "upcoming",
+    "dataRequirements": [
+      "Unique battery identifier",
+      "Manufacturer information",
+      "Manufacturing date and place",
+      "Battery weight, capacity, chemistry",
+      "Carbon footprint (lifecycle GHG emissions in kg CO2e)",
+      "Supply chain due diligence report",
+      "Hazardous substances and critical raw materials",
+      "Recycled content share",
+      "Dismantling and recycling information",
+      "Performance and durability parameters",
+      "State of health data (dynamic, over lifetime)",
+      "Battery model identification",
+      "Battery category (LMT, EV, industrial)",
+      "Manufacturing plant location",
+      "Carbon footprint value (kg CO2e per kWh of total energy)",
+      "Carbon footprint share per lifecycle stage (raw material, manufacturing, distribution, end-of-life)",
+      "Carbon footprint performance class (A-E)",
+      "EU Declaration of Conformity reference number",
+      "Conformity assessment body ID",
+      "Rated capacity (Ah)",
+      "Nominal voltage (V)",
+      "Rated energy (Wh)",
+      "Expected battery lifetime (cycles under reference conditions)",
+      "Expected battery lifetime (calendar years under reference conditions)",
+      "Cycle life reference test results",
+      "C-rate of relevant cycle-life test",
+      "Energy round-trip efficiency at 50% cycle life",
+      "Internal resistance (Ohm) per cell and pack",
+      "Temperature range tolerated (min/max operating temp)",
+      "Maximum allowed battery power (W) -- original",
+      "Ratio of max allowed power to battery energy (W/Wh)",
+      "Initial state of health (100%)",
+      "Cathode active material chemistry",
+      "Anode active material chemistry",
+      "Electrolyte composition",
+      "Recycled cobalt share (%)",
+      "Recycled lithium share (%)",
+      "Recycled nickel share (%)",
+      "Recycled lead share (%)",
+      "Presence and concentration of hazardous substances (REACH SVHC)",
+      "Critical raw materials present (list per Annex II of CRM Regulation)",
+      "Dismantling instructions and sequence",
+      "Recycling information for recyclers",
+      "Spare parts availability information",
+      "Safety instructions for handling, transport, storage",
+      "Extinguishing agent for fire",
+      "State of health (SoH) -- remaining capacity (%)",
+      "State of health (SoH) -- remaining energy (%)",
+      "State of health (SoH) -- remaining power capability (%)",
+      "Evolution of self-discharge rates",
+      "Number of charge-discharge cycles completed",
+      "Negative events (thermal runaway, fire, short circuit incidents)",
+      "Link to original EU Declaration of Conformity (URL)",
+      "Unique battery passport identifier (UUID)",
+      "Operator/owner information (updateable)",
+      "Battery passport registered in the interoperability network / EU registry",
+      "Access rights management (public data vs. authority-restricted data vs. notified-body data)",
+      "Unique identifier linked to physical data carrier on the battery",
+      "Conformity assessment module applied",
+      "Notified body certificate number (where applicable)",
+      "Test report references with accredited laboratory details",
+      "Carbon footprint per kWh (lifecycle, PEF methodology)",
+      "Carbon footprint performance class label",
+      "Share of battery carbon footprint per lifecycle stage (raw material, manufacturing, distribution, end-of-life)"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542 Full Text",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      },
+      {
+        "title": "Battery Pass Consortium Guidance",
+        "url": "https://thebatterypass.eu/"
+      }
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "eu-battery-cf-ev",
+    "name": "Carbon Footprint Declaration \u2014 EV Batteries",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "Carbon Footprint Declaration (Article 7)",
+    "description": "EV battery manufacturers must declare the carbon footprint of their batteries using the Product Environmental Footprint (PEF) methodology, covering cradle-to-grave lifecycle excluding the use phase.",
+    "plainLanguage": "You must calculate and publicly declare the carbon footprint of each EV battery model you place on the market, using the EU\u2019s standardised calculation method (PEF). This is already in effect.",
+    "applicableTo": {
+      "batteryTypes": [
+        "ev"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2025-02-18",
+      "label": "18 February 2025"
+    },
+    "status": "active",
+    "dataRequirements": [
+      "Lifecycle GHG emissions (kg CO2e per kWh)",
+      "PEF-compliant calculation methodology",
+      "Carbon footprint per functional unit (kg CO2e per kWh of total energy provided over expected lifetime)",
+      "Web-accessible documentation of CF calculation methodology",
+      "Identification of the manufacturing plant",
+      "Carbon footprint study compliant with Commission Delegated Regulation (EU) 2024/1773",
+      "CF lifecycle stages breakdown (raw material acquisition, main production, distribution, end-of-life/recycling)",
+      "Third-party verification report from accredited verifier (required before maximum thresholds apply)",
+      "Accredited verifier identification and accreditation number",
+      "System boundary: cradle-to-grave excluding use phase (per Commission Delegated Regulation)",
+      "Functional unit: kg CO2e per kWh of total energy provided over battery service life",
+      "Data quality requirements: primary data for cathode active material, cell manufacturing energy",
+      "Third-party verification by notified body (mandatory from performance class stage)",
+      "Carbon footprint performance class assignment (A-E scale, from Feb 2027)"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      }
+    ],
+    "urgency": "critical"
+  },
+  {
+    "id": "eu-battery-cf-industrial",
+    "name": "Carbon Footprint Declaration \u2014 Industrial Batteries",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "Carbon Footprint Declaration (Article 7)",
+    "description": "Industrial rechargeable batteries with capacity above 2 kWh (excluding external storage) must include a carbon footprint declaration.",
+    "plainLanguage": "You must calculate and declare the carbon footprint for each industrial rechargeable battery model above 2 kWh that you place on the EU market.",
+    "applicableTo": {
+      "batteryTypes": [
+        "industrial_2kwh_plus"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2026-02-18",
+      "label": "18 February 2026"
+    },
+    "status": "upcoming",
+    "dataRequirements": [
+      "Lifecycle GHG emissions (kg CO2e per kWh)",
+      "PEF-compliant calculation methodology",
+      "Carbon footprint per functional unit (kg CO2e per kWh)",
+      "Web-accessible documentation of CF calculation methodology",
+      "Identification of the manufacturing plant",
+      "CF lifecycle stages breakdown (raw material acquisition, main production, distribution, end-of-life/recycling)",
+      "Third-party verification report from accredited verifier",
+      "Accredited verifier identification and accreditation number",
+      "System boundary: cradle-to-grave excluding use phase",
+      "Functional unit: kg CO2e per kWh of total energy provided over battery service life",
+      "Data quality requirements: primary data for cathode active material, cell manufacturing energy",
+      "Carbon footprint performance class assignment (from Aug 2026)"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      }
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "eu-battery-cf-lmt",
+    "name": "Carbon Footprint Declaration \u2014 LMT Batteries",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "Carbon Footprint Declaration (Article 7)",
+    "description": "Light means of transport (LMT) batteries must include a carbon footprint declaration from August 2028.",
+    "plainLanguage": "You must calculate and declare the carbon footprint for each LMT battery model (e-bikes, e-scooters) you place on the EU market.",
+    "applicableTo": {
+      "batteryTypes": [
+        "lmt"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2028-08-18",
+      "label": "18 August 2028"
+    },
+    "status": "upcoming",
+    "dataRequirements": [
+      "Lifecycle GHG emissions (kg CO2e per kWh)",
+      "PEF-compliant calculation methodology",
+      "Carbon footprint per functional unit (kg CO2e per kWh)",
+      "Web-accessible documentation of CF calculation methodology",
+      "Identification of the manufacturing plant",
+      "CF lifecycle stages breakdown (raw material acquisition, main production, distribution, end-of-life/recycling)",
+      "Third-party verification report from accredited verifier",
+      "Accredited verifier identification and accreditation number",
+      "System boundary: cradle-to-grave excluding use phase",
+      "Functional unit: kg CO2e per kWh of total energy provided over battery service life",
+      "Data quality requirements: primary data for cathode active material, cell manufacturing energy"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      }
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "eu-battery-cf-perf-ev",
+    "name": "Carbon Footprint Performance Classes \u2014 EV Batteries",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "Carbon Footprint Performance Classes (Article 7)",
+    "description": "EV batteries must be assigned a carbon footprint performance class based on the statistical distribution of declared carbon footprint values.",
+    "plainLanguage": "Each EV battery model will receive a performance class rating (like an energy label) based on how its carbon footprint compares to other batteries on the market.",
+    "applicableTo": {
+      "batteryTypes": [
+        "ev"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2027-02-18",
+      "label": "18 February 2027"
+    },
+    "status": "upcoming",
+    "dataRequirements": [
+      "Carbon footprint declaration (prerequisite)",
+      "Performance class label on battery",
+      "Carbon footprint performance class (A through E)",
+      "Performance class label visibly affixed on battery",
+      "Performance class accessible in battery passport"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      }
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "eu-battery-cf-perf-industrial",
+    "name": "Carbon Footprint Performance Classes \u2014 Industrial Batteries",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "Carbon Footprint Performance Classes (Article 7)",
+    "description": "Industrial rechargeable batteries above 2 kWh must be assigned a carbon footprint performance class.",
+    "plainLanguage": "Each industrial rechargeable battery model above 2 kWh will receive a performance class rating based on how its carbon footprint compares to other batteries on the market.",
+    "applicableTo": {
+      "batteryTypes": [
+        "industrial_2kwh_plus"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2026-08-18",
+      "label": "18 August 2026"
+    },
+    "status": "upcoming",
+    "dataRequirements": [
+      "Carbon footprint declaration (prerequisite)",
+      "Performance class label on battery",
+      "Carbon footprint performance class (A through E)",
+      "Performance class label visibly affixed on battery",
+      "Performance class accessible in battery passport"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      }
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "eu-battery-cf-threshold-ev",
+    "name": "Carbon Footprint Maximum Thresholds \u2014 EV Batteries",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "Maximum Carbon Footprint Thresholds (Article 7)",
+    "description": "EV batteries exceeding a maximum carbon footprint threshold will be prohibited from being placed on the EU market.",
+    "plainLanguage": "There will be an upper limit on how much CO2 an EV battery can generate over its lifecycle. Batteries exceeding this limit cannot be sold in the EU.",
+    "applicableTo": {
+      "batteryTypes": [
+        "ev"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2028-02-18",
+      "label": "18 February 2028"
+    },
+    "status": "future",
+    "dataRequirements": [
+      "Carbon footprint below maximum threshold",
+      "Third-party verification of calculations",
+      "Carbon footprint value below maximum lifecycle threshold (kg CO2e per kWh)",
+      "Third-party verification report confirming compliance with threshold",
+      "Declaration that battery is below maximum carbon footprint threshold",
+      "Verified carbon footprint value below maximum lifecycle CO2e threshold (to be set by Commission delegated act)",
+      "Verification by ISO 14065 accredited body",
+      "Compliance with PEF-based calculation rules including data quality requirements"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      }
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "eu-battery-recycled-content",
+    "name": "Recycled Content Documentation",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "Recycled Content Requirements (Article 8)",
+    "description": "Manufacturers must document and declare the share of recycled cobalt, lead, lithium, and nickel in their batteries.",
+    "plainLanguage": "You must track and declare what percentage of key materials (cobalt, lead, lithium, nickel) in your batteries comes from recycled sources.",
+    "applicableTo": {
+      "batteryTypes": [
+        "industrial_2kwh_plus",
+        "ev",
+        "sli",
+        "lmt"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2028-08-18",
+      "label": "18 August 2028"
+    },
+    "status": "upcoming",
+    "dataRequirements": [
+      "Recycled cobalt content (%)",
+      "Recycled lead content (%)",
+      "Recycled lithium content (%)",
+      "Recycled nickel content (%)",
+      "Documentation of recycled material sourcing",
+      "Pre-consumer and post-consumer recycled content breakdown",
+      "Calculation methodology per Commission Delegated Regulation on recycled content",
+      "Third-party verification of recycled content claims",
+      "Mass balance or chain of custody documentation",
+      "Third-party verification of recycled content by notified body (Art 8(4))",
+      "Notified body certificate number for recycled content verification",
+      "Audit trail documenting chain of custody for recycled materials"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      }
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "eu-battery-performance-durability",
+    "name": "Performance & Durability Information",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "Performance & Durability Requirements (Article 10)",
+    "description": "Technical documentation on battery performance and durability must accompany industrial, LMT, and EV batteries placed on the EU market.",
+    "plainLanguage": "You must provide detailed technical information about your battery's performance characteristics and expected lifetime, including rated capacity, cycle life, and energy efficiency.",
+    "applicableTo": {
+      "batteryTypes": [
+        "industrial_2kwh_plus",
+        "industrial_other",
+        "lmt",
+        "ev"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2024-08-18",
+      "label": "18 August 2024"
+    },
+    "status": "active",
+    "dataRequirements": [
+      "Rated capacity (Ah)",
+      "Expected battery lifetime (cycles and years)",
+      "Energy round-trip efficiency",
+      "Internal resistance",
+      "C-rate capability",
+      "Nominal voltage (V)",
+      "Minimum and maximum voltage (V)",
+      "Original power capability (W)",
+      "Rated energy (Wh)",
+      "Temperature range tolerated during charging and discharging",
+      "Fade rate of rated capacity (% per cycle)",
+      "Fade rate of round-trip energy efficiency (% per cycle)",
+      "Impedance increase (% per cycle)",
+      "Power fade (% per cycle)",
+      "Endurance in cycles at reference conditions",
+      "Capacity threshold for exhaustion (% of initial capacity)",
+      "Test reports from ISO/IEC 17025 accredited laboratory",
+      "Performance testing per applicable delegated act methodology",
+      "EU Declaration of Conformity covering performance parameters"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      }
+    ],
+    "urgency": "critical"
+  },
+  {
+    "id": "eu-battery-due-diligence",
+    "name": "Supply Chain Due Diligence",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "Due Diligence Obligations (Articles 48\u201353)",
+    "description": "All economic operators placing batteries on the EU market must establish due diligence policies for raw material sourcing, covering human rights, environmental risks, and conflict minerals. Postponed from August 2025 to August 2027 via Omnibus IV.",
+    "plainLanguage": "You must implement and publicly communicate a responsible sourcing policy covering risks like child labour, forced labour, and environmental harm in your battery supply chain. Annual third-party audits and public reporting are required.",
+    "applicableTo": {
+      "batteryTypes": [
+        "portable",
+        "sli",
+        "lmt",
+        "ev",
+        "industrial_2kwh_plus",
+        "industrial_other",
+        "sbess"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer",
+        "distributor"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2027-08-18",
+      "label": "18 August 2027"
+    },
+    "status": "upcoming",
+    "dataRequirements": [
+      "Due diligence policy document",
+      "Supply chain mapping for cobalt, lithium, nickel, natural graphite",
+      "Third-party audit report (annual)",
+      "Grievance mechanism",
+      "Public disclosure of due diligence findings",
+      "Risk management plan for identified supply chain risks",
+      "Corrective action plan for adverse impacts",
+      "Annual due diligence report published on website",
+      "Supply chain traceability for tin, tantalum, tungsten, and gold (if applicable)",
+      "Country of origin for cobalt, lithium, nickel, natural graphite",
+      "Supplier list and tier mapping",
+      "Alignment with CSDDD due diligence obligations (if in-scope for both)",
+      "Third-party audit by independent body accredited under ISO/IEC 17021 or equivalent",
+      "Auditor accreditation details and audit scope"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      },
+      {
+        "title": "EU Council: Omnibus IV postponement",
+        "url": "https://www.consilium.europa.eu/en/press/press-releases/2025/07/18/simplification-council-adopts-law-to-stop-the-clock-on-due-diligence-rules-for-batteries/"
+      }
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "eu-battery-qr-code",
+    "name": "QR Code & Data Carrier",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "QR Code / Data Carrier (Article 13)",
+    "description": "All batteries placed on the EU market must bear a QR code linking to prescribed information. The QR code must be physically affixed and remain readable throughout the battery's lifetime.",
+    "plainLanguage": "Every battery you sell in the EU must have a QR code printed or affixed on it that links to information about the battery (basic info for all batteries, full passport data for EV/LMT/industrial >2kWh).",
+    "applicableTo": {
+      "batteryTypes": [
+        "portable",
+        "sli",
+        "lmt",
+        "ev",
+        "industrial_2kwh_plus",
+        "industrial_other",
+        "sbess"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2027-02-18",
+      "label": "18 February 2027"
+    },
+    "status": "upcoming",
+    "dataRequirements": [
+      "Machine-readable QR code on battery",
+      "Unique product identifier encoded",
+      "Link to battery information database",
+      "QR code durability (readable through battery lifetime)",
+      "QR code compliance with ISO/IEC 18004 or equivalent",
+      "Minimum QR code size ensuring scannability",
+      "QR code links to battery passport (for EV, industrial >2kWh, LMT) or basic info (other types)",
+      "Data carrier encoding unique battery identifier",
+      "Redundancy provisions if QR code is damaged",
+      "QR code resolves to a valid, accessible URL (no authentication barrier for public data)",
+      "Data carrier complies with ISO/IEC 18004 (QR code standard)",
+      "Fallback mechanism if primary URL becomes unavailable",
+      "Consumer-readable battery information (capacity, chemistry, safe handling)",
+      "Recycling/disposal instructions accessible via QR code",
+      "Safety warnings accessible to consumers via QR code scan"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      }
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "eu-battery-ce-marking",
+    "name": "CE Marking & EU Declaration of Conformity",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "CE Marking (Articles 18\u201320)",
+    "description": "All batteries placed on the EU market must bear CE marking and be accompanied by an EU Declaration of Conformity.",
+    "plainLanguage": "Your batteries must carry the CE mark and you must have a formal EU Declaration of Conformity document confirming your battery meets all applicable EU requirements. This is already in effect.",
+    "applicableTo": {
+      "batteryTypes": [
+        "portable",
+        "sli",
+        "lmt",
+        "ev",
+        "industrial_2kwh_plus",
+        "industrial_other",
+        "sbess"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2024-08-18",
+      "label": "18 August 2024"
+    },
+    "status": "active",
+    "dataRequirements": [
+      "CE marking on battery",
+      "EU Declaration of Conformity document",
+      "Technical documentation",
+      "Conformity assessment procedure completed",
+      "Notified body identification number (where third-party assessment required)",
+      "EU Declaration of Conformity per Annex IX",
+      "Technical documentation per Annex VIII",
+      "CE marking affixed visibly, legibly, and indelibly on battery or label",
+      "Notified body identification number (where applicable, e.g., Module B+C or Module H)",
+      "10-year document retention plan for technical file and DoC",
+      "Name and address of EU-based responsible person on product/packaging",
+      "Internal production control records (Module A)",
+      "Conformity assessment module applied (Module A per Art 17 for most batteries)",
+      "EU-type examination certificate number (if Module B applies)",
+      "Reference to harmonised standards applied (IEC 62619, IEC 62133, UN 38.3 as applicable)",
+      "Quality management system certificate (if Module D or H applies)"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      }
+    ],
+    "urgency": "critical"
+  },
+  {
+    "id": "eu-battery-labelling",
+    "name": "Labelling Requirements",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "Labelling (Article 13)",
+    "description": "Batteries must bear specific labels including manufacturer information, battery type, chemistry, hazardous substances, and separate collection symbol. Requirements phase in from August 2024 with additional requirements from February 2026.",
+    "plainLanguage": "Your batteries must carry specific labels with manufacturer details, battery chemistry, hazardous substance warnings, and recycling symbols. Some labels are already required; additional labelling requirements kick in from February 2026.",
+    "applicableTo": {
+      "batteryTypes": [
+        "portable",
+        "sli",
+        "lmt",
+        "ev",
+        "industrial_2kwh_plus",
+        "industrial_other",
+        "sbess"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2024-08-18",
+      "label": "18 August 2024 (phase 1) / 18 February 2026 (phase 2)"
+    },
+    "status": "active",
+    "dataRequirements": [
+      "Manufacturer name and address",
+      "Battery type and chemistry",
+      "Hazardous substance symbols",
+      "Separate collection symbol (crossed-out wheeled bin)",
+      "Capacity information",
+      "Date of manufacture",
+      "Nominal capacity (Ah) -- for portable and LMT",
+      "Nominal voltage (V)",
+      "Non-rechargeable indicator (if applicable)",
+      "Battery chemistry symbol",
+      "Weight of battery",
+      "Country of origin",
+      "QR code linking to battery information (from 18 Feb 2026)",
+      "Cadmium/lead symbol where applicable (Cd/Pb)",
+      "Safe handling instructions for consumers",
+      "Recycling point information / take-back guidance",
+      "Consumer-readable capacity and expected lifetime information"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      }
+    ],
+    "urgency": "critical"
+  },
+  {
+    "id": "eu-battery-sbess-safety",
+    "name": "Safety Requirements (SBESS)",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "Safety Requirements for Stationary Energy Storage (Article 12)",
+    "description": "Stationary battery energy storage systems must meet specific safety requirements and documentation standards.",
+    "plainLanguage": "If you manufacture or import stationary battery energy storage systems, they must meet additional safety requirements and be accompanied by safety documentation. This is already in effect.",
+    "applicableTo": {
+      "batteryTypes": [
+        "sbess"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2024-08-18",
+      "label": "18 August 2024"
+    },
+    "status": "active",
+    "dataRequirements": [
+      "Safety test reports",
+      "Thermal management documentation",
+      "Fire safety assessment",
+      "Installation and operation safety guidelines",
+      "Compliance with IEC 62619 or equivalent safety standards",
+      "Battery pack and system-level safety test documentation",
+      "Thermal propagation test results",
+      "Electrical safety test results",
+      "Mechanical safety test results (vibration, shock, drop)",
+      "Emergency shutdown procedure documentation",
+      "Transportation safety documentation (UN 38.3)",
+      "Test reports per IEC 62619 (safety requirements for secondary lithium cells)",
+      "Test reports per IEC 62933-5-2 (safety of BESS)",
+      "Testing performed by ISO/IEC 17025 accredited laboratory",
+      "Risk assessment documentation per Annex VIII Part A",
+      "EU Declaration of Conformity per Annex IX"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      }
+    ],
+    "urgency": "critical"
+  },
+  {
+    "id": "eu-battery-collection-portable",
+    "name": "Collection Targets -- Portable Batteries",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "Collection Rate Targets for Portable Batteries (Articles 55-59)",
+    "description": "Producers (manufacturers/importers) of portable batteries must achieve minimum collection rates: 45% by end of 2023, 63% by end of 2027, and 73% by end of 2030, calculated as a percentage of the average weight of portable batteries sold in the preceding three calendar years.",
+    "plainLanguage": "If you manufacture or import portable batteries sold in the EU, you must collect (via take-back schemes) a minimum percentage of the weight of batteries you have sold. The 63% target takes effect at end of 2027, rising to 73% by end of 2030.",
+    "applicableTo": {
+      "batteryTypes": [
+        "portable"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2027-12-31",
+      "label": "63% by 31 December 2027 (73% by 31 December 2030)"
+    },
+    "status": "active",
+    "dataRequirements": [
+      "Weight of portable batteries placed on market (per calendar year)",
+      "Weight of waste portable batteries collected (per calendar year)",
+      "Collection rate calculation (3-year rolling average)",
+      "Producer registration in each member state",
+      "Collection scheme membership or individual scheme approval",
+      "Annual reporting to competent authorities"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542, Art 55-59",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      }
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "eu-battery-collection-lmt",
+    "name": "Collection Targets -- LMT Batteries",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "Collection Rate Targets for LMT Batteries (Articles 55-59)",
+    "description": "Producers of LMT batteries must achieve minimum collection rates of 51% by end of 2028 and 61% by end of 2031, calculated as a percentage of the average weight of LMT batteries sold in the preceding three calendar years.",
+    "plainLanguage": "If you manufacture or import LMT batteries (e-bikes, e-scooters) sold in the EU, you must collect a minimum percentage of the weight of batteries you have sold. The first target of 51% applies from end of 2028.",
+    "applicableTo": {
+      "batteryTypes": [
+        "lmt"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2028-12-31",
+      "label": "51% by 31 December 2028 (61% by 31 December 2031)"
+    },
+    "status": "upcoming",
+    "dataRequirements": [
+      "Weight of LMT batteries placed on market (per calendar year)",
+      "Weight of waste LMT batteries collected (per calendar year)",
+      "Collection rate calculation (3-year rolling average)",
+      "Producer registration in each member state",
+      "Collection scheme membership or individual scheme approval",
+      "Annual reporting to competent authorities"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542, Art 55-59",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      }
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "eu-battery-recycling-efficiency",
+    "name": "Recycling Efficiency Targets",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "Recycling Efficiency Requirements (Article 71, Annex XII)",
+    "description": "Recyclers of waste batteries must achieve minimum recycling efficiency rates by chemistry type: lead-acid 75% (by 31 Dec 2025, rising to 80% by 31 Dec 2030), lithium-based 65% (by 31 Dec 2025, rising to 70% by 31 Dec 2030), nickel-cadmium 80%, and other 50%. Material recovery minimums apply for cobalt (16% by 2027, 26% by 2031), copper (90%), lead (90%), lithium (50% by 2027, 80% by 2031), and nickel (90% by 2027, 95% by 2031).",
+    "plainLanguage": "If you operate a battery recycling facility processing EU waste batteries, you must meet minimum recycling efficiency targets by chemistry type and recover minimum amounts of cobalt, lithium, nickel, copper, and lead from waste batteries.",
+    "applicableTo": {
+      "batteryTypes": [
+        "portable",
+        "sli",
+        "lmt",
+        "ev",
+        "industrial_2kwh_plus",
+        "industrial_other",
+        "sbess"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2025-12-31",
+      "label": "Phase 1: 31 December 2025 / Phase 2: 31 December 2030"
+    },
+    "status": "active",
+    "dataRequirements": [
+      "Recycling efficiency rate by battery chemistry (%)",
+      "Material recovery rate for cobalt (%)",
+      "Material recovery rate for copper (%)",
+      "Material recovery rate for lead (%)",
+      "Material recovery rate for lithium (%)",
+      "Material recovery rate for nickel (%)",
+      "Documentation of recycling process and outputs",
+      "Annual reporting to competent authorities"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542, Art 71 & Annex XII",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      }
+    ],
+    "urgency": "critical"
+  },
+  {
+    "id": "eu-battery-recycled-content-min",
+    "name": "Recycled Content Minimum Levels",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "Mandatory Recycled Content Minimums (Article 8)",
+    "description": "Batteries containing cobalt, lead, lithium, or nickel in active materials must meet minimum recycled content levels. Phase 1 (18 August 2031): Co 16%, Pb 85%, Li 6%, Ni 6%. Phase 2 (18 August 2036): Co 26%, Li 12%, Ni 15%. Applies to industrial batteries >2kWh, EV batteries, SLI batteries, and LMT batteries.",
+    "plainLanguage": "From August 2031, your batteries must contain minimum percentages of recycled cobalt, lead, lithium, and nickel. These minimum thresholds increase further in 2036. This is separate from the documentation obligation (already in Art 8 from August 2028).",
+    "applicableTo": {
+      "batteryTypes": [
+        "industrial_2kwh_plus",
+        "ev",
+        "sli",
+        "lmt"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2031-08-18",
+      "label": "Phase 1: 18 August 2031 / Phase 2: 18 August 2036"
+    },
+    "status": "upcoming",
+    "dataRequirements": [
+      "Recycled cobalt content in active material (%)",
+      "Recycled lead content in battery (%)",
+      "Recycled lithium content in active material (%)",
+      "Recycled nickel content in active material (%)",
+      "Third-party verified recycled content documentation",
+      "Calculation methodology per delegated act"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542, Art 8",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      }
+    ],
+    "urgency": "low"
+  },
+  {
+    "id": "eu-battery-bms-access",
+    "name": "Battery Management System Data Access",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "BMS Data Access for Independent Operators (Article 14)",
+    "description": "EV and industrial batteries with a battery management system (BMS) must provide read-only access to real-time and historical data to independent operators (repairers, remanufacturers, second-life preparers) and the vehicle/appliance owner. Data includes state of charge, state of health, remaining capacity/power, and usage history.",
+    "plainLanguage": "If your EV or industrial battery has a BMS, you must enable independent repair shops, remanufacturers, and battery owners to access real-time data from the BMS. This supports repair, reuse, and second-life applications.",
+    "applicableTo": {
+      "batteryTypes": [
+        "ev",
+        "industrial_2kwh_plus"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2027-02-18",
+      "label": "18 February 2027"
+    },
+    "status": "upcoming",
+    "dataRequirements": [
+      "BMS read-only data access interface specification",
+      "Real-time state of charge (SoC)",
+      "Real-time state of health (SoH)",
+      "Remaining capacity (Ah and %)",
+      "Remaining power capability",
+      "Overall battery voltage and cell-level voltage",
+      "Battery temperature and cooling system status",
+      "Charge-discharge cycles completed",
+      "Harmful events log (thermal runaway, short circuits)",
+      "Software version of BMS"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542, Art 14",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      }
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "eu-battery-removability",
+    "name": "Removability of Portable Batteries",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "End-User Removability of Portable Batteries in Appliances (Article 11)",
+    "description": "Portable batteries incorporated in appliances must be readily removable and replaceable by the end user at any time during the lifetime of the appliance. Manufacturers of appliances must design products to allow easy battery removal using commonly available tools and without risk of damage. Exemptions exist for safety, water/dust protection, and data integrity reasons (with conditions).",
+    "plainLanguage": "If you make appliances containing portable batteries, those batteries must be designed so the end user can easily remove and replace them. Limited exemptions apply (e.g., waterproofing, professional medical devices).",
+    "applicableTo": {
+      "batteryTypes": [
+        "portable"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2027-02-18",
+      "label": "18 February 2027"
+    },
+    "status": "upcoming",
+    "dataRequirements": [
+      "Design documentation demonstrating end-user removability",
+      "Instructions for battery removal and replacement",
+      "List of commonly available tools required (if any)",
+      "Justification document if exemption claimed",
+      "Replacement battery availability commitment"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542, Art 11",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      }
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "eu-battery-hazardous-substances",
+    "name": "Hazardous Substance Restrictions",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "Restrictions on Hazardous Substances (Article 6, Annex I)",
+    "description": "Batteries placed on the EU market must comply with substance restrictions: mercury <0.0005% by weight in all batteries, cadmium <0.002% by weight in portable batteries (with SLI and specific industrial exemptions), and lead <0.01% by weight in portable batteries (subject to REACH restrictions). The Commission may adopt further restrictions based on REACH evaluations.",
+    "plainLanguage": "Your batteries must not exceed EU limits for mercury, cadmium, and lead content. These limits are already in effect. Additional substance restrictions may be added through future delegated acts.",
+    "applicableTo": {
+      "batteryTypes": [
+        "portable",
+        "sli",
+        "lmt",
+        "ev",
+        "industrial_2kwh_plus",
+        "industrial_other",
+        "sbess"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2024-08-18",
+      "label": "18 August 2024 (ongoing)"
+    },
+    "status": "active",
+    "dataRequirements": [
+      "Mercury content declaration (% by weight)",
+      "Cadmium content declaration (% by weight)",
+      "Lead content declaration (% by weight)",
+      "Full bill of materials with substance concentrations",
+      "Supplier declarations of hazardous substance compliance",
+      "Test reports from accredited laboratory"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542, Art 6 & Annex I",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      }
+    ],
+    "urgency": "critical"
+  },
+  {
+    "id": "eu-battery-producer-registration",
+    "name": "Battery Producer Registration",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "Producer Registration in National Registers (Article 55)",
+    "description": "Producers (manufacturers or importers who place batteries on the market under their own name/trademark, or who first make batteries available in a member state) must register in the national producer register of each member state before placing batteries on that market. Registration must include producer identity, battery types, brand names, and compliance scheme information.",
+    "plainLanguage": "Before you sell batteries in any EU member state, you must register as a battery producer in that country's national register. This applies to manufacturers, importers, and brands selling under their own name.",
+    "applicableTo": {
+      "batteryTypes": [
+        "portable",
+        "sli",
+        "lmt",
+        "ev",
+        "industrial_2kwh_plus",
+        "industrial_other",
+        "sbess"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2024-08-18",
+      "label": "18 August 2024 (ongoing)"
+    },
+    "status": "active",
+    "dataRequirements": [
+      "Producer name, address, contact details",
+      "National registration number (per member state)",
+      "Battery types placed on market (portable, LMT, SLI, industrial, EV)",
+      "Battery brand names and trademarks",
+      "Authorised representative details (if applicable)",
+      "Collection/take-back scheme membership details",
+      "Annual reporting of batteries placed on market (weight and number)"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542, Art 55",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      }
+    ],
+    "urgency": "critical"
+  },
+  {
+    "id": "eu-battery-waste-treatment",
+    "name": "Waste Battery Treatment Standards",
+    "regulation": "Regulation (EU) 2023/1542",
+    "requirement": "Treatment and Recycling of Waste Batteries (Article 70)",
+    "description": "Waste batteries must be treated and recycled at facilities that meet the best available techniques (BAT) and applicable EU health, safety, and environmental standards. Treatment must include removal of all fluids and acids. Facilities must hold permits. Battery producers bear the financial responsibility for collection, treatment, and recycling of waste batteries.",
+    "plainLanguage": "If you are a battery producer in the EU, you are financially responsible for ensuring waste batteries are properly treated and recycled at permitted facilities meeting EU standards. This includes portable, industrial, EV, and all other battery types.",
+    "applicableTo": {
+      "batteryTypes": [
+        "portable",
+        "sli",
+        "lmt",
+        "ev",
+        "industrial_2kwh_plus",
+        "industrial_other",
+        "sbess"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2024-08-18",
+      "label": "18 August 2024 (ongoing)"
+    },
+    "status": "active",
+    "dataRequirements": [
+      "Waste battery treatment contracts with permitted facilities",
+      "Treatment facility permits and certifications",
+      "Treatment process documentation",
+      "Annual volumes of waste batteries treated (by chemistry)",
+      "Financial guarantee or insurance for end-of-life obligations",
+      "Compliance with Annex XII recycling efficiency targets"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation 2023/1542, Art 70",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+      }
+    ],
+    "urgency": "critical"
+  },
+  {
+    "id": "reach-scip",
+    "name": "SCIP Database Notification (SVHC Articles)",
+    "regulation": "Waste Framework Directive 2008/98/EC (as amended by Directive (EU) 2018/851)",
+    "requirement": "SCIP Database Notification for Articles Containing SVHCs (Art 9(1)(i) WFD)",
+    "description": "Suppliers of articles containing Candidate List substances (SVHCs) above 0.1% weight by weight must submit a notification to the SCIP (Substances of Concern In articles as such or in complex objects \u2014 Products) database maintained by ECHA. The notification must be made before or at the time the article is placed on the EU market. SCIP is mandated by the Waste Framework Directive to ensure substance information is available throughout the waste lifecycle.",
+    "plainLanguage": "If your products contain any SVHC above 0.1% by weight, you must submit a notification to ECHA's SCIP database before or when placing the product on the EU market. This ensures waste operators have information about hazardous substances in products. This has been mandatory since January 2021.",
+    "applicableTo": {
+      "batteryTypes": [
+        "portable",
+        "sli",
+        "lmt",
+        "ev",
+        "industrial_2kwh_plus",
+        "industrial_other",
+        "sbess"
+      ],
+      "productCategories": null,
+      "roles": [
+        "manufacturer",
+        "importer",
+        "distributor"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2021-01-05",
+      "label": "Active (since January 2021)"
+    },
+    "status": "active",
+    "dataRequirements": [
+      "Article identification (name, primary article identifier, article category per ECHA SCIP format)",
+      "SVHC identity (substance name, EC number, CAS number) per Candidate List entry",
+      "Concentration range of each SVHC (per ECHA predefined ranges)",
+      "Material category containing the SVHC",
+      "Mixture category (if substance is in a mixture within the article)",
+      "Safe use instructions for the article",
+      "SCIP notification number (generated upon submission)",
+      "Complex object hierarchy (for products composed of multiple articles)",
+      "Linking of sub-articles within complex objects in SCIP submission",
+      "Periodic review and update of SCIP notifications upon Candidate List changes",
+      "SVHC identification in detergent formulations (surfactants, fragrances, preservatives)",
+      "SCIP submission format (IUCLID cloud or System-to-System/S2S for bulk submissions)",
+      "Sub-article linking for complex objects (each sub-article containing SVHCs requires its own notification)",
+      "SCIP notification update process when Candidate List is expanded (biannual review trigger)",
+      "Consumer SVHC request response process (REACH Art 33(2), 45-day deadline)",
+      "Consumer-facing SVHC information (substance name and safe use conditions)"
+    ],
+    "links": [
+      {
+        "title": "ECHA: SCIP Database",
+        "url": "https://echa.europa.eu/scip"
+      }
+    ],
+    "urgency": "critical"
+  },
+  {
+    "id": "gba-battery-passport",
+    "name": "GBA Battery Passport (Voluntary)",
+    "regulation": "Global Battery Alliance",
+    "requirement": "GBA Battery Passport & Sustainability Standards",
+    "description": "The Global Battery Alliance offers a voluntary battery passport framework covering seven sustainability pillars: GHG emissions, human rights, child labour, biodiversity, forced labour, circular design, and indigenous peoples\u2019 rights.",
+    "plainLanguage": "You can voluntarily adopt the GBA Battery Passport to demonstrate sustainability leadership. It goes beyond EU requirements by covering broader topics like biodiversity and indigenous rights. It can help you prepare for EU regulatory compliance.",
+    "applicableTo": {
+      "batteryTypes": [
+        "portable",
+        "sli",
+        "lmt",
+        "ev",
+        "industrial_2kwh_plus",
+        "industrial_other",
+        "sbess"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu",
+        "global"
+      ]
+    },
+    "timeline": {
+      "date": null,
+      "label": "Voluntary / Ongoing"
+    },
+    "status": "voluntary",
+    "dataRequirements": [
+      "GHG emissions data (per GBA GHG Rulebook)",
+      "Human rights due diligence",
+      "Child labour assessment",
+      "Biodiversity impact assessment",
+      "Circular design metrics"
+    ],
+    "links": [
+      {
+        "title": "Global Battery Alliance: Battery Passport",
+        "url": "https://www.globalbattery.org/battery-passport/"
+      }
+    ],
+    "urgency": "low"
+  },
+  {
+    "id": "reach-svhc-communication",
+    "name": "REACH -- SVHC Communication Duty (Art 33)",
+    "regulation": "REACH Regulation (EC) 1907/2006",
+    "requirement": "Communication of SVHC Information in Articles (Article 33)",
+    "description": "Any supplier of an article containing a Candidate List substance (SVHC) in a concentration above 0.1% weight by weight must communicate sufficient information to allow safe use to the recipient of the article, including at minimum the name of the substance. Upon request from a consumer, the same information must be provided free of charge within 45 days. This obligation applies to all articles placed on the EU market.",
+    "plainLanguage": "If your products contain any SVHC above 0.1% by weight, you must proactively inform your business customers (with at least the substance name) and respond to any consumer's request for this information within 45 days. This is already in effect and applies to all physical products.",
+    "applicableTo": {
+      "batteryTypes": [
+        "portable",
+        "sli",
+        "lmt",
+        "ev",
+        "industrial_2kwh_plus",
+        "industrial_other",
+        "sbess"
+      ],
+      "productCategories": [
+        "textiles",
+        "electronics",
+        "iron_steel",
+        "aluminium",
+        "tyres",
+        "furniture",
+        "construction",
+        "other"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer",
+        "distributor"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2007-06-01",
+      "label": "Active (since REACH entered into force, 1 June 2007)"
+    },
+    "status": "active",
+    "dataRequirements": [
+      "Identification of all SVHCs present above 0.1% w/w (substance name, CAS number, EC number)",
+      "Concentration of each SVHC in the article (% w/w)",
+      "Location of SVHC within product (component, material, sub-assembly)",
+      "Safe use instructions for articles containing SVHCs",
+      "Process for responding to consumer information requests within 45 days",
+      "Supply chain communication records (downstream and upstream)",
+      "Current ECHA Candidate List screening (updated biannually)"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: REACH Regulation (EC) 1907/2006, Art 33",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02006R1907-20231201"
+      },
+      {
+        "title": "ECHA: Candidate List of SVHCs",
+        "url": "https://echa.europa.eu/candidate-list-table"
+      }
+    ],
+    "urgency": "critical"
+  },
+  {
+    "id": "reach-authorisation",
+    "name": "REACH -- Authorisation for SVHC Use (Annex XIV)",
+    "regulation": "REACH Regulation (EC) 1907/2006",
+    "requirement": "Authorisation for Use of Annex XIV Substances (Articles 55-66)",
+    "description": "Substances listed on REACH Annex XIV cannot be placed on the market or used after their sunset date unless an authorisation has been granted by the European Commission. Applicants must demonstrate that risks are adequately controlled or that socio-economic benefits outweigh the risks, and must analyse the availability of suitable alternatives. Currently approximately 60 substances are on Annex XIV with staggered sunset dates.",
+    "plainLanguage": "If you use any substance listed on REACH Annex XIV in your manufacturing or products, you need a formal authorisation from the European Commission to continue using it after its sunset date. You must also investigate alternatives. This applies to substance users in the EU.",
+    "applicableTo": {
+      "batteryTypes": [
+        "portable",
+        "sli",
+        "lmt",
+        "ev",
+        "industrial_2kwh_plus",
+        "industrial_other",
+        "sbess"
+      ],
+      "productCategories": [
+        "textiles",
+        "electronics",
+        "iron_steel",
+        "aluminium",
+        "tyres",
+        "furniture",
+        "construction",
+        "other"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2007-06-01",
+      "label": "Active (ongoing, per substance sunset dates)"
+    },
+    "status": "active",
+    "dataRequirements": [
+      "Inventory of Annex XIV substances used in products or processes",
+      "Authorisation application or downstream user notification (per substance)",
+      "Analysis of alternatives (Art 62(4)(e))",
+      "Substitution plan with timeline where alternatives exist",
+      "Chemical safety report for authorised substances",
+      "Sunset date tracking per substance",
+      "Authorisation decision reference numbers",
+      "Downstream user notification to ECHA (Art 66)"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: REACH Regulation (EC) 1907/2006, Art 55-66",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02006R1907-20231201"
+      },
+      {
+        "title": "ECHA: Authorisation List (Annex XIV)",
+        "url": "https://echa.europa.eu/authorisation-list"
+      }
+    ],
+    "urgency": "critical"
+  },
+  {
+    "id": "reach-restrictions",
+    "name": "REACH -- Substance Restrictions (Annex XVII)",
+    "regulation": "REACH Regulation (EC) 1907/2006",
+    "requirement": "Restrictions on Manufacture, Placing on Market and Use of Substances (Articles 67-73, Annex XVII)",
+    "description": "REACH Annex XVII contains approximately 70 restriction entries covering specific substances or substance groups in specific uses. These include lead in consumer articles, cadmium in plastics and coatings, nickel in articles in direct skin contact, chromium VI in leather, azo dyes in textiles, PAHs in rubber/plastic components, phthalates (DEHP, DBP, BBP, DIBP) in plasticised materials, and many others. Manufacturers and importers must ensure products comply with all applicable Annex XVII restrictions.",
+    "plainLanguage": "Your products must not exceed the substance limits set out in REACH Annex XVII. These include specific restrictions for lead, cadmium, nickel, chromium VI, certain dyes, PAHs, phthalates, and many other substances depending on your product type. This is already in effect.",
+    "applicableTo": {
+      "batteryTypes": [
+        "portable",
+        "sli",
+        "lmt",
+        "ev",
+        "industrial_2kwh_plus",
+        "industrial_other",
+        "sbess"
+      ],
+      "productCategories": [
+        "textiles",
+        "electronics",
+        "iron_steel",
+        "aluminium",
+        "tyres",
+        "furniture",
+        "construction",
+        "other"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2009-06-01",
+      "label": "Active (restrictions in force since 1 June 2009, continuously updated)"
+    },
+    "status": "active",
+    "dataRequirements": [
+      "Full bill of materials with substance-level composition data",
+      "Screening against all applicable Annex XVII restrictions",
+      "Test reports from accredited laboratories for restricted substances",
+      "Supplier declarations of restriction compliance",
+      "Product category-specific substance limits (e.g., lead <0.05% in consumer articles, Entry 63)",
+      "PAH content in rubber/plastic components (Entry 50)",
+      "Phthalate content in plasticised material (DEHP, DBP, BBP, DIBP -- Entries 51-52)",
+      "Nickel release rate for articles in direct skin contact (Entry 27)",
+      "Documentation of compliance per applicable restriction entry"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: REACH Annex XVII",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02006R1907-20231201"
+      },
+      {
+        "title": "ECHA: Restricted Substances under REACH",
+        "url": "https://echa.europa.eu/substances-restricted-under-reach"
+      }
+    ],
+    "urgency": "critical"
+  },
+  {
+    "id": "reach-pfas-restriction",
+    "name": "REACH -- PFAS Universal Restriction (Proposed)",
+    "regulation": "REACH Regulation (EC) 1907/2006",
+    "requirement": "Proposed Universal Restriction on Per- and Polyfluoroalkyl Substances (PFAS)",
+    "description": "ECHA received a restriction proposal in February 2023 from five national authorities (Germany, Denmark, Netherlands, Norway, Sweden) to restrict the manufacture, placing on market, and use of approximately 10,000 PFAS substances. If adopted, this would be the broadest REACH restriction ever, affecting virtually every product category. ECHA's RAC and SEAC committees have been evaluating the proposal. Adoption expected 2025-2027, with use-specific transition periods of 18 months to 12+ years depending on the application.",
+    "plainLanguage": "The EU is proposing a near-total ban on PFAS (per- and polyfluoroalkyl substances, also known as 'forever chemicals'). This would affect ~10,000 substances used in coatings, textiles, electronics, and many other products. If your products contain PFAS, start planning for alternatives now.",
+    "applicableTo": {
+      "batteryTypes": [],
+      "productCategories": [
+        "textiles",
+        "electronics",
+        "iron_steel",
+        "aluminium",
+        "tyres",
+        "furniture",
+        "construction",
+        "other"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2027-06-01",
+      "label": "Expected adoption 2026-2027; transition periods vary by use"
+    },
+    "status": "future",
+    "dataRequirements": [
+      "Inventory of all PFAS-containing materials, components, and products",
+      "PFAS substance identification (CAS numbers, concentrations)",
+      "Assessment of PFAS function in each application",
+      "Alternatives analysis and substitution roadmap",
+      "Transition period applicability per product use category",
+      "Supplier engagement plan for PFAS elimination",
+      "Testing capability for total organic fluorine or targeted PFAS analysis",
+      "Product-category PFAS risk assessment (high risk: textiles, furniture, cookware; medium risk: electronics, construction; lower risk: batteries, iron/steel)",
+      "Total organic fluorine (TOF) screening results for products suspected of containing PFAS",
+      "PFAS-free alternatives documentation per application",
+      "ECHA/RAC opinion tracking per use-category for transition period planning"
+    ],
+    "links": [
+      {
+        "title": "ECHA: PFAS Restriction Proposal",
+        "url": "https://echa.europa.eu/hot-topics/perfluoroalkyl-chemicals-pfas"
+      },
+      {
+        "title": "ECHA: Registry of Restriction Intentions -- PFAS",
+        "url": "https://echa.europa.eu/registry-of-restriction-intentions/-/dislist/details/0b0236e18663449b"
+      }
+    ],
+    "urgency": "medium"
+  },
+  {
+    "id": "reach-candidate-list-monitoring",
+    "name": "REACH -- Candidate List Monitoring",
+    "regulation": "REACH Regulation (EC) 1907/2006",
+    "requirement": "Ongoing Monitoring of ECHA Candidate List Updates (Article 59)",
+    "description": "ECHA updates the Candidate List of SVHCs approximately twice per year (typically January and June). As of early 2025, the Candidate List contains approximately 240 substances. Each new addition immediately triggers Article 33 communication duties and SCIP notification obligations for articles containing the newly listed substance above 0.1% w/w. Companies must continuously monitor updates and re-screen their product portfolios.",
+    "plainLanguage": "ECHA regularly adds new substances to the SVHC Candidate List (about twice a year). Each time a new substance is added, you must check whether it is present in your products above 0.1% by weight. If so, you immediately have new communication and SCIP notification duties.",
+    "applicableTo": {
+      "batteryTypes": [
+        "portable",
+        "sli",
+        "lmt",
+        "ev",
+        "industrial_2kwh_plus",
+        "industrial_other",
+        "sbess"
+      ],
+      "productCategories": [
+        "textiles",
+        "electronics",
+        "iron_steel",
+        "aluminium",
+        "tyres",
+        "furniture",
+        "construction",
+        "other"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer",
+        "distributor"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": null,
+      "label": "Ongoing (biannual updates, typically January and June)"
+    },
+    "status": "active",
+    "dataRequirements": [
+      "Process for monitoring ECHA Candidate List updates (biannual)",
+      "Product portfolio re-screening procedure upon new additions",
+      "Full material declarations from suppliers covering current Candidate List",
+      "Gap analysis when new SVHCs are added (affected products, components, concentrations)",
+      "Updated SCIP notifications within reasonable timeframe of new listings",
+      "Updated Article 33 communication to supply chain recipients",
+      "Internal registry of substances approaching Candidate List inclusion (ECHA Registry of Intentions)"
+    ],
+    "links": [
+      {
+        "title": "ECHA: Candidate List of SVHCs",
+        "url": "https://echa.europa.eu/candidate-list-table"
+      },
+      {
+        "title": "ECHA: Registry of Intentions",
+        "url": "https://echa.europa.eu/registry-of-svhc-intentions"
+      }
+    ],
+    "urgency": "critical"
+  },
+  {
+    "id": "gpsr-product-safety",
+    "name": "General Product Safety Regulation (GPSR)",
+    "regulation": "Regulation (EU) 2023/988",
+    "requirement": "General Safety, Traceability & Economic Operator Obligations (Articles 5-22)",
+    "description": "The GPSR applies to consumer products placed on the EU market that are not fully covered by sector-specific harmonised legislation (lex specialis). It requires economic operators (manufacturers, importers, distributors, and online marketplaces) to ensure products are safe, maintain traceability through the supply chain, conduct internal risk analysis, cooperate with market surveillance authorities, and report dangerous products via the Safety Gate (RAPEX) system. Products covered by dedicated sector legislation (e.g., batteries, medical devices) may be partially or fully exempt where that legislation addresses the same safety aspects.",
+    "plainLanguage": "If you sell consumer products in the EU, you must ensure they are safe and traceable. This applies when your products are sold to consumers (B2C) and are not fully covered by sector-specific safety rules. You need to keep records, conduct risk assessments, cooperate with authorities, and report dangerous products. Products with dedicated EU safety legislation (e.g., Battery Regulation) may be partially exempt.",
+    "applicableTo": {
+      "batteryTypes": null,
+      "productCategories": null,
+      "requiresB2C": true,
+      "roles": [
+        "manufacturer",
+        "importer",
+        "distributor"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2024-12-13",
+      "label": "13 December 2024 (in application)"
+    },
+    "status": "active",
+    "dataRequirements": [
+      "Batch or serial number or other traceability element",
+      "Consumer safety warnings in language of member state of sale",
+      "Contact point for market surveillance authorities",
+      "Corrective action and recall procedures",
+      "Identification of other economic operators in the supply chain",
+      "Incident and complaint records",
+      "Incident reporting procedure for Safety Gate (RAPEX)",
+      "Internal risk analysis documentation",
+      "Internal risk assessment documentation",
+      "Manufacturer and importer contact details on product or packaging",
+      "Manufacturer or authorised representative contact details",
+      "Online product listing safety information (for online sales)",
+      "Product identification (name, image, identifiers)",
+      "Product traceability data (manufacturer, importer, batch/serial number)",
+      "Product traceability information (manufacturer, importer, product identification)",
+      "Records of complaints and product recalls",
+      "Risk assessment records",
+      "Safety Gate notification records (where unsafe product identified)",
+      "Safety Gate/RAPEX notification capability",
+      "Safety test reports or certificates",
+      "Technical documentation demonstrating product safety",
+      "Technical documentation for product safety"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Regulation (EU) 2023/988",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/988/oj"
+      },
+      {
+        "title": "EUR-Lex: GPSR Regulation 2023/988",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/988/oj/eng"
+      },
+      {
+        "title": "European Commission: Product Safety",
+        "url": "https://commission.europa.eu/business-economy-euro/product-safety-and-requirements/product-safety_en"
+      }
+    ]
+  },
+  {
+    "id": "csddd-supply-chain-dd",
+    "name": "CSDDD \u2014 Supply Chain Due Diligence",
+    "regulation": "Directive (EU) 2024/1760",
+    "requirement": "Human Rights and Environmental Due Diligence (Articles 5\u201311)",
+    "description": "Large companies must identify, prevent, mitigate, and account for actual and potential adverse human rights and environmental impacts in their own operations and those of their direct and indirect business partners throughout the value chain. Companies must establish a due diligence policy, integrate it into management systems, maintain a grievance mechanism, and publicly communicate their approach.",
+    "plainLanguage": "If your company meets the size thresholds (1,000+ employees AND \u20ac450M+ turnover for the final phase), you must implement a comprehensive due diligence process covering human rights and environmental risks across your entire value chain \u2014 from raw material sourcing through to final customers. This includes identifying risks, taking preventive and corrective action, and providing a complaints mechanism.",
+    "applicableTo": {
+      "batteryTypes": null,
+      "productCategories": null,
+      "roles": [
+        "manufacturer",
+        "importer",
+        "distributor"
+      ],
+      "markets": [
+        "eu"
+      ],
+      "companySize": [
+        "large"
+      ]
+    },
+    "timeline": {
+      "date": "2028-07-26",
+      "label": "26 July 2028 (>5000 emp, >\u20ac1.5B); phased to 2029\u20132030 (smaller tiers). Subject to Omnibus simplification \u2014 transposition deadline postponed to 26 July 2028"
+    },
+    "status": "upcoming",
+    "dataRequirements": [
+      "Due diligence policy document (Art 5)",
+      "Adverse impact identification and assessment methodology (Art 6)",
+      "Supply chain risk mapping (own operations + direct and indirect partners)",
+      "Preventive and corrective action plans (Arts 7\u20138)",
+      "Remediation measures and processes (Art 9)",
+      "Grievance mechanism description and accessibility (Art 9)",
+      "Stakeholder engagement records (Arts 10\u201311)",
+      "Annual public report on due diligence activities and findings",
+      "Supply chain partner contractual assurances",
+      "Monitoring and verification procedures"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Directive (EU) 2024/1760 Full Text",
+        "url": "https://eur-lex.europa.eu/eli/dir/2024/1760/oj"
+      },
+      {
+        "title": "European Commission: CSDDD Overview",
+        "url": "https://commission.europa.eu/business-economy-euro/doing-business-eu/corporate-sustainability-due-diligence_en"
+      }
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "csddd-climate-transition",
+    "name": "CSDDD \u2014 Climate Transition Plan",
+    "regulation": "Directive (EU) 2024/1760",
+    "requirement": "Climate Transition Plan (Article 15)",
+    "description": "In-scope companies must adopt and put into effect a climate transition plan to ensure that the business model and strategy are compatible with the transition to a sustainable economy and with the limiting of global warming to 1.5\u00b0C in line with the Paris Agreement. The plan must include time-bound emission reduction targets and identify key decarbonisation levers and investment needs.",
+    "plainLanguage": "If your company falls under CSDDD, you must create and implement a climate transition plan setting out how you will contribute to limiting global warming to 1.5\u00b0C. The plan must include concrete emission reduction targets, key actions, and an investment plan for decarbonisation.",
+    "applicableTo": {
+      "batteryTypes": null,
+      "productCategories": null,
+      "roles": [
+        "manufacturer",
+        "importer",
+        "distributor"
+      ],
+      "markets": [
+        "eu"
+      ],
+      "companySize": [
+        "large"
+      ]
+    },
+    "timeline": {
+      "date": "2028-07-26",
+      "label": "26 July 2028 (>5000 emp, >\u20ac1.5B); phased to 2029\u20132030 (smaller tiers). Subject to Omnibus simplification \u2014 transposition deadline postponed to 26 July 2028"
+    },
+    "status": "upcoming",
+    "dataRequirements": [
+      "Climate transition plan document (Art 15)",
+      "Time-bound GHG emission reduction targets (Scope 1, 2, and where appropriate Scope 3)",
+      "Key decarbonisation levers and actions",
+      "Investment and funding plan for transition",
+      "Role of offsets (if any) and their limitations",
+      "Explanation of alignment with Paris Agreement 1.5\u00b0C pathway",
+      "Annual progress reporting against targets",
+      "Board-level oversight documentation"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Directive (EU) 2024/1760 Full Text",
+        "url": "https://eur-lex.europa.eu/eli/dir/2024/1760/oj"
+      }
+    ],
+    "urgency": "high"
+  },
+  {
+    "id": "csrd-sustainability-reporting",
+    "name": "CSRD -- Sustainability Reporting",
+    "regulation": "Directive (EU) 2022/2464",
+    "requirement": "Corporate Sustainability Reporting per ESRS (Articles 19a, 29a)",
+    "description": "Companies in scope of CSRD must report sustainability information according to the European Sustainability Reporting Standards (ESRS). IMPORTANT: The EU Omnibus simplification package (2025) has postponed application dates for Wave 2 (large non-NFRD companies) and subsequent waves by 2 years. Only Wave 1 companies (former NFRD entities \u2014 large public-interest entities with 500+ employees) are currently reporting (FY 2024). Wave 2 (all large companies) is now expected for FY 2027 instead of FY 2025. Listed SMEs are further postponed. Confirm your company's NFRD history to determine your actual reporting start date.",
+    "plainLanguage": "If your company meets the CSRD size thresholds, you must include detailed sustainability information in your annual management report. HOWEVER: the EU has postponed the reporting start date for most companies by 2 years under the Omnibus package. Only companies that were already reporting under the old NFRD (large public-interest entities with 500+ employees) are currently required to report. For other large companies, reporting now starts from FY 2027 at the earliest. Check whether your company was previously under NFRD to determine your actual timeline.",
+    "applicableTo": {
+      "batteryTypes": null,
+      "productCategories": null,
+      "roles": [
+        "manufacturer",
+        "importer",
+        "distributor"
+      ],
+      "markets": [
+        "eu"
+      ],
+      "companySize": [
+        "large"
+      ]
+    },
+    "timeline": {
+      "date": "2025-01-01",
+      "label": "FY 2024 (Wave 1: former NFRD entities only). Omnibus postponement: Wave 2 (all large) now FY 2027; listed SMEs FY 2028; non-EU >EUR150M FY 2030"
+    },
+    "status": "active",
+    "_statusNote": "Status 'active' applies only to Wave 1 (former NFRD entities). For most large companies, CSRD is effectively 'upcoming' due to Omnibus 2-year postponement. Confirm NFRD history.",
+    "dataRequirements": [
+      "Double materiality assessment results (ESRS 1)",
+      "Governance structure and sustainability oversight (ESRS 2, GOV-1 to GOV-5)",
+      "Strategy and business model sustainability integration (ESRS 2, SBM-1 to SBM-3)",
+      "Sustainability-related targets and progress metrics (ESRS 2, MDR-T)",
+      "Sustainability policies across all material topics (ESRS 2, MDR-P)",
+      "Actions and resources allocated to sustainability (ESRS 2, MDR-A)",
+      "XHTML/XBRL digital tagging of sustainability disclosures (Art 29d)",
+      "Independent auditor limited assurance opinion (Art 34)",
+      "Consolidated group-level reporting (where applicable)",
+      "Value chain information where material (upstream and downstream)"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Directive (EU) 2022/2464 (CSRD)",
+        "url": "https://eur-lex.europa.eu/eli/dir/2022/2464/oj"
+      },
+      {
+        "title": "EUR-Lex: ESRS Delegated Regulation 2023/2772",
+        "url": "https://eur-lex.europa.eu/eli/reg_del/2023/2772/oj"
+      },
+      {
+        "title": "EFRAG: ESRS Implementation Guidance",
+        "url": "https://www.efrag.org/lab6"
+      }
+    ],
+    "urgency": "critical"
+  },
+  {
+    "id": "msr-economic-operator-obligations",
+    "name": "Market Surveillance -- Economic Operator Obligations",
+    "regulation": "Regulation (EU) 2019/1020",
+    "requirement": "Economic Operator Obligations for Products Sold on the EU Market (Articles 4-7)",
+    "description": "Products subject to EU harmonised legislation that are placed on the EU market must have an economic operator established in the EU who is responsible for compliance tasks, including making the EU Declaration of Conformity and technical documentation available to authorities, cooperating with market surveillance authorities, and informing authorities when a product presents a risk. This applies to all CE-marked products.",
+    "plainLanguage": "If you sell products on the EU market that fall under EU product safety or harmonisation legislation, there must be an EU-based economic operator (manufacturer, importer, authorised representative, or fulfilment service provider) who is responsible for keeping compliance documents ready and cooperating with authorities on request.",
+    "applicableTo": {
+      "batteryTypes": [
+        "portable",
+        "sli",
+        "lmt",
+        "ev",
+        "industrial_2kwh_plus",
+        "industrial_other",
+        "sbess"
+      ],
+      "productCategories": [
+        "textiles",
+        "electronics",
+        "iron_steel",
+        "aluminium",
+        "tyres",
+        "furniture",
+        "construction"
+      ],
+      "roles": [
+        "manufacturer",
+        "importer"
+      ],
+      "markets": [
+        "eu"
+      ]
+    },
+    "timeline": {
+      "date": "2021-07-16",
+      "label": "Active (since 16 July 2021)"
+    },
+    "status": "active",
+    "dataRequirements": [
+      "EU Declaration of Conformity (available to authorities on request)",
+      "Technical documentation (available to authorities on request)",
+      "Contact details of EU-based responsible economic operator on product or packaging",
+      "Product traceability records (suppliers and recipients for 10 years)",
+      "Corrective action records and recall documentation",
+      "RAPEX/Safety Gate notification records (where applicable)",
+      "Cooperation log with market surveillance authorities"
+    ],
+    "links": [
+      {
+        "title": "EUR-Lex: Market Surveillance Regulation 2019/1020",
+        "url": "https://eur-lex.europa.eu/eli/reg/2019/1020/oj/eng"
+      }
+    ],
+    "urgency": "critical"
+  }
+]
