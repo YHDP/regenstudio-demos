@@ -94,16 +94,39 @@ Deno.serve(async (req) => {
         : "Thanks for reaching out — Regen Studio";
 
       const confirmationBody = isAccessRequest
-        ? `Hi ${displayName},\n\nWe've received your request for access to ${demoLabel}. We'll review it and get back to you shortly.\n\nBest regards,\nThe Regen Studio team\n\nhttps://www.regenstudio.space`
-        : `Hi ${displayName},\n\nThank you for reaching out. We received your message and will get back to you as soon as possible.\n\nBest regards,\nThe Regen Studio team\n\nhttps://www.regenstudio.space`;
+        ? `Hi ${displayName},\n\nWe've received your request for access to ${demoLabel}. We'll review it and get back to you shortly.\n\n---\n\nAbout Regen Studio\nWe pioneer systemic innovations at the intersection of technology, society, and nature — helping organizations create positive impact through new solutions.\n\nOur focus: Energy Transition, Circular Economy, Digital Society, Liveable Cities, Resilient Nature\n\nWebsite: https://www.regenstudio.space\nDemos: https://demos.regenstudio.space\nBlog: https://www.regenstudio.space/blog.html\n\nBest regards,\nThe Regen Studio team`
+        : `Hi ${displayName},\n\nThank you for reaching out. We received your message and will get back to you as soon as possible.\n\n---\n\nAbout Regen Studio\nWe pioneer systemic innovations at the intersection of technology, society, and nature — helping organizations create positive impact through new solutions.\n\nOur focus: Energy Transition, Circular Economy, Digital Society, Liveable Cities, Resilient Nature\n\nWebsite: https://www.regenstudio.space\nDemos: https://demos.regenstudio.space\nBlog: https://www.regenstudio.space/blog.html\n\nBest regards,\nThe Regen Studio team`;
+
+      const aboutSection = `
+           <div style="margin:24px 0 0;padding:24px;background:#FAFBFC;border-radius:12px;border:1px solid #E4E2E2">
+             <p style="margin:0 0 6px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.8px;color:#00914B">About Regen Studio</p>
+             <p style="margin:0 0 14px;font-size:14px;color:#5781A1;line-height:1.6">We pioneer systemic innovations at the intersection of technology, society, and nature — helping organizations create positive impact through new solutions.</p>
+             <table cellpadding="0" cellspacing="0" style="width:100%"><tr>
+               <td style="padding:0 6px 0 0;width:20%"><a href="https://www.regenstudio.space/#focus" style="display:block;padding:8px 0;text-align:center;background:#243644;color:white;border-radius:6px;font-size:11px;font-weight:600;text-decoration:none">Our Focus</a></td>
+               <td style="padding:0 6px;width:20%"><a href="https://www.regenstudio.space/#about" style="display:block;padding:8px 0;text-align:center;background:#243644;color:white;border-radius:6px;font-size:11px;font-weight:600;text-decoration:none">Vision</a></td>
+               <td style="padding:0 6px;width:20%"><a href="https://www.regenstudio.space/#services" style="display:block;padding:8px 0;text-align:center;background:#243644;color:white;border-radius:6px;font-size:11px;font-weight:600;text-decoration:none">Services</a></td>
+               <td style="padding:0 6px;width:20%"><a href="https://demos.regenstudio.space" style="display:block;padding:8px 0;text-align:center;background:#00914B;color:white;border-radius:6px;font-size:11px;font-weight:600;text-decoration:none">Demos</a></td>
+               <td style="padding:0 0 0 6px;width:20%"><a href="https://www.regenstudio.space/blog.html" style="display:block;padding:8px 0;text-align:center;background:#243644;color:white;border-radius:6px;font-size:11px;font-weight:600;text-decoration:none">Blog</a></td>
+             </tr></table>
+             <table cellpadding="0" cellspacing="0" style="width:100%;margin-top:16px"><tr>
+               <td style="font-size:12px;color:#5781A1;line-height:1.5">
+                 <span style="color:#00914B;font-weight:600">&#9650;</span> Energy Transition &nbsp;
+                 <span style="color:#009BBB;font-weight:600">&#9650;</span> Circular Economy &nbsp;
+                 <span style="color:#6366F1;font-weight:600">&#9650;</span> Digital Society &nbsp;
+                 <span style="color:#FFA92D;font-weight:600">&#9650;</span> Liveable Cities &nbsp;
+                 <span style="color:#93093F;font-weight:600">&#9650;</span> Resilient Nature
+               </td>
+             </tr></table>
+           </div>`;
 
       const confirmationContent = isAccessRequest
         ? `<p style="margin:0 0 16px">Hi ${displayName},</p>
            <p style="margin:0 0 16px">We've received your request for access to <strong>${demoLabel}</strong>.</p>
-           <p style="margin:0 0 24px">We'll review it and get back to you shortly.</p>`
+           <p style="margin:0 0 0">We'll review it and get back to you shortly.</p>
+           ${aboutSection}`
         : `<p style="margin:0 0 16px">Hi ${displayName},</p>
-           <p style="margin:0 0 16px">Thank you for reaching out. We received your message and will get back to you as soon as possible.</p>
-           <p style="margin:0 0 24px">In the meantime, feel free to explore our <a href="https://demos.regenstudio.space" style="color:#00914B;text-decoration:underline">interactive demos</a>.</p>`;
+           <p style="margin:0 0 0">Thank you for reaching out. We received your message and will get back to you as soon as possible.</p>
+           ${aboutSection}`;
 
       const confirmationHtml = emailLayout(confirmationContent, true);
 
@@ -217,13 +240,25 @@ function emailLayout(content: string, isExternal: boolean): string {
     <tr><td align="center">
       <table width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#FFFFFF;border-radius:16px;border:1px solid #E4E2E2;overflow:hidden">
 
-        <!-- Header bar -->
-        <tr><td style="background:#243644;padding:24px 32px;text-align:center">
+        <!-- Header bar with triangle accents -->
+        <tr><td style="background:#243644;padding:28px 32px 20px;text-align:center;position:relative">
+          <!-- Subtle decorative triangles -->
+          <div style="position:absolute;top:8px;left:12px;width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:14px solid rgba(0,145,75,0.15)"></div>
+          <div style="position:absolute;top:14px;right:24px;width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:10px solid rgba(0,155,187,0.15)"></div>
+          <div style="position:absolute;bottom:10px;left:40px;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:9px solid rgba(99,102,241,0.15)"></div>
           <span style="color:white;font-size:18px;font-weight:600;letter-spacing:0.5px">REGEN STUDIO</span>
         </td></tr>
 
-        <!-- Emerald accent line -->
-        <tr><td style="height:3px;background:linear-gradient(90deg,#00914B,#009BBB)"></td></tr>
+        <!-- Multi-color accent line (triangle-inspired segments) -->
+        <tr><td style="height:0;font-size:0;line-height:0">
+          <table width="100%" cellpadding="0" cellspacing="0"><tr>
+            <td style="width:30%;height:3px;background:#00914B"></td>
+            <td style="width:20%;height:3px;background:#009BBB"></td>
+            <td style="width:20%;height:3px;background:#6366F1"></td>
+            <td style="width:15%;height:3px;background:#FFA92D"></td>
+            <td style="width:15%;height:3px;background:#93093F"></td>
+          </tr></table>
+        </td></tr>
 
         <!-- Body -->
         <tr><td style="padding:32px 32px 24px;font-size:15px;line-height:1.7;color:#243644">
@@ -241,14 +276,24 @@ function emailLayout(content: string, isExternal: boolean): string {
         </td></tr>
         ` : ""}
 
-        <!-- Footer -->
-        <tr><td style="background:#FAFBFC;padding:20px 32px;border-top:1px solid #E4E2E2;text-align:center">
+        <!-- Footer with triangle accent -->
+        <tr><td style="height:0;font-size:0;line-height:0">
+          <table width="100%" cellpadding="0" cellspacing="0"><tr>
+            <td style="width:30%;height:2px;background:#00914B"></td>
+            <td style="width:20%;height:2px;background:#009BBB"></td>
+            <td style="width:20%;height:2px;background:#6366F1"></td>
+            <td style="width:15%;height:2px;background:#FFA92D"></td>
+            <td style="width:15%;height:2px;background:#93093F"></td>
+          </tr></table>
+        </td></tr>
+        <tr><td style="background:#FAFBFC;padding:20px 32px;text-align:center">
           <p style="margin:0;font-size:12px;color:#9B9B9B">
+            <span style="color:#00914B">&#9650;</span> &nbsp;
             ${isExternal
               ? 'You received this because you submitted a form on <a href="https://demos.regenstudio.space" style="color:#5781A1;text-decoration:none">demos.regenstudio.space</a>'
               : 'Internal notification from <a href="https://demos.regenstudio.space" style="color:#5781A1;text-decoration:none">demos.regenstudio.space</a>'}
           </p>
-          <p style="margin:8px 0 0;font-size:11px;color:#9B9B9B">&copy; ${new Date().getFullYear()} Regen Studio</p>
+          <p style="margin:8px 0 0;font-size:11px;color:#9B9B9B">&copy; ${new Date().getFullYear()} Regen Studio &middot; Innovations that regenerate</p>
         </td></tr>
 
       </table>
