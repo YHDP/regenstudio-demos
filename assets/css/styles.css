@@ -159,12 +159,6 @@ img {
   margin: 0 auto;
 }
 
-.hero-logo {
-  height: 48px;
-  width: auto;
-  margin: 0 auto var(--space-xl);
-}
-
 .hero-label {
   display: inline-block;
   font-size: 0.8rem;
@@ -195,6 +189,17 @@ img {
   line-height: 1.7;
 }
 
+.hero-disclaimer {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin: var(--space-md) auto 0;
+  line-height: 1.6;
+  font-style: italic;
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-md);
+}
+
 /* --- Polygon Divider --- */
 .polygon-divider {
   width: 100%;
@@ -215,46 +220,31 @@ img {
   padding: var(--space-3xl) var(--space-lg);
 }
 
-.demos-group {
-  margin-bottom: var(--space-3xl);
+#demos-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xl);
 }
 
-.demos-group:last-child {
-  margin-bottom: 0;
+.demos-group__header {
+  margin-bottom: var(--space-lg);
 }
 
-.demos-group-header {
-  margin-bottom: var(--space-xl);
-}
-
-.demos-group-header h2 {
+.demos-group__title {
   font-family: var(--font-serif);
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: var(--space-xs);
 }
 
-.demos-group-header p {
-  font-size: 0.95rem;
+.demos-group__subtitle {
+  font-size: 0.9rem;
   color: var(--text-secondary);
+  line-height: 1.6;
 }
 
-.demos-group-badge {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-secondary);
-  background: var(--bg);
-  border: 1px solid var(--border);
-  padding: 4px 12px;
-  border-radius: var(--radius-full);
-  margin-bottom: var(--space-sm);
-}
-
-.demos-grid {
+.demos-group__cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: var(--space-xl);
@@ -325,11 +315,6 @@ img {
   background: var(--emerald);
   padding: 4px 12px;
   border-radius: var(--radius-full);
-}
-
-.demo-card-badge-locked {
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(8px);
 }
 
 .demo-card-body {
@@ -668,7 +653,7 @@ img {
     font-size: 1rem;
   }
 
-  .demos-grid {
+  .demos-group__cards {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
   }
