@@ -238,28 +238,35 @@ function emailLayout(content: string, isExternal: boolean): string {
     <tr><td align="center">
       <table width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#FFFFFF;border-radius:16px;border:1px solid #E4E2E2;overflow:hidden">
 
-        <!-- Header with scattered triangle characters -->
-        <tr><td style="background:#243644;padding:0;text-align:center;height:80px">
-          <table width="100%" cellpadding="0" cellspacing="0" style="height:80px"><tr>
+        <!-- Header with scattered rotated triangle characters -->
+        <tr><td style="background:#3A5A6E;padding:0;text-align:center;height:88px">
+          <table width="100%" cellpadding="0" cellspacing="0" style="height:88px"><tr>
             <td style="vertical-align:middle;text-align:center">
               <!-- Top scatter row -->
-              <div style="font-size:0;line-height:0;height:16px;text-align:left;padding:0 12px">
-                <span style="font-size:14px;color:rgba(0,145,75,0.45);padding-left:8px">&#9650;</span>
-                <span style="font-size:8px;color:rgba(0,155,187,0.35);padding-left:60px">&#9650;</span>
-                <span style="font-size:11px;color:rgba(99,102,241,0.3);padding-left:90px">&#9650;</span>
-                <span style="font-size:6px;color:rgba(255,169,45,0.4);padding-left:40px">&#9650;</span>
-                <span style="font-size:10px;color:rgba(147,9,63,0.3);padding-left:50px">&#9650;</span>
-                <span style="font-size:7px;color:rgba(0,145,75,0.25);padding-left:30px">&#9650;</span>
+              <div style="font-size:0;line-height:0;height:20px;text-align:left;padding:0 8px">
+                <span style="font-size:16px;color:rgba(0,145,75,0.7);padding-left:5px;display:inline-block;transform:rotate(25deg)">&#9650;</span>
+                <span style="font-size:9px;color:rgba(0,155,187,0.6);padding-left:22px;display:inline-block;transform:rotate(-40deg)">&#9650;</span>
+                <span style="font-size:13px;color:rgba(99,102,241,0.55);padding-left:35px;display:inline-block;transform:rotate(160deg)">&#9650;</span>
+                <span style="font-size:7px;color:rgba(255,169,45,0.65);padding-left:18px;display:inline-block;transform:rotate(75deg)">&#9650;</span>
+                <span style="font-size:11px;color:rgba(147,9,63,0.5);padding-left:30px;display:inline-block;transform:rotate(-20deg)">&#9650;</span>
+                <span style="font-size:6px;color:rgba(0,145,75,0.6);padding-left:15px;display:inline-block;transform:rotate(200deg)">&#9650;</span>
+                <span style="font-size:14px;color:rgba(0,155,187,0.45);padding-left:25px;display:inline-block;transform:rotate(110deg)">&#9650;</span>
+                <span style="font-size:8px;color:rgba(255,169,45,0.55);padding-left:20px;display:inline-block;transform:rotate(-65deg)">&#9650;</span>
+                <span style="font-size:10px;color:rgba(99,102,241,0.5);padding-left:12px;display:inline-block;transform:rotate(45deg)">&#9650;</span>
               </div>
               <!-- Title -->
               <span style="color:white;font-size:18px;font-weight:600;letter-spacing:0.5px">REGEN STUDIO</span>
               <!-- Bottom scatter row -->
-              <div style="font-size:0;line-height:0;height:18px;text-align:right;padding:2px 16px 0">
-                <span style="font-size:7px;color:rgba(0,155,187,0.35);padding-right:120px">&#9650;</span>
-                <span style="font-size:12px;color:rgba(255,169,45,0.4);padding-right:40px">&#9650;</span>
-                <span style="font-size:9px;color:rgba(0,145,75,0.3);padding-right:70px">&#9650;</span>
-                <span style="font-size:6px;color:rgba(99,102,241,0.35);padding-right:20px">&#9650;</span>
-                <span style="font-size:13px;color:rgba(0,155,187,0.25);padding-right:8px">&#9650;</span>
+              <div style="font-size:0;line-height:0;height:20px;text-align:right;padding:2px 8px 0">
+                <span style="font-size:8px;color:rgba(0,155,187,0.6);padding-right:10px;display:inline-block;transform:rotate(135deg)">&#9650;</span>
+                <span style="font-size:15px;color:rgba(255,169,45,0.65);padding-right:28px;display:inline-block;transform:rotate(-30deg)">&#9650;</span>
+                <span style="font-size:10px;color:rgba(0,145,75,0.55);padding-right:35px;display:inline-block;transform:rotate(80deg)">&#9650;</span>
+                <span style="font-size:7px;color:rgba(99,102,241,0.6);padding-right:15px;display:inline-block;transform:rotate(-90deg)">&#9650;</span>
+                <span style="font-size:12px;color:rgba(147,9,63,0.5);padding-right:22px;display:inline-block;transform:rotate(210deg)">&#9650;</span>
+                <span style="font-size:6px;color:rgba(0,145,75,0.7);padding-right:40px;display:inline-block;transform:rotate(50deg)">&#9650;</span>
+                <span style="font-size:13px;color:rgba(0,155,187,0.5);padding-right:18px;display:inline-block;transform:rotate(-150deg)">&#9650;</span>
+                <span style="font-size:9px;color:rgba(255,169,45,0.6);padding-right:30px;display:inline-block;transform:rotate(15deg)">&#9650;</span>
+                <span style="font-size:11px;color:rgba(99,102,241,0.55);padding-right:5px;display:inline-block;transform:rotate(-55deg)">&#9650;</span>
               </div>
             </td>
           </tr></table>
