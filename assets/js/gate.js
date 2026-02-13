@@ -1,5 +1,7 @@
 // Password gate — client-side SHA-256 check with sessionStorage
 
+const EDGE_FUNCTION_URL = 'https://uemspezaqxmkhenimwuf.supabase.co/functions/v1/contact-form';
+
 (async function () {
   const config = window.DEMO_CONFIG;
   if (!config) return;
@@ -55,35 +57,57 @@
     });
   }
 
-  // Copyable email
-  document.querySelectorAll('.copy-btn').forEach(btn => {
-    btn.addEventListener('click', async (e) => {
-      e.preventDefault();
-      const email = btn.dataset.email || 'info@regenstudio.world';
-      try {
-        await navigator.clipboard.writeText(email);
-        const original = btn.innerHTML;
-        btn.classList.add('copied');
-        btn.innerHTML = `
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Copied!
-        `;
-        setTimeout(() => {
-          btn.classList.remove('copied');
-          btn.innerHTML = original;
-        }, 2000);
-      } catch {
-        const addressEl = btn.closest('.email-pill')?.querySelector('.email-address');
-        if (addressEl) {
-          const range = document.createRange();
-          range.selectNodeContents(addressEl);
-          window.getSelection()?.removeAllRanges();
-          window.getSelection()?.addRange(range);
-        }
-      }
-    });
-  });
+  // Access request form
+  initAccessForm(config);
 })();
+
+function initAccessForm(config) {
+  const form = document.getElementById('access-form');
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const btn = form.querySelector('.gate-submit');
+    const existingError = form.querySelector('.contact-error');
+    if (existingError) existingError.remove();
+
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch(EDGE_FUNCTION_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          email: formData.get('email'),
+          organization: formData.get('organization'),
+          source: 'demo_access_request',
+          demo_id: config.demoId,
+          page_url: window.location.href,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || 'Something went wrong');
+      }
+
+      form.style.display = 'none';
+      document.getElementById('access-success').style.display = 'flex';
+    } catch (err) {
+      const errorEl = document.createElement('p');
+      errorEl.className = 'contact-error';
+      errorEl.textContent = err.message || 'Something went wrong. Please try again.';
+      form.appendChild(errorEl);
+      btn.disabled = false;
+      btn.textContent = 'Request Access';
+    }
+  });
+}
 
 async function sha256(message) {
   const msgBuffer = new TextEncoder().encode(message);

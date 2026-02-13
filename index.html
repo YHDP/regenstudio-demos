@@ -63,12 +63,19 @@
   <section class="cta-section">
     <h2>Interested in a custom demonstration?</h2>
     <p>We'd love to show you what's possible. Reach out and we'll set up a personalized walkthrough.</p>
-    <div class="email-pill">
-      <span class="email-address">info@regenstudio.world</span>
-      <button class="copy-btn" data-email="info@regenstudio.world">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-        Copy
-      </button>
+    <form id="contact-form" class="contact-form">
+      <div class="contact-form-row">
+        <input type="text" name="name" placeholder="Your name" class="contact-input" required>
+        <input type="email" name="email" placeholder="Email address" class="contact-input" required>
+      </div>
+      <textarea name="message" placeholder="Tell us about your project or what you'd like to explore..." class="contact-input contact-textarea"></textarea>
+      <button type="submit" class="contact-submit">Send Message</button>
+      <p class="contact-disclaimer">Your data is stored in the EU and not shared with third parties.</p>
+    </form>
+    <div id="contact-success" class="contact-success" style="display:none">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      <h3>Message sent!</h3>
+      <p>We'll get back to you within 2 business days.</p>
     </div>
   </section>
 
