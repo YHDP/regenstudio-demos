@@ -137,11 +137,11 @@ img {
 .header-nav {
   display: flex;
   align-items: center;
-  gap: var(--space-xl);
+  gap: var(--space-lg);
 }
 
 .header-nav a {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-secondary);
   transition: color var(--duration) var(--ease);
@@ -149,6 +149,26 @@ img {
 
 .header-nav a:hover {
   color: var(--text-primary);
+}
+
+.header-nav-active {
+  color: var(--emerald) !important;
+  font-weight: 600 !important;
+}
+
+.header-nav-cta {
+  background: var(--emerald);
+  color: white !important;
+  padding: 6px 16px;
+  border-radius: 99px;
+  font-weight: 600 !important;
+  font-size: 0.8rem !important;
+  transition: background var(--duration) var(--ease);
+}
+
+.header-nav-cta:hover {
+  background: #007a3e;
+  color: white !important;
 }
 
 /* --- Hero --- */
