@@ -1197,6 +1197,110 @@ body {
   color: var(--color-orange);
 }
 
+/* --- Gate: Regulation Teaser --- */
+.gate-reg-teaser {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(135deg, #FEF2F2, #FFF7ED);
+  border: 1px solid rgba(231, 24, 70, 0.15);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 24px;
+}
+
+.gate-reg-count {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--color-red, #E71846);
+  line-height: 1;
+  min-width: 60px;
+  text-align: center;
+}
+
+.gate-reg-teaser-text {
+  font-size: 14px;
+  color: var(--color-navy);
+  line-height: 1.5;
+}
+
+/* --- Gate: Deep Dive CTA --- */
+.gate-deep-dive-cta {
+  background: var(--color-bg-light);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.gate-deep-dive-cta h3 {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: var(--color-navy);
+}
+
+.gate-deep-dive-cta p {
+  font-size: 14px;
+  color: var(--color-navy-light);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* --- Gate: Email Shortcut --- */
+.gate-email-shortcut {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.gate-email-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.gate-email-divider::before,
+.gate-email-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.gate-email-divider span {
+  font-size: 13px;
+  color: var(--color-navy-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.gate-email-shortcut h3 {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: var(--color-navy);
+}
+
+.gate-email-shortcut p {
+  font-size: 13px;
+  color: var(--color-navy-light);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.gate-email-shortcut .email-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.gate-actions-bottom {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
 .gate-actions {
   display: flex;
   flex-direction: column;
@@ -1208,6 +1312,63 @@ body {
 .gate-cta {
   width: 100%;
   max-width: 400px;
+}
+
+/* --- Preview: Locked Content Teaser --- */
+.preview-locked-teaser {
+  background: linear-gradient(135deg, #F0F9FF, #F0FDF4);
+  border: 2px dashed var(--color-emerald);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.preview-locked-icon {
+  color: var(--color-emerald);
+  margin-bottom: 8px;
+}
+
+.preview-locked-count {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-emerald);
+  margin-bottom: 8px;
+}
+
+.preview-locked-text {
+  font-size: 14px;
+  color: var(--color-navy);
+  line-height: 1.5;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* --- Email Gate: Enhanced --- */
+.email-gate-badge {
+  display: inline-block;
+  background: var(--color-emerald);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+/* --- Secondary Button --- */
+.btn-secondary {
+  background: var(--color-navy);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+  background: var(--color-navy-light);
 }
 
 /* --- Responsive --- */

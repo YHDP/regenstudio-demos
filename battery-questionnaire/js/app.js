@@ -242,6 +242,38 @@ const App = {
     if (restartBtn) {
       restartBtn.addEventListener('click', () => this.restart());
     }
+
+    // Gate email shortcut — skip deep dive, go straight to results
+    const gateEmailForm = document.getElementById('gate-email-form');
+    if (gateEmailForm) {
+      gateEmailForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = document.getElementById('gate-email-name').value;
+        const email = document.getElementById('gate-email-address').value;
+        const submitBtn = gateEmailForm.querySelector('button[type="submit"]');
+
+        if (!email) return;
+
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Generating report...';
+        }
+
+        let pdfBase64 = null;
+        try {
+          pdfBase64 = await PDFReport.generate(this.engine, { download: false, returnBase64: true });
+        } catch (err) {
+          console.warn('PDF generation for email failed:', err);
+        }
+
+        if (submitBtn) submitBtn.textContent = 'Sending report...';
+
+        await LeadCapture.saveLead({ name, email, engine: this.engine, pdfBase64 });
+
+        this.emailUnlocked = true;
+        this.showResults();
+      });
+    }
   },
 
   startDeepDive() {

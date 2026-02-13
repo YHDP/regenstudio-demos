@@ -25,6 +25,10 @@ const Results = {
    */
   renderGateResult(engine) {
     const gate = engine.getGateVerdict();
+    const deepDiveQuestions = getDeepDiveQuestions(engine.answers);
+    const deepDiveCount = deepDiveQuestions.length;
+    const matched = engine.getMatchedRegulations();
+    const mandatoryCount = matched.filter(r => r.status !== 'voluntary' && r.status !== 'future').length;
 
     const verdictConfig = {
       yes: {
@@ -56,9 +60,19 @@ const Results = {
       `;
     }
 
-    const ctaText = gate.verdict === 'no'
-      ? 'Explore other Battery Regulation obligations'
-      : 'Discover what you need to do';
+    // Regulation teaser
+    let regTeaser = '';
+    if (mandatoryCount > 0) {
+      regTeaser = `
+        <div class="gate-reg-teaser">
+          <div class="gate-reg-count">${mandatoryCount}</div>
+          <div class="gate-reg-teaser-text">
+            <strong>regulatory requirement${mandatoryCount !== 1 ? 's' : ''}</strong> may apply to your business.
+            Get the full breakdown in your compliance report.
+          </div>
+        </div>
+      `;
+    }
 
     return `
       <div class="gate-result">
@@ -68,8 +82,28 @@ const Results = {
           <p class="gate-verdict-reason">${gate.reason}</p>
           ${deadlineHtml}
         </div>
-        <div class="gate-actions">
-          <button id="gate-deep-dive-btn" class="btn btn-primary btn-lg gate-cta">${ctaText}</button>
+
+        ${regTeaser}
+
+        <div class="gate-deep-dive-cta">
+          <h3>Get your full compliance report</h3>
+          <p>Answer <strong>${deepDiveCount} more questions</strong> about your company and current compliance status to receive a personalised report with all applicable regulations, deadlines, and recommended next steps.</p>
+          <button id="gate-deep-dive-btn" class="btn btn-primary btn-lg gate-cta">Continue Assessment (${deepDiveCount} questions)</button>
+        </div>
+
+        <div class="gate-email-shortcut">
+          <div class="gate-email-divider"><span>or</span></div>
+          <h3>Get your report now</h3>
+          <p>Don\u2019t have time for the full assessment? Enter your email and we\u2019ll send you a compliance report based on what we know so far.</p>
+          <form id="gate-email-form" class="email-form">
+            <input type="text" id="gate-email-name" placeholder="Name (optional)" class="email-input" />
+            <input type="email" id="gate-email-address" placeholder="Email address *" required class="email-input" />
+            <button type="submit" class="btn btn-secondary btn-lg">Send Me the Report</button>
+          </form>
+          <p class="email-disclaimer">We respect your privacy. Your data is stored in the EU and not shared with third parties.</p>
+        </div>
+
+        <div class="gate-actions-bottom">
           <button id="gate-restart-btn" class="btn btn-ghost">Start Over</button>
         </div>
       </div>
@@ -137,6 +171,8 @@ const Results = {
       }
     }
 
+    const remainingCount = matched.length > 3 ? matched.length - 3 : 0;
+
     let top3Html = '';
     if (top3.length > 0) {
       top3Html = `
@@ -151,7 +187,19 @@ const Results = {
               </div>
             </div>
           `).join('')}
-          ${matched.length > 3 ? `<p class="preview-more">+ ${matched.length - 3} more requirement${matched.length - 3 !== 1 ? 's' : ''}</p>` : ''}
+        </div>`;
+    }
+
+    // Prominent locked-content teaser
+    let lockedTeaser = '';
+    if (remainingCount > 0) {
+      lockedTeaser = `
+        <div class="preview-locked-teaser">
+          <div class="preview-locked-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <div class="preview-locked-count">+ ${remainingCount} more requirement${remainingCount !== 1 ? 's' : ''}</div>
+          <p class="preview-locked-text">Your full report includes <strong>all ${matched.length} applicable regulations</strong>, compliance timelines, urgency ratings, and personalised next steps.</p>
         </div>`;
     }
 
@@ -164,16 +212,18 @@ const Results = {
         </div>
         ${deadlineHtml}
         ${top3Html}
+        ${lockedTeaser}
         <div class="email-gate">
           <div class="email-gate-content">
-            <h3>Get your full compliance report</h3>
-            <p>Enter your email to unlock the complete regulatory analysis, detailed timelines, and a downloadable PDF report.</p>
+            <div class="email-gate-badge">Free</div>
+            <h3>Unlock your full compliance report</h3>
+            <p>Enter your email to receive the <strong>complete regulatory analysis</strong> with all ${matched.length} requirements, detailed timelines, and a <strong>downloadable PDF report</strong> sent directly to your inbox.</p>
             <form id="email-form" class="email-form">
               <input type="text" id="email-name" placeholder="Name (optional)" class="email-input" />
               <input type="email" id="email-address" placeholder="Email address *" required class="email-input" />
-              <button type="submit" class="btn btn-primary btn-lg">Unlock Full Report</button>
+              <button type="submit" class="btn btn-primary btn-lg">Unlock Full Report &amp; Send PDF</button>
             </form>
-            <p class="email-disclaimer">We respect your privacy. Your information is stored locally and not shared with third parties.</p>
+            <p class="email-disclaimer">We respect your privacy. Your data is stored in the EU and not shared with third parties.</p>
           </div>
         </div>
       </div>
