@@ -1,45 +1,55 @@
 // Landing page — render demo cards from demos.json
 
 (async function () {
-  const grid = document.getElementById('demos-grid');
-  if (!grid) return;
+  const gridFree = document.getElementById('demos-grid-free');
+  const gridRestricted = document.getElementById('demos-grid-restricted');
+  if (!gridFree || !gridRestricted) return;
 
   try {
     const res = await fetch('demos.json');
     const data = await res.json();
 
-    data.demos.forEach(demo => {
-      const card = document.createElement('a');
-      card.href = demo.public ? demo.path + 'index.html' : demo.path + 'gate.html';
-      card.className = 'demo-card';
+    const freeDemos = data.demos.filter(d => d.public);
+    const restrictedDemos = data.demos.filter(d => !d.public);
 
-      card.innerHTML = `
-        <div class="demo-card-preview" style="background: linear-gradient(135deg, ${demo.accentColor} 0%, ${demo.accentColor}CC 100%)">
-          <img src="${demo.preview}" alt="${demo.name} preview"
-               onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=\\'placeholder-icon\\'>&#9670;</div>'">
-          <span class="demo-card-category">${demo.category}</span>
-          ${demo.public ? '<span class="demo-card-badge">Free Access</span>' : ''}
-        </div>
-        <div class="demo-card-body">
-          <h3>${demo.name}</h3>
-          <div class="subtitle">${demo.subtitle}</div>
-          <div class="description">${demo.description}</div>
-          <div class="demo-card-tags">
-            ${demo.tags.map(t => `<span>${t}</span>`).join('')}
-          </div>
-          <span class="demo-card-link">View Demo &rarr;</span>
-        </div>
-      `;
+    freeDemos.forEach(demo => gridFree.appendChild(buildCard(demo)));
+    restrictedDemos.forEach(demo => gridRestricted.appendChild(buildCard(demo)));
 
-      grid.appendChild(card);
-    });
+    // Hide sections if empty
+    if (freeDemos.length === 0) document.getElementById('demos-free').style.display = 'none';
+    if (restrictedDemos.length === 0) document.getElementById('demos-restricted').style.display = 'none';
   } catch (e) {
-    grid.innerHTML = '<p style="color: var(--text-muted); text-align: center;">Unable to load demos.</p>';
+    gridFree.innerHTML = '<p style="color: var(--text-muted); text-align: center;">Unable to load demos.</p>';
   }
 
-  // Copyable email
   initCopyButtons();
 })();
+
+function buildCard(demo) {
+  const card = document.createElement('a');
+  card.href = demo.public ? demo.path + 'index.html' : demo.path + 'gate.html';
+  card.className = 'demo-card';
+
+  card.innerHTML = `
+    <div class="demo-card-preview" style="background: linear-gradient(135deg, ${demo.accentColor} 0%, ${demo.accentColor}CC 100%)">
+      <img src="${demo.preview}" alt="${demo.name} preview"
+           onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=\\'placeholder-icon\\'>&#9670;</div>'">
+      <span class="demo-card-category">${demo.category}</span>
+      ${demo.public ? '<span class="demo-card-badge">Free Access</span>' : '<span class="demo-card-badge demo-card-badge-locked">Password Required</span>'}
+    </div>
+    <div class="demo-card-body">
+      <h3>${demo.name}</h3>
+      <div class="subtitle">${demo.subtitle}</div>
+      <div class="description">${demo.description}</div>
+      <div class="demo-card-tags">
+        ${demo.tags.map(t => `<span>${t}</span>`).join('')}
+      </div>
+      <span class="demo-card-link">${demo.public ? 'View Demo' : 'Request Access'} &rarr;</span>
+    </div>
+  `;
+
+  return card;
+}
 
 function initCopyButtons() {
   document.querySelectorAll('.copy-btn').forEach(btn => {
@@ -59,7 +69,6 @@ function initCopyButtons() {
           btn.innerHTML = original;
         }, 2000);
       } catch {
-        // Fallback: select the email text
         const addressEl = btn.closest('.email-pill')?.querySelector('.email-address');
         if (addressEl) {
           const range = document.createRange();

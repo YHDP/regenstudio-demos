@@ -159,6 +159,12 @@ img {
   margin: 0 auto;
 }
 
+.hero-logo {
+  height: 48px;
+  width: auto;
+  margin: 0 auto var(--space-xl);
+}
+
 .hero-label {
   display: inline-block;
   font-size: 0.8rem;
@@ -209,7 +215,46 @@ img {
   padding: var(--space-3xl) var(--space-lg);
 }
 
-#demos-grid {
+.demos-group {
+  margin-bottom: var(--space-3xl);
+}
+
+.demos-group:last-child {
+  margin-bottom: 0;
+}
+
+.demos-group-header {
+  margin-bottom: var(--space-xl);
+}
+
+.demos-group-header h2 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.demos-group-header p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.demos-group-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-sm);
+}
+
+.demos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: var(--space-xl);
@@ -280,6 +325,11 @@ img {
   background: var(--emerald);
   padding: 4px 12px;
   border-radius: var(--radius-full);
+}
+
+.demo-card-badge-locked {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
 }
 
 .demo-card-body {
@@ -618,7 +668,7 @@ img {
     font-size: 1rem;
   }
 
-  #demos-grid {
+  .demos-grid {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
   }
