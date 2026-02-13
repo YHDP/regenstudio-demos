@@ -63,7 +63,7 @@ const LeadCapture = {
    * Save a lead. Falls back to localStorage if Supabase is not configured.
    * Returns { success: boolean, method: 'supabase'|'localStorage' }
    */
-  async saveLead({ name, email, engine }) {
+  async saveLead({ name, email, engine, pdfBase64 }) {
     const gate = engine.getGateVerdict();
     const batteryTypes = (engine.getAnswer('q_battery_type') || []).join(', ');
     const role = engine.getAnswer('q_role') || '';
@@ -75,7 +75,8 @@ const LeadCapture = {
       verdict: gate.verdict,
       battery_types: batteryTypes || null,
       role: role || null,
-      eu_market: euMarket || null
+      eu_market: euMarket || null,
+      pdf_base64: pdfBase64 || null
     };
 
     // Try Supabase first

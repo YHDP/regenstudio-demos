@@ -279,13 +279,23 @@ const App = {
 
       if (!email) return;
 
-      // Disable button while saving
+      // Disable button while generating + saving
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Unlocking...';
+        submitBtn.textContent = 'Generating report...';
       }
 
-      await LeadCapture.saveLead({ name, email, engine: this.engine });
+      // Generate PDF as base64 (no download yet — user can download from results page)
+      let pdfBase64 = null;
+      try {
+        pdfBase64 = await PDFReport.generate(this.engine, { download: false, returnBase64: true });
+      } catch (err) {
+        console.warn('PDF generation for email failed:', err);
+      }
+
+      if (submitBtn) submitBtn.textContent = 'Sending report...';
+
+      await LeadCapture.saveLead({ name, email, engine: this.engine, pdfBase64 });
 
       this.emailUnlocked = true;
       this.showResults();
