@@ -321,6 +321,7 @@ function emailLayout(content: string, isExternal: boolean): string {
               : 'Internal notification from the website of Regen Studio'}
           </p>
           <p style="margin:8px 0 0;font-size:11px;color:#9B9B9B">&copy; ${new Date().getFullYear()} Regen Studio &middot; Innovations that regenerate</p>
+          ${isExternal ? '<p style="margin:8px 0 0;font-size:11px;color:#9B9B9B">Learn how we handle your data in our <a href="https://www.regenstudio.world/privacy.html" style="color:#5781A1;text-decoration:underline">Privacy Policy</a></p>' : ''}
         </td></tr>
 
       </table>
