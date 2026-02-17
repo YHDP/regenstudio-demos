@@ -18,7 +18,7 @@ function getCorsHeaders(req: Request) {
   };
 }
 
-const RESEND_API_URL = "https://api.resend.com/emails";
+const LETTERMINT_API_URL = "https://api.lettermint.co/v1/send";
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -76,9 +76,9 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Send emails via Resend
-    const resendApiKey = Deno.env.get("RESEND_API_KEY");
-    if (resendApiKey) {
+    // Send emails via Lettermint
+    const lettermintToken = Deno.env.get("LETTERMINT_API_TOKEN");
+    if (lettermintToken) {
       const fromAddress = "Regen Studio <noreply@regenstudio.space>";
       const displayName = name || "there";
       const timestamp = new Date().toISOString();
@@ -89,16 +89,21 @@ Deno.serve(async (req) => {
       });
 
       const demoLabel = demo_id ? demo_id.replace(/-/g, " ") : "our demo";
-      const sourceLabel = source === "demo_access_request" ? "Demo Access Request" : "Contact Form";
+      const isDppGate = source === "dpp_gate";
       const isAccessRequest = source === "demo_access_request";
+      const sourceLabel = isAccessRequest ? "Demo Access Request" : isDppGate ? "DPP Product Overview Unlock" : "Contact Form";
 
       // --- Confirmation email to visitor ---
       const confirmationSubject = isAccessRequest
         ? "Demo access request received — Regen Studio"
+        : isDppGate
+        ? "Your DPP product overview is unlocked — Regen Studio"
         : "Thanks for reaching out — Regen Studio";
 
       const confirmationBody = isAccessRequest
         ? `Hi ${displayName},\n\nWe've received your request for access to ${demoLabel}. We'll review it and get back to you shortly.\n\n---\n\nAbout Regen Studio\nWe pioneer systemic innovations at the intersection of technology, society, and nature — helping organizations create positive impact through new solutions.\n\nOur focus: Energy Transition, Circular Economy, Digital Society, Liveable Cities, Resilient Nature\n\nWebsite: https://www.regenstudio.space\nDemos: https://demos.regenstudio.space\nBlog: https://www.regenstudio.space/blog.html\n\nBest regards,\nThe Regen Studio team`
+        : isDppGate
+        ? `Hi ${displayName},\n\nThank you for sharing your email address with us to unlock all product group information surrounding Digital Product Passports.\n\nYou now have access to our full regulatory tracker with 33 product groups, DPP obligation dates, status indicators, and links to the source legislation.\n\nIf this was valuable to you, we'd love to know. Reach out to us at info@regenstudio.world.\n\nExplore more:\n- DPP Product Overview: https://www.regenstudio.world/dpp.html\n- Our Demos: https://demos.regenstudio.space\n- Blog: https://www.regenstudio.world/blog.html\n\nBest regards,\nThe Regen Studio team`
         : `Hi ${displayName},\n\nThank you for reaching out. We received your message and will get back to you as soon as possible.\n\n---\n\nAbout Regen Studio\nWe pioneer systemic innovations at the intersection of technology, society, and nature — helping organizations create positive impact through new solutions.\n\nOur focus: Energy Transition, Circular Economy, Digital Society, Liveable Cities, Resilient Nature\n\nWebsite: https://www.regenstudio.space\nDemos: https://demos.regenstudio.space\nBlog: https://www.regenstudio.space/blog.html\n\nBest regards,\nThe Regen Studio team`;
 
       const aboutSection = `
@@ -121,11 +126,22 @@ Deno.serve(async (req) => {
              </div>
            </div>`;
 
+      const dppContent = `<p style="margin:0 0 16px">Hi ${displayName},</p>
+           <p style="margin:0 0 16px">Thank you for sharing your email address with us to unlock all product group information surrounding <strong>Digital Product Passports</strong>.</p>
+           <p style="margin:0 0 16px">You now have access to our full regulatory tracker with <strong>33 product groups</strong>, DPP obligation dates, status indicators, and links to the source legislation.</p>
+           <p style="margin:0 0 16px">If this was valuable to you, we'd love to know. Reach out to us at <a href="mailto:info@regenstudio.world" style="color:#00914B;text-decoration:none;font-weight:600">info@regenstudio.world</a>.</p>
+           <div style="text-align:center;margin:24px 0 8px">
+             <a href="https://www.regenstudio.world/dpp.html#dpp-products" style="display:inline-block;background:#00914B;color:white;padding:12px 28px;border-radius:99px;font-size:14px;font-weight:600;text-decoration:none">View DPP Product Overview</a>
+           </div>
+           ${aboutSection}`;
+
       const confirmationContent = isAccessRequest
         ? `<p style="margin:0 0 16px">Hi ${displayName},</p>
            <p style="margin:0 0 16px">We've received your request for access to <strong>${demoLabel}</strong>.</p>
            <p style="margin:0 0 0">We'll review it and get back to you shortly.</p>
            ${aboutSection}`
+        : isDppGate
+        ? dppContent
         : `<p style="margin:0 0 16px">Hi ${displayName},</p>
            <p style="margin:0 0 0">Thank you for reaching out. We received your message and will get back to you as soon as possible.</p>
            ${aboutSection}`;
@@ -159,7 +175,7 @@ Deno.serve(async (req) => {
 
       const notifContent = `
         <div style="margin-bottom:24px">
-          <span style="display:inline-block;background:${isAccessRequest ? "#009BBB" : "#00914B"};color:white;padding:4px 14px;border-radius:99px;font-size:12px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase">${sourceLabel}</span>
+          <span style="display:inline-block;background:${isAccessRequest ? "#009BBB" : isDppGate ? "#E5A100" : "#00914B"};color:white;padding:4px 14px;border-radius:99px;font-size:12px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase">${sourceLabel}</span>
         </div>
         <table style="width:100%;border-collapse:collapse;margin-bottom:24px">
           ${rows.map(([k, v]) => `
@@ -177,10 +193,10 @@ Deno.serve(async (req) => {
 
       // Fire both emails in parallel
       const emailPromises = [
-        fetch(RESEND_API_URL, {
+        fetch(LETTERMINT_API_URL, {
           method: "POST",
           headers: {
-            Authorization: `Bearer ${resendApiKey}`,
+            "x-lettermint-token": lettermintToken,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
@@ -191,10 +207,10 @@ Deno.serve(async (req) => {
             html: confirmationHtml,
           }),
         }),
-        fetch(RESEND_API_URL, {
+        fetch(LETTERMINT_API_URL, {
           method: "POST",
           headers: {
-            Authorization: `Bearer ${resendApiKey}`,
+            "x-lettermint-token": lettermintToken,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
@@ -213,11 +229,11 @@ Deno.serve(async (req) => {
           console.error("Email send error:", result.reason);
         } else if (!result.value.ok) {
           const errBody = await result.value.text();
-          console.error("Resend API error:", result.value.status, errBody);
+          console.error("Lettermint API error:", result.value.status, errBody);
         }
       }
     } else {
-      console.warn("RESEND_API_KEY not set — skipping emails");
+      console.warn("LETTERMINT_API_TOKEN not set — skipping emails");
     }
 
     return new Response(JSON.stringify({ success: true }), {
