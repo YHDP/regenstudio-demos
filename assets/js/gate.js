@@ -109,6 +109,7 @@ function initAccessForm(config) {
     const formData = new FormData(form);
 
     try {
+      const nlCheckbox = form.querySelector('input[name="newsletter_opt_in"]');
       const res = await fetch(EDGE_FUNCTION_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -119,6 +120,7 @@ function initAccessForm(config) {
           source: 'demo_access_request',
           demo_id: config.demoId,
           page_url: window.location.href,
+          newsletter_opt_in: nlCheckbox ? nlCheckbox.checked : false,
         }),
       });
 

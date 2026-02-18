@@ -111,6 +111,7 @@ function initContactForm() {
     const formData = new FormData(form);
 
     try {
+      const nlCheckbox = form.querySelector('input[name="newsletter_opt_in"]');
       const res = await fetch(EDGE_FUNCTION_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -120,6 +121,7 @@ function initContactForm() {
           message: formData.get('message'),
           source: 'contact_form',
           page_url: window.location.href,
+          newsletter_opt_in: nlCheckbox ? nlCheckbox.checked : false,
         }),
       });
 
