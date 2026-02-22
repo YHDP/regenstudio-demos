@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPR DPP Tracker — Regen Studio</title>
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tracker.css">
+</head>
+<body>
+  <script src="js/guard.js"></script>
+
+  <!-- Header -->
+  <div class="tracker-header">
+    <h1 class="tracker-header__title">CPR DPP Tracker</h1>
+    <p class="tracker-header__subtitle">Construction Products Regulation — Digital Product Passport Timeline</p>
+    <p class="tracker-header__meta" id="trackerMeta">Loading...</p>
+  </div>
+
+  <!-- Disclaimer banner -->
+  <div class="tracker-disclaimer">
+    <strong>IMPORTANT INFORMATION</strong> — This tracker has not been independently verified by legal and regulatory experts and is solely for demo purposes only. Do not rely only on this information for key decision making and verify with others before using.
+  </div>
+
+  <!-- Grid -->
+  <div class="tracker-container">
+    <div class="cpr-grid" id="trackerGrid" role="list" aria-label="All 37 product families ordered by estimated DPP obligation date"></div>
+  </div>
+
+  <!-- Modal -->
+  <div class="cpr-modal" id="cprModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="cpr-modal__backdrop"></div>
+    <div class="cpr-modal__card">
+      <button class="cpr-modal__close" aria-label="Close">&times;</button>
+      <div class="cpr-modal__header">
+        <div class="cpr-modal__icon"><img src="" alt=""></div>
+        <div class="cpr-modal__header-text">
+          <h3 class="cpr-modal__title"></h3>
+          <p class="cpr-modal__subtitle"></p>
+        </div>
+      </div>
+      <div class="cpr-modal__tags"></div>
+      <div class="cpr-modal__updated"></div>
+      <div class="cpr-modal__intro"></div>
+      <div class="cpr-modal__dpp-box"></div>
+      <div class="cpr-modal__standards" style="display:none;">
+        <div class="cpr-modal__section-title">Per-standard DPP timeline</div>
+        <div class="cpr-modal__stds-content"></div>
+      </div>
+      <div class="cpr-modal__annex"></div>
+      <div class="cpr-modal__body"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="tracker-footer">
+    <p>&copy; 2025 <a href="https://www.regenstudio.world">Regen Studio</a> &middot; <a href="https://www.regenstudio.world/blog.html">Blog</a> &middot; <a href="../">Demos</a> &middot; <a href="dashboard.html">Data Dashboard</a></p>
+  </footer>
+
+  <script src="js/dpp-info.js"></script>
+  <script src="js/tracker.js"></script>
+</body>
+</html>

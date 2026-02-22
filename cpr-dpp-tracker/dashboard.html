@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Integrity Dashboard — CPR DPP Tracker</title>
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #00914B;
+      --color-teal: #009BBB;
+      --color-text: #1a1a1a;
+      --color-text-secondary: #6b7280;
+      --color-bg: #f8fafc;
+      --color-bg-card: #fff;
+      --color-border: #e5e7eb;
+      --color-red: #DC2626;
+      --color-yellow: #F59E0B;
+      --color-green: #16A34A;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 0;
+      font-family: var(--font-body);
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header */
+    .dash-header {
+      background: linear-gradient(135deg, #243644 0%, #1B2833 100%);
+      color: #fff; padding: 28px 24px 20px; text-align: center;
+    }
+    .dash-header h1 { font-size: 1.5rem; font-weight: 700; margin: 0 0 4px; }
+    .dash-header p { font-size: 0.85rem; color: #8CA9BF; margin: 0; }
+
+    /* Container */
+    .dash-container { max-width: 1300px; margin: 0 auto; padding: 24px 20px 60px; }
+
+    /* Summary cards */
+    .summary-row {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+      margin-bottom: 28px;
+    }
+    .summary-card {
+      background: var(--color-bg-card); border-radius: 10px; padding: 18px 16px;
+      border: 1px solid var(--color-border); text-align: center;
+    }
+    .summary-card__value {
+      font-size: 2rem; font-weight: 700; line-height: 1.1; margin-bottom: 4px;
+    }
+    .summary-card__label {
+      font-size: 0.72rem; font-weight: 500; color: var(--color-text-secondary);
+      text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .summary-card--green .summary-card__value { color: var(--color-green); }
+    .summary-card--red .summary-card__value { color: var(--color-red); }
+    .summary-card--teal .summary-card__value { color: var(--color-teal); }
+
+    /* Section headings */
+    .section-title {
+      font-size: 1rem; font-weight: 700; margin: 28px 0 12px;
+      padding-bottom: 6px; border-bottom: 2px solid var(--color-border);
+    }
+
+    /* Heatmap */
+    .heatmap-wrap { overflow-x: auto; margin-bottom: 28px; }
+    .heatmap {
+      border-collapse: collapse; font-size: 0.62rem; width: 100%;
+      min-width: 900px;
+    }
+    .heatmap th {
+      padding: 5px 4px; font-weight: 600; color: #5A7080;
+      text-transform: uppercase; letter-spacing: 0.03em;
+      border-bottom: 2px solid var(--color-border);
+      position: sticky; top: 0; background: var(--color-bg);
+      white-space: nowrap; font-size: 0.56rem;
+    }
+    .heatmap th:first-child { text-align: left; min-width: 50px; }
+    .heatmap td { padding: 3px 4px; text-align: center; border-bottom: 1px solid #f0f0f0; }
+    .heatmap td:first-child {
+      text-align: left; font-weight: 600; color: var(--color-text);
+      white-space: nowrap;
+    }
+    .hm-green { background: #DCFCE7; color: #166534; }
+    .hm-yellow { background: #FEF9C3; color: #854D0E; }
+    .hm-red { background: #FEE2E2; color: #991B1B; }
+
+    /* Count integrity table */
+    .integrity-wrap { overflow-x: auto; margin-bottom: 28px; }
+    .integrity-table {
+      border-collapse: collapse; font-size: 0.75rem; width: 100%;
+    }
+    .integrity-table th {
+      padding: 8px 10px; font-weight: 600; color: #5A7080;
+      text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.65rem;
+      border-bottom: 2px solid var(--color-border); text-align: left;
+      cursor: pointer; user-select: none; white-space: nowrap;
+      position: sticky; top: 0; background: var(--color-bg);
+    }
+    .integrity-table th:hover { color: var(--color-teal); }
+    .integrity-table th .sort-arrow { font-size: 0.55rem; margin-left: 3px; opacity: 0.4; }
+    .integrity-table th.sorted .sort-arrow { opacity: 1; color: var(--color-teal); }
+    .integrity-table td {
+      padding: 7px 10px; border-bottom: 1px solid #f0f0f0; vertical-align: middle;
+    }
+    .integrity-table tr:hover td { background: #F1F5F9; }
+    .integrity-table tr.row-mismatch td:first-child { border-left: 3px solid var(--color-red); }
+    .cell-mismatch { background: #FEE2E2; color: #991B1B; font-weight: 600; }
+    .cell-ok { color: var(--color-green); }
+    .cell-na { color: #aaa; font-style: italic; }
+    .expand-btn {
+      background: none; border: 1px solid var(--color-border); border-radius: 4px;
+      cursor: pointer; font-size: 0.65rem; padding: 2px 8px; color: var(--color-teal);
+      font-weight: 600;
+    }
+    .expand-btn:hover { background: var(--color-teal); color: #fff; }
+
+    /* Explanation box */
+    .section-explain {
+      background: var(--color-bg-card); border: 1px solid var(--color-border);
+      border-radius: 8px; padding: 14px 16px; margin-bottom: 16px;
+      font-size: 0.76rem; line-height: 1.65; color: var(--color-text-secondary);
+    }
+    .section-explain strong { color: var(--color-text); }
+    .section-explain code {
+      background: #F1F5F9; padding: 1px 5px; border-radius: 3px;
+      font-size: 0.7rem; color: #334155;
+    }
+    .section-explain ul { margin: 6px 0 0; padding-left: 18px; }
+    .section-explain li { margin-bottom: 2px; }
+
+    /* Detail expander */
+    .detail-row td { padding: 0 !important; border-bottom: 1px solid var(--color-border); }
+    .detail-inner { padding: 16px; background: #F8FAFB; }
+    .detail-inner h4 {
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.04em; color: #5A7080; margin: 0 0 8px;
+    }
+    .detail-inner h4:not(:first-child) { margin-top: 16px; }
+    .std-table {
+      border-collapse: collapse; font-size: 0.7rem; width: 100%;
+      margin-bottom: 8px;
+    }
+    .std-table th {
+      padding: 5px 8px; font-weight: 600; color: #5A7080; font-size: 0.6rem;
+      text-transform: uppercase; letter-spacing: 0.04em; text-align: left;
+      border-bottom: 2px solid var(--color-border); background: #F1F5F9;
+    }
+    .std-table td {
+      padding: 5px 8px; border-bottom: 1px solid #E5E7EB; vertical-align: top;
+    }
+    .std-table tr:last-child td { border-bottom: none; }
+    .std-type-hen { color: var(--color-teal); font-weight: 600; }
+    .std-type-ead { color: var(--color-primary); font-weight: 600; }
+    .std-cited-yes { color: var(--color-green); font-weight: 600; }
+    .std-cited-no { color: var(--color-red); }
+    .detail-none { font-size: 0.72rem; color: #9CA3AF; font-style: italic; padding: 4px 0; }
+    .json-toggle {
+      background: none; border: 1px solid var(--color-border); border-radius: 4px;
+      cursor: pointer; font-size: 0.62rem; padding: 3px 10px; color: #5A7080;
+      font-weight: 600; margin-top: 12px;
+    }
+    .json-toggle:hover { background: #E5E7EB; }
+    .detail-pre {
+      margin: 8px 0 0; padding: 14px 16px; background: #1B2833; color: #CDE8F5;
+      font-size: 0.68rem; line-height: 1.55; overflow-x: auto;
+      max-height: 400px; overflow-y: auto; border-radius: 6px;
+    }
+
+    /* Footer */
+    .dash-footer {
+      text-align: center; padding: 20px; font-size: 0.72rem;
+      color: var(--color-text-secondary); border-top: 1px solid var(--color-border);
+    }
+    .dash-footer a { color: var(--color-primary); text-decoration: none; }
+    .dash-footer a:hover { text-decoration: underline; }
+
+    /* Loading state */
+    .loading { text-align: center; padding: 60px 20px; color: var(--color-text-secondary); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .summary-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .summary-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dash-header">
+    <h1>Data Integrity Dashboard</h1>
+    <p>CPR DPP Tracker — families.json diagnostic view</p>
+  </div>
+
+  <div class="dash-container">
+    <div class="loading" id="loading">Loading families.json&hellip;</div>
+
+    <!-- Summary cards -->
+    <div class="summary-row" id="summaryRow" style="display:none;"></div>
+
+    <!-- Heatmap -->
+    <h2 class="section-title" id="heatmapTitle" style="display:none;">Field Completeness Heatmap</h2>
+    <div class="heatmap-wrap" id="heatmapWrap" style="display:none;"></div>
+
+    <!-- Count integrity -->
+    <h2 class="section-title" id="integrityTitle" style="display:none;">Count Integrity</h2>
+    <div class="section-explain" id="integrityExplain" style="display:none;">
+      <strong>What this table checks:</strong> Each family stores hEN/EAD counts in <strong>three places</strong> that should agree:
+      <ul>
+        <li><strong>Actual</strong> — counted by iterating <code>standards.standards[]</code> and filtering by <code>type: "hEN"</code> or <code>type: "EAD"</code>. This is the ground truth.</li>
+        <li><strong>Range</strong> — the value in <code>dpp-range.hen_count</code> / <code>dpp-range.ead_count</code>. Used by the tracker to display DPP range info.</li>
+        <li><strong>Summary</strong> — the value in <code>standards.summary.hen_count</code> / <code>standards.summary.ead_count</code>. A convenience field in the standards block.</li>
+      </ul>
+      A <strong style="color:var(--color-red);">red cell</strong> means a value disagrees with the <em>Actual</em> count. This typically happens when standards are added or removed from the <code>standards[]</code> array but the numeric counts in <code>dpp-range</code> or <code>summary</code> are not updated to match. Click a row to see all individual standards.
+    </div>
+    <div class="integrity-wrap" id="integrityWrap" style="display:none;"></div>
+  </div>
+
+  <footer class="dash-footer">
+    <p>&larr; <a href="index.html">Back to Tracker</a> &middot; &copy; 2025 <a href="https://www.regenstudio.world">Regen Studio</a></p>
+  </footer>
+
+  <script>
+  (function() {
+    'use strict';
+
+    const ALL_KEYS = [
+      'full-name','letter','family','priority','updated','acquis','sreq',
+      'tc','dpp-est','milestones','dpp-range','standards','info',
+      'icon','display_name','family_label','tc_label'
+    ];
+
+    let families = [];
+    let sortCol = null;
+    let sortAsc = true;
+
+    // --- Helpers ---
+
+    function isEmpty(val) {
+      if (val === null || val === undefined) return true;
+      if (typeof val === 'string' && val.trim() === '') return true;
+      if (typeof val === 'object' && Object.keys(val).length === 0) return true;
+      return false;
+    }
+
+    function countActual(fam, type) {
+      if (!fam.standards || !fam.standards.standards) return null;
+      return fam.standards.standards.filter(s => s.type === type).length;
+    }
+
+    function countClaimed(fam, type) {
+      const key = type === 'hEN' ? 'hen_count' : 'ead_count';
+      if (!fam['dpp-range']) return null;
+      return fam['dpp-range'][key];
+    }
+
+    function countSummary(fam, type) {
+      const key = type === 'hEN' ? 'hen_count' : 'ead_count';
+      if (!fam.standards || !fam.standards.summary) return null;
+      return fam.standards.summary[key];
+    }
+
+    function hasMismatch(fam) {
+      const actualHen = countActual(fam, 'hEN');
+      const claimedHen = countClaimed(fam, 'hEN');
+      const summaryHen = countSummary(fam, 'hEN');
+      const actualEad = countActual(fam, 'EAD');
+      const claimedEad = countClaimed(fam, 'EAD');
+      const summaryEad = countSummary(fam, 'EAD');
+
+      if (actualHen !== null) {
+        if (claimedHen !== null && actualHen !== claimedHen) return true;
+        if (summaryHen !== null && actualHen !== summaryHen) return true;
+      }
+      if (actualEad !== null) {
+        if (claimedEad !== null && actualEad !== claimedEad) return true;
+        if (summaryEad !== null && actualEad !== summaryEad) return true;
+      }
+      return false;
+    }
+
+    function countMissingFields(fam) {
+      let missing = 0;
+      ALL_KEYS.forEach(k => { if (!(k in fam)) missing++; });
+      return missing;
+    }
+
+    function fmt(val) {
+      if (val === null || val === undefined) return '<span class="cell-na">n/a</span>';
+      return String(val);
+    }
+
+    // --- Render summary cards ---
+
+    function renderSummary() {
+      const total = families.length;
+      let totalStandards = 0;
+      families.forEach(f => {
+        if (f.standards && f.standards.standards) totalStandards += f.standards.standards.length;
+      });
+      const mismatches = families.filter(hasMismatch).length;
+      const missingAny = families.filter(f => ALL_KEYS.some(k => !(k in f))).length;
+
+      const el = document.getElementById('summaryRow');
+      el.innerHTML = `
+        <div class="summary-card summary-card--teal">
+          <div class="summary-card__value">${total}</div>
+          <div class="summary-card__label">Product Families</div>
+        </div>
+        <div class="summary-card summary-card--teal">
+          <div class="summary-card__value">${totalStandards}</div>
+          <div class="summary-card__label">Total Standards</div>
+        </div>
+        <div class="summary-card ${mismatches > 0 ? 'summary-card--red' : 'summary-card--green'}">
+          <div class="summary-card__value">${mismatches}</div>
+          <div class="summary-card__label">Count Mismatches</div>
+        </div>
+        <div class="summary-card ${missingAny > 0 ? 'summary-card--red' : 'summary-card--green'}">
+          <div class="summary-card__value">${missingAny}</div>
+          <div class="summary-card__label">Missing Fields</div>
+        </div>
+      `;
+      el.style.display = '';
+    }
+
+    // --- Render heatmap ---
+
+    function renderHeatmap() {
+      let html = '<table class="heatmap"><thead><tr><th>Family</th>';
+      ALL_KEYS.forEach(k => { html += `<th>${k}</th>`; });
+      html += '</tr></thead><tbody>';
+
+      families.forEach(f => {
+        html += `<tr><td>${f.letter || '?'}</td>`;
+        ALL_KEYS.forEach(k => {
+          if (!(k in f)) {
+            html += '<td class="hm-red" title="missing">&times;</td>';
+          } else if (isEmpty(f[k])) {
+            html += '<td class="hm-yellow" title="empty">&ndash;</td>';
+          } else {
+            html += '<td class="hm-green" title="present">&check;</td>';
+          }
+        });
+        html += '</tr>';
+      });
+
+      html += '</tbody></table>';
+      document.getElementById('heatmapWrap').innerHTML = html;
+      document.getElementById('heatmapTitle').style.display = '';
+      document.getElementById('heatmapWrap').style.display = '';
+    }
+
+    // --- Render count integrity table ---
+
+    function buildRows() {
+      return families.map((f, i) => ({
+        idx: i,
+        letter: f.letter || '',
+        name: f['display_name'] || f['full-name'] || '',
+        actualHen: countActual(f, 'hEN'),
+        claimedHen: countClaimed(f, 'hEN'),
+        summaryHen: countSummary(f, 'hEN'),
+        actualEad: countActual(f, 'EAD'),
+        claimedEad: countClaimed(f, 'EAD'),
+        summaryEad: countSummary(f, 'EAD'),
+        mismatch: hasMismatch(f)
+      }));
+    }
+
+    const COL_DEFS = [
+      { key: 'letter',     label: 'Letter' },
+      { key: 'name',       label: 'Name' },
+      { key: 'actualHen',  label: 'Actual hEN' },
+      { key: 'claimedHen', label: 'Range hEN' },
+      { key: 'summaryHen', label: 'Summary hEN' },
+      { key: 'actualEad',  label: 'Actual EAD' },
+      { key: 'claimedEad', label: 'Range EAD' },
+      { key: 'summaryEad', label: 'Summary EAD' },
+    ];
+
+    function sortRows(rows, col, asc) {
+      return rows.slice().sort((a, b) => {
+        let va = a[col], vb = b[col];
+        if (va === null && vb === null) return 0;
+        if (va === null) return 1;
+        if (vb === null) return -1;
+        if (typeof va === 'string') {
+          return asc ? va.localeCompare(vb) : vb.localeCompare(va);
+        }
+        return asc ? va - vb : vb - va;
+      });
+    }
+
+    function renderIntegrity() {
+      let rows = buildRows();
+      if (sortCol) rows = sortRows(rows, sortCol, sortAsc);
+
+      let html = '<table class="integrity-table"><thead><tr>';
+      COL_DEFS.forEach(c => {
+        const isSorted = sortCol === c.key;
+        const arrow = isSorted ? (sortAsc ? '&#9650;' : '&#9660;') : '&#9650;';
+        html += `<th class="${isSorted ? 'sorted' : ''}" data-col="${c.key}">${c.label}<span class="sort-arrow">${arrow}</span></th>`;
+      });
+      html += '<th>Detail</th></tr></thead><tbody>';
+
+      rows.forEach(r => {
+        const mismatchCls = r.mismatch ? ' row-mismatch' : '';
+        html += `<tr class="data-row${mismatchCls}" data-idx="${r.idx}">`;
+
+        // Letter
+        html += `<td>${r.letter}</td>`;
+        // Name
+        html += `<td>${r.name}</td>`;
+
+        // hEN columns
+        const henMismatch = r.actualHen !== null && (
+          (r.claimedHen !== null && r.actualHen !== r.claimedHen) ||
+          (r.summaryHen !== null && r.actualHen !== r.summaryHen)
+        );
+        html += `<td class="${henMismatch ? 'cell-mismatch' : 'cell-ok'}">${fmt(r.actualHen)}</td>`;
+        html += `<td class="${r.claimedHen !== null && r.actualHen !== null && r.claimedHen !== r.actualHen ? 'cell-mismatch' : ''}">${fmt(r.claimedHen)}</td>`;
+        html += `<td class="${r.summaryHen !== null && r.actualHen !== null && r.summaryHen !== r.actualHen ? 'cell-mismatch' : ''}">${fmt(r.summaryHen)}</td>`;
+
+        // EAD columns
+        const eadMismatch = r.actualEad !== null && (
+          (r.claimedEad !== null && r.actualEad !== r.claimedEad) ||
+          (r.summaryEad !== null && r.actualEad !== r.summaryEad)
+        );
+        html += `<td class="${eadMismatch ? 'cell-mismatch' : 'cell-ok'}">${fmt(r.actualEad)}</td>`;
+        html += `<td class="${r.claimedEad !== null && r.actualEad !== null && r.claimedEad !== r.actualEad ? 'cell-mismatch' : ''}">${fmt(r.claimedEad)}</td>`;
+        html += `<td class="${r.summaryEad !== null && r.actualEad !== null && r.summaryEad !== r.actualEad ? 'cell-mismatch' : ''}">${fmt(r.summaryEad)}</td>`;
+
+        // Expand button
+        html += `<td><button class="expand-btn" data-idx="${r.idx}">${r.actualHen !== null || r.actualEad !== null ? 'Standards' : 'Detail'}</button></td>`;
+        html += '</tr>';
+
+        // Hidden detail row
+        html += `<tr class="detail-row" id="detail-${r.idx}" style="display:none;"><td colspan="${COL_DEFS.length + 1}"><div class="detail-inner" id="detail-inner-${r.idx}"></div></td></tr>`;
+      });
+
+      html += '</tbody></table>';
+
+      const wrap = document.getElementById('integrityWrap');
+      wrap.innerHTML = html;
+      document.getElementById('integrityTitle').style.display = '';
+      document.getElementById('integrityExplain').style.display = '';
+      wrap.style.display = '';
+
+      // Sort handlers
+      wrap.querySelectorAll('th[data-col]').forEach(th => {
+        th.addEventListener('click', () => {
+          const col = th.dataset.col;
+          if (sortCol === col) { sortAsc = !sortAsc; }
+          else { sortCol = col; sortAsc = true; }
+          renderIntegrity();
+        });
+      });
+
+      // Expand handlers — button and row click
+      wrap.querySelectorAll('.expand-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggleDetail(parseInt(btn.dataset.idx));
+        });
+      });
+      wrap.querySelectorAll('.data-row').forEach(tr => {
+        tr.style.cursor = 'pointer';
+        tr.addEventListener('click', () => {
+          toggleDetail(parseInt(tr.dataset.idx));
+        });
+      });
+    }
+
+    function escHtml(s) {
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    function renderStandardsTable(stds, type) {
+      const filtered = stds.filter(s => s.type === type);
+      if (filtered.length === 0) return `<p class="detail-none">No ${type} entries</p>`;
+      let html = '<table class="std-table"><thead><tr>';
+      html += '<th>#</th><th>ID</th><th>Name</th><th>AVCP</th><th>DPP Est.</th><th>Cited</th><th>Notes</th>';
+      html += '</tr></thead><tbody>';
+      filtered.forEach((s, i) => {
+        const typeCls = type === 'hEN' ? 'std-type-hen' : 'std-type-ead';
+        const citedHtml = s.cited === true
+          ? '<span class="std-cited-yes">Yes</span>'
+          : s.cited === false
+            ? '<span class="std-cited-no">No</span>'
+            : '<span class="cell-na">n/a</span>';
+        html += '<tr>';
+        html += `<td>${i + 1}</td>`;
+        html += `<td class="${typeCls}">${escHtml(s.id || '')}</td>`;
+        html += `<td>${escHtml(s.name || '')}</td>`;
+        html += `<td>${escHtml(s.avcp || '')}</td>`;
+        html += `<td>${escHtml(s.dpp_est || '')}</td>`;
+        html += `<td>${citedHtml}</td>`;
+        html += `<td style="max-width:300px;font-size:0.65rem;color:#6b7280;">${escHtml(s.notes || '')}</td>`;
+        html += '</tr>';
+      });
+      html += '</tbody></table>';
+      return html;
+    }
+
+    function toggleDetail(idx) {
+      const row = document.getElementById('detail-' + idx);
+      if (!row) return;
+      const visible = row.style.display !== 'none';
+      if (visible) {
+        row.style.display = 'none';
+        return;
+      }
+
+      const inner = document.getElementById('detail-inner-' + idx);
+      const fam = families[idx];
+      const stds = (fam.standards && fam.standards.standards) || [];
+      const henCount = stds.filter(s => s.type === 'hEN').length;
+      const eadCount = stds.filter(s => s.type === 'EAD').length;
+
+      let html = '';
+
+      // hEN listing
+      html += `<h4>hEN Standards (${henCount})</h4>`;
+      html += renderStandardsTable(stds, 'hEN');
+
+      // EAD listing
+      html += `<h4>EAD Standards (${eadCount})</h4>`;
+      html += renderStandardsTable(stds, 'EAD');
+
+      if (stds.length === 0) {
+        html = '<p class="detail-none">No standards object — this family has no standards.standards[] array.</p>';
+      }
+
+      // JSON toggle
+      html += `<button class="json-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'':'none'">Toggle raw JSON</button>`;
+      html += `<pre class="detail-pre" style="display:none;"></pre>`;
+
+      inner.innerHTML = html;
+      inner.querySelector('.detail-pre').textContent = JSON.stringify(fam, null, 2);
+      row.style.display = '';
+    }
+
+    // --- Init ---
+
+    fetch('data/families.json')
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(data => {
+        families = data;
+        document.getElementById('loading').style.display = 'none';
+        renderSummary();
+        renderHeatmap();
+        renderIntegrity();
+      })
+      .catch(err => {
+        document.getElementById('loading').innerHTML =
+          '<strong style="color:#DC2626;">Failed to load families.json</strong><br>' + err.message;
+      });
+  })();
+  </script>
+
+</body>
+</html>

@@ -46,6 +46,17 @@
       "accentColor": "#00914B",
       "path": "/battery-questionnaire/",
       "public": true
+    },
+    {
+      "id": "cpr-dpp-tracker",
+      "name": "CPR DPP Tracker",
+      "subtitle": "Construction Products Regulation Compliance",
+      "description": "Interactive tracker for all 37 CPR product families showing harmonised standard progress, EAD pipelines, and estimated Digital Product Passport obligation dates under Regulation (EU) 2024/3110.",
+      "category": "Circular Economy",
+      "tags": ["CPR", "Digital Product Passport", "Regulatory", "Construction"],
+      "preview": "assets/images/previews/cpr-dpp-tracker.svg",
+      "accentColor": "#009BBB",
+      "path": "/cpr-dpp-tracker/"
     }
   ]
 }
