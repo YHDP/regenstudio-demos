@@ -126,7 +126,7 @@ Deno.serve(async (req) => {
     // Send email via Lettermint
     const lettermintToken = Deno.env.get("LETTERMINT_API_TOKEN");
     if (lettermintToken) {
-      const fromAddress = "Regen Studio <noreply@regenstudio.world>";
+      const fromAddress = "Regen Studio <noreply@regenstudio.space>";
 
       const textBody = `Hi,\n\nHere's your access link for the ${demo.name} demo:\n\n${magicLink}\n\nThis link expires in 15 minutes and can only be used once.\n\n— Regen Studio\nwww.regenstudio.world`;
 
