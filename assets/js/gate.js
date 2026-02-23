@@ -1,67 +1,121 @@
-// Password gate — client-side SHA-256 check with sessionStorage
+// Magic link gate — email-based access with 24h localStorage sessions
 
-const EDGE_FUNCTION_URL = 'https://uemspezaqxmkhenimwuf.supabase.co/functions/v1/contact-form';
+const SUPABASE_URL = 'https://uemspezaqxmkhenimwuf.supabase.co/functions/v1';
 
 (async function () {
   const config = window.DEMO_CONFIG;
   if (!config) return;
 
-  const storageKey = `demo_access_${config.demoId}`;
+  const sessionKey = `demo_session_${config.demoId}`;
 
-  // Already authenticated — redirect immediately
-  if (sessionStorage.getItem(storageKey) === 'granted') {
-    window.location.replace(config.demoPath);
+  // --- 1. Check for ?token= in URL → validate magic link ---
+  const params = new URLSearchParams(window.location.search);
+  const token = params.get('token');
+
+  if (token) {
+    // Show validating state
+    showMessage('Validating your access link...', false);
+    hideForm();
+
+    try {
+      const tokenHash = await sha256(token);
+      const res = await fetch(`${SUPABASE_URL}/validate-magic-link`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token_hash: tokenHash, demo_id: config.demoId }),
+      });
+
+      const data = await res.json();
+
+      if (data.valid) {
+        // Save 24h session
+        localStorage.setItem(sessionKey, JSON.stringify({
+          demo_id: config.demoId,
+          granted_at: Date.now(),
+        }));
+        // Clean URL and redirect
+        window.location.replace(config.demoPath);
+        return;
+      } else {
+        showMessage(data.error || 'Link expired or already used. Please request a new one.', true);
+      }
+    } catch {
+      showMessage('Something went wrong. Please try again.', true);
+    }
+    // Clean the token from URL without reload
+    window.history.replaceState({}, '', window.location.pathname);
     return;
   }
 
-  // Fetch password hash
-  let passwordHash = '';
+  // --- 2. Check localStorage for valid session ---
   try {
-    const res = await fetch('../demos.json');
-    const data = await res.json();
-    passwordHash = data.passwordHash;
-  } catch {
-    console.error('Could not load demo configuration.');
-  }
-
-  // Form elements
-  const form = document.getElementById('gate-form');
-  const input = document.getElementById('gate-password');
-  const errorEl = document.getElementById('gate-error');
-
-  // Auto-focus
-  if (input) input.focus();
-
-  // Submit handler
-  if (form) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const value = input.value;
-      if (!value) return;
-
-      const hash = await sha256(value);
-
-      if (hash === passwordHash) {
-        sessionStorage.setItem(storageKey, 'granted');
+    const raw = localStorage.getItem(sessionKey);
+    if (raw) {
+      const session = JSON.parse(raw);
+      const age = Date.now() - session.granted_at;
+      if (session.demo_id === config.demoId && age < 24 * 60 * 60 * 1000) {
         window.location.replace(config.demoPath);
-      } else {
-        errorEl.classList.add('visible');
-        input.classList.add('error');
-        input.value = '';
-        input.focus();
-        setTimeout(() => {
-          errorEl.classList.remove('visible');
-          input.classList.remove('error');
-        }, 3000);
+        return;
       }
-    });
-  }
+      // Expired — clean up
+      localStorage.removeItem(sessionKey);
+    }
+  } catch { /* invalid JSON — continue to show form */ }
 
-  // Access request form + copy buttons
-  initAccessForm(config);
+  // --- 3. Show email form ---
+  initEmailForm(config);
   initCopyButtons();
 })();
 
+// --- Email form handler ---
+function initEmailForm(config) {
+  const form = document.getElementById('gate-form');
+  if (!form) return;
+
+  const input = document.getElementById('gate-email');
+  if (input) input.focus();
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const emailInput = document.getElementById('gate-email');
+    const email = emailInput?.value?.trim();
+    if (!email) return;
+
+    const btn = form.querySelector('.gate-submit');
+    const existingError = form.querySelector('.contact-error');
+    if (existingError) existingError.remove();
+
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    try {
+      const res = await fetch(`${SUPABASE_URL}/send-magic-link`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, demo_id: config.demoId }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || 'Something went wrong');
+      }
+
+      // Show success message
+      form.style.display = 'none';
+      document.getElementById('gate-success').style.display = 'flex';
+    } catch (err) {
+      const errorEl = document.createElement('p');
+      errorEl.className = 'contact-error';
+      errorEl.textContent = err.message || 'Something went wrong. Please try again.';
+      form.appendChild(errorEl);
+      btn.disabled = false;
+      btn.textContent = 'Send Link';
+    }
+  });
+}
+
+// --- Copy-to-clipboard for email pill ---
 function initCopyButtons() {
   document.querySelectorAll('.copy-btn').forEach(btn => {
     btn.addEventListener('click', async (e) => {
@@ -92,54 +146,18 @@ function initCopyButtons() {
   });
 }
 
-function initAccessForm(config) {
-  const form = document.getElementById('access-form');
-  if (!form) return;
+// --- Helpers ---
+function showMessage(text, isError) {
+  const header = document.querySelector('.gate-header p');
+  if (header) {
+    header.textContent = text;
+    if (isError) header.style.color = '#E71846';
+  }
+}
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const btn = form.querySelector('.gate-submit');
-    const existingError = form.querySelector('.contact-error');
-    if (existingError) existingError.remove();
-
-    btn.disabled = true;
-    btn.textContent = 'Sending...';
-
-    const formData = new FormData(form);
-
-    try {
-      const nlCheckbox = form.querySelector('input[name="newsletter_opt_in"]');
-      const res = await fetch(EDGE_FUNCTION_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: formData.get('name'),
-          email: formData.get('email'),
-          organization: formData.get('organization'),
-          source: 'demo_access_request',
-          demo_id: config.demoId,
-          page_url: window.location.href,
-          newsletter_opt_in: nlCheckbox ? nlCheckbox.checked : false,
-        }),
-      });
-
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || 'Something went wrong');
-      }
-
-      form.style.display = 'none';
-      document.getElementById('access-success').style.display = 'flex';
-    } catch (err) {
-      const errorEl = document.createElement('p');
-      errorEl.className = 'contact-error';
-      errorEl.textContent = err.message || 'Something went wrong. Please try again.';
-      form.appendChild(errorEl);
-      btn.disabled = false;
-      btn.textContent = 'Request Access';
-    }
-  });
+function hideForm() {
+  const form = document.getElementById('gate-form');
+  if (form) form.style.display = 'none';
 }
 
 async function sha256(message) {

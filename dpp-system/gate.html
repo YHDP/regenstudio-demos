@@ -40,37 +40,25 @@
           </svg>
         </div>
         <h1>DPP System Demo</h1>
-        <p>This demonstration requires access credentials.</p>
+        <p>Enter your email to receive an access link.</p>
       </div>
 
       <form id="gate-form" class="gate-form">
-        <label for="gate-password">Password</label>
+        <label for="gate-email">Email address</label>
         <div class="gate-input-group">
-          <input type="password" id="gate-password" placeholder="Enter access password" autocomplete="off" required>
-          <button type="submit" class="gate-submit">Access</button>
+          <input type="email" id="gate-email" placeholder="you@example.com" autocomplete="email" required>
+          <button type="submit" class="gate-submit">Send Link</button>
         </div>
-        <p id="gate-error" class="gate-error">Incorrect password. Please try again or request access below.</p>
       </form>
 
-      <hr class="gate-divider">
+      <div id="gate-success" class="contact-success" style="display:none">
+        <p>Link sent! Check your inbox.</p>
+      </div>
 
-      <div class="gate-access">
-        <p>Request access to this demo:</p>
-        <form id="access-form" class="access-form">
-          <input type="text" name="name" placeholder="Your name" class="gate-input" required>
-          <input type="email" name="email" placeholder="Email address" class="gate-input" required>
-          <input type="text" name="organization" placeholder="Organization" class="gate-input">
-          <label class="gate-checkbox">
-            <input type="checkbox" name="newsletter_opt_in" value="1" checked>
-            <span>Keep me updated on Regen Studio news</span>
-          </label>
-          <button type="submit" class="gate-submit">Request Access</button>
-        </form>
-        <p class="contact-disclaimer">Your data is stored in the EU and not shared with third parties. <a href="../privacy.html">Privacy Policy</a></p>
-        <div id="access-success" class="contact-success" style="display:none">
-          <p>Request received! We'll get back to you shortly.</p>
-        </div>
-        <div class="cta-divider"><span>or email us directly</span></div>
+      <p class="contact-disclaimer">Your data is stored in the EU and not shared with third parties. <a href="../privacy.html">Privacy Policy</a></p>
+
+      <div class="cta-divider"><span>or email us directly</span></div>
+      <div style="text-align:center">
         <div class="email-pill">
           <span class="email-address">info@regenstudio.world</span>
           <button class="copy-btn" type="button" data-email="info@regenstudio.world">

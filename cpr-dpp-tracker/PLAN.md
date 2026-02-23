@@ -4,7 +4,7 @@
 
 ## Overview
 
-Standalone password-protected demo at `cpr-dpp-tracker/` within the `regenstudio-demos` repo (`demos.regenstudio.space`). Extracts the CPR compliance tracker from the blog at `regenstudio-website/Blogs/cpr-digital-product-passport/content.html` into a clean, single-source-of-truth architecture.
+Standalone password-protected demo at `cpr-dpp-tracker/` within the `regenstudio-demos` repo (`demos.regenstudio.world`). Extracts the CPR compliance tracker from the blog at `regenstudio-website/Blogs/cpr-digital-product-passport/content.html` into a clean, single-source-of-truth architecture.
 
 ## File structure
 
