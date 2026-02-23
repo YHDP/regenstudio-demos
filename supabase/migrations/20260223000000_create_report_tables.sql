@@ -40,7 +40,8 @@ CREATE TABLE report_orders (
   buyer_extra TEXT,
   buyer_postal TEXT,
   buyer_city TEXT,
-  buyer_country TEXT
+  buyer_country TEXT,
+  email_sent BOOLEAN DEFAULT FALSE
 );
 
 CREATE SEQUENCE report_invoice_seq START 1;

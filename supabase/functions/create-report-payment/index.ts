@@ -153,8 +153,8 @@ Deno.serve(async (req) => {
         page_url: `${baseUrl}/reports.html`,
       });
 
-      // Send emails (free order — no invoice needed, no BTW)
-      await sendEmails(email.toLowerCase(), report_type, family_letter, 0, discount_code, order.id, baseUrl);
+      // Internal notification only — buyer email deferred until PDF is generated client-side
+      await sendInternalNotification(email.toLowerCase(), report_type, family_letter, 0, discount_code, baseUrl);
 
       return new Response(
         JSON.stringify({ order_id: order.id, download_token: downloadToken }),
@@ -263,13 +263,12 @@ Deno.serve(async (req) => {
   }
 });
 
-async function sendEmails(
+async function sendInternalNotification(
   email: string,
   reportType: string,
   familyLetter: string | null,
   amountCents: number,
   discountCode: string | null,
-  orderId: string,
   baseUrl: string,
 ) {
   const lettermintToken = Deno.env.get("LETTERMINT_API_TOKEN");
@@ -281,19 +280,8 @@ async function sendEmails(
   const fromAddress = "Regen Studio <noreply@regenstudio.space>";
   const reportLabel = REPORT_LABELS[reportType];
   const familySuffix = familyLetter ? ` (${familyLetter})` : "";
-  const downloadUrl = `${baseUrl}/report-success.html?order_id=${orderId}`;
   const amountStr = amountCents === 0 ? "Free" : `EUR ${(amountCents / 100).toFixed(2)}`;
   const timeStr = new Date().toLocaleString("en-GB", { dateStyle: "long", timeStyle: "short", timeZone: "Europe/Amsterdam" });
-
-  const buyerText = `Hi,\n\nYour ${reportLabel}${familySuffix} report is ready.\n\nDownload: ${downloadUrl}\n\nThis download link is valid for 24 hours.\n\n— Regen Studio\nwww.regenstudio.world`;
-
-  const buyerHtml = emailLayout(`
-    <p style="margin:0 0 16px">Hi,</p>
-    <p style="margin:0 0 16px">Your <strong>${reportLabel}${familySuffix}</strong> report is ready.</p>
-    <div style="text-align:center;margin:24px 0">
-      <a href="${downloadUrl}" style="display:inline-block;background:#00914B;color:white;padding:14px 32px;border-radius:99px;font-size:15px;font-weight:600;text-decoration:none">Download Report &rarr;</a>
-    </div>
-    <p style="margin:0;font-size:13px;color:#5781A1;text-align:center">This download link is valid for 24 hours.</p>`);
 
   const notifText = `Report purchase\n\nEmail: ${email}\nReport: ${reportType}${familySuffix}\nAmount: ${amountStr}\nDiscount: ${discountCode || "none"}\nTime: ${timeStr}`;
 
@@ -324,19 +312,8 @@ async function sendEmails(
       </tr>
     </table>`, false);
 
-  const emailPromises = [
-    fetch(LETTERMINT_API_URL, {
-      method: "POST",
-      headers: { "x-lettermint-token": lettermintToken, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        from: fromAddress,
-        to: [email],
-        subject: `Your CPR Report — Regen Studio`,
-        text: buyerText,
-        html: buyerHtml,
-      }),
-    }),
-    fetch(LETTERMINT_API_URL, {
+  try {
+    const resp = await fetch(LETTERMINT_API_URL, {
       method: "POST",
       headers: { "x-lettermint-token": lettermintToken, "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -346,17 +323,10 @@ async function sendEmails(
         text: notifText,
         html: notifHtml,
       }),
-    }),
-  ];
-
-  const results = await Promise.allSettled(emailPromises);
-  for (const result of results) {
-    if (result.status === "rejected") {
-      console.error("Email send error:", result.reason);
-    } else if (!result.value.ok) {
-      const errBody = await result.value.text();
-      console.error("Lettermint API error:", result.value.status, errBody);
-    }
+    });
+    if (!resp.ok) console.error("Lettermint error:", resp.status, await resp.text());
+  } catch (err) {
+    console.error("Email send error:", err);
   }
 }
 

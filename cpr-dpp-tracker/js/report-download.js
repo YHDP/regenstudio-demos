@@ -47,19 +47,38 @@
       .then(function (r) { return r.json(); })
       .then(function (families) {
         waitForJsPDF(function () {
-          var options = { download: true };
+          var progressText = document.getElementById('progressText');
+          var progressFill = document.getElementById('progressFill');
+
+          var options = {
+            download: true,
+            onProgress: function (current, total, name) {
+              var pct = Math.round((current / total) * 100);
+              if (progressFill) progressFill.style.width = pct + '%';
+              if (progressText) progressText.textContent = 'Building family ' + current + ' of ' + total + (name ? ' \u2014 ' + name : '');
+            }
+          };
           if (reportType === 'product_family' && familyLetter) {
             options.familyLetter = familyLetter;
           }
 
+          if (progressText) progressText.textContent = 'Generating PDF...';
+
           CPRReport.generate(families, options).then(function () {
+            // Trigger buyer email now that PDF is ready
+            fetch(SUPABASE_URL + '/send-report-email', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ order_id: orderId })
+            }).catch(function () { /* email send is best-effort */ });
+
             // Show success state
             stateLoading.style.display = 'none';
             stateSuccess.style.display = '';
 
             // Manual download button
             btnDownload.addEventListener('click', function () {
-              CPRReport.generate(families, options);
+              CPRReport.generate(families, { download: true, familyLetter: options.familyLetter });
             });
           });
         });

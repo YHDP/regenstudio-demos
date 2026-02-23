@@ -297,19 +297,9 @@ async function sendConfirmationEmail(order: Record<string, unknown>, orderId: st
       </tr>
     </table>`, false);
 
-  const promises = [
-    fetch(LETTERMINT_API_URL, {
-      method: "POST",
-      headers: { "x-lettermint-token": lettermintToken, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        from: fromAddress,
-        to: [email],
-        subject: `Your CPR Report + Invoice ${invoiceId} — Regen Studio`,
-        text: buyerText,
-        html: buyerHtml,
-      }),
-    }),
-    fetch(LETTERMINT_API_URL, {
+  // Only send internal notification — buyer email deferred until PDF is generated client-side
+  try {
+    const resp = await fetch(LETTERMINT_API_URL, {
       method: "POST",
       headers: { "x-lettermint-token": lettermintToken, "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -319,16 +309,10 @@ async function sendConfirmationEmail(order: Record<string, unknown>, orderId: st
         text: `Payment confirmed\n\nEmail: ${email}\nReport: ${reportType}${familySuffix}\nInvoice: ${invoiceId}\nAmount: ${amountStr}\nDiscount: ${discountCode || "none"}\nTime: ${timeStr}`,
         html: notifHtml,
       }),
-    }),
-  ];
-
-  const results = await Promise.allSettled(promises);
-  for (const result of results) {
-    if (result.status === "rejected") {
-      console.error("Email error:", result.reason);
-    } else if (!result.value.ok) {
-      console.error("Lettermint error:", result.value.status, await result.value.text());
-    }
+    });
+    if (!resp.ok) console.error("Lettermint error:", resp.status, await resp.text());
+  } catch (err) {
+    console.error("Email error:", err);
   }
 }
 
