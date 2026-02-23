@@ -29,7 +29,7 @@ const CPRReport = {
    * @param {boolean} options.returnPages — return array of page image data URLs for canvas
    */
   async generate(families, options = {}) {
-    const { preview = false, familyLetter = null, download = true, returnBlob = false, returnPages = false } = options;
+    const { preview = false, familyLetter = null, download = true, returnBlob = false, returnPages = false, onProgress = null } = options;
 
     if (!window.jspdf) {
       alert('PDF library is still loading. Please try again in a moment.');
@@ -106,9 +106,13 @@ const CPRReport = {
       const fitText = (text, maxW) => {
         if (!text) return '';
         if (doc.getTextWidth(text) <= maxW) return text;
-        let t = text;
-        while (t.length > 1 && doc.getTextWidth(t + '\u2026') > maxW) t = t.slice(0, -1);
-        return t + '\u2026';
+        let lo = 1, hi = text.length - 1, best = 1;
+        while (lo <= hi) {
+          var mid = (lo + hi) >> 1;
+          if (doc.getTextWidth(text.slice(0, mid) + '\u2026') <= maxW) { best = mid; lo = mid + 1; }
+          else hi = mid - 1;
+        }
+        return text.slice(0, best) + '\u2026';
       };
 
       const bodyText = (text, maxWidth) => {
@@ -392,8 +396,14 @@ const CPRReport = {
       // ═══════════════════════════════════════════════════════
       const maxFamilies = preview ? 1 : reportFamilies.length;
 
+      const _yield = () => new Promise(resolve => setTimeout(resolve, 0));
+
       for (let fi = 0; fi < maxFamilies; fi++) {
         const fam = reportFamilies[fi];
+
+        // Yield to browser and report progress
+        if (fi % 3 === 0) await _yield();
+        if (onProgress) onProgress(fi + 1, maxFamilies, fam.display_name || fam['full-name']);
 
         doc.addPage();
         y = 20;
