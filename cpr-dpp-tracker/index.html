@@ -5,18 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CPR DPP Tracker — Regen Studio</title>
   <link rel="icon" type="image/png" href="../assets/images/favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/fonts/inter.css">
   <link rel="stylesheet" href="css/tracker.css">
 </head>
 <body>
   <script>window.DEMO_GUARD = { demoId: 'cpr-dpp-tracker' };</script>
   <script src="../assets/js/guard.js"></script>
 
-  <!-- Header -->
-  <div class="tracker-header">
-    <h1 class="tracker-header__title">CPR DPP Tracker</h1>
-    <p class="tracker-header__subtitle">Construction Products Regulation — Digital Product Passport Timeline</p>
-    <p class="tracker-header__meta" id="trackerMeta">Loading...</p>
+  <!-- Hero -->
+  <div class="tracker-hero">
+    <div class="tracker-hero__icons" id="heroIcons" aria-hidden="true"></div>
+    <div class="tracker-hero__content">
+      <span class="tracker-hero__badge">CPR 2024/3110</span>
+      <h1 class="tracker-hero__title">DPP Tracker</h1>
+      <p class="tracker-hero__subtitle">Interactive timeline for all 37 product families — harmonised standards, EAD pipelines, and estimated Digital Product Passport obligation dates under the new Construction Products Regulation.</p>
+      <div class="tracker-hero__features">
+        <div class="tracker-hero__feature">
+          <span class="tracker-hero__feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </span>
+          <span>37 Product Families</span>
+        </div>
+        <div class="tracker-hero__feature">
+          <span class="tracker-hero__feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </span>
+          <span>70+ Standards</span>
+        </div>
+        <div class="tracker-hero__feature">
+          <span class="tracker-hero__feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
+          <span>Updated Monthly</span>
+        </div>
+      </div>
+      <p class="tracker-hero__meta" id="trackerMeta">Loading...</p>
+    </div>
   </div>
 
   <!-- Disclaimer banner -->

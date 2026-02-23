@@ -6,41 +6,72 @@
 
   var SUPABASE_URL = 'https://uemspezaqxmkhenimwuf.supabase.co/functions/v1';
 
+  var stateEmailVerify = document.getElementById('stateEmailVerify');
   var stateLoading = document.getElementById('stateLoading');
   var stateSuccess = document.getElementById('stateSuccess');
   var stateError = document.getElementById('stateError');
   var errorMsg = document.getElementById('errorMsg');
   var btnDownload = document.getElementById('btnDownload');
 
-  // Extract order_id from URL
+  // Extract order_id and optional email from URL
   var params = new URLSearchParams(window.location.search);
   var orderId = params.get('order_id');
+  var emailParam = params.get('email') || '';
 
   if (!orderId) {
+    if (stateEmailVerify) stateEmailVerify.style.display = 'none';
     showError('No order ID provided.');
     return;
   }
 
-  // Verify access
-  fetch(SUPABASE_URL + '/verify-report-access', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ order_id: orderId })
-  })
-  .then(function (r) { return r.json(); })
-  .then(function (data) {
-    if (!data.access) {
-      showError(data.reason || 'Access denied.');
-      return;
-    }
+  // Pre-fill email if provided in URL
+  var emailInput = document.getElementById('emailInput');
+  if (emailParam && emailInput) emailInput.value = emailParam;
 
-    // Access granted — load families and generate PDF
-    generateReport(data.report_type, data.family_letter);
-  })
-  .catch(function (err) {
-    console.error('Verification error:', err);
-    showError('Could not verify access. Please try again.');
-  });
+  // Email verification form
+  var emailForm = document.getElementById('emailVerifyForm');
+  if (emailForm) {
+    emailForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = emailInput.value.trim();
+      if (!email) return;
+      var emailError = document.getElementById('emailError');
+      if (emailError) emailError.style.display = 'none';
+      stateEmailVerify.style.display = 'none';
+      stateLoading.style.display = '';
+      verifyAndGenerate(email);
+    });
+  }
+
+  function verifyAndGenerate(email) {
+    fetch(SUPABASE_URL + '/verify-report-access', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ order_id: orderId, email: email })
+    })
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      if (!data.access) {
+        if (data.reason === 'email_mismatch') {
+          stateLoading.style.display = 'none';
+          stateEmailVerify.style.display = '';
+          var emailError = document.getElementById('emailError');
+          if (emailError) {
+            emailError.textContent = 'Email does not match this order.';
+            emailError.style.display = '';
+          }
+          return;
+        }
+        showError(data.reason || 'Access denied.');
+        return;
+      }
+      generateReport(data.report_type, data.family_letter);
+    })
+    .catch(function (err) {
+      console.error('Verification error:', err);
+      showError('Could not verify access. Please try again.');
+    });
+  }
 
   function generateReport(reportType, familyLetter) {
     fetch('data/families.json')

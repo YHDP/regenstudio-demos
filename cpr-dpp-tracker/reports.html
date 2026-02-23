@@ -5,38 +5,147 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CPR DPP Reports — Regen Studio</title>
   <link rel="icon" type="image/png" href="../assets/images/favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/fonts/inter.css">
   <link rel="stylesheet" href="css/reports.css">
 </head>
 <body>
 
-  <!-- Nav Bar -->
+  <!-- 1. Nav Bar -->
   <nav class="reports-nav">
     <div class="reports-nav__inner">
       <a href="https://www.regenstudio.world" class="reports-nav__logo">
         <img src="../assets/images/logo-color.png" alt="Regen Studio">
       </a>
+      <div class="reports-nav__actions">
+        <a href="#purchase" class="reports-nav__cta" id="navCta" data-track="nav_cta">Get the Report &rarr;</a>
+      </div>
     </div>
   </nav>
 
-  <!-- Page Header -->
-  <div class="reports-header">
-    <h1 class="reports-header__title">Construction Products Regulation — Digital Product Passports</h1>
-    <p class="reports-header__subtitle">Regulatory analysis reports for EU construction product families</p>
-  </div>
-
-  <!-- Disclaimer banner -->
-  <div class="reports-disclaimer">
-    <div class="reports-disclaimer__icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+  <!-- 2. Hero -->
+  <section class="sales-hero" data-section="hero">
+    <div class="sales-hero__accent"></div>
+    <div class="sales-hero__inner">
+      <h1 class="sales-hero__headline">Know exactly when DPP obligations hit your product family</h1>
+      <p class="sales-hero__subheadline">CPR 2024/3110 rewrites the rules for construction products. Our report maps every standard, milestone and DPP pathway across all 37 product families.</p>
+      <div class="sales-hero__buttons">
+        <a href="#purchase" class="sales-hero__btn sales-hero__btn--primary" data-track="hero_cta">Get the Report</a>
+        <button class="sales-hero__btn sales-hero__btn--ghost" id="heroPreviewBtn" data-track="preview_btn">Preview Sample</button>
+      </div>
     </div>
-    <p class="reports-disclaimer__title">IMPORTANT INFORMATION</p>
-    <p class="reports-disclaimer__text">This product is still in demo mode, but the payment links are active. We are confident the document can be of value already, but should be treated as a guideway, not a decision-making document. Some product families with no sREQ announced have not been deep dived and might miss important hENs and EADs.</p>
+  </section>
+
+  <!-- 3. Warning Banner (unchanged) -->
+  <div class="reports-disclaimer">
+    <div class="reports-disclaimer__accent"></div>
+    <div class="reports-disclaimer__content">
+      <div class="reports-disclaimer__header">
+        <div class="reports-disclaimer__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <p class="reports-disclaimer__title">Important Information</p>
+      </div>
+      <p class="reports-disclaimer__bold">This product is still in demo mode, but the payment links are active.</p>
+      <p class="reports-disclaimer__text">This document should be treated as a guideway, not a decision-making document. Some product families with no sREQ announced have not been deep dived and might miss important hENs and EADs. We are exploring partnerships for validating this information independently and verifiably.</p>
+      <p class="reports-disclaimer__text">In the mean time, we believe the report can already deliver value. That is why we offer you an 80% discount by using the code:</p>
+      <button class="reports-disclaimer__code" onclick="navigator.clipboard.writeText('EARLYADOPTER');this.classList.add('copied');var b=this;setTimeout(function(){b.classList.remove('copied')},2000)">
+        <span class="reports-disclaimer__code-label">EARLYADOPTER</span>
+        <span class="reports-disclaimer__code-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </span>
+        <span class="reports-disclaimer__code-copied">Copied!</span>
+      </button>
+    </div>
   </div>
 
-  <div class="reports-container">
+  <!-- 4. Trust/Stats Bar -->
+  <section class="trust-bar">
+    <div class="trust-bar__inner">
+      <div class="trust-bar__stat">
+        <span class="trust-bar__number">37</span>
+        <span class="trust-bar__label">Product Families</span>
+      </div>
+      <div class="trust-bar__stat">
+        <span class="trust-bar__number">70+</span>
+        <span class="trust-bar__label">Standards Mapped</span>
+      </div>
+      <div class="trust-bar__stat">
+        <span class="trust-bar__number">6</span>
+        <span class="trust-bar__label">Milestone Stages Tracked</span>
+      </div>
+      <div class="trust-bar__stat">
+        <span class="trust-bar__number">&infin;</span>
+        <span class="trust-bar__label">Updated Monthly</span>
+      </div>
+    </div>
+  </section>
 
-    <!-- Preview Hero -->
+  <!-- 5. Problem Agitation -->
+  <section class="problem-section">
+    <div class="problem-section__inner">
+      <div class="problem-card">
+        <div class="problem-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3 class="problem-card__title">Fragmented standards</h3>
+        <p class="problem-card__desc">70+ hENs and EADs spread across 37 families, each with different technical committees, AVCP systems, and publication timelines.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3 class="problem-card__title">Unclear DPP timelines</h3>
+        <p class="problem-card__desc">Obligation dates depend on sREQ delivery, Official Journal publication, and Art 75 delegated acts &mdash; none of which follow a single schedule.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h3 class="problem-card__title">Narrowing preparation window</h3>
+        <p class="problem-card__desc">The new CPR applies from January 2028, with the earliest DPP obligations expected from 2029. The time to prepare is now.</p>
+      </div>
+    </div>
+    <p class="problem-section__transition">Our report maps this complexity for you.</p>
+  </section>
+
+  <!-- 6. What's Inside -->
+  <section class="features-section">
+    <h2 class="features-section__heading">What you get</h2>
+    <div class="features-grid">
+      <div class="feature-tile">
+        <h3 class="feature-tile__title">Full CPR Overview</h3>
+        <p class="feature-tile__subtitle">All 37 product families in one report</p>
+        <ul class="feature-tile__list">
+          <li><svg viewBox="0 0 20 20" width="18" height="18"><path fill="#00914B" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg> Legislative timeline &amp; DPP framework</li>
+          <li><svg viewBox="0 0 20 20" width="18" height="18"><path fill="#00914B" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg> 37 product family profiles</li>
+          <li><svg viewBox="0 0 20 20" width="18" height="18"><path fill="#00914B" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg> Complete hEN &amp; EAD standards tables</li>
+          <li><svg viewBox="0 0 20 20" width="18" height="18"><path fill="#00914B" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg> Milestone pipeline per family</li>
+          <li><svg viewBox="0 0 20 20" width="18" height="18"><path fill="#00914B" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg> DPP pathway analysis</li>
+          <li><svg viewBox="0 0 20 20" width="18" height="18"><path fill="#00914B" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg> AVCP system breakdown</li>
+          <li><svg viewBox="0 0 20 20" width="18" height="18"><path fill="#00914B" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg> sREQ tracking &amp; status</li>
+          <li><svg viewBox="0 0 20 20" width="18" height="18"><path fill="#00914B" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg> CPR regime comparison (old vs new)</li>
+        </ul>
+      </div>
+      <div class="feature-tile">
+        <h3 class="feature-tile__title">Family Deep-Dive</h3>
+        <p class="feature-tile__subtitle">One product family, full detail</p>
+        <ul class="feature-tile__list">
+          <li><svg viewBox="0 0 20 20" width="18" height="18"><path fill="#009BBB" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg> Complete hEN &amp; EAD standards breakdown</li>
+          <li><svg viewBox="0 0 20 20" width="18" height="18"><path fill="#009BBB" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg> Milestone timeline with dates</li>
+          <li><svg viewBox="0 0 20 20" width="18" height="18"><path fill="#009BBB" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg> DPP pathway &amp; readiness assessment</li>
+          <li><svg viewBox="0 0 20 20" width="18" height="18"><path fill="#009BBB" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg> Narrative regulatory context</li>
+          <li><svg viewBox="0 0 20 20" width="18" height="18"><path fill="#009BBB" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg> AVCP system details</li>
+          <li><svg viewBox="0 0 20 20" width="18" height="18"><path fill="#009BBB" d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z"/></svg> OJ citation references</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Preview Section (wraps existing) -->
+  <section class="preview-section">
+    <h2 class="preview-section__heading">See the report quality</h2>
+
+    <!-- Preview Hero (existing, unchanged) -->
     <div class="preview-hero" id="previewHero">
       <div class="preview-cover">
         <div class="preview-cover__bar"></div>
@@ -59,8 +168,9 @@
         </span>
       </div>
     </div>
+    <p class="preview-section__caption">Page 1 of the full report. Click to preview.</p>
 
-    <!-- Preview Modal -->
+    <!-- Preview Modal (existing, unchanged) -->
     <div class="preview-modal" id="previewModal">
       <div class="preview-modal__backdrop" id="previewModalBackdrop"></div>
       <div class="preview-modal__body">
@@ -73,152 +183,385 @@
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Report Cards -->
-    <div class="report-cards">
-      <div class="report-card active" data-type="full_overview" id="cardFull">
-        <span class="report-card__badge">Most Popular</span>
-        <h3 class="report-card__title">Full CPR Overview</h3>
-        <p class="report-card__desc">All 37 product families: regulatory overview, legislative timeline, DPP framework, complete standards tables, milestones, and DPP pathway analysis.</p>
-        <div class="report-card__price" id="priceFull">EUR 99</div>
-      </div>
-      <div class="report-card" data-type="product_family" id="cardFamily">
-        <span class="report-card__badge report-card__badge--teal">Single Family</span>
-        <h3 class="report-card__title">Product Family Deep-Dive</h3>
-        <p class="report-card__desc">One product family: complete standards breakdown (hEN + EAD tables), milestones timeline, DPP pathway, all narrative sections.</p>
-        <div class="report-card__price" id="priceFamily">EUR 29</div>
+  <!-- 8. Purchase Section -->
+  <section class="purchase-section" id="purchase" data-section="purchase">
+    <h2 class="purchase-section__heading">Get your report</h2>
+
+    <!-- Promo Callout -->
+    <div class="promo-callout">
+      <div class="promo-callout__inner">
+        <span class="promo-callout__badge">Early Adopter Offer</span>
+        <p class="promo-callout__text">Get <strong>80% off</strong> with code</p>
+        <button class="promo-callout__code" onclick="navigator.clipboard.writeText('EARLYADOPTER');this.classList.add('copied');var b=this;setTimeout(function(){b.classList.remove('copied')},2000)">
+          <span class="promo-callout__code-label">EARLYADOPTER</span>
+          <span class="promo-callout__code-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          </span>
+          <span class="promo-callout__code-copied">Copied!</span>
+        </button>
       </div>
     </div>
 
-    <!-- Family Selector (hidden by default) -->
-    <div class="family-selector" id="familySelector">
-      <label for="familySelect">Select product family</label>
-      <select id="familySelect">
-        <option value="">Choose a family...</option>
-      </select>
-    </div>
+    <div class="reports-container">
 
-    <!-- Purchase Form -->
-    <form class="purchase-form" id="purchaseForm">
-      <div class="purchase-form__row">
-        <label for="purchaseEmail">Email address</label>
-        <input type="email" id="purchaseEmail" placeholder="you@example.com" autocomplete="email" required>
+      <!-- Report Cards (existing, unchanged) -->
+      <div class="report-cards">
+        <div class="report-card active" data-type="full_overview" id="cardFull" data-track="card_full">
+          <span class="report-card__badge">Most Popular</span>
+          <h3 class="report-card__title">Full CPR Overview</h3>
+          <p class="report-card__desc">All 37 product families: regulatory overview, legislative timeline, DPP framework, complete standards tables, milestones, and DPP pathway analysis.</p>
+          <div class="report-card__price" id="priceFull">EUR 99</div>
+        </div>
+        <div class="report-card" data-type="product_family" id="cardFamily" data-track="card_family">
+          <span class="report-card__badge report-card__badge--teal">Single Family</span>
+          <h3 class="report-card__title">Product Family Deep-Dive</h3>
+          <p class="report-card__desc">One product family: complete standards breakdown (hEN + EAD tables), milestones timeline, DPP pathway, all narrative sections.</p>
+          <div class="report-card__price" id="priceFamily">EUR 29</div>
+        </div>
       </div>
-      <p class="invoice-section-label">Invoice details (optional)</p>
-      <div class="invoice-fields" id="invoiceFields">
+
+      <!-- Family Selector (existing, unchanged) -->
+      <div class="family-selector" id="familySelector">
+        <label for="familySelect">Select product family</label>
+        <select id="familySelect">
+          <option value="">Choose a family...</option>
+        </select>
+      </div>
+
+      <!-- Purchase Form (existing, unchanged) -->
+      <form class="purchase-form" id="purchaseForm">
         <div class="purchase-form__row">
-          <label for="buyerCompany">Company name</label>
-          <input type="text" id="buyerCompany" placeholder="Acme B.V.">
+          <label for="purchaseEmail">Email address</label>
+          <input type="email" id="purchaseEmail" placeholder="you@example.com" autocomplete="email" required>
+        </div>
+        <p class="invoice-section-label">Invoice details (optional)</p>
+        <div class="invoice-fields" id="invoiceFields">
+          <div class="purchase-form__row">
+            <label for="buyerCompany">Company name</label>
+            <input type="text" id="buyerCompany" placeholder="Acme B.V.">
+          </div>
+          <div class="purchase-form__row">
+            <label for="buyerVatId">VAT number</label>
+            <input type="text" id="buyerVatId" placeholder="NL123456789B01">
+          </div>
+          <div class="purchase-form__row purchase-form__row--inline">
+            <div class="purchase-form__field purchase-form__field--street">
+              <label for="buyerStreet">Street</label>
+              <input type="text" id="buyerStreet" placeholder="Keizersgracht">
+            </div>
+            <div class="purchase-form__field purchase-form__field--number">
+              <label for="buyerNumber">Nr.</label>
+              <input type="text" id="buyerNumber" placeholder="123">
+            </div>
+            <div class="purchase-form__field purchase-form__field--extra">
+              <label for="buyerExtra">Addition</label>
+              <input type="text" id="buyerExtra" placeholder="2A">
+            </div>
+          </div>
+          <div class="purchase-form__row purchase-form__row--inline">
+            <div class="purchase-form__field purchase-form__field--postal">
+              <label for="buyerPostal">Postal code</label>
+              <input type="text" id="buyerPostal" placeholder="1015 AB">
+            </div>
+            <div class="purchase-form__field purchase-form__field--city">
+              <label for="buyerCity">City</label>
+              <input type="text" id="buyerCity" placeholder="Amsterdam">
+            </div>
+            <div class="purchase-form__field purchase-form__field--country">
+              <label for="buyerCountry">Country</label>
+              <select id="buyerCountry">
+                <option value="">Select...</option>
+                <option value="NL" selected>Netherlands</option>
+                <option value="BE">Belgium</option>
+                <option value="DE">Germany</option>
+                <option value="FR">France</option>
+                <option value="AT">Austria</option>
+                <option value="IT">Italy</option>
+                <option value="ES">Spain</option>
+                <option value="PT">Portugal</option>
+                <option value="LU">Luxembourg</option>
+                <option value="IE">Ireland</option>
+                <option value="DK">Denmark</option>
+                <option value="SE">Sweden</option>
+                <option value="FI">Finland</option>
+                <option value="PL">Poland</option>
+                <option value="CZ">Czech Republic</option>
+                <option value="GR">Greece</option>
+                <option value="RO">Romania</option>
+                <option value="BG">Bulgaria</option>
+                <option value="HR">Croatia</option>
+                <option value="HU">Hungary</option>
+                <option value="SK">Slovakia</option>
+                <option value="SI">Slovenia</option>
+                <option value="EE">Estonia</option>
+                <option value="LV">Latvia</option>
+                <option value="LT">Lithuania</option>
+                <option value="CY">Cyprus</option>
+                <option value="MT">Malta</option>
+                <option value="NO">Norway</option>
+                <option value="CH">Switzerland</option>
+                <option value="GB">United Kingdom</option>
+                <option value="US">United States</option>
+                <option value="BR">Brazil</option>
+                <option value="OTHER">Other</option>
+              </select>
+            </div>
+          </div>
         </div>
         <div class="purchase-form__row">
-          <label for="buyerVatId">VAT number</label>
-          <input type="text" id="buyerVatId" placeholder="NL123456789B01">
+          <label for="discountCode">Discount code (optional)</label>
+          <div class="discount-row">
+            <input type="text" id="discountCode" placeholder="Enter code">
+            <button type="button" class="btn-apply" id="btnApply">Apply</button>
+          </div>
+          <div class="discount-msg" id="discountMsg"></div>
         </div>
-        <div class="purchase-form__row purchase-form__row--inline">
-          <div class="purchase-form__field purchase-form__field--street">
-            <label for="buyerStreet">Street</label>
-            <input type="text" id="buyerStreet" placeholder="Keizersgracht">
+        <div class="price-breakdown" id="priceBreakdown">
+          <div class="price-breakdown__row">
+            <span>Subtotal excl. BTW</span>
+            <span id="priceExcl">EUR 81.82</span>
           </div>
-          <div class="purchase-form__field purchase-form__field--number">
-            <label for="buyerNumber">Nr.</label>
-            <input type="text" id="buyerNumber" placeholder="123">
+          <div class="price-breakdown__row">
+            <span>BTW (21%)</span>
+            <span id="priceBtw">EUR 17.18</span>
           </div>
-          <div class="purchase-form__field purchase-form__field--extra">
-            <label for="buyerExtra">Addition</label>
-            <input type="text" id="buyerExtra" placeholder="2A">
-          </div>
-        </div>
-        <div class="purchase-form__row purchase-form__row--inline">
-          <div class="purchase-form__field purchase-form__field--postal">
-            <label for="buyerPostal">Postal code</label>
-            <input type="text" id="buyerPostal" placeholder="1015 AB">
-          </div>
-          <div class="purchase-form__field purchase-form__field--city">
-            <label for="buyerCity">City</label>
-            <input type="text" id="buyerCity" placeholder="Amsterdam">
-          </div>
-          <div class="purchase-form__field purchase-form__field--country">
-            <label for="buyerCountry">Country</label>
-            <select id="buyerCountry">
-              <option value="">Select...</option>
-              <option value="NL" selected>Netherlands</option>
-              <option value="BE">Belgium</option>
-              <option value="DE">Germany</option>
-              <option value="FR">France</option>
-              <option value="AT">Austria</option>
-              <option value="IT">Italy</option>
-              <option value="ES">Spain</option>
-              <option value="PT">Portugal</option>
-              <option value="LU">Luxembourg</option>
-              <option value="IE">Ireland</option>
-              <option value="DK">Denmark</option>
-              <option value="SE">Sweden</option>
-              <option value="FI">Finland</option>
-              <option value="PL">Poland</option>
-              <option value="CZ">Czech Republic</option>
-              <option value="GR">Greece</option>
-              <option value="RO">Romania</option>
-              <option value="BG">Bulgaria</option>
-              <option value="HR">Croatia</option>
-              <option value="HU">Hungary</option>
-              <option value="SK">Slovakia</option>
-              <option value="SI">Slovenia</option>
-              <option value="EE">Estonia</option>
-              <option value="LV">Latvia</option>
-              <option value="LT">Lithuania</option>
-              <option value="CY">Cyprus</option>
-              <option value="MT">Malta</option>
-              <option value="NO">Norway</option>
-              <option value="CH">Switzerland</option>
-              <option value="GB">United Kingdom</option>
-              <option value="US">United States</option>
-              <option value="BR">Brazil</option>
-              <option value="OTHER">Other</option>
-            </select>
+          <div class="price-breakdown__row price-breakdown__total">
+            <span>Total incl. BTW</span>
+            <span id="totalPrice">EUR 99.00</span>
           </div>
         </div>
-      </div>
-      <div class="purchase-form__row">
-        <label for="discountCode">Discount code (optional)</label>
-        <div class="discount-row">
-          <input type="text" id="discountCode" placeholder="Enter code">
-          <button type="button" class="btn-apply" id="btnApply">Apply</button>
-        </div>
-        <div class="discount-msg" id="discountMsg"></div>
-      </div>
-      <div class="price-breakdown" id="priceBreakdown">
-        <div class="price-breakdown__row">
-          <span>Subtotal excl. BTW</span>
-          <span id="priceExcl">EUR 81.82</span>
-        </div>
-        <div class="price-breakdown__row">
-          <span>BTW (21%)</span>
-          <span id="priceBtw">EUR 17.18</span>
-        </div>
-        <div class="price-breakdown__row price-breakdown__total">
-          <span>Total incl. BTW</span>
-          <span id="totalPrice">EUR 99.00</span>
-        </div>
-      </div>
-      <button type="submit" class="btn-buy" id="btnBuy">Buy Report</button>
-      <p class="price-note">Transaction costs may apply depending on the payment method selected.</p>
-    </form>
+        <button type="submit" class="btn-buy" id="btnBuy" data-track="buy_report">Buy Report</button>
+        <p class="price-note">Report data updated monthly. Transaction costs may apply depending on the payment method selected.</p>
+      </form>
 
-    <!-- Disclaimer box -->
-    <div class="report-disclaimer-box">
-      <strong>Disclaimer:</strong> This report is generated by a tool in demo mode. The information has NOT been independently verified by legal experts and does not constitute legal advice. Always consult qualified legal counsel.
     </div>
+  </section>
 
+  <!-- 9. Long-Form Content -->
+
+  <!-- 9a. Sample Content Description -->
+  <section class="longform-section">
+    <div class="longform-section__inner">
+      <h2 class="longform-section__heading">What a product family profile contains</h2>
+      <p class="longform-section__text">Each product family profile opens with a narrative regulatory context &mdash; the current CPR regime, expected transition to CPR 2024/3110, and sREQ status. This is followed by structured data tables and visual timelines.</p>
+      <div class="longform-section__example">
+        <p class="longform-section__example-label">Example: Standards table row</p>
+        <div class="longform-section__example-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Standard</th>
+                <th>Type</th>
+                <th>TC</th>
+                <th>AVCP</th>
+                <th>OJ Cited</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>EN 197-1:2011</td>
+                <td>hEN</td>
+                <td>CEN/TC 51</td>
+                <td>1+</td>
+                <td>Yes</td>
+                <td>Active</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="longform-section__text">Following the standards tables, each family includes a milestone pipeline (6 stages from sREQ to DPP go-live) and a DPP pathway analysis showing the expected compliance timeline.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9b. Methodology -->
+  <section class="longform-section longform-section--alt">
+    <div class="longform-section__inner">
+      <h2 class="longform-section__heading">How we build these reports</h2>
+      <p class="longform-section__text">Our analysis is grounded in primary EU regulatory sources:</p>
+      <ul class="longform-section__list">
+        <li><strong>Official Journal of the EU</strong> &mdash; harmonised standard citations and delegated acts</li>
+        <li><strong>EOTA database</strong> &mdash; European Assessment Documents and Technical Assessment Bodies</li>
+        <li><strong>CEN/TC work programmes</strong> &mdash; standard revision timelines and committee progress</li>
+        <li><strong>European Commission sREQs</strong> &mdash; standardisation requests under CPR 2024/3110</li>
+        <li><strong>CPR 2024/3110 text</strong> &mdash; transition provisions, delegated act framework, Annex IV</li>
+      </ul>
+      <p class="longform-section__text">Reports are updated on a monthly cycle to incorporate new OJ publications, sREQ developments, and CEN/TC progress.</p>
+    </div>
+  </section>
+
+  <!-- 9c. Who This Is For -->
+  <section class="longform-section">
+    <div class="longform-section__inner">
+      <h2 class="longform-section__heading">Who this is for</h2>
+      <div class="audience-cards">
+        <div class="audience-card">
+          <div class="audience-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+          </div>
+          <h3 class="audience-card__title">Compliance Teams</h3>
+          <p class="audience-card__desc">Map upcoming obligations to your product portfolio and build a structured compliance roadmap.</p>
+        </div>
+        <div class="audience-card">
+          <div class="audience-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <h3 class="audience-card__title">C-Level &amp; Strategy</h3>
+          <p class="audience-card__desc">Understand the regulatory landscape at a glance and make informed resource allocation decisions.</p>
+        </div>
+        <div class="audience-card">
+          <div class="audience-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <h3 class="audience-card__title">Consultants</h3>
+          <p class="audience-card__desc">Serve your construction-sector clients with authoritative, data-backed regulatory analysis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9d. FAQ -->
+  <section class="longform-section longform-section--alt">
+    <div class="longform-section__inner">
+      <h2 class="longform-section__heading">Frequently asked questions</h2>
+      <div class="faq-accordion" id="faqAccordion" data-section="faq">
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            <span>How often are reports updated?</span>
+            <svg class="faq-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-item__answer">
+            <p>Reports are updated on a monthly cycle. Each update incorporates new Official Journal publications, sREQ developments, CEN/TC progress, and any changes to the CPR 2024/3110 implementation timeline.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            <span>What format is the report?</span>
+            <svg class="faq-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-item__answer">
+            <p>Reports are delivered as PDF documents. After purchase, you receive an email with a secure download link that is valid for 7 days. The PDF is optimised for both screen reading and printing.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            <span>Can I share the report within my organisation?</span>
+            <svg class="faq-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-item__answer">
+            <p>Yes. The report is licensed for internal use within the purchasing organisation. You may share it with colleagues. Redistribution to external parties or resale is not permitted.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            <span>What's the difference between Full Overview and Family Deep-Dive?</span>
+            <svg class="faq-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-item__answer">
+            <p>The Full Overview covers all 37 product families with the regulatory framework, timeline, and complete per-family profiles. A Family Deep-Dive contains the same depth of analysis but for a single product family &mdash; ideal if you only manufacture one product category.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            <span>Is this legal advice?</span>
+            <svg class="faq-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-item__answer">
+            <p>No. This report is a regulatory analysis tool, not legal advice. It maps the regulatory landscape to help you plan your compliance strategy. Always consult qualified legal counsel for binding legal guidance.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            <span>What payment methods are accepted?</span>
+            <svg class="faq-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-item__answer">
+            <p>We accept credit/debit cards (Visa, Mastercard, Amex), iDEAL, Bancontact, and bank transfer via our payment provider Mollie. All transactions are processed securely.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">
+            <span>How does the discount code work?</span>
+            <svg class="faq-item__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-item__answer">
+            <p>Enter the code <strong>EARLYADOPTER</strong> in the discount field during checkout and click Apply. The 80% discount is applied to the total price before VAT. This code is available while the product is in demo mode.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Secondary CTA -->
+  <section class="secondary-cta">
+    <div class="secondary-cta__inner">
+      <h2 class="secondary-cta__headline">Ready to map your DPP compliance pathway?</h2>
+      <div class="secondary-cta__buttons">
+        <a href="#purchase" class="secondary-cta__btn secondary-cta__btn--primary">Get the Report</a>
+        <a href="#purchase" class="secondary-cta__btn secondary-cta__btn--ghost">View Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Exit Links -->
+  <section class="exit-section">
+    <div class="exit-section__inner">
+      <p class="exit-section__text">Still exploring the new CPR?</p>
+      <a href="https://www.regenstudio.space/blog/cpr-digital-product-passport" class="exit-section__link">Read our CPR Digital Product Passport blog &rarr;</a>
+    </div>
+  </section>
+
+  <!-- Privacy Trust Signal -->
+  <section class="privacy-signal">
+    <div class="privacy-signal__inner">
+      <div class="privacy-signal__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="privacy-signal__content">
+        <p class="privacy-signal__headline">No cookies. No tracking. No banner needed.</p>
+        <p class="privacy-signal__detail">This site self-hosts all fonts and scripts &mdash; zero third-party connections. Our analytics are privacy-preserving: your IP is hashed with a daily-rotating salt and never stored. Only aggregate page view counts persist. We set no cookies unless you enter the checkout flow, where session cookies are strictly necessary and exempt under ePrivacy Art. 5(3).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. Disclaimer + Footer -->
+  <div class="prefooter-disclaimer">
+    <p><strong>Disclaimer:</strong> This report is generated by a tool in demo mode. The information has NOT been independently verified by legal experts and does not constitute legal advice. Always consult qualified legal counsel.</p>
   </div>
 
-  <!-- Footer -->
   <footer class="reports-footer">
-    <p>&copy; 2025 <a href="https://www.regenstudio.space">Regen Studio</a> &middot; <a href="index.html">Tracker</a> &middot; <a href="../">Demos</a></p>
+    <div class="reports-footer__inner">
+      <p>&copy; 2025 <a href="https://www.regenstudio.space">Regen Studio</a></p>
+      <p class="reports-footer__links">
+        <a href="index.html">Tracker</a>
+        <span>&middot;</span>
+        <a href="https://www.regenstudio.space/blog/cpr-digital-product-passport">Blog</a>
+        <span>&middot;</span>
+        <a href="../">Demos</a>
+        <span>&middot;</span>
+        <span class="reports-footer__privacy">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Privacy-first
+        </span>
+      </p>
+    </div>
   </footer>
 
-  <script src="https://unpkg.com/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
-  <script>if (window.pdfjsLib) pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';</script>
+  <script src="../assets/js/tracker.js"></script>
+  <script src="js/vendor/jspdf.umd.min.js"></script>
+  <script src="js/vendor/pdf.min.js"></script>
+  <script>if (window.pdfjsLib) pdfjsLib.GlobalWorkerOptions.workerSrc = 'js/vendor/pdf.worker.min.js';</script>
   <script src="js/cpr-pdf.js"></script>
   <script src="js/reports.js"></script>
 </body>

@@ -68,11 +68,13 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Mark as used
-    const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || null;
+    // Mark as used — store hashed IP, never raw (GDPR)
+    const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "";
+    const ipDigest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(clientIp));
+    const hashedIp = Array.from(new Uint8Array(ipDigest)).map(b => b.toString(16).padStart(2, '0')).join('');
     await supabase
       .from("demo_magic_links")
-      .update({ used_at: new Date().toISOString(), session_ip: clientIp })
+      .update({ used_at: new Date().toISOString(), session_ip: hashedIp })
       .eq("id", data.id);
 
     return new Response(

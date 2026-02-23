@@ -1,5 +1,7 @@
 /**
- * Reports page controller — handles preview, report selection, discount codes, purchase flow.
+ * Reports page controller — handles preview, report selection, discount codes, purchase flow,
+ * FAQ accordion, nav CTA visibility, and smooth scroll.
+ * Analytics now handled by universal tracker (assets/js/tracker.js).
  */
 (function () {
   'use strict';
@@ -105,12 +107,21 @@
   var previewModalClose = document.getElementById('previewModalClose');
   var previewModalBackdrop = document.getElementById('previewModalBackdrop');
 
-  previewHero.addEventListener('click', function () {
+  function openPreview() {
     if (!pdfArrayBuffer) return;
     renderPdfPage('previewCanvasModal', pdfArrayBuffer, 2.5);
     previewModal.classList.add('open');
     document.body.style.overflow = 'hidden';
-  });
+    if (window.RegenTracker) RegenTracker.track('preview_click');
+  }
+
+  previewHero.addEventListener('click', openPreview);
+
+  // Hero "Preview sample" button
+  var heroPreviewBtn = document.getElementById('heroPreviewBtn');
+  if (heroPreviewBtn) {
+    heroPreviewBtn.addEventListener('click', openPreview);
+  }
 
   function closeModal() {
     previewModal.classList.remove('open');
@@ -129,6 +140,7 @@
     cardFamily.classList.remove('active');
     familySelector.classList.remove('visible');
     updatePriceDisplay();
+    if (window.RegenTracker) RegenTracker.track('card_select_full');
   });
 
   cardFamily.addEventListener('click', function () {
@@ -137,6 +149,7 @@
     cardFull.classList.remove('active');
     familySelector.classList.add('visible');
     updatePriceDisplay();
+    if (window.RegenTracker) RegenTracker.track('card_select_family');
   });
 
   // ── Discount ──
@@ -165,6 +178,7 @@
         discountCode = code;
         discountMsg.textContent = data.discount_percent + '% discount applied!';
         discountMsg.className = 'discount-msg discount-msg--valid';
+        if (window.RegenTracker) RegenTracker.track('discount_applied');
       } else {
         discountPercent = 0;
         discountCode = '';
@@ -235,6 +249,8 @@
     btnBuy.disabled = true;
     btnBuy.textContent = 'Processing...';
 
+    if (window.RegenTracker) RegenTracker.track('purchase_submit');
+
     var payload = {
       email: email,
       report_type: selectedType,
@@ -275,10 +291,8 @@
       }
 
       if (data.checkout_url) {
-        // Redirect to Mollie
         window.location.href = data.checkout_url;
       } else if (data.order_id) {
-        // Free — go directly to download
         window.location.href = 'report-success.html?order_id=' + data.order_id;
       }
     })
@@ -292,4 +306,62 @@
 
   // Init
   updatePriceDisplay();
+
+  // ══════════════════════════════════════════════════════════════
+  // Smooth scroll for anchor links
+  // ══════════════════════════════════════════════════════════════
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      var target = document.querySelector(targetId);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // ══════════════════════════════════════════════════════════════
+  // Nav CTA visibility (IntersectionObserver)
+  // ══════════════════════════════════════════════════════════════
+  var navCta = document.getElementById('navCta');
+  var salesHero = document.querySelector('.sales-hero');
+
+  if (navCta && salesHero) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          navCta.classList.remove('visible');
+        } else {
+          navCta.classList.add('visible');
+        }
+      });
+    }, { threshold: 0 });
+    observer.observe(salesHero);
+  }
+
+  // ══════════════════════════════════════════════════════════════
+  // FAQ Accordion
+  // ══════════════════════════════════════════════════════════════
+  var faqAccordion = document.getElementById('faqAccordion');
+  if (faqAccordion) {
+    faqAccordion.addEventListener('click', function (e) {
+      var btn = e.target.closest('.faq-item__question');
+      if (!btn) return;
+      var item = btn.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+      // Close all
+      faqAccordion.querySelectorAll('.faq-item.open').forEach(function (el) {
+        el.classList.remove('open');
+        el.querySelector('.faq-item__question').setAttribute('aria-expanded', 'false');
+      });
+      // Toggle clicked
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        if (window.RegenTracker) RegenTracker.track('faq_open');
+      }
+    });
+  }
+
 })();

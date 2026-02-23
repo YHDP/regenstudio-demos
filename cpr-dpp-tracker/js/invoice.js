@@ -12,32 +12,66 @@
 
   var params = new URLSearchParams(window.location.search);
   var orderId = params.get('order_id');
+  var emailParam = params.get('email') || '';
+
+  var stateEmailVerify = document.getElementById('stateEmailVerify');
+  var emailInput = document.getElementById('emailInput');
+  var emailForm = document.getElementById('emailVerifyForm');
 
   if (!orderId) {
+    if (stateEmailVerify) stateEmailVerify.style.display = 'none';
     showError('No order ID provided.');
     return;
   }
 
-  fetch(SUPABASE_URL + '/verify-report-access', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ order_id: orderId })
-  })
-  .then(function (r) { return r.json(); })
-  .then(function (data) {
-    if (!data.access) {
-      showError(data.reason || 'Unable to access invoice.');
-      return;
-    }
-    if (!data.invoice_number) {
-      showError('No invoice available for this order.');
-      return;
-    }
-    renderInvoice(data);
-  })
-  .catch(function () {
-    showError('Failed to load invoice data.');
-  });
+  // Pre-fill email if provided in URL
+  if (emailParam && emailInput) emailInput.value = emailParam;
+
+  if (emailForm) {
+    emailForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = emailInput.value.trim();
+      if (!email) return;
+      var emailError = document.getElementById('emailError');
+      if (emailError) emailError.style.display = 'none';
+      stateEmailVerify.style.display = 'none';
+      document.getElementById('stateLoading').style.display = '';
+      verifyAndRender(email);
+    });
+  }
+
+  function verifyAndRender(email) {
+    fetch(SUPABASE_URL + '/verify-report-access', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ order_id: orderId, email: email })
+    })
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      if (!data.access) {
+        if (data.reason === 'email_mismatch') {
+          document.getElementById('stateLoading').style.display = 'none';
+          stateEmailVerify.style.display = '';
+          var emailError = document.getElementById('emailError');
+          if (emailError) {
+            emailError.textContent = 'Email does not match this order.';
+            emailError.style.display = '';
+          }
+          return;
+        }
+        showError(data.reason || 'Unable to access invoice.');
+        return;
+      }
+      if (!data.invoice_number) {
+        showError('No invoice available for this order.');
+        return;
+      }
+      renderInvoice(data);
+    })
+    .catch(function () {
+      showError('Failed to load invoice data.');
+    });
+  }
 
   function showError(msg) {
     document.getElementById('stateLoading').style.display = 'none';

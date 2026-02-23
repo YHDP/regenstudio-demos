@@ -29,11 +29,11 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const { order_id } = await req.json();
+    const { order_id, email } = await req.json();
 
-    if (!order_id) {
+    if (!order_id || !email) {
       return new Response(
-        JSON.stringify({ access: false, reason: "Missing order_id" }),
+        JSON.stringify({ access: false, reason: "Missing order_id or email" }),
         { status: 200, headers: { ...getCorsHeaders(req), "Content-Type": "application/json" } }
       );
     }
@@ -52,6 +52,14 @@ Deno.serve(async (req) => {
     if (error || !order) {
       return new Response(
         JSON.stringify({ access: false, reason: "Order not found" }),
+        { status: 200, headers: { ...getCorsHeaders(req), "Content-Type": "application/json" } }
+      );
+    }
+
+    // Verify email matches the order (prevents casual URL-sharing from leaking PII)
+    if (order.email.toLowerCase() !== email.toLowerCase()) {
+      return new Response(
+        JSON.stringify({ access: false, reason: "email_mismatch" }),
         { status: 200, headers: { ...getCorsHeaders(req), "Content-Type": "application/json" } }
       );
     }
