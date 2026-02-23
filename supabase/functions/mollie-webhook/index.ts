@@ -285,7 +285,7 @@ async function sendConfirmationEmail(order: Record<string, unknown>, orderId: st
       </tr>
       <tr>
         <td style="padding:12px 16px;border-bottom:1px solid #E4E2E2;font-weight:600;color:#5781A1;width:130px;font-size:13px;text-transform:uppercase">Invoice</td>
-        <td style="padding:12px 16px;border-bottom:1px solid #E4E2E2;color:#243644;font-size:14px">${invoiceId}</td>
+        <td style="padding:12px 16px;border-bottom:1px solid #E4E2E2;color:#243644;font-size:14px"><a href="${invoiceUrl}" style="color:#00914B;text-decoration:none;font-weight:600">${invoiceId}</a></td>
       </tr>
       <tr>
         <td style="padding:12px 16px;border-bottom:1px solid #E4E2E2;font-weight:600;color:#5781A1;width:130px;font-size:13px;text-transform:uppercase">Amount</td>
@@ -295,7 +295,11 @@ async function sendConfirmationEmail(order: Record<string, unknown>, orderId: st
         <td style="padding:12px 16px;border-bottom:1px solid #E4E2E2;font-weight:600;color:#5781A1;width:130px;font-size:13px;text-transform:uppercase">Time</td>
         <td style="padding:12px 16px;border-bottom:1px solid #E4E2E2;color:#243644;font-size:14px">${timeStr}</td>
       </tr>
-    </table>`, false);
+    </table>
+    <div style="border-top:2px solid #E4E2E2;padding-top:24px;margin-top:8px">
+      <p style="margin:0 0 16px;font-size:12px;font-weight:600;color:#5781A1;text-transform:uppercase;letter-spacing:0.5px">Invoice for accountant</p>
+      ${invoiceHtml}
+    </div>`, false);
 
   // Only send internal notification — buyer email deferred until PDF is generated client-side
   try {
