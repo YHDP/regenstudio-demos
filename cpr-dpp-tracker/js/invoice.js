@@ -101,7 +101,7 @@
       + '  <div class="party">'
       + '    <p class="party-label">From</p>'
       + '    <p class="name">Regen Studio B.V.</p>'
-      + '    <p>Stollenbergweg 43, Berg en Dal</p>'
+      + '    <p>Stollenbergweg 43, 6571 AB, Berg en Dal</p>'
       + '    <p>KVK 90337948</p>'
       + '    <p>BTW NL865282377B01</p>'
       + '  </div>'
