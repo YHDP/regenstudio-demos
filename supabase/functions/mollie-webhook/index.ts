@@ -1,4 +1,5 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { PDFDocument, StandardFonts, rgb } from "https://esm.sh/pdf-lib@1.17.1";
 
 const LETTERMINT_API_URL = "https://api.lettermint.co/v1/send";
 const MOLLIE_API_URL = "https://api.mollie.com/v2/payments";
@@ -301,23 +302,209 @@ async function sendConfirmationEmail(order: Record<string, unknown>, orderId: st
       ${invoiceHtml}
     </div>`, false);
 
+  // Generate invoice PDF for attachment
+  let pdfBase64: string | null = null;
+  try {
+    const pdfBytes = await generateInvoicePdf({
+      invoiceNumber: invoiceId,
+      invoiceDate: invoiceDateStr,
+      email,
+      buyerCompany,
+      buyerVatId,
+      buyerStreet,
+      buyerNumber: order.buyer_number as string | null,
+      buyerExtra: order.buyer_extra as string | null,
+      buyerPostal: order.buyer_postal as string | null,
+      buyerCity,
+      buyerCountry,
+      description: `${reportLabel}${familySuffix}`,
+      amountCentsInclBtw: amountCents,
+      paymentMethod: "Mollie (online payment)",
+    });
+    // Convert to base64
+    let binary = "";
+    for (let i = 0; i < pdfBytes.length; i++) binary += String.fromCharCode(pdfBytes[i]);
+    pdfBase64 = btoa(binary);
+  } catch (err) {
+    console.error("PDF generation error:", err);
+  }
+
   // Only send internal notification — buyer email deferred until PDF is generated client-side
   try {
+    const emailPayload: Record<string, unknown> = {
+      from: fromAddress,
+      to: ["info@regenstudio.world"],
+      subject: `[Report Sale] ${email} — ${reportType} — ${amountStr} — ${invoiceId}`,
+      text: `Payment confirmed\n\nEmail: ${email}\nReport: ${reportType}${familySuffix}\nInvoice: ${invoiceId}\nAmount: ${amountStr}\nDiscount: ${discountCode || "none"}\nTime: ${timeStr}\n\nInvoice: ${invoiceUrl}`,
+      html: notifHtml,
+    };
+    if (pdfBase64) {
+      emailPayload.attachments = [{
+        filename: `${invoiceId}.pdf`,
+        content: pdfBase64,
+      }];
+    }
+
     const resp = await fetch(LETTERMINT_API_URL, {
       method: "POST",
       headers: { "x-lettermint-token": lettermintToken, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        from: fromAddress,
-        to: ["info@regenstudio.world"],
-        subject: `[Report Sale] ${email} — ${reportType} — ${amountStr} — ${invoiceId}`,
-        text: `Payment confirmed\n\nEmail: ${email}\nReport: ${reportType}${familySuffix}\nInvoice: ${invoiceId}\nAmount: ${amountStr}\nDiscount: ${discountCode || "none"}\nTime: ${timeStr}`,
-        html: notifHtml,
-      }),
+      body: JSON.stringify(emailPayload),
     });
     if (!resp.ok) console.error("Lettermint error:", resp.status, await resp.text());
   } catch (err) {
     console.error("Email error:", err);
   }
+}
+
+async function generateInvoicePdf(opts: {
+  invoiceNumber: string;
+  invoiceDate: string;
+  email: string;
+  buyerCompany?: string | null;
+  buyerVatId?: string | null;
+  buyerStreet?: string | null;
+  buyerNumber?: string | null;
+  buyerExtra?: string | null;
+  buyerPostal?: string | null;
+  buyerCity?: string | null;
+  buyerCountry?: string | null;
+  description: string;
+  amountCentsInclBtw: number;
+  paymentMethod: string;
+}): Promise<Uint8Array> {
+  const doc = await PDFDocument.create();
+  const page = doc.addPage([595.28, 841.89]); // A4
+  const helvetica = await doc.embedFont(StandardFonts.Helvetica);
+  const helveticaBold = await doc.embedFont(StandardFonts.HelveticaBold);
+
+  const pw = 595.28;
+  const margin = 50;
+  const cw = pw - margin * 2;
+  let y = 800;
+
+  const navy = rgb(36 / 255, 54 / 255, 68 / 255);
+  const grey = rgb(87 / 255, 129 / 255, 161 / 255);
+  const emerald = rgb(0, 145 / 255, 75 / 255);
+  const lightBg = rgb(248 / 255, 249 / 255, 250 / 255);
+  const lineColor = rgb(228 / 255, 226 / 255, 226 / 255);
+
+  // Emerald top bar
+  page.drawRectangle({ x: 0, y: 841.89 - 8, width: pw, height: 8, color: emerald });
+
+  // Company name
+  page.drawText("REGEN STUDIO", { x: margin, y, size: 16, font: helveticaBold, color: navy });
+  page.drawText("B.V.", { x: margin + helveticaBold.widthOfTextAtSize("REGEN STUDIO ", 16), y, size: 16, font: helvetica, color: grey });
+  y -= 14;
+  page.drawText("Stollenbergweg 43, 6571 AB, Berg en Dal", { x: margin, y, size: 8, font: helvetica, color: grey });
+  y -= 11;
+  page.drawText("KVK 90337948  |  BTW NL865282377B01", { x: margin, y, size: 8, font: helvetica, color: grey });
+
+  // INVOICE title (right)
+  page.drawText("INVOICE", { x: pw - margin - helveticaBold.widthOfTextAtSize("INVOICE", 22), y: 800, size: 22, font: helveticaBold, color: navy });
+  const invNumW = helvetica.widthOfTextAtSize(opts.invoiceNumber, 9);
+  page.drawText(opts.invoiceNumber, { x: pw - margin - invNumW, y: 784, size: 9, font: helvetica, color: grey });
+  const dateW = helvetica.widthOfTextAtSize(opts.invoiceDate, 9);
+  page.drawText(opts.invoiceDate, { x: pw - margin - dateW, y: 773, size: 9, font: helvetica, color: grey });
+
+  // Separator
+  y -= 16;
+  page.drawLine({ start: { x: margin, y }, end: { x: pw - margin, y }, thickness: 1, color: emerald });
+  y -= 28;
+
+  // Bill to
+  page.drawText("BILL TO", { x: margin, y, size: 8, font: helveticaBold, color: grey });
+  y -= 14;
+  if (opts.buyerCompany) {
+    page.drawText(opts.buyerCompany, { x: margin, y, size: 10, font: helveticaBold, color: navy });
+    y -= 14;
+  }
+  page.drawText(opts.email, { x: margin, y, size: 9, font: helvetica, color: navy });
+  y -= 12;
+  if (opts.buyerVatId) {
+    page.drawText("VAT: " + opts.buyerVatId, { x: margin, y, size: 9, font: helvetica, color: grey });
+    y -= 12;
+  }
+  if (opts.buyerStreet) {
+    let addr = opts.buyerStreet;
+    if (opts.buyerNumber) addr += " " + opts.buyerNumber;
+    if (opts.buyerExtra) addr += " " + opts.buyerExtra;
+    page.drawText(addr, { x: margin, y, size: 9, font: helvetica, color: navy });
+    y -= 12;
+    let city = "";
+    if (opts.buyerPostal) city += opts.buyerPostal + " ";
+    if (opts.buyerCity) city += opts.buyerCity;
+    if (city) {
+      page.drawText(city, { x: margin, y, size: 9, font: helvetica, color: navy });
+      y -= 12;
+    }
+    if (opts.buyerCountry) {
+      page.drawText(opts.buyerCountry, { x: margin, y, size: 9, font: helvetica, color: navy });
+      y -= 12;
+    }
+  }
+
+  y -= 20;
+
+  // Line items table
+  const inclBtw = opts.amountCentsInclBtw / 100;
+  const exclBtw = Math.round(opts.amountCentsInclBtw / 1.21) / 100;
+  const btwAmount = +(inclBtw - exclBtw).toFixed(2);
+
+  // Header row
+  const rowH = 28;
+  page.drawRectangle({ x: margin, y: y - rowH + 10, width: cw, height: rowH, color: lightBg });
+  const cols = [margin + 8, margin + 260, margin + 320, margin + 370, margin + 420, pw - margin - 8];
+  const headers = ["Description", "Qty", "Excl. BTW", "BTW %", "BTW", "Incl. BTW"];
+  headers.forEach((h, i) => {
+    const align = i === 0 ? "left" : "right";
+    const xPos = align === "right" ? cols[i] : cols[i];
+    const textW = i > 0 ? helveticaBold.widthOfTextAtSize(h, 7) : 0;
+    page.drawText(h, { x: i > 0 ? xPos - textW : xPos, y: y - 4, size: 7, font: helveticaBold, color: grey });
+  });
+  y -= rowH;
+
+  // Data row
+  page.drawLine({ start: { x: margin, y: y + 10 }, end: { x: pw - margin, y: y + 10 }, thickness: 0.5, color: lineColor });
+  const vals = [opts.description, "1", `€ ${exclBtw.toFixed(2)}`, "21%", `€ ${btwAmount.toFixed(2)}`, `€ ${inclBtw.toFixed(2)}`];
+  vals.forEach((v, i) => {
+    const textW = i > 0 ? helvetica.widthOfTextAtSize(v, 9) : 0;
+    page.drawText(v, { x: i > 0 ? cols[i] - textW : cols[i], y: y - 6, size: 9, font: helvetica, color: navy });
+  });
+  y -= rowH;
+  page.drawLine({ start: { x: margin, y: y + 10 }, end: { x: pw - margin, y: y + 10 }, thickness: 0.5, color: lineColor });
+
+  // Totals
+  y -= 10;
+  const totLabelX = margin + 320;
+  const totValX = pw - margin - 8;
+
+  const drawTotRow = (label: string, value: string, bold = false) => {
+    const font = bold ? helveticaBold : helvetica;
+    const sz = bold ? 11 : 9;
+    page.drawText(label, { x: totLabelX, y, size: sz, font, color: bold ? navy : grey });
+    const vw = font.widthOfTextAtSize(value, sz);
+    page.drawText(value, { x: totValX - vw, y, size: sz, font, color: navy });
+    y -= (bold ? 18 : 14);
+  };
+
+  drawTotRow("Subtotal excl. BTW", `€ ${exclBtw.toFixed(2)}`);
+  drawTotRow("BTW 21%", `€ ${btwAmount.toFixed(2)}`);
+  page.drawLine({ start: { x: totLabelX, y: y + 8 }, end: { x: totValX, y: y + 8 }, thickness: 1.5, color: navy });
+  y -= 4;
+  drawTotRow("Total incl. BTW", `€ ${inclBtw.toFixed(2)}`, true);
+
+  // Payment method
+  y -= 8;
+  page.drawText("Payment method: " + opts.paymentMethod, { x: margin, y, size: 8, font: helvetica, color: grey });
+
+  // Footer
+  y = 40;
+  page.drawLine({ start: { x: margin, y: y + 10 }, end: { x: pw - margin, y: y + 10 }, thickness: 0.5, color: emerald });
+  const footerText = "Regen Studio B.V.  ·  KVK 90337948  ·  BTW NL865282377B01  ·  regenstudio.space";
+  const ftw = helvetica.widthOfTextAtSize(footerText, 7);
+  page.drawText(footerText, { x: (pw - ftw) / 2, y, size: 7, font: helvetica, color: grey });
+
+  return await doc.save();
 }
 
 function emailLayout(content: string, isExternal = true): string {
