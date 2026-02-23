@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice — Regen Studio</title>
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #fff; color: #243644; line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    .invoice-page {
+      max-width: 680px; margin: 0 auto; padding: 48px 40px;
+    }
+    .invoice-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 32px; padding-bottom: 20px;
+      border-bottom: 3px solid #243644;
+    }
+    .invoice-header h1 {
+      margin: 0; font-size: 28px; font-weight: 700; color: #243644;
+      letter-spacing: 1px;
+    }
+    .invoice-header .invoice-meta {
+      text-align: right; font-size: 13px; color: #5781A1;
+    }
+    .invoice-header .invoice-meta p { margin: 2px 0; }
+    .invoice-header .invoice-meta .invoice-id { font-weight: 600; color: #243644; }
+    .invoice-parties {
+      display: flex; justify-content: space-between; margin-bottom: 32px;
+    }
+    .invoice-parties .party { width: 48%; }
+    .party-label {
+      font-size: 11px; font-weight: 600; color: #5781A1;
+      text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 6px;
+    }
+    .party p { margin: 2px 0; font-size: 13px; }
+    .party .name { font-weight: 600; }
+    .line-items { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13px; }
+    .line-items th {
+      padding: 10px 12px; text-align: left; font-weight: 600;
+      color: #5781A1; font-size: 11px; text-transform: uppercase;
+      letter-spacing: 0.3px; border-bottom: 2px solid #e5e7eb;
+      background: #f8fafc;
+    }
+    .line-items th.right, .line-items td.right { text-align: right; }
+    .line-items th.center, .line-items td.center { text-align: center; }
+    .line-items td {
+      padding: 12px; border-bottom: 1px solid #e5e7eb; color: #243644;
+    }
+    .totals { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 13px; }
+    .totals td { padding: 6px 12px; }
+    .totals td:first-child { color: #5781A1; }
+    .totals td:last-child { text-align: right; color: #243644; }
+    .totals .total-row td {
+      padding: 10px 12px; border-top: 2px solid #243644;
+      font-weight: 700; font-size: 15px; color: #243644;
+    }
+    .payment-method {
+      font-size: 12px; color: #5781A1; margin-bottom: 32px;
+    }
+    .invoice-footer {
+      border-top: 1px solid #e5e7eb; padding-top: 16px; text-align: center;
+      font-size: 11px; color: #9b9b9b;
+    }
+    .loading, .error {
+      text-align: center; padding: 80px 20px; font-size: 14px; color: #5781A1;
+    }
+    .error { color: #D32F2F; }
+    .btn-print {
+      display: inline-block; padding: 10px 24px; background: #243644;
+      color: #fff; border: none; border-radius: 99px; font-size: 13px;
+      font-weight: 600; cursor: pointer; font-family: inherit;
+      margin-bottom: 32px;
+    }
+    .btn-print:hover { background: #1B2833; }
+    @media print {
+      .btn-print { display: none; }
+      .invoice-page { padding: 0; }
+      body { background: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <div class="invoice-page" id="invoicePage">
+    <div class="loading" id="stateLoading">Loading invoice...</div>
+    <div class="error" id="stateError" style="display:none"></div>
+    <div id="invoiceContent" style="display:none"></div>
+  </div>
+  <script src="js/invoice.js"></script>
+</body>
+</html>

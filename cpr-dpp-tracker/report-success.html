@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Report — Regen Studio</title>
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reports.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="reports-header">
+    <h1 class="reports-header__title">CPR DPP Report</h1>
+    <p class="reports-header__subtitle">Your report is being prepared</p>
+  </div>
+
+  <div class="success-container">
+    <div class="success-card">
+
+      <!-- Loading state -->
+      <div id="stateLoading">
+        <div class="success-spinner"></div>
+        <h2 class="success-title">Generating your report...</h2>
+        <p class="success-text">This may take a few seconds while we compile the data.</p>
+      </div>
+
+      <!-- Success state (hidden) -->
+      <div id="stateSuccess" style="display:none">
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <h2 class="success-title">Report ready!</h2>
+        <p class="success-text">Your download should start automatically. If not, click the button below.</p>
+        <button class="btn-download" id="btnDownload">Download Report</button>
+      </div>
+
+      <!-- Error state (hidden) -->
+      <div id="stateError" style="display:none">
+        <h2 class="success-title">Unable to access report</h2>
+        <p class="success-error" id="errorMsg">This download link may have expired or the payment was not completed.</p>
+        <p class="success-text" style="margin-top:16px"><a href="reports.html" style="color:#00914B;font-weight:600">Back to Reports</a></p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="reports-footer">
+    <p>&copy; 2025 <a href="https://www.regenstudio.world">Regen Studio</a> &middot; <a href="index.html">Tracker</a> &middot; <a href="../">Demos</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+  <script src="js/cpr-pdf.js"></script>
+  <script src="js/report-download.js"></script>
+</body>
+</html>
