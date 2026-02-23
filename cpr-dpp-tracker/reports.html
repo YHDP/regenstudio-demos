@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPR DPP Reports — Regen Studio</title>
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reports.css">
+</head>
+<body>
+
+  <!-- Nav Bar -->
+  <nav class="reports-nav">
+    <div class="reports-nav__inner">
+      <a href="https://www.regenstudio.world" class="reports-nav__logo">
+        <img src="../assets/images/logo-color.png" alt="Regen Studio">
+      </a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="reports-header">
+    <h1 class="reports-header__title">Construction Products Regulation — Digital Product Passports</h1>
+    <p class="reports-header__subtitle">Regulatory analysis reports for EU construction product families</p>
+  </div>
+
+  <!-- Disclaimer banner -->
+  <div class="reports-disclaimer">
+    <strong>DEMO</strong> — This report tool is for demonstration purposes. Information has not been independently verified by legal experts.
+  </div>
+
+  <div class="reports-container">
+
+    <!-- Preview Hero -->
+    <div class="preview-hero" id="previewHero">
+      <div class="preview-cover">
+        <div class="preview-cover__bar"></div>
+        <div class="preview-cover__body">
+          <p class="preview-cover__label">REGEN STUDIO</p>
+          <h2 class="preview-cover__title">Construction Products Regulation<br>Digital Product Passport Analysis</h2>
+          <div class="preview-cover__divider"></div>
+          <p class="preview-cover__subtitle">Full Overview — All 37 Product Families</p>
+          <p class="preview-cover__meta">Regulatory framework, legislative timeline, harmonised standards,<br>milestones, and DPP pathway analysis</p>
+        </div>
+        <div class="preview-cover__footer">
+          <span>Regen Studio B.V.</span>
+          <span id="previewDate"></span>
+        </div>
+      </div>
+      <div class="preview-hero__overlay">
+        <span class="preview-hero__btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          Preview Report
+        </span>
+      </div>
+    </div>
+
+    <!-- Preview Modal -->
+    <div class="preview-modal" id="previewModal">
+      <div class="preview-modal__backdrop" id="previewModalBackdrop"></div>
+      <div class="preview-modal__body">
+        <div class="preview-modal__header">
+          <h3 class="preview-modal__title">Report Preview — Page 1</h3>
+          <button class="preview-modal__close" id="previewModalClose">&times;</button>
+        </div>
+        <div class="preview-modal__content">
+          <canvas id="previewCanvasModal"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Report Cards -->
+    <div class="report-cards">
+      <div class="report-card active" data-type="full_overview" id="cardFull">
+        <span class="report-card__badge">Most Popular</span>
+        <h3 class="report-card__title">Full CPR Overview</h3>
+        <p class="report-card__desc">All 37 product families: regulatory overview, legislative timeline, DPP framework, complete standards tables, milestones, and DPP pathway analysis.</p>
+        <div class="report-card__price" id="priceFull">EUR 99</div>
+      </div>
+      <div class="report-card" data-type="product_family" id="cardFamily">
+        <span class="report-card__badge report-card__badge--teal">Single Family</span>
+        <h3 class="report-card__title">Product Family Deep-Dive</h3>
+        <p class="report-card__desc">One product family: complete standards breakdown (hEN + EAD tables), milestones timeline, DPP pathway, all narrative sections.</p>
+        <div class="report-card__price" id="priceFamily">EUR 29</div>
+      </div>
+    </div>
+
+    <!-- Family Selector (hidden by default) -->
+    <div class="family-selector" id="familySelector">
+      <label for="familySelect">Select product family</label>
+      <select id="familySelect">
+        <option value="">Choose a family...</option>
+      </select>
+    </div>
+
+    <!-- Purchase Form -->
+    <form class="purchase-form" id="purchaseForm">
+      <div class="purchase-form__row">
+        <label for="purchaseEmail">Email address</label>
+        <input type="email" id="purchaseEmail" placeholder="you@example.com" autocomplete="email" required>
+      </div>
+      <p class="invoice-section-label">Invoice details (optional)</p>
+      <div class="invoice-fields" id="invoiceFields">
+        <div class="purchase-form__row">
+          <label for="buyerCompany">Company name</label>
+          <input type="text" id="buyerCompany" placeholder="Acme B.V.">
+        </div>
+        <div class="purchase-form__row">
+          <label for="buyerVatId">VAT number</label>
+          <input type="text" id="buyerVatId" placeholder="NL123456789B01">
+        </div>
+        <div class="purchase-form__row">
+          <label for="buyerAddress">Address</label>
+          <input type="text" id="buyerAddress" placeholder="Street 1, 1234 AB City, NL">
+        </div>
+      </div>
+      <div class="purchase-form__row">
+        <label for="discountCode">Discount code (optional)</label>
+        <div class="discount-row">
+          <input type="text" id="discountCode" placeholder="Enter code">
+          <button type="button" class="btn-apply" id="btnApply">Apply</button>
+        </div>
+        <div class="discount-msg" id="discountMsg"></div>
+      </div>
+      <div class="price-breakdown" id="priceBreakdown">
+        <div class="price-breakdown__row">
+          <span>Subtotal excl. BTW</span>
+          <span id="priceExcl">EUR 81.82</span>
+        </div>
+        <div class="price-breakdown__row">
+          <span>BTW (21%)</span>
+          <span id="priceBtw">EUR 17.18</span>
+        </div>
+        <div class="price-breakdown__row price-breakdown__total">
+          <span>Total incl. BTW</span>
+          <span id="totalPrice">EUR 99.00</span>
+        </div>
+      </div>
+      <button type="submit" class="btn-buy" id="btnBuy">Buy Report</button>
+      <p class="price-note">Transaction costs may apply depending on the payment method selected.</p>
+    </form>
+
+    <!-- Disclaimer box -->
+    <div class="report-disclaimer-box">
+      <strong>Disclaimer:</strong> This report is generated by a tool in demo mode. The information has NOT been independently verified by legal experts and does not constitute legal advice. Always consult qualified legal counsel.
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="reports-footer">
+    <p>&copy; 2025 <a href="https://www.regenstudio.world">Regen Studio</a> &middot; <a href="index.html">Tracker</a> &middot; <a href="../">Demos</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <script>if (window.pdfjsLib) pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';</script>
+  <script src="js/cpr-pdf.js"></script>
+  <script src="js/reports.js"></script>
+</body>
+</html>
