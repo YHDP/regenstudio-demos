@@ -159,7 +159,7 @@ function generateInvoiceHtml(opts: {
       </td>
       <td style="vertical-align:top;text-align:right;width:50%">
         <p style="margin:0;font-size:13px;font-weight:600;color:#243644">Regen Studio B.V.</p>
-        <p style="margin:2px 0 0;font-size:12px;color:#5781A1">Stollenbergweg 43, Berg en Dal</p>
+        <p style="margin:2px 0 0;font-size:12px;color:#5781A1">Stollenbergweg 43, 6571 AB, Berg en Dal</p>
         <p style="margin:2px 0 0;font-size:12px;color:#5781A1">KVK 90337948</p>
         <p style="margin:2px 0 0;font-size:12px;color:#5781A1">BTW NL865282377B01</p>
       </td>
