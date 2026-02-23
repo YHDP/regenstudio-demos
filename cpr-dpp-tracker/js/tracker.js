@@ -39,8 +39,22 @@
         return dppSortKey(a) - dppSortKey(b);
       });
       renderGrid();
+      populateHeroIcons();
       if (metaEl) metaEl.textContent = families.length + ' product families \u00b7 Regulation (EU) 2024/3110';
     });
+
+  // ---------- HERO ICONS ----------
+  function populateHeroIcons() {
+    var container = document.getElementById('heroIcons');
+    if (!container) return;
+    var html = '';
+    families.forEach(function (fam) {
+      if (fam.icon) {
+        html += '<img src="Images/' + fam.icon + '" alt="" loading="lazy">';
+      }
+    });
+    container.innerHTML = html;
+  }
 
   // ---------- GRID ----------
   function renderGrid() {
