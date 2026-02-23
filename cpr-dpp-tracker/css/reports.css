@@ -503,11 +503,30 @@ body {
   background: #D32F2F;
   color: #fff;
   text-align: center;
-  padding: 10px 24px;
-  font-size: 0.82rem;
-  line-height: 1.5;
+  padding: 24px 24px;
+  max-width: 800px;
+  margin: -12px auto 0;
+  border-radius: 0 0 12px 12px;
 }
-.reports-disclaimer strong { font-weight: 700; }
+.reports-disclaimer__icon {
+  margin-bottom: 8px;
+}
+.reports-disclaimer__icon svg {
+  stroke: #fff;
+}
+.reports-disclaimer__title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+.reports-disclaimer__text {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  margin: 0;
+  opacity: 0.95;
+}
 .report-disclaimer-box {
   background: #fff5f5;
   border: 1px solid var(--color-red);
