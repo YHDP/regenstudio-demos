@@ -1,4 +1,4 @@
-// Magic link gate — email-based access with 24h localStorage sessions
+// Gate — magic link + password access with 24h localStorage sessions
 
 const SUPABASE_URL = 'https://uemspezaqxmkhenimwuf.supabase.co/functions/v1';
 
@@ -13,9 +13,9 @@ const SUPABASE_URL = 'https://uemspezaqxmkhenimwuf.supabase.co/functions/v1';
   const token = params.get('token');
 
   if (token) {
-    // Show validating state
     showMessage('Validating your access link...', false);
     hideForm();
+    hidePasswordForm();
 
     try {
       const tokenHash = await sha256(token);
@@ -28,13 +28,7 @@ const SUPABASE_URL = 'https://uemspezaqxmkhenimwuf.supabase.co/functions/v1';
       const data = await res.json();
 
       if (data.valid) {
-        // Save 24h session
-        localStorage.setItem(sessionKey, JSON.stringify({
-          demo_id: config.demoId,
-          granted_at: Date.now(),
-        }));
-        // Clean URL and redirect
-        window.location.replace(config.demoPath);
+        grantSession(sessionKey, config);
         return;
       } else {
         showMessage(data.error || 'Link expired or already used. Please request a new one.', true);
@@ -42,7 +36,6 @@ const SUPABASE_URL = 'https://uemspezaqxmkhenimwuf.supabase.co/functions/v1';
     } catch {
       showMessage('Something went wrong. Please try again.', true);
     }
-    // Clean the token from URL without reload
     window.history.replaceState({}, '', window.location.pathname);
     return;
   }
@@ -57,13 +50,13 @@ const SUPABASE_URL = 'https://uemspezaqxmkhenimwuf.supabase.co/functions/v1';
         window.location.replace(config.demoPath);
         return;
       }
-      // Expired — clean up
       localStorage.removeItem(sessionKey);
     }
   } catch { /* invalid JSON — continue to show form */ }
 
-  // --- 3. Show email form ---
+  // --- 3. Show forms ---
   initEmailForm(config);
+  await initPasswordForm(config, sessionKey);
   initCopyButtons();
 })();
 
@@ -101,7 +94,6 @@ function initEmailForm(config) {
         throw new Error(data.error || 'Something went wrong');
       }
 
-      // Show success message
       form.style.display = 'none';
       document.getElementById('gate-success').style.display = 'flex';
     } catch (err) {
@@ -111,6 +103,45 @@ function initEmailForm(config) {
       form.appendChild(errorEl);
       btn.disabled = false;
       btn.textContent = 'Send Link';
+    }
+  });
+}
+
+// --- Password form handler ---
+async function initPasswordForm(config, sessionKey) {
+  const form = document.getElementById('password-form');
+  if (!form) return;
+
+  let passwordHash = '';
+  try {
+    const res = await fetch('../demos.json');
+    const data = await res.json();
+    passwordHash = data.passwordHash;
+  } catch {
+    console.error('Could not load demo configuration.');
+  }
+
+  const input = document.getElementById('gate-password');
+  const errorEl = document.getElementById('password-error');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const value = input.value;
+    if (!value) return;
+
+    const hash = await sha256(value);
+
+    if (hash === passwordHash) {
+      grantSession(sessionKey, config);
+    } else {
+      errorEl.classList.add('visible');
+      input.classList.add('error');
+      input.value = '';
+      input.focus();
+      setTimeout(() => {
+        errorEl.classList.remove('visible');
+        input.classList.remove('error');
+      }, 3000);
     }
   });
 }
@@ -147,6 +178,14 @@ function initCopyButtons() {
 }
 
 // --- Helpers ---
+function grantSession(sessionKey, config) {
+  localStorage.setItem(sessionKey, JSON.stringify({
+    demo_id: config.demoId,
+    granted_at: Date.now(),
+  }));
+  window.location.replace(config.demoPath);
+}
+
 function showMessage(text, isError) {
   const header = document.querySelector('.gate-header p');
   if (header) {
@@ -158,6 +197,13 @@ function showMessage(text, isError) {
 function hideForm() {
   const form = document.getElementById('gate-form');
   if (form) form.style.display = 'none';
+}
+
+function hidePasswordForm() {
+  const form = document.getElementById('password-form');
+  if (form) form.style.display = 'none';
+  const divider = document.getElementById('password-divider');
+  if (divider) divider.style.display = 'none';
 }
 
 async function sha256(message) {
