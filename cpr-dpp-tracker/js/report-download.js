@@ -80,6 +80,9 @@
             btnDownload.addEventListener('click', function () {
               CPRReport.generate(families, { download: true, familyLetter: options.familyLetter });
             });
+          }).catch(function (err) {
+            console.error('PDF generation error:', err);
+            showError('Failed to generate report. Please try again.');
           });
         });
       })
@@ -89,9 +92,12 @@
       });
   }
 
+  var jspdfAttempts = 0;
   function waitForJsPDF(cb) {
     if (window.jspdf) {
       cb();
+    } else if (++jspdfAttempts > 30) {
+      showError('PDF library failed to load. Please refresh the page.');
     } else {
       setTimeout(function () { waitForJsPDF(cb); }, 300);
     }
