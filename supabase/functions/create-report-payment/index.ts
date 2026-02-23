@@ -185,7 +185,12 @@ Deno.serve(async (req) => {
         status: "pending",
         buyer_company: buyer_company || null,
         buyer_vat_id: buyer_vat_id || null,
-        buyer_address: buyer_address || null,
+        buyer_street: buyer_street || null,
+        buyer_number: buyer_number || null,
+        buyer_extra: buyer_extra || null,
+        buyer_postal: buyer_postal || null,
+        buyer_city: buyer_city || null,
+        buyer_country: buyer_country || null,
       })
       .select("id")
       .single();
