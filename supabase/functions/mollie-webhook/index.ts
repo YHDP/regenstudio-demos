@@ -119,7 +119,12 @@ function generateInvoiceHtml(opts: {
   email: string;
   buyerCompany?: string | null;
   buyerVatId?: string | null;
-  buyerAddress?: string | null;
+  buyerStreet?: string | null;
+  buyerNumber?: string | null;
+  buyerExtra?: string | null;
+  buyerPostal?: string | null;
+  buyerCity?: string | null;
+  buyerCountry?: string | null;
   description: string;
   amountCentsInclBtw: number;
   paymentMethod: string;
@@ -132,7 +137,17 @@ function generateInvoiceHtml(opts: {
   if (opts.buyerCompany) buyerLines.push(`<strong>${escHtml(opts.buyerCompany)}</strong>`);
   buyerLines.push(escHtml(opts.email));
   if (opts.buyerVatId) buyerLines.push(`VAT: ${escHtml(opts.buyerVatId)}`);
-  if (opts.buyerAddress) buyerLines.push(escHtml(opts.buyerAddress));
+  if (opts.buyerStreet) {
+    let addrLine = escHtml(opts.buyerStreet);
+    if (opts.buyerNumber) addrLine += ` ${escHtml(opts.buyerNumber)}`;
+    if (opts.buyerExtra) addrLine += ` ${escHtml(opts.buyerExtra)}`;
+    buyerLines.push(addrLine);
+    let cityLine = "";
+    if (opts.buyerPostal) cityLine += `${escHtml(opts.buyerPostal)} `;
+    if (opts.buyerCity) cityLine += escHtml(opts.buyerCity);
+    if (cityLine) buyerLines.push(cityLine);
+    if (opts.buyerCountry) buyerLines.push(escHtml(opts.buyerCountry));
+  }
 
   return `
   <table style="width:100%;border-collapse:collapse;margin-bottom:24px">
@@ -207,7 +222,9 @@ async function sendConfirmationEmail(order: Record<string, unknown>, orderId: st
   const discountCode = order.discount_code as string | null;
   const buyerCompany = order.buyer_company as string | null;
   const buyerVatId = order.buyer_vat_id as string | null;
-  const buyerAddress = order.buyer_address as string | null;
+  const buyerStreet = order.buyer_street as string | null;
+  const buyerCity = order.buyer_city as string | null;
+  const buyerCountry = order.buyer_country as string | null;
 
   const fromAddress = "Regen Studio <noreply@regenstudio.space>";
   const reportLabel = REPORT_LABELS[reportType] || reportType;
@@ -226,7 +243,12 @@ async function sendConfirmationEmail(order: Record<string, unknown>, orderId: st
     email,
     buyerCompany,
     buyerVatId,
-    buyerAddress,
+    buyerStreet,
+    buyerNumber: order.buyer_number as string | null,
+    buyerExtra: order.buyer_extra as string | null,
+    buyerPostal: order.buyer_postal as string | null,
+    buyerCity,
+    buyerCountry,
     description: `${reportLabel}${familySuffix}`,
     amountCentsInclBtw: amountCents,
     paymentMethod: "Mollie (online payment)",

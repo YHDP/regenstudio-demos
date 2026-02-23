@@ -43,7 +43,7 @@ Deno.serve(async (req) => {
 
   try {
     const body = await req.json();
-    const { email, report_type, family_letter, discount_code, buyer_company, buyer_vat_id, buyer_address } = body;
+    const { email, report_type, family_letter, discount_code, buyer_company, buyer_vat_id, buyer_street, buyer_number, buyer_extra, buyer_postal, buyer_city, buyer_country } = body;
 
     // Validate
     if (!email || !report_type) {
@@ -127,7 +127,12 @@ Deno.serve(async (req) => {
           download_token_expires: expires,
           buyer_company: buyer_company || null,
           buyer_vat_id: buyer_vat_id || null,
-          buyer_address: buyer_address || null,
+          buyer_street: buyer_street || null,
+          buyer_number: buyer_number || null,
+          buyer_extra: buyer_extra || null,
+          buyer_postal: buyer_postal || null,
+          buyer_city: buyer_city || null,
+          buyer_country: buyer_country || null,
         })
         .select("id")
         .single();
