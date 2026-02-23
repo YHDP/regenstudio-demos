@@ -72,7 +72,17 @@
     if (d.buyer_company) buyerLines += '<p class="name">' + esc(d.buyer_company) + '</p>';
     buyerLines += '<p>' + esc(d.email) + '</p>';
     if (d.buyer_vat_id) buyerLines += '<p>VAT: ' + esc(d.buyer_vat_id) + '</p>';
-    if (d.buyer_address) buyerLines += '<p>' + esc(d.buyer_address) + '</p>';
+    if (d.buyer_street) {
+      var addrLine = esc(d.buyer_street);
+      if (d.buyer_number) addrLine += ' ' + esc(d.buyer_number);
+      if (d.buyer_extra) addrLine += ' ' + esc(d.buyer_extra);
+      buyerLines += '<p>' + addrLine + '</p>';
+      var cityLine = '';
+      if (d.buyer_postal) cityLine += esc(d.buyer_postal) + ' ';
+      if (d.buyer_city) cityLine += esc(d.buyer_city);
+      if (cityLine) buyerLines += '<p>' + cityLine + '</p>';
+      if (d.buyer_country) buyerLines += '<p>' + esc(d.buyer_country) + '</p>';
+    }
 
     var paymentMethod = d.amount_cents > 0 ? 'Mollie (online payment)' : 'Discount code';
     if (d.discount_code && d.amount_cents > 0) {

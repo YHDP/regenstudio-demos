@@ -30,7 +30,12 @@
   var priceFamily = document.getElementById('priceFamily');
   var buyerCompany = document.getElementById('buyerCompany');
   var buyerVatId = document.getElementById('buyerVatId');
-  var buyerAddress = document.getElementById('buyerAddress');
+  var buyerStreet = document.getElementById('buyerStreet');
+  var buyerNumber = document.getElementById('buyerNumber');
+  var buyerExtra = document.getElementById('buyerExtra');
+  var buyerPostal = document.getElementById('buyerPostal');
+  var buyerCity = document.getElementById('buyerCity');
+  var buyerCountry = document.getElementById('buyerCountry');
 
   // ── Load families ──
   fetch('data/families.json')
@@ -246,8 +251,13 @@
     if (buyerVatId.value.trim()) {
       payload.buyer_vat_id = buyerVatId.value.trim();
     }
-    if (buyerAddress.value.trim()) {
-      payload.buyer_address = buyerAddress.value.trim();
+    if (buyerStreet.value.trim()) {
+      payload.buyer_street = buyerStreet.value.trim();
+      payload.buyer_number = buyerNumber.value.trim();
+      payload.buyer_extra = buyerExtra.value.trim();
+      payload.buyer_postal = buyerPostal.value.trim();
+      payload.buyer_city = buyerCity.value.trim();
+      payload.buyer_country = buyerCountry.value;
     }
 
     fetch(SUPABASE_URL + '/create-report-payment', {

@@ -397,6 +397,47 @@ body {
 .invoice-fields {
   margin-bottom: 8px;
 }
+.purchase-form__row--inline {
+  display: flex;
+  gap: 12px;
+}
+.purchase-form__field {
+  flex: 1;
+}
+.purchase-form__field--street { flex: 3; }
+.purchase-form__field--number { flex: 1; min-width: 64px; }
+.purchase-form__field--extra { flex: 1; min-width: 64px; }
+.purchase-form__field--postal { flex: 1.2; }
+.purchase-form__field--city { flex: 2; }
+.purchase-form__field--country { flex: 1.5; }
+.purchase-form__field label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  margin-bottom: 6px;
+}
+.purchase-form__field input,
+.purchase-form__field select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  transition: border-color 0.2s;
+}
+.purchase-form__field input:focus,
+.purchase-form__field select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+@media (max-width: 540px) {
+  .purchase-form__row--inline { flex-wrap: wrap; }
+  .purchase-form__field--street,
+  .purchase-form__field--city { flex-basis: 100%; }
+}
 
 /* ---------- Price Breakdown ---------- */
 .price-breakdown {

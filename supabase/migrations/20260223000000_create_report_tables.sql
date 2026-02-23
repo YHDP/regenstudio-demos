@@ -35,7 +35,12 @@ CREATE TABLE report_orders (
   invoice_number INTEGER,
   buyer_company TEXT,
   buyer_vat_id TEXT,
-  buyer_address TEXT
+  buyer_street TEXT,
+  buyer_number TEXT,
+  buyer_extra TEXT,
+  buyer_postal TEXT,
+  buyer_city TEXT,
+  buyer_country TEXT
 );
 
 CREATE SEQUENCE report_invoice_seq START 1;
