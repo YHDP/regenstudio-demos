@@ -9,6 +9,8 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <!-- Header -->
   <header class="site-header">
     <div class="header-inner">
@@ -27,7 +29,7 @@
   </header>
 
   <!-- Demos -->
-  <section class="demos-section">
+  <section class="demos-section" id="main-content">
     <aside class="demos-sidebar">
       <div class="sidebar-accent"></div>
       <span class="sidebar-label">Demos</span>
@@ -61,10 +63,10 @@
     <p>We'd love to show you what's possible. Reach out and we'll set up a personalized walkthrough.</p>
     <form id="contact-form" class="contact-form">
       <div class="contact-form-row">
-        <input type="text" name="name" placeholder="Your name" class="contact-input" required>
-        <input type="email" name="email" placeholder="Email address" class="contact-input" required>
+        <input type="text" name="name" placeholder="Your name" aria-label="Your name" class="contact-input" required>
+        <input type="email" name="email" placeholder="Email address" aria-label="Email address" class="contact-input" required>
       </div>
-      <textarea name="message" placeholder="Tell us about your project or what you'd like to explore..." class="contact-input contact-textarea"></textarea>
+      <textarea name="message" placeholder="Tell us about your project or what you'd like to explore..." aria-label="Tell us about your project" class="contact-input contact-textarea"></textarea>
       <label class="gate-checkbox">
         <input type="checkbox" name="newsletter_opt_in" value="1" checked>
         <span>Also subscribe me to the Regen Studio newsletter</span>
@@ -91,7 +93,7 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <p>&copy; 2025 Regen Studio &middot; <a href="https://www.regenstudio.world">www.regenstudio.world</a></p>
+    <p>&copy; 2026 Regen Studio &middot; <a href="https://www.regenstudio.world/privacy.html">Privacy Policy</a> &middot; <a href="https://www.regenstudio.world">www.regenstudio.world</a></p>
   </footer>
 
   <script src="assets/js/tracker.js"></script>

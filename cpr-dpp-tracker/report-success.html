@@ -10,13 +10,15 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <!-- Header -->
   <div class="reports-header">
     <h1 class="reports-header__title">CPR DPP Report</h1>
     <p class="reports-header__subtitle">Your report is being prepared</p>
   </div>
 
-  <div class="success-container">
+  <div class="success-container" id="main-content">
     <div class="success-card">
 
       <!-- Email verification -->
@@ -24,7 +26,7 @@
         <h2 class="success-title">Verify your email</h2>
         <p class="success-text">Enter the email address used for this order to access your report.</p>
         <form id="emailVerifyForm" style="margin-top:16px;text-align:center;">
-          <input type="email" id="emailInput" placeholder="your@email.com" required
+          <input type="email" id="emailInput" placeholder="you@example.com" required
             style="padding:10px 14px;font-size:15px;border:1px solid #ccc;border-radius:6px;width:100%;max-width:320px;">
           <p id="emailError" style="color:#c0392b;font-size:13px;margin-top:8px;display:none"></p>
           <button type="submit" style="margin-top:12px;padding:10px 28px;font-size:15px;font-weight:600;color:#fff;background:#00914B;border:none;border-radius:6px;cursor:pointer;">
@@ -65,7 +67,7 @@
 
   <!-- Footer -->
   <footer class="reports-footer">
-    <p>&copy; 2025 <a href="https://www.regenstudio.space">Regen Studio</a> &middot; <a href="index.html">Tracker</a> &middot; <a href="../">Demos</a></p>
+    <p>&copy; 2026 <a href="https://www.regenstudio.world">Regen Studio</a> &middot; <a href="https://www.regenstudio.world/privacy.html">Privacy Policy</a> &middot; <a href="index.html">Tracker</a> &middot; <a href="../">Demos</a></p>
   </footer>
 
   <script src="js/vendor/jspdf.umd.min.js"></script>

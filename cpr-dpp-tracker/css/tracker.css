@@ -1,24 +1,12 @@
 /* CPR DPP Tracker — extracted & cleaned from blog inline styles */
 
-:root {
-  --color-primary: #00914B;
-  --color-teal: #009BBB;
-  --color-text: #1a1a1a;
-  --color-text-secondary: #6b7280;
-  --color-bg: #f8fafc;
-  --color-bg-card: #fff;
-  --color-border: #e5e7eb;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
 *, *::before, *::after { box-sizing: border-box; }
 
 body {
   margin: 0; padding: 0;
-  font-family: var(--font-body);
-  background: var(--color-bg);
-  color: var(--color-text);
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text-primary);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -131,27 +119,27 @@ body {
 }
 .cpr-card {
   display: flex; flex-direction: column; align-items: center; text-align: center;
-  padding: 20px 12px 16px; background: var(--color-bg-card); border: 1px solid var(--color-border);
+  padding: 20px 12px 16px; background: var(--surface); border: 1px solid var(--border);
   border-radius: 12px; transition: border-color 0.2s ease, box-shadow 0.2s ease; cursor: pointer;
 }
 .cpr-card:hover {
-  border-color: var(--color-primary); box-shadow: 0 2px 12px rgba(0,145,75,0.08);
+  border-color: var(--emerald); box-shadow: 0 2px 12px rgba(0,145,75,0.08);
 }
 .cpr-card img { width: 56px; height: 56px; object-fit: contain; margin-bottom: 10px; }
 .cpr-card__name {
-  font-size: 0.82rem; font-weight: 600; color: var(--color-text);
+  font-size: 0.82rem; font-weight: 600; color: var(--text-primary);
   line-height: 1.35; min-height: 2.2em; display: flex; align-items: center;
 }
 .cpr-card__family {
   display: block; font-size: 0.66rem; font-weight: 400;
-  color: var(--color-text-secondary); margin-top: 4px; line-height: 1.3; opacity: 0.8;
+  color: var(--text-secondary); margin-top: 4px; line-height: 1.3; opacity: 0.8;
 }
 .cpr-card__tc {
-  display: block; font-size: 0.62rem; color: var(--color-text-secondary);
+  display: block; font-size: 0.62rem; color: var(--text-secondary);
   margin-top: 6px; line-height: 1.3; opacity: 0.7;
 }
 .cpr-card__dpp {
-  display: block; font-size: 0.62rem; font-weight: 600; color: var(--color-teal);
+  display: block; font-size: 0.62rem; font-weight: 600; color: var(--teal);
   margin-top: 8px; letter-spacing: 0.01em;
 }
 .cpr-card__status {
@@ -162,7 +150,7 @@ body {
 .cpr-card__status--teal   { background: rgba(0,155,187,0.1); color: #009BBB; }
 .cpr-card__status--blue   { background: rgba(59,130,246,0.1); color: #3B82F6; }
 .cpr-card__status--orange { background: rgba(255,169,45,0.12); color: #B87800; }
-.cpr-card__status--grey   { background: rgba(107,114,128,0.08); color: #6b7280; }
+.cpr-card__status--grey   { background: rgba(107,114,128,0.08); color: var(--text-secondary); }
 
 @media (max-width: 900px) { .cpr-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 600px) { .cpr-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -179,7 +167,7 @@ body {
   background: rgba(15,23,30,0.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
 }
 .cpr-modal__card {
-  position: relative; background: var(--color-bg-card); border-radius: 20px; padding: 0;
+  position: relative; background: var(--surface); border-radius: 20px; padding: 0;
   max-width: 720px; width: 92vw; max-height: 85vh; overflow-y: auto;
   box-shadow: 0 24px 64px rgba(0,0,0,0.20), 0 0 0 1px rgba(0,0,0,0.04);
   transform: translateY(20px) scale(0.97); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
@@ -187,7 +175,7 @@ body {
 .cpr-modal[aria-hidden="false"] .cpr-modal__card { transform: translateY(0) scale(1); }
 .cpr-modal__close {
   position: absolute; top: 16px; right: 16px; background: rgba(0,0,0,0.04); border: none;
-  font-size: 1.25rem; cursor: pointer; color: var(--color-text-secondary); line-height: 1;
+  font-size: 1.25rem; cursor: pointer; color: var(--text-secondary); line-height: 1;
   width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
   border-radius: 50%; transition: background 0.15s;
 }
@@ -199,8 +187,8 @@ body {
 }
 .cpr-modal__icon img { width: 36px; height: 36px; object-fit: contain; }
 .cpr-modal__header-text { flex: 1; min-width: 0; padding-right: 24px; }
-.cpr-modal__title { font-size: 1.1rem; font-weight: 700; margin: 0; color: var(--color-text); line-height: 1.3; }
-.cpr-modal__subtitle { font-size: 0.75rem; color: var(--color-text-secondary); margin: 4px 0 0; font-weight: 500; }
+.cpr-modal__title { font-size: 1.1rem; font-weight: 700; margin: 0; color: var(--text-primary); line-height: 1.3; }
+.cpr-modal__subtitle { font-size: 0.75rem; color: var(--text-secondary); margin: 4px 0 0; font-weight: 500; }
 .cpr-modal__tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 14px 28px 0; }
 .cpr-modal__tag {
   display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 6px;
@@ -212,7 +200,7 @@ body {
 .cpr-modal__tag--teal   { color: #006B7F; background: rgba(0,155,187,0.08); }
 .cpr-modal__tag--orange { color: #B87800; background: rgba(255,169,45,0.1); }
 .cpr-modal__updated { padding: 4px 28px 0; font-size: 0.68rem; color: #8CA9BF; }
-.cpr-dpp-box__date { font-size: 1.05rem; font-weight: 700; color: var(--color-teal); margin-bottom: 6px; }
+.cpr-dpp-box__date { font-size: 1.05rem; font-weight: 700; color: var(--teal); margin-bottom: 6px; }
 .cpr-modal__section { padding: 0 28px; }
 .cpr-modal__section-title {
   font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
@@ -238,12 +226,12 @@ body {
   font-size: 10px; flex-shrink: 0; transition: all 0.2s ease;
 }
 .cpr-milestone__dot--done   { border-color: #00914B; background: #00914B; color: #fff; }
-.cpr-milestone__dot--active { border-color: var(--color-teal); background: var(--color-teal); color: #fff; box-shadow: 0 0 0 3px rgba(0,155,187,0.12); }
+.cpr-milestone__dot--active { border-color: var(--teal); background: var(--teal); color: #fff; box-shadow: 0 0 0 3px rgba(0,155,187,0.12); }
 .cpr-milestone__dot--future { border-color: #E2E8ED; background: #fff; color: #C5CDD5; }
 .cpr-milestone__label { font-size: 0.64rem; color: #5A7080; margin-top: 6px; line-height: 1.2; }
 .cpr-milestone__date  { font-size: 0.6rem; color: #A0B0BE; margin-top: 2px; font-weight: 600; }
 .cpr-milestone__date--done  { color: #00914B; }
-.cpr-milestone__date--draft { color: var(--color-teal); }
+.cpr-milestone__date--draft { color: var(--teal); }
 .cpr-milestone__link { color: inherit; text-decoration: none; border-bottom: 1px dotted currentColor; }
 .cpr-milestone__link:hover { border-bottom-style: solid; opacity: 0.85; }
 .cpr-milestones--7 .cpr-milestone__dot   { width: 20px; height: 20px; font-size: 9px; }
@@ -252,12 +240,12 @@ body {
 .cpr-milestones--7::before { top: 17px; }
 
 /* Modal body/sections */
-.cpr-modal__body { font-size: 0.82rem; line-height: 1.65; color: var(--color-text); padding: 0 28px 28px; }
+.cpr-modal__body { font-size: 0.82rem; line-height: 1.65; color: var(--text-primary); padding: 0 28px 28px; }
 .cpr-modal__body p { margin: 0 0 8px; }
 .cpr-modal__body p:last-child { margin: 0; }
 .cpr-modal__body strong { font-weight: 600; color: #1a2b36; }
 
-.cpr-modal__intro { padding: 0 28px; font-size: 0.82rem; line-height: 1.65; color: var(--color-text); }
+.cpr-modal__intro { padding: 0 28px; font-size: 0.82rem; line-height: 1.65; color: var(--text-primary); }
 .cpr-modal__intro p { margin: 0 0 8px; }
 .cpr-modal__intro p:last-child { margin: 0; }
 .cpr-modal__intro strong { font-weight: 600; color: #1a2b36; }
@@ -273,11 +261,11 @@ body {
 .cpr-modal__dpp-box strong { font-weight: 600; color: #1a2b36; }
 .cpr-modal__dpp-box .cpr-dpp-box__title {
   font-size: 0.62rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.06em; color: var(--color-teal); margin-bottom: 6px;
+  letter-spacing: 0.06em; color: var(--teal); margin-bottom: 6px;
 }
 .cpr-modal__annex { padding: 0 28px 0; }
 .cpr-modal__annex-content {
-  display: block; font-size: 0.78rem; line-height: 1.6; color: var(--color-text);
+  display: block; font-size: 0.78rem; line-height: 1.6; color: var(--text-primary);
   padding: 8px 0 4px; border-top: 1px solid #EEF1F4;
 }
 .cpr-modal__annex-content p { margin: 0 0 8px; }
@@ -294,14 +282,14 @@ body {
 .cpr-modal__standards { padding: 0 28px; }
 .cpr-dpp-info-btn {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 13px; height: 13px; border-radius: 50%; border: 1.2px solid var(--color-teal);
-  background: #fff; color: var(--color-teal); font-size: 0.48rem; font-weight: 700;
+  width: 13px; height: 13px; border-radius: 50%; border: 1.2px solid var(--teal);
+  background: #fff; color: var(--teal); font-size: 0.48rem; font-weight: 700;
   font-style: italic; cursor: pointer; margin-left: 4px; vertical-align: middle;
   line-height: 1; font-family: Georgia, serif; flex-shrink: 0;
 }
-.cpr-dpp-info-btn:hover { background: var(--color-teal); color: #fff; }
-.cpr-dpp-info-btn--ead { border-color: var(--color-primary); color: var(--color-primary); }
-.cpr-dpp-info-btn--ead:hover { background: var(--color-primary); color: #fff; }
+.cpr-dpp-info-btn:hover { background: var(--teal); color: #fff; }
+.cpr-dpp-info-btn--ead { border-color: var(--emerald); color: var(--emerald); }
+.cpr-dpp-info-btn--ead:hover { background: var(--emerald); color: #fff; }
 .cpr-dpp-info-popup {
   position: fixed; z-index: 10001; max-width: 340px; padding: 12px 14px;
   background: #fff; border: 1px solid #E2E8ED; border-radius: 10px;
@@ -314,8 +302,8 @@ body {
 }
 .cpr-dpp-info-popup__step { margin-bottom: 4px; }
 .cpr-dpp-info-popup__step b { font-weight: 600; color: #1a2b36; }
-.cpr-dpp-info-popup__step .cpr-dpp-date { font-weight: 600; color: var(--color-teal); }
-.cpr-dpp-info-popup__step .cpr-dpp-date--ead { color: var(--color-primary); }
+.cpr-dpp-info-popup__step .cpr-dpp-date { font-weight: 600; color: var(--teal); }
+.cpr-dpp-info-popup__step .cpr-dpp-date--ead { color: var(--emerald); }
 
 .cpr-modal__stds-table-wrap { overflow-x: auto; margin: 0 -4px; }
 .cpr-modal__stds-table { width: 100%; border-collapse: collapse; font-size: 0.7rem; line-height: 1.4; }
@@ -326,7 +314,7 @@ body {
 }
 .cpr-modal__stds-table td {
   padding: 5px 6px; border-bottom: 1px solid #EEF1F4;
-  color: var(--color-text); vertical-align: middle;
+  color: var(--text-primary); vertical-align: middle;
 }
 .cpr-modal__stds-table td:nth-child(2) { vertical-align: top; }
 .cpr-modal__stds-table tr:last-child td { border-bottom: none; }
@@ -335,12 +323,12 @@ body {
   margin-right: 4px; vertical-align: middle;
 }
 .cpr-std-dot--green  { background: #00914B; }
-.cpr-std-dot--teal   { background: var(--color-teal); }
+.cpr-std-dot--teal   { background: var(--teal); }
 .cpr-std-dot--orange { background: #E78A00; }
 .cpr-std-dot--grey   { background: #C5CDD5; }
 .cpr-modal__stds-toggle {
   display: inline-flex; align-items: center; gap: 4px; border: none; background: none;
-  cursor: pointer; font-size: 0.7rem; font-weight: 600; color: var(--color-teal); padding: 4px 0; margin-top: 4px;
+  cursor: pointer; font-size: 0.7rem; font-weight: 600; color: var(--teal); padding: 4px 0; margin-top: 4px;
 }
 .cpr-modal__stds-toggle:hover { color: #007A9B; }
 .cpr-modal__stds-toggle svg { transition: transform 0.2s; }
@@ -353,9 +341,9 @@ body {
   width: 7px; height: 7px; border-radius: 50%; border: 1.5px solid #C5CDD5;
   background: #fff; flex-shrink: 0;
 }
-.cpr-stage-dots__dot--done { border-color: var(--color-teal); background: var(--color-teal); }
-.cpr-stage-dots__dot--done-green { border-color: var(--color-primary); background: var(--color-primary); }
-.cpr-stage-dots__dot--check { border-color: var(--color-primary); background: var(--color-primary); position: relative; }
+.cpr-stage-dots__dot--done { border-color: var(--teal); background: var(--teal); }
+.cpr-stage-dots__dot--done-green { border-color: var(--emerald); background: var(--emerald); }
+.cpr-stage-dots__dot--check { border-color: var(--emerald); background: var(--emerald); position: relative; }
 .cpr-stage-dots__dot--check::after {
   content: '\2713'; position: absolute; inset: 0; display: flex; align-items: center;
   justify-content: center; color: #fff; font-size: 5px; line-height: 1;
@@ -381,8 +369,8 @@ body {
 
 /* ---------- Footer ---------- */
 .tracker-footer {
-  text-align: center; padding: 20px; font-size: 0.72rem; color: var(--color-text-secondary);
-  border-top: 1px solid var(--color-border);
+  text-align: center; padding: 20px; font-size: 0.72rem; color: var(--text-secondary);
+  border-top: 1px solid var(--border);
 }
-.tracker-footer a { color: var(--color-primary); text-decoration: none; }
+.tracker-footer a { color: var(--emerald); text-decoration: none; }
 .tracker-footer a:hover { text-decoration: underline; }
