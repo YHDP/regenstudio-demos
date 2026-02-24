@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#FFFFFF"/>
+
+  <!-- House/building shape - tessellated triangles in teal/navy -->
+
+  <!-- Roof - steep triangle -->
+  <polygon points="300,100 400,160 200,160" fill="#009BBB" opacity="0.9"/>
+  <polygon points="300,100 350,130 300,160" fill="#0891B2" opacity="0.8"/>
+  <polygon points="300,100 250,130 300,160" fill="#009BBB" opacity="0.75"/>
+  <polygon points="200,160 250,130 300,100" fill="#0E7490" opacity="0.85"/>
+  <polygon points="300,100 350,130 400,160" fill="#06B6D4" opacity="0.7"/>
+
+  <!-- Left wall - tessellated -->
+  <polygon points="200,160 260,160 230,210" fill="#009BBB" opacity="0.85"/>
+  <polygon points="260,160 230,210 290,210" fill="#0891B2" opacity="0.75"/>
+  <polygon points="260,160 320,160 290,210" fill="#0E7490" opacity="0.8"/>
+  <polygon points="200,160 230,210 200,260" fill="#06B6D4" opacity="0.7"/>
+  <polygon points="230,210 200,260 260,260" fill="#009BBB" opacity="0.8"/>
+  <polygon points="230,210 290,210 260,260" fill="#0891B2" opacity="0.85"/>
+  <polygon points="290,210 260,260 320,260" fill="#0E7490" opacity="0.75"/>
+
+  <!-- Right wall - tessellated -->
+  <polygon points="320,160 380,160 350,210" fill="#0891B2" opacity="0.8"/>
+  <polygon points="380,160 350,210 400,210" fill="#009BBB" opacity="0.7"/>
+  <polygon points="380,160 400,160 400,210" fill="#0E7490" opacity="0.75"/>
+  <polygon points="320,160 350,210 320,260" fill="#06B6D4" opacity="0.85"/>
+  <polygon points="350,210 320,260 380,260" fill="#009BBB" opacity="0.8"/>
+  <polygon points="350,210 400,210 380,260" fill="#0891B2" opacity="0.7"/>
+  <polygon points="400,210 380,260 400,260" fill="#0E7490" opacity="0.8"/>
+
+  <!-- Lower walls -->
+  <polygon points="200,260 260,260 230,310" fill="#009BBB" opacity="0.65"/>
+  <polygon points="260,260 230,310 290,310" fill="#0891B2" opacity="0.6"/>
+  <polygon points="260,260 320,260 290,310" fill="#0E7490" opacity="0.55"/>
+  <polygon points="320,260 380,260 350,310" fill="#06B6D4" opacity="0.6"/>
+  <polygon points="380,260 350,310 400,310" fill="#009BBB" opacity="0.55"/>
+  <polygon points="380,260 400,260 400,310" fill="#0891B2" opacity="0.5"/>
+
+  <!-- Foundation row -->
+  <polygon points="200,260 230,310 200,360" fill="#243644" opacity="0.2"/>
+  <polygon points="230,310 200,360 260,360" fill="#243644" opacity="0.15"/>
+  <polygon points="230,310 290,310 260,360" fill="#243644" opacity="0.18"/>
+  <polygon points="290,310 260,360 320,360" fill="#243644" opacity="0.12"/>
+  <polygon points="290,310 350,310 320,360" fill="#243644" opacity="0.15"/>
+  <polygon points="350,310 320,360 380,360" fill="#243644" opacity="0.12"/>
+  <polygon points="350,310 400,310 380,360" fill="#243644" opacity="0.18"/>
+  <polygon points="400,310 380,360 400,360" fill="#243644" opacity="0.15"/>
+
+  <!-- Door outline -->
+  <rect x="270" y="270" width="60" height="90" rx="2" fill="#243644" opacity="0.25"/>
+  <rect x="275" y="275" width="50" height="85" rx="1" fill="white" opacity="0.5"/>
+
+  <!-- Window left -->
+  <rect x="215" y="190" width="35" height="35" rx="2" fill="#243644" opacity="0.2"/>
+  <rect x="218" y="193" width="29" height="29" rx="1" fill="white" opacity="0.4"/>
+  <line x1="232.5" y1="193" x2="232.5" y2="222" stroke="#243644" stroke-width="1.5" opacity="0.2"/>
+  <line x1="218" y1="207.5" x2="247" y2="207.5" stroke="#243644" stroke-width="1.5" opacity="0.2"/>
+
+  <!-- Window right -->
+  <rect x="350" y="190" width="35" height="35" rx="2" fill="#243644" opacity="0.2"/>
+  <rect x="353" y="193" width="29" height="29" rx="1" fill="white" opacity="0.4"/>
+  <line x1="367.5" y1="193" x2="367.5" y2="222" stroke="#243644" stroke-width="1.5" opacity="0.2"/>
+  <line x1="353" y1="207.5" x2="382" y2="207.5" stroke="#243644" stroke-width="1.5" opacity="0.2"/>
+
+  <!-- DPP Document - right side -->
+  <rect x="500" y="130" width="160" height="210" rx="8" fill="#009BBB" opacity="0.12"/>
+  <rect x="508" y="138" width="144" height="194" rx="5" fill="white" stroke="#009BBB" stroke-width="2" opacity="0.9"/>
+
+  <!-- Document header bar -->
+  <rect x="508" y="138" width="144" height="32" rx="5" fill="#009BBB" opacity="0.2"/>
+  <rect x="530" y="145" width="60" height="6" rx="3" fill="#009BBB" opacity="0.5"/>
+  <rect x="530" y="157" width="40" height="4" rx="2" fill="#009BBB" opacity="0.3"/>
+
+  <!-- Document content lines -->
+  <rect x="522" y="184" width="116" height="4" rx="2" fill="#243644" opacity="0.12"/>
+  <rect x="522" y="196" width="100" height="4" rx="2" fill="#243644" opacity="0.1"/>
+  <rect x="522" y="208" width="110" height="4" rx="2" fill="#243644" opacity="0.12"/>
+  <rect x="522" y="220" width="80" height="4" rx="2" fill="#243644" opacity="0.08"/>
+
+  <!-- Document checklist items -->
+  <rect x="522" y="240" width="10" height="10" rx="2" fill="#009BBB" opacity="0.3"/>
+  <polyline points="524,245 527,248 532,243" fill="none" stroke="#009BBB" stroke-width="1.5" opacity="0.7"/>
+  <rect x="538" y="242" width="70" height="4" rx="2" fill="#243644" opacity="0.1"/>
+
+  <rect x="522" y="258" width="10" height="10" rx="2" fill="#009BBB" opacity="0.3"/>
+  <polyline points="524,263 527,266 532,261" fill="none" stroke="#009BBB" stroke-width="1.5" opacity="0.7"/>
+  <rect x="538" y="260" width="85" height="4" rx="2" fill="#243644" opacity="0.1"/>
+
+  <rect x="522" y="276" width="10" height="10" rx="2" fill="#009BBB" opacity="0.3"/>
+  <polyline points="524,281 527,284 532,279" fill="none" stroke="#009BBB" stroke-width="1.5" opacity="0.7"/>
+  <rect x="538" y="278" width="60" height="4" rx="2" fill="#243644" opacity="0.1"/>
+
+  <rect x="522" y="294" width="10" height="10" rx="2" fill="#243644" opacity="0.1"/>
+  <rect x="538" y="296" width="75" height="4" rx="2" fill="#243644" opacity="0.08"/>
+
+  <!-- Arrow connecting building to document -->
+  <line x1="420" y1="250" x2="488" y2="250" stroke="#009BBB" stroke-width="2" stroke-dasharray="6,4" opacity="0.4"/>
+  <polygon points="488,244 500,250 488,256" fill="#009BBB" opacity="0.5"/>
+
+  <!-- Compliance badge on document -->
+  <circle cx="630" cy="310" r="28" fill="#009BBB" opacity="0.9"/>
+  <polyline points="618,310 626,318 644,300" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- "CPR" text badge -->
+  <circle cx="300" cy="370" r="20" fill="#243644" opacity="0.8"/>
+  <text x="300" y="376" text-anchor="middle" fill="white" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="12">CPR</text>
+
+  <!-- Decorative scattered triangles -->
+  <polygon points="120,150 150,130 140,170" fill="#009BBB" opacity="0.2"/>
+  <polygon points="700,160 730,145 720,180" fill="#0891B2" opacity="0.15"/>
+  <polygon points="140,300 165,285 158,315" fill="#0E7490" opacity="0.15"/>
+  <polygon points="690,380 715,365 708,395" fill="#009BBB" opacity="0.12"/>
+  <polygon points="110,230 135,220 128,248" fill="#06B6D4" opacity="0.1"/>
+  <polygon points="720,260 742,248 736,276" fill="#0E7490" opacity="0.1"/>
+
+  <!-- Small construction detail triangles near building -->
+  <polygon points="170,140 185,125 180,155" fill="#009BBB" opacity="0.08"/>
+  <polygon points="430,140 445,125 440,155" fill="#0891B2" opacity="0.08"/>
+  <polygon points="160,370 180,358 174,382" fill="#243644" opacity="0.06"/>
+  <polygon points="420,370 440,358 434,382" fill="#243644" opacity="0.06"/>
+</svg>
