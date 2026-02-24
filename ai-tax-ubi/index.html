@@ -288,45 +288,6 @@
             min-width: 40px;
         }
 
-        /* Citizens */
-        .citizens-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 0.75rem;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        .citizen {
-            background: var(--bg);
-            border-radius: var(--radius-sm);
-            padding: 0.75rem;
-            text-align: center;
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: 1px solid var(--border);
-        }
-
-        .citizen:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .citizen-avatar {
-            font-size: 2rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .citizen-name {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            margin-bottom: 0.25rem;
-        }
-
-        .citizen-ubi {
-            font-weight: 600;
-            color: var(--primary);
-            font-size: 0.875rem;
-        }
 
         /* Flow Visualization */
         .flow-container {
@@ -478,11 +439,38 @@
         }
 
         @media (max-width: 768px) {
-            .dashboard {
-                grid-template-columns: 1fr;
+            .container {
+                display: flex;
+                flex-direction: column;
             }
-            .citizens-grid {
-                grid-template-columns: repeat(3, 1fr);
+            .dashboard {
+                grid-template-columns: repeat(2, 1fr);
+                order: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .flow-diagram {
+                flex-direction: column;
+                gap: 0;
+            }
+            .flow-node {
+                min-width: auto;
+                width: 100%;
+            }
+            .flow-arrow {
+                height: 40px;
+                width: 4px;
+                margin: 0;
+                align-self: center;
+            }
+            .flow-arrow::after {
+                content: '\2193';
+                right: auto;
+                bottom: -5px;
+                top: auto;
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
 
@@ -528,13 +516,114 @@
             line-height: 1.6;
             border: 1px solid var(--border);
         }
+
+        .context-section {
+            margin-top: 2rem;
+        }
+
+        .context-section h2 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .context-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .context-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow var(--transition);
+        }
+
+        .context-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .context-card h3 {
+            font-size: 0.95rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .context-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .context-card .source {
+            font-size: 0.75rem;
+            color: var(--navy-light);
+            margin-top: 0.5rem;
+        }
+
+        .context-card .source a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .context-card .source a:hover {
+            text-decoration: underline;
+        }
+
+        .further-reading {
+            margin-top: 1.5rem;
+            padding: 1.25rem 1.5rem;
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+
+        .further-reading h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .further-reading ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .further-reading li {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .further-reading a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .further-reading a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .context-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>AI Tax → Universal Basic Income</h1>
-            <p class="subtitle">A simulation of funding UBI through taxation on AI-driven automation</p>
+            <p class="subtitle">Explore how taxing AI-driven automation could fund universal basic income — grounded in real policy proposals from South Korea to the US Senate</p>
         </header>
 
         <div class="year-display">
@@ -572,8 +661,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="description">
-                        Adjust the AI tax rate and other parameters to see how they affect UBI distribution.
-                        The tax is calculated based on each company's AI automation level and revenue.
+                        In 2025, Senator Sanders proposed the first US robot tax bill. South Korea already reduced automation investment credits, cutting robot installations by 28%. Meanwhile, UBI experiments in Germany, Finland, and the US consistently show recipients maintain employment while gaining autonomy. This simulator lets you explore the math: how would a progressive tax on AI automation fund monthly payments to citizens?
                     </div>
                     <div class="controls">
                         <div class="control-group">
@@ -667,16 +755,45 @@
                 </div>
             </div>
 
-            <div class="panel" style="grid-column: span 2;">
-                <div class="panel-header">
-                    <h2>UBI Recipients Sample</h2>
-                    <span style="color: var(--text-muted); font-size: 0.875rem;" id="recipientCount">Showing 20 of 50,000,000</span>
+        </div>
+
+        <div class="context-section">
+            <h2>The Real-World Evidence</h2>
+            <div class="context-grid">
+                <div class="context-card">
+                    <h3>The Dutch Trust Experiments</h3>
+                    <p>Six Dutch cities tested removing welfare obligations (2017–2019). Utrecht found 20% of recipients took up part-time work vs 12% in the control group. Nobody stopped looking for work. The results led to the 2025 Participatiewet in balans — national law replacing coercion with trust.</p>
+                    <div class="source"><a href="https://www.uu.nl/en/publication/final-report-what-works-weten-wat-werkt" target="_blank" rel="noopener">Utrecht University</a> · <a href="https://www.cpb.nl/en/evaluation-experiments-for-social-assistance-benefit-recipients-effects-on-the-job-finding-rate" target="_blank" rel="noopener">CPB evaluation</a></div>
                 </div>
-                <div class="panel-body">
-                    <div class="citizens-grid" id="citizensGrid">
-                        <!-- Citizens will be inserted here -->
-                    </div>
+                <div class="context-card">
+                    <h3>AI Profits Could Fund UBI by 2028</h3>
+                    <p>A 2025 model shows AI capital profits alone could finance $12,000/adult/year once AI reaches 5–6× current automation productivity. Raising the public revenue share from 15% to 33% halves the required capability threshold.</p>
+                    <div class="source"><a href="https://arxiv.org/abs/2505.18687v2" target="_blank" rel="noopener">Nayebi, 2025 (arXiv)</a> · <a href="https://www.brookings.edu/articles/future-tax-policy-a-public-finance-framework-for-the-age-of-ai/" target="_blank" rel="noopener">Korinek & Lockwood, Brookings 2026</a></div>
                 </div>
+                <div class="context-card">
+                    <h3>UBI Doesn't Stop Work</h3>
+                    <p>Germany's 2025 Pilotprojekt Grundeinkommen: recipients worked 40 hrs/week — identical to the control group. Improved mental health, greater autonomy, especially for women.</p>
+                    <div class="source"><a href="https://www.pilotprojekt-grundeinkommen.de/english" target="_blank" rel="noopener">Pilotprojekt Grundeinkommen</a></div>
+                </div>
+                <div class="context-card">
+                    <h3>The Case for an AI Tax</h3>
+                    <p>The IMF recommends a 1–3.7% optimal robot tax rate. Sanders' 2025 HELP Committee report proposes taxing corporations that replace workers with AI. The US tax code already implicitly subsidises automation over labour.</p>
+                    <div class="source"><a href="https://www.imf.org/en/Publications/Staff-Discussion-Notes/Issues/2024/06/11/Broadening-the-Gains-from-Generative-AI-The-Role-of-Fiscal-Policies-549639" target="_blank" rel="noopener">IMF, 2024</a> · <a href="https://www.help.senate.gov/dem/newsroom/press/news-sanders-releases-report-on-big-tech-oligarchs-war-against-workers-warns-ai-could-eliminate-nearly-100-million-us-jobs" target="_blank" rel="noopener">Sanders, Oct 2025</a></div>
+                </div>
+            </div>
+
+            <div class="further-reading">
+                <h3>Further Reading</h3>
+                <ul>
+                    <li>Merola, R. (2022). <a href="https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2022.867832/full" target="_blank" rel="noopener">Inclusive Growth in the Era of Automation and AI: How Can Taxation Help?</a> — Frontiers in Artificial Intelligence. Evaluates robot tax revenue for UBI and displaced-worker transfers.</li>
+                    <li>Ahn, M. J. (2024). <a href="https://www.brookings.edu/articles/navigating-the-future-of-work-a-case-for-a-robot-tax-in-the-age-of-ai/" target="_blank" rel="noopener">A Case for a Robot Tax in the Age of AI</a> — Brookings Institution. Proposes taxing companies deploying autonomous AI to fund social welfare.</li>
+                    <li>Altman, S. (2021). <a href="https://moores.samaltman.com/" target="_blank" rel="noopener">Moore's Law for Everything</a> — Proposes an American Equity Fund: 2.5% tax on market value, paying ~$13,500/year per adult.</li>
+                    <li>Almeida, F. & Ponce Bertello, P. (2025). <a href="https://blogs.lse.ac.uk/businessreview/2025/04/29/universal-basic-income-as-a-new-social-contract-for-the-age-of-ai-1/" target="_blank" rel="noopener">UBI as a New Social Contract for the Age of AI</a> — LSE Business Review. Robot taxes as a direct financial link between automation and social support.</li>
+                    <li>Acemoglu, D., Manera, A. & Restrepo, P. (2020). <a href="https://www.brookings.edu/articles/does-the-u-s-tax-code-favor-automation/" target="_blank" rel="noopener">Does the U.S. Tax Code Favor Automation?</a> — Brookings/NBER. Shows the US tax system implicitly subsidises automation over labour.</li>
+                    <li>Roosma, F. (2022). <a href="https://journals.sagepub.com/doi/full/10.1177/13882627221109846" target="_blank" rel="noopener">The Impact of the 'Basic Income Experiments' on Social Policy Reform in the Netherlands</a> — European Journal of Social Security. Analysis of how the Dutch experiments shifted national welfare policy.</li>
+                    <li>Gielens, E. (2023). <a href="https://openpresstiu.pubpub.org/universal-basic-income" target="_blank" rel="noopener">From Crackpot Idea to Mainstream Debate</a> — Tilburg University. PhD dissertation tracing UBI's path into Dutch policy discourse.</li>
+                    <li>Watson Coleman, B. (2025). <a href="https://www.congress.gov/bill/119th-congress/house-bill/5830/text" target="_blank" rel="noopener">H.R. 5830 — Guaranteed Income Pilot Program Act</a> — US Congress. Federal bill proposing a 3-year, 10,000-participant UBI pilot.</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -684,22 +801,17 @@
     <script>
         // Initial data
         const companies = [
-            { name: "AutoMind AI", icon: "🤖", sector: "General AI", revenue: 85, aiLevel: 92 },
-            { name: "RoboManufact", icon: "🏭", sector: "Manufacturing", revenue: 120, aiLevel: 78 },
-            { name: "DataFlow Inc", icon: "📊", sector: "Data Analytics", revenue: 45, aiLevel: 85 },
-            { name: "SmartLogistics", icon: "🚚", sector: "Transportation", revenue: 67, aiLevel: 65 },
-            { name: "HealthAI Corp", icon: "🏥", sector: "Healthcare", revenue: 95, aiLevel: 55 },
-            { name: "FinanceBot", icon: "💰", sector: "Financial Services", revenue: 150, aiLevel: 72 },
-            { name: "RetailGenius", icon: "🛒", sector: "Retail", revenue: 78, aiLevel: 48 },
-            { name: "AgriTech AI", icon: "🌾", sector: "Agriculture", revenue: 35, aiLevel: 60 },
-            { name: "EduMind", icon: "📚", sector: "Education", revenue: 28, aiLevel: 45 },
-            { name: "SecureAI", icon: "🔒", sector: "Cybersecurity", revenue: 55, aiLevel: 88 }
+            { name: "NovaMind AI", icon: "🧠", sector: "Foundation Models", revenue: 95, aiLevel: 94 },
+            { name: "AutoDrive Corp", icon: "🚗", sector: "Autonomous Vehicles", revenue: 130, aiLevel: 82 },
+            { name: "AlgoTrade Systems", icon: "📈", sector: "Financial AI", revenue: 160, aiLevel: 76 },
+            { name: "RoboFactory", icon: "🏭", sector: "Manufacturing", revenue: 110, aiLevel: 71 },
+            { name: "MedDiagnose AI", icon: "🏥", sector: "Healthcare AI", revenue: 85, aiLevel: 58 },
+            { name: "ContentForge", icon: "✍️", sector: "Content Generation", revenue: 70, aiLevel: 90 },
+            { name: "LogiBot", icon: "📦", sector: "Logistics & Warehousing", revenue: 75, aiLevel: 67 },
+            { name: "AgriSense", icon: "🌾", sector: "Precision Agriculture", revenue: 40, aiLevel: 52 },
+            { name: "CodePilot", icon: "💻", sector: "Software Engineering", revenue: 65, aiLevel: 88 },
+            { name: "CyberShield AI", icon: "🔒", sector: "Cybersecurity", revenue: 55, aiLevel: 80 }
         ];
-
-        const firstNames = ["Emma", "Liam", "Olivia", "Noah", "Ava", "James", "Sophia", "Oliver", "Isabella", "William",
-                          "Mia", "Benjamin", "Charlotte", "Lucas", "Amelia", "Mason", "Harper", "Ethan", "Evelyn", "Alexander"];
-        const avatars = ["👩", "👨", "👩‍🦱", "👨‍🦱", "👩‍🦰", "👨‍🦰", "👱‍♀️", "👱", "👩‍🦳", "👨‍🦳",
-                        "🧑", "👧", "🧒", "👴", "👵", "🧓", "👩‍🦲", "👨‍🦲", "🧔", "👸"];
 
         let state = {
             year: 2026,
@@ -741,10 +853,12 @@
 
         // Format currency
         function formatCurrency(amount, decimals = 0) {
-            if (amount >= 1000000000) {
-                return '$' + (amount / 1000000000).toFixed(1) + 'T';
+            if (amount >= 1000000000000) {
+                return '$' + (amount / 1000000000000).toFixed(1) + 'T';
+            } else if (amount >= 1000000000) {
+                return '$' + (amount / 1000000000).toFixed(1) + 'B';
             } else if (amount >= 1000000) {
-                return '$' + (amount / 1000000).toFixed(1) + 'B';
+                return '$' + (amount / 1000000).toFixed(1) + 'M';
             } else if (amount >= 1000) {
                 return '$' + (amount / 1000).toFixed(1) + 'K';
             }
@@ -776,29 +890,6 @@
                     </div>
                 `;
             }).join('');
-        }
-
-        // Render citizens
-        function renderCitizens() {
-            const container = document.getElementById('citizensGrid');
-            const ubi = calculateUBI();
-            let citizens = [];
-
-            for (let i = 0; i < 20; i++) {
-                const name = firstNames[Math.floor(Math.random() * firstNames.length)];
-                const avatar = avatars[Math.floor(Math.random() * avatars.length)];
-                citizens.push(`
-                    <div class="citizen">
-                        <div class="citizen-avatar">${avatar}</div>
-                        <div class="citizen-name">${name}</div>
-                        <div class="citizen-ubi">${formatCurrency(ubi)}/mo</div>
-                    </div>
-                `);
-            }
-
-            container.innerHTML = citizens.join('');
-            document.getElementById('recipientCount').textContent =
-                `Showing 20 of ${(state.population * 1000000).toLocaleString()}`;
         }
 
         // Update dashboard
@@ -879,7 +970,6 @@
         // Update everything
         function updateAll() {
             renderCompanies();
-            renderCitizens();
             updateDashboard();
         }
 
