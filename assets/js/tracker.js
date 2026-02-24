@@ -13,11 +13,13 @@
   'use strict';
 
   var ENDPOINT = 'https://uemspezaqxmkhenimwuf.supabase.co/functions/v1/track-report-event';
+  var SITE = 'demos';
   var pageLoadTime = Date.now();
 
   // ── Send helper ──
   function send(payload) {
     try {
+      payload.site = SITE;
       var blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
       if (navigator.sendBeacon) {
         navigator.sendBeacon(ENDPOINT, blob);

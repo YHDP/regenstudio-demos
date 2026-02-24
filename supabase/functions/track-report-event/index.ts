@@ -3,6 +3,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 const ALLOWED_ORIGINS = [
   "https://demos.regenstudio.space",
   "https://demos.regenstudio.world",
+  "https://www.regenstudio.space",
   "https://www.regenstudio.world",
   "https://regenstudio.world",
 ];
@@ -54,7 +55,7 @@ Deno.serve(async (req) => {
 
   try {
     const body = await req.json();
-    const { pathname, event_type, referrer_domain, from_page, target, section, time_on_page_ms } = body;
+    const { pathname, event_type, referrer_domain, from_page, target, section, time_on_page_ms, site: rawSite } = body;
 
     if (!event_type) {
       return new Response(
@@ -62,6 +63,10 @@ Deno.serve(async (req) => {
         { status: 400, headers: { ...getCorsHeaders(req), "Content-Type": "application/json" } }
       );
     }
+
+    // Validate site field — must be 'www' or 'demos'
+    const VALID_SITES = ["www", "demos"];
+    const site = VALID_SITES.includes(rawSite) ? rawSite : "demos";
 
     const supabase = createClient(
       Deno.env.get("SUPABASE_URL")!,
@@ -88,6 +93,7 @@ Deno.serve(async (req) => {
       p_event_type: event_type,
       p_country: country,
       p_referrer: referrer_domain || "direct",
+      p_site: site,
     });
 
     if (rpcError) {
@@ -125,6 +131,7 @@ Deno.serve(async (req) => {
       browser_family: browserFamily,
       country,
       referrer: referrer_domain || "direct",
+      site,
     });
 
     return new Response(

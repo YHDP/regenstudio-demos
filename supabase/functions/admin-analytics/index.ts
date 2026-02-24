@@ -3,9 +3,12 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 const ALLOWED_ORIGINS = [
   "https://demos.regenstudio.space",
   "https://demos.regenstudio.world",
+  "https://www.regenstudio.space",
   "https://www.regenstudio.world",
   "https://regenstudio.world",
 ];
+
+const VALID_SITES = ["www", "demos"];
 
 function getCorsHeaders(req: Request) {
   const origin = req.headers.get("Origin") || "";
@@ -21,6 +24,12 @@ function jsonResponse(req: Request, data: unknown, status = 200) {
     status,
     headers: { ...getCorsHeaders(req), "Content-Type": "application/json" },
   });
+}
+
+// deno-lint-ignore no-explicit-any
+function applySiteFilter(query: any, site: string) {
+  if (site !== "all") return query.eq("site", site);
+  return query;
 }
 
 Deno.serve(async (req) => {
@@ -51,18 +60,22 @@ Deno.serve(async (req) => {
   const view = url.searchParams.get("view") || "overview";
   const from = url.searchParams.get("from") || new Date(Date.now() - 30 * 86400000).toISOString().split("T")[0];
   const to = url.searchParams.get("to") || new Date().toISOString().split("T")[0];
+  const rawSite = url.searchParams.get("site") || "all";
+  const site = VALID_SITES.includes(rawSite) ? rawSite : (rawSite === "all" ? "all" : "all");
 
   try {
     switch (view) {
       case "overview": {
         // Daily views trend
-        const { data: views } = await supabase
-          .from("page_views_daily")
-          .select("date, views")
-          .eq("event_type", "page_view")
-          .gte("date", from)
-          .lte("date", to)
-          .order("date");
+        const { data: views } = await applySiteFilter(
+          supabase
+            .from("page_views_daily")
+            .select("date, views")
+            .eq("event_type", "page_view")
+            .gte("date", from)
+            .lte("date", to),
+          site
+        ).order("date");
 
         // Aggregate by date
         const dailyViews: Record<string, number> = {};
@@ -71,12 +84,14 @@ Deno.serve(async (req) => {
         });
 
         // Daily uniques
-        const { data: uniques } = await supabase
-          .from("unique_visitors_daily")
-          .select("date, uniques")
-          .gte("date", from)
-          .lte("date", to)
-          .order("date");
+        const { data: uniques } = await applySiteFilter(
+          supabase
+            .from("unique_visitors_daily")
+            .select("date, uniques")
+            .gte("date", from)
+            .lte("date", to),
+          site
+        ).order("date");
 
         const dailyUniques: Record<string, number> = {};
         (uniques || []).forEach((r: { date: string; uniques: number }) => {
@@ -84,18 +99,24 @@ Deno.serve(async (req) => {
         });
 
         // Session depth
-        const { data: depth } = await supabase
-          .from("session_depth_daily")
-          .select("depth_bucket, count")
-          .gte("date", from)
-          .lte("date", to);
+        const { data: depth } = await applySiteFilter(
+          supabase
+            .from("session_depth_daily")
+            .select("depth_bucket, count")
+            .gte("date", from)
+            .lte("date", to),
+          site
+        );
 
         // Time on page
-        const { data: timeData } = await supabase
-          .from("time_on_page_daily")
-          .select("bucket, count")
-          .gte("date", from)
-          .lte("date", to);
+        const { data: timeData } = await applySiteFilter(
+          supabase
+            .from("time_on_page_daily")
+            .select("bucket, count")
+            .gte("date", from)
+            .lte("date", to),
+          site
+        );
 
         // KPIs
         const totalViews = Object.values(dailyViews).reduce((a, b) => a + b, 0);
@@ -126,76 +147,98 @@ Deno.serve(async (req) => {
           kpis: { totalViews, totalUniques, avgDepth, avgTimeMs },
           dailyViews,
           dailyUniques,
+          site,
         });
       }
 
       case "pages": {
-        // Views per pathname
-        const { data: views } = await supabase
-          .from("page_views_daily")
-          .select("pathname, views")
-          .eq("event_type", "page_view")
-          .gte("date", from)
-          .lte("date", to);
+        // Views per pathname — include site column for labeling
+        const { data: views } = await applySiteFilter(
+          supabase
+            .from("page_views_daily")
+            .select("site, pathname, views")
+            .eq("event_type", "page_view")
+            .gte("date", from)
+            .lte("date", to),
+          site
+        );
 
-        const pageViews: Record<string, number> = {};
-        (views || []).forEach((r: { pathname: string; views: number }) => {
-          pageViews[r.pathname] = (pageViews[r.pathname] || 0) + r.views;
+        // Key by site:pathname when showing "all", just pathname otherwise
+        const makeKey = (s: string, p: string) => site === "all" ? s + ":" + p : p;
+        const pageViews: Record<string, { views: number; site: string; pathname: string }> = {};
+        (views || []).forEach((r: { site: string; pathname: string; views: number }) => {
+          const k = makeKey(r.site, r.pathname);
+          if (!pageViews[k]) pageViews[k] = { views: 0, site: r.site, pathname: r.pathname };
+          pageViews[k].views += r.views;
         });
 
         // Uniques per pathname
-        const { data: uniques } = await supabase
-          .from("unique_visitors_daily")
-          .select("pathname, uniques")
-          .gte("date", from)
-          .lte("date", to);
+        const { data: uniques } = await applySiteFilter(
+          supabase
+            .from("unique_visitors_daily")
+            .select("site, pathname, uniques")
+            .gte("date", from)
+            .lte("date", to),
+          site
+        );
 
         const pageUniques: Record<string, number> = {};
-        (uniques || []).forEach((r: { pathname: string; uniques: number }) => {
-          pageUniques[r.pathname] = (pageUniques[r.pathname] || 0) + r.uniques;
+        (uniques || []).forEach((r: { site: string; pathname: string; uniques: number }) => {
+          const k = makeKey(r.site, r.pathname);
+          pageUniques[k] = (pageUniques[k] || 0) + r.uniques;
         });
 
         // Time per pathname
-        const { data: timeData } = await supabase
-          .from("time_on_page_daily")
-          .select("pathname, bucket, count")
-          .gte("date", from)
-          .lte("date", to);
+        const { data: timeData } = await applySiteFilter(
+          supabase
+            .from("time_on_page_daily")
+            .select("site, pathname, bucket, count")
+            .gte("date", from)
+            .lte("date", to),
+          site
+        );
 
         const timeBucketMs: Record<string, number> = {
           "0-10s": 5000, "10-30s": 20000, "30s-1m": 45000, "1-3m": 120000, "3m+": 300000
         };
         const pageTimeSum: Record<string, number> = {};
         const pageTimeCount: Record<string, number> = {};
-        (timeData || []).forEach((r: { pathname: string; bucket: string; count: number }) => {
-          pageTimeSum[r.pathname] = (pageTimeSum[r.pathname] || 0) + (timeBucketMs[r.bucket] || 30000) * r.count;
-          pageTimeCount[r.pathname] = (pageTimeCount[r.pathname] || 0) + r.count;
+        (timeData || []).forEach((r: { site: string; pathname: string; bucket: string; count: number }) => {
+          const k = makeKey(r.site, r.pathname);
+          pageTimeSum[k] = (pageTimeSum[k] || 0) + (timeBucketMs[r.bucket] || 30000) * r.count;
+          pageTimeCount[k] = (pageTimeCount[k] || 0) + r.count;
         });
 
-        const pages = Object.keys(pageViews).map((p) => ({
-          pathname: p,
-          views: pageViews[p] || 0,
-          uniques: pageUniques[p] || 0,
-          avgTimeMs: pageTimeCount[p] ? Math.round(pageTimeSum[p] / pageTimeCount[p]) : 0,
+        const pages = Object.keys(pageViews).map((k) => ({
+          site: pageViews[k].site,
+          pathname: pageViews[k].pathname,
+          views: pageViews[k].views,
+          uniques: pageUniques[k] || 0,
+          avgTimeMs: pageTimeCount[k] ? Math.round(pageTimeSum[k] / pageTimeCount[k]) : 0,
         })).sort((a, b) => b.views - a.views);
 
-        return jsonResponse(req, { pages });
+        return jsonResponse(req, { pages, siteFilter: site });
       }
 
       case "navigation": {
-        const { data: flows } = await supabase
-          .from("navigation_flows")
-          .select("from_page, to_page, count")
-          .gte("date", from)
-          .lte("date", to)
-          .order("count", { ascending: false })
-          .limit(50);
+        const { data: flows } = await applySiteFilter(
+          supabase
+            .from("navigation_flows")
+            .select("from_page, to_page, count")
+            .gte("date", from)
+            .lte("date", to)
+            .order("count", { ascending: false }),
+          site
+        ).limit(50);
 
-        const { data: entryExit } = await supabase
-          .from("entry_exit_daily")
-          .select("entry_page, exit_page, count")
-          .gte("date", from)
-          .lte("date", to);
+        const { data: entryExit } = await applySiteFilter(
+          supabase
+            .from("entry_exit_daily")
+            .select("entry_page, exit_page, count")
+            .gte("date", from)
+            .lte("date", to),
+          site
+        );
 
         // Aggregate entry pages
         const entries: Record<string, number> = {};
@@ -218,12 +261,15 @@ Deno.serve(async (req) => {
 
       case "engagement": {
         // Scroll depth from page_views_daily (scroll_25, scroll_50, etc.)
-        const { data: scrollData } = await supabase
-          .from("page_views_daily")
-          .select("event_type, views")
-          .like("event_type", "scroll_%")
-          .gte("date", from)
-          .lte("date", to);
+        const { data: scrollData } = await applySiteFilter(
+          supabase
+            .from("page_views_daily")
+            .select("event_type, views")
+            .like("event_type", "scroll_%")
+            .gte("date", from)
+            .lte("date", to),
+          site
+        );
 
         const scrollDepth: Record<string, number> = {};
         (scrollData || []).forEach((r: { event_type: string; views: number }) => {
@@ -231,11 +277,14 @@ Deno.serve(async (req) => {
         });
 
         // Time distribution
-        const { data: timeData } = await supabase
-          .from("time_on_page_daily")
-          .select("bucket, count")
-          .gte("date", from)
-          .lte("date", to);
+        const { data: timeData } = await applySiteFilter(
+          supabase
+            .from("time_on_page_daily")
+            .select("bucket, count")
+            .gte("date", from)
+            .lte("date", to),
+          site
+        );
 
         const timeBuckets: Record<string, number> = {};
         (timeData || []).forEach((r: { bucket: string; count: number }) => {
@@ -243,25 +292,30 @@ Deno.serve(async (req) => {
         });
 
         // Click targets
-        const { data: clicks } = await supabase
-          .from("click_targets_daily")
-          .select("pathname, target, section, clicks")
-          .gte("date", from)
-          .lte("date", to)
-          .order("clicks", { ascending: false })
-          .limit(50);
+        const { data: clicks } = await applySiteFilter(
+          supabase
+            .from("click_targets_daily")
+            .select("pathname, target, section, clicks")
+            .gte("date", from)
+            .lte("date", to)
+            .order("clicks", { ascending: false }),
+          site
+        ).limit(50);
 
         return jsonResponse(req, { scrollDepth, timeBuckets, clicks });
       }
 
       case "acquisition": {
         // Referrer sources
-        const { data: refData } = await supabase
-          .from("page_views_daily")
-          .select("referrer, views")
-          .eq("event_type", "page_view")
-          .gte("date", from)
-          .lte("date", to);
+        const { data: refData } = await applySiteFilter(
+          supabase
+            .from("page_views_daily")
+            .select("referrer, views")
+            .eq("event_type", "page_view")
+            .gte("date", from)
+            .lte("date", to),
+          site
+        );
 
         const referrers: Record<string, number> = {};
         (refData || []).forEach((r: { referrer: string; views: number }) => {
@@ -269,12 +323,15 @@ Deno.serve(async (req) => {
         });
 
         // Countries
-        const { data: countryData } = await supabase
-          .from("page_views_daily")
-          .select("country, views")
-          .eq("event_type", "page_view")
-          .gte("date", from)
-          .lte("date", to);
+        const { data: countryData } = await applySiteFilter(
+          supabase
+            .from("page_views_daily")
+            .select("country, views")
+            .eq("event_type", "page_view")
+            .gte("date", from)
+            .lte("date", to),
+          site
+        );
 
         const countries: Record<string, number> = {};
         (countryData || []).forEach((r: { country: string; views: number }) => {
@@ -282,11 +339,14 @@ Deno.serve(async (req) => {
         });
 
         // Device & browser
-        const { data: deviceData } = await supabase
-          .from("device_daily")
-          .select("device_type, browser_family, count")
-          .gte("date", from)
-          .lte("date", to);
+        const { data: deviceData } = await applySiteFilter(
+          supabase
+            .from("device_daily")
+            .select("device_type, browser_family, count")
+            .gte("date", from)
+            .lte("date", to),
+          site
+        );
 
         const devices: Record<string, number> = {};
         const browsers: Record<string, number> = {};
@@ -299,13 +359,16 @@ Deno.serve(async (req) => {
       }
 
       case "funnel": {
-        const { data: funnelData } = await supabase
-          .from("funnel_daily")
-          .select("step_number, step_name, visitors")
-          .eq("funnel_name", "reports_purchase")
-          .gte("date", from)
-          .lte("date", to)
-          .order("step_number");
+        const { data: funnelData } = await applySiteFilter(
+          supabase
+            .from("funnel_daily")
+            .select("step_number, step_name, visitors")
+            .eq("funnel_name", "reports_purchase")
+            .gte("date", from)
+            .lte("date", to)
+            .order("step_number"),
+          site
+        );
 
         // Aggregate by step
         const steps: Record<number, { name: string; visitors: number }> = {};
@@ -320,7 +383,7 @@ Deno.serve(async (req) => {
           .map(([n, s]) => ({ step: parseInt(n), name: s.name, visitors: s.visitors }))
           .sort((a, b) => a.step - b.step);
 
-        return jsonResponse(req, { funnel });
+        return jsonResponse(req, { funnel, siteFilter: site });
       }
 
       default:
