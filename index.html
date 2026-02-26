@@ -29,6 +29,9 @@
       <a href="https://www.regenstudio.world" class="header-logo">
         <img src="assets/images/logo-color.png" alt="Regen Studio">
       </a>
+      <button class="header-toggle" id="headerToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
       <nav class="header-nav">
         <a href="https://www.regenstudio.world/#focus">Our Focus</a>
         <a href="https://www.regenstudio.world/#about">Vision</a>
@@ -110,5 +113,15 @@
 
   <script src="assets/js/tracker.js"></script>
   <script src="assets/js/landing.js"></script>
+  <script>
+    var toggle = document.getElementById('headerToggle');
+    var headerNav = document.querySelector('.header-nav');
+    if (toggle && headerNav) {
+      toggle.addEventListener('click', function() {
+        toggle.classList.toggle('active');
+        headerNav.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html>
