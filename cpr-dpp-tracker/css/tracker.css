@@ -119,16 +119,18 @@ body {
 }
 .cpr-card {
   display: flex; flex-direction: column; align-items: center; text-align: center;
-  padding: 20px 12px 16px; background: var(--surface); border: 1px solid var(--border);
+  padding: 22px 16px 18px; background: var(--surface); border: 1.5px solid rgba(0, 0, 0, 0.12);
   border-radius: 12px; transition: border-color 0.2s ease, box-shadow 0.2s ease; cursor: pointer;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.06);
 }
 .cpr-card:hover {
   border-color: var(--emerald); box-shadow: 0 2px 12px rgba(0,145,75,0.08);
 }
 .cpr-card img { width: 56px; height: 56px; object-fit: contain; margin-bottom: 10px; }
 .cpr-card__name {
-  font-size: 0.82rem; font-weight: 600; color: var(--text-primary);
+  font-size: 0.88rem; font-weight: 600; color: var(--text-primary);
   line-height: 1.35; min-height: 2.2em; display: flex; align-items: center;
+  letter-spacing: 0.01em;
 }
 .cpr-card__family {
   display: block; font-size: 0.66rem; font-weight: 400;
@@ -164,10 +166,10 @@ body {
 .cpr-modal[aria-hidden="false"] { opacity: 1; pointer-events: auto; }
 .cpr-modal__backdrop {
   position: absolute; inset: 0;
-  background: rgba(15,23,30,0.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  background: rgba(15,23,30,0.4); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
 }
 .cpr-modal__card {
-  position: relative; background: var(--surface); border-radius: 20px; padding: 0;
+  position: relative; background: #fff; border-radius: 20px; padding: 0;
   max-width: 720px; width: 92vw; max-height: 85vh; overflow-y: auto;
   box-shadow: 0 24px 64px rgba(0,0,0,0.20), 0 0 0 1px rgba(0,0,0,0.04);
   transform: translateY(20px) scale(0.97); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
@@ -365,6 +367,34 @@ body {
 .cpr-ead-milestones::before {
   content: ''; position: absolute; top: 19px; left: 40px; right: 40px;
   height: 2px; background: #E2E8ED; z-index: 0;
+}
+
+/* ---------- Landing section ---------- */
+.tracker-landing {
+  max-width: 720px;
+  margin: 32px auto 32px;
+  padding: 0 24px;
+  text-align: center;
+}
+.tracker-landing__text {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-secondary, #5a6672);
+  margin-bottom: 20px;
+}
+.tracker-landing__cta {
+  display: inline-block;
+  padding: 10px 24px;
+  background: var(--primary, #00897B);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.tracker-landing__cta:hover {
+  background: var(--primary-dark, #00796B);
 }
 
 /* ---------- Footer ---------- */

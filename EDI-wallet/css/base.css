@@ -145,6 +145,75 @@ p {
   color: var(--color-text-secondary);
 }
 
+/* Demo Home Button */
+.demo-home-btn {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 200;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: rgba(26, 26, 46, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+.demo-home-btn:hover {
+  background: rgba(26, 26, 46, 0.9);
+  color: #fff;
+}
+.demo-home-btn svg {
+  flex-shrink: 0;
+}
+
+/* Small viewport: remove phone chrome, go full-screen */
+@media (max-width: 420px) {
+  body {
+    background: var(--color-surface);
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+  .phone-frame {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+  }
+  .dynamic-island {
+    display: none;
+  }
+  .status-bar {
+    display: none;
+  }
+  .screen-content {
+    padding-top: 0;
+  }
+  .demo-home-btn {
+    top: 12px;
+    left: 12px;
+    padding: 6px 10px;
+    font-size: 0.68rem;
+    background: rgba(26, 26, 46, 0.4);
+  }
+}
+
+/* Medium viewport: scale phone frame */
+@media (min-width: 421px) and (max-width: 500px) {
+  .phone-frame {
+    transform: scale(0.9);
+    transform-origin: top center;
+  }
+}
+
 /* Utility */
 .visually-hidden {
   position: absolute;
