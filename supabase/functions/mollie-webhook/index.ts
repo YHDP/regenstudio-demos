@@ -227,10 +227,10 @@ async function sendConfirmationEmail(order: Record<string, unknown>, orderId: st
   const buyerCity = order.buyer_city as string | null;
   const buyerCountry = order.buyer_country as string | null;
 
-  const fromAddress = "Regen Studio <noreply@regenstudio.space>";
+  const fromAddress = "Regen Studio <noreply@regenstudio.world>";
   const reportLabel = REPORT_LABELS[reportType] || reportType;
   const familySuffix = familyLetter ? ` (${familyLetter})` : "";
-  const baseUrl = "https://demos.regenstudio.space/cpr-dpp-tracker";
+  const baseUrl = "https://demos.regenstudio.world/cpr-dpp-tracker";
   const downloadUrl = `${baseUrl}/report-success.html?order_id=${orderId}`;
   const invoiceUrl = `${baseUrl}/invoice.html?order_id=${orderId}`;
   const amountStr = `EUR ${(amountCents / 100).toFixed(2)}`;
@@ -500,7 +500,7 @@ async function generateInvoicePdf(opts: {
   // Footer
   y = 40;
   page.drawLine({ start: { x: margin, y: y + 10 }, end: { x: pw - margin, y: y + 10 }, thickness: 0.5, color: emerald });
-  const footerText = "Regen Studio B.V.  ·  KVK 90337948  ·  BTW NL865282377B01  ·  regenstudio.space";
+  const footerText = "Regen Studio B.V.  ·  KVK 90337948  ·  BTW NL865282377B01  ·  regenstudio.world";
   const ftw = helvetica.widthOfTextAtSize(footerText, 7);
   page.drawText(footerText, { x: (pw - ftw) / 2, y, size: 7, font: helvetica, color: grey });
 

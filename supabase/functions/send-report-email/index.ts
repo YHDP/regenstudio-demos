@@ -1,8 +1,11 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const ALLOWED_ORIGINS = [
-  "https://demos.regenstudio.space",
   "https://demos.regenstudio.world",
+  "https://demos.regenstudio.space",
+  "https://www.regenstudio.world",
+  "https://www.regenstudio.space",
+  "https://regenstudio.world",
 ];
 
 function getCorsHeaders(req: Request) {
@@ -84,9 +87,9 @@ Deno.serve(async (req) => {
     const amountCents = order.amount_cents;
     const reportLabel = REPORT_LABELS[reportType] || reportType;
     const familySuffix = familyLetter ? ` (${familyLetter})` : "";
-    const baseUrl = "https://demos.regenstudio.space/cpr-dpp-tracker";
+    const baseUrl = "https://demos.regenstudio.world/cpr-dpp-tracker";
     const downloadUrl = `${baseUrl}/report-success.html?order_id=${order_id}`;
-    const fromAddress = "Regen Studio <noreply@regenstudio.space>";
+    const fromAddress = "Regen Studio <noreply@regenstudio.world>";
 
     let subject: string;
     let buyerText: string;
@@ -99,7 +102,7 @@ Deno.serve(async (req) => {
 
       subject = `Your CPR Report + Invoice ${invoiceId} — Regen Studio`;
 
-      buyerText = `Hi,\n\nYour payment has been confirmed. Your ${reportLabel}${familySuffix} report is ready.\n\nDownload: ${downloadUrl}\n\nInvoice: ${invoiceUrl}\n\nThis download link is valid for 24 hours.\n\nInvoice ${invoiceId}\n\n— Regen Studio\nwww.regenstudio.space`;
+      buyerText = `Hi,\n\nYour payment has been confirmed. Your ${reportLabel}${familySuffix} report is ready.\n\nDownload: ${downloadUrl}\n\nInvoice: ${invoiceUrl}\n\nThis download link is valid for 24 hours.\n\nInvoice ${invoiceId}\n\n— Regen Studio\nwww.regenstudio.world`;
 
       buyerHtml = emailLayout(`
     <p style="margin:0 0 16px">Hi,</p>
@@ -115,7 +118,7 @@ Deno.serve(async (req) => {
       // Free order
       subject = `Your CPR Report — Regen Studio`;
 
-      buyerText = `Hi,\n\nYour ${reportLabel}${familySuffix} report is ready.\n\nDownload: ${downloadUrl}\n\nThis download link is valid for 24 hours.\n\n— Regen Studio\nwww.regenstudio.space`;
+      buyerText = `Hi,\n\nYour ${reportLabel}${familySuffix} report is ready.\n\nDownload: ${downloadUrl}\n\nThis download link is valid for 24 hours.\n\n— Regen Studio\nwww.regenstudio.world`;
 
       buyerHtml = emailLayout(`
     <p style="margin:0 0 16px">Hi,</p>
@@ -201,7 +204,7 @@ function emailLayout(content: string): string {
           <div style="border-top:1px solid #E4E2E2;padding-top:20px">
             <p style="margin:0 0 4px;font-weight:600;font-size:14px;color:#243644">Best regards,</p>
             <p style="margin:0 0 12px;font-size:14px;color:#5781A1">The Regen Studio team</p>
-            <a href="https://www.regenstudio.space" style="color:#00914B;font-size:13px;text-decoration:none">www.regenstudio.space</a>
+            <a href="https://www.regenstudio.world" style="color:#00914B;font-size:13px;text-decoration:none">www.regenstudio.world</a>
           </div>
         </td></tr>
         <tr><td style="height:0;font-size:0;line-height:0">
@@ -216,7 +219,7 @@ function emailLayout(content: string): string {
         <tr><td style="background:#FAFBFC;padding:20px 32px;text-align:center">
           <p style="margin:0;font-size:12px;color:#9B9B9B">You received this because you purchased a report from Regen Studio</p>
           <p style="margin:8px 0 0;font-size:11px;color:#9B9B9B">&copy; ${new Date().getFullYear()} Regen Studio &middot; Innovations that regenerate</p>
-          <p style="margin:8px 0 0;font-size:11px;color:#9B9B9B">Learn how we handle your data in our <a href="https://www.regenstudio.space/privacy.html" style="color:#5781A1;text-decoration:underline">Privacy Policy</a></p>
+          <p style="margin:8px 0 0;font-size:11px;color:#9B9B9B">Learn how we handle your data in our <a href="https://www.regenstudio.world/privacy.html" style="color:#5781A1;text-decoration:underline">Privacy Policy</a></p>
         </td></tr>
       </table>
     </td></tr>

@@ -1,9 +1,10 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const ALLOWED_ORIGINS = [
-  "https://demos.regenstudio.space",
   "https://demos.regenstudio.world",
+  "https://demos.regenstudio.space",
   "https://www.regenstudio.world",
+  "https://www.regenstudio.space",
   "https://regenstudio.world",
 ];
 
@@ -117,16 +118,16 @@ Deno.serve(async (req) => {
       email: email.toLowerCase(),
       source: "demo_magic_link",
       demo_id,
-      page_url: `https://demos.regenstudio.space${demo.path}gate.html`,
+      page_url: `https://demos.regenstudio.world${demo.path}gate.html`,
     });
 
     // Build magic link URL
-    const magicLink = `https://demos.regenstudio.space${demo.path}gate.html?token=${token}`;
+    const magicLink = `https://demos.regenstudio.world${demo.path}gate.html?token=${token}`;
 
     // Send email via Lettermint
     const lettermintToken = Deno.env.get("LETTERMINT_API_TOKEN");
     if (lettermintToken) {
-      const fromAddress = "Regen Studio <noreply@regenstudio.space>";
+      const fromAddress = "Regen Studio <noreply@regenstudio.world>";
 
       const textBody = `Hi,\n\nHere's your access link for the ${demo.name} demo:\n\n${magicLink}\n\nThis link expires in 15 minutes and can only be used once.\n\n— Regen Studio\nwww.regenstudio.world`;
 

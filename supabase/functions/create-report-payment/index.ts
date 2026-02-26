@@ -1,9 +1,10 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const ALLOWED_ORIGINS = [
-  "https://demos.regenstudio.space",
   "https://demos.regenstudio.world",
+  "https://demos.regenstudio.space",
   "https://www.regenstudio.world",
+  "https://www.regenstudio.space",
   "https://regenstudio.world",
 ];
 
@@ -104,7 +105,7 @@ Deno.serve(async (req) => {
     const baseCents = PRICES[report_type];
     const amountCents = Math.round(baseCents * (1 - discountPercent / 100));
 
-    const baseUrl = "https://demos.regenstudio.space/cpr-dpp-tracker";
+    const baseUrl = "https://demos.regenstudio.world/cpr-dpp-tracker";
 
     if (amountCents === 0) {
       // Free order — mark as paid immediately
@@ -282,7 +283,7 @@ async function sendInternalNotification(
     return;
   }
 
-  const fromAddress = "Regen Studio <noreply@regenstudio.space>";
+  const fromAddress = "Regen Studio <noreply@regenstudio.world>";
   const reportLabel = REPORT_LABELS[reportType];
   const familySuffix = familyLetter ? ` (${familyLetter})` : "";
   const amountStr = amountCents === 0 ? "Free" : `EUR ${(amountCents / 100).toFixed(2)}`;
