@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Triangle Playground — Regen Studio</title>
+  <meta name="description" content="Interactive physics sandbox and constellation-building game. Herd triangles, form bonds, and create emergent patterns.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://demos.regenstudio.world/triangle-playground/">
+  <meta property="og:title" content="Triangle Playground — Regen Studio">
+  <meta property="og:description" content="Interactive physics sandbox and constellation-building game.">
+  <meta property="og:image" content="https://www.regenstudio.world/Images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <link rel="stylesheet" href="../assets/fonts/inter.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#game-canvas">Skip to game</a>
+
+  <!-- Mode bar -->
+  <nav class="mode-bar">
+    <a href="https://www.regenstudio.world" class="mode-bar-logo" target="_blank" rel="noopener">
+      <img src="../assets/images/logo-text.svg" alt="Regen Studio" height="22">
+    </a>
+    <div class="mode-buttons">
+      <button class="mode-btn active" data-mode="creative">
+        <span class="mode-icon">&#9998;</span> Creative
+      </button>
+      <button class="mode-btn" data-mode="constellation">
+        <span class="mode-icon">&#9733;</span> Constellation
+      </button>
+      <button class="mode-btn" data-mode="rush">
+        <span class="mode-icon">&#9889;</span> Cluster Rush
+      </button>
+    </div>
+    <button class="mode-bar-info" id="info-btn" aria-label="Info">?</button>
+  </nav>
+
+  <!-- Canvas -->
+  <canvas id="game-canvas"></canvas>
+
+  <!-- HUD -->
+  <div class="hud" id="hud">
+    <div class="hud-stats" id="hud-stats">
+      <div class="hud-stat">
+        <span class="hud-value" id="hud-count">0</span>
+        <span class="hud-label">triangles</span>
+      </div>
+      <div class="hud-stat">
+        <span class="hud-value" id="hud-clusters">0</span>
+        <span class="hud-label">clusters</span>
+      </div>
+      <div class="hud-stat">
+        <span class="hud-value" id="hud-bonds">0</span>
+        <span class="hud-label">bonds</span>
+      </div>
+    </div>
+    <div class="hud-game" id="hud-game" style="display:none">
+      <div class="hud-stat">
+        <span class="hud-value hud-timer" id="hud-timer">1:00</span>
+        <span class="hud-label">time</span>
+      </div>
+      <div class="hud-stat">
+        <span class="hud-value hud-score" id="hud-score">0</span>
+        <span class="hud-label">score</span>
+      </div>
+      <div class="hud-combo" id="hud-combo"></div>
+      <div class="hud-level" id="hud-level"></div>
+    </div>
+  </div>
+
+  <!-- Creative panel -->
+  <aside class="creative-panel" id="creative-panel">
+    <div class="panel-header">
+      <h2>Creative Mode</h2>
+      <button class="panel-toggle" id="panel-toggle" aria-label="Toggle panel">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="panel-body" id="panel-body">
+      <div class="panel-section" id="sliders-container"></div>
+      <div class="panel-section" id="palette-container"></div>
+      <div class="panel-actions">
+        <button class="btn btn-secondary" id="btn-reset">Reset</button>
+        <button class="btn btn-primary" id="btn-freeze">Freeze</button>
+        <button class="btn btn-accent" id="btn-export" style="display:none">Export Image</button>
+      </div>
+      <div class="share-step" id="share-step">
+        <p class="share-hint">Image saved! Now share it:</p>
+        <div class="share-buttons">
+          <button class="share-btn share-btn--native" id="share-native" title="Share (native)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <button class="share-btn share-btn--bluesky" id="share-bluesky" title="Share on Bluesky">
+            <svg width="14" height="14" viewBox="0 0 600 530" fill="currentColor"><path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+          </button>
+          <button class="share-btn share-btn--linkedin" id="share-linkedin" title="Share on LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </button>
+          <button class="share-btn share-btn--mastodon" id="share-mastodon" title="Share on Mastodon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.547c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054 19.648 19.648 0 0 0 4.581.536h.353c1.578 0 3.168-.091 4.718-.39.038-.007.077-.013.112-.026 2.437-.503 4.756-2.075 4.992-6.048.009-.155.043-1.625.043-1.784 0-.544.199-3.858-.077-5.89z"/></svg>
+          </button>
+          <button class="share-btn share-btn--reddit" id="share-reddit" title="Share on Reddit">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+          </button>
+          <button class="share-btn share-btn--whatsapp" id="share-whatsapp" title="Share on WhatsApp">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          </button>
+          <button class="share-btn share-btn--email" id="share-email" title="Share via Email">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Overlays -->
+  <div class="overlay" id="overlay-level-intro" style="display:none">
+    <div class="overlay-card">
+      <span class="overlay-badge" id="level-badge">Level 1</span>
+      <h2 id="level-name"></h2>
+      <p id="level-desc"></p>
+      <canvas id="level-preview" width="200" height="150"></canvas>
+      <button class="btn btn-primary btn-lg" id="btn-start-level">Start</button>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay-score" style="display:none">
+    <div class="overlay-card">
+      <h2 id="score-title">Time's Up!</h2>
+      <div class="score-breakdown" id="score-breakdown"></div>
+      <div class="score-actions">
+        <button class="btn btn-secondary" id="btn-replay">Replay</button>
+        <button class="btn btn-primary" id="btn-next-level">Next Level</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay-game-over" style="display:none">
+    <div class="overlay-card overlay-card-split">
+      <div class="overlay-split-left">
+        <h2 id="game-over-title">Game Over</h2>
+        <div class="final-score" id="final-score"></div>
+        <div class="personal-best" id="personal-best"></div>
+
+        <!-- Leaderboard submit -->
+        <div class="leaderboard-submit" id="leaderboard-submit">
+          <p class="leaderboard-prompt">Save your score to the leaderboard?</p>
+          <div class="leaderboard-form">
+            <input type="text" id="leaderboard-name" class="leaderboard-input" placeholder="Nickname (max 20 chars)" maxlength="20" autocomplete="off">
+            <button class="btn btn-primary" id="btn-submit-score">Submit</button>
+          </div>
+          <p class="leaderboard-status" id="leaderboard-status"></p>
+        </div>
+
+        <div class="score-actions">
+          <button class="btn btn-secondary" id="btn-back-menu">Back</button>
+          <button class="btn btn-primary" id="btn-play-again">Play Again</button>
+        </div>
+      </div>
+
+      <div class="overlay-split-right">
+        <h3 class="leaderboard-title" id="leaderboard-title">Leaderboard</h3>
+        <div class="leaderboard-list" id="leaderboard-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay-info" style="display:none">
+    <div class="overlay-card overlay-card-wide">
+      <button class="overlay-close" id="info-close">&times;</button>
+      <h2>Triangle Playground</h2>
+      <p>An interactive physics sandbox based on the <a href="https://www.regenstudio.world" target="_blank" rel="noopener">Regen Studio</a> homepage animation.</p>
+      <h3>How to play</h3>
+      <ul>
+        <li><strong>Creative Mode:</strong> Tune physics parameters, swap palettes, freeze and export your creation.</li>
+        <li><strong>Constellation Builder:</strong> Build one cluster that covers all touchpoints to complete levels.</li>
+        <li><strong>Cluster Rush:</strong> 60 seconds to form as many bonds as possible. Keep the combo going!</li>
+      </ul>
+      <h3>Controls</h3>
+      <ul>
+        <li><strong>Hover / Touch:</strong> Attract nearby triangles</li>
+        <li><strong>Click + Drag:</strong> Grab and move clusters</li>
+        <li><strong>Click bonded cluster:</strong> Disperse it</li>
+      </ul>
+      <p class="info-footer">A <a href="https://www.regenstudio.world" target="_blank" rel="noopener">Regen Studio</a> demo. No data collected. <a href="../privacy.html">Privacy Policy</a></p>
+    </div>
+  </div>
+
+  <!-- Panel reopen button (visible when panel collapsed) -->
+  <button class="panel-reopen" id="panel-reopen" aria-label="Open panel">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+      <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <!-- Countdown overlay -->
+  <div class="countdown-overlay" id="countdown-overlay" style="display:none">
+    <span class="countdown-number" id="countdown-number"></span>
+  </div>
+
+  <!-- Intro screen -->
+  <div class="intro-screen" id="intro-screen">
+    <div class="intro-card">
+      <img src="../assets/images/logo-text.svg" alt="Regen Studio" class="intro-logo">
+      <h1 class="intro-title">Triangle Playground</h1>
+      <p class="intro-subtitle">Playfully understanding innovation system dynamics</p>
+      <div class="intro-modes">
+        <button class="intro-mode-btn" data-mode="creative">
+          <div class="intro-mode-icon">&#9998;</div>
+          <div class="intro-mode-text">
+            <h3>Creative Mode</h3>
+            <p>Tune physics, swap palettes, freeze and export your creation.</p>
+          </div>
+        </button>
+        <button class="intro-mode-btn" data-mode="constellation">
+          <div class="intro-mode-icon">&#9733;</div>
+          <div class="intro-mode-text">
+            <h3>Constellation Builder</h3>
+            <p>Build one cluster that covers all touchpoints. 7 levels.</p>
+          </div>
+        </button>
+        <button class="intro-mode-btn" data-mode="rush">
+          <div class="intro-mode-icon">&#9889;</div>
+          <div class="intro-mode-text">
+            <h3>Cluster Rush</h3>
+            <p>60 seconds to form as many bonds as possible. Keep the combo!</p>
+          </div>
+        </button>
+      </div>
+
+      <div class="intro-leaderboards" id="intro-leaderboards">
+        <div class="intro-lb">
+          <h3 class="intro-lb-title">Constellation Top 5</h3>
+          <div class="intro-lb-list" id="intro-lb-constellation"></div>
+        </div>
+        <div class="intro-lb">
+          <h3 class="intro-lb-title">Cluster Rush Top 5</h3>
+          <div class="intro-lb-list" id="intro-lb-rush"></div>
+        </div>
+      </div>
+
+      <p class="intro-blog-link">Why are we serious about this playful implementation? It resembles how innovation systems work. <a href="https://www.regenstudio.world/blog/emergent-triangles/" target="_blank" rel="noopener">Read our blog post</a></p>
+      <p class="intro-footer">A <a href="https://www.regenstudio.world" target="_blank" rel="noopener">Regen Studio</a> demo. No data collected. <a href="../privacy.html">Privacy</a></p>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/palettes.js"></script>
+  <script src="js/physics.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/hud.js"></script>
+  <script src="js/creative.js"></script>
+  <script src="js/constellation.js"></script>
+  <script src="js/cluster-rush.js"></script>
+  <script src="js/leaderboard.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
