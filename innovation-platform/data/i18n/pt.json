@@ -1,0 +1,136 @@
+{
+  "app": {
+    "title": "Plataforma de Inovacao"
+  },
+  "nav": {
+    "toolkit": "Ferramentas",
+    "portfolio": "Portfolio"
+  },
+  "portfolio": {
+    "title": "Portfolio de Inovacao",
+    "subtitle": "Gerencie seus projetos de inovacao governamental"
+  },
+  "btn": {
+    "new_project": "Novo Projeto",
+    "create": "Criar",
+    "cancel": "Cancelar",
+    "save": "Salvar",
+    "close": "Fechar",
+    "add": "Adicionar",
+    "remove": "Remover",
+    "expand": "Expandir",
+    "print": "Imprimir",
+    "back_to_portfolio": "Voltar ao Portfolio",
+    "back_to_project": "Voltar ao Projeto",
+    "project_report": "Relatorio do Projeto",
+    "phase_report": "Relatorio da Fase",
+    "add_custom_task": "Adicionar tarefa personalizada",
+    "add_custom_tool": "Adicionar ferramenta personalizada"
+  },
+  "create": {
+    "title": "Novo Projeto de Inovacao",
+    "name": "Nome do Projeto",
+    "description": "Descricao",
+    "department": "Departamento",
+    "challenge_owner": "Responsavel pelo Desafio"
+  },
+  "label": {
+    "phase": "Fase",
+    "tasks": "tarefas",
+    "custom": "Personalizado",
+    "optional": "opcional",
+    "notes": "Notas",
+    "tools": "Ferramentas",
+    "deliverables": "Entregaveis",
+    "deepening_options": "Aprofundamento Situacional",
+    "no_department": "Sem departamento",
+    "select_status": "Selecionar status",
+    "sample": "Exemplo"
+  },
+  "phase": {
+    "summary": "{0} de {1} itens marcados"
+  },
+  "governance": {
+    "directing": "Direcao",
+    "advisory": "Consultivo",
+    "advisory_banner": "Papel do Escritorio de Inovacao: Consultivo — A equipe do responsavel pelo desafio lidera daqui. O oficial de inovacao fornece orientacao sob demanda."
+  },
+  "gate": {
+    "title": "Gate da Fase",
+    "go": "Avancar",
+    "redo": "Refazer",
+    "stop": "Parar",
+    "notes": "Notas de Decisao"
+  },
+  "status": {
+    "not_started": "Nao Iniciado",
+    "in_progress": "Em Progresso",
+    "completed": "Concluido",
+    "skipped": "Ignorado"
+  },
+  "deepening": {
+    "description": "Selecione opcoes de aprofundamento situacional relevantes para seu projeto. Estes sao metodos opcionais que podem ser ativados conforme necessario."
+  },
+  "placeholder": {
+    "task_notes": "Adicionar notas para esta tarefa...",
+    "gate_notes": "Documente a justificativa da decisao...",
+    "custom_task_name": "Digite o nome da tarefa personalizada...",
+    "item_name": "Nome do item",
+    "item_description": "Descricao (opcional)",
+    "stakeholder_name": "Nome do stakeholder ou grupo...",
+    "add_item": "Digite e pressione Enter para adicionar...",
+    "add_symptom": "Adicione um sintoma ou problema...",
+    "add_stakeholder": "Adicione nome do stakeholder...",
+    "add_requirement": "Adicione um requisito...",
+    "add_actor": "Adicione ator/stakeholder...",
+    "value_type": "Tipo de valor (ex: Financiamento, Conhecimento)",
+    "person_name": "Nome da pessoa / funcao...",
+    "problem_statement": "Descreva o problema central...",
+    "component_name": "Nome do componente...",
+    "assignee": "Responsavel...",
+    "domain_notes": "Notas, riscos, acoes..."
+  },
+  "report": {
+    "date": "Data",
+    "department": "Departamento",
+    "challenge_owner": "Responsavel pelo Desafio",
+    "created": "Criado",
+    "project_report": "Relatorio do Projeto",
+    "project_description": "Descricao do Projeto",
+    "phase_notes": "Notas da Fase",
+    "status": "Status",
+    "tasks_completed": "{0} de {1} tarefas concluidas",
+    "governance": "Papel de governanca",
+    "generated_by": "Gerado pela Plataforma de Gestao de Inovacao"
+  },
+  "canvas": {
+    "stakeholder_name": "Stakeholder",
+    "problem_statement": "Declaracao do Problema Central",
+    "component_name": "Componente",
+    "add_sub_problem": "Adicionar Sub-Problema",
+    "add_idea": "Adicionar Ideia",
+    "sub_problems": "Sub-Problemas",
+    "sub_problem": "Sub-Problema",
+    "idea": "Ideia",
+    "pilot_phase": "Periodo Piloto",
+    "adoption_phase": "Pos-Adocao",
+    "actors": "Atores / Stakeholders",
+    "value_flows": "Fluxos de Valor",
+    "generic_description": "Esta ferramenta esta disponivel para uso em seu projeto."
+  },
+  "trl": {
+    "current": "TRL Atual",
+    "target": "TRL Alvo",
+    "current_short": "Atual",
+    "target_short": "Alvo"
+  },
+  "toolkit": {
+    "title": "Biblioteca de Ferramentas",
+    "description": "Explore todas as ferramentas, canvas e templates disponiveis para seus projetos de inovacao.",
+    "canvas_tools": "Ferramentas Canvas"
+  },
+  "error": {
+    "project_not_found": "Projeto nao encontrado",
+    "invalid_report_scope": "Escopo de relatorio invalido"
+  }
+}

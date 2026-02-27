@@ -1,0 +1,4922 @@
+{
+  "phases": [
+    {
+      "name": {
+        "en": "Start Project",
+        "nl": "Project Starten",
+        "pt": "Iniciar Projeto"
+      },
+      "description": {
+        "en": "Establish the preconditions and administrative foundations needed to launch the innovation project.",
+        "nl": "Stel de randvoorwaarden en administratieve basis vast die nodig zijn om het innovatieproject te starten.",
+        "pt": "Estabelecer as pré-condições e bases administrativas necessárias para lançar o projeto de inovação."
+      },
+      "governanceRole": "directing",
+      "color": "#4F46E5",
+      "icon": "flag",
+      "taskGroups": [
+        {
+          "name": {
+            "en": "Preconditions",
+            "nl": "Randvoorwaarden",
+            "pt": "Pré-condições"
+          },
+          "tasks": [
+            {
+              "id": "p0-t1",
+              "name": {
+                "en": "Strategy alignment check",
+                "nl": "Strategische afstemming controleren",
+                "pt": "Verificação de alinhamento estratégico"
+              },
+              "description": {
+                "en": "Verify the innovation challenge aligns with organizational strategy and policy priorities.",
+                "nl": "Controleer of de innovatie-uitdaging aansluit bij de organisatiestrategie en beleidsprioriteiten.",
+                "pt": "Verificar se o desafio de inovação está alinhado com a estratégia organizacional e as prioridades políticas."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p0-t2",
+              "name": {
+                "en": "Budget confirmation",
+                "nl": "Budgetbevestiging",
+                "pt": "Confirmação de orçamento"
+              },
+              "description": {
+                "en": "Confirm budget availability and cost center allocation for the project.",
+                "nl": "Bevestig de beschikbaarheid van het budget en de kostenplaatsallocatie voor het project.",
+                "pt": "Confirmar a disponibilidade de orçamento e a alocação de centro de custos para o projeto."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p0-t3",
+              "name": {
+                "en": "Sponsor identified",
+                "nl": "Sponsor geïdentificeerd",
+                "pt": "Patrocinador identificado"
+              },
+              "description": {
+                "en": "Identify and confirm the executive sponsor for the innovation project.",
+                "nl": "Identificeer en bevestig de opdrachtgever voor het innovatieproject.",
+                "pt": "Identificar e confirmar o patrocinador executivo do projeto de inovação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p0-t4",
+              "name": {
+                "en": "Case number assigned",
+                "nl": "Zaaknummer toegewezen",
+                "pt": "Número de caso atribuído"
+              },
+              "description": {
+                "en": "Request and register a case number in the project administration system.",
+                "nl": "Vraag een zaaknummer aan en registreer dit in het projectadministratiesysteem.",
+                "pt": "Solicitar e registrar um número de caso no sistema de administração de projetos."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p0-t5",
+              "name": {
+                "en": "SharePoint folder created",
+                "nl": "SharePoint-map aangemaakt",
+                "pt": "Pasta SharePoint criada"
+              },
+              "description": {
+                "en": "Create the project file structure in the document management system.",
+                "nl": "Maak de projectmappenstructuur aan in het documentbeheersysteem.",
+                "pt": "Criar a estrutura de arquivos do projeto no sistema de gestão documental."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p0-t6",
+              "name": {
+                "en": "Draft Phase Plan",
+                "nl": "Fase Plan opstellen",
+                "pt": "Elaborar Plano de Fase"
+              },
+              "description": {
+                "en": "Create the initial phase plan with scope, timeline, and resource allocation.",
+                "nl": "Stel het initiële faseplan op met scope, tijdlijn en middelenallocatie.",
+                "pt": "Criar o plano de fase inicial com escopo, cronograma e alocação de recursos."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        }
+      ],
+      "deliverables": [
+        {
+          "id": "p0-d1",
+          "name": {
+            "en": "Phase Plan",
+            "nl": "Fase Plan",
+            "pt": "Plano de Fase"
+          }
+        }
+      ],
+      "deepeningOptions": [],
+      "gate": {
+        "question": {
+          "en": "Are all preconditions met to start Problem Analysis?",
+          "nl": "Zijn alle randvoorwaarden vervuld om te starten met Probleemanalyse?",
+          "pt": "Todas as pré-condições foram atendidas para iniciar a Análise de Problemas?"
+        }
+      }
+    },
+    {
+      "name": {
+        "en": "Problem Analysis",
+        "nl": "Probleemanalyse",
+        "pt": "Análise de Problemas"
+      },
+      "description": {
+        "en": "Systematically analyze the problem through workshops, stakeholder engagement, and structured mapping to build a shared understanding.",
+        "nl": "Analyseer het probleem systematisch door middel van workshops, stakeholderbetrokkenheid en gestructureerde mapping om een gedeeld begrip op te bouwen.",
+        "pt": "Analisar sistematicamente o problema através de workshops, envolvimento de stakeholders e mapeamento estruturado para construir uma compreensão partilhada."
+      },
+      "governanceRole": "directing",
+      "color": "#EF4444",
+      "icon": "search",
+      "taskGroups": [
+        {
+          "name": {
+            "en": "Preparation",
+            "nl": "Voorbereiding",
+            "pt": "Preparação"
+          },
+          "tasks": [
+            {
+              "id": "p1-g1-t1",
+              "name": {
+                "en": "Duplicate template",
+                "nl": "Template dupliceren",
+                "pt": "Duplicar modelo"
+              },
+              "description": {
+                "en": "Copy the phase template to set up the working documents for Problem Analysis.",
+                "nl": "Kopieer het fasesjabloon om de werkdocumenten voor Probleemanalyse op te zetten.",
+                "pt": "Copiar o modelo de fase para configurar os documentos de trabalho para a Análise de Problemas."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g1-t2",
+              "name": {
+                "en": "Verify start conditions",
+                "nl": "Startcondities verifiëren",
+                "pt": "Verificar condições iniciais"
+              },
+              "description": {
+                "en": "Check that all outputs from Phase 0 are available and complete.",
+                "nl": "Controleer of alle outputs van Fase 0 beschikbaar en volledig zijn.",
+                "pt": "Verificar se todos os resultados da Fase 0 estão disponíveis e completos."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g1-t3",
+              "name": {
+                "en": "Discuss in capacity review",
+                "nl": "Bespreken in werkverdelingsoverleg",
+                "pt": "Discutir na revisão de capacidade"
+              },
+              "description": {
+                "en": "Present the project scope and resource needs in the capacity review meeting.",
+                "nl": "Presenteer de projectscope en middelenbehoefte in het werkverdelingsoverleg.",
+                "pt": "Apresentar o escopo do projeto e as necessidades de recursos na reunião de revisão de capacidade."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g1-t4",
+              "name": {
+                "en": "Request case number",
+                "nl": "Zaaknummer aanvragen",
+                "pt": "Solicitar número de caso"
+              },
+              "description": {
+                "en": "Ensure the project has a registered case number for tracking.",
+                "nl": "Zorg ervoor dat het project een geregistreerd zaaknummer heeft voor tracking.",
+                "pt": "Garantir que o projeto tenha um número de caso registrado para rastreamento."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g1-t5",
+              "name": {
+                "en": "Draft Phase Plan",
+                "nl": "Fase Plan opstellen",
+                "pt": "Elaborar Plano de Fase"
+              },
+              "description": {
+                "en": "Create the detailed phase plan with activities, timeline, and responsibilities.",
+                "nl": "Stel het gedetailleerde faseplan op met activiteiten, tijdlijn en verantwoordelijkheden.",
+                "pt": "Criar o plano de fase detalhado com atividades, cronograma e responsabilidades."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g1-t6",
+              "name": {
+                "en": "Create file structure",
+                "nl": "Mappenstructuur aanmaken",
+                "pt": "Criar estrutura de arquivos"
+              },
+              "description": {
+                "en": "Set up the folder structure for storing all phase deliverables.",
+                "nl": "Richt de mappenstructuur in voor het opslaan van alle fasedeliverables.",
+                "pt": "Configurar a estrutura de pastas para armazenar todos os entregáveis da fase."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g1-t7",
+              "name": {
+                "en": "Share info with challenge owner",
+                "nl": "Informatie delen met opgavehouder",
+                "pt": "Compartilhar informação com responsável"
+              },
+              "description": {
+                "en": "Brief the challenge owner on the Problem Analysis approach and their role.",
+                "nl": "Informeer de opgavehouder over de Probleemanalyse-aanpak en hun rol.",
+                "pt": "Informar o responsável pelo desafio sobre a abordagem da Análise de Problemas e o seu papel."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g1-t8",
+              "name": {
+                "en": "Finalize Phase Plan",
+                "nl": "Fase Plan afronden",
+                "pt": "Finalizar Plano de Fase"
+              },
+              "description": {
+                "en": "Complete and approve the phase plan with all stakeholders.",
+                "nl": "Rond het faseplan af en laat het goedkeuren door alle stakeholders.",
+                "pt": "Completar e aprovar o plano de fase com todos os stakeholders."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g1-t9",
+              "name": {
+                "en": "Set baseline and Gantt",
+                "nl": "Baseline en Gantt instellen",
+                "pt": "Definir baseline e Gantt"
+              },
+              "description": {
+                "en": "Establish the project baseline and timeline visualization.",
+                "nl": "Stel de projectbaseline en tijdlijnvisualisatie in.",
+                "pt": "Estabelecer a baseline do projeto e a visualização do cronograma."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Problem System",
+            "nl": "Probleem Systeem",
+            "pt": "Sistema de Problemas"
+          },
+          "tasks": [
+            {
+              "id": "p1-g2-t1",
+              "name": {
+                "en": "Plan Workshop 1a & 1b",
+                "nl": "Workshop 1a & 1b plannen",
+                "pt": "Planear Workshop 1a & 1b"
+              },
+              "description": {
+                "en": "Schedule the problem analysis workshops with all relevant participants.",
+                "nl": "Plan de probleemanalyseworkshops in met alle relevante deelnemers.",
+                "pt": "Agendar os workshops de análise de problemas com todos os participantes relevantes."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g2-t2",
+              "name": {
+                "en": "Design workshops",
+                "nl": "Workshops ontwerpen",
+                "pt": "Desenhar workshops"
+              },
+              "description": {
+                "en": "Design the workshop agenda and select appropriate methods.",
+                "nl": "Ontwerp de workshopagenda en selecteer geschikte methoden.",
+                "pt": "Desenhar a agenda do workshop e selecionar métodos apropriados."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g2-t3",
+              "name": {
+                "en": "Send info to participants",
+                "nl": "Informatie naar deelnemers sturen",
+                "pt": "Enviar informação aos participantes"
+              },
+              "description": {
+                "en": "Distribute preparation materials and logistics to workshop participants.",
+                "nl": "Verspreid voorbereidingsmaterialen en logistieke informatie naar workshopdeelnemers.",
+                "pt": "Distribuir materiais de preparação e logística aos participantes do workshop."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g2-t4",
+              "name": {
+                "en": "Prepare workshop tooling",
+                "nl": "Workshop tooling voorbereiden",
+                "pt": "Preparar ferramentas do workshop"
+              },
+              "description": {
+                "en": "Set up digital or physical tools needed for the workshop exercises.",
+                "nl": "Bereid de digitale of fysieke tools voor die nodig zijn voor de workshopoefeningen.",
+                "pt": "Configurar as ferramentas digitais ou físicas necessárias para os exercícios do workshop."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g2-t5",
+              "name": {
+                "en": "Update or create slides",
+                "nl": "Slides bijwerken of aanmaken",
+                "pt": "Atualizar ou criar slides"
+              },
+              "description": {
+                "en": "Prepare the presentation materials for the workshops.",
+                "nl": "Bereid de presentatiematerialen voor de workshops voor.",
+                "pt": "Preparar os materiais de apresentação para os workshops."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g2-t6",
+              "name": {
+                "en": "Execute Workshop 1a (Symptom Tree + Values Canvas)",
+                "nl": "Workshop 1a uitvoeren (Symptoomboom + Waardencanvas)",
+                "pt": "Executar Workshop 1a (Árvore de Sintomas + Canvas de Valores)"
+              },
+              "description": {
+                "en": "Run the first workshop: map symptoms using the Symptom Tree and explore core values.",
+                "nl": "Voer de eerste workshop uit: breng symptomen in kaart met de Symptoomboom en verken kernwaarden.",
+                "pt": "Realizar o primeiro workshop: mapear sintomas usando a Árvore de Sintomas e explorar valores fundamentais."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": [
+                "symptom-tree"
+              ]
+            },
+            {
+              "id": "p1-g2-t7",
+              "name": {
+                "en": "Create Problem System map",
+                "nl": "Probleem Systeem kaart maken",
+                "pt": "Criar mapa do Sistema de Problemas"
+              },
+              "description": {
+                "en": "Visualize the problem system relationships using a mapping tool like KUMU.",
+                "nl": "Visualiseer de probleemssysteemrelaties met een mappingtool zoals KUMU.",
+                "pt": "Visualizar as relações do sistema de problemas usando uma ferramenta de mapeamento como o KUMU."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g2-t8",
+              "name": {
+                "en": "Digitize output and participant prioritization",
+                "nl": "Output digitaliseren en deelnemerspriorisering",
+                "pt": "Digitalizar resultados e priorização dos participantes"
+              },
+              "description": {
+                "en": "Process and digitize all workshop outputs; collect participant priorities.",
+                "nl": "Verwerk en digitaliseer alle workshopoutputs; verzamel deelnemersprioriteiten.",
+                "pt": "Processar e digitalizar todos os resultados do workshop; recolher prioridades dos participantes."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g2-t9",
+              "name": {
+                "en": "Design own Value Image",
+                "nl": "Eigen Waardenbeeld ontwerpen",
+                "pt": "Desenhar própria Imagem de Valores"
+              },
+              "description": {
+                "en": "Create a visual representation of the core values identified.",
+                "nl": "Maak een visuele weergave van de geïdentificeerde kernwaarden.",
+                "pt": "Criar uma representação visual dos valores fundamentais identificados."
+              },
+              "subtasks": [],
+              "optional": true,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g2-t10",
+              "name": {
+                "en": "Prepare Workshop 1b",
+                "nl": "Workshop 1b voorbereiden",
+                "pt": "Preparar Workshop 1b"
+              },
+              "description": {
+                "en": "Set up materials and agenda for the second problem analysis workshop.",
+                "nl": "Bereid materialen en agenda voor de tweede probleemanalyseworkshop voor.",
+                "pt": "Preparar materiais e agenda para o segundo workshop de análise de problemas."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g2-t11",
+              "name": {
+                "en": "Execute Workshop 1b (Problem Focus, Stakeholder Map, Empathy Map)",
+                "nl": "Workshop 1b uitvoeren (Probleemfocus, Stakeholder Map, Empathy Map)",
+                "pt": "Executar Workshop 1b (Foco do Problema, Mapa de Stakeholders, Mapa de Empatia)"
+              },
+              "description": {
+                "en": "Run the second workshop: narrow the problem focus, map stakeholders and empathy.",
+                "nl": "Voer de tweede workshop uit: vernauw de probleemfocus, breng stakeholders en empathie in kaart.",
+                "pt": "Realizar o segundo workshop: estreitar o foco do problema, mapear stakeholders e empatia."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": [
+                "stakeholder-map",
+                "empathy-map"
+              ]
+            },
+            {
+              "id": "p1-g2-t12",
+              "name": {
+                "en": "Digitize output",
+                "nl": "Output digitaliseren",
+                "pt": "Digitalizar resultados"
+              },
+              "description": {
+                "en": "Process and digitize all outputs from Workshop 1b.",
+                "nl": "Verwerk en digitaliseer alle outputs van Workshop 1b.",
+                "pt": "Processar e digitalizar todos os resultados do Workshop 1b."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g2-t13",
+              "name": {
+                "en": "Create Empathy Maps",
+                "nl": "Empathy Maps maken",
+                "pt": "Criar Mapas de Empatia"
+              },
+              "description": {
+                "en": "Develop detailed empathy maps for key stakeholder groups.",
+                "nl": "Ontwikkel gedetailleerde empathy maps voor belangrijke stakeholdergroepen.",
+                "pt": "Desenvolver mapas de empatia detalhados para os principais grupos de stakeholders."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": [
+                "empathy-map"
+              ]
+            },
+            {
+              "id": "p1-g2-t14",
+              "name": {
+                "en": "Create Problem System Report",
+                "nl": "Probleem Systeem Rapport maken",
+                "pt": "Criar Relatório do Sistema de Problemas"
+              },
+              "description": {
+                "en": "Compile all findings into a comprehensive Problem System report.",
+                "nl": "Stel alle bevindingen samen in een uitgebreid Probleem Systeem rapport.",
+                "pt": "Compilar todas as conclusões num relatório abrangente do Sistema de Problemas."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g2-t15",
+              "name": {
+                "en": "Deepening proposal",
+                "nl": "Verdiepingsvoorstel",
+                "pt": "Proposta de aprofundamento"
+              },
+              "description": {
+                "en": "Propose whether and which situational deepening activities are needed.",
+                "nl": "Stel voor of en welke situationele verdiepingsactiviteiten nodig zijn.",
+                "pt": "Propor se e quais atividades de aprofundamento situacional são necessárias."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g2-t16",
+              "name": {
+                "en": "Decision on continuation",
+                "nl": "Besluit over vervolg",
+                "pt": "Decisão sobre continuação"
+              },
+              "description": {
+                "en": "Decide with the decision maker whether to proceed with deepening or move to reporting.",
+                "nl": "Beslis samen met de besluitvormer of er wordt doorgegaan met verdieping of dat er wordt overgegaan naar rapportage.",
+                "pt": "Decidir com o decisor se se prossegue com o aprofundamento ou se avança para os relatórios."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Reporting",
+            "nl": "Rapportage",
+            "pt": "Relatórios"
+          },
+          "tasks": [
+            {
+              "id": "p1-g3-t1",
+              "name": {
+                "en": "Revise problem focus and hypothesis",
+                "nl": "Probleemfocus en hypothese herzien",
+                "pt": "Revisar foco do problema e hipótese"
+              },
+              "description": {
+                "en": "If deepening was done, update the problem focus and hypothesis based on new insights.",
+                "nl": "Werk, indien verdieping is uitgevoerd, de probleemfocus en hypothese bij op basis van nieuwe inzichten.",
+                "pt": "Se o aprofundamento foi realizado, atualizar o foco do problema e a hipótese com base em novas perspetivas."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g3-t2",
+              "name": {
+                "en": "Define Problem Characteristics",
+                "nl": "Probleemkarakteristieken bepalen",
+                "pt": "Definir Características do Problema"
+              },
+              "description": {
+                "en": "Classify the problem characteristics to guide ideation tool selection in Phase 2.",
+                "nl": "Classificeer de probleemkarakteristieken om de selectie van ideation-tools in Fase 2 te sturen.",
+                "pt": "Classificar as características do problema para orientar a seleção de ferramentas de ideação na Fase 2."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g3-t3",
+              "name": {
+                "en": "Create DMU/Steering Group proposal",
+                "nl": "DMU/Stuurgroep voorstel maken",
+                "pt": "Criar proposta DMU/Grupo Diretivo"
+              },
+              "description": {
+                "en": "Propose the Decision Making Unit composition for project governance.",
+                "nl": "Stel de samenstelling van de Decision Making Unit voor ten behoeve van de projectgovernance.",
+                "pt": "Propor a composição da Unidade de Tomada de Decisão para a governança do projeto."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": [
+                "dmu"
+              ]
+            },
+            {
+              "id": "p1-g3-t4",
+              "name": {
+                "en": "Set learning objectives",
+                "nl": "Leerdoelen vaststellen",
+                "pt": "Definir objetivos de aprendizagem"
+              },
+              "description": {
+                "en": "Document the learning objectives for the innovation project.",
+                "nl": "Leg de leerdoelen voor het innovatieproject vast.",
+                "pt": "Documentar os objetivos de aprendizagem do projeto de inovação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g3-t5",
+              "name": {
+                "en": "Establish lessons learned",
+                "nl": "Geleerde lessen vastleggen",
+                "pt": "Registrar lições aprendidas"
+              },
+              "description": {
+                "en": "Document both content and process lessons from the Problem Analysis phase.",
+                "nl": "Leg zowel inhoudelijke als procesmatige lessen uit de Probleemanalysefase vast.",
+                "pt": "Documentar tanto as lições de conteúdo como de processo da fase de Análise de Problemas."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g3-t6",
+              "name": {
+                "en": "Finalize case name",
+                "nl": "Zaaknaam finaliseren",
+                "pt": "Finalizar nome do caso"
+              },
+              "description": {
+                "en": "Confirm the official name for the innovation case.",
+                "nl": "Bevestig de officiële naam voor de innovatiecasus.",
+                "pt": "Confirmar o nome oficial do caso de inovação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g3-t7",
+              "name": {
+                "en": "Create Phase Report",
+                "nl": "Fase Rapport maken",
+                "pt": "Criar Relatório de Fase"
+              },
+              "description": {
+                "en": "Compile the complete Phase 1 report with all findings and recommendations.",
+                "nl": "Stel het volledige Fase 1-rapport samen met alle bevindingen en aanbevelingen.",
+                "pt": "Compilar o relatório completo da Fase 1 com todas as conclusões e recomendações."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Phase Closure",
+            "nl": "Afronding Fase",
+            "pt": "Encerramento de Fase"
+          },
+          "tasks": [
+            {
+              "id": "p1-g4-t1",
+              "name": {
+                "en": "Submit to capacity review",
+                "nl": "Indienen bij werkverdelingsoverleg",
+                "pt": "Submeter à revisão de capacidade"
+              },
+              "description": {
+                "en": "Present the phase report and results in the capacity review meeting.",
+                "nl": "Presenteer het faserapport en de resultaten in het werkverdelingsoverleg.",
+                "pt": "Apresentar o relatório de fase e os resultados na reunião de revisão de capacidade."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g4-t2",
+              "name": {
+                "en": "Decision maker approval",
+                "nl": "Goedkeuring besluitvormer",
+                "pt": "Aprovação do decisor"
+              },
+              "description": {
+                "en": "Obtain formal approval from the decision maker to proceed to Ideation.",
+                "nl": "Verkrijg formele goedkeuring van de besluitvormer om door te gaan naar Ideatie.",
+                "pt": "Obter aprovação formal do decisor para avançar para a Ideação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g4-t3",
+              "name": {
+                "en": "Communicate results",
+                "nl": "Resultaten communiceren",
+                "pt": "Comunicar resultados"
+              },
+              "description": {
+                "en": "Share the problem analysis results with all relevant stakeholders.",
+                "nl": "Deel de probleemanalyseresultaten met alle relevante stakeholders.",
+                "pt": "Partilhar os resultados da análise de problemas com todos os stakeholders relevantes."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g4-t4",
+              "name": {
+                "en": "Form Ideation steering group",
+                "nl": "Ideation stuurgroep vormen",
+                "pt": "Formar grupo diretivo de Ideação"
+              },
+              "description": {
+                "en": "Assemble the steering group for the upcoming Ideation phase.",
+                "nl": "Stel de stuurgroep samen voor de aankomende Ideatiefase.",
+                "pt": "Montar o grupo diretivo para a próxima fase de Ideação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p1-g4-t5",
+              "name": {
+                "en": "Phase evaluation",
+                "nl": "Fase evaluatie",
+                "pt": "Avaliação de fase"
+              },
+              "description": {
+                "en": "Evaluate the execution of the Problem Analysis phase for process improvement.",
+                "nl": "Evalueer de uitvoering van de Probleemanalysefase voor procesverbetering.",
+                "pt": "Avaliar a execução da fase de Análise de Problemas para melhoria de processos."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        }
+      ],
+      "deliverables": [
+        {
+          "id": "p1-d1",
+          "name": {
+            "en": "Problem System Map",
+            "nl": "Probleem Systeem Kaart",
+            "pt": "Mapa do Sistema de Problemas"
+          }
+        },
+        {
+          "id": "p1-d2",
+          "name": {
+            "en": "Symptom Tree",
+            "nl": "Symptoomboom",
+            "pt": "Árvore de Sintomas"
+          }
+        },
+        {
+          "id": "p1-d3",
+          "name": {
+            "en": "Values Canvas",
+            "nl": "Waardencanvas",
+            "pt": "Canvas de Valores"
+          }
+        },
+        {
+          "id": "p1-d4",
+          "name": {
+            "en": "Empathy Maps",
+            "nl": "Empathy Maps",
+            "pt": "Mapas de Empatia"
+          }
+        },
+        {
+          "id": "p1-d5",
+          "name": {
+            "en": "Stakeholder Map",
+            "nl": "Stakeholder Map",
+            "pt": "Mapa de Stakeholders"
+          }
+        },
+        {
+          "id": "p1-d6",
+          "name": {
+            "en": "Problem Characteristics",
+            "nl": "Probleemkarakteristieken",
+            "pt": "Características do Problema"
+          }
+        },
+        {
+          "id": "p1-d7",
+          "name": {
+            "en": "DMU Proposal",
+            "nl": "DMU Voorstel",
+            "pt": "Proposta DMU"
+          }
+        },
+        {
+          "id": "p1-d8",
+          "name": {
+            "en": "Phase Report",
+            "nl": "Fase Rapport",
+            "pt": "Relatório de Fase"
+          }
+        }
+      ],
+      "deepeningOptions": [
+        {
+          "id": "p1-deep-1",
+          "name": {
+            "en": "Co-sensing (Stakeholder interviews & workshop)",
+            "nl": "Co-sensing (Stakeholder interviews & workshop)",
+            "pt": "Co-sensing (Entrevistas e workshop com stakeholders)"
+          },
+          "description": {
+            "en": "Deep-dive through structured stakeholder interviews and a synthesis workshop.",
+            "nl": "Verdieping door middel van gestructureerde stakeholderinterviews en een syntheseworkshop.",
+            "pt": "Aprofundamento através de entrevistas estruturadas com stakeholders e um workshop de síntese."
+          },
+          "subtasks": [
+            {
+              "id": "p1-deep-1-s1",
+              "name": {
+                "en": "Plan interviews and workshop",
+                "nl": "Interviews en workshop plannen",
+                "pt": "Planear entrevistas e workshop"
+              }
+            },
+            {
+              "id": "p1-deep-1-s2",
+              "name": {
+                "en": "Set up questionnaire",
+                "nl": "Vragenlijst opstellen",
+                "pt": "Elaborar questionário"
+              }
+            },
+            {
+              "id": "p1-deep-1-s3",
+              "name": {
+                "en": "Conduct interviews",
+                "nl": "Interviews uitvoeren",
+                "pt": "Realizar entrevistas"
+              }
+            },
+            {
+              "id": "p1-deep-1-s4",
+              "name": {
+                "en": "Process interview results",
+                "nl": "Interviewresultaten verwerken",
+                "pt": "Processar resultados das entrevistas"
+              }
+            },
+            {
+              "id": "p1-deep-1-s5",
+              "name": {
+                "en": "Choose methods from database",
+                "nl": "Methoden kiezen uit database",
+                "pt": "Escolher métodos da base de dados"
+              }
+            },
+            {
+              "id": "p1-deep-1-s6",
+              "name": {
+                "en": "Create session script",
+                "nl": "Draaiboek maken",
+                "pt": "Criar roteiro da sessão"
+              }
+            },
+            {
+              "id": "p1-deep-1-s7",
+              "name": {
+                "en": "Print and prepare tooling",
+                "nl": "Tooling printen en voorbereiden",
+                "pt": "Imprimir e preparar ferramentas"
+              }
+            },
+            {
+              "id": "p1-deep-1-s8",
+              "name": {
+                "en": "Execute co-sensing workshop",
+                "nl": "Co-sensing workshop uitvoeren",
+                "pt": "Executar workshop de co-sensing"
+              }
+            },
+            {
+              "id": "p1-deep-1-s9",
+              "name": {
+                "en": "Digitize output",
+                "nl": "Output digitaliseren",
+                "pt": "Digitalizar resultados"
+              }
+            }
+          ]
+        },
+        {
+          "id": "p1-deep-2",
+          "name": {
+            "en": "Data Analysis",
+            "nl": "Data-analyse",
+            "pt": "Análise de Dados"
+          },
+          "description": {
+            "en": "Analyze existing data sources to quantify and validate the problem.",
+            "nl": "Analyseer bestaande databronnen om het probleem te kwantificeren en te valideren.",
+            "pt": "Analisar fontes de dados existentes para quantificar e validar o problema."
+          },
+          "subtasks": []
+        },
+        {
+          "id": "p1-deep-3",
+          "name": {
+            "en": "As-is UX Analysis",
+            "nl": "As-is UX Analyse",
+            "pt": "Análise UX As-is"
+          },
+          "description": {
+            "en": "Map the current user experience and identify pain points.",
+            "nl": "Breng de huidige gebruikerservaring in kaart en identificeer knelpunten.",
+            "pt": "Mapear a experiência do utilizador atual e identificar pontos problemáticos."
+          },
+          "subtasks": []
+        },
+        {
+          "id": "p1-deep-4",
+          "name": {
+            "en": "Interviews",
+            "nl": "Interviews",
+            "pt": "Entrevistas"
+          },
+          "description": {
+            "en": "Conduct targeted stakeholder interviews for additional problem insights.",
+            "nl": "Voer gerichte stakeholderinterviews uit voor aanvullende probleeminzichten.",
+            "pt": "Realizar entrevistas direcionadas com stakeholders para obter perspetivas adicionais sobre o problema."
+          },
+          "subtasks": []
+        },
+        {
+          "id": "p1-deep-5",
+          "name": {
+            "en": "Desk Research",
+            "nl": "Deskresearch",
+            "pt": "Pesquisa Documental"
+          },
+          "description": {
+            "en": "Conduct literature and documentation research on the problem domain.",
+            "nl": "Voer literatuur- en documentatieonderzoek uit over het probleemdomein.",
+            "pt": "Realizar pesquisa de literatura e documentação sobre o domínio do problema."
+          },
+          "subtasks": []
+        },
+        {
+          "id": "p1-deep-6",
+          "name": {
+            "en": "Custom Deepening",
+            "nl": "Aangepaste verdieping",
+            "pt": "Aprofundamento Personalizado"
+          },
+          "description": {
+            "en": "Add a project-specific deepening activity not listed above.",
+            "nl": "Voeg een projectspecifieke verdiepingsactiviteit toe die hierboven niet staat vermeld.",
+            "pt": "Adicionar uma atividade de aprofundamento específica do projeto não listada acima."
+          },
+          "subtasks": []
+        }
+      ],
+      "gate": {
+        "question": {
+          "en": "Is the problem sufficiently understood to proceed to Ideation?",
+          "nl": "Is het probleem voldoende begrepen om door te gaan naar Ideatie?",
+          "pt": "O problema é suficientemente compreendido para avançar para a Ideação?"
+        }
+      }
+    },
+    {
+      "name": {
+        "en": "Ideation",
+        "nl": "Ideatie",
+        "pt": "Ideação"
+      },
+      "description": {
+        "en": "Generate and evaluate innovative solutions through structured ideation sessions and creative methods.",
+        "nl": "Genereer en evalueer innovatieve oplossingen door middel van gestructureerde ideatiesessies en creatieve methoden.",
+        "pt": "Gerar e avaliar soluções inovadoras através de sessões de ideação estruturadas e métodos criativos."
+      },
+      "governanceRole": "directing",
+      "color": "#F59E0B",
+      "icon": "lightbulb",
+      "taskGroups": [
+        {
+          "name": {
+            "en": "Preparation",
+            "nl": "Voorbereiding",
+            "pt": "Preparação"
+          },
+          "tasks": [
+            {
+              "id": "p2-g1-t1",
+              "name": {
+                "en": "Duplicate template",
+                "nl": "Template dupliceren",
+                "pt": "Duplicar modelo"
+              },
+              "description": {
+                "en": "Copy the phase template for Ideation working documents.",
+                "nl": "Kopieer het fasetemplate voor Ideatie werkdocumenten.",
+                "pt": "Copiar o modelo de fase para documentos de trabalho de Ideação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p2-g1-t2",
+              "name": {
+                "en": "Create Phase Plan",
+                "nl": "Fase Plan opstellen",
+                "pt": "Elaborar Plano de Fase"
+              },
+              "description": {
+                "en": "Create the ideation phase plan with scope, approach, and timeline.",
+                "nl": "Stel het ideatieplan op met scope, aanpak en tijdlijn.",
+                "pt": "Criar o plano da fase de ideação com âmbito, abordagem e cronograma."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p2-g1-t3",
+              "name": {
+                "en": "Share in capacity review",
+                "nl": "Delen in werkverdelingsoverleg",
+                "pt": "Partilhar na revisão de capacidade"
+              },
+              "description": {
+                "en": "Present ideation needs and resource requirements.",
+                "nl": "Presenteer ideatiebehoeften en resourcevereisten.",
+                "pt": "Apresentar as necessidades de ideação e requisitos de recursos."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p2-g1-t4",
+              "name": {
+                "en": "Get decision maker approval",
+                "nl": "Goedkeuring besluitvormer",
+                "pt": "Obter aprovação do decisor"
+              },
+              "description": {
+                "en": "Obtain approval to proceed with the ideation approach.",
+                "nl": "Verkrijg goedkeuring om door te gaan met de ideatieaanpak.",
+                "pt": "Obter aprovação para prosseguir com a abordagem de ideação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p2-g1-t5",
+              "name": {
+                "en": "Set baseline and Gantt",
+                "nl": "Baseline en Gantt instellen",
+                "pt": "Definir baseline e Gantt"
+              },
+              "description": {
+                "en": "Establish the phase timeline and tracking baseline.",
+                "nl": "Stel de fasetijdlijn en tracking-baseline in.",
+                "pt": "Estabelecer o cronograma da fase e a baseline de acompanhamento."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Ideation Session",
+            "nl": "Ideation Sessie",
+            "pt": "Sessão de Ideação"
+          },
+          "tasks": [
+            {
+              "id": "p2-g2-t1",
+              "name": {
+                "en": "Determine participants",
+                "nl": "Deelnemers bepalen",
+                "pt": "Determinar participantes"
+              },
+              "description": {
+                "en": "Select a diverse group of participants for the ideation session.",
+                "nl": "Selecteer een diverse groep deelnemers voor de ideatiesessie.",
+                "pt": "Selecionar um grupo diversificado de participantes para a sessão de ideação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p2-g2-t2",
+              "name": {
+                "en": "Plan the session",
+                "nl": "Sessie plannen",
+                "pt": "Planear a sessão"
+              },
+              "description": {
+                "en": "Schedule the ideation session including logistics and venue.",
+                "nl": "Plan de ideatiesessie inclusief logistiek en locatie.",
+                "pt": "Agendar a sessão de ideação incluindo logística e local."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p2-g2-t3",
+              "name": {
+                "en": "Reference research",
+                "nl": "Onderzoek raadplegen",
+                "pt": "Consultar pesquisa"
+              },
+              "description": {
+                "en": "Review Problem Analysis findings to inform ideation direction.",
+                "nl": "Raadpleeg de bevindingen van de probleemanalyse voor de ideatierichting.",
+                "pt": "Rever as conclusões da Análise de Problemas para orientar a direção da ideação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p2-g2-t4",
+              "name": {
+                "en": "Choose tooling based on Problem Characteristics",
+                "nl": "Tooling kiezen op basis van Probleemkarakteristieken",
+                "pt": "Escolher ferramentas com base nas Características do Problema"
+              },
+              "description": {
+                "en": "Select ideation methods from the methods database based on problem type.",
+                "nl": "Selecteer ideatiemethoden uit de methodendatabase op basis van probleemtype.",
+                "pt": "Selecionar métodos de ideação da base de dados de métodos com base no tipo de problema."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": [
+                "idea-matrix"
+              ]
+            },
+            {
+              "id": "p2-g2-t5",
+              "name": {
+                "en": "Create session script and preparations",
+                "nl": "Draaiboek en voorbereidingen maken",
+                "pt": "Criar roteiro e preparações da sessão"
+              },
+              "description": {
+                "en": "Design the detailed session agenda with exercises and materials.",
+                "nl": "Ontwerp de gedetailleerde sessie-agenda met oefeningen en materialen.",
+                "pt": "Conceber a agenda detalhada da sessão com exercícios e materiais."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p2-g2-t6",
+              "name": {
+                "en": "Execute ideation session",
+                "nl": "Ideation sessie uitvoeren",
+                "pt": "Executar sessão de ideação"
+              },
+              "description": {
+                "en": "Facilitate the ideation session: warm-up, exercises, idea generation, evaluation.",
+                "nl": "Faciliteer de ideatiesessie: warming-up, oefeningen, ideegeneratie, evaluatie.",
+                "pt": "Facilitar a sessão de ideação: aquecimento, exercícios, geração de ideias, avaliação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p2-g2-t7",
+              "name": {
+                "en": "Digitize output",
+                "nl": "Output digitaliseren",
+                "pt": "Digitalizar resultados"
+              },
+              "description": {
+                "en": "Process and digitize all session outputs and ideas.",
+                "nl": "Verwerk en digitaliseer alle sessieresultaten en ideeën.",
+                "pt": "Processar e digitalizar todos os resultados e ideias da sessão."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p2-g2-t8",
+              "name": {
+                "en": "Combine future visions of idea ambassadors",
+                "nl": "Toekomstvisies van idee-ambassadeurs combineren",
+                "pt": "Combinar visões futuras dos embaixadores de ideias"
+              },
+              "description": {
+                "en": "Synthesize the future visions from ideation session participants.",
+                "nl": "Synthetiseer de toekomstvisies van de deelnemers aan de ideatiesessie.",
+                "pt": "Sintetizar as visões futuras dos participantes da sessão de ideação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p2-g2-t9",
+              "name": {
+                "en": "Explore deepening options",
+                "nl": "Verdiepingsmogelijkheden verkennen",
+                "pt": "Explorar opções de aprofundamento"
+              },
+              "description": {
+                "en": "Assess whether any ideas need further deepening before selection.",
+                "nl": "Beoordeel of ideeën verdere verdieping nodig hebben voor selectie.",
+                "pt": "Avaliar se alguma ideia precisa de aprofundamento antes da seleção."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p2-g2-t10",
+              "name": {
+                "en": "Finalize Idea Proposals",
+                "nl": "Idee Voorstellen finaliseren",
+                "pt": "Finalizar Propostas de Ideias"
+              },
+              "description": {
+                "en": "Develop complete idea proposals for the strongest concepts.",
+                "nl": "Ontwikkel volledige ideevoorstellen voor de sterkste concepten.",
+                "pt": "Desenvolver propostas de ideias completas para os conceitos mais fortes."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p2-g2-t11",
+              "name": {
+                "en": "Create choice report of Idea Proposals",
+                "nl": "Keuzerapport Idee Voorstellen maken",
+                "pt": "Criar relatório de escolha das Propostas"
+              },
+              "description": {
+                "en": "Compile a comparative report of all idea proposals for decision making.",
+                "nl": "Stel een vergelijkend rapport samen van alle ideevoorstellen voor besluitvorming.",
+                "pt": "Compilar um relatório comparativo de todas as propostas de ideias para tomada de decisão."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p2-g2-t12",
+              "name": {
+                "en": "Run Innovation Quickscan",
+                "nl": "Innovatie Quickscan uitvoeren",
+                "pt": "Executar Quickscan de Inovação"
+              },
+              "description": {
+                "en": "Conduct initial compliance scan across all relevant domains.",
+                "nl": "Voer een initiële compliancescan uit over alle relevante domeinen.",
+                "pt": "Realizar uma verificação inicial de conformidade em todos os domínios relevantes."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": [
+                "quickscan"
+              ]
+            },
+            {
+              "id": "p2-g2-t13",
+              "name": {
+                "en": "Decision maker chooses idea and deepening",
+                "nl": "Besluitvormer kiest idee en verdieping",
+                "pt": "Decisor escolhe ideia e aprofundamento"
+              },
+              "description": {
+                "en": "Present ideas to decision maker for selection and next steps.",
+                "nl": "Presenteer ideeën aan de besluitvormer voor selectie en vervolgstappen.",
+                "pt": "Apresentar ideias ao decisor para seleção e próximos passos."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Reporting",
+            "nl": "Rapportage",
+            "pt": "Relatórios"
+          },
+          "tasks": [
+            {
+              "id": "p2-g3-t1",
+              "name": {
+                "en": "Ethics Workshop",
+                "nl": "Ethiek Workshop",
+                "pt": "Workshop de Ética"
+              },
+              "description": {
+                "en": "Conduct an ethics review workshop for the selected idea.",
+                "nl": "Voer een ethische review workshop uit voor het geselecteerde idee.",
+                "pt": "Realizar um workshop de revisão ética para a ideia selecionada."
+              },
+              "subtasks": [],
+              "optional": true,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p2-g3-t2",
+              "name": {
+                "en": "Create Definitive Idea Proposal",
+                "nl": "Definitief Idee Voorstel maken",
+                "pt": "Criar Proposta de Ideia Definitiva"
+              },
+              "description": {
+                "en": "Finalize the selected idea into a comprehensive proposal.",
+                "nl": "Finaliseer het geselecteerde idee tot een uitgebreid voorstel.",
+                "pt": "Finalizar a ideia selecionada numa proposta abrangente."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p2-g3-t3",
+              "name": {
+                "en": "Establish lessons learned",
+                "nl": "Geleerde lessen vastleggen",
+                "pt": "Registrar lições aprendidas"
+              },
+              "description": {
+                "en": "Document content and process lessons from the Ideation phase.",
+                "nl": "Documenteer inhoudelijke en proceslessen uit de Ideatiefase.",
+                "pt": "Documentar lições de conteúdo e processo da fase de Ideação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p2-g3-t4",
+              "name": {
+                "en": "Create Phase Report",
+                "nl": "Fase Rapport maken",
+                "pt": "Criar Relatório de Fase"
+              },
+              "description": {
+                "en": "Compile the complete Phase 2 report with session outputs and idea proposals.",
+                "nl": "Stel het volledige Fase 2-rapport samen met sessieresultaten en ideevoorstellen.",
+                "pt": "Compilar o relatório completo da Fase 2 com resultados das sessões e propostas de ideias."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Phase Closure",
+            "nl": "Afronding Fase",
+            "pt": "Encerramento de Fase"
+          },
+          "tasks": [
+            {
+              "id": "p2-g4-t1",
+              "name": {
+                "en": "Submit to capacity review",
+                "nl": "Indienen bij werkverdelingsoverleg",
+                "pt": "Submeter à revisão de capacidade"
+              },
+              "description": {
+                "en": "Present the phase report in the capacity review meeting.",
+                "nl": "Presenteer het faserapport in het werkverdelingsoverleg.",
+                "pt": "Apresentar o relatório de fase na reunião de revisão de capacidade."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p2-g4-t2",
+              "name": {
+                "en": "Decision maker approval",
+                "nl": "Goedkeuring besluitvormer",
+                "pt": "Aprovação do decisor"
+              },
+              "description": {
+                "en": "Obtain formal approval to proceed to Prototyping.",
+                "nl": "Verkrijg formele goedkeuring om door te gaan naar Prototyping.",
+                "pt": "Obter aprovação formal para avançar para Prototipagem."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p2-g4-t3",
+              "name": {
+                "en": "Phase evaluation",
+                "nl": "Fase evaluatie",
+                "pt": "Avaliação de fase"
+              },
+              "description": {
+                "en": "Evaluate the Ideation phase execution.",
+                "nl": "Evalueer de uitvoering van de Ideatiefase.",
+                "pt": "Avaliar a execução da fase de Ideação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p2-g4-t4",
+              "name": {
+                "en": "Communicate results",
+                "nl": "Resultaten communiceren",
+                "pt": "Comunicar resultados"
+              },
+              "description": {
+                "en": "Share ideation results with all stakeholders.",
+                "nl": "Deel ideatieresultaten met alle stakeholders.",
+                "pt": "Partilhar os resultados da ideação com todos os stakeholders."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        }
+      ],
+      "deliverables": [
+        {
+          "id": "p2-d1",
+          "name": {
+            "en": "Idea Proposals",
+            "nl": "Idee Voorstellen",
+            "pt": "Propostas de Ideias"
+          }
+        },
+        {
+          "id": "p2-d2",
+          "name": {
+            "en": "Choice Report",
+            "nl": "Keuzerapport",
+            "pt": "Relatório de Escolha"
+          }
+        },
+        {
+          "id": "p2-d3",
+          "name": {
+            "en": "Innovation Quickscan Results",
+            "nl": "Innovatie Quickscan Resultaten",
+            "pt": "Resultados do Quickscan de Inovação"
+          }
+        },
+        {
+          "id": "p2-d4",
+          "name": {
+            "en": "Definitive Idea Proposal",
+            "nl": "Definitief Idee Voorstel",
+            "pt": "Proposta de Ideia Definitiva"
+          }
+        },
+        {
+          "id": "p2-d5",
+          "name": {
+            "en": "Phase Report",
+            "nl": "Fase Rapport",
+            "pt": "Relatório de Fase"
+          }
+        }
+      ],
+      "deepeningOptions": [
+        {
+          "id": "p2-deep-1",
+          "name": {
+            "en": "Student project",
+            "nl": "Studentenproject",
+            "pt": "Projeto estudantil"
+          },
+          "description": {
+            "en": "Commission a student team to explore and develop the idea further.",
+            "nl": "Geef een studententeam de opdracht om het idee verder te verkennen en te ontwikkelen.",
+            "pt": "Encomendar a uma equipa de estudantes a exploração e desenvolvimento da ideia."
+          },
+          "subtasks": []
+        },
+        {
+          "id": "p2-deep-2",
+          "name": {
+            "en": "Literature research",
+            "nl": "Literatuuronderzoek",
+            "pt": "Pesquisa bibliográfica"
+          },
+          "description": {
+            "en": "Conduct academic literature review on the solution domain.",
+            "nl": "Voer een academisch literatuuronderzoek uit over het oplossingsdomein.",
+            "pt": "Realizar uma revisão da literatura académica sobre o domínio da solução."
+          },
+          "subtasks": []
+        },
+        {
+          "id": "p2-deep-3",
+          "name": {
+            "en": "Inspiration event",
+            "nl": "Inspiratie-event",
+            "pt": "Evento de inspiração"
+          },
+          "description": {
+            "en": "Organize a visit or event to gather inspiration from similar solutions.",
+            "nl": "Organiseer een bezoek of evenement om inspiratie op te doen van vergelijkbare oplossingen.",
+            "pt": "Organizar uma visita ou evento para recolher inspiração de soluções semelhantes."
+          },
+          "subtasks": []
+        },
+        {
+          "id": "p2-deep-4",
+          "name": {
+            "en": "Trainee assignment",
+            "nl": "Trainee-opdracht",
+            "pt": "Trabalho de trainee"
+          },
+          "description": {
+            "en": "Assign a trainee to research and develop the concept.",
+            "nl": "Wijs een trainee toe om het concept te onderzoeken en te ontwikkelen.",
+            "pt": "Atribuir a um trainee a pesquisa e desenvolvimento do conceito."
+          },
+          "subtasks": []
+        },
+        {
+          "id": "p2-deep-5",
+          "name": {
+            "en": "Market research",
+            "nl": "Marktonderzoek",
+            "pt": "Pesquisa de mercado"
+          },
+          "description": {
+            "en": "Research existing market solutions and suppliers.",
+            "nl": "Onderzoek bestaande marktoplossingen en leveranciers.",
+            "pt": "Pesquisar soluções de mercado e fornecedores existentes."
+          },
+          "subtasks": []
+        },
+        {
+          "id": "p2-deep-6",
+          "name": {
+            "en": "Participative ideation",
+            "nl": "Participatieve ideatie",
+            "pt": "Ideação participativa"
+          },
+          "description": {
+            "en": "Engage citizens or end-users in co-creating solutions.",
+            "nl": "Betrek burgers of eindgebruikers bij het co-creëren van oplossingen.",
+            "pt": "Envolver cidadãos ou utilizadores finais na co-criação de soluções."
+          },
+          "subtasks": []
+        },
+        {
+          "id": "p2-deep-7",
+          "name": {
+            "en": "Innovative procurement",
+            "nl": "Innovatief aanbesteden",
+            "pt": "Contratação inovadora"
+          },
+          "description": {
+            "en": "Explore innovative procurement routes for the solution.",
+            "nl": "Verken innovatieve aanbestedingsroutes voor de oplossing.",
+            "pt": "Explorar vias de contratação inovadoras para a solução."
+          },
+          "subtasks": []
+        },
+        {
+          "id": "p2-deep-8",
+          "name": {
+            "en": "Design competition / hackathon",
+            "nl": "Ontwerpwedstrijd / hackathon",
+            "pt": "Competição de design / hackathon"
+          },
+          "description": {
+            "en": "Organize a competitive design event to generate solutions.",
+            "nl": "Organiseer een competitief ontwerpevenement om oplossingen te genereren.",
+            "pt": "Organizar um evento competitivo de design para gerar soluções."
+          },
+          "subtasks": []
+        },
+        {
+          "id": "p2-deep-9",
+          "name": {
+            "en": "Design sprint",
+            "nl": "Design sprint",
+            "pt": "Sprint de design"
+          },
+          "description": {
+            "en": "Run a focused design sprint to rapidly prototype and test.",
+            "nl": "Voer een gerichte design sprint uit om snel te prototypen en te testen.",
+            "pt": "Realizar um sprint de design focado para prototipar e testar rapidamente."
+          },
+          "subtasks": []
+        },
+        {
+          "id": "p2-deep-10",
+          "name": {
+            "en": "Startup in Residence",
+            "nl": "Startup in Residence",
+            "pt": "Startup in Residence"
+          },
+          "description": {
+            "en": "Invite a startup to develop a solution within the organization.",
+            "nl": "Nodig een startup uit om een oplossing te ontwikkelen binnen de organisatie.",
+            "pt": "Convidar uma startup para desenvolver uma solução dentro da organização."
+          },
+          "subtasks": []
+        }
+      ],
+      "gate": {
+        "question": {
+          "en": "Is the selected idea viable enough to proceed to Prototyping?",
+          "nl": "Is het geselecteerde idee haalbaar genoeg om door te gaan naar Prototyping?",
+          "pt": "A ideia selecionada é viável o suficiente para avançar para Prototipagem?"
+        }
+      }
+    },
+    {
+      "name": {
+        "en": "Prototyping",
+        "nl": "Prototyping",
+        "pt": "Prototipagem"
+      },
+      "description": {
+        "en": "Transform the selected idea into a testable prototype through design, development, and user testing.",
+        "nl": "Transformeer het geselecteerde idee tot een testbaar prototype door middel van ontwerp, ontwikkeling en gebruikerstesten.",
+        "pt": "Transformar a ideia selecionada num protótipo testável através de design, desenvolvimento e testes com utilizadores."
+      },
+      "governanceRole": "directing",
+      "color": "#3B82F6",
+      "icon": "build",
+      "taskGroups": [
+        {
+          "name": {
+            "en": "Preparation",
+            "nl": "Voorbereiding",
+            "pt": "Preparação"
+          },
+          "tasks": [
+            {
+              "id": "p3-g1-t1",
+              "name": {
+                "en": "Duplicate template",
+                "nl": "Template dupliceren",
+                "pt": "Duplicar modelo"
+              },
+              "description": {
+                "en": "Copy the phase template for Prototyping working documents.",
+                "nl": "Kopieer het fasetemplate voor Prototyping werkdocumenten.",
+                "pt": "Copiar o modelo de fase para documentos de trabalho de Prototipagem."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p3-g1-t2",
+              "name": {
+                "en": "Set up decision-making for this phase",
+                "nl": "Besluitvorming voor deze fase inrichten",
+                "pt": "Configurar tomada de decisão para esta fase"
+              },
+              "description": {
+                "en": "Establish the governance structure for prototyping decisions.",
+                "nl": "Richt de governancestructuur in voor prototypingbeslissingen.",
+                "pt": "Estabelecer a estrutura de governança para decisões de prototipagem."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p3-g1-t3",
+              "name": {
+                "en": "Create Phase Plan",
+                "nl": "Fase Plan opstellen",
+                "pt": "Elaborar Plano de Fase"
+              },
+              "description": {
+                "en": "Create the prototyping phase plan with scope and approach.",
+                "nl": "Stel het prototypingplan op met scope en aanpak.",
+                "pt": "Criar o plano da fase de prototipagem com âmbito e abordagem."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p3-g1-t4",
+              "name": {
+                "en": "Submit to capacity review",
+                "nl": "Indienen bij werkverdelingsoverleg",
+                "pt": "Submeter à revisão de capacidade"
+              },
+              "description": {
+                "en": "Present prototyping needs in the capacity review.",
+                "nl": "Presenteer prototypingbehoeften in het werkverdelingsoverleg.",
+                "pt": "Apresentar as necessidades de prototipagem na revisão de capacidade."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p3-g1-t5",
+              "name": {
+                "en": "Get decision maker approval",
+                "nl": "Goedkeuring besluitvormer",
+                "pt": "Obter aprovação do decisor"
+              },
+              "description": {
+                "en": "Get approval for the prototyping approach.",
+                "nl": "Verkrijg goedkeuring voor de prototypingaanpak.",
+                "pt": "Obter aprovação para a abordagem de prototipagem."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p3-g1-t6",
+              "name": {
+                "en": "Update stakeholders",
+                "nl": "Stakeholders bijwerken",
+                "pt": "Atualizar stakeholders"
+              },
+              "description": {
+                "en": "Inform stakeholders about the prototyping phase plans.",
+                "nl": "Informeer stakeholders over de prototypingfaseplannen.",
+                "pt": "Informar os stakeholders sobre os planos da fase de prototipagem."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p3-g1-t7",
+              "name": {
+                "en": "Set baseline and Gantt",
+                "nl": "Baseline en Gantt instellen",
+                "pt": "Definir baseline e Gantt"
+              },
+              "description": {
+                "en": "Establish the phase timeline and tracking baseline.",
+                "nl": "Stel de fasetijdlijn en tracking-baseline in.",
+                "pt": "Estabelecer o cronograma da fase e a baseline de acompanhamento."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Onboarding Suppliers",
+            "nl": "Leveranciers Onboarden",
+            "pt": "Integração de Fornecedores"
+          },
+          "tasks": [
+            {
+              "id": "p3-g2-t1",
+              "name": {
+                "en": "Draft Request for Proposal",
+                "nl": "Uitvraag opstellen",
+                "pt": "Elaborar Solicitação de Proposta"
+              },
+              "description": {
+                "en": "Prepare the RFP document for potential prototype suppliers.",
+                "nl": "Stel het RFP-document op voor potentiële prototypeleveranciers.",
+                "pt": "Preparar o documento de RFP para potenciais fornecedores de protótipos."
+              },
+              "subtasks": [
+                {
+                  "id": "p3-g2-t1-s1",
+                  "name": {
+                    "en": "Use previous deliverables",
+                    "nl": "Eerdere deliverables gebruiken",
+                    "pt": "Usar deliverables anteriores"
+                  }
+                },
+                {
+                  "id": "p3-g2-t1-s2",
+                  "name": {
+                    "en": "Update stakeholder map",
+                    "nl": "Stakeholder map bijwerken",
+                    "pt": "Atualizar mapa de stakeholders"
+                  }
+                },
+                {
+                  "id": "p3-g2-t1-s3",
+                  "name": {
+                    "en": "Determine personas",
+                    "nl": "Persona's bepalen",
+                    "pt": "Determinar personas"
+                  }
+                },
+                {
+                  "id": "p3-g2-t1-s4",
+                  "name": {
+                    "en": "Expected user requirements",
+                    "nl": "Verwachte gebruikerseisen",
+                    "pt": "Requisitos esperados do utilizador"
+                  }
+                },
+                {
+                  "id": "p3-g2-t1-s5",
+                  "name": {
+                    "en": "Scenario sketches",
+                    "nl": "Scenarioschetsjes",
+                    "pt": "Esboços de cenários"
+                  }
+                },
+                {
+                  "id": "p3-g2-t1-s6",
+                  "name": {
+                    "en": "Prototype fitness criteria",
+                    "nl": "Prototype geschiktheidscriteria",
+                    "pt": "Critérios de aptidão do protótipo"
+                  }
+                }
+              ],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p3-g2-t2",
+              "name": {
+                "en": "Request quotes",
+                "nl": "Offertes aanvragen",
+                "pt": "Solicitar cotações"
+              },
+              "description": {
+                "en": "Request and compare supplier quotes for prototype development.",
+                "nl": "Vraag offertes aan en vergelijk leveranciersoffertes voor prototypeontwikkeling.",
+                "pt": "Solicitar e comparar cotações de fornecedores para desenvolvimento de protótipos."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p3-g2-t3",
+              "name": {
+                "en": "Determine TRL",
+                "nl": "TRL bepalen",
+                "pt": "Determinar TRL"
+              },
+              "description": {
+                "en": "Assess the Technology Readiness Level of the proposed approach.",
+                "nl": "Beoordeel het Technology Readiness Level van de voorgestelde aanpak.",
+                "pt": "Avaliar o Nível de Prontidão Tecnológica da abordagem proposta."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": [
+                "trl-assessment"
+              ]
+            },
+            {
+              "id": "p3-g2-t4",
+              "name": {
+                "en": "Supplier selection by decision maker",
+                "nl": "Leveranciersselectie door besluitvormer",
+                "pt": "Seleção de fornecedor pelo decisor"
+              },
+              "description": {
+                "en": "Present supplier options for decision maker selection.",
+                "nl": "Presenteer leveranciersopties voor selectie door de besluitvormer.",
+                "pt": "Apresentar opções de fornecedores para seleção pelo decisor."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p3-g2-t5",
+              "name": {
+                "en": "Sign contract",
+                "nl": "Contract tekenen",
+                "pt": "Assinar contrato"
+              },
+              "description": {
+                "en": "Finalize and sign the contract with the selected supplier.",
+                "nl": "Finaliseer en teken het contract met de geselecteerde leverancier.",
+                "pt": "Finalizar e assinar o contrato com o fornecedor selecionado."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Design Session",
+            "nl": "Design Sessie",
+            "pt": "Sessão de Design"
+          },
+          "tasks": [
+            {
+              "id": "p3-g3-t1",
+              "name": {
+                "en": "Prepare session",
+                "nl": "Sessie voorbereiden",
+                "pt": "Preparar sessão"
+              },
+              "description": {
+                "en": "Prepare the design session including all materials and logistics.",
+                "nl": "Bereid de designsessie voor inclusief alle materialen en logistiek.",
+                "pt": "Preparar a sessão de design incluindo todos os materiais e logística."
+              },
+              "subtasks": [
+                {
+                  "id": "p3-g3-t1-s1",
+                  "name": {
+                    "en": "Determine participants",
+                    "nl": "Deelnemers bepalen",
+                    "pt": "Determinar participantes"
+                  }
+                },
+                {
+                  "id": "p3-g3-t1-s2",
+                  "name": {
+                    "en": "Schedule and location",
+                    "nl": "Planning en locatie",
+                    "pt": "Agendamento e local"
+                  }
+                },
+                {
+                  "id": "p3-g3-t1-s3",
+                  "name": {
+                    "en": "1-on-1 user conversations",
+                    "nl": "1-op-1 gebruikersgesprekken",
+                    "pt": "Conversas 1-a-1 com utilizadores"
+                  }
+                },
+                {
+                  "id": "p3-g3-t1-s4",
+                  "name": {
+                    "en": "Describe personas",
+                    "nl": "Persona's beschrijven",
+                    "pt": "Descrever personas"
+                  }
+                },
+                {
+                  "id": "p3-g3-t1-s5",
+                  "name": {
+                    "en": "What-if persona user journeys",
+                    "nl": "What-if persona user journeys",
+                    "pt": "Jornadas What-if de personas"
+                  }
+                },
+                {
+                  "id": "p3-g3-t1-s6",
+                  "name": {
+                    "en": "Create session script",
+                    "nl": "Draaiboek maken",
+                    "pt": "Criar roteiro da sessão"
+                  }
+                },
+                {
+                  "id": "p3-g3-t1-s7",
+                  "name": {
+                    "en": "Tooling and templates",
+                    "nl": "Tooling en templates",
+                    "pt": "Ferramentas e modelos"
+                  }
+                },
+                {
+                  "id": "p3-g3-t1-s8",
+                  "name": {
+                    "en": "Materials",
+                    "nl": "Materialen",
+                    "pt": "Materiais"
+                  }
+                },
+                {
+                  "id": "p3-g3-t1-s9",
+                  "name": {
+                    "en": "Book facilitator",
+                    "nl": "Facilitator boeken",
+                    "pt": "Reservar facilitador"
+                  }
+                }
+              ],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p3-g3-t2",
+              "name": {
+                "en": "Execute design session",
+                "nl": "Design sessie uitvoeren",
+                "pt": "Executar sessão de design"
+              },
+              "description": {
+                "en": "Facilitate the design session with stakeholders and end users.",
+                "nl": "Faciliteer de designsessie met stakeholders en eindgebruikers.",
+                "pt": "Facilitar a sessão de design com stakeholders e utilizadores finais."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": [
+                "persona-builder"
+              ]
+            },
+            {
+              "id": "p3-g3-t3",
+              "name": {
+                "en": "Process session output",
+                "nl": "Sessie output verwerken",
+                "pt": "Processar resultados da sessão"
+              },
+              "description": {
+                "en": "Digitize and compile all design session outputs.",
+                "nl": "Digitaliseer en compileer alle designsessieresultaten.",
+                "pt": "Digitalizar e compilar todos os resultados da sessão de design."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p3-g3-t4",
+              "name": {
+                "en": "Deliver deliverables",
+                "nl": "Deliverables opleveren",
+                "pt": "Entregar deliverables"
+              },
+              "description": {
+                "en": "Package design session outputs into formal deliverables.",
+                "nl": "Verpak designsessieresultaten tot formele deliverables.",
+                "pt": "Empacotar os resultados da sessão de design em deliverables formais."
+              },
+              "subtasks": [
+                {
+                  "id": "p3-g3-t4-s1",
+                  "name": {
+                    "en": "Absent stakeholder feedback",
+                    "nl": "Feedback afwezige stakeholders",
+                    "pt": "Feedback de stakeholders ausentes"
+                  }
+                },
+                {
+                  "id": "p3-g3-t4-s2",
+                  "name": {
+                    "en": "Personas document",
+                    "nl": "Persona's document",
+                    "pt": "Documento de personas"
+                  }
+                },
+                {
+                  "id": "p3-g3-t4-s3",
+                  "name": {
+                    "en": "User journeys PDF",
+                    "nl": "User journeys PDF",
+                    "pt": "PDF de jornadas do utilizador"
+                  }
+                },
+                {
+                  "id": "p3-g3-t4-s4",
+                  "name": {
+                    "en": "User requirements",
+                    "nl": "Gebruikerseisen",
+                    "pt": "Requisitos do utilizador"
+                  }
+                },
+                {
+                  "id": "p3-g3-t4-s5",
+                  "name": {
+                    "en": "Prototype proposals",
+                    "nl": "Prototype voorstellen",
+                    "pt": "Propostas de protótipo"
+                  }
+                }
+              ],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p3-g3-t5",
+              "name": {
+                "en": "Prototype selection by decision maker",
+                "nl": "Prototype selectie door besluitvormer",
+                "pt": "Seleção de protótipo pelo decisor"
+              },
+              "description": {
+                "en": "Decision maker selects the prototype approach to develop.",
+                "nl": "Besluitvormer selecteert de prototypebenadering om te ontwikkelen.",
+                "pt": "O decisor seleciona a abordagem de protótipo a desenvolver."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Development",
+            "nl": "Ontwikkeling",
+            "pt": "Desenvolvimento"
+          },
+          "tasks": [
+            {
+              "id": "p3-g4-t1",
+              "name": {
+                "en": "Create Development Plan",
+                "nl": "Ontwikkelplan maken",
+                "pt": "Criar Plano de Desenvolvimento"
+              },
+              "description": {
+                "en": "Plan the technical approach for prototype development.",
+                "nl": "Plan de technische aanpak voor prototypeontwikkeling.",
+                "pt": "Planear a abordagem técnica para o desenvolvimento do protótipo."
+              },
+              "subtasks": [
+                {
+                  "id": "p3-g4-t1-s1",
+                  "name": {
+                    "en": "Design methodologies",
+                    "nl": "Ontwerpmethodologieën",
+                    "pt": "Metodologias de design"
+                  }
+                },
+                {
+                  "id": "p3-g4-t1-s2",
+                  "name": {
+                    "en": "Test methodologies",
+                    "nl": "Testmethodologieën",
+                    "pt": "Metodologias de teste"
+                  }
+                },
+                {
+                  "id": "p3-g4-t1-s3",
+                  "name": {
+                    "en": "System requirements",
+                    "nl": "Systeemeisen",
+                    "pt": "Requisitos de sistema"
+                  }
+                },
+                {
+                  "id": "p3-g4-t1-s4",
+                  "name": {
+                    "en": "Development and test plan",
+                    "nl": "Ontwikkel- en testplan",
+                    "pt": "Plano de desenvolvimento e teste"
+                  }
+                },
+                {
+                  "id": "p3-g4-t1-s5",
+                  "name": {
+                    "en": "Align timelines",
+                    "nl": "Tijdlijnen afstemmen",
+                    "pt": "Alinhar cronogramas"
+                  }
+                }
+              ],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p3-g4-t2",
+              "name": {
+                "en": "Prototype Development",
+                "nl": "Prototype Ontwikkeling",
+                "pt": "Desenvolvimento do Protótipo"
+              },
+              "description": {
+                "en": "Build and test the prototype iteratively.",
+                "nl": "Bouw en test het prototype iteratief.",
+                "pt": "Construir e testar o protótipo iterativamente."
+              },
+              "subtasks": [
+                {
+                  "id": "p3-g4-t2-s1",
+                  "name": {
+                    "en": "Execute design methodology",
+                    "nl": "Ontwerpmethodologie uitvoeren",
+                    "pt": "Executar metodologia de design"
+                  }
+                },
+                {
+                  "id": "p3-g4-t2-s2",
+                  "name": {
+                    "en": "Development",
+                    "nl": "Ontwikkeling",
+                    "pt": "Desenvolvimento"
+                  }
+                },
+                {
+                  "id": "p3-g4-t2-s3",
+                  "name": {
+                    "en": "User testing",
+                    "nl": "Gebruikerstesten",
+                    "pt": "Testes com utilizadores"
+                  }
+                }
+              ],
+              "optional": false,
+              "tags": [],
+              "linkedTools": [
+                "user-requirements"
+              ]
+            },
+            {
+              "id": "p3-g4-t3",
+              "name": {
+                "en": "Reflection",
+                "nl": "Reflectie",
+                "pt": "Reflexão"
+              },
+              "description": {
+                "en": "Assess prototype readiness and determine next steps.",
+                "nl": "Beoordeel de gereedheid van het prototype en bepaal vervolgstappen.",
+                "pt": "Avaliar a prontidão do protótipo e determinar os próximos passos."
+              },
+              "subtasks": [
+                {
+                  "id": "p3-g4-t3-s1",
+                  "name": {
+                    "en": "Assess experiment readiness",
+                    "nl": "Experimentgereedheid beoordelen",
+                    "pt": "Avaliar prontidão para experimentação"
+                  }
+                },
+                {
+                  "id": "p3-g4-t3-s2",
+                  "name": {
+                    "en": "Decide if iteration needed",
+                    "nl": "Beslissen of iteratie nodig is",
+                    "pt": "Decidir se é necessária iteração"
+                  }
+                }
+              ],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Reporting",
+            "nl": "Rapportage",
+            "pt": "Relatórios"
+          },
+          "tasks": [
+            {
+              "id": "p3-g5-t1",
+              "name": {
+                "en": "Compile interim deliverables",
+                "nl": "Tussentijdse deliverables samenstellen",
+                "pt": "Compilar deliverables intermédios"
+              },
+              "description": {
+                "en": "Gather personas, user journeys, requirements, and system specs.",
+                "nl": "Verzamel persona's, user journeys, eisen en systeemspecificaties.",
+                "pt": "Reunir personas, jornadas do utilizador, requisitos e especificações de sistema."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p3-g5-t2",
+              "name": {
+                "en": "Document developed prototype",
+                "nl": "Ontwikkeld prototype documenteren",
+                "pt": "Documentar protótipo desenvolvido"
+              },
+              "description": {
+                "en": "Create complete documentation of the prototype.",
+                "nl": "Maak volledige documentatie van het prototype.",
+                "pt": "Criar documentação completa do protótipo."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p3-g5-t3",
+              "name": {
+                "en": "Compile user test results",
+                "nl": "Gebruikerstestresultaten samenstellen",
+                "pt": "Compilar resultados dos testes"
+              },
+              "description": {
+                "en": "Summarize all user testing findings and feedback.",
+                "nl": "Vat alle bevindingen en feedback uit gebruikerstesten samen.",
+                "pt": "Resumir todas as conclusões e feedback dos testes com utilizadores."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p3-g5-t4",
+              "name": {
+                "en": "Establish lessons learned",
+                "nl": "Geleerde lessen vastleggen",
+                "pt": "Registrar lições aprendidas"
+              },
+              "description": {
+                "en": "Document content and process lessons from Prototyping.",
+                "nl": "Documenteer inhoudelijke en proceslessen uit de Prototypingfase.",
+                "pt": "Documentar lições de conteúdo e processo da fase de Prototipagem."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p3-g5-t5",
+              "name": {
+                "en": "Create Phase Report",
+                "nl": "Fase Rapport maken",
+                "pt": "Criar Relatório de Fase"
+              },
+              "description": {
+                "en": "Compile the complete Phase 3 report.",
+                "nl": "Stel het volledige Fase 3-rapport samen.",
+                "pt": "Compilar o relatório completo da Fase 3."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Phase Closure",
+            "nl": "Afronding Fase",
+            "pt": "Encerramento de Fase"
+          },
+          "tasks": [
+            {
+              "id": "p3-g6-t1",
+              "name": {
+                "en": "Submit to capacity review",
+                "nl": "Indienen bij werkverdelingsoverleg",
+                "pt": "Submeter à revisão de capacidade"
+              },
+              "description": {
+                "en": "Present the phase report in capacity review.",
+                "nl": "Presenteer het faserapport in het werkverdelingsoverleg.",
+                "pt": "Apresentar o relatório de fase na revisão de capacidade."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p3-g6-t2",
+              "name": {
+                "en": "Decision maker approval",
+                "nl": "Goedkeuring besluitvormer",
+                "pt": "Aprovação do decisor"
+              },
+              "description": {
+                "en": "Obtain approval to proceed to Validation.",
+                "nl": "Verkrijg goedkeuring om door te gaan naar Validatie.",
+                "pt": "Obter aprovação para avançar para Validação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p3-g6-t3",
+              "name": {
+                "en": "Phase evaluation",
+                "nl": "Fase evaluatie",
+                "pt": "Avaliação de fase"
+              },
+              "description": {
+                "en": "Evaluate the Prototyping phase execution.",
+                "nl": "Evalueer de uitvoering van de Prototypingfase.",
+                "pt": "Avaliar a execução da fase de Prototipagem."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p3-g6-t4",
+              "name": {
+                "en": "Communicate results",
+                "nl": "Resultaten communiceren",
+                "pt": "Comunicar resultados"
+              },
+              "description": {
+                "en": "Share prototyping results with stakeholders.",
+                "nl": "Deel prototypingresultaten met stakeholders.",
+                "pt": "Partilhar os resultados da prototipagem com os stakeholders."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        }
+      ],
+      "deliverables": [
+        {
+          "id": "p3-d1",
+          "name": {
+            "en": "Personas",
+            "nl": "Persona's",
+            "pt": "Personas"
+          }
+        },
+        {
+          "id": "p3-d2",
+          "name": {
+            "en": "User Journeys",
+            "nl": "User Journeys",
+            "pt": "Jornadas do Utilizador"
+          }
+        },
+        {
+          "id": "p3-d3",
+          "name": {
+            "en": "User Requirements",
+            "nl": "Gebruikerseisen",
+            "pt": "Requisitos do Utilizador"
+          }
+        },
+        {
+          "id": "p3-d4",
+          "name": {
+            "en": "System Requirements",
+            "nl": "Systeemeisen",
+            "pt": "Requisitos de Sistema"
+          }
+        },
+        {
+          "id": "p3-d5",
+          "name": {
+            "en": "Prototype",
+            "nl": "Prototype",
+            "pt": "Protótipo"
+          }
+        },
+        {
+          "id": "p3-d6",
+          "name": {
+            "en": "User Test Results",
+            "nl": "Gebruikerstestresultaten",
+            "pt": "Resultados dos Testes"
+          }
+        },
+        {
+          "id": "p3-d7",
+          "name": {
+            "en": "TRL Assessment",
+            "nl": "TRL Beoordeling",
+            "pt": "Avaliação TRL"
+          }
+        },
+        {
+          "id": "p3-d8",
+          "name": {
+            "en": "Phase Report",
+            "nl": "Fase Rapport",
+            "pt": "Relatório de Fase"
+          }
+        }
+      ],
+      "deepeningOptions": [],
+      "gate": {
+        "question": {
+          "en": "Is the prototype validated enough to proceed to Validation?",
+          "nl": "Is het prototype voldoende gevalideerd om door te gaan naar Validatie?",
+          "pt": "O protótipo está suficientemente validado para avançar para Validação?"
+        }
+      }
+    },
+    {
+      "name": {
+        "en": "Validation",
+        "nl": "Validatie",
+        "pt": "Validação"
+      },
+      "description": {
+        "en": "Validate the solution across all organizational dimensions: technical, legal, ethical, security, and political.",
+        "nl": "Valideer de oplossing over alle organisatorische dimensies: technisch, juridisch, ethisch, beveiliging en politiek.",
+        "pt": "Validar a solução em todas as dimensões organizacionais: técnica, jurídica, ética, segurança e política."
+      },
+      "governanceRole": "directing",
+      "color": "#10B981",
+      "icon": "verified",
+      "taskGroups": [
+        {
+          "name": {
+            "en": "Preparation",
+            "nl": "Voorbereiding",
+            "pt": "Preparação"
+          },
+          "tasks": [
+            {
+              "id": "p4-g1-t1",
+              "name": {
+                "en": "Duplicate template",
+                "nl": "Template dupliceren",
+                "pt": "Duplicar modelo"
+              },
+              "description": {
+                "en": "Copy the phase template for Validation working documents.",
+                "nl": "Kopieer het fasesjabloon voor Validatie-werkdocumenten.",
+                "pt": "Copiar o modelo de fase para os documentos de trabalho de Validação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g1-t2",
+              "name": {
+                "en": "Update stakeholders",
+                "nl": "Stakeholders bijwerken",
+                "pt": "Atualizar stakeholders"
+              },
+              "description": {
+                "en": "Inform and engage relevant stakeholders for the validation phase.",
+                "nl": "Informeer en betrek relevante stakeholders voor de validatiefase.",
+                "pt": "Informar e envolver stakeholders relevantes para a fase de validação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g1-t3",
+              "name": {
+                "en": "Determine relevant tasks",
+                "nl": "Relevante taken bepalen",
+                "pt": "Determinar tarefas relevantes"
+              },
+              "description": {
+                "en": "Review the standard elements list and select what applies to this project.",
+                "nl": "Bekijk de lijst met standaardelementen en selecteer wat van toepassing is op dit project.",
+                "pt": "Rever a lista de elementos padrão e selecionar o que se aplica a este projeto."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g1-t4",
+              "name": {
+                "en": "Determine if deepening needed",
+                "nl": "Bepalen of verdieping nodig is",
+                "pt": "Determinar se é necessário aprofundamento"
+              },
+              "description": {
+                "en": "Assess whether additional research is needed before validation.",
+                "nl": "Beoordeel of aanvullend onderzoek nodig is vóór validatie.",
+                "pt": "Avaliar se é necessária investigação adicional antes da validação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g1-t5",
+              "name": {
+                "en": "Free up internal capacity",
+                "nl": "Interne capaciteit vrijmaken",
+                "pt": "Libertar capacidade interna"
+              },
+              "description": {
+                "en": "Ensure required internal experts are available for validation activities.",
+                "nl": "Zorg ervoor dat benodigde interne experts beschikbaar zijn voor validatieactiviteiten.",
+                "pt": "Garantir que os especialistas internos necessários estão disponíveis para atividades de validação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g1-t6",
+              "name": {
+                "en": "Set up timeline",
+                "nl": "Tijdlijn inrichten",
+                "pt": "Configurar cronograma"
+              },
+              "description": {
+                "en": "Create the validation timeline coordinating all disciplines.",
+                "nl": "Maak de validatietijdlijn die alle disciplines coördineert.",
+                "pt": "Criar o cronograma de validação coordenando todas as disciplinas."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g1-t7",
+              "name": {
+                "en": "Create Validation Phase Plan",
+                "nl": "Validatie Fase Plan maken",
+                "pt": "Criar Plano de Fase de Validação"
+              },
+              "description": {
+                "en": "Draft the comprehensive validation plan with all activities and dependencies.",
+                "nl": "Stel het uitgebreide validatieplan op met alle activiteiten en afhankelijkheden.",
+                "pt": "Elaborar o plano de validação abrangente com todas as atividades e dependências."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g1-t8",
+              "name": {
+                "en": "Submit to capacity review",
+                "nl": "Indienen bij werkverdelingsoverleg",
+                "pt": "Submeter à revisão de capacidade"
+              },
+              "description": {
+                "en": "Present validation plan in the capacity review meeting.",
+                "nl": "Presenteer het validatieplan in het werkverdelingsoverleg.",
+                "pt": "Apresentar o plano de validação na reunião de revisão de capacidade."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g1-t9",
+              "name": {
+                "en": "Arrange financing",
+                "nl": "Financiering regelen",
+                "pt": "Organizar financiamento"
+              },
+              "description": {
+                "en": "Secure budget for validation activities (supplier contracts, specialist consultations).",
+                "nl": "Zeker budget voor validatieactiviteiten (leverancierscontracten, specialistische consultaties).",
+                "pt": "Assegurar orçamento para atividades de validação (contratos de fornecedores, consultas especializadas)."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g1-t10",
+              "name": {
+                "en": "Set up supplier contracts",
+                "nl": "Leverancierscontracten inrichten",
+                "pt": "Configurar contratos de fornecedores"
+              },
+              "description": {
+                "en": "Prepare contracts for external validation support.",
+                "nl": "Bereid contracten voor voor externe validatieondersteuning.",
+                "pt": "Preparar contratos para apoio externo de validação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g1-t11",
+              "name": {
+                "en": "Set baseline and Gantt",
+                "nl": "Baseline en Gantt instellen",
+                "pt": "Definir baseline e Gantt"
+              },
+              "description": {
+                "en": "Establish the validation baseline and timeline.",
+                "nl": "Stel de validatiebaseline en tijdlijn vast.",
+                "pt": "Estabelecer a baseline e o cronograma de validação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Standard Elements",
+            "nl": "Standaard Elementen",
+            "pt": "Elementos Padrão"
+          },
+          "tasks": [
+            {
+              "id": "p4-g2-t1",
+              "name": {
+                "en": "Storyboard",
+                "nl": "Storyboard",
+                "pt": "Storyboard"
+              },
+              "description": {
+                "en": "Create a visual storyboard showing how the solution works in practice.",
+                "nl": "Maak een visueel storyboard dat laat zien hoe de oplossing in de praktijk werkt.",
+                "pt": "Criar um storyboard visual mostrando como a solução funciona na prática."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [
+                "UX"
+              ],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g2-t2",
+              "name": {
+                "en": "Process and Dataflow",
+                "nl": "Proces en Dataflow",
+                "pt": "Processo e Fluxo de Dados"
+              },
+              "description": {
+                "en": "Map the data flows and process steps for the solution.",
+                "nl": "Breng de datastromen en processtappen voor de oplossing in kaart.",
+                "pt": "Mapear os fluxos de dados e etapas do processo para a solução."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [
+                "Data/AI"
+              ],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g2-t3",
+              "name": {
+                "en": "High-level Architecture",
+                "nl": "High-level Architectuur",
+                "pt": "Arquitetura de Alto Nível"
+              },
+              "description": {
+                "en": "Design the technical architecture for the solution.",
+                "nl": "Ontwerp de technische architectuur voor de oplossing.",
+                "pt": "Projetar a arquitetura técnica para a solução."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [
+                "Architecture"
+              ],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g2-t4",
+              "name": {
+                "en": "Impact Measurement",
+                "nl": "Impactmeting",
+                "pt": "Medição de Impacto"
+              },
+              "description": {
+                "en": "Define impact indicators and measurement methodology.",
+                "nl": "Definieer impactindicatoren en meetmethodologie.",
+                "pt": "Definir indicadores de impacto e metodologia de medição."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [
+                "Data/AI",
+                "Challenge Owner"
+              ],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g2-t5",
+              "name": {
+                "en": "Ecosystem Value Map",
+                "nl": "Ecosysteem Waarde Map",
+                "pt": "Mapa de Valor do Ecossistema"
+              },
+              "description": {
+                "en": "Map value flows between all actors for pilot and adoption phases.",
+                "nl": "Breng waardestromen tussen alle actoren in kaart voor pilot- en adoptiefasen.",
+                "pt": "Mapear fluxos de valor entre todos os atores para as fases de piloto e adoção."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [
+                "Challenge Owner"
+              ],
+              "linkedTools": [
+                "ecosystem-map"
+              ]
+            },
+            {
+              "id": "p4-g2-t6",
+              "name": {
+                "en": "Ethics Audit",
+                "nl": "Ethiek Audit",
+                "pt": "Auditoria Ética"
+              },
+              "description": {
+                "en": "Conduct a formal ethics review of the solution.",
+                "nl": "Voer een formele ethische toetsing van de oplossing uit.",
+                "pt": "Realizar uma auditoria ética formal da solução."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [
+                "Ethics"
+              ],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g2-t7",
+              "name": {
+                "en": "Innovation Quickscan",
+                "nl": "Innovatie Quickscan",
+                "pt": "Quickscan de Inovação"
+              },
+              "description": {
+                "en": "Conduct deep compliance review across all domains.",
+                "nl": "Voer een diepgaande compliance-toetsing uit over alle domeinen.",
+                "pt": "Realizar uma revisão aprofundada de conformidade em todos os domínios."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [
+                "Security",
+                "Privacy",
+                "Architecture",
+                "Info Mgmt",
+                "Data/AI",
+                "Procurement"
+              ],
+              "linkedTools": [
+                "quickscan"
+              ]
+            },
+            {
+              "id": "p4-g2-t8",
+              "name": {
+                "en": "BIO Security Baseline",
+                "nl": "BIO Security Baseline",
+                "pt": "Baseline de Segurança BIO"
+              },
+              "description": {
+                "en": "Assess compliance with the BIO (Baseline Information Security Government) framework.",
+                "nl": "Beoordeel naleving van het BIO (Baseline Informatiebeveiliging Overheid) raamwerk.",
+                "pt": "Avaliar conformidade com o framework BIO (Baseline de Segurança da Informação Governamental)."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [
+                "Security"
+              ],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g2-t9",
+              "name": {
+                "en": "Legal Advice",
+                "nl": "Juridisch Advies",
+                "pt": "Aconselhamento Jurídico"
+              },
+              "description": {
+                "en": "Obtain legal review and advice on the solution implementation.",
+                "nl": "Verkrijg juridische toetsing en advies over de implementatie van de oplossing.",
+                "pt": "Obter revisão jurídica e aconselhamento sobre a implementação da solução."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [
+                "Legal"
+              ],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g2-t10",
+              "name": {
+                "en": "Infrastructure Requirements",
+                "nl": "Infrastructuur Eisen",
+                "pt": "Requisitos de Infraestrutura"
+              },
+              "description": {
+                "en": "Define infrastructure needs for deployment.",
+                "nl": "Definieer infrastructuurbehoeften voor uitrol.",
+                "pt": "Definir necessidades de infraestrutura para implantação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [
+                "Architecture"
+              ],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g2-t11",
+              "name": {
+                "en": "DPIA",
+                "nl": "DPIA",
+                "pt": "AIPD"
+              },
+              "description": {
+                "en": "Conduct a Data Protection Impact Assessment.",
+                "nl": "Voer een Data Protection Impact Assessment uit.",
+                "pt": "Realizar uma Avaliação de Impacto sobre a Proteção de Dados."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [
+                "Privacy"
+              ],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g2-t12",
+              "name": {
+                "en": "Political/Administrative Support",
+                "nl": "Politiek/Bestuurlijke Steun",
+                "pt": "Apoio Político/Administrativo"
+              },
+              "description": {
+                "en": "Secure political and administrative backing for the experiment.",
+                "nl": "Verzeker politieke en bestuurlijke steun voor het experiment.",
+                "pt": "Assegurar apoio político e administrativo para o experimento."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [
+                "Communications",
+                "Challenge Owner"
+              ],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g2-t13",
+              "name": {
+                "en": "Communication/Participation Plan",
+                "nl": "Communicatie/Participatieplan",
+                "pt": "Plano de Comunicação/Participação"
+              },
+              "description": {
+                "en": "Develop the stakeholder communication and citizen participation plan.",
+                "nl": "Ontwikkel het communicatie- en burgerparticipatieplan voor stakeholders.",
+                "pt": "Desenvolver o plano de comunicação com stakeholders e participação cidadã."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [
+                "Communications"
+              ],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g2-t14",
+              "name": {
+                "en": "Management Plan",
+                "nl": "Beheersplan",
+                "pt": "Plano de Gestão"
+              },
+              "description": {
+                "en": "Create the information management plan for the solution.",
+                "nl": "Maak het informatiebeheerplan voor de oplossing.",
+                "pt": "Criar o plano de gestão da informação para a solução."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [
+                "Info Mgmt"
+              ],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g2-t15",
+              "name": {
+                "en": "Permits and Certifications",
+                "nl": "Vergunningen en Certificeringen",
+                "pt": "Licenças e Certificações"
+              },
+              "description": {
+                "en": "Identify and obtain required permits or certifications.",
+                "nl": "Identificeer en verkrijg vereiste vergunningen of certificeringen.",
+                "pt": "Identificar e obter licenças ou certificações necessárias."
+              },
+              "subtasks": [],
+              "optional": true,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g2-t16",
+              "name": {
+                "en": "Supplier Business Case",
+                "nl": "Leverancier Business Case",
+                "pt": "Business Case do Fornecedor"
+              },
+              "description": {
+                "en": "Evaluate the supplier's business case and sustainability.",
+                "nl": "Evalueer de business case en duurzaamheid van de leverancier.",
+                "pt": "Avaliar o business case e a sustentabilidade do fornecedor."
+              },
+              "subtasks": [],
+              "optional": true,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g2-t17",
+              "name": {
+                "en": "Installation and Decommission Design",
+                "nl": "Installatie en Afbouw Ontwerp",
+                "pt": "Design de Instalação e Descomissionamento"
+              },
+              "description": {
+                "en": "Plan the installation and eventual decommissioning of the solution.",
+                "nl": "Plan de installatie en uiteindelijke afbouw van de oplossing.",
+                "pt": "Planear a instalação e eventual descomissionamento da solução."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g2-t18",
+              "name": {
+                "en": "DMU and Experiment Steering Group",
+                "nl": "DMU en Experiment Stuurgroep",
+                "pt": "DMU e Grupo Diretivo do Experimento"
+              },
+              "description": {
+                "en": "Set up the governance structure for the experiment phase.",
+                "nl": "Richt de governance-structuur in voor de experimentfase.",
+                "pt": "Configurar a estrutura de governança para a fase de experimento."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": [
+                "dmu"
+              ]
+            },
+            {
+              "id": "p4-g2-t19",
+              "name": {
+                "en": "Risk Analysis",
+                "nl": "Risicoanalyse",
+                "pt": "Análise de Riscos"
+              },
+              "description": {
+                "en": "Identify and assess risks for the experiment and adoption.",
+                "nl": "Identificeer en beoordeel risico's voor het experiment en de adoptie.",
+                "pt": "Identificar e avaliar riscos para o experimento e adoção."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Reporting",
+            "nl": "Rapportage",
+            "pt": "Relatórios"
+          },
+          "tasks": [
+            {
+              "id": "p4-g3-t1",
+              "name": {
+                "en": "Create Phase Report",
+                "nl": "Fase Rapport maken",
+                "pt": "Criar Relatório de Fase"
+              },
+              "description": {
+                "en": "Compile all validation results into the Phase 4 report.",
+                "nl": "Compileer alle validatieresultaten in het Fase 4 rapport.",
+                "pt": "Compilar todos os resultados de validação no relatório da Fase 4."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g3-t2",
+              "name": {
+                "en": "Submit to capacity review",
+                "nl": "Indienen bij werkverdelingsoverleg",
+                "pt": "Submeter à revisão de capacidade"
+              },
+              "description": {
+                "en": "Present validation results in the capacity review.",
+                "nl": "Presenteer validatieresultaten in het werkverdelingsoverleg.",
+                "pt": "Apresentar resultados de validação na revisão de capacidade."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g3-t3",
+              "name": {
+                "en": "Decision maker/steering group approval",
+                "nl": "Goedkeuring besluitvormer/stuurgroep",
+                "pt": "Aprovação do decisor/grupo diretivo"
+              },
+              "description": {
+                "en": "Obtain approval to proceed to Experiment.",
+                "nl": "Verkrijg goedkeuring om door te gaan naar Experiment.",
+                "pt": "Obter aprovação para avançar para o Experimento."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p4-g3-t4",
+              "name": {
+                "en": "Phase evaluation",
+                "nl": "Fase evaluatie",
+                "pt": "Avaliação de fase"
+              },
+              "description": {
+                "en": "Evaluate the Validation phase execution.",
+                "nl": "Evalueer de uitvoering van de Validatiefase.",
+                "pt": "Avaliar a execução da fase de Validação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        }
+      ],
+      "deliverables": [
+        {
+          "id": "p4-d1",
+          "name": {
+            "en": "Storyboard",
+            "nl": "Storyboard",
+            "pt": "Storyboard"
+          }
+        },
+        {
+          "id": "p4-d2",
+          "name": {
+            "en": "Architecture Document",
+            "nl": "Architectuur Document",
+            "pt": "Documento de Arquitetura"
+          }
+        },
+        {
+          "id": "p4-d3",
+          "name": {
+            "en": "Impact Measurement Plan",
+            "nl": "Impactmeting Plan",
+            "pt": "Plano de Medição de Impacto"
+          }
+        },
+        {
+          "id": "p4-d4",
+          "name": {
+            "en": "Ecosystem Value Maps",
+            "nl": "Ecosysteem Waarde Maps",
+            "pt": "Mapas de Valor do Ecossistema"
+          }
+        },
+        {
+          "id": "p4-d5",
+          "name": {
+            "en": "Innovation Quickscan Results",
+            "nl": "Quickscan Resultaten",
+            "pt": "Resultados do Quickscan"
+          }
+        },
+        {
+          "id": "p4-d6",
+          "name": {
+            "en": "DPIA",
+            "nl": "DPIA",
+            "pt": "AIPD"
+          }
+        },
+        {
+          "id": "p4-d7",
+          "name": {
+            "en": "BIO Assessment",
+            "nl": "BIO Beoordeling",
+            "pt": "Avaliação BIO"
+          }
+        },
+        {
+          "id": "p4-d8",
+          "name": {
+            "en": "Risk Matrix",
+            "nl": "Risicomatrix",
+            "pt": "Matriz de Riscos"
+          }
+        },
+        {
+          "id": "p4-d9",
+          "name": {
+            "en": "Communications Plan",
+            "nl": "Communicatieplan",
+            "pt": "Plano de Comunicação"
+          }
+        },
+        {
+          "id": "p4-d10",
+          "name": {
+            "en": "Management Plan",
+            "nl": "Beheersplan",
+            "pt": "Plano de Gestão"
+          }
+        },
+        {
+          "id": "p4-d11",
+          "name": {
+            "en": "Phase Report",
+            "nl": "Fase Rapport",
+            "pt": "Relatório de Fase"
+          }
+        }
+      ],
+      "deepeningOptions": [],
+      "gate": {
+        "question": {
+          "en": "Are all validations complete and risks acceptable to proceed to Experiment?",
+          "nl": "Zijn alle validaties compleet en risico's acceptabel om door te gaan naar Experiment?",
+          "pt": "Todas as validações estão completas e os riscos são aceitáveis para avançar para o Experimento?"
+        }
+      }
+    },
+    {
+      "name": {
+        "en": "Experiment",
+        "nl": "Experiment",
+        "pt": "Experimento"
+      },
+      "description": {
+        "en": "Execute the innovation experiment in a controlled setting, collect data, and evaluate results for adoption decisions.",
+        "nl": "Voer het innovatie-experiment uit in een gecontroleerde omgeving, verzamel data en evalueer resultaten voor adoptiebeslissingen.",
+        "pt": "Executar o experimento de inovação num ambiente controlado, recolher dados e avaliar resultados para decisões de adoção."
+      },
+      "governanceRole": "directing",
+      "color": "#8B5CF6",
+      "icon": "science",
+      "taskGroups": [
+        {
+          "name": {
+            "en": "Preparation",
+            "nl": "Voorbereiding",
+            "pt": "Preparação"
+          },
+          "tasks": [
+            {
+              "id": "p5-g1-t1",
+              "name": {
+                "en": "Set up work packages",
+                "nl": "Werkpakketten inrichten",
+                "pt": "Configurar pacotes de trabalho"
+              },
+              "description": {
+                "en": "Define and organize work packages for the experiment.",
+                "nl": "Definieer en organiseer werkpakketten voor het experiment.",
+                "pt": "Definir e organizar pacotes de trabalho para o experimento."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p5-g1-t2",
+              "name": {
+                "en": "Create monitoring plan",
+                "nl": "Monitoringplan opstellen",
+                "pt": "Criar plano de monitoramento"
+              },
+              "description": {
+                "en": "Define how experiment progress and results will be tracked.",
+                "nl": "Definieer hoe de voortgang en resultaten van het experiment worden gevolgd.",
+                "pt": "Definir como o progresso e os resultados do experimento serão acompanhados."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p5-g1-t3",
+              "name": {
+                "en": "Create experiment plan with timeline",
+                "nl": "Experimentplan met tijdlijn maken",
+                "pt": "Criar plano de experimento com cronograma"
+              },
+              "description": {
+                "en": "Draft the complete experiment plan with milestones and timeline.",
+                "nl": "Stel het volledige experimentplan op met mijlpalen en tijdlijn.",
+                "pt": "Elaborar o plano completo do experimento com marcos e cronograma."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p5-g1-t4",
+              "name": {
+                "en": "Arrange budget and financing",
+                "nl": "Budget en financiering regelen",
+                "pt": "Organizar orçamento e financiamento"
+              },
+              "description": {
+                "en": "Secure budget allocation for all experiment activities.",
+                "nl": "Zeker budgettoewijzing voor alle experimentactiviteiten.",
+                "pt": "Assegurar alocação de orçamento para todas as atividades do experimento."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p5-g1-t5",
+              "name": {
+                "en": "Kick-off with stakeholders",
+                "nl": "Kick-off met stakeholders",
+                "pt": "Kick-off com stakeholders"
+              },
+              "description": {
+                "en": "Launch the experiment phase with all involved parties.",
+                "nl": "Start de experimentfase met alle betrokken partijen.",
+                "pt": "Lançar a fase de experimento com todas as partes envolvidas."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p5-g1-t6",
+              "name": {
+                "en": "Set baseline and Gantt",
+                "nl": "Baseline en Gantt instellen",
+                "pt": "Definir baseline e Gantt"
+              },
+              "description": {
+                "en": "Establish experiment timeline baseline.",
+                "nl": "Stel de baseline van de experimenttijdlijn vast.",
+                "pt": "Estabelecer a baseline do cronograma do experimento."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p5-g1-t7",
+              "name": {
+                "en": "Prepare impact measurement",
+                "nl": "Impactmeting voorbereiden",
+                "pt": "Preparar medição de impacto"
+              },
+              "description": {
+                "en": "Set up data collection for impact indicators.",
+                "nl": "Richt dataverzameling in voor impactindicatoren.",
+                "pt": "Configurar a recolha de dados para indicadores de impacto."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p5-g1-t8",
+              "name": {
+                "en": "Configure communications",
+                "nl": "Communicatie inrichten",
+                "pt": "Configurar comunicações"
+              },
+              "description": {
+                "en": "Set up communication channels for experiment updates.",
+                "nl": "Richt communicatiekanalen in voor experimentupdates.",
+                "pt": "Configurar canais de comunicação para atualizações do experimento."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Execution",
+            "nl": "Uitvoering",
+            "pt": "Execução"
+          },
+          "tasks": [
+            {
+              "id": "p5-g2-t1",
+              "name": {
+                "en": "Execute work packages",
+                "nl": "Werkpakketten uitvoeren",
+                "pt": "Executar pacotes de trabalho"
+              },
+              "description": {
+                "en": "Run the experiment work packages as planned.",
+                "nl": "Voer de experimentwerkpakketten uit zoals gepland.",
+                "pt": "Executar os pacotes de trabalho do experimento conforme planeado."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p5-g2-t2",
+              "name": {
+                "en": "Collect data per impact indicators",
+                "nl": "Data verzamelen per impactindicator",
+                "pt": "Recolher dados por indicador de impacto"
+              },
+              "description": {
+                "en": "Systematically collect data for all defined impact indicators.",
+                "nl": "Verzamel systematisch data voor alle gedefinieerde impactindicatoren.",
+                "pt": "Recolher sistematicamente dados para todos os indicadores de impacto definidos."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p5-g2-t3",
+              "name": {
+                "en": "Monitor progress",
+                "nl": "Voortgang monitoren",
+                "pt": "Monitorar progresso"
+              },
+              "description": {
+                "en": "Track experiment progress against plan and address issues.",
+                "nl": "Volg de voortgang van het experiment ten opzichte van het plan en pak problemen aan.",
+                "pt": "Acompanhar o progresso do experimento em relação ao plano e resolver problemas."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p5-g2-t4",
+              "name": {
+                "en": "Conduct interim evaluations",
+                "nl": "Tussentijdse evaluaties uitvoeren",
+                "pt": "Realizar avaliações intermédias"
+              },
+              "description": {
+                "en": "Assess experiment progress at predefined checkpoints.",
+                "nl": "Beoordeel de voortgang van het experiment bij vooraf gedefinieerde checkpoints.",
+                "pt": "Avaliar o progresso do experimento em pontos de controle predefinidos."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p5-g2-t5",
+              "name": {
+                "en": "Manage stakeholder communications",
+                "nl": "Stakeholder communicatie beheren",
+                "pt": "Gerir comunicação com stakeholders"
+              },
+              "description": {
+                "en": "Keep all stakeholders informed of experiment progress.",
+                "nl": "Houd alle stakeholders op de hoogte van de voortgang van het experiment.",
+                "pt": "Manter todos os stakeholders informados sobre o progresso do experimento."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Processing",
+            "nl": "Verwerking",
+            "pt": "Processamento"
+          },
+          "tasks": [
+            {
+              "id": "p5-g3-t1",
+              "name": {
+                "en": "Analyze experiment results",
+                "nl": "Experimentresultaten analyseren",
+                "pt": "Analisar resultados do experimento"
+              },
+              "description": {
+                "en": "Analyze all collected data and experiment outcomes.",
+                "nl": "Analyseer alle verzamelde data en experimentresultaten.",
+                "pt": "Analisar todos os dados recolhidos e resultados do experimento."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p5-g3-t2",
+              "name": {
+                "en": "Compile impact measurement results",
+                "nl": "Impactmeting resultaten samenstellen",
+                "pt": "Compilar resultados da medição de impacto"
+              },
+              "description": {
+                "en": "Synthesize impact measurement data into findings.",
+                "nl": "Synthetiseer impactmetingsdata tot bevindingen.",
+                "pt": "Sintetizar dados de medição de impacto em conclusões."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p5-g3-t3",
+              "name": {
+                "en": "Document technical findings",
+                "nl": "Technische bevindingen documenteren",
+                "pt": "Documentar conclusões técnicas"
+              },
+              "description": {
+                "en": "Document all technical observations and recommendations.",
+                "nl": "Documenteer alle technische observaties en aanbevelingen.",
+                "pt": "Documentar todas as observações e recomendações técnicas."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Reporting and Evaluation",
+            "nl": "Rapportage en Evaluatie",
+            "pt": "Relatórios e Avaliação"
+          },
+          "tasks": [
+            {
+              "id": "p5-g4-t1",
+              "name": {
+                "en": "Create experiment results report",
+                "nl": "Experimentresultaten rapport maken",
+                "pt": "Criar relatório de resultados"
+              },
+              "description": {
+                "en": "Compile comprehensive experiment results report.",
+                "nl": "Stel een uitgebreid rapport samen van de experimentresultaten.",
+                "pt": "Compilar relatório abrangente dos resultados do experimento."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p5-g4-t2",
+              "name": {
+                "en": "Formulate adoption scenarios",
+                "nl": "Adoptiescenario's formuleren",
+                "pt": "Formular cenários de adoção"
+              },
+              "description": {
+                "en": "Develop scenarios for adoption: scale, modify, or stop.",
+                "nl": "Ontwikkel scenario's voor adoptie: opschalen, aanpassen of stoppen.",
+                "pt": "Desenvolver cenários de adoção: escalar, modificar ou parar."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p5-g4-t3",
+              "name": {
+                "en": "Establish lessons learned",
+                "nl": "Geleerde lessen vastleggen",
+                "pt": "Registrar lições aprendidas"
+              },
+              "description": {
+                "en": "Document content and process lessons from the Experiment.",
+                "nl": "Documenteer inhoudelijke en procesmatige lessen van het Experiment.",
+                "pt": "Documentar lições de conteúdo e processo do Experimento."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p5-g4-t4",
+              "name": {
+                "en": "Create Phase Report",
+                "nl": "Fase Rapport maken",
+                "pt": "Criar Relatório de Fase"
+              },
+              "description": {
+                "en": "Compile the complete Phase 5 report with results and recommendations.",
+                "nl": "Stel het volledige Fase 5 rapport samen met resultaten en aanbevelingen.",
+                "pt": "Compilar o relatório completo da Fase 5 com resultados e recomendações."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Phase Closure",
+            "nl": "Afronding Fase",
+            "pt": "Encerramento de Fase"
+          },
+          "tasks": [
+            {
+              "id": "p5-g5-t1",
+              "name": {
+                "en": "Submit to capacity review",
+                "nl": "Indienen bij werkverdelingsoverleg",
+                "pt": "Submeter à revisão de capacidade"
+              },
+              "description": {
+                "en": "Present experiment results in capacity review.",
+                "nl": "Presenteer experimentresultaten in het werkverdelingsoverleg.",
+                "pt": "Apresentar resultados do experimento na revisão de capacidade."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p5-g5-t2",
+              "name": {
+                "en": "Decision maker approval",
+                "nl": "Goedkeuring besluitvormer",
+                "pt": "Aprovação do decisor"
+              },
+              "description": {
+                "en": "Obtain approval on adoption recommendation.",
+                "nl": "Verkrijg goedkeuring over de adoptieaanbeveling.",
+                "pt": "Obter aprovação sobre a recomendação de adoção."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p5-g5-t3",
+              "name": {
+                "en": "Phase evaluation",
+                "nl": "Fase evaluatie",
+                "pt": "Avaliação de fase"
+              },
+              "description": {
+                "en": "Evaluate the Experiment phase execution.",
+                "nl": "Evalueer de uitvoering van de Experimentfase.",
+                "pt": "Avaliar a execução da fase de Experimento."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p5-g5-t4",
+              "name": {
+                "en": "Communicate results",
+                "nl": "Resultaten communiceren",
+                "pt": "Comunicar resultados"
+              },
+              "description": {
+                "en": "Share experiment results and adoption recommendation.",
+                "nl": "Deel experimentresultaten en adoptieaanbeveling.",
+                "pt": "Partilhar resultados do experimento e recomendação de adoção."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p5-g5-t5",
+              "name": {
+                "en": "Initiate governance transition",
+                "nl": "Governance transitie initiëren",
+                "pt": "Iniciar transição de governança"
+              },
+              "description": {
+                "en": "Begin handover from directing to advisory governance role.",
+                "nl": "Start de overdracht van sturende naar adviserende governance-rol.",
+                "pt": "Iniciar a transição de governança de diretiva para consultiva."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        }
+      ],
+      "deliverables": [
+        {
+          "id": "p5-d1",
+          "name": {
+            "en": "Experiment Results Report",
+            "nl": "Experimentresultaten Rapport",
+            "pt": "Relatório de Resultados"
+          }
+        },
+        {
+          "id": "p5-d2",
+          "name": {
+            "en": "Impact Measurement Results",
+            "nl": "Impactmeting Resultaten",
+            "pt": "Resultados da Medição de Impacto"
+          }
+        },
+        {
+          "id": "p5-d3",
+          "name": {
+            "en": "Adoption Scenarios",
+            "nl": "Adoptiescenario's",
+            "pt": "Cenários de Adoção"
+          }
+        },
+        {
+          "id": "p5-d4",
+          "name": {
+            "en": "Technical Findings",
+            "nl": "Technische Bevindingen",
+            "pt": "Conclusões Técnicas"
+          }
+        },
+        {
+          "id": "p5-d5",
+          "name": {
+            "en": "Lessons Learned",
+            "nl": "Geleerde Lessen",
+            "pt": "Lições Aprendidas"
+          }
+        },
+        {
+          "id": "p5-d6",
+          "name": {
+            "en": "Phase Report",
+            "nl": "Fase Rapport",
+            "pt": "Relatório de Fase"
+          }
+        }
+      ],
+      "deepeningOptions": [],
+      "gate": {
+        "question": {
+          "en": "Do the experiment results support proceeding to Feasibility assessment?",
+          "nl": "Ondersteunen de experimentresultaten het doorgaan naar Haalbaarheidsanalyse?",
+          "pt": "Os resultados do experimento suportam avançar para a avaliação de Viabilidade?"
+        }
+      }
+    },
+    {
+      "color": "#14B8A6",
+      "icon": "assessment",
+      "governanceRole": "advisory",
+      "name": {
+        "en": "Feasibility",
+        "nl": "Haalbaarheid",
+        "pt": "Viabilidade"
+      },
+      "description": {
+        "en": "Assess the organizational feasibility and develop the business case for full adoption — innovation office in advisory role.",
+        "nl": "Beoordeel de organisatorische haalbaarheid en ontwikkel de business case voor volledige adoptie — innovatiebureau in adviserende rol.",
+        "pt": "Avaliar a viabilidade organizacional e desenvolver o business case para adoção completa — escritório de inovação em papel consultivo."
+      },
+      "deliverables": [
+        {
+          "id": "p6-d1",
+          "name": {
+            "en": "Business Case",
+            "nl": "Business Case",
+            "pt": "Business Case"
+          }
+        },
+        {
+          "id": "p6-d2",
+          "name": {
+            "en": "Adoption Roadmap",
+            "nl": "Adoptie-routekaart",
+            "pt": "Roteiro de Adoção"
+          }
+        },
+        {
+          "id": "p6-d3",
+          "name": {
+            "en": "Readiness Assessment",
+            "nl": "Gereedheidstoets",
+            "pt": "Avaliação de Prontidão"
+          }
+        },
+        {
+          "id": "p6-d4",
+          "name": {
+            "en": "Phase Report",
+            "nl": "Fase Rapport",
+            "pt": "Relatório de Fase"
+          }
+        }
+      ],
+      "deepeningOptions": [],
+      "gate": {
+        "question": {
+          "en": "Is the organization ready and is the business case positive for full adoption?",
+          "nl": "Is de organisatie gereed en is de business case positief voor volledige adoptie?",
+          "pt": "A organização está pronta e o business case é positivo para adoção completa?"
+        }
+      },
+      "taskGroups": [
+        {
+          "name": {
+            "en": "Business Case",
+            "nl": "Business Case",
+            "pt": "Business Case"
+          },
+          "tasks": [
+            {
+              "id": "p6-g1-t1",
+              "name": {
+                "en": "Develop organizational business case",
+                "nl": "Organisatorische business case ontwikkelen",
+                "pt": "Desenvolver business case organizacional"
+              },
+              "description": {
+                "en": "Build the business case from the organization's perspective, not the supplier's.",
+                "nl": "Bouw de business case vanuit het perspectief van de organisatie, niet van de leverancier.",
+                "pt": "Construir o business case da perspetiva da organização, não do fornecedor."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p6-g1-t2",
+              "name": {
+                "en": "Cost-benefit analysis",
+                "nl": "Kosten-batenanalyse",
+                "pt": "Análise custo-benefício"
+              },
+              "description": {
+                "en": "Calculate total costs and expected benefits of full adoption.",
+                "nl": "Bereken de totale kosten en verwachte baten van volledige adoptie.",
+                "pt": "Calcular os custos totais e benefícios esperados da adoção completa."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p6-g1-t3",
+              "name": {
+                "en": "Organizational readiness assessment",
+                "nl": "Organisatorische gereedheid beoordelen",
+                "pt": "Avaliar prontidão organizacional"
+              },
+              "description": {
+                "en": "Assess whether the organization is ready for full adoption.",
+                "nl": "Beoordeel of de organisatie klaar is voor volledige adoptie.",
+                "pt": "Avaliar se a organização está pronta para adoção completa."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p6-g1-t4",
+              "name": {
+                "en": "Scaling analysis",
+                "nl": "Schaalbaarheidsanalyse",
+                "pt": "Análise de escalabilidade"
+              },
+              "description": {
+                "en": "Analyze what's needed to scale from experiment to full deployment.",
+                "nl": "Analyseer wat nodig is om op te schalen van experiment naar volledige uitrol.",
+                "pt": "Analisar o que é necessário para escalar de experimento para implantação completa."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Adoption Planning",
+            "nl": "Adoptieplanning",
+            "pt": "Planeamento de Adoção"
+          },
+          "tasks": [
+            {
+              "id": "p6-g2-t1",
+              "name": {
+                "en": "Create adoption roadmap",
+                "nl": "Adoptie-routekaart maken",
+                "pt": "Criar roteiro de adoção"
+              },
+              "description": {
+                "en": "Develop the step-by-step roadmap for moving to full adoption.",
+                "nl": "Ontwikkel de stapsgewijze routekaart voor de overgang naar volledige adoptie.",
+                "pt": "Desenvolver o roteiro passo a passo para avançar para adoção completa."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p6-g2-t2",
+              "name": {
+                "en": "Define operational requirements",
+                "nl": "Operationele eisen definiëren",
+                "pt": "Definir requisitos operacionais"
+              },
+              "description": {
+                "en": "Specify what operations needs for running the solution long-term.",
+                "nl": "Specificeer wat de operatie nodig heeft om de oplossing langdurig te draaien.",
+                "pt": "Especificar o que as operações necessitam para executar a solução a longo prazo."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p6-g2-t3",
+              "name": {
+                "en": "Stakeholder alignment",
+                "nl": "Stakeholder-afstemming",
+                "pt": "Alinhamento de stakeholders"
+              },
+              "description": {
+                "en": "Ensure all stakeholders are aligned on the adoption approach.",
+                "nl": "Zorg ervoor dat alle stakeholders zijn afgestemd op de adoptieaanpak.",
+                "pt": "Garantir que todos os stakeholders estão alinhados na abordagem de adoção."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p6-g2-t4",
+              "name": {
+                "en": "Create Phase Report",
+                "nl": "Fase Rapport maken",
+                "pt": "Criar Relatório de Fase"
+              },
+              "description": {
+                "en": "Compile the feasibility assessment and adoption recommendation.",
+                "nl": "Stel de haalbaarheidsbeoordeling en adoptieaanbeveling samen.",
+                "pt": "Compilar a avaliação de viabilidade e recomendação de adoção."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "color": "#059669",
+      "icon": "rocket_launch",
+      "governanceRole": "advisory",
+      "name": {
+        "en": "Adoption",
+        "nl": "Adoptie",
+        "pt": "Adoção"
+      },
+      "description": {
+        "en": "Execute the adoption plan, hand over to operations, and ensure sustainable long-term implementation — innovation office provides guidance on request.",
+        "nl": "Voer het adoptieplan uit, draag over aan beheer en zorg voor duurzame langetermijnimplementatie — innovatiebureau biedt begeleiding op aanvraag.",
+        "pt": "Executar o plano de adoção, transferir para operações e garantir implementação sustentável a longo prazo — escritório de inovação fornece orientação a pedido."
+      },
+      "deliverables": [
+        {
+          "id": "p7-d1",
+          "name": {
+            "en": "Handover Documentation",
+            "nl": "Overdrachtsdocumentatie",
+            "pt": "Documentação de Transferência"
+          }
+        },
+        {
+          "id": "p7-d2",
+          "name": {
+            "en": "Scaling Plan",
+            "nl": "Opschalingsplan",
+            "pt": "Plano de Escalabilidade"
+          }
+        },
+        {
+          "id": "p7-d3",
+          "name": {
+            "en": "Monitoring Framework",
+            "nl": "Monitoringsraamwerk",
+            "pt": "Framework de Monitoramento"
+          }
+        },
+        {
+          "id": "p7-d4",
+          "name": {
+            "en": "Final Project Report",
+            "nl": "Eindrapport",
+            "pt": "Relatório Final do Projeto"
+          }
+        }
+      ],
+      "deepeningOptions": [],
+      "gate": {
+        "question": {
+          "en": "Has the solution been successfully adopted and is sustainable monitoring in place?",
+          "nl": "Is de oplossing succesvol geadopteerd en is duurzame monitoring ingericht?",
+          "pt": "A solução foi adotada com sucesso e o monitoramento sustentável está implementado?"
+        }
+      },
+      "taskGroups": [
+        {
+          "name": {
+            "en": "Handover",
+            "nl": "Overdracht",
+            "pt": "Transferência"
+          },
+          "tasks": [
+            {
+              "id": "p7-g1-t1",
+              "name": {
+                "en": "Execute handover to operations",
+                "nl": "Overdracht naar beheer uitvoeren",
+                "pt": "Executar transferência para operações"
+              },
+              "description": {
+                "en": "Formally hand over the solution to the operational team.",
+                "nl": "Draag de oplossing formeel over aan het operationele team.",
+                "pt": "Transferir formalmente a solução para a equipa operacional."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p7-g1-t2",
+              "name": {
+                "en": "Knowledge transfer",
+                "nl": "Kennisoverdracht",
+                "pt": "Transferência de conhecimento"
+              },
+              "description": {
+                "en": "Transfer all project knowledge to the receiving team.",
+                "nl": "Draag alle projectkennis over aan het ontvangende team.",
+                "pt": "Transferir todo o conhecimento do projeto para a equipa recetora."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p7-g1-t3",
+              "name": {
+                "en": "Documentation handover",
+                "nl": "Documentatie overdragen",
+                "pt": "Entregar documentação"
+              },
+              "description": {
+                "en": "Deliver all project documentation to the operational team.",
+                "nl": "Lever alle projectdocumentatie aan het operationele team.",
+                "pt": "Entregar toda a documentação do projeto à equipa operacional."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Scaling and Monitoring",
+            "nl": "Opschaling en Monitoring",
+            "pt": "Escalabilidade e Monitoramento"
+          },
+          "tasks": [
+            {
+              "id": "p7-g2-t1",
+              "name": {
+                "en": "Execute scaling plan",
+                "nl": "Opschalingsplan uitvoeren",
+                "pt": "Executar plano de escalabilidade"
+              },
+              "description": {
+                "en": "Implement the scaling plan from experiment to full deployment.",
+                "nl": "Implementeer het opschalingsplan van experiment naar volledige uitrol.",
+                "pt": "Implementar o plano de escalabilidade de experimento para implantação completa."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p7-g2-t2",
+              "name": {
+                "en": "Long-term monitoring",
+                "nl": "Langetermijnmonitoring",
+                "pt": "Monitoramento de longo prazo"
+              },
+              "description": {
+                "en": "Set up ongoing monitoring of the solution's performance and impact.",
+                "nl": "Richt doorlopende monitoring in van de prestaties en impact van de oplossing.",
+                "pt": "Configurar monitoramento contínuo do desempenho e impacto da solução."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p7-g2-t3",
+              "name": {
+                "en": "Continuous improvement",
+                "nl": "Continue verbetering",
+                "pt": "Melhoria contínua"
+              },
+              "description": {
+                "en": "Establish processes for ongoing improvement based on monitoring data.",
+                "nl": "Stel processen in voor doorlopende verbetering op basis van monitoringsgegevens.",
+                "pt": "Estabelecer processos de melhoria contínua com base em dados de monitoramento."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p7-g2-t4",
+              "name": {
+                "en": "Final project evaluation",
+                "nl": "Eindevaluatie project",
+                "pt": "Avaliação final do projeto"
+              },
+              "description": {
+                "en": "Conduct the comprehensive final evaluation of the innovation project.",
+                "nl": "Voer de uitgebreide eindevaluatie van het innovatieproject uit.",
+                "pt": "Realizar a avaliação final abrangente do projeto de inovação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            },
+            {
+              "id": "p7-g2-t5",
+              "name": {
+                "en": "Create Final Report",
+                "nl": "Eindrapport maken",
+                "pt": "Criar Relatório Final"
+              },
+              "description": {
+                "en": "Compile the final project report covering the entire innovation journey.",
+                "nl": "Stel het eindrapport samen dat de gehele innovatiereis beschrijft.",
+                "pt": "Compilar o relatório final do projeto cobrindo toda a jornada de inovação."
+              },
+              "subtasks": [],
+              "optional": false,
+              "tags": [],
+              "linkedTools": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "canvasTypes": {
+    "empathy-map": {
+      "name": {
+        "en": "Empathy Map",
+        "nl": "Empathy Map",
+        "pt": "Mapa de Empatia"
+      },
+      "description": {
+        "en": "Capture stakeholder perspectives across 9 dimensions to build deep understanding.",
+        "nl": "Leg stakeholder-perspectieven vast over 9 dimensies voor diep begrip.",
+        "pt": "Capture perspetivas de stakeholders em 9 dimensões para compreensão profunda."
+      },
+      "icon": "psychology",
+      "fields": [
+        {
+          "name": {
+            "en": "Thinks",
+            "nl": "Denkt",
+            "pt": "Pensa"
+          }
+        },
+        {
+          "name": {
+            "en": "Feels",
+            "nl": "Voelt",
+            "pt": "Sente"
+          }
+        },
+        {
+          "name": {
+            "en": "Says",
+            "nl": "Zegt",
+            "pt": "Diz"
+          }
+        },
+        {
+          "name": {
+            "en": "Does",
+            "nl": "Doet",
+            "pt": "Faz"
+          }
+        },
+        {
+          "name": {
+            "en": "Sees",
+            "nl": "Ziet",
+            "pt": "Vê"
+          }
+        },
+        {
+          "name": {
+            "en": "Hears",
+            "nl": "Hoort",
+            "pt": "Ouve"
+          }
+        },
+        {
+          "name": {
+            "en": "Pains",
+            "nl": "Pijnpunten",
+            "pt": "Dores"
+          }
+        },
+        {
+          "name": {
+            "en": "Gains",
+            "nl": "Opbrengsten",
+            "pt": "Ganhos"
+          }
+        },
+        {
+          "name": {
+            "en": "Needs",
+            "nl": "Behoeften",
+            "pt": "Necessidades"
+          }
+        }
+      ]
+    },
+    "stakeholder-map": {
+      "name": {
+        "en": "Stakeholder Map",
+        "nl": "Stakeholder Map",
+        "pt": "Mapa de Stakeholders"
+      },
+      "description": {
+        "en": "Map stakeholders on a power/interest matrix to guide engagement strategy.",
+        "nl": "Breng stakeholders in kaart op een macht/interesse-matrix voor de betrokkenheidsstrategie.",
+        "pt": "Mapeie stakeholders numa matriz poder/interesse para guiar a estratégia de envolvimento."
+      },
+      "icon": "groups",
+      "fields": [
+        {
+          "name": {
+            "en": "High Power, High Interest",
+            "nl": "Hoge Macht, Hoog Belang",
+            "pt": "Alto Poder, Alto Interesse"
+          }
+        },
+        {
+          "name": {
+            "en": "High Power, Low Interest",
+            "nl": "Hoge Macht, Laag Belang",
+            "pt": "Alto Poder, Baixo Interesse"
+          }
+        },
+        {
+          "name": {
+            "en": "Low Power, High Interest",
+            "nl": "Lage Macht, Hoog Belang",
+            "pt": "Baixo Poder, Alto Interesse"
+          }
+        },
+        {
+          "name": {
+            "en": "Low Power, Low Interest",
+            "nl": "Lage Macht, Laag Belang",
+            "pt": "Baixo Poder, Baixo Interesse"
+          }
+        }
+      ]
+    },
+    "symptom-tree": {
+      "name": {
+        "en": "Symptom Tree",
+        "nl": "Symptoomboom",
+        "pt": "Árvore de Sintomas"
+      },
+      "description": {
+        "en": "Categorize problem symptoms using the 7M framework (Ishikawa-based) to identify root causes.",
+        "nl": "Categoriseer probleemsymptomen met het 7M-raamwerk (Ishikawa) om grondoorzaken te identificeren.",
+        "pt": "Categorize sintomas do problema usando o framework 7M (baseado em Ishikawa) para identificar causas raiz."
+      },
+      "icon": "account_tree",
+      "fields": [
+        {
+          "name": {
+            "en": "People",
+            "nl": "Mensen",
+            "pt": "Pessoas"
+          }
+        },
+        {
+          "name": {
+            "en": "Process",
+            "nl": "Proces",
+            "pt": "Processo"
+          }
+        },
+        {
+          "name": {
+            "en": "Policy",
+            "nl": "Beleid",
+            "pt": "Política"
+          }
+        },
+        {
+          "name": {
+            "en": "Technology",
+            "nl": "Technologie",
+            "pt": "Tecnologia"
+          }
+        },
+        {
+          "name": {
+            "en": "Organization",
+            "nl": "Organisatie",
+            "pt": "Organização"
+          }
+        },
+        {
+          "name": {
+            "en": "Environment",
+            "nl": "Omgeving",
+            "pt": "Ambiente"
+          }
+        },
+        {
+          "name": {
+            "en": "Resources",
+            "nl": "Middelen",
+            "pt": "Recursos"
+          }
+        }
+      ]
+    },
+    "quickscan": {
+      "name": {
+        "en": "Innovation Quickscan",
+        "nl": "Innovatie Quickscan",
+        "pt": "Quickscan de Inovação"
+      },
+      "description": {
+        "en": "Cross-functional compliance review across 8 domains: privacy, security, data/AI, archiving, information management, procurement, legal, and ethics.",
+        "nl": "Cross-functionele compliance-review over 8 domeinen: privacy, beveiliging, data/AI, archivering, informatiemanagement, inkoop, juridisch en ethiek.",
+        "pt": "Revisão de conformidade multifuncional em 8 domínios: privacidade, segurança, dados/IA, arquivo, gestão de informação, aquisição, jurídico e ética."
+      },
+      "icon": "fact_check",
+      "fields": [
+        {
+          "name": {
+            "en": "Privacy",
+            "nl": "Privacy",
+            "pt": "Privacidade"
+          }
+        },
+        {
+          "name": {
+            "en": "Security",
+            "nl": "Beveiliging",
+            "pt": "Segurança"
+          }
+        },
+        {
+          "name": {
+            "en": "Data & AI",
+            "nl": "Data & AI",
+            "pt": "Dados & IA"
+          }
+        },
+        {
+          "name": {
+            "en": "Archiving",
+            "nl": "Archivering",
+            "pt": "Arquivo"
+          }
+        },
+        {
+          "name": {
+            "en": "Information Management",
+            "nl": "Informatiemanagement",
+            "pt": "Gestão de Informação"
+          }
+        },
+        {
+          "name": {
+            "en": "Procurement",
+            "nl": "Inkoop",
+            "pt": "Aquisição"
+          }
+        },
+        {
+          "name": {
+            "en": "Legal",
+            "nl": "Juridisch",
+            "pt": "Jurídico"
+          }
+        },
+        {
+          "name": {
+            "en": "Ethics",
+            "nl": "Ethiek",
+            "pt": "Ética"
+          }
+        }
+      ]
+    },
+    "trl-assessment": {
+      "name": {
+        "en": "TRL Assessment",
+        "nl": "TRL Beoordeling",
+        "pt": "Avaliação TRL"
+      },
+      "description": {
+        "en": "Assess Technology Readiness Level (1-9) for each solution component.",
+        "nl": "Beoordeel het Technology Readiness Level (1-9) voor elk onderdeel van de oplossing.",
+        "pt": "Avalie o Nível de Prontidão Tecnológica (1-9) para cada componente da solução."
+      },
+      "icon": "trending_up",
+      "fields": [
+        {
+          "name": {
+            "en": "Component",
+            "nl": "Component",
+            "pt": "Componente"
+          }
+        },
+        {
+          "name": {
+            "en": "Current TRL",
+            "nl": "Huidig TRL",
+            "pt": "TRL Atual"
+          }
+        },
+        {
+          "name": {
+            "en": "Target TRL",
+            "nl": "Doel TRL",
+            "pt": "TRL Alvo"
+          }
+        }
+      ]
+    },
+    "idea-matrix": {
+      "name": {
+        "en": "Idea Matrix",
+        "nl": "Idee Matrix",
+        "pt": "Matriz de Ideias"
+      },
+      "description": {
+        "en": "Map ideas against sub-problems to evaluate coverage and identify the strongest concepts.",
+        "nl": "Breng ideeën in kaart tegen deelproblemen om dekking te evalueren en de sterkste concepten te identificeren.",
+        "pt": "Mapeie ideias contra subproblemas para avaliar cobertura e identificar os conceitos mais fortes."
+      },
+      "icon": "grid_view",
+      "fields": [
+        {
+          "name": {
+            "en": "Sub-problems",
+            "nl": "Deelproblemen",
+            "pt": "Subproblemas"
+          }
+        },
+        {
+          "name": {
+            "en": "Ideas",
+            "nl": "Ideeën",
+            "pt": "Ideias"
+          }
+        }
+      ]
+    },
+    "dmu": {
+      "name": {
+        "en": "Decision Making Unit",
+        "nl": "Decision Making Unit",
+        "pt": "Unidade de Decisão"
+      },
+      "description": {
+        "en": "Map the 9 key governance roles for the innovation project.",
+        "nl": "Breng de 9 belangrijkste governance-rollen in kaart voor het innovatieproject.",
+        "pt": "Mapeie os 9 papéis-chave de governança para o projeto de inovação."
+      },
+      "icon": "account_balance",
+      "fields": [
+        {
+          "name": {
+            "en": "Decision Maker",
+            "nl": "Besluitvormer",
+            "pt": "Decisor"
+          }
+        },
+        {
+          "name": {
+            "en": "Challenge Owner",
+            "nl": "Opgavehouder",
+            "pt": "Responsável pelo Desafio"
+          }
+        },
+        {
+          "name": {
+            "en": "Innovation Officer",
+            "nl": "Use Case Manager",
+            "pt": "Oficial de Inovação"
+          }
+        },
+        {
+          "name": {
+            "en": "Steering Group",
+            "nl": "Stuurgroep",
+            "pt": "Grupo Diretivo"
+          }
+        },
+        {
+          "name": {
+            "en": "Sponsor",
+            "nl": "Sponsor",
+            "pt": "Patrocinador"
+          }
+        },
+        {
+          "name": {
+            "en": "Technical Advisor",
+            "nl": "Technisch Adviseur",
+            "pt": "Consultor Técnico"
+          }
+        },
+        {
+          "name": {
+            "en": "Legal Advisor",
+            "nl": "Juridisch Adviseur",
+            "pt": "Consultor Jurídico"
+          }
+        },
+        {
+          "name": {
+            "en": "Privacy Officer",
+            "nl": "Privacy Officer",
+            "pt": "Oficial de Privacidade"
+          }
+        },
+        {
+          "name": {
+            "en": "Communications",
+            "nl": "Communicatie",
+            "pt": "Comunicação"
+          }
+        }
+      ]
+    },
+    "persona-builder": {
+      "name": {
+        "en": "Persona Builder",
+        "nl": "Persona Builder",
+        "pt": "Construtor de Personas"
+      },
+      "description": {
+        "en": "Create structured user personas with goals, frustrations, and needs.",
+        "nl": "Maak gestructureerde gebruikerspersona's met doelen, frustraties en behoeften.",
+        "pt": "Crie personas de utilizador estruturadas com objetivos, frustrações e necessidades."
+      },
+      "icon": "person",
+      "fields": [
+        {
+          "name": {
+            "en": "Name",
+            "nl": "Naam",
+            "pt": "Nome"
+          }
+        },
+        {
+          "name": {
+            "en": "Role",
+            "nl": "Rol",
+            "pt": "Função"
+          }
+        },
+        {
+          "name": {
+            "en": "Goals",
+            "nl": "Doelen",
+            "pt": "Objetivos"
+          }
+        },
+        {
+          "name": {
+            "en": "Frustrations",
+            "nl": "Frustraties",
+            "pt": "Frustrações"
+          }
+        },
+        {
+          "name": {
+            "en": "Needs",
+            "nl": "Behoeften",
+            "pt": "Necessidades"
+          }
+        }
+      ]
+    },
+    "user-requirements": {
+      "name": {
+        "en": "User Requirements",
+        "nl": "Gebruikerseisen",
+        "pt": "Requisitos do Utilizador"
+      },
+      "description": {
+        "en": "Structure requirements across functional, usability, performance, and security dimensions.",
+        "nl": "Structureer eisen over functionele, bruikbaarheids-, prestatie- en beveiligingsdimensies.",
+        "pt": "Estruture requisitos em dimensões funcionais, usabilidade, desempenho e segurança."
+      },
+      "icon": "checklist",
+      "fields": [
+        {
+          "name": {
+            "en": "Functional",
+            "nl": "Functioneel",
+            "pt": "Funcional"
+          }
+        },
+        {
+          "name": {
+            "en": "Usability",
+            "nl": "Bruikbaarheid",
+            "pt": "Usabilidade"
+          }
+        },
+        {
+          "name": {
+            "en": "Performance",
+            "nl": "Prestatie",
+            "pt": "Desempenho"
+          }
+        },
+        {
+          "name": {
+            "en": "Security & Privacy",
+            "nl": "Security & Privacy",
+            "pt": "Segurança e Privacidade"
+          }
+        }
+      ]
+    },
+    "ecosystem-map": {
+      "name": {
+        "en": "Ecosystem Value Map",
+        "nl": "Ecosysteem Waarde Map",
+        "pt": "Mapa de Valor do Ecossistema"
+      },
+      "description": {
+        "en": "Map value flows between actors for both pilot and adoption phases.",
+        "nl": "Breng waardestromen tussen actoren in kaart voor zowel pilot- als adoptiefase.",
+        "pt": "Mapeie fluxos de valor entre atores para as fases piloto e de adoção."
+      },
+      "icon": "hub",
+      "fields": [
+        {
+          "name": {
+            "en": "Actors",
+            "nl": "Actoren",
+            "pt": "Atores"
+          }
+        },
+        {
+          "name": {
+            "en": "Value Flows",
+            "nl": "Waardestromen",
+            "pt": "Fluxos de Valor"
+          }
+        },
+        {
+          "name": {
+            "en": "Pilot Phase",
+            "nl": "Pilotfase",
+            "pt": "Fase Piloto"
+          }
+        },
+        {
+          "name": {
+            "en": "Adoption Phase",
+            "nl": "Adoptiefase",
+            "pt": "Fase de Adoção"
+          }
+        }
+      ]
+    }
+  }
+}

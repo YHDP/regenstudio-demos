@@ -1,0 +1,136 @@
+{
+  "app": {
+    "title": "Innovatie Platform"
+  },
+  "nav": {
+    "toolkit": "Toolkit",
+    "portfolio": "Portfolio"
+  },
+  "portfolio": {
+    "title": "Innovatie Portfolio",
+    "subtitle": "Beheer uw overheidsinnovatieprojecten"
+  },
+  "btn": {
+    "new_project": "Nieuw Project",
+    "create": "Aanmaken",
+    "cancel": "Annuleren",
+    "save": "Opslaan",
+    "close": "Sluiten",
+    "add": "Toevoegen",
+    "remove": "Verwijderen",
+    "expand": "Uitklappen",
+    "print": "Afdrukken",
+    "back_to_portfolio": "Terug naar Portfolio",
+    "back_to_project": "Terug naar Project",
+    "project_report": "Projectrapport",
+    "phase_report": "Faserapport",
+    "add_custom_task": "Aangepaste taak toevoegen",
+    "add_custom_tool": "Aangepast hulpmiddel toevoegen"
+  },
+  "create": {
+    "title": "Nieuw Innovatieproject",
+    "name": "Projectnaam",
+    "description": "Omschrijving",
+    "department": "Afdeling",
+    "challenge_owner": "Opgavehouder"
+  },
+  "label": {
+    "phase": "Fase",
+    "tasks": "taken",
+    "custom": "Aangepast",
+    "optional": "optioneel",
+    "notes": "Notities",
+    "tools": "Hulpmiddelen",
+    "deliverables": "Deliverables",
+    "deepening_options": "Situationele Verdieping",
+    "no_department": "Geen afdeling",
+    "select_status": "Selecteer status",
+    "sample": "Voorbeeld"
+  },
+  "phase": {
+    "summary": "{0} van {1} items afgevinkt"
+  },
+  "governance": {
+    "directing": "Sturend",
+    "advisory": "Adviserend",
+    "advisory_banner": "Rol Innovatie-afdeling: Adviserend — Het team van de opgavehouder neemt hier de leiding. De innovatie-officer biedt begeleiding op verzoek."
+  },
+  "gate": {
+    "title": "Fase Gate",
+    "go": "Doorgaan",
+    "redo": "Herhalen",
+    "stop": "Stoppen",
+    "notes": "Besluitnotities"
+  },
+  "status": {
+    "not_started": "Nog Beginnen",
+    "in_progress": "Bezig",
+    "completed": "Afgerond",
+    "skipped": "Overgeslagen"
+  },
+  "deepening": {
+    "description": "Selecteer situationele verdiepingsopties die relevant zijn voor uw project. Dit zijn optionele methoden die u naar behoefte kunt activeren."
+  },
+  "placeholder": {
+    "task_notes": "Notities toevoegen voor deze taak...",
+    "gate_notes": "Documenteer de besluitonderbouwing...",
+    "custom_task_name": "Voer naam aangepaste taak in...",
+    "item_name": "Naam item",
+    "item_description": "Omschrijving (optioneel)",
+    "stakeholder_name": "Naam stakeholder of groep...",
+    "add_item": "Typ en druk op Enter om toe te voegen...",
+    "add_symptom": "Voeg een symptoom of probleem toe...",
+    "add_stakeholder": "Voeg stakeholder naam toe...",
+    "add_requirement": "Voeg een eis toe...",
+    "add_actor": "Voeg actor/stakeholder toe...",
+    "value_type": "Waardetype (bijv. Financiering, Kennis)",
+    "person_name": "Persoon / rolnaam...",
+    "problem_statement": "Beschrijf het kernprobleem...",
+    "component_name": "Componentnaam...",
+    "assignee": "Toegewezen aan...",
+    "domain_notes": "Notities, risico's, acties..."
+  },
+  "report": {
+    "date": "Datum",
+    "department": "Afdeling",
+    "challenge_owner": "Opgavehouder",
+    "created": "Aangemaakt",
+    "project_report": "Projectrapport",
+    "project_description": "Projectomschrijving",
+    "phase_notes": "Fasenotities",
+    "status": "Status",
+    "tasks_completed": "{0} van {1} taken afgerond",
+    "governance": "Bestuurlijke rol",
+    "generated_by": "Gegenereerd door Innovatie Management Platform"
+  },
+  "canvas": {
+    "stakeholder_name": "Stakeholder",
+    "problem_statement": "Kernprobleemstelling",
+    "component_name": "Component",
+    "add_sub_problem": "Deelprobleem Toevoegen",
+    "add_idea": "Idee Toevoegen",
+    "sub_problems": "Deelproblemen",
+    "sub_problem": "Deelprobleem",
+    "idea": "Idee",
+    "pilot_phase": "Pilotperiode",
+    "adoption_phase": "Na Adoptie",
+    "actors": "Actoren / Stakeholders",
+    "value_flows": "Waardestromen",
+    "generic_description": "Dit hulpmiddel is beschikbaar voor gebruik in uw project."
+  },
+  "trl": {
+    "current": "Huidige TRL",
+    "target": "Doel TRL",
+    "current_short": "Huidig",
+    "target_short": "Doel"
+  },
+  "toolkit": {
+    "title": "Toolkit Bibliotheek",
+    "description": "Bekijk alle beschikbare hulpmiddelen, canvassen en templates voor uw innovatieprojecten.",
+    "canvas_tools": "Canvas Hulpmiddelen"
+  },
+  "error": {
+    "project_not_found": "Project niet gevonden",
+    "invalid_report_scope": "Ongeldige rapportscope"
+  }
+}

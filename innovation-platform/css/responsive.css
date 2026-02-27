@@ -1,0 +1,130 @@
+/* Responsive Breakpoints */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .quickscan-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dmu-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .persona-form {
+    grid-template-columns: 1fr;
+  }
+
+  .persona-photo {
+    margin: 0 auto;
+  }
+
+  .ecosystem-map {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  :root {
+    --space-lg: 16px;
+    --space-xl: 24px;
+    --space-2xl: 32px;
+  }
+
+  .app-header {
+    padding: 0 var(--space-md);
+  }
+
+  .app-header__logo span:not(.material-icons) {
+    display: none;
+  }
+
+  .app-main {
+    padding: var(--space-md);
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .project-header__top {
+    flex-direction: column;
+  }
+
+  .project-header__actions {
+    align-self: flex-start;
+  }
+
+  .phase-section__header {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .phase-section__progress {
+    display: none;
+  }
+
+  .phase-section__content {
+    padding: var(--space-md);
+  }
+
+  .canvas-grid--2x2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .canvas-grid--3x3 {
+    grid-template-columns: 1fr;
+  }
+
+  .canvas-grid--empathy {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .canvas-cell--center {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .quickscan-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dmu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gate-panel__actions {
+    flex-direction: column;
+  }
+
+  .gate-btn {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .modal {
+    margin: var(--space-md);
+    max-height: calc(100vh - var(--space-xl));
+  }
+
+  .report-header__meta {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .lang-switcher__options {
+    right: 0;
+    left: auto;
+  }
+}
