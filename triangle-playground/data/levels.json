@@ -1,0 +1,111 @@
+{
+  "levels": [
+    {
+      "id": 1,
+      "name": "Trio",
+      "description": "Cover 3 touchpoints with one cluster",
+      "nodes": [
+        { "x": 0.42, "y": 0.38 },
+        { "x": 0.58, "y": 0.38 },
+        { "x": 0.50, "y": 0.55 }
+      ],
+      "tolerance": 60,
+      "timeBonusCap": 30
+    },
+    {
+      "id": 2,
+      "name": "Quartet",
+      "description": "Cover 4 touchpoints with one cluster",
+      "nodes": [
+        { "x": 0.40, "y": 0.35 },
+        { "x": 0.60, "y": 0.35 },
+        { "x": 0.60, "y": 0.55 },
+        { "x": 0.40, "y": 0.55 }
+      ],
+      "tolerance": 55,
+      "timeBonusCap": 45
+    },
+    {
+      "id": 3,
+      "name": "Quintet",
+      "description": "Cover 5 touchpoints with one cluster",
+      "nodes": [
+        { "x": 0.50, "y": 0.28 },
+        { "x": 0.60, "y": 0.40 },
+        { "x": 0.56, "y": 0.55 },
+        { "x": 0.44, "y": 0.55 },
+        { "x": 0.40, "y": 0.40 }
+      ],
+      "tolerance": 50,
+      "timeBonusCap": 60
+    },
+    {
+      "id": 0,
+      "name": "Chaos",
+      "description": "Bonus round! Random touchpoints, random physics. Good luck.",
+      "bonus": true,
+      "nodeCount": 5,
+      "tolerance": 50,
+      "timeBonusCap": 150
+    },
+    {
+      "id": 4,
+      "name": "Hextet",
+      "description": "Cover 6 touchpoints with one cluster",
+      "nodes": [
+        { "x": 0.50, "y": 0.30 },
+        { "x": 0.60, "y": 0.36 },
+        { "x": 0.60, "y": 0.50 },
+        { "x": 0.50, "y": 0.56 },
+        { "x": 0.40, "y": 0.50 },
+        { "x": 0.40, "y": 0.36 }
+      ],
+      "tolerance": 48,
+      "timeBonusCap": 75
+    },
+    {
+      "id": 5,
+      "name": "Scatter",
+      "description": "Cover 5 spread-out touchpoints with one cluster",
+      "nodes": [
+        { "x": 0.50, "y": 0.25 },
+        { "x": 0.62, "y": 0.40 },
+        { "x": 0.57, "y": 0.58 },
+        { "x": 0.43, "y": 0.58 },
+        { "x": 0.38, "y": 0.40 }
+      ],
+      "tolerance": 45,
+      "timeBonusCap": 90
+    },
+    {
+      "id": 6,
+      "name": "Split",
+      "description": "Cover 5 touchpoints in two groups with one cluster",
+      "nodes": [
+        { "x": 0.33, "y": 0.35 },
+        { "x": 0.33, "y": 0.55 },
+        { "x": 0.50, "y": 0.45 },
+        { "x": 0.67, "y": 0.35 },
+        { "x": 0.67, "y": 0.55 }
+      ],
+      "tolerance": 45,
+      "timeBonusCap": 75
+    },
+    {
+      "id": 7,
+      "name": "Seven",
+      "description": "Cover all 7 touchpoints with one cluster",
+      "nodes": [
+        { "x": 0.30, "y": 0.52 },
+        { "x": 0.37, "y": 0.35 },
+        { "x": 0.44, "y": 0.52 },
+        { "x": 0.50, "y": 0.30 },
+        { "x": 0.56, "y": 0.52 },
+        { "x": 0.63, "y": 0.35 },
+        { "x": 0.70, "y": 0.52 }
+      ],
+      "tolerance": 40,
+      "timeBonusCap": 120
+    }
+  ]
+}
