@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel — CPR DPP Tracker</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <link rel="stylesheet" href="../assets/fonts/inter.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <!-- Auth Gate -->
+  <div id="authGate" class="admin-gate">
+    <span class="admin-gate__icon" aria-hidden="true">&#128274;</span>
+    <h1 class="admin-gate__title">CPR Admin Panel</h1>
+    <p class="admin-gate__subtitle">Enter the admin passphrase to access the review queue and data management tools.</p>
+    <input type="password" id="authInput" class="admin-gate__input" placeholder="Passphrase..." autocomplete="off">
+    <p id="authError" class="admin-gate__error">Incorrect passphrase.</p>
+    <button id="authBtn" class="btn btn--primary" style="width:100%;">Unlock</button>
+  </div>
+
+  <!-- Admin Content (hidden until authenticated) -->
+  <div id="adminContent" style="display:none;">
+    <!-- Header -->
+    <div class="tracker-hero" style="padding: 28px 24px 24px;">
+      <div class="tracker-hero__content" style="max-width:960px;">
+        <span class="tracker-hero__badge">Admin</span>
+        <h1 class="tracker-hero__title" style="font-size:1.4rem;">CPR Expert Review Queue</h1>
+        <p class="tracker-hero__subtitle" style="font-size:0.82rem; max-width:600px;">Review data updates and structural issues from the CPR Expert agent. Approve changes to update families.json directly.</p>
+      </div>
+    </div>
+
+    <div class="admin-container">
+      <!-- Stats -->
+      <div class="admin-stats">
+        <div class="admin-stat admin-stat--pending">
+          <div class="admin-stat__number" id="statPending">0</div>
+          <div class="admin-stat__label">Pending</div>
+        </div>
+        <div class="admin-stat admin-stat--approved">
+          <div class="admin-stat__number" id="statApproved">0</div>
+          <div class="admin-stat__label">Approved</div>
+        </div>
+        <div class="admin-stat admin-stat--rejected">
+          <div class="admin-stat__number" id="statRejected">0</div>
+          <div class="admin-stat__label">Rejected</div>
+        </div>
+        <div class="admin-stat admin-stat--issues">
+          <div class="admin-stat__number" id="statIssues">0</div>
+          <div class="admin-stat__label">Issues</div>
+        </div>
+      </div>
+
+      <!-- Queue Meta -->
+      <div class="admin-queue-meta" id="queueMeta" style="display:none;">
+        <span>Source: <span class="admin-queue-meta__source" id="queueSource">—</span></span>
+        <span>Generated: <span id="queueDate">—</span></span>
+        <span>Families: <span id="queueFamilies">—</span></span>
+        <div class="admin-header__actions">
+          <button class="btn btn--sm btn--outline" id="loadQueueBtn" title="Load review-queue.json from disk">Load Queue</button>
+          <button class="btn btn--sm btn--primary" id="applyApprovedBtn" title="Write all approved changes to families.json" disabled>Apply Approved</button>
+          <button class="btn btn--sm btn--outline" id="clearQueueBtn" title="Clear all items">Clear</button>
+        </div>
+      </div>
+
+      <!-- Actions when no queue loaded -->
+      <div id="noQueueActions" class="admin-header" style="justify-content:center;">
+        <button class="btn btn--teal" id="loadQueueBtnEmpty">Load review-queue.json</button>
+      </div>
+
+      <!-- Tabs -->
+      <div class="admin-tabs" id="adminTabs" style="display:none;">
+        <button class="admin-tab admin-tab--active" data-tab="updates">
+          Data Updates<span class="admin-tab__count" id="tabUpdatesCount">0</span>
+        </button>
+        <button class="admin-tab" data-tab="issues">
+          Structural Issues<span class="admin-tab__count" id="tabIssuesCount">0</span>
+        </button>
+      </div>
+
+      <!-- Updates Panel -->
+      <div class="admin-panel admin-panel--active" id="panelUpdates">
+        <div id="updatesList"></div>
+      </div>
+
+      <!-- Issues Panel -->
+      <div class="admin-panel" id="panelIssues">
+        <div id="issuesList"></div>
+      </div>
+
+      <!-- Chat Panel -->
+      <div class="admin-chat" id="chatPanel">
+        <h2 class="admin-chat__title">Agent Chat</h2>
+        <p class="admin-chat__subtitle">Ask the CPR Expert agent open questions. Copy its response and paste here for reference, or draft commands to run in Claude Code.</p>
+        <div class="admin-chat__messages" id="chatMessages">
+          <div class="chat-msg chat-msg--system">
+            Chat messages are stored locally. Use this as a scratch pad for agent interactions.
+          </div>
+        </div>
+        <div class="admin-chat__input-row">
+          <textarea class="admin-chat__input" id="chatInput" placeholder="Type a note or paste agent output..." rows="1"></textarea>
+          <button class="btn btn--teal admin-chat__send" id="chatSendBtn">Add Note</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="tracker-footer">
+      <p><a href="index.html">Back to Tracker</a> &middot; <a href="dashboard.html">Dashboard</a> &middot; Admin Panel</p>
+    </footer>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

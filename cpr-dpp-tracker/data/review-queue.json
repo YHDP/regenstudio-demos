@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "generated": "2026-02-26T18:00:00Z",
+    "source": "scan-2026-02-26",
+    "agent": "cpr-expert",
+    "families_affected": ["SHA", "FIX", "DWS", "PCR", "CEM", "SMP"],
+    "total_updates": 9,
+    "total_issues": 4
+  },
+  "dataUpdates": [
+    {
+      "id": "upd-001",
+      "family": "SHA",
+      "action": "add_standard",
+      "field": "standards",
+      "standard_id": "EN 1-2:2025",
+      "current_value": "(not in list)",
+      "proposed_value": {
+        "id": "EN 1-2:2025",
+        "type": "hEN",
+        "name": "Residential liquid fuel burning appliances — Part 2: Flued oil stoves with vaporizing burners",
+        "tc_wg": "CEN/TC 130",
+        "avcp": "3",
+        "dpp_est": "~2032–2033",
+        "dpp_route": "hEN",
+        "revision": "CPR 2011",
+        "cited": true,
+        "notes": "Added by Implementing Decision (EU) 2026/284 (6 Feb 2026). Cited under CPR 305/2011 — DPP does NOT apply. Coexistence period ends 9 Feb 2027."
+      },
+      "reason": "Implementing Decision (EU) 2026/284 adds EN 1-2:2025 to Annex I of 2019/451. New OJ-cited hEN for flued oil stoves. CPR 305/2011 citation — no DPP impact.",
+      "source": "EUR-Lex — Implementing Decision 2026/284",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026D0284",
+      "confidence": "high",
+      "status": "pending"
+    },
+    {
+      "id": "upd-002",
+      "family": "SHA",
+      "action": "add_standard",
+      "field": "standards",
+      "standard_id": "EN 16510-2-5:2025",
+      "current_value": "(not in list)",
+      "proposed_value": {
+        "id": "EN 16510-2-5:2025",
+        "type": "hEN",
+        "name": "Residential solid fuel burning appliances — Part 2-5: Slow heat release appliances",
+        "tc_wg": "CEN/TC 295",
+        "avcp": "3",
+        "dpp_est": "~2032–2033",
+        "dpp_route": "hEN",
+        "revision": "CPR 2011",
+        "cited": true,
+        "notes": "Added by Implementing Decision (EU) 2026/284 (6 Feb 2026). Cited under CPR 305/2011 — DPP does NOT apply. Coexistence period ends 9 Feb 2027."
+      },
+      "reason": "2026/284 adds EN 16510-2-5:2025 (slow heat release appliances) to OJ. New standard not previously in SHA standards list.",
+      "source": "EUR-Lex — Implementing Decision 2026/284",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026D0284",
+      "confidence": "high",
+      "status": "pending"
+    },
+    {
+      "id": "upd-003",
+      "family": "SHA",
+      "action": "add_standard",
+      "field": "standards",
+      "standard_id": "EN 16510-2-10:2025",
+      "current_value": "(not in list)",
+      "proposed_value": {
+        "id": "EN 16510-2-10:2025",
+        "type": "hEN",
+        "name": "Residential solid fuel burning appliances — Part 2-10: Multi-firing sauna stoves",
+        "tc_wg": "CEN/TC 295",
+        "avcp": "3",
+        "dpp_est": "~2032–2033",
+        "dpp_route": "hEN",
+        "revision": "CPR 2011",
+        "cited": true,
+        "notes": "Added by Implementing Decision (EU) 2026/284 (6 Feb 2026). Cited under CPR 305/2011 — DPP does NOT apply. Coexistence period ends 9 Feb 2027."
+      },
+      "reason": "2026/284 adds EN 16510-2-10:2025 (sauna stoves) to OJ. New standard not previously in SHA standards list.",
+      "source": "EUR-Lex — Implementing Decision 2026/284",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026D0284",
+      "confidence": "high",
+      "status": "pending"
+    },
+    {
+      "id": "upd-004",
+      "family": "SHA",
+      "action": "update_standard",
+      "field": "standards",
+      "standard_id": "EN 16510-2-7",
+      "current_value": "notes: Added by amendment C(2024) 2697",
+      "proposed_value": {
+        "notes": "First cited by C(2024) 2697. Updated to EN 16510-2-7:2025 by Implementing Decision (EU) 2026/284 (6 Feb 2026). Coexistence period for 2025 revision ends 9 Feb 2027. Cited under CPR 305/2011 — DPP does NOT apply."
+      },
+      "reason": "2026/284 publishes the 2025 revision of EN 16510-2-7 (combination wood/pellet appliances). Standard was already cited — this updates the revision and adds the 2026/284 reference.",
+      "source": "EUR-Lex — Implementing Decision 2026/284",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026D0284",
+      "confidence": "high",
+      "status": "pending"
+    },
+    {
+      "id": "upd-005",
+      "family": "SHA",
+      "action": "set",
+      "field": "dpp-range.hen_count",
+      "current_value": 10,
+      "proposed_value": 13,
+      "reason": "SHA gains 3 new hENs from 2026/284 (EN 1-2:2025, EN 16510-2-5:2025, EN 16510-2-10:2025). Total hEN count increases from 10 to 13.",
+      "source": "EUR-Lex — Implementing Decision 2026/284",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026D0284",
+      "confidence": "high",
+      "status": "pending"
+    },
+    {
+      "id": "upd-006",
+      "family": "FIX",
+      "action": "add_standard",
+      "field": "standards",
+      "standard_id": "EN 17235:2024",
+      "current_value": "(not in list — FIX currently has 0 hENs, only EADs)",
+      "proposed_value": {
+        "id": "EN 17235:2024",
+        "type": "hEN",
+        "name": "Permanent anchor devices and safety hooks",
+        "avcp": "1",
+        "dpp_est": "~2032–2033",
+        "dpp_route": "hEN",
+        "revision": "CPR 2011",
+        "cited": true,
+        "notes": "Added by Implementing Decision (EU) 2026/284 (6 Feb 2026). First OJ-cited hEN for FIX family. Coexistence period ends 9 Aug 2027. Cited under CPR 305/2011 — DPP does NOT apply."
+      },
+      "reason": "2026/284 adds EN 17235:2024 (permanent anchor devices and safety hooks) to OJ. This is the first hEN for the FIX family, which previously had only EADs.",
+      "source": "EUR-Lex — Implementing Decision 2026/284",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026D0284",
+      "confidence": "high",
+      "status": "pending"
+    },
+    {
+      "id": "upd-007",
+      "family": "FIX",
+      "action": "set",
+      "field": "dpp-range.hen_count",
+      "current_value": 0,
+      "proposed_value": 1,
+      "reason": "FIX gains its first hEN (EN 17235:2024) from 2026/284. hen_count changes from 0 to 1.",
+      "source": "EUR-Lex — Implementing Decision 2026/284",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026D0284",
+      "confidence": "high",
+      "status": "pending"
+    },
+    {
+      "id": "upd-008",
+      "family": "PCR",
+      "action": "set",
+      "field": "milestones.sreq.status",
+      "current_value": "draft",
+      "proposed_value": "draft",
+      "reason": "PCR SReq draft feedback deadline is 3 Mar 2026 (5 days away). Not yet adopted. ITB.pl also lists C(2025)2125 (10 Apr 2025) — may be predecessor. No field change yet.",
+      "source": "EC Notification System + ITB.pl",
+      "source_url": "https://single-market-economy.ec.europa.eu/single-market/goods/european-standards/notification-system_en",
+      "confidence": "medium",
+      "status": "pending"
+    },
+    {
+      "id": "upd-009",
+      "family": "DWS",
+      "action": "set",
+      "field": "milestones.sreq",
+      "current_value": "Q1 2026",
+      "proposed_value": "Q1 2026",
+      "reason": "DWS SReq draft notified 21 Jan 2026, feedback deadline 18 Feb 2026 (expired). Under CPR 2024/3110. Adoption could come Q1-Q2 2026. No change yet — monitor.",
+      "source": "EC Notification System — Art. 12",
+      "source_url": "https://single-market-economy.ec.europa.eu/single-market/goods/european-standards/notification-system_en",
+      "confidence": "medium",
+      "status": "pending"
+    }
+  ],
+  "structuralIssues": [
+    {
+      "id": "iss-001",
+      "families": ["SHA", "FIX"],
+      "severity": "info",
+      "type": "new_insight",
+      "title": "Implementing Decision 2026/284 adds 5 new OJ-cited hENs",
+      "description": "Commission Implementing Decision (EU) 2026/284 (6 Feb 2026) amends 2019/451 with 5 new harmonised standards: 4 for space heating appliances (EN 16510 series + EN 1-2:2025) and 1 for fixings (EN 17235:2024). All cited under CPR 305/2011 — no DPP impact. FIX family gains its first hEN alongside existing EADs.",
+      "source": "EUR-Lex OJ L series, 9 Feb 2026",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026D0284",
+      "action_required": "Approve upd-001 through upd-007 to apply all 2026/284 changes. Also update SHA standards.summary to reflect new counts.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-002",
+      "families": ["DWS"],
+      "severity": "warning",
+      "type": "new_insight",
+      "title": "DWS SReq feedback deadline expired — adoption may be imminent",
+      "description": "The draft SReq for doors, windows and related products (CPR 2024/3110) had a feedback deadline of 18 Feb 2026, which has now passed. Formal adoption could come Q1-Q2 2026. When adopted, DWS sreq field should change from 'Draft' to 'Adopted' and milestone date updated.",
+      "source": "EC Notification System — Art. 12",
+      "source_url": "https://single-market-economy.ec.europa.eu/single-market/goods/european-standards/notification-system_en",
+      "action_required": "Monitor EC Transparency Register for DWS SReq adoption. When adopted, update sreq to 'Adopted' and add adoption date.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-003",
+      "families": ["PCR"],
+      "severity": "warning",
+      "type": "new_insight",
+      "title": "PCR has two SReq references — needs cross-referencing",
+      "description": "ITB.pl lists C(2025)2125 (10 Apr 2025) as SReq for precast concrete under CPR 305/2011. Meanwhile, the EC Notification System shows a new draft SReq notified 4 Feb 2026 with deadline 3 Mar 2026. These may be the same request (draft then adopted) or parallel requests.",
+      "source": "ITB.pl + EC Notification System",
+      "source_url": "https://www.itb.pl/normy-zharmonizowane/",
+      "action_required": "Cross-reference C(2025)2125 with the Feb 2026 draft SReq. If C(2025)2125 was already adopted, PCR sreq should be 'Adopted' not 'Draft'. Run /dive PCR for deep investigation.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-004",
+      "families": ["ALL"],
+      "severity": "info",
+      "type": "cross_family",
+      "title": "Horizontal dangerous substances SReq affects all 37 families",
+      "description": "A horizontal SReq for dangerous substance release assessment (Sep 2025 draft, CPR 2024/3110) will affect all 37 product families. Standards under CEN/TC 351. ESPR DPP registry (Art. 13) due 19 Jul 2026. JTC24 8 DPP framework standards targeting 31 Mar 2026. These cross-cutting developments are not reflected in individual family timelines.",
+      "source": "EC Notification System + CEN/CENELEC JTC24 + ESPR",
+      "action_required": "Consider adding a cross-family annotation about: (1) dangerous substances SReq impact, (2) ESPR registry timeline, (3) JTC24 DPP standards publication.",
+      "status": "pending"
+    }
+  ]
+}
