@@ -83,10 +83,11 @@ function initEmailForm(config) {
     btn.textContent = 'Sending...';
 
     try {
+      const hpField = form.querySelector('input[name="website"]');
       const res = await fetch(`${SUPABASE_URL}/send-magic-link`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, demo_id: config.demoId }),
+        body: JSON.stringify({ email, demo_id: config.demoId, website: hpField ? hpField.value : '' }),
       });
 
       if (!res.ok) {

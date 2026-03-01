@@ -41,6 +41,14 @@ Deno.serve(async (req) => {
     const body = await req.json();
     const { email, demo_id } = body;
 
+    // Honeypot check — if filled, silently accept but do nothing
+    if (body.website) {
+      return new Response(JSON.stringify({ success: true }), {
+        status: 200,
+        headers: { ...getCorsHeaders(req), "Content-Type": "application/json" },
+      });
+    }
+
     // Validate required fields
     if (!email || !demo_id) {
       return new Response(
