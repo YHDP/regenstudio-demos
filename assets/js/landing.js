@@ -119,6 +119,7 @@ function initContactForm() {
           name: formData.get('name'),
           email: formData.get('email'),
           message: formData.get('message'),
+          website: formData.get('website') || '',
           source: 'contact_form',
           page_url: window.location.href,
           newsletter_opt_in: nlCheckbox ? nlCheckbox.checked : false,
