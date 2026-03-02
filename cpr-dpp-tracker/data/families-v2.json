@@ -7357,7 +7357,7 @@
       "family": "27",
       "priority": "",
       "tc": "CEN/TC 130",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "space-heating.svg",
       "display_name": "Space Heating",
       "family_label": "Annex VII #27 · SHA",
@@ -7550,7 +7550,13 @@
           "dpp_route": "hEN",
           "revision": "CPR 2011",
           "cited": true,
-          "notes": "Added by amendment C(2024) 2697. Cited under CPR 305/2011 — DPP does NOT apply."
+          "notes": "First cited by C(2024) 2697. Updated to EN 16510-2-7:2025 by Implementing Decision (EU) 2026/284 (6 Feb 2026). Coexistence period for 2025 revision ends 9 Feb 2027. Cited under CPR 305/2011 — DPP does NOT apply.",
+          "_verification": {
+            "human_verified": true,
+            "verified_at": "2026-03-02",
+            "source": "EUR-Lex — Implementing Decision 2026/284",
+            "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026D0284"
+          }
         },
         {
           "id": "EN 13240",
@@ -7584,6 +7590,60 @@
           "dpp_route": "hEN",
           "revision": "CPR 2011",
           "cited": true
+        },
+        {
+          "id": "EN 1-2:2025",
+          "type": "hEN",
+          "name": "Residential liquid fuel burning appliances — Part 2: Flued oil stoves with vaporizing burners",
+          "tc_wg": "CEN/TC 130",
+          "avcp": "3",
+          "dpp_est": "~2032–2033",
+          "dpp_route": "hEN",
+          "revision": "CPR 2011",
+          "cited": true,
+          "notes": "Added by Implementing Decision (EU) 2026/284 (6 Feb 2026). Cited under CPR 305/2011 — DPP does NOT apply. Coexistence period ends 9 Feb 2027.",
+          "_verification": {
+            "human_verified": true,
+            "verified_at": "2026-03-02",
+            "source": "EUR-Lex — Implementing Decision 2026/284",
+            "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026D0284"
+          }
+        },
+        {
+          "id": "EN 16510-2-5:2025",
+          "type": "hEN",
+          "name": "Residential solid fuel burning appliances — Part 2-5: Slow heat release appliances",
+          "tc_wg": "CEN/TC 295",
+          "avcp": "3",
+          "dpp_est": "~2032–2033",
+          "dpp_route": "hEN",
+          "revision": "CPR 2011",
+          "cited": true,
+          "notes": "Added by Implementing Decision (EU) 2026/284 (6 Feb 2026). Cited under CPR 305/2011 — DPP does NOT apply. Coexistence period ends 9 Feb 2027.",
+          "_verification": {
+            "human_verified": true,
+            "verified_at": "2026-03-02",
+            "source": "EUR-Lex — Implementing Decision 2026/284",
+            "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026D0284"
+          }
+        },
+        {
+          "id": "EN 16510-2-10:2025",
+          "type": "hEN",
+          "name": "Residential solid fuel burning appliances — Part 2-10: Multi-firing sauna stoves",
+          "tc_wg": "CEN/TC 295",
+          "avcp": "3",
+          "dpp_est": "~2032–2033",
+          "dpp_route": "hEN",
+          "revision": "CPR 2011",
+          "cited": true,
+          "notes": "Added by Implementing Decision (EU) 2026/284 (6 Feb 2026). Cited under CPR 305/2011 — DPP does NOT apply. Coexistence period ends 9 Feb 2027.",
+          "_verification": {
+            "human_verified": true,
+            "verified_at": "2026-03-02",
+            "source": "EUR-Lex — Implementing Decision 2026/284",
+            "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026D0284"
+          }
         }
       ],
       "standards_summary": {
@@ -11445,7 +11505,7 @@
       "family": "33",
       "priority": "",
       "tc": "EOTA (ETAs)",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "fixings.svg",
       "display_name": "Fixings",
       "family_label": "Annex VII #33 · FIX",
@@ -11456,7 +11516,8 @@
         "hen_latest": null,
         "ead_earliest": "~2032",
         "ead_latest": "~2032",
-        "envelope": "~2032–2033"
+        "envelope": "~2032–2033",
+        "hen_count": 1
       },
       "acquis": "No",
       "sreq": "",
@@ -11957,6 +12018,23 @@
           "dpp_est": "~2032",
           "cited": true,
           "notes": "Old-regime EAD under CPR 305/2011."
+        },
+        {
+          "id": "EN 17235:2024",
+          "type": "hEN",
+          "name": "Permanent anchor devices and safety hooks",
+          "avcp": "1",
+          "dpp_est": "~2032–2033",
+          "dpp_route": "hEN",
+          "revision": "CPR 2011",
+          "cited": true,
+          "notes": "Added by Implementing Decision (EU) 2026/284 (6 Feb 2026). First OJ-cited hEN for FIX family. Coexistence period ends 9 Aug 2027. Cited under CPR 305/2011 — DPP does NOT apply.",
+          "_verification": {
+            "human_verified": true,
+            "verified_at": "2026-03-02",
+            "source": "EUR-Lex — Implementing Decision 2026/284",
+            "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026D0284"
+          }
         }
       ],
       "standards_summary": {
