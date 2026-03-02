@@ -39,11 +39,12 @@
   var buyerCity = document.getElementById('buyerCity');
   var buyerCountry = document.getElementById('buyerCountry');
 
-  // ── Load families ──
-  fetch('data/families.json')
+  // ── Load families (v2 schema) ──
+  fetch('data/families-v2.json')
     .then(function (r) { return r.json(); })
     .then(function (data) {
-      families = data.slice().sort(function (a, b) {
+      var raw = data.families || data;
+      families = raw.slice().sort(function (a, b) {
         return dppSortKey(a) - dppSortKey(b);
       });
       populateFamilyDropdown();
@@ -51,7 +52,7 @@
     });
 
   function dppSortKey(fam) {
-    var str = (fam['dpp-range'] && fam['dpp-range'].envelope) || fam['dpp-est'] || '';
+    var str = (fam.convergence && fam.convergence.dpp_date) || (fam['dpp-range'] && fam['dpp-range'].envelope) || fam['dpp-est'] || '';
     if (!str || str === 'TBD') return 9999;
     var m = str.match(/(\d{4})/);
     return m ? parseInt(m[1], 10) : 9999;

@@ -7,6 +7,8 @@
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" type="image/png" href="../assets/images/favicon.png">
   <link rel="stylesheet" href="../assets/fonts/inter.css">
+  <link rel="stylesheet" href="../assets/fonts/dm-serif-display.css">
+  <link rel="stylesheet" href="../assets/fonts/jetbrains-mono.css">
   <link rel="stylesheet" href="../assets/css/styles.css">
   <link rel="stylesheet" href="css/admin.css">
 </head>
@@ -15,7 +17,7 @@
   <div id="authGate" class="admin-gate">
     <span class="admin-gate__icon" aria-hidden="true">&#128274;</span>
     <h1 class="admin-gate__title">CPR Admin Panel</h1>
-    <p class="admin-gate__subtitle">Enter the admin passphrase to access the review queue and data management tools.</p>
+    <p class="admin-gate__subtitle">Enter the admin passphrase to access the pipeline editor and data management tools.</p>
     <input type="password" id="authInput" class="admin-gate__input" placeholder="Passphrase..." autocomplete="off">
     <p id="authError" class="admin-gate__error">Incorrect passphrase.</p>
     <button id="authBtn" class="btn btn--primary" style="width:100%;">Unlock</button>
@@ -24,76 +26,84 @@
   <!-- Admin Content (hidden until authenticated) -->
   <div id="adminContent" style="display:none;">
     <!-- Header -->
-    <div class="tracker-hero" style="padding: 28px 24px 24px;">
-      <div class="tracker-hero__content" style="max-width:960px;">
-        <span class="tracker-hero__badge">Admin</span>
-        <h1 class="tracker-hero__title" style="font-size:1.4rem;">CPR Expert Review Queue</h1>
-        <p class="tracker-hero__subtitle" style="font-size:0.82rem; max-width:600px;">Review data updates and structural issues from the CPR Expert agent. Approve changes to update families.json directly.</p>
-      </div>
+    <div class="admin-hero">
+      <span class="admin-hero__badge">Admin</span>
+      <h1 class="admin-hero__title">CPR DPP Tracker — Data Management</h1>
+      <p class="admin-hero__subtitle">Edit pipeline nodes, system timeline, review agent updates, and export data.</p>
+      <div class="admin-hero__meta" id="dataMeta">Loading data...</div>
     </div>
 
     <div class="admin-container">
-      <!-- Stats -->
-      <div class="admin-stats">
-        <div class="admin-stat admin-stat--pending">
-          <div class="admin-stat__number" id="statPending">0</div>
-          <div class="admin-stat__label">Pending</div>
-        </div>
-        <div class="admin-stat admin-stat--approved">
-          <div class="admin-stat__number" id="statApproved">0</div>
-          <div class="admin-stat__label">Approved</div>
-        </div>
-        <div class="admin-stat admin-stat--rejected">
-          <div class="admin-stat__number" id="statRejected">0</div>
-          <div class="admin-stat__label">Rejected</div>
-        </div>
-        <div class="admin-stat admin-stat--issues">
-          <div class="admin-stat__number" id="statIssues">0</div>
-          <div class="admin-stat__label">Issues</div>
-        </div>
-      </div>
-
-      <!-- Queue Meta -->
-      <div class="admin-queue-meta" id="queueMeta" style="display:none;">
-        <span>Source: <span class="admin-queue-meta__source" id="queueSource">—</span></span>
-        <span>Generated: <span id="queueDate">—</span></span>
-        <span>Families: <span id="queueFamilies">—</span></span>
-        <div class="admin-header__actions">
-          <button class="btn btn--sm btn--outline" id="loadQueueBtn" title="Load review-queue.json from disk">Load Queue</button>
-          <button class="btn btn--sm btn--primary" id="applyApprovedBtn" title="Write all approved changes to families.json" disabled>Apply Approved</button>
-          <button class="btn btn--sm btn--outline" id="clearQueueBtn" title="Clear all items">Clear</button>
-        </div>
-      </div>
-
-      <!-- Actions when no queue loaded -->
-      <div id="noQueueActions" class="admin-header" style="justify-content:center;">
-        <button class="btn btn--teal" id="loadQueueBtnEmpty">Load review-queue.json</button>
-      </div>
-
       <!-- Tabs -->
-      <div class="admin-tabs" id="adminTabs" style="display:none;">
-        <button class="admin-tab admin-tab--active" data-tab="updates">
-          Data Updates<span class="admin-tab__count" id="tabUpdatesCount">0</span>
+      <div class="admin-tabs" id="adminTabs">
+        <button class="admin-tab admin-tab--active" data-tab="families">
+          Families<span class="admin-tab__count" id="tabFamiliesCount">0</span>
         </button>
-        <button class="admin-tab" data-tab="issues">
-          Structural Issues<span class="admin-tab__count" id="tabIssuesCount">0</span>
+        <button class="admin-tab" data-tab="system">
+          System Timeline<span class="admin-tab__count" id="tabSystemCount">0</span>
+        </button>
+        <button class="admin-tab" data-tab="queue">
+          Review Queue<span class="admin-tab__count" id="tabQueueCount">0</span>
+        </button>
+        <button class="admin-tab" data-tab="notes">
+          Notes
+        </button>
+        <button class="admin-tab" data-tab="export">
+          Export
+        </button>
+        <button class="admin-tab" data-tab="health">
+          Data Health<span class="admin-tab__count" id="tabHealthScore">-</span>
         </button>
       </div>
 
-      <!-- Updates Panel -->
-      <div class="admin-panel admin-panel--active" id="panelUpdates">
-        <div id="updatesList"></div>
+      <!-- Panel: Families (Pipeline Editor) -->
+      <div class="admin-panel admin-panel--active" id="panelFamilies">
+        <div class="admin-panel__toolbar">
+          <select id="familySelect" class="admin-select">
+            <option value="">Select a family...</option>
+          </select>
+          <button class="btn btn--sm btn--primary" id="saveFamiliesBtn" disabled>Save Changes</button>
+        </div>
+        <div id="familyEditor"></div>
       </div>
 
-      <!-- Issues Panel -->
-      <div class="admin-panel" id="panelIssues">
-        <div id="issuesList"></div>
+      <!-- Panel: System Timeline -->
+      <div class="admin-panel" id="panelSystem">
+        <div class="admin-panel__toolbar">
+          <span class="admin-panel__toolbar-label">System Timeline Nodes</span>
+          <button class="btn btn--sm btn--primary" id="saveSystemBtn" disabled>Save Changes</button>
+        </div>
+        <div id="systemEditor"></div>
       </div>
 
-      <!-- Chat Panel -->
-      <div class="admin-chat" id="chatPanel">
-        <h2 class="admin-chat__title">Agent Chat</h2>
-        <p class="admin-chat__subtitle">Ask the CPR Expert agent open questions. Copy its response and paste here for reference, or draft commands to run in Claude Code.</p>
+      <!-- Panel: Review Queue -->
+      <div class="admin-panel" id="panelQueue">
+        <div id="queueToolbar" class="admin-panel__toolbar">
+          <button class="btn btn--sm btn--teal" id="loadQueueBtn">Load review-queue.json</button>
+          <button class="btn btn--sm btn--outline" id="uploadQueueBtn">Upload file...</button>
+          <button class="btn btn--sm btn--outline" id="clearQueueBtn">Clear</button>
+        </div>
+        <div class="admin-queue-meta" id="rqMeta" style="display:none;">
+          <span>Source: <strong id="rqMetaSource">-</strong></span>
+          <span>Generated: <span id="rqMetaDate">-</span></span>
+          <span>Families: <span id="rqMetaFamilies">-</span></span>
+        </div>
+        <!-- Queue sub-tabs -->
+        <div class="admin-sub-tabs" id="rqSubTabs" style="display:none;">
+          <button class="admin-sub-tab admin-sub-tab--active" data-qtab="updates">
+            Updates<span class="admin-tab__count" id="tabUpdatesCount">0</span>
+          </button>
+          <button class="admin-sub-tab" data-qtab="issues">
+            Issues<span class="admin-tab__count" id="tabIssuesCount">0</span>
+          </button>
+        </div>
+        <div id="rqUpdatesPanel"></div>
+        <div id="rqIssuesPanel" style="display:none;"></div>
+      </div>
+
+      <!-- Panel: Notes -->
+      <div class="admin-panel" id="panelNotes">
+        <p class="admin-notes__desc">Scratch pad for agent interactions. Stored locally in your browser.</p>
         <div class="admin-chat__messages" id="chatMessages">
           <div class="chat-msg chat-msg--system">
             Chat messages are stored locally. Use this as a scratch pad for agent interactions.
@@ -104,14 +114,45 @@
           <button class="btn btn--teal admin-chat__send" id="chatSendBtn">Add Note</button>
         </div>
       </div>
+
+      <!-- Panel: Data Health -->
+      <div class="admin-panel" id="panelHealth">
+        <div id="healthDashboard"></div>
+      </div>
+
+      <!-- Panel: Export -->
+      <div class="admin-panel" id="panelExport">
+        <div class="admin-export">
+          <div class="admin-export__card">
+            <h3 class="admin-export__title">families-v2.json</h3>
+            <p class="admin-export__desc">All 37 product families with pipeline nodes, convergence data, and content sections.</p>
+            <button class="btn btn--teal" id="exportFamiliesBtn">Download</button>
+          </div>
+          <div class="admin-export__card">
+            <h3 class="admin-export__title">system-timeline.json</h3>
+            <p class="admin-export__desc">Shared system timeline nodes (DPP infrastructure, Art. 75 DA, etc.).</p>
+            <button class="btn btn--teal" id="exportSystemBtn">Download</button>
+          </div>
+          <div class="admin-export__card">
+            <h3 class="admin-export__title">sources.json</h3>
+            <p class="admin-export__desc">Source citation registry with ~95 sources and verification status.</p>
+            <button class="btn btn--teal" id="exportSourcesBtn">Download</button>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <!-- Toast container (outside panels so toasts are always visible) -->
+    <div id="rqToastContainer" class="rq-toast-container"></div>
+
     <!-- Footer -->
-    <footer class="tracker-footer">
-      <p><a href="index.html">Back to Tracker</a> &middot; <a href="dashboard.html">Dashboard</a> &middot; Admin Panel</p>
+    <footer class="admin-footer">
+      <p><a href="index.html">Back to Tracker</a> &middot; <a href="reports.html">Reports</a> &middot; Admin Panel</p>
     </footer>
   </div>
 
+  <script src="js/review-queue.js"></script>
+  <script src="js/data-health.js"></script>
   <script src="js/admin.js"></script>
 </body>
 </html>

@@ -18,6 +18,9 @@
   <meta name="twitter:image" content="https://www.regenstudio.world/Images/og-image.png">
   <link rel="icon" type="image/png" href="../assets/images/favicon.png">
   <link rel="stylesheet" href="../assets/fonts/inter.css">
+  <link rel="stylesheet" href="../assets/fonts/dm-serif-display.css">
+  <link rel="stylesheet" href="../assets/fonts/jetbrains-mono.css">
+  <link rel="stylesheet" href="css/convergence.css">
   <link rel="stylesheet" href="css/tracker.css">
 </head>
 <body>
@@ -25,6 +28,20 @@
   <script src="../assets/js/guard.js"></script>
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Nav -->
+  <nav class="tracker-nav" id="trackerNav">
+    <div class="tracker-nav__inner">
+      <a href="https://www.regenstudio.world" class="tracker-nav__logo">
+        <img src="../assets/images/logo-color.png" alt="Regen Studio" height="32">
+      </a>
+      <div class="tracker-nav__links">
+        <a href="landing.html" class="tracker-nav__link">About</a>
+        <a href="https://www.regenstudio.world/blog.html" class="tracker-nav__link">Blog</a>
+        <a href="reports.html" class="tracker-nav__cta">Get the Report</a>
+      </div>
+    </div>
+  </nav>
 
   <!-- Hero -->
   <div class="tracker-hero">
@@ -65,47 +82,97 @@
   <!-- Landing intro -->
   <section class="tracker-landing">
     <div class="tracker-landing__inner">
-      <p class="tracker-landing__text">Explore how the Construction Products Regulation (CPR 2024/3110) introduces Digital Product Passports across 37 product families. Each card shows the current harmonised standards, DPP readiness timeline, and standardisation status.</p>
+      <p class="tracker-landing__text">The DPP obligation date for each product family is determined by whichever is later: the <strong>product timeline</strong> (harmonised standards in force under the new CPR) or the <strong>system timeline</strong> (EU DPP infrastructure operational). Explore all 37 families below.</p>
       <a href="reports.html" class="btn tracker-landing__cta">Get the Full Report</a>
     </div>
   </section>
+
+  <!-- Filter bar -->
+  <div id="filterBar"></div>
 
   <!-- Grid -->
   <div class="tracker-container" id="main-content">
     <div class="cpr-grid" id="trackerGrid" role="list" aria-label="All 37 product families ordered by estimated DPP obligation date"></div>
   </div>
 
-  <!-- Modal -->
-  <div class="cpr-modal" id="cprModal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="cpr-modal__backdrop"></div>
-    <div class="cpr-modal__card">
-      <button class="cpr-modal__close" aria-label="Close">&times;</button>
-      <div class="cpr-modal__header">
-        <div class="cpr-modal__icon"><img src="" alt=""></div>
-        <div class="cpr-modal__header-text">
-          <h3 class="cpr-modal__title"></h3>
-          <p class="cpr-modal__subtitle"></p>
+  <!-- Comparison View (side-by-side families) -->
+  <section class="compare-view" id="compareView" hidden></section>
+
+  <!-- Convergence View (replaces modal — full-page detail for a family) -->
+  <section class="conv-view" id="convView" hidden>
+    <nav class="conv-view__breadcrumb" id="convBreadcrumb" aria-label="Breadcrumb">
+      <a href="#" class="conv-view__breadcrumb-link" id="convBreadcrumbBack">Tracker</a>
+      <span class="conv-view__breadcrumb-sep">/</span>
+      <span class="conv-view__breadcrumb-current" id="convBreadcrumbCurrent"></span>
+    </nav>
+    <div class="conv-view__header">
+      <div class="conv-view__header-left">
+        <img class="conv-view__icon" id="convIcon" src="" alt="">
+        <div>
+          <h2 class="conv-view__title" id="convTitle"></h2>
+          <p class="conv-view__subtitle" id="convSubtitle"></p>
         </div>
       </div>
-      <div class="cpr-modal__tags"></div>
-      <div class="cpr-modal__updated"></div>
-      <div class="cpr-modal__intro"></div>
-      <div class="cpr-modal__dpp-box"></div>
-      <div class="cpr-modal__standards" style="display:none;">
-        <div class="cpr-modal__section-title">Per-standard DPP timeline</div>
-        <div class="cpr-modal__stds-content"></div>
+      <div class="conv-view__header-right">
+        <button class="conv-view__print" id="convPrint" title="Print this view">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Print
+        </button>
+        <button class="conv-view__close" id="convClose">&times; Back to grid</button>
       </div>
-      <div class="cpr-modal__annex"></div>
-      <div class="cpr-modal__body"></div>
     </div>
-  </div>
+    <div id="convDppOutlook"></div>
+    <div id="convChartWrap"></div>
+    <div id="convExpansion"></div>
+    <div id="convContentSections"></div>
+    <div id="convStandards" style="display:none;">
+      <div class="conv-view__section-title">Per-standard DPP timeline</div>
+      <div id="convStdsContent"></div>
+    </div>
+    <div id="convDisclaimer"></div>
+  </section>
+
+  <!-- Source toggle (floating button) -->
+  <button class="src-toggle" id="sourceToggle" aria-pressed="false" title="Show source citations">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+    Sources
+  </button>
 
   <!-- Footer -->
   <footer class="tracker-footer">
-    <p>&copy; 2026 <a href="https://www.regenstudio.world">Regen Studio</a> &middot; <a href="https://www.regenstudio.world/privacy.html">Privacy Policy</a> &middot; <a href="https://www.regenstudio.world/blog.html">Blog</a> &middot; <a href="../">Demos</a> &middot; <a href="dashboard.html">Data Dashboard</a> &middot; <a href="reports.html">Get the full PDF report</a> &middot; <a href="admin.html">Admin</a></p>
+    <div class="tracker-footer__inner">
+      <div class="tracker-footer__grid">
+        <div class="tracker-footer__col">
+          <h4 class="tracker-footer__heading">Product</h4>
+          <a href="landing.html">About the Tracker</a>
+          <a href="reports.html">Full Report</a>
+          <a href="admin.html">Admin Panel</a>
+        </div>
+        <div class="tracker-footer__col">
+          <h4 class="tracker-footer__heading">Resources</h4>
+          <a href="https://www.regenstudio.world/blog.html">Blog</a>
+          <a href="https://www.regenstudio.world">Regen Studio</a>
+          <a href="../">All Demos</a>
+        </div>
+        <div class="tracker-footer__col">
+          <h4 class="tracker-footer__heading">Legal</h4>
+          <a href="https://www.regenstudio.world/privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="tracker-footer__bottom">
+        <p>&copy; 2026 Regen Studio. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
 
+  <script src="js/content-renderer.js"></script>
   <script src="js/dpp-info.js"></script>
+  <script src="js/convergence-view.js"></script>
+  <script src="js/node-detail.js"></script>
+  <script src="js/node-expansion.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/comparison.js"></script>
+  <script src="js/source-layer.js"></script>
   <script src="js/tracker.js"></script>
 </body>
 </html>

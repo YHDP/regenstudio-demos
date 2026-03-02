@@ -1,0 +1,80 @@
+{
+  "family": "CHI",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-CHI-001",
+      "families": ["CHI"],
+      "severity": "warning",
+      "type": "citation_verification",
+      "title": "EN 1443 and EN 12391-1 citation status unverified",
+      "description": "EN 1443 and EN 12391-1 are listed in the tracker with cited=true but were NOT found in the nlfnorm.cz group 6 harmonised standards listing. EN 1443:2019 'Chimneys — General requirements' may be a reference/umbrella standard rather than an OJ-cited harmonised product standard. EN 12391-1 'Metal chimneys — Metal liners' similarly absent from nlfnorm. If confirmed non-harmonised, hen_count should be adjusted from 18 to 16.",
+      "action_required": "Verify OJ citation status against official EUR-Lex/OJ C 092/2018 or Implementing Decision 2019/451. If not cited, update cited field to false.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CHI-002",
+      "families": ["CHI"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "Three content sections empty (stakeholder_notes, key_risks, sources_summary)",
+      "description": "content.stakeholder_notes, content.key_risks, and content.sources_summary are all empty. CHI has identifiable risks (prEN 1856-1 uncertainty, EAD transition, EN 13084 scoping) that should be documented.",
+      "action_required": "Populate with proposed content from deep-dive report §8.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CHI-003",
+      "families": ["CHI"],
+      "severity": "info",
+      "type": "scoping_note",
+      "title": "EN 13084-5 and EN 13084-7 excluded from tracker — intentional scoping",
+      "description": "EN 13084-5:2005 and EN 13084-7:2012 (free-standing chimneys) are OJ-cited in nlfnorm.cz group 6 but intentionally excluded from the CHI tracker. The content.sreq_analysis documents this: 'Self-standing chimneys (EN 13084 series) will be covered by a separate standardisation request for facade fire testing standards, planned for 2027.' This is a deliberate scoping decision.",
+      "action_required": "No action needed. Document rationale if not already clear to admin panel users.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CHI-004",
+      "families": ["CHI"],
+      "severity": "info",
+      "type": "citation_verification",
+      "title": "EN 12391-1 superseded by EN 15287-1:2007 — likely not harmonised",
+      "description": "BS EN 12391-1:2003 was superseded by EN 15287-1:2007 and is titled 'Chimneys — Execution standard for metal chimneys' — the word 'execution' indicates this is an installation standard, not a product standard with Annex ZA. Execution standards are not harmonised under the CPR. Combined with EN 1443 being a general requirements/umbrella standard, the hen_count correction from 18 to 16 is increasingly likely. Strengthens iss-CHI-001.",
+      "action_required": "Verify against official EUR-Lex/OJ sources. If confirmed non-harmonised, remove EN 12391-1 and EN 1443 from standards[] and adjust hen_count to 16.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CHI-005",
+      "families": ["CHI"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "Only Schiedel has chimney EPD — industry EPD readiness very low",
+      "description": "Schiedel GmbH has an EPD for the Absolut Parat chimney system (EN 15804, 2021 data), but no other chimney manufacturer EPDs were found. DPP GWP declaration under new CPR will require EN 15804-based environmental data. Very low EPD readiness across the chimney industry compared to cement, concrete, or steel sectors.",
+      "source": "Schiedel EPD (https://www.heinze.de/m2/17/61317/pdf/53/47852553px595x842.pdf)",
+      "action_required": "Document EPD readiness gap in content. Flag as risk for CPR GWP disclosure compliance.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CHI-006",
+      "families": ["CHI"],
+      "severity": "info",
+      "type": "market_context",
+      "title": "Heat pump sales overtook gas boilers in Germany 2025 — structural chimney demand shift",
+      "description": "In Germany 2025, 299,000 heat pumps sold (+55%) vs 229,000 gas boilers (−36%). EU air-water heat pump sales grew 275% from 2015 to 2024. EPBD pushing fossil boiler phase-out. Structural demand shift from gas/oil flues toward biomass and condensing flues. Affects DPP system sizing assumptions and product mix within chimney family.",
+      "source": "Heatpumpswatch.org (https://heatpumpswatch.org/heating-technologies-compared/); IEA Future of Heat Pumps (https://www.iea.org/reports/the-future-of-heat-pumps/executive-summary); Clean Energy Wire (https://www.cleanenergywire.org/news/rising-heating-costs-2025-impact-homes-gas-boilers-most-analysis)",
+      "action_required": "Document market shift in content. Consider impact on DPP product scope and volume estimates.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CHI-007",
+      "families": ["CHI"],
+      "severity": "info",
+      "type": "standards_gap",
+      "title": "No hydrogen-ready chimney/flue standard despite EU hydrogen strategy",
+      "description": "No specific hydrogen-ready chimney or flue standard found. Hydrogen combustion produces different flue gas: higher water vapour, different condensate chemistry. Current EN 1443 designation system (T/P/W-D/V/G-O/L) designed for conventional fuels. As EU hydrogen deployment accelerates (network blending, dedicated H2 appliances), chimney standards may need hydrogen-specific designation classes. Gap could delay DPP-ready harmonised standards if revision needed.",
+      "source": "BFCMA (https://www.bfcma.co.uk/regulations-and-standards); ChimneyLab.dk (https://www.chimneylab.dk/engelsk/chimneys/standards-for-chimney-testing)",
+      "action_required": "Monitor CEN/TC 166 for hydrogen-related work items. Document gap in content.key_risks.",
+      "status": "pending"
+    }
+  ]
+}

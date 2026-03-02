@@ -1,0 +1,70 @@
+{
+  "family": "FLO",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-FLO-001",
+      "families": ["FLO", "CMG"],
+      "severity": "warning",
+      "type": "cross_family",
+      "title": "EN 13813 AVCP mismatch with CMG",
+      "description": "EN 13813 (screed material) appears in both FLO and CMG with different AVCP values. FLO records '1, 3, 4' while CMG records '3, 4'. The FLO entry includes System 1 for reaction-to-fire testing, which is correct per Commission Decision 97/808/EC. CMG likely has an incomplete AVCP entry.",
+      "action_required": "Verify EN 13813 AVCP against Commission Decision 97/808/EC. Update CMG entry to include System 1 if confirmed.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-FLO-002",
+      "families": ["FLO"],
+      "severity": "info",
+      "type": "standards_development",
+      "title": "EN 14041 standardisation crisis gap",
+      "description": "EN 14041:2018 was published by CEN but its OJ citation status is unclear. The 2004/AC:2006 version remains the OJ-cited edition. This is a standardisation crisis gap where CEN publishes a revision but the Commission does not cite it. EPLF is working on further revision. Data notes this correctly.",
+      "action_required": "Monitor EN 14041 OJ citation status. When resolved, update standards[] citation field.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-FLO-003",
+      "families": ["FLO"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "Three content sections empty",
+      "description": "content.stakeholder_notes, content.key_risks, and content.sources_summary are empty.",
+      "action_required": "Populate with proposed content from deep-dive report §8.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-FLO-004",
+      "families": ["FLO"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "Split EPD readiness across 6 material types — most varied DPP landscape of any CPR family",
+      "description": "Ceramics: excellent (Confindustria Ceramica industry EPD covers 82.6% Italian production). Laminate: good (EPLF EPDs since 2009, 55% global market). Natural stone: emerging (EUROROC promotes, individual quarry EPDs, lifecycle advantage over ceramics/cement). Vinyl: partial (VOC/chemical data focus, not full EN 15804 EPDs). Wood: moderate (linked to STP, EN 14342). Screed: minimal (EN 13813 cross-listed with CMG). DPP implementation will proceed at different speeds for different materials.",
+      "source": "Confindustria Ceramica (https://www.ceramica.info/en/articoli/environmental-product-declaration-epd-italian-ceramic-tiles/); EPLF (https://eplf.com/en/news/eplf-unveils-manifesto-for-advocating-for-a-sustainable-and-competitive-european-laminate-flooring); EUROROC (https://www.euroroc.net/)",
+      "action_required": "Document split EPD readiness in content. Note material-specific DPP implementation timelines.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-FLO-005",
+      "families": ["FLO"],
+      "severity": "warning",
+      "type": "dpp_complexity",
+      "title": "$52-62B market, 8 TCs, 6+ material types — most diverse CPR family, DPP architecture challenge",
+      "description": "European flooring market $52-62B (2024), ~3 billion m²/yr. Material breakdown: ceramics 34%, carpets 34%, laminate 15%, vinyl ~10%. Spans 8 CEN TCs — most of any family. Each material has different production processes, environmental profiles, and EPD methodologies. SReq must coordinate across 8 TCs. DPP data architecture must accommodate radically different product types within one family framework.",
+      "source": "Market Data Forecast (https://www.marketdataforecast.com/market-reports/europe-flooring-market); Mordor Intelligence (https://www.mordorintelligence.com/industry-reports/europe-floor-covering-market)",
+      "action_required": "Include market scale and TC coordination complexity in content.key_risks.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-FLO-006",
+      "families": ["FLO"],
+      "severity": "info",
+      "type": "cross_regulatory",
+      "title": "Vinyl flooring: REACH + CPR dangerous substances + VOC emissions — compound regulatory burden",
+      "description": "Vinyl (PVC) flooring faces compound regulation: REACH restricts SVHC phthalates (DEHP), industry shifted to DINCH/DEHA alternatives. New CPR 2024/3110 dangerous substances requirements (CEN/TC 351) will require VOC emission declarations. German AgBB/DIBt method is current benchmark (3/7/14-day VOC protocols). DPP for vinyl must include: VOC emission class, phthalate content, indoor air quality data — alongside traditional performance. This cross-regulatory burden is unique to vinyl within FLO.",
+      "source": "EU flooring standards (https://globalfloorings.com/2025/08/11/eu-flooring-standards-and-ce-marking-for-environmental-compliance/); PMC DEHP-free PVC (https://pmc.ncbi.nlm.nih.gov/articles/PMC6856815/)",
+      "action_required": "Document vinyl cross-regulatory burden in content. Flag CEN/TC 351 dangerous substances as DPP data requirement.",
+      "status": "pending"
+    }
+  ]
+}

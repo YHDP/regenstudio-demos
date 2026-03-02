@@ -1,0 +1,60 @@
+{
+  "family": "WCF",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-WCF-001",
+      "families": ["WCF"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "Three content sections empty",
+      "description": "content.standards_development, content.key_risks, and content.sources_summary are empty.",
+      "action_required": "Populate with proposed content from deep-dive report §8.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-WCF-002",
+      "families": ["WCF", "SMP", "ROC"],
+      "severity": "info",
+      "type": "cross_family",
+      "title": "EN 14509 (sandwich panels) cross-listed in SMP, ROC, WCF",
+      "description": "EN 14509 tracked across three families. Data consistency should be verified. Duplicate of iss-ROC-002 and iss-SMP-003 (cross-family tracking).",
+      "action_required": "Verify EN 14509 data consistency across all three families.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-WCF-003",
+      "families": ["WCF"],
+      "severity": "warning",
+      "type": "regulatory_development",
+      "title": "New EU facade fire test standard effective 31 January 2026 — post-Grenfell system-level testing",
+      "description": "Revised European cladding fire test standard takes effect 31 Jan 2026. Post-Grenfell: minimum Euroclass A2-s1,d0 for buildings >11m. EOTA TR 078 provides system-level fire assessment methodology beyond EN 13823 SBI single-product testing. DPP fire classification data (Euroclass, smoke, droplets) is safety-critical and must be machine-readable. AVCP System 1 for fire classes A1-C ensures third-party testing. May require re-testing existing products.",
+      "source": "EOTA TR 078 (https://www.eota.eu/sites/default/files/uploads/Technical%20reports/EOTA%20TR%20078_Determination%20of%20fire-related%20characteristics%20of%20external%20wall%20claddings_2023-11.pdf); International Fire & Safety Journal (https://internationalfireandsafetyjournal.com/new-european-cladding-fire-test-standard-to-take-effect-in-2026/)",
+      "action_required": "Document facade fire test standard in content.key_risks. Cross-reference with FPP and KAS ETICS fire safety issues.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-WCF-004",
+      "families": ["WCF"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "Split EPD readiness: fibre-cement excellent, suspended ceilings good, gypsum established, others less visible",
+      "description": "Fibre-cement: James Hardie >90% products have verified EPDs (EN 15804), Etex Cedral EPDs published. Suspended ceilings: Knauf AMF EPDs via IBU, ISO 14001. Gypsum plasterboard: PSP Sustainability Action Plan, recycled gypsum established. Metal cladding, stone cladding, HPL panels, render/plaster: EPD coverage less visible. Split readiness across WCF's diverse product types mirrors FLO pattern.",
+      "source": "James Hardie (https://www.jameshardie.eu/EU-en/products/smart-sustainability); Etex Cedral EPD (https://media.cedral.world/pd53969/original/1192955283/en_cedral_epd-2.pdf); Knauf AMF EPD via IBU",
+      "action_required": "Document split EPD readiness in content. Note fibre-cement as DPP-ready exemplar for cladding.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-WCF-005",
+      "families": ["WCF"],
+      "severity": "info",
+      "type": "market_context",
+      "title": "European cladding $57B+, facade $7B, plasterboard $7.1B — combined among largest CPR families",
+      "description": "European cladding market $57.23B+ (2024). European facade market $7B (2024), growing to $10.34B by 2032. Gypsum plasterboard $7.1B (2023), growing to $14.08B by 2033. Ventilated systems 51% of facade revenue. Fibre-cement cladding $1.75B, growing at 7.5% CAGR. European Green Deal and EPBD recast drive demand for insulated/solar-integrated/green facades. Combined WCF market among largest CPR families by value.",
+      "source": "Research & Markets (https://www.researchandmarkets.com/report/europe-cladding-market); GlobeNewsWire plasterboard (https://www.globenewswire.com/news-release/2024/11/01/2973239/28124/en/Europe-Gypsum-Based-Plasterboard-and-Alternatives-Market-Report-2023-2033); Mordor Intelligence facade (https://www.mordorintelligence.com/industry-reports/europe-facade-market)",
+      "action_required": "Include market scale in content for DPP impact assessment.",
+      "status": "pending"
+    }
+  ]
+}

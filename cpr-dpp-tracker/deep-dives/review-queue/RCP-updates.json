@@ -1,0 +1,60 @@
+{
+  "family": "RCP",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-RCP-001",
+      "families": ["RCP", "AGG"],
+      "severity": "warning",
+      "type": "cross_family",
+      "title": "EN 13043 and EN 13055 AVCP mismatch with AGG",
+      "description": "EN 13043 (aggregates for bituminous mixtures) and EN 13055 (lightweight aggregates) are cross-listed in both RCP and AGG. RCP records AVCP as '2+' for both, while AGG records '2+, 4'. The correct value likely includes System 4 for certain characteristics. EN 13242 (unbound/hydraulically bound) is consistent across both families ('2+'). Name formats also differ slightly.",
+      "action_required": "Verify AVCP for EN 13043 and EN 13055 against the relevant Commission Decision. Update the family with incorrect data.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-RCP-002",
+      "families": ["RCP"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "Three content sections empty",
+      "description": "content.stakeholder_notes, content.key_risks, and content.sources_summary are empty.",
+      "action_required": "Populate with proposed content from deep-dive report §8.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-RCP-003",
+      "families": ["RCP"],
+      "severity": "warning",
+      "type": "dpp_data",
+      "title": "Eurobitume LCA 4.0 (2025) doubles bitumen GWP to 530 kg CO₂e/t — all DPP data must use updated figure",
+      "description": "Eurobitume LCA Report 4.0 (March 2025) updates paving-grade bitumen GWP100 from 216 kg CO₂e/t (LCA 3.1, 2021) to 530 kg CO₂e/t — a 145% increase. Change is due to improved methane accounting from crude oil extraction, not increased actual emissions. Data from 17 European refineries (75%+ coverage). Outputs are EN 15804+A2 compatible. ~70% of bitumen GWP stems from oil extraction and refining. All future RCP EPDs and DPP environmental declarations must use this updated figure. Previous EPDs using LCA 3.1 data are significantly understated.",
+      "source": "Eurobitume LCA 4.0 (https://eurobitume.eu/lca_4-0_news/); Eurobitume LCA 4.0 PDF (https://eurobitume.eu/wp-content/uploads/2025/03/EB-LCA-4.0-2025.pdf)",
+      "action_required": "Flag Eurobitume LCA 4.0 GWP revision in content. Note EN 15804+A2 compatibility for DPP readiness.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-RCP-004",
+      "families": ["RCP"],
+      "severity": "info",
+      "type": "circular_economy",
+      "title": "RAP recycling infrastructure provides DPP recycled content data — 45.5 Mt/yr available, 76% reused",
+      "description": "Reclaimed Asphalt Pavement (RAP) is Europe's most recycled construction material. 45.5 Mt available annually, 23.2 Mt utilised in asphalt production, 76% reused in mixes. 65-75% goes to new asphalt, 25-35% to unbound layers, ~5% to landfill. 100% recyclability demonstrated. RAP incorporation typically limited to 10-30% by national specifications. EN 13108-8 governs RAP specifications. This circular economy data is directly relevant to DPP recycled content and end-of-life data fields.",
+      "source": "EAPA Recycling (https://eapa.org/recycling/); EAPA Asphalt in Figures (https://eapa.org/asphalt-in-figures/); CAPRI RAP overview (https://www.capri-project.com/news-1/the-importance-of-re-userecycle-rap-quick-overview-in-europe)",
+      "action_required": "Document RAP circular economy data in content. Note as DPP recycled content exemplar.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-RCP-005",
+      "families": ["RCP"],
+      "severity": "info",
+      "type": "market_context",
+      "title": "EU-27 asphalt 208.5 Mt (2024), ~$20.5B bitumen market — one of highest-volume CPR families",
+      "description": "EU-27 HMA+WMA production: 208.5 Mt (2024). European bitumen market: ~$20.48B (2024), road construction 85.5% of market. EU earmarked €7B for road modernisation (2024), Germany €2.8B/yr motorway spending. RCP is among the highest-tonnage CPR families. EAPA/Eurobitume coordinate as joint industry voice. EAPA Asphalt 4.0 explores BIM/digital twins for quality management — potential DPP infrastructure.",
+      "source": "EAPA Asphalt in Figures (https://eapa.org/asphalt-in-figures/); Market Data Forecast (https://www.marketdataforecast.com/market-reports/europe-bitumen-market); Mordor Intelligence (https://www.mordorintelligence.com/industry-reports/europe-bitumen-market)",
+      "action_required": "Include market size context in content for DPP impact assessment.",
+      "status": "pending"
+    }
+  ]
+}

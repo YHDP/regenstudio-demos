@@ -1,0 +1,67 @@
+{
+  "family": "CWP",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-CWP-001",
+      "family": "CWP",
+      "severity": "info",
+      "type": "empty_content",
+      "title": "4 content sections empty",
+      "description": "standards_landscape, standards_development, stakeholder_notes, key_risks, sources_summary are all empty.",
+      "action": "Populate with proposed content from deep-dive report."
+    },
+    {
+      "id": "iss-CWP-002",
+      "family": "CWP",
+      "severity": "info",
+      "type": "cross_family",
+      "title": "CEN/TC 33 shared with DWS — SReq scope overlap",
+      "description": "CEN/TC 33 is shared between CWP (WG 6) and DWS. The DWS draft SReq (Jan 2026) references curtain walling accessories, creating potential scope overlap between the CWP SReq (Q4 2026) and DWS SReq.",
+      "action": "Monitor DWS SReq for curtain walling accessory overlap. Ensure CWP SReq scope does not conflict."
+    },
+    {
+      "id": "iss-CWP-003",
+      "family": "CWP",
+      "severity": "info",
+      "type": "content_data_disagreement",
+      "title": "NT-5 in_progress vs EN 13830 'awaiting SReq'",
+      "description": "Pipeline A NT-5 (CEN Standards Development) is marked 'in_progress' but EN 13830 stage note says 'No active revision — awaiting CPR 2024/3110 SReq.' The in_progress status may reflect preparatory TC work rather than formal standards revision.",
+      "action": "Verify whether in_progress refers to preparatory TC work or formal revision. Update stage note or NT-5 status accordingly."
+    },
+    {
+      "id": "iss-CWP-004",
+      "families": ["CWP"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "Schüco, Reynaers, ALUMIL, WICONA all publish EN 15804+A2 EPDs — among strongest EPD coverage in CPR",
+      "description": "Schüco publishes EN 15804+A2 EPDs for aluminium profiles and FWS 60 curtain wall systems (German Sustainability Award 2026 winner). Reynaers publishes EPDs for ConceptWall® 50. ALUMIL publishes EPDs for M7 curtain wall. WICONA publishes EPDs for WICTEC 50. All use 1 m² declared unit, modules A1-C4 (cradle-to-grave). Aluminium sector invested €700M in recycling facilities. 90%+ recycled content facades already built. For DPP: aluminium curtain wall sector has among the strongest EPD coverage of any CPR family — full lifecycle data already available from major manufacturers.",
+      "source": "Schüco EPD Guide (https://epd.guide/manufacturers/schuco-product-range-and-epd-coverage-in-2025); Reynaers EPD (https://european-aluminium.eu/wp-content/uploads/2024/08/EPD-Reynaers_Concept-Wall-50.pdf); European Aluminium (https://european-aluminium.eu/policy_areas/circular-economy/)",
+      "action_required": "Document EPD readiness in content. Flag as DPP-ready exemplar — one of the most prepared families.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CWP-005",
+      "families": ["CWP"],
+      "severity": "warning",
+      "type": "cross_regulatory",
+      "title": "Post-Grenfell facade fire testing may expand CPR essential characteristics — EN 1364-4 gaps identified",
+      "description": "Post-Grenfell regulatory response driving large-scale facade fire testing requirements (BS 8414 in UK, similar proposals in EU). Academic review of EN 1364-4 (fire resistance of partial curtain wall configurations) identified gaps: fire propagation within facade system 'not necessarily considered in fire-resistant spandrel zone.' EN 13830 defines fire propagation resistance as essential characteristic (E, EI, EW) but whole-system behaviour testing remains incomplete. Several EU Member States developing similar large-scale test requirements. For DPP: fire performance data scope may expand beyond current EN 13830 declarations to include whole-system fire propagation testing.",
+      "source": "MDPI fire safety research (https://www.mdpi.com/2571-6255/8/8/311); BS 8414 (https://www.designingbuildings.co.uk/wiki/BS_8414_Fire_performance_of_external_cladding_systems); Intertek EN 13830 (https://www.intertek.com/building/standards/en-13830/)",
+      "action_required": "Document fire safety regulatory evolution in content.key_risks. Flag EN 1364-4 gaps as potential driver for expanded DPP fire data.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CWP-006",
+      "families": ["CWP"],
+      "severity": "info",
+      "type": "market_context",
+      "title": "Global facades $298B (2025), curtain walls 45% of European value — aluminium circular economy strong",
+      "description": "Global facade market $298.20B (2025), projected $389.70B by 2030. Curtain walls captured 45.2% of European facade market value (2024). Germany leads 22.1%. Aluminium recycling saves 95% energy vs primary production. EU aluminium industry invested €700M in recycling facilities. 90%+ recycled content facades demonstrated. Post-consumer recycled content increasing. Reuse of unitised curtain wall units provides additional GWP benefits over recycling. For DPP: recycled content percentage and post-consumer/pre-consumer ratio will be critical environmental data declarations.",
+      "source": "Mordor Intelligence (https://www.mordorintelligence.com/industry-reports/europe-facade-market); European Aluminium (https://european-aluminium.eu/wp-content/uploads/2022/10/sustainability-of-aluminium-in-buildings.pdf); GlassOnWeb circularity (https://www.glassonweb.com/article/circularity-existing-aluminium-unitised-curtain-wall-facades)",
+      "action_required": "Include market context and aluminium circular economy in content.",
+      "status": "pending"
+    }
+  ]
+}

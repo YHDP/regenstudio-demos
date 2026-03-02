@@ -1,0 +1,67 @@
+{
+  "family": "DWP",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-DWP-001",
+      "family": "DWP",
+      "severity": "warning",
+      "type": "empty_content",
+      "title": "6 content sections empty — most of any family",
+      "description": "standards_landscape, standards_development, sreq_analysis, stakeholder_notes, key_risks, sources_summary are all empty. This is the most empty family in the tracker.",
+      "action": "Populate with content — at minimum document DWD 2020/2184 cross-regulatory situation."
+    },
+    {
+      "id": "iss-DWP-002",
+      "family": "DWP",
+      "severity": "warning",
+      "type": "content_data_disagreement",
+      "title": "standards_summary is null",
+      "description": "standards_summary is null (not even an empty object). Only DWP and DPW have null rather than a structured value.",
+      "action": "Set standards_summary to a structured empty value with completeness and source fields."
+    },
+    {
+      "id": "iss-DWP-003",
+      "family": "DWP",
+      "severity": "info",
+      "type": "cross_regulatory",
+      "title": "DWD 2020/2184 parallel framework",
+      "description": "EU Drinking Water Directive 2020/2184 is developing a parallel regulatory framework for materials in contact with drinking water. Delegated Regulation (EU) 2024/371 (marking) and Implementing Decision (EU) 2024/367 (positive lists) already adopted under DWD. CPR vs DWD jurisdiction for construction products remains unclear.",
+      "action": "Document DWD cross-regulatory situation in content sections. Monitor Art. 11 DWD coherence measures."
+    },
+    {
+      "id": "iss-DWP-004",
+      "families": ["DWP"],
+      "severity": "warning",
+      "type": "cross_regulatory",
+      "title": "DWD framework far more advanced than CPR for DWP — six regulations adopted, positive lists apply Dec 2026",
+      "description": "EU Drinking Water Directive 2020/2184 implementation is far more advanced than any CPR pathway for DWP. Six delegated/implementing regulations adopted April 2024: European positive lists (Implementing Decision 2024/367, 4 material annexes), testing methodologies (2024/365), marking specifications (Delegated Regulation 2024/371). Positive lists apply 31 Dec 2026 for new products, transitional until 31 Dec 2032. ECHA manages substance lists. CPR Art. 11 coherence requirement means CPR must reference DWD measures. For DPP: any future DWP CPR standards would create cross-regulatory DPP drawing from both EU frameworks simultaneously.",
+      "source": "EC press release (https://ec.europa.eu/commission/presscorner/detail/en/ip_24_350); ECHA positive lists (https://echa.europa.eu/european-positive-lists); figawa (https://figawa.org/en/topics/water-supply/harmonisation-of-materials-and-products-in-contact-with-drinking-water/)",
+      "action_required": "Document DWD regulatory advancement vs CPR dormancy in content. Flag cross-regulatory DPP complexity.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-DWP-005",
+      "families": ["DWP"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "Drinking water pipe/fitting EPDs well-developed but serve PTA family, not DWP",
+      "description": "Multiple manufacturers publish EN 15804+A2 EPDs for drinking water products: SANHA (all pipe systems), Uponor (PE100), Pipelife (via EPD Norway), REHAU (PEX), Aquatherm (PP-R green pipe). TEPPFA publishes sector EPDs for PVC-U. EPD coverage for drinking water piping is among the most developed of any construction product category. However, these EPDs primarily serve the PTA family under CPR, not DWP specifically. Material safety data exists under DWD positive lists (ECHA-managed), not CPR framework.",
+      "source": "SANHA (https://www.sanha.com/en/blog/sanha-publishes-epds-for-all-pipe-systems-on-its-website-transparency-in-sustainability); REHAU (https://www.rehau.com/downloads/1002828/environmental-product-declaration.pdf)",
+      "action_required": "Document EPD readiness overlap with PTA in content. Note DWD as primary material safety data source.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-DWP-006",
+      "families": ["DWP"],
+      "severity": "info",
+      "type": "market_context",
+      "title": "European plastics pipe/fittings market $27.3B (2024) — PFAS monitoring from Jan 2026, lead pipe replacement required in Germany",
+      "description": "European plastics pipes and pipe fittings market $27.3B (2024). Pipe fittings projected $6.9B by 2030. Drinking water is a key application segment. EU PFAS monitoring in drinking water from 12 Jan 2026 — first systematic EU-wide monitoring. Germany requires lead pipe replacement by 12 Jan 2026 and set first national PFAS drinking water limits. 4MS Initiative (France, Germany, Netherlands, UK) drove EU harmonisation — now ECHA-managed positive lists. Significant product overlap with PTA family.",
+      "source": "IndexBox Europe (https://www.indexbox.io/blog/plastics-pipe-and-pipe-fitting-europe-market-overview-2024-4/); EC PFAS rules (https://environment.ec.europa.eu/news/new-eu-rules-limit-pfas-drinking-water-2026-01-12_en)",
+      "action_required": "Include market context and PFAS/lead regulatory developments in content.",
+      "status": "pending"
+    }
+  ]
+}

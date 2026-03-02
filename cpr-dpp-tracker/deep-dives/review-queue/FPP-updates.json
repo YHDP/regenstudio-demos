@@ -1,0 +1,80 @@
+{
+  "family": "FPP",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-FPP-001",
+      "families": ["FPP"],
+      "severity": "warning",
+      "type": "timeline_gap",
+      "title": "EAD expiry (2031) vs SReq timeline (2029) creates regulatory gap risk",
+      "description": "EADs expire 9 Jan 2031 but SReq not planned until 2029. Only ~2 years between SReq adoption and EAD expiry — typically the full SReq→development→citation cycle takes 3-4 years. This means new hENs will NOT be available before EADs expire. While ETAs remain valid until 2036 (Art. 95(4) backstop), no new ETAs can be issued after 2031. This creates a gap where new products cannot enter the market via the EAD route and new hENs are not yet available.",
+      "action_required": "Flag for policy monitoring. Consider whether Pipeline A NT-9 estimated date (~2030-2032) is realistic given the SReq is planned for 2029.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-FPP-002",
+      "families": ["FPP"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "Five content sections empty",
+      "description": "content.standards_landscape, content.standards_development, content.stakeholder_notes, content.key_risks, and content.sources_summary are all empty. FPP has significant context worth documenting: EAD-only status (0 hENs), 800+ active ETAs, PFAS exposure, CEN/TC 127 test method context, timeline gap risk.",
+      "action_required": "Populate with proposed content from deep-dive report §8.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-FPP-003",
+      "families": ["FPP", "FIX", "KAS", "SEA"],
+      "severity": "info",
+      "type": "cross_family",
+      "title": "FPP is bellwether for EAD-only family transition",
+      "description": "FPP's all-EAD structure (0 hENs, 6 EADs) makes it a test case for the EAD sunset pathway under CPR 2024/3110. Lessons from FPP's EAD→hEN transition planning will directly inform other EAD-heavy families: FIX (Batch 6), KAS (Batch 6), SEA (Batch 6).",
+      "action_required": "Cross-reference when FIX, KAS, SEA analyzed in Batch 6.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-FPP-004",
+      "families": ["FPP"],
+      "severity": "info",
+      "type": "cross_regulatory",
+      "title": "PFAS broader restriction SEAC consultation spring 2026",
+      "description": "Current EU PFAS restriction (Regulation (EU) 2025/1988) targets firefighting foams only, effective October 2026. Broader PFAS restriction under development: ECHA SEAC draft opinion consultation spring 2026, final opinions expected end of 2026. If broader restriction is adopted, it could affect PFAS-containing fire retardant products (EAD 350865-00-1106) and intumescent coatings (EAD 350005-00-1104) in FPP scope. Timeline and scope uncertain but regulatory direction toward broader restriction is clear.",
+      "action_required": "Monitor ECHA SEAC consultation spring 2026 for construction product impacts. Flag for fire retardant and intumescent product manufacturers.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-FPP-005",
+      "families": ["FPP"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "Split EPD readiness: intumescent coatings have EPDs, penetration seals likely don't",
+      "description": "Intumescent fire protection coatings have verified EPDs: Nullifire SC802/SC803/SC804 (EPD International S-P-13759), Sherwin-Williams Firetex M71V2 (NSF EPD10559), Rudolf Hensel 410KS/420KS/421KS (EN 15804+A2). However, penetration seals (EAD 350454), linear joint/gap seals (EAD 350141/350142), and fire retardant products (EAD 350865) appear to lack EPDs. Split EPD readiness within the FPP family means DPP environmental data will be easier for some product types than others.",
+      "source": "EPD International Nullifire (https://www.environdec.com/library/epd13759); NSF Firetex (https://info.nsf.org/Certified/Sustain/ProdCert/EPD10559.pdf); Rudolf Hensel (https://www.rudolf-hensel.de/wp-content/uploads/download/EPD_410KS_420KS_421KS_GB.pdf)",
+      "action_required": "Document split EPD readiness in content. Note intumescent coatings as best-positioned sub-category.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-FPP-006",
+      "families": ["FPP"],
+      "severity": "info",
+      "type": "cross_regulatory",
+      "title": "Dual chemical reformulation pressure: PFAS + brominated FR restrictions",
+      "description": "FPP faces chemical reformulation risk on two fronts: (1) PFAS restriction (Regulation (EU) 2025/1988) — currently targets foams only but broader SEAC consultation spring 2026 may extend to construction; (2) ECHA proposes 'wide and generic restriction' on aromatic brominated flame retardants under REACH — affects fire retardant products (EAD 350865). Industry shifting to halogen-free alternatives and water-based formulations (35.3% market share 2024). Reformulated products may require new ETAs.",
+      "source": "Pinfa FR regulation plans (https://www.pinfa.eu/news/plans-for-fr-assessment-and-regulation/); Stellarix halogen-free (https://stellarix.com/insights/blogs/halogen-free-flame-retardants-implementation-complexities/)",
+      "action_required": "Document dual chemical reformulation risk in content.key_risks. Monitor ECHA SEAC and brominated FR restriction dossier.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-FPP-007",
+      "families": ["FPP"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "Hilti BIM/digital infrastructure provides DPP data architecture groundwork",
+      "description": "Hilti firestop division has developed digital infrastructure paralleling DPP needs: 'Button for Firestop' (3D BIM design automation), 'Firestop Documentation Manager' (jobsite documentation/reports), CFS-CT products on NBS Source (BIM platform), CAD/BIM Typicals. This proprietary digital data infrastructure demonstrates fire stopping products CAN be structured digitally. Digital-ready manufacturers (Hilti, Promat) have significant advantage in DPP transition vs manufacturers without digital infrastructure.",
+      "source": "Hilti Firestop Design Center (https://www.hilti.com/content/hilti/W1/US/en/business/business/engineering/fire-protection.html); NBS Source CFS-CT (https://source.thenbs.com/product/cfs-ct-b-firestop-board/9DohpdSwQGrzP9BuPf9JNy/u2q9uKBReerPT4uroJAwNR)",
+      "action_required": "Document BIM/digital readiness in content. Note as positive DPP indicator for leading manufacturers.",
+      "status": "pending"
+    }
+  ]
+}

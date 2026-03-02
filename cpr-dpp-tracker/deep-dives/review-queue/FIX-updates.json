@@ -1,0 +1,73 @@
+{
+  "family": "FIX",
+  "review_date": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-FIX-001",
+      "type": "content_data_disagreement",
+      "severity": "medium",
+      "field": "standards_summary.source",
+      "current": "COM(2025) 772 + EOTA PA 33. 0 hENs + EADs for post-installed fasteners.",
+      "expected": "COM(2025) 772 + EOTA PA 33. 0 hENs + 34 EADs for post-installed fasteners.",
+      "description": "standards_summary.source text omits EAD count — should specify '34 EADs' for consistency with standards[] array.",
+      "action": "Update text to include EAD count"
+    },
+    {
+      "id": "iss-FIX-002",
+      "type": "empty_content",
+      "severity": "low",
+      "field": "content",
+      "description": "5 content sections empty: standards_landscape, standards_development, stakeholder_notes, key_risks, sources_summary.",
+      "action": "Populate in future content pass"
+    },
+    {
+      "id": "iss-FIX-003",
+      "type": "cross_family",
+      "severity": "info",
+      "field": "standards",
+      "description": "EAD 330031 (plastic anchors for ETICS) in FIX connects to ETICS kits in KAS (EAD 340001-340012). Product boundary correct but regulatory fates linked.",
+      "action": "Note for cross-family tracking"
+    },
+    {
+      "id": "iss-FIX-004",
+      "families": ["FIX", "ROC", "SMP", "CHI", "KAS", "CMG", "MAS", "FPP"],
+      "severity": "warning",
+      "type": "timeline_risk",
+      "title": "EAD transition bottleneck quantified: 400 EADs vs 25/yr publishing rate in 3-year window",
+      "description": "Trade press (Fastener + Fixing Magazine) quantifies the systemic EAD transition problem: ~400 EADs under current CPR, EOTA publishes 20-30/year, effective transition window is ~3 years (delegated acts ~2027, EADs invalid 2030). Math: 400÷25=16 years vs 3-year window. Industry warns of 'innovation freeze' lasting several years and potential return to national Member State assessments (market fragmentation). Affects all EAD-heavy families. EOTA's 12-month fast-track helps but cannot close the gap. CFE advocates rolling EAD updates instead of deadline-based transition.",
+      "action": "Document as systemic risk. Flag for all EAD-heavy families. Consider adding transition risk indicator to tracker."
+    },
+    {
+      "id": "iss-FIX-005",
+      "families": ["FIX"],
+      "severity": "info",
+      "type": "cross_regulatory",
+      "title": "CBAM + machine-readable EADs + c-PCRs for fixings",
+      "description": "Three new cross-regulatory developments: 1) CBAM applies to imported steel fasteners from Jan 2026 (embedded emissions reporting). 2) New CPR requires EADs in machine-readable format for BIM/DPP integration — new digital infrastructure investment needed. 3) Industry exploring complementary Product Category Rules (c-PCRs) to link fixings into LCA/EPD frameworks. Additionally, 5,500+ ETAs exist for construction fixings (largest ETA market), and EN 1992-4 (Eurocode 2 Part 4) creates direct design-code dependency on ETA performance data.",
+      "action": "Document in content. Cross-reference with SMP (iss-SMP-006) and RPS (iss-RPS-003) for CBAM consistency."
+    },
+    {
+      "id": "iss-FIX-006",
+      "families": ["FIX"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "Hilti leads fixing EPDs (~300 declarations) — Fischer and Würth have no EPDs found",
+      "description": "Hilti offers ~300 product declarations including fixing-specific EPDs: HDA undercut anchor (stainless steel, EN 15804+A2), HIT-RE 500 V3/V4 adhesive anchor (ÖKOBAUDAT registered), MT support systems (>80% weight coverage). EcoVadis gold, CO₂ neutral operations since 2023. However, Fischer and Würth — the 2nd and 3rd largest European fixing manufacturers — have no visible EPD programmes for construction fixings. Industry EPD readiness concentrated in market leader only.",
+      "source": "Hilti Green Building (https://www.hilti.group/content/hilti/CP/XX/en/company/health-safety-and-environment/products-and-technology/green-building.html); Hilti HIT-RE 500 V4 ÖKOBAUDAT (https://www.oekobaudat.de/OEKOBAU.DAT/resource/sources/8d63ef24-a533-4762-9ec1-24e16020934f/HIT-RE_500_V4_18984.pdf)",
+      "action_required": "Document EPD readiness gap in content. Note Hilti as DPP-ready exemplar for fixings.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-FIX-007",
+      "families": ["FIX"],
+      "severity": "info",
+      "type": "dpp_complexity",
+      "title": "Seismic performance categories C1/C2 are safety-critical DPP data fields",
+      "description": "European seismic qualification uses ETAG 001 Annex E categories: C1 (non-structural, strength) and C2 (structural, strength + deformation). Seismic data is part of ETA declarations, referenced by EN 1992-4 (Eurocode 2 Part 4). DPP must carry machine-readable seismic qualification to enable designer filtering. Using C1 where C2 is required = structural failure risk in earthquake zones. This is a safety-critical DPP data architecture requirement unique to fixings.",
+      "source": "ResearchGate C1/C2 paper (https://www.researchgate.net/publication/346828271_European_Seismic_Performance_Categories_C1_and_C2_for_Post-Installed_Anchors); EOTA ETAG 001 Annex E (https://www.eota.eu/sites/default/files/uploads/ETAGs/etag-001-annex-e-2013-04-08-2.pdf)",
+      "action_required": "Document seismic DPP data requirements in content. Flag as safety-critical DPP architecture concern.",
+      "status": "pending"
+    }
+  ]
+}

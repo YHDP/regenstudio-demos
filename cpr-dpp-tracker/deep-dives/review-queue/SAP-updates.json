@@ -1,0 +1,48 @@
+{
+  "family": "SAP",
+  "review_date": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-SAP-001",
+      "type": "empty_content",
+      "severity": "low",
+      "field": "content",
+      "description": "4 content sections empty: standards_landscape, standards_development, stakeholder_notes, key_risks, sources_summary.",
+      "action": "Populate in future content pass"
+    },
+    {
+      "id": "iss-SAP-002",
+      "families": ["SAP"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "Villeroy & Boch 14,000+ product EPDs, Duravit IBU-verified — surprisingly advanced DPP readiness",
+      "description": "Villeroy & Boch Group publishes EPDs for Villeroy & Boch, Ideal Standard, and Gustavsberg brands — over 14,000 products. Duravit holds IBU-verified EPDs for sanitary ceramic and sanitary acrylic. EPDs cover washbasins, bidets, urinals, toilets, shower trays, cisterns — matching EN 997/EN 14688 scope exactly. EPD coverage among major European manufacturers is strong, comparable to fibre-cement (WCF) and flat glass (GLA) as DPP-ready exemplars.",
+      "source": "Villeroy & Boch (https://pro.villeroy-boch.com/en/gb/bathroom-and-wellness/service/laws-and-regulations/sustainability-at-villeroy-boch); Duravit EPD (https://wgassets.duravit.com/statc/download/EPD_Sanitary_ceramic_EN.pdf)",
+      "action_required": "Document EPD readiness in content. Note as DPP-ready exemplar despite late timeline.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-SAP-003",
+      "families": ["SAP"],
+      "severity": "info",
+      "type": "cross_regulatory",
+      "title": "European Water Label (90+ brands) may influence CPR water efficiency requirements — DPP data ready",
+      "description": "European Water Label voluntary scheme (UK 2007, CEIR 2012, FECS ceramics 2014) supported by 90+ European brands. Covers baths, WC suites, cisterns, taps, showers, flow regulators. Not yet mandatory under CPR, but water efficiency flagged as potential new essential characteristic. Water consumption data (litres/flush, litres/minute) could become mandatory DPP declaration. The existing Water Label database infrastructure could transition to DPP format.",
+      "source": "European Water Label (http://www.europeanwaterlabel.eu/schemepartners.asp); CEIR (https://www.ceir.eu/en/what-we-do/water-saving)",
+      "action_required": "Document water efficiency as potential future CPR characteristic in content.key_risks.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-SAP-004",
+      "families": ["SAP"],
+      "severity": "info",
+      "type": "market_context",
+      "title": "European sanitary ware $11.3B (2024) — latest DPP timeline, AVCP System 4, ceramic-dominated",
+      "description": "European sanitary ware market $11.31B (2024), projected $16.98B by 2032 (CAGR 5.2%). European ceramic sanitary ware $10.70B (2023). WC segment 28.7%. Germany leads. Key players: Roca, Villeroy & Boch, Geberit, Duravit, TOTO. SAP shares latest DPP timeline (~2033-2034) with PTA. AVCP System 4 (manufacturer self-declaration). Material diversity manageable: ceramic dominant, acrylic secondary.",
+      "source": "Data Bridge (https://www.databridgemarketresearch.com/reports/europe-sanitary-ware-market); Expert Market Research (https://www.expertmarketresearch.com/reports/europe-sanitary-ware-market)",
+      "action_required": "Include market context and DPP timeline position in content.",
+      "status": "pending"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "family": "TIP",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-TIP-001",
+      "families": ["TIP"],
+      "severity": "warning",
+      "type": "content_data_disagreement",
+      "title": "content.standards_landscape says '13 hENs' but standards[] has 12",
+      "description": "content.standards_landscape states '13 hENs for factory-made products: EN 13162–13171 series (one per insulation type) plus EN 14063-1, EN 16069, and EN 16977' which totals 13 (10+3). However standards[] contains only 12 hENs, and standards_summary says '12 hENs + 18 EADs'. Either one hEN is missing from standards[] or the content narrative is incorrect.",
+      "action_required": "Cross-reference the list of 13 hENs from content against standards[] to identify the missing or extra standard. Update whichever is incorrect.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-TIP-002",
+      "families": ["TIP"],
+      "severity": "info",
+      "type": "new_ead",
+      "title": "EAD 042461 (green roof mineral wool) published May 2025 — not in standards[]",
+      "description": "EAD 042461-00-1201 (hydrophilic thermal insulation product made of mineral wool for water retention in green roofs and similar applications) was published by EOTA in May 2025. This EAD is NOT in the TIP standards[] array. If confirmed as belonging to PA 04, ead_count should be updated to 19 and total to 31.",
+      "action_required": "Verify if EAD 042461 belongs in TIP. If yes, add to standards[] and update counts.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-TIP-003",
+      "families": ["TIP"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "Three content sections empty",
+      "description": "content.standards_development, content.key_risks, and content.sources_summary are empty.",
+      "action_required": "Populate with proposed content from deep-dive report §8.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-TIP-004",
+      "families": ["TIP"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "Knauf, Rockwool, EUMEPS all publish EN 15804+A2 EPDs — strong infrastructure for mineral wool + EPS",
+      "description": "Knauf Insulation publishes comprehensive EN 15804+A2 EPDs for glass and rock mineral wool (multiple λ ranges). Rockwool publishes EN 15804+A2 EPDs. EUMEPS publishes industry-wide sector EPDs for EPS insulation (updated 2024, multiple densities, IBU-verified). EUMEPS actively participating in c-PCR EPD revision for thermal insulation. Sector EPD approach enables SME EPS producers to declare DPP environmental data. XPS, PUR/PIR, phenolic foam EPD coverage less visible. Mineral wool (55% of EU market) and EPS (~25%) are well-covered; other materials lag.",
+      "source": "Knauf Rock Mineral Wool EPDs (https://www.knaufinsulation.com/downloads/environmental-product-declarations-epd/rock-mineral-wool-rmw); EUMEPS EPD 2024 (https://eumeps.eu/eumeps-newsroom-sie/publications/environmental-product-declaration-for-eps-insulation-2024); EUMEPS c-PCR (https://www.eumeps.eu/eumeps-newsroom-sie/news/collaboration-in-standardisation-navigating-the-c-pcr-epd-revision-for-thermal-insulation)",
+      "action_required": "Document EPD infrastructure by material type in content. Note EUMEPS sector EPD as DPP-ready model.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-TIP-005",
+      "families": ["TIP"],
+      "severity": "warning",
+      "type": "circular_economy",
+      "title": "Majority of insulation waste landfilled — EPS ETICS waste to triple by 2050, France EPR leading",
+      "description": "Currently majority of insulation C&D waste is landfilled (up to €400/tonne). EPS waste from ETICS expected to almost double by 2030 and triple by 2050 as post-1970s insulated buildings reach end-of-life. Knauf RESULATION project converts mineral wool waste into secondary raw materials. France Anti-Waste Law introduces EPR for building materials. Austria plans insulation landfill ban from 2027. LIFE ReWo project (EU-funded) recycling mineral wool into high-value products. For DPP: end-of-life recyclability data and recycled content declarations will be critical.",
+      "source": "Eurima circular economy (https://www.eurima.org/circular-economy); Knauf RESULATION (https://www.resulation.eu/en); LIFE ReWo (https://webgate.ec.europa.eu/life/publicWebsite/project/LIFE22-ENV-IT-LIFE-ReWo-101113855/recycling-mineral-wool-waste-into-high-value-products)",
+      "action_required": "Document insulation waste challenge in content.key_risks. Flag France EPR and Austria landfill ban as DPP-relevant regulatory developments.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-TIP-006",
+      "families": ["TIP"],
+      "severity": "info",
+      "type": "market_context",
+      "title": "European insulation $21B (2024), CAGR 6.32% — EPBD renovation wave targeting 35M buildings by 2030",
+      "description": "European insulation market $21.03B (2024), projected to $36.52B by 2033 (CAGR 6.32%). Building thermal insulation specifically $10.11B (2024). EPBD renovation wave targeting ~35 million buildings by 2030, nearly doubling current annual rate. Market fragmentation: mineral wool 55%, EPS ~25%, XPS/PUR/PIR ~20%. TIP among largest CPR families by value. DPP must accommodate fundamentally different material types within one family — similar challenge to FLO.",
+      "source": "Market Data Forecast (https://www.marketdataforecast.com/market-reports/europe-insulation-market); Market Data Forecast Thermal (https://www.marketdataforecast.com/market-reports/europe-building-thermal-insulation-market)",
+      "action_required": "Include market scale and EPBD renovation wave coupling in content.",
+      "status": "pending"
+    }
+  ]
+}

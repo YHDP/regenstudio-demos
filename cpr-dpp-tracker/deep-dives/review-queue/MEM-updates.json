@@ -1,0 +1,50 @@
+{
+  "family": "MEM",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-MEM-001",
+      "families": ["MEM"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "Five content sections empty",
+      "description": "content.standards_landscape, content.standards_development, content.stakeholder_notes, content.key_risks, and content.sources_summary are empty.",
+      "action_required": "Populate with proposed content from deep-dive report \u00a78.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-MEM-002",
+      "families": ["MEM"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "Market leaders publish EN 15804 EPDs, prEN 17388-2 membrane-specific PCR under development",
+      "description": "Sika (SikaProof, Sikaplan), BMI Group (Icopal), Bauder (RBM systems), and Soprema all publish EN 15804+A2 EPDs for waterproofing membranes. prEN 17388-2 'Flexible sheets for waterproofing — Environmental product declarations — Product Category Rules' is under development at CEN/TC 254 — this membrane-specific PCR would harmonise EPD methodology across bitumen and synthetic sheets, directly supporting DPP environmental data generation. SME manufacturers likely lack EPD infrastructure. For DPP: EPD readiness among market leaders is relatively strong for a late-timeline family, but the PCR is needed to ensure comparability across material types.",
+      "source": "Bauder RBM EPD (https://www.bauder.co.uk/getmedia/37161530-7cc6-4472-aef0-5c729ce4f398/Environmental-Product-Declaration-RBM.pdf); Soprema EPD Guide (https://epd.guide/manufacturers/soprema-at-a-glance-products-and-epd-coverage); BAU-EPD PCR (https://www.bau-epd.at/en/pcr/list/cen-tc-standards-european-specific-product-category-rules-for-construction-products)",
+      "action_required": "Document EPD readiness and prEN 17388-2 PCR development in content. Flag as DPP-ready among leaders.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-MEM-003",
+      "families": ["MEM"],
+      "severity": "info",
+      "type": "circular_economy",
+      "title": "PVC recycling via ROOFCOLLECT, EPDM recycled, but bitumen membranes mostly landfilled",
+      "description": "ROOFCOLLECT (ESWA programme) coordinates recovery and recycling of post-consumer PVC roofing membranes across Europe. VinylPlus recycled ~1M tonnes PVC annually. EPDM recycled into rubber crumb for tires, pavers, playgrounds. Recycled content in new PVC membranes limited to ~5%. Bitumen membranes are the most challenging to recycle — most end up in landfill or energy recovery. For DPP: circular economy data will vary dramatically by membrane material within this single family — PVC has established collection infrastructure, bitumen has almost none.",
+      "source": "ROOFCOLLECT/ESWA; VinylPlus annual reports",
+      "action_required": "Document material-dependent recycling gap in content. Flag bitumen end-of-life as DPP circular economy challenge.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-MEM-004",
+      "families": ["MEM"],
+      "severity": "info",
+      "type": "market_context",
+      "title": "European waterproofing membrane market $4.6B (2024) — bitumen dominant but PVC/TPO gaining, material split creates DPP complexity",
+      "description": "European waterproofing membrane market $4.6B (2024), growing at 4.1–5.9% CAGR. Global market projected beyond $14.5B by 2032. Bitumen sheets remain dominant in continental Europe but PVC and TPO single-ply membranes gaining share (lighter weight, faster installation, cool roof properties). EPDM holds niche position. Key manufacturers: Sika, BMI Group, Soprema, IKO, Bauder. Below-grade waterproofing growing segment driven by EU infrastructure investment ($95.5B+ EIB urban regeneration). National regulatory fragmentation (e.g., DIN 18533 vs EN 13967) adds complexity for DPP declared performance.",
+      "source": "GMInsights (https://www.gminsights.com/pressrelease/waterproofing-membrane-market); ScienceDirect (https://www.sciencedirect.com/science/article/pii/S0950061821015117)",
+      "action_required": "Include market context and material split DPP implications in content.",
+      "status": "pending"
+    }
+  ]
+}

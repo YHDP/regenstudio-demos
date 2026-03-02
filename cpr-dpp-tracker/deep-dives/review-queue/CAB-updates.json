@@ -1,0 +1,49 @@
+{
+  "family": "CAB",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-CAB-001",
+      "family": "CAB",
+      "severity": "info",
+      "type": "empty_content",
+      "title": "4 content sections empty",
+      "description": "standards_landscape, standards_development, stakeholder_notes, key_risks, sources_summary are all empty.",
+      "action": "Populate with proposed content from deep-dive report."
+    },
+    {
+      "id": "iss-CAB-002",
+      "families": ["CAB"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "Prysmian and Nexans publish EN 15804+A2 EPDs — cable copper 100% recyclable, PCR NPCR 027 exists",
+      "description": "Prysmian publishes EN 15804+A2 EPDs for cable products (PCR NPCR 027.2022). Nexans produces EPDs per EN 15804+A2 (PCR ed4). Copper is 100% recyclable with no quality loss. PVC recycled with 90% primary energy savings vs virgin. XLPE chemical recycling emerging (Borealis Borcycle™ C). VinylPlus/PVC4Cables and RecyCâbles coordinate cable recovery across Europe. For DPP: market leaders have EPD infrastructure but hundreds of SME cable manufacturers likely lack EPD coverage. Cable-specific PCR exists, which is positive for DPP data standardisation.",
+      "source": "Prysmian EPD (https://northeurope.prysmian.com/sustainability/products-services/epd); Nexans EPD (https://www.nexans.no/en/sustainability/Miljo/PEP.html); PVC4Cables (https://pvc4cables.org/sustainability/circular-economy/)",
+      "action_required": "Document EPD readiness and cable recycling infrastructure in content.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CAB-003",
+      "families": ["CAB"],
+      "severity": "warning",
+      "type": "cross_regulatory",
+      "title": "REACH lead restriction on PVC cables (Nov 2024) and PFAS proposal — EN 50575 scope expansion likely most significant for any single-hEN family",
+      "description": "REACH lead restriction on PVC articles effective Nov 29, 2024 directly affects PVC-insulated cables. ECHA PFAS restriction proposal could impact fluoropolymer cable insulation (PTFE, FEP, ETFE). PVC cables release up to 30% HCl when burned (driving LSZH adoption). Ireland mandates LSZH; Netherlands, Germany, Greece, Switzerland require LSZH in high-risk environments. Current EN 50575 covers reaction to fire only — dangerous substances dimension conspicuously absent. SReq scope expansion to include dangerous substances, durability, and recyclability would represent one of the most significant expansions for any single-hEN family.",
+      "source": "SGS EU lead in PVC (https://www.sgs.com/en-us/news/2023/05/safeguards-5523-eu-restricts-lead-in-pvc-articles-under-reach); UL PFAS (https://www.ul.com/news/eu-sets-pfas-restrictions-consumer-products); Europacable (https://cpr.europacable.eu/en/faq)",
+      "action_required": "Document dangerous substances regulatory convergence in content.key_risks. Flag as critical SReq scope expansion risk.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CAB-004",
+      "families": ["CAB"],
+      "severity": "info",
+      "type": "market_context",
+      "title": "European wire/cable market $36–63B (2024) — construction cables a subset, growth driven by electrification and renewables",
+      "description": "European wire and cable market $36.3–63.3B (2024, scope varies), CAGR 5.2–7.2%. Construction building cables (EN 50575 scope) are a subset of the broader market. Growth drivers: renewable energy, EV charging infrastructure, smart grid modernisation, EPBD building electrification. Key manufacturers: Prysmian (world's largest), Nexans, NKT, Leoni. Cable recycling well-established — copper 100% recyclable, PVC recovery programmes, XLPE chemical recycling emerging. CENELEC (not CEN) is the standardisation body — unique among CPR families.",
+      "source": "GMInsights (https://www.gminsights.com/industry-analysis/europe-wire-and-cable-market); Mordor Intelligence (https://www.mordorintelligence.com/industry-reports/europe-wire-and-cable-market)",
+      "action_required": "Include market context and CENELEC uniqueness in content.",
+      "status": "pending"
+    }
+  ]
+}

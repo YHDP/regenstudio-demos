@@ -1,0 +1,70 @@
+{
+  "family": "GLA",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-GLA-001",
+      "families": ["GLA"],
+      "severity": "warning",
+      "type": "stale_sreq",
+      "title": "SReq targeted Q1 2026 but no Art. 12 notification found",
+      "description": "The GLA SReq was targeted for Q1 2026 per COM(2025) 772 Table 3. As of 1 Mar 2026, no public Art. 12 notification or formal adoption has been found. Either the SReq is imminent, slightly delayed, or was filed without public visibility. Glass for Europe confirms it is planned for 2026.",
+      "action_required": "Monitor weekly for SReq notification. When confirmed, update NT-4 status and add detail/date fields.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-GLA-002",
+      "families": ["GLA"],
+      "severity": "info",
+      "type": "new_ead_citation",
+      "title": "Implementing Decision 2025/871 — new EAD for PET foils in insulating glass units",
+      "description": "Commission Implementing Decision 2025/871 (30 Apr 2025) amended Implementing Decision 2019/450 to add EAD citations for 'polyethylene terephthalate-based foils with coating for insulating glass units'. This may represent a new EAD that should be added to GLA's standards[] array.",
+      "action_required": "Identify the specific EAD number from 2025/871 and check if it belongs in GLA standards[].",
+      "status": "pending"
+    },
+    {
+      "id": "iss-GLA-003",
+      "families": ["GLA"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "Three content sections empty",
+      "description": "content.standards_development, content.key_risks, and content.sources_summary are empty.",
+      "action_required": "Populate with proposed content from deep-dive report §8.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-GLA-004",
+      "families": ["GLA"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "AGC EPD Generator + Big-4 EPD programmes — GLA among most DPP-ready families",
+      "description": "AGC Glass Europe EPD Generator (end 2024) provides product-specific, third-party verified EPDs with 30+ environmental indicators per EN 15804+A2 and EN 17074, integrated into Glass Configurator. Guardian Glass, Glas Trösch, Tvitec also publish EPDs. All Big-4 (Saint-Gobain, AGC, NSG, Guardian) have EPD programmes. Consolidated industry structure (4 companies dominate) means DPP implementation reaches majority of market. EN 17074 c-PCR is most advanced product-specific PCR in CPR. GLA is among the most DPP-ready families.",
+      "source": "AGC EPD Generator (https://www.agc-glass.eu/en/news/press-release/agc-environmental-product-declaration-epd-generator-now-available); AGC Configurator (https://www.agc-yourglass.com/configurator/en/epd); Guardian EPDs (https://www.guardianglass.com/us/en/tools-and-resources/product-certifications/product-declarations)",
+      "action_required": "Document DPP readiness in content. Note AGC EPD Generator as best-in-class DPP-ready tool.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-GLA-005",
+      "families": ["GLA"],
+      "severity": "warning",
+      "type": "circular_economy",
+      "title": "Only 5% of C&D flat glass recycled, 80%+ landfilled — DPP recycled content data gap",
+      "description": "Only 5% of flat glass from construction and demolition is recycled; 80%+ ends in landfills. Average cullet share in new flat glass: 26% (up from 20% in 2010). Target: 40% if all end-of-life glazing recycled flat-to-flat. Each 10% cullet increase saves 2.5% energy, avoids 0.7t CO₂/t cullet. Key barrier: no EU obligation to dismantle and sort windows from buildings. Glass for Europe advocates closed-loop flat-to-flat recycling. McKinsey identifies circularity as key to flat glass decarbonisation. DPP recycled content data infrastructure underdeveloped.",
+      "source": "Glass for Europe Circular Economy (https://glassforeurope.com/circular-economy/); AGC Recycling (https://www.agc-glass.eu/en/sustainability/decarbonisation/recycling); McKinsey (https://www.mckinsey.com/industries/metals-and-mining/our-insights/seeing-clearly-decarbonizing-the-flat-glass-industry-with-circularity); EuRIC (https://euric.org/resource-hub/position-papers/joint-position-paper-from-flat-to-circular-rethinking-glass-in-construction)",
+      "action_required": "Document circular economy gap in content.key_risks. Flag DPP recycled content data as underdeveloped.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-GLA-006",
+      "families": ["GLA"],
+      "severity": "info",
+      "type": "cross_regulatory",
+      "title": "EPBD transparent building elements guidance (June 2025) — U-value + g-value required",
+      "description": "EC adopted EPBD guidance (30 June 2025) on transparent building elements encouraging Member States to require both U-value AND g-value (solar factor), whereas current requirements are 'almost entirely based on U-value.' EPBD implementation deadline: 29 May 2026. DPP data for insulating glass must carry both thermal and solar performance aligned with EPBD national calculation methodologies. GLA is one of few families at direct CPR/EPBD intersection.",
+      "source": "Glass for Europe EPBD guidance (https://glassforeurope.com/the-european-commission-releases-the-epbd-guidance-on-the-energy-calculation-of-transparent-building-elements/); EC EPBD (https://energy.ec.europa.eu/topics/energy-efficiency/energy-performance-buildings/energy-performance-buildings-directive_en)",
+      "action_required": "Document EPBD cross-regulatory dimension in content. Ensure DPP data model includes both U-value and g-value.",
+      "status": "pending"
+    }
+  ]
+}

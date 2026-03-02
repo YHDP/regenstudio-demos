@@ -1,0 +1,60 @@
+{
+  "family": "PCR",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-PCR-001",
+      "families": ["PCR"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "Three content sections empty",
+      "description": "content.stakeholder_notes, content.key_risks, and content.sources_summary are all empty strings. While not incorrect, populating these would improve completeness.",
+      "action_required": "Low priority. Consider adding stakeholder engagement notes (CEN/TC 229), key risks (SReq adoption delay, EN 13369 non-harmonised status), and sources summary.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-PCR-002",
+      "families": ["PCR"],
+      "severity": "warning",
+      "type": "stale_sreq",
+      "title": "SReq feedback deadline 3 Mar 2026 — monitor for adoption",
+      "description": "The draft SReq for precast concrete products (CPR 305/2011) has a feedback deadline of 3 Mar 2026. As of this deep-dive (1 Mar 2026), no adoption announcement has been found. When adopted, multiple fields need updating: sreq → 'Adopted', milestones.sreq.status → 'adopted', Pipeline B NT-4 status → 'complete'.",
+      "source": "EC Notification System — Art. 12",
+      "action_required": "Monitor weekly after 3 Mar 2026. When adoption is confirmed, apply coordinated update to sreq, milestones.sreq, and Pipeline B NT-4.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-PCR-003",
+      "families": ["PCR"],
+      "severity": "info",
+      "type": "regulatory_development",
+      "title": "GWP declaration mandatory from Jan 2026 for EN 1520 and EN 12602",
+      "description": "Under new CPR 2024/3110, GWP declarations became mandatory from 8 January 2026 for products covered by existing OJ-cited harmonised standards. EN 1520:2011 and EN 12602:2016 are both OJ-cited under M/100, making precast concrete manufacturers among the first affected. Creates early compliance burden before full DPP system operational. Strong EPD infrastructure (EN 15804) eases transition.",
+      "action_required": "Document in content.key_risks. Consider noting GWP obligation in dpp_outlook.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-PCR-004",
+      "families": ["PCR"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "GCCA Low Carbon Ratings for concrete (incl. precast) launched Apr 2025",
+      "description": "GCCA Global Ratings for Concrete: 7-band AA-G classification based on GWP (kg CO₂e/m³) cross-referenced with strength (MPa). Precast explicitly included in scope. Band E = global reference (e.g., 255 kg CO₂e/m³ for 20 MPa). Uses EN 15804+A2. UK adaptation published Feb 2025. Provides voluntary carbon class overlay alongside mandatory CPR GWP disclosure in DoPC.",
+      "source": "GCCA Concrete Ratings (https://gccassociation.org/lcr-concrete/); GCCA Definitions PDF (https://gccassociation.org/wp-content/uploads/2025/07/GCCA_Concrete_Definitions_for_Low_Carbon_and_NearZeroPolicy_Digital.pdf)",
+      "action_required": "Document in content. Note GCCA LCR as market classification overlay for CPR GWP disclosure.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-PCR-005",
+      "families": ["PCR"],
+      "severity": "info",
+      "type": "circular_economy",
+      "title": "ReCreate project: EPDs for reused precast concrete components — 93-98% carbon savings",
+      "description": "ReCreate (H2020, grant 958200) demonstrates deconstruction and reuse of intact precast components from condemned buildings. Developing EPDs for reused precast concrete. Reuse achieves 93-98% energy/carbon reduction vs virgin production. DPP could carry original Declaration of Performance data through reuse cycles — precast components have known performance from original DoP.",
+      "source": "ReCreate project (https://recreate-project.eu/); CORDIS 958200 (https://cordis.europa.eu/project/id/958200)",
+      "action_required": "Document in content. Consider DPP lifecycle data model implications for precast reuse.",
+      "status": "pending"
+    }
+  ]
+}

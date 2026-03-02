@@ -1,0 +1,60 @@
+{
+  "family": "CMG",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-CMG-001",
+      "families": ["CMG", "MAS"],
+      "severity": "warning",
+      "type": "cross_family",
+      "title": "EN 998-1 and EN 998-2 cross-listed with MAS — data inconsistencies",
+      "description": "EN 998-1 appears in both CMG and MAS with inconsistent data. AVCP: CMG records '2+, 4' while MAS records '4'. Name: CMG says 'Specification for mortar for masonry' while MAS says 'Mortar for masonry'. DPP estimates also differ (~2032–2033 vs ~2031–2032). EN 998-2 has matching AVCP but different DPP estimates. The correct AVCP for EN 998-1 is '2+, 4' per Commission Decision 97/555/EC (System 2+ for designed mortars, System 4 for prescribed). MAS data likely has an error.",
+      "action_required": "Reconcile EN 998-1 and EN 998-2 data across CMG and MAS. Verify AVCP against Commission Decision 97/555/EC. Align name format. DPP estimates may legitimately differ per family timeline.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CMG-002",
+      "families": ["CMG"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "Five content sections empty",
+      "description": "content.standards_landscape, content.standards_development, content.sreq_analysis, content.key_risks, and content.sources_summary are empty.",
+      "action_required": "Populate with proposed content from deep-dive report §8.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CMG-003",
+      "families": ["CMG"],
+      "severity": "warning",
+      "type": "regulatory_development",
+      "title": "EN 206-1:2026 ratified — potential CPR scope expansion to ready-mixed concrete",
+      "description": "EN 206-1:2026 was ratified by CEN/TC 104 (DOR 19 January 2026). EN 206 is currently a specification standard, NOT harmonised under CPR. If the future CMG SReq (targeted Q4 2026) brings EN 206 into CPR scope, it would be transformational: the ready-mixed concrete market (~€80B+ annually in Europe) would require CE marking and ultimately DPP compliance. This is the single largest potential scope expansion in the entire CPR DPP programme.",
+      "source": "Genorma EN 206-1:2026 (https://genorma.com/en/standards/en-206-1-2026)",
+      "action_required": "Monitor CMG SReq scope decisions closely. If EN 206 is included, DPP range and market impact estimates need major revision.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CMG-004",
+      "families": ["CMG"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "Split EPD readiness: admixtures excellent (EFCA since 2005), EN 1504 repair products lack EPDs",
+      "description": "EFCA has published admixture EPDs since 2005 (EN 15804 + ISO 14025), covering plasticisers, superplasticisers, accelerators, retarders, air entrainers, waterproofers. Sika EPDs since 2012, Master Builders Solutions EPDs including 50% lower-carbon grout. However, EN 1504 concrete repair/protection products (19 EADs in CMG) appear to lack EPDs. Split readiness within the family: admixtures are DPP-ready, repair products are not.",
+      "source": "EFCA EPDs (https://www.efca.info/admixtures/environmental-and-sustainability-aspects/environmental-product-declarations-epd/); Sika LCA (https://gbr.sika.com/en/sustainability/sustainable-solutions/lca-and-epd-s.html)",
+      "action_required": "Document split readiness in content. Note EFCA as DPP-ready exemplar for construction chemicals.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CMG-005",
+      "families": ["CMG", "CEM", "PCR", "MAS"],
+      "severity": "info",
+      "type": "cross_family",
+      "title": "Concrete Europe (BIBM+CEMBUREAU+EFCA+ERMCO) coordinates across CEM, CMG, PCR, MAS",
+      "description": "Four European concrete sector associations formed 'Concrete Europe' as coordinated umbrella: BIBM (precast/PCR), CEMBUREAU (cement/CEM), EFCA (admixtures/CMG), ERMCO (ready-mixed/CMG). The concrete value chain spans 4 CPR families. DPP data architecture should align across the chain: cement GWP → admixture GWP → concrete mix GWP → precast product GWP. Sika already has LCA tools linking component EPD data into concrete mix design GWP.",
+      "source": "Concrete Europe (https://www.theconcreteinitiative.eu/about-us); ERMCO (https://ermco.eu/)",
+      "action_required": "Ensure DPP data model consistency across CEM, CMG, PCR, MAS families. Reference Concrete Europe coordination.",
+      "status": "pending"
+    }
+  ]
+}

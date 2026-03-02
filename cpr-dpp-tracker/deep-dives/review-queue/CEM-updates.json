@@ -1,0 +1,190 @@
+{
+  "family": "CEM",
+  "generated": "2026-03-01",
+  "dataUpdates": [
+    {
+      "id": "upd-CEM-001",
+      "family": "CEM",
+      "action": "set",
+      "field": "content.key_risks",
+      "current_value": "",
+      "proposed_value": "(1) Standards development bottleneck: Only EN 197-1 has a registered prEN (stage 10.99, Jul 2025). The remaining 8 product standards (EN 413-1, EN 459-1, EN 15368, EN 14216, EN 14647, EN 15743, EN 13282, EN 16908) have SReq delivery deadlines in 2027\u20132028 but no prEN registrations yet. CEN first annual report (due Jun 2026) will clarify progress. (2) Alkali-activated cements: CEN/TC 51 refused to develop standards; downgraded to Technical Report in C(2025) 4828. Performance-based standard requested for delivery by 2030 but uncertain. (3) EAD sunset risk: EAD 150080-00-0301 (blended cements) valid only until 9 Jan 2031 under old CPR. New-regime EAD needed for continued ETA route. EOTA mandate by 2027 signaled but not yet formalised. (4) Clean Industrial Deal: Mandatory cement carbon label (GWP disclosure in DoP) planned when new standards become mandatory, adding compliance complexity.",
+      "reason": "key_risks field was empty. Deep-dive research identified four material risks for CEM family: standards development bottleneck, alkali-activated cement refusal, EAD sunset, and CID carbon label.",
+      "source": "Deep-dive analysis of SReq C(2025) 4828, genorma.com (prEN 197-1 stage), joint letter May 2025, Ecocem press Dec 2025, CEMBUREAU CID references",
+      "source_url": "https://ec.europa.eu/transparency/documents-register/api/files/C(2025)4828_0/de00000001073540?rendition=false",
+      "confidence": "high",
+      "status": "pending"
+    },
+    {
+      "id": "upd-CEM-002",
+      "family": "CEM",
+      "action": "set",
+      "field": "content.sources_summary",
+      "current_value": "",
+      "proposed_value": "CPR 2024/3110 [S1]; SReq C(2025) 4828 [S11]; CPR Working Plan COM(2025) 772 [S30]; nlfnorm.cz hEN database [S143]; EOTA EAD database [S144]. EAD 150080 OJ citation: industry press (Ecocem, CemNet) Dec 2025. prEN 197-1 stage: genorma.com. Joint letter on alkali-activated cements: ecostandard.org May 2025.",
+      "reason": "sources_summary field was empty. Compiled key source references from tracker data and deep-dive research.",
+      "source": "Deep-dive compilation",
+      "source_url": "",
+      "confidence": "high",
+      "status": "pending"
+    },
+    {
+      "id": "upd-CEM-003",
+      "family": "CEM",
+      "action": "set",
+      "field": "pipelines.A.nodes[3].detail",
+      "current_value": "Adopted Jul 2025",
+      "proposed_value": "Adopted 28 Jul 2025. C(2025) 4828 replaces M/114. SReq expires 30 Jun 2030. First CEN annual report due 30 Jun 2026.",
+      "reason": "NT-4 SReq node detail lacked expiry date and reporting deadline. These are useful for monitoring SReq lifecycle.",
+      "source": "C(2025) 4828 document text",
+      "source_url": "https://ec.europa.eu/transparency/documents-register/api/files/C(2025)4828_0/de00000001073540?rendition=false",
+      "confidence": "high",
+      "status": "pending"
+    },
+    {
+      "id": "upd-CEM-004",
+      "family": "CEM",
+      "action": "set",
+      "field": "updated",
+      "current_value": "2026-02-22",
+      "proposed_value": "2026-03-01",
+      "reason": "Deep-dive review completed. Timestamp update to reflect review date.",
+      "source": "Deep-dive protocol",
+      "source_url": "",
+      "confidence": "high",
+      "status": "pending"
+    }
+  ],
+  "structuralIssues": [
+    {
+      "id": "iss-CEM-001",
+      "families": ["CEM"],
+      "severity": "warning",
+      "type": "empty_content",
+      "title": "key_risks field is empty despite identifiable risks",
+      "description": "CEM has at least four material risks: (1) only 1 of 9 product standards has a registered prEN (EN 197-1 at stage 10.99), (2) CEN/TC 51 refused to develop alkali-activated cement standards, (3) EAD 150080 sunset risk (expires 9 Jan 2031) with no new-regime EAD mandate formalised, (4) Clean Industrial Deal mandatory carbon label adds complexity.",
+      "source": "Deep-dive analysis",
+      "source_url": "",
+      "action_required": "Approve upd-CEM-001 to populate key_risks field.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CEM-002",
+      "families": ["CEM"],
+      "severity": "warning",
+      "type": "empty_content",
+      "title": "sources_summary field is empty",
+      "description": "CEM family has extensive source references across pipeline nodes and standards but no compiled sources_summary in the content section.",
+      "source": "Deep-dive analysis",
+      "source_url": "",
+      "action_required": "Approve upd-CEM-002 to populate sources_summary field.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CEM-003",
+      "families": ["CEM"],
+      "severity": "info",
+      "type": "content_data_disagreement",
+      "title": "TC field may be incomplete -- CEN/TC 459 not listed",
+      "description": "The tc field shows only 'CEN/TC 51' but building lime standards (EN 459-1) have historically been developed under CEN/TC 459. The SReq C(2025) 4828 may assign all work to CEN/TC 51, but this should be verified. The task description and family context reference both CEN/TC 51 and CEN/TC 459.",
+      "source": "Deep-dive analysis vs task brief",
+      "source_url": "",
+      "action_required": "Verify against SReq C(2025) 4828 text whether CEN/TC 459 is addressed separately or subsumed under CEN/TC 51. If both are involved, update tc field to 'CEN/TC 51, CEN/TC 459'.",
+      "status": "resolved",
+      "resolution": "CEN/TC 459 is ECISS (iron/steel), not building limes. CEN/TC 51 full title is 'Cement and building limes' — covers both. tc field correct as-is."
+    },
+    {
+      "id": "iss-CEM-004",
+      "families": ["CEM"],
+      "severity": "info",
+      "type": "missing_source",
+      "title": "EAD 150080 OJ citation vehicle not confirmed",
+      "description": "Industry sources (Ecocem, CemNet, World Cement, S&P Global) all report EAD 150080-00-0301 was cited in OJEU in December 2025. The tracker records cited: true. However, the exact implementing decision could not be definitively confirmed from EUR-Lex searches. Implementing Decision 2025/2623 (16 Dec 2025) was checked but contains only 9 non-cement EADs. The citation may have been via a separate C-series OJ communication or Implementing Decision 2025/2355 (13 Nov 2025).",
+      "source": "EUR-Lex search + industry press",
+      "source_url": "https://www.ecocemglobal.com/new-european-assessment-document-is-a-significant-step-forward-for-ecocems-breakthrough-act-technology/",
+      "action_required": "When accessing EUR-Lex consolidated text of 2019/450, verify which implementing decision added EAD 150080-00-0301 and add the reference to the EAD notes field.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CEM-005",
+      "families": ["CEM"],
+      "severity": "info",
+      "type": "stale_sreq",
+      "title": "SReq expiry and reporting dates not captured in tracker",
+      "description": "C(2025) 4828 expires 30 Jun 2030. CEN must submit first annual report by 30 Jun 2026 and final report by 30 Jun 2030. These lifecycle dates are not reflected in milestones or SReq detail fields. The first annual report (Jun 2026) is an important upcoming data point for tracking CEM standards development progress.",
+      "source": "C(2025) 4828 document text",
+      "source_url": "https://ec.europa.eu/transparency/documents-register/api/files/C(2025)4828_0/de00000001073540?rendition=false",
+      "action_required": "Consider adding SReq expiry date and annual report deadline to milestones or NT-4 detail. Approve upd-CEM-003 for partial fix.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CEM-006",
+      "families": ["CEM"],
+      "severity": "info",
+      "type": "missing_source",
+      "title": "Clean Industrial Deal cement carbon label not reflected in content",
+      "description": "The Clean Industrial Deal proposes a mandatory cement carbon label (GWP disclosure in Declaration of Performance) when new cement standards become mandatory. This is referenced by CEMBUREAU, COM(2025) 772, and CemNet. It is not mentioned in the tracker's content sections (regulatory_landscape, stakeholder_notes). It could affect the DPP data requirements timeline.",
+      "source": "CEMBUREAU policy page, CemNet reports, COM(2025) 772",
+      "source_url": "https://www.cembureau.eu/policy-focus/sustainable-construction/construction-products-regulation/",
+      "action_required": "Consider adding CID carbon label reference to content.stakeholder_notes or content.key_risks. Partially addressed by upd-CEM-001.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CEM-007",
+      "families": ["CEM"],
+      "severity": "info",
+      "type": "content_data_disagreement",
+      "title": "EN 459-1 tc_wg field says CEN/TC 51 but building limes traditionally under CEN/TC 459",
+      "description": "The standards[] entry for EN 459-1 lists tc_wg as 'CEN/TC 51'. Building limes have historically been standardised under CEN/TC 459 (Limes). The SReq C(2025) 4828 was addressed to CEN for standardisation work, and CEN/TC 51's full title is 'Cement and building limes', which may cover both. However, CEN/TC 459 is also listed separately in some CEN databases. Needs verification.",
+      "source": "CEN TC databases, task brief context",
+      "source_url": "",
+      "action_required": "Verify whether EN 459-1 revision is under CEN/TC 51 or CEN/TC 459 or both. Update tc_wg field if needed.",
+      "status": "resolved",
+      "resolution": "CEN/TC 459 is iron/steel (ECISS), not building limes. CEN/TC 51 full title is 'Cement and building limes'. tc_wg 'CEN/TC 51' is correct."
+    },
+    {
+      "id": "iss-CEM-008",
+      "families": ["CEM"],
+      "severity": "info",
+      "type": "regulatory_development",
+      "title": "Industrial Decarbonisation Accelerator Act (IDAA) — postponed, will operationalise cement carbon label",
+      "description": "The IDAA was initially scheduled 10 Dec 2025, postponed twice, expected 25 Feb 2026. It will operationalise the cement carbon label mandating GWP disclosure (kgCO2 eq./t) in Declaration of Performance and Conformity via CPR. EPBD requires lifecycle GWP for buildings >1000m² from 2028, all new buildings from 2030. Germany already has national cement carbon labelling. CEMBUREAU (now Cement Europe) supports lead markets approach.",
+      "source": "CemNet Dec 2025, EU Parliament legislative train, Cement Europe position paper Jun 2025",
+      "action_required": "Monitor IDAA adoption. When adopted, assess impact on CEM DPP data requirements and timeline. Update content sections.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CEM-009",
+      "families": ["CEM"],
+      "severity": "info",
+      "type": "regulatory_development",
+      "title": "EN 197-5 (CEM VI) NOT harmonised — low-carbon cements excluded from DPP",
+      "description": "EN 197-5:2021 (CEM II/C-M and CEM VI ternary cements, ~340 kg CO₂/t) is NOT harmonised under CPR and has no OJ citation. CEM VI cements must use national approvals (e.g., Dyckerhoff received German DIBt abZ 20 Oct 2025). This excludes the most climate-relevant cements from the harmonised CE marking and DPP system. The prEN 197-1 revision (stage 10.99 since Jul 2025) is the only path to harmonisation but is years away. ALCCC advocates for performance-based standards to close this gap.",
+      "source": "EN 197-5:2021 (https://standards.iteh.ai/catalog/standards/cen/69d3b559-4114-43b3-bfed-05787fc839a2/en-197-5-2021); Dyckerhoff CEM VI abZ (https://www.dyckerhoff.com/en/w/zulassung-cem-vi-zement); ALCCC (https://alliancelccc.com/)",
+      "action_required": "Flag in content.key_risks — low-carbon cements excluded from harmonised system. Monitor prEN 197-1 revision progress for CEM VI inclusion.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CEM-010",
+      "families": ["CEM"],
+      "severity": "info",
+      "type": "cross_regulatory",
+      "title": "EPBD delegated act C(2025) 8723 creates building-level GWP demand for cement data",
+      "description": "Commission delegated regulation C(2025) 8723 (16 Dec 2025) establishes EU framework for building life-cycle GWP calculations: >1000m² from Jan 2028, all new buildings from Jan 2030. Data hierarchy favours product-specific EPDs over generic values. Cement is a major contributor to building embodied carbon. Creates downstream pull for plant-specific digital EPD data — exactly what DPP requires. Member States must publish GWP limit value roadmaps by 2027.",
+      "source": "C(2025) 8723 (https://energy.ec.europa.eu/document/download/a13f9997-fe46-40ec-b158-86149e978624_en?filename=C_2025_8723_1_EN_ACT_part1_v5.pdf); EC announcement (https://energy.ec.europa.eu/news/commission-encourages-low-carbon-construction-materials-calculation-framework-life-cycle-global-2025-12-16_en)",
+      "action_required": "Document in content.key_risks. Cross-reference with iss-DWS-009 and other families affected by EPBD GWP requirements.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CEM-011",
+      "families": ["CEM"],
+      "severity": "info",
+      "type": "cross_regulatory",
+      "title": "EU ETS binder-based benchmark shift + CBAM makes GWP disclosure economically consequential",
+      "description": "From 1 Jan 2026, ETS free allocations shift from clinker-based to binder-based benchmark (Cement Europe flags as 'unclear'). Free allocation phase-out: 97.5% remaining 2026, 51.5% by 2030, 0% by 2034. ETS benchmark: 0.666 t CO₂/t clinker. CBAM definitive compliance started 1 Jan 2026. The progressive cost increase for carbon makes CPR GWP disclosure on DPPs economically consequential — low-carbon cements gain real cost advantage. Two carbon accounting methodologies (ETS/CBAM and CPR/EN 15804) must align.",
+      "source": "Cement Europe EU ETS page (https://www.cementeurope.eu/policy-focus/climate-co2-strategy/eu-ets/); CBAM timeline (https://www.coolset.com/academy/cbam-timeline-deadlines-phases-what-to-expect-2026); SCHWENK 2026 seminars (https://www.schwenk.de/en/schwenk-concrete-seminars-2026-transformation-with-realism/)",
+      "action_required": "Document ETS/CBAM interaction in content. Note methodological alignment risk between ETS binder-based and CPR EN 15804-based carbon accounting.",
+      "status": "pending"
+    }
+  ]
+}

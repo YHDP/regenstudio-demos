@@ -1,0 +1,163 @@
+{
+  "family": "DWS",
+  "generated": "2026-03-01",
+  "dataUpdates": [
+    {
+      "id": "upd-DWS-001",
+      "family": "DWS",
+      "action": "set",
+      "field": "pipelines.A.nodes[2].status",
+      "current_value": "not_started",
+      "proposed_value": "draft",
+      "reason": "SReq was notified 21 Jan 2026 as draft via EC Notification System. Feedback deadline 18 Feb 2026 has expired. Node status should reflect the draft stage.",
+      "source": "EC Notification System — Art. 12",
+      "confidence": "high",
+      "status": "pending"
+    },
+    {
+      "id": "upd-DWS-002",
+      "family": "DWS",
+      "action": "set",
+      "field": "pipelines.A.nodes[2].certainty",
+      "current_value": "amber",
+      "proposed_value": "yellow-green",
+      "reason": "Draft SReq exists and feedback period has closed. Adoption expected Q1-Q2 2026. Certainty should be upgraded from amber to yellow-green.",
+      "source": "EC Notification System — Art. 12",
+      "confidence": "medium",
+      "status": "pending"
+    },
+    {
+      "id": "upd-DWS-003",
+      "family": "DWS",
+      "action": "set",
+      "field": "pipelines.A.nodes[2].detail",
+      "current_value": null,
+      "proposed_value": "Draft published 21 Jan 2026, feedback closed 18 Feb 2026. Under CPR 2024/3110.",
+      "reason": "Add descriptive detail to the SReq node for user context.",
+      "source": "EC Notification System — Art. 12",
+      "confidence": "high",
+      "status": "pending"
+    },
+    {
+      "id": "upd-DWS-004",
+      "family": "DWS",
+      "action": "set",
+      "field": "pipelines.A.nodes[2].date",
+      "current_value": null,
+      "proposed_value": "Jan 2026",
+      "reason": "Record when the draft SReq was published.",
+      "source": "EC Notification System — Art. 12",
+      "confidence": "high",
+      "status": "pending"
+    }
+  ],
+  "structuralIssues": [
+    {
+      "id": "iss-DWS-001",
+      "families": ["DWS"],
+      "severity": "error",
+      "type": "content_data_disagreement",
+      "title": "Pipeline A NT-4 status disagrees with family-level SReq data",
+      "description": "Pipeline A node NT-4 (SReq) has status 'not_started' but the family-level sreq field is 'Draft', milestones.sreq is 'Q1 2026', and content.sreq_analysis describes a published draft (21 Jan 2026). The node status should be 'draft' to match the family-level data.",
+      "action_required": "Apply upd-DWS-001 through upd-DWS-004 to align the NT-4 node with existing family-level data.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-DWS-002",
+      "families": ["DWS"],
+      "severity": "warning",
+      "type": "stale_sreq",
+      "title": "SReq feedback deadline expired — monitor for adoption",
+      "description": "The draft SReq feedback deadline (18 Feb 2026) expired 11 days ago. EuroWindoor submitted comments on 13 Feb 2026. No public adoption confirmation found. When adopted, multiple fields need updating.",
+      "source": "EC Notification System — Art. 12, EuroWindoor",
+      "action_required": "Monitor weekly for adoption announcement. When confirmed, update sreq → 'Adopted', milestones.sreq, and Pipeline A NT-4 status → 'complete'.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-DWS-003",
+      "families": ["DWS"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "Three content sections empty (stakeholder_notes, key_risks, sources_summary)",
+      "description": "content.stakeholder_notes, content.key_risks, and content.sources_summary are empty. DWS has significant stakeholder engagement data (EuroWindoor 86 comments, 1-year extension request) and clear risks (timeline, dual regulation, DPP volume) that should be documented.",
+      "action_required": "Populate with proposed content from deep-dive report §8.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-DWS-004",
+      "families": ["DWS", "CWP"],
+      "severity": "info",
+      "type": "cross_family",
+      "title": "CEN/TC 33 shared between DWS and CWP — consistency check needed",
+      "description": "CEN/TC 33 (doors, windows, shutters and building hardware) is the primary TC for both DWS and CWP families. Any TC-level changes (work programme, mandates) affect both families. Cross-check needed when CWP is analyzed in Batch 9.",
+      "action_required": "Flag for Batch 9 CWP analysis.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-DWS-005",
+      "families": ["DWS"],
+      "severity": "warning",
+      "type": "regulatory_development",
+      "title": "AVS 4+ joint proposal (Feb 2026) — could change verification regime for DWS",
+      "description": "EuroWindoor, European Aluminium, EPPA, Glass for Europe, and SBS jointly proposed a new Assessment and Verification System 'AVS 4+' under CPR 2024/3110 (published 3 Feb 2026). Under AVS 4+, a Notified Body verifies input data and validates software tools, while manufacturers assess performance using the verified digital process within FPC. Could be introduced via delegated act under Art. 10(4). This fundamentally changes the AVCP landscape for DWS and is not currently tracked.",
+      "source": "EuroWindoor publications, SBS press release (Feb 2026)",
+      "action_required": "Track AVS 4+ proposal status. If adopted, update AVCP field and add new AVS node to Pipeline A.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-DWS-006",
+      "families": ["DWS"],
+      "severity": "warning",
+      "type": "regulatory_development",
+      "title": "EN 14351 series restructuring into 4 consolidated standards",
+      "description": "Under the new SReq, the current EN 14351 series is being reorganised: (1) Pedestrian doorsets = EN 14351-1 (excl. windows) + EN 14351-2 + EN 16034; (2) Windows = EN 14351-1 (excl. doors) + EN 16034; (3) Fire industrial doors = EN 13241 + EN 16034; (4) Non-fire industrial doors = EN 13241. This restructuring means the current 15 hEN listing will change significantly. EN 14351-2 (internal doorsets) has never been OJ-cited since 2018 — a confirmed standardisation deficit.",
+      "source": "Efectis article on EN 14351-2, ift Rosenheim new CPR rules, EuroWindoor SReq comments",
+      "action_required": "Document restructuring plan in content.standards_development. When new prEN registrations appear at CEN, update standards[] accordingly.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-DWS-007",
+      "families": ["DWS"],
+      "severity": "info",
+      "type": "timeline_risk",
+      "title": "EuroWindoor explicit warning: standardisation work risks failure within timeframe",
+      "description": "EuroWindoor warns that 'standardisation work risks failing to deliver the required quality within the set timeframe' with 'key templates, guidance documents and delegated acts essential for consistent implementation still missing.' CEN cannot formally register prENs until SReq is adopted. No prEN 14351-1 (new), prEN 14351-2, or prEN 14351-3 registrations found. The Jun 2029 delivery target for 15 deliverables is increasingly at risk.",
+      "source": "EuroWindoor Feb 2026 press release, web research confirming no prEN registrations",
+      "action_required": "Monitor CEN/TC 33 work programme for prEN registration. Flag timeline risk in key_risks content.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-DWS-008",
+      "families": ["DWS"],
+      "severity": "info",
+      "type": "scope_risk",
+      "title": "SReq scope: 51 technical chars + 19 environmental + 257 substances",
+      "description": "The draft SReq for DWS lists 51 technical characteristics, 19 environmental criteria, and 257 substances for windows — all to be addressed in the future Declaration of Performance and Conformity (DoPC). Industry argues this scope is excessive. May be reduced during CEN acceptance negotiation, which would affect deliverable count and timeline.",
+      "source": "EuroWindoor Feb 2026 comments, ift Rosenheim article",
+      "action_required": "Monitor scope changes during CEN acceptance process. Update deliverable count if scope is reduced.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-DWS-009",
+      "families": ["DWS"],
+      "severity": "info",
+      "type": "cross_regulatory",
+      "title": "EPBD 2024/1275 creates dual GWP data demand for windows",
+      "description": "EPBD recast requires building-level GWP calculations: large new buildings >2000m² from 2027, all new buildings from 2030. Window manufacturers face dual data demand: CPR product-level GWP in DoPC + EPBD building-level contribution via EN 15978/Level(s). Glass industry EPD infrastructure is mature (AGC, Guardian publish EPDs), but window assembly-level data is the bottleneck. Creates urgency for GWP data preparation before new CPR harmonised standards are published.",
+      "source": "Directive (EU) 2024/1275 Art. 7(2)-(3) + Annex III (https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275); AGC Glass Europe EPDs (https://www.agc-glass.eu/en/sustainability/environmental-product-declarations); Guardian Glass EPDs (https://www.guardianglass.com/eu/en/our-glass/environmental-product-declarations)",
+      "action_required": "Document in content.key_risks. Note that glass industry EPD readiness is ahead of window assembly-level readiness.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-DWS-010",
+      "families": ["DWS"],
+      "severity": "info",
+      "type": "circular_economy",
+      "title": "PVC/aluminium recycling infrastructure provides DPP end-of-life data foundation",
+      "description": "VinylPlus (PVC industry commitment) targets 1 million tonnes PVC recycled/year by 2030 (2024 actual: 724,638 tonnes). EPPA 5-year action plan boosting PVC window recycling in France, Germany, Poland. Industrial pilot evaluation 2026. Aluminium windows are infinitely recyclable. DPP under new CPR requires end-of-life/recyclability data — existing recycling infrastructure provides data foundation. Wood windows have biogenic carbon accounting considerations (EN 15804+A2).",
+      "source": "VinylPlus Progress Report 2025 (https://www.vinylplus.eu/progress-report/); EPPA circular economy programme (https://eppa-profiles.eu/circular-economy/); European Aluminium Circular Action Plan (https://european-aluminium.eu/)",
+      "action_required": "Document recycling infrastructure readiness in content.stakeholder_notes. Consider DPP data readiness assessment.",
+      "status": "pending"
+    }
+  ]
+}

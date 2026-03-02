@@ -1,0 +1,50 @@
+{
+  "family": "GEO",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-GEO-001",
+      "families": ["GEO"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "Five content sections empty",
+      "description": "content.standards_landscape, content.standards_development, content.stakeholder_notes, content.key_risks, and content.sources_summary are empty.",
+      "action_required": "Populate with proposed content from deep-dive report \u00a78.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-GEO-002",
+      "families": ["GEO"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "HUESKER and Naue publish geogrid EPDs but broader geosynthetics portfolio lacks EPD coverage",
+      "description": "HUESKER publishes EN 15804 EPDs for Fortrac® T geogrid (Kiwa-verified). Naue publishes EPDs for Secugrid® geogrids. The HUESKER Fortrac EPD was highlighted as the first geogrid EPD — a milestone for the industry. However, EPDs for geotextiles (filtration/separation), geomembranes (barrier), and geocomposites (drainage) were not found. IGS claims geosynthetics carbon footprint is typically 65% lower than alternative construction materials. For DPP: the geosynthetics industry is early in its EPD journey with reinforcement products leading, but the broader portfolio (8 of 10 application-specific hENs) lacks environmental data infrastructure.",
+      "source": "HUESKER EPD via Kiwa (https://www.kiwa.com/globalassets/germany/veroffentlichte-epds/06-0921/epd-huesker-134-en.pdf/); Naue EPDs (https://www.naue.com/info-center/downloads/environmental-product-declaration/); Geosynthetica (https://www.geosynthetica.com/geogrid-earns-environmental-product-declaration/)",
+      "action_required": "Document EPD readiness gap in content. Note geogrid-only coverage vs 10 application-specific hENs.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-GEO-003",
+      "families": ["GEO"],
+      "severity": "warning",
+      "type": "cross_regulatory",
+      "title": "ECHA PFAS ban creates dual pressure on geomembranes — products contain PFAS but manufacturing may use PFAS aids",
+      "description": "ECHA proposed universal PFAS restriction (Feb 2023) creates dual regulatory pressure on geomembranes: HDPE geomembranes are critical infrastructure for containing PFAS-laden leachate in landfills (intact membranes contain PFAS 30+ years, permeability <10⁻¹⁴ cm/s), but some geomembrane manufacturing processes use PFAS-containing processing aids. Manufacturers developing PFAS-free products. Additionally, EU investigating microplastics release from geotextiles — IGS formally responded advocating science-based evidence. For DPP: EN 13257 (solid waste) and EN 13265 (liquid waste) products may need to declare both PFAS containment performance AND PFAS-free manufacturing status.",
+      "source": "ScienceDirect PFAS permeation (https://www.sciencedirect.com/science/article/abs/pii/S0269749124019511); EPI PFAS containment (https://www.geomembrane.com/about/blog/pfas-containment-why-liners-are-now-more-important-than-ever.html); Nonwovens News microplastics (https://www.nonwovensnews.com/manufacturing-news/15928-eu-investigating-release-of-microplastics-from-geotextiles)",
+      "action_required": "Document PFAS dual-pressure and microplastics regulatory risk in content.key_risks. Flag as cross-regulatory DPP data challenge.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-GEO-004",
+      "families": ["GEO"],
+      "severity": "info",
+      "type": "market_context",
+      "title": "European geosynthetics market $2.94B (2025) — geotextiles 38%, Germany 23%, circular economy emerging",
+      "description": "European geosynthetics market $2.94B (2025), projected $4.32B by 2034 (CAGR 4.36%). Geotextiles 38.2% of market. GCLs fastest-growing segment (9.3% CAGR). Germany leads 23.3%, France 16.3%. Construction sector produces 850M+ tonnes waste annually with geosynthetics underrepresented in circular economy. Netherlands project recycled 500,000 m² geotextiles (EuroGeo8 2025). 100% recycled PP composite geogrids developed (FHWA-documented). Economic barriers remain: soil contamination in recovered geotextiles, cost disparities with virgin material.",
+      "source": "Market Data Forecast (https://www.marketdataforecast.com/market-reports/europe-geosynthetics-market); EuroGeo8 (https://www.e3s-conferences.org/articles/e3sconf/pdf/2025/44/e3sconf_eurogeo82025_01004.pdf); FHWA (https://highways.dot.gov/public-roads/winter-2025/08)",
+      "action_required": "Include market context and circular economy developments in content.",
+      "status": "pending"
+    }
+  ]
+}
