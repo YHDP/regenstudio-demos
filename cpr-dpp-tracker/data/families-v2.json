@@ -3571,7 +3571,7 @@
       "family": "2",
       "priority": "04",
       "tc": "CEN/TC 33",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "doors-windows.svg",
       "display_name": "Doors, Windows & Gates",
       "family_label": "Annex VII #2 · DWS",
@@ -3628,12 +3628,14 @@
             {
               "type": "NT-4",
               "label": "SReq (CPR 2024/3110)",
-              "status": "not_started",
-              "certainty": "amber",
+              "status": "draft",
+              "certainty": "yellow-green",
               "sources": [
                 "S30"
               ],
-              "estimated_date": "Q1 2026"
+              "estimated_date": "Q1 2026",
+              "detail": "Draft published 21 Jan 2026, feedback closed 18 Feb 2026. Under CPR 2024/3110.",
+              "date": "Jan 2026"
             },
             {
               "type": "NT-5",
@@ -3759,7 +3761,11 @@
           "pub_est": "Q3 2029",
           "mand_est": "~Q1 2030",
           "cited": false,
-          "notes": "EN 14351-2:2018 was NEVER cited in OJ. New standard under CPR 2024/3110."
+          "notes": "EN 14351-2:2018 was NEVER cited in OJ. New standard under CPR 2024/3110.",
+          "content": {
+            "regulatory_history": "Never OJ-cited since publication in 2018 — a confirmed standardisation deficit. Under the new SReq restructuring, EN 14351-2 will be folded into the consolidated pedestrian doorsets standard.",
+            "status_narrative": "Internal doorsets standard. No OJ citation means no CE marking obligation and no DPP requirement under current harmonised framework. Resolution depends on new CEN/TC 33 work programme under the adopted SReq."
+          }
         },
         {
           "id": "EN 13241 (new)",
@@ -4020,12 +4026,12 @@
       "content": {
         "about": "One of the broadest and most commercially significant product families, covering windows, external and internal pedestrian doorsets, industrial and garage doors, fire and smoke control doorsets, powered pedestrian doors, external blinds, awnings, shutters, roof windows, and hatches. It also includes building hardware such as door closers, hold-open devices, emergency and panic exit devices, hinges, and locks. With around 50,000 manufacturers and an estimated 76 million DPPs per year for windows alone, this family represents a major implementation challenge. Standardisation is led by CEN/TC 33.",
         "standards_landscape": "EN 14351-1:2006+A2:2016 (windows/external doors, AVCP System 1 for fire / System 3 for thermal/acoustic), EN 13241:2003+A2:2016 (industrial/commercial/garage doors, also under Machinery Directive), EN 16034:2014 (fire/smoke — must be used with EN 14351-1 or EN 13241), EN 13561:2015 and EN 13659:2015 (blinds/shutters, System 4), and 8 building hardware standards (EN 1154, EN 1155, EN 1158, EN 179, EN 1125, EN 1935, EN 12209, EN 14846 — all System 1 for escape/fire, System 3 otherwise). All cited via OJ C 092/6 and Implementing Decision (EU) 2019/451 under old CPR 305/2011 mandate M/101. EN 14351-2 (internal doors) published 2018 but NEVER cited — victim of the post-James Elliott standardisation deficit where the Commission froze new hEN citations.",
-        "standards_development": "The draft SReq (21 Jan 2026) requests 15 deliverables: 4 new product standards (windows/hatches/doorsets, industrial/commercial/garage doors, rooflights/hatches, building hardware — all due 15 Jun 2029), 5 new EPD product category rules (due Jun–Dec 2028), and 6 revisions (EN 13241 gates/barriers due Jun 2029; EN 13561 awnings, EN 13561 external blinds, EN 13120 internal blinds, EN 13659 shutters — all due 15 Dec 2029; EN 17610 EPD PCR building hardware due Dec 2028). prEN 14351-3 also exists at CEN — would merge EN 16034's fire/smoke approach into the EN 14351 series. Dangerous substances assessment will follow the horizontal SReq for dangerous substances (1 Sep 2025, under CPR 2024/3110, 15 deliverables by CEN/TC 351, all due 31 Dec 2029 — covers PFAS, microplastics, VVOC, asbestos, radioactivity).",
+        "standards_development": "The draft SReq (21 Jan 2026) requests 15 deliverables: 4 new product standards (windows/hatches/doorsets, industrial/commercial/garage doors, rooflights/hatches, building hardware — all due 15 Jun 2029), 5 new EPD product category rules (due Jun–Dec 2028), and 6 revisions (EN 13241 gates/barriers due Jun 2029; EN 13561 awnings, EN 13561 external blinds, EN 13120 internal blinds, EN 13659 shutters — all due 15 Dec 2029; EN 17610 EPD PCR building hardware due Dec 2028). prEN 14351-3 also exists at CEN — would merge EN 16034's fire/smoke approach into the EN 14351 series. Dangerous substances assessment will follow the horizontal SReq for dangerous substances (1 Sep 2025, under CPR 2024/3110, 15 deliverables by CEN/TC 351, all due 31 Dec 2029 — covers PFAS, microplastics, VVOC, asbestos, radioactivity). Under the new SReq, the EN 14351 series is being reorganised into 4 consolidated standards: (1) Pedestrian doorsets = EN 14351-1 (excl. windows) + EN 14351-2 + EN 16034; (2) Windows = EN 14351-1 (excl. doors) + EN 16034; (3) Fire industrial doors = EN 13241 + EN 16034; (4) Non-fire industrial doors = EN 13241. This restructuring will significantly change the current 15-hEN listing.",
         "sreq_analysis": "Draft Art. 12 notification published 21 Jan 2026 via the EC Notification System. Feedback deadline was 18 Feb 2026. NOT yet adopted — EuroWindoor submitted comments 13 Feb 2026. Under CPR 2024/3110. Replaces mandate M/101 (expires 31 Dec 2026 per Article 5). Decision expires 30 Jun 2031. First annual report due 30 Jun 2027. Final report due 30 Jun 2030. Scope: 51 technical characteristics + 19 environmental criteria + 257 substances for windows alone. Industry pushback: 86 comments on 4th draft (Oct 2025), EuroWindoor calls timeline \"highly ambitious\", wants 1-year extension. AVCP System 1 for fire/escape; System 3 otherwise (Decision 1999/93/EC, amended 2011/246/EU). Joint AVS 4+ proposal (Feb 2026) for verified software assessment. Product requirements DA for escape routes targeted 2029. Acquis sub-group established Q4 2022 (M-I and M-III both finished).",
         "dpp_outlook": "The estimated DPP range is ~2030–2032, informed by two scenarios. Policy pipeline: With standardisation request draft published and delivery expected Jun 2029, the regulatory pathway points to DPP by ~2030–2031. Standards-based: Per-standard DPP estimates across 15 hENs and 7 EADs range from ~2030 to ~2032 (13 of 15 hENs under CPR 305/2011, needing revision under CPR 2024/3110). The combined range spans from the standards-based assessment’s earlier estimate (~2030–2032) to the policy pipeline’s later horizon (~2030–2031).",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "EuroWindoor submitted 86 comments on 4th draft SReq (Oct 2025) and further comments on revised draft (13 Feb 2026). Industry calls Jun 2029 delivery timeline 'highly ambitious' and requests 1-year extension. Joint AVS 4+ proposal (Feb 2026) for verified software assessment submitted. AISBL technical workshop on CPR 2024/3110 implementation ongoing. PVC recycling: VinylPlus targets 1 Mt/year by 2030 (2024 actual: 724,638t). EPPA 5-year action plan boosting PVC window recycling in France, Germany, Poland (pilot evaluation 2026). Aluminium windows infinitely recyclable. Wood windows have biogenic carbon accounting considerations (EN 15804+A2). DPP under new CPR requires end-of-life/recyclability data — existing recycling infrastructure provides data foundation.",
+        "key_risks": "(1) Timeline risk: 15 deliverables in ~3 years is aggressive for CEN/TC 33. (2) Dual regulation: EN 13241 (industrial doors) also under Machinery Directive 2006/42/EC — coordination needed. (3) DPP volume: ~76 million DPPs/year for windows alone — infrastructure scaling challenge. (4) Standardisation deficit: EN 14351-2 (internal doors) never cited since 2018 — risk of continued delay. (5) AVS 4+ proposal: EuroWindoor, European Aluminium, EPPA, Glass for Europe, and SBS jointly proposed a new Assessment and Verification System (Feb 2026) where a Notified Body verifies input data and validates software tools. If adopted via delegated act under Art. 10(4), this fundamentally changes the verification regime. (6) EuroWindoor warns standardisation work ‘risks failing to deliver the required quality within the set timeframe’ with key templates and guidance documents still missing. No prEN 14351-1 (new), prEN 14351-2, or prEN 14351-3 registrations found. (7) SReq scope complexity: Draft lists 51 technical characteristics, 19 environmental criteria, and 257 substances for windows — industry argues excessive. May be reduced during CEN acceptance negotiation. (8) EPBD dual GWP demand: EPBD recast requires building-level GWP calculations (large new >2000m² from 2027, all new from 2030). Glass industry EPD infrastructure is mature (AGC, Guardian), but window assembly-level data is the bottleneck. Creates urgency for GWP data preparation before new CPR standards are published.",
+        "sources_summary": "CPR 2024/3110 [S1]; EC Notification System Art. 12 (DWS SReq draft, Jan 2026); EuroWindoor publications and SReq comments (Feb 2026); ift Rosenheim CPR articles; VinylPlus Progress Report 2025; EPPA circular economy programme; Directive (EU) 2024/1275 (EPBD recast)."
       }
     },
     {
