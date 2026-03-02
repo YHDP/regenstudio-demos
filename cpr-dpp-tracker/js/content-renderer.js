@@ -32,10 +32,13 @@
   var STD_SECTION_LABELS = {
     description: 'Description',
     status_narrative: 'Current status',
-    dpp_impact: 'DPP impact'
+    regulatory_history: 'Regulatory context',
+    dpp_impact: 'DPP impact',
+    key_risks: 'Key risks',
+    sources: 'Sources'
   };
 
-  var STD_SECTION_ORDER = ['description', 'status_narrative', 'dpp_impact'];
+  var STD_SECTION_ORDER = ['description', 'status_narrative', 'regulatory_history', 'dpp_impact', 'key_risks', 'sources'];
 
   function esc(str) {
     if (!str) return '';
