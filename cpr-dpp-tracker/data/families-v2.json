@@ -992,7 +992,7 @@
       "family": "15",
       "priority": "05",
       "tc": "CEN/TC 51",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "cement.svg",
       "display_name": "Cement & Building Limes",
       "family_label": "Annex VII #15 · CEM",
@@ -1057,7 +1057,7 @@
               "status": "complete",
               "certainty": "green",
               "date": "Jul 2025",
-              "detail": "Adopted Jul 2025",
+              "detail": "Adopted 28 Jul 2025. C(2025) 4828 replaces M/114. SReq expires 30 Jun 2030. First CEN annual report due 30 Jun 2026.",
               "url": "https://ec.europa.eu/transparency/documents-register/api/files/C(2025)4828_0/de00000001073540?rendition=false",
               "sources": [
                 "S11"
@@ -1303,7 +1303,10 @@
           "new_ead": "~2027–2028",
           "dpp_est": "~2032",
           "cited": true,
-          "notes": "Ecocem ETA 23-0877 (Cerema, Dec 2023). EAD formally cited in OJEU Dec 2025 — milestone for low-carbon cement. Ecocem building EUR 50M ACT facility in Dunkirk (300kt/yr, commercial H2 2026). Old-regime EAD (CPR 305/2011). DPP requires new EAD under CPR 2024/3110 (~2032). Commission signaled EOTA mandate by 2027 but old EAD valid until 2031."
+          "notes": "Ecocem ETA 23-0877 (Cerema, Dec 2023). EAD formally cited in OJEU Dec 2025 — milestone for low-carbon cement. Ecocem building EUR 50M ACT facility in Dunkirk (300kt/yr, commercial H2 2026). Old-regime EAD (CPR 305/2011). DPP requires new EAD under CPR 2024/3110 (~2032). Commission signaled EOTA mandate by 2027 but old EAD valid until 2031.",
+          "content": {
+            "regulatory_history": "Cited in OJEU December 2025 (industry sources: Ecocem, CemNet, World Cement, S&P Global confirm). Exact implementing decision number not yet confirmed from EUR-Lex — may be via C-series OJ communication or Implementing Decision 2025/2355 (13 Nov 2025). Old-regime EAD under CPR 305/2011. Valid until 9 Jan 2031."
+          }
         }
       ],
       "standards_summary": {
@@ -1324,9 +1327,9 @@
         "standards_development": "prEN 197-1 rev — new project approved 2 July 2025 by CEN/TC 51 (stage 10.99). Revision will integrate EN 197-5 (CEM II/C-M and CEM VI low-carbon cements) and EN 197-6 (cement with recycled building materials), enabling wider range of low-carbon cements. EN 196-12:2024 published Dec 2024 (reactivity test methods supporting performance-based approach). NOTE: Only EN 197-1 has a registered CEN prEN project. All other 8 standards covered by C(2025) 4828 have no registered prEN yet — risk for 2027-2028 deadlines.",
         "sreq_analysis": "Acquis Milestone I (product scope) and Milestone III (essential characteristics) both completed. Commission Implementing Decision C(2025) 4828, adopted 28 July 2025. Confirmed under CPR 2024/3110 (title: \"in support of Regulation (EU) 2024/3110\"). DPP applies directly. Replaces mandate M/114 (expired 31 Dec 2025). 10 deliverables — 1 new TR + 9 revisions (Annex I). Deadlines: EN 197-1 + EN 16908 by 30 Jun 2027; EN 413-1, EN 459-1, EN 15368, alkali-activated TR by 31 Dec 2027; EN 14216, EN 14647, EN 15743, EN 13282 by 30 Jun 2028. Decision expires 30 Jun 2030.",
         "dpp_outlook": "The estimated DPP range is ~2029–2032, informed by two scenarios. Policy pipeline: With standardisation request adopted (Jul 2025) and delivery expected Jun 2027–Jun 2028, the regulatory pathway points to DPP by ~2029–2030. Standards-based: Per-standard DPP estimates across 9 hENs and 1 EAD range from ~2029 to ~2032 (8 of 9 hENs under CPR 305/2011, needing revision under CPR 2024/3110). The combined range spans from the standards-based assessment’s earlier estimate (~2029–2032) to the policy pipeline’s later horizon (~2029–2030).",
-        "stakeholder_notes": "Alkali-activated cements: Downgraded to Technical Report in C(2025) 4828, despite strong stakeholder opposition (19 signatories). CEN/TC 51 refused to develop standards. A performance-based standard for alternative low-carbon cements requested for delivery by 2030.",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "Alkali-activated cements: Downgraded to Technical Report in C(2025) 4828, despite strong stakeholder opposition (19 signatories). CEN/TC 51 refused to develop standards. A performance-based standard for alternative low-carbon cements requested for delivery by 2030.SReq C(2025) 4828 lifecycle: expires 30 Jun 2030. CEN first annual report due 30 Jun 2026 — key data point for standards development progress monitoring. Industrial Decarbonisation Accelerator Act (IDAA): postponed from Dec 2025, will operationalise cement carbon label mandating GWP disclosure (kgCO₂ eq./t) in Declaration of Performance via CPR. EPBD requires lifecycle GWP for buildings >1000m² from 2028, all new buildings from 2030. Germany already has national cement carbon labelling. Cement Europe (formerly CEMBUREAU) supports lead markets approach. EU ETS/CBAM interaction: From 1 Jan 2026, ETS free allocations shift to binder-based benchmark (Cement Europe flags as ‘unclear’). Free allocation phase-out: 97.5% remaining 2026, 51.5% by 2030, 0% by 2034. CBAM definitive compliance started 1 Jan 2026. Progressive carbon cost makes CPR GWP disclosure on DPPs economically consequential — low-carbon cements gain real cost advantage.",
+        "key_risks": "(1) Standards development bottleneck: Only EN 197-1 has a registered prEN (stage 10.99, Jul 2025). The remaining 8 product standards (EN 413-1, EN 459-1, EN 15368, EN 14216, EN 14647, EN 15743, EN 13282, EN 16908) have SReq delivery deadlines in 2027–2028 but no prEN registrations yet. CEN first annual report (due Jun 2026) will clarify progress. (2) Alkali-activated cements: CEN/TC 51 refused to develop standards; downgraded to Technical Report in C(2025) 4828. Performance-based standard requested for delivery by 2030 but uncertain. (3) EAD sunset risk: EAD 150080-00-0301 (blended cements) valid only until 9 Jan 2031 under old CPR. New-regime EAD needed for continued ETA route. EOTA mandate by 2027 signaled but not yet formalised. (4) Clean Industrial Deal: Mandatory cement carbon label (GWP disclosure in DoP) planned when new standards become mandatory, adding compliance complexity. (5) EPBD GWP demand: Commission delegated regulation C(2025) 8723 (16 Dec 2025) establishes building life-cycle GWP calculations: >1000m² from Jan 2028, all new buildings from Jan 2030. Data hierarchy favours product-specific EPDs, creating downstream pull for plant-specific digital EPD data aligned with DPP requirements. (6) EN 197-5 gap: EN 197-5:2021 (CEM II/C-M, CEM VI ternary cements, ~340 kg CO₂/t) is NOT harmonised and has no OJ citation. These most climate-relevant cements are excluded from CE marking and DPP. Only path: prEN 197-1 revision incorporating CEM VI.",
+        "sources_summary": "CPR 2024/3110 [S1]; SReq C(2025) 4828 [S11]; CPR Working Plan COM(2025) 772 [S30]; nlfnorm.cz hEN database [S143]; EOTA EAD database [S144]. EAD 150080 OJ citation: industry press (Ecocem, CemNet) Dec 2025. prEN 197-1 stage: genorma.com. Joint letter on alkali-activated cements: ecostandard.org May 2025."
       }
     },
     {
