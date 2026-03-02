@@ -98,6 +98,11 @@ function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
+  // Protect with antibot
+  if (window.Antibot) {
+    window.Antibot.protect(form);
+  }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -108,38 +113,62 @@ function initContactForm() {
     btn.disabled = true;
     btn.textContent = 'Sending...';
 
-    const formData = new FormData(form);
-
-    try {
+    async function doSubmit(antibotPayload) {
+      const formData = new FormData(form);
       const nlCheckbox = form.querySelector('input[name="newsletter_opt_in"]');
-      const res = await fetch(EDGE_FUNCTION_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: formData.get('name'),
-          email: formData.get('email'),
-          message: formData.get('message'),
-          website: formData.get('website') || '',
-          source: 'contact_form',
-          page_url: window.location.href,
-          newsletter_opt_in: nlCheckbox ? nlCheckbox.checked : false,
-        }),
-      });
+      const payload = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        message: formData.get('message'),
+        source: 'contact_form',
+        page_url: window.location.href,
+        newsletter_opt_in: nlCheckbox ? nlCheckbox.checked : false,
+      };
 
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || 'Something went wrong');
+      // Merge antibot fields
+      if (antibotPayload) {
+        Object.assign(payload, antibotPayload);
       }
 
-      form.style.display = 'none';
-      document.getElementById('contact-success').style.display = 'flex';
-    } catch (err) {
-      const errorEl = document.createElement('p');
-      errorEl.className = 'contact-error';
-      errorEl.textContent = err.message || 'Something went wrong. Please try again.';
-      form.appendChild(errorEl);
-      btn.disabled = false;
-      btn.textContent = 'Send Message';
+      try {
+        const res = await fetch(EDGE_FUNCTION_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (!res.ok) {
+          const data = await res.json().catch(() => ({}));
+          throw new Error(data.error || 'Something went wrong');
+        }
+
+        form.style.display = 'none';
+        document.getElementById('contact-success').style.display = 'flex';
+      } catch (err) {
+        const errorEl = document.createElement('p');
+        errorEl.className = 'contact-error';
+        errorEl.textContent = err.message || 'Something went wrong. Please try again.';
+        form.appendChild(errorEl);
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+      }
+    }
+
+    // Validate antibot before submitting
+    if (window.Antibot) {
+      try {
+        const antibotPayload = await window.Antibot.validate(form);
+        await doSubmit(antibotPayload);
+      } catch (errMsg) {
+        const errorEl = document.createElement('p');
+        errorEl.className = 'contact-error';
+        errorEl.textContent = errMsg;
+        form.appendChild(errorEl);
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+      }
+    } else {
+      await doSubmit(null);
     }
   });
 }
