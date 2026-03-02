@@ -1,0 +1,2053 @@
+{
+  "meta": {
+    "created": "2026-03-01T00:00:00Z",
+    "last_updated": "2026-03-01T23:00:00Z",
+    "total_families": 37,
+    "completed_families": 37,
+    "current_batch": null,
+    "current_family": null,
+    "extended_dives": {
+      "status": "complete",
+      "phases": {
+        "phase_1_targeted": {
+          "description": "Extended deep dives on 5 high-uncertainty families with 5-8 targeted web searches each",
+          "families": [
+            "DWS",
+            "CEM",
+            "STP",
+            "RPS",
+            "WBP"
+          ],
+          "completed": 5,
+          "new_issues": 14,
+          "new_updates": 1,
+          "issues_resolved": 2
+        },
+        "phase_2_supplementary": {
+          "description": "Wide-scope supplementary research on all 37 families with 6 web searches each (market, EPDs, recycling, standards, cross-regulatory, industry)",
+          "families_completed": 37,
+          "web_searches": 222,
+          "new_issues": 117,
+          "new_updates": 0,
+          "issue_types_added": [
+            "dpp_readiness (34)",
+            "market_context (22)",
+            "circular_economy (9)",
+            "cross_regulatory (+27)",
+            "multi_directive (1)",
+            "multi_regulatory (1)",
+            "raw_material_transition (1)"
+          ]
+        }
+      },
+      "merged_totals": {
+        "data_updates": 9,
+        "structural_issues": 224,
+        "duplicate_ids": 0,
+        "severity_breakdown": {
+          "info": 161,
+          "warning": 51,
+          "low": 8,
+          "medium": 3,
+          "error": 1
+        }
+      }
+    }
+  },
+  "batches": [
+    {
+      "id": 1,
+      "name": "Priority (SReq active)",
+      "families": [
+        "CEM",
+        "SMP",
+        "PCR",
+        "DWS"
+      ],
+      "status": "complete"
+    },
+    {
+      "id": 2,
+      "name": "Structural & Fire",
+      "families": [
+        "CHI",
+        "FFF",
+        "FPP"
+      ],
+      "status": "complete"
+    },
+    {
+      "id": 3,
+      "name": "Building Envelope",
+      "families": [
+        "ROC",
+        "WCF",
+        "GLA",
+        "TIP"
+      ],
+      "status": "complete"
+    },
+    {
+      "id": 4,
+      "name": "Concrete & Mortar",
+      "families": [
+        "CMG",
+        "AGG",
+        "MAS",
+        "GYP"
+      ],
+      "status": "complete"
+    },
+    {
+      "id": 5,
+      "name": "Civil Engineering",
+      "families": [
+        "RCP",
+        "FLO",
+        "SBE",
+        "CIF"
+      ],
+      "status": "complete"
+    },
+    {
+      "id": 6,
+      "name": "EOTA-Dominated",
+      "families": [
+        "FIX",
+        "KAS",
+        "SEA",
+        "ADH"
+      ],
+      "status": "complete"
+    },
+    {
+      "id": 7,
+      "name": "Plumbing & Utilities",
+      "families": [
+        "SHA",
+        "PTA",
+        "SAP",
+        "RPS"
+      ],
+      "status": "complete"
+    },
+    {
+      "id": 8,
+      "name": "Panels & Membranes",
+      "families": [
+        "WWD",
+        "WBP",
+        "MEM",
+        "GEO"
+      ],
+      "status": "complete"
+    },
+    {
+      "id": 9,
+      "name": "Curtain/Wood/Ladders",
+      "families": [
+        "CWP",
+        "LAD",
+        "STP"
+      ],
+      "status": "complete"
+    },
+    {
+      "id": 10,
+      "name": "Trailing (sparse data)",
+      "families": [
+        "CAB",
+        "DWP",
+        "DPW"
+      ],
+      "status": "complete"
+    }
+  ],
+  "families": {
+    "CEM": {
+      "batch": 1,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for CEM. 2026/284 affects SHA/FIX only."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "prEN 197-1 at stage 10.99, approved Jul 2025."
+        },
+        {
+          "step": 3,
+          "source": "EC/ITB",
+          "finding": "SReq C(2025) 4828 adopted Jul 2025. Expires Jun 2030."
+        },
+        {
+          "step": 4,
+          "source": "EOTA",
+          "finding": "EAD 150080 is sole CEM EAD. Ecocem facility targeting late 2026."
+        },
+        {
+          "step": 5,
+          "source": "Cross-ref",
+          "finding": "key_risks and sources_summary empty. TC field may need CEN/TC 459."
+        },
+        {
+          "step": 6,
+          "source": "Report",
+          "finding": "Written by agent to deep-dives/reports/CEM-deep-dive.md"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue",
+          "finding": "Written by agent to deep-dives/review-queue/CEM-updates.json. 4 updates, 7 issues."
+        },
+        {
+          "step": 8,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: CEMBUREAU roadmap 2050, geopolymer/LC3 alternatives, EU ETS Phase 4 carbon pricing"
+        },
+        {
+          "step": 9,
+          "source": "Review-queue update",
+          "finding": "Added 2 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 11."
+        }
+      ],
+      "issues_found": 11,
+      "updates_proposed": 4,
+      "quality_gate_passed": true
+    },
+    "SMP": {
+      "batch": 1,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for SMP in 2026. 2026/284 does not affect SMP."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "EN 1090-1 mandate rejected summer 2025. Stage 10.99. prEN 1090-4/5 at 40.60."
+        },
+        {
+          "step": 3,
+          "source": "EC/ITB",
+          "finding": "SReq C(2025) 6586 adopted Oct 2025. Delivery 15 Nov 2025 overdue."
+        },
+        {
+          "step": 4,
+          "source": "EOTA",
+          "finding": "28 legacy EADs in PA 20. EAD 200116 found with 2025 OJ ref."
+        },
+        {
+          "step": 5,
+          "source": "Cross-ref",
+          "finding": "Stakeholder_notes reference EADs not in standards[]. EN 14509 cross-family."
+        },
+        {
+          "step": 6,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/SMP-deep-dive.md"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/SMP-updates.json. 0 updates, 5 issues."
+        },
+        {
+          "step": 8,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: European steel structures €20B+, prEN 1090-1 mandate rejected, EAD 200116 new citation"
+        },
+        {
+          "step": 9,
+          "source": "Review-queue update",
+          "finding": "Added 2 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 8."
+        }
+      ],
+      "issues_found": 8,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "PCR": {
+      "batch": 1,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for PCR in 2026. 2026/284 affects SHA/FIX only."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP 2025",
+          "finding": "TC 229 active, M/XXX no mandate number yet. prEN 12602 draft Jul 2025 confirmed."
+        },
+        {
+          "step": 3,
+          "source": "EC Notification",
+          "finding": "SReq draft feedback deadline 3 Mar 2026. Dual reference C(2025)2125 unresolved."
+        },
+        {
+          "step": 4,
+          "source": "EOTA",
+          "finding": "No relevant EADs for PCR. No Pipeline C needed."
+        },
+        {
+          "step": 5,
+          "source": "Cross-ref",
+          "finding": "No data changes needed. 3 empty content sections flagged."
+        },
+        {
+          "step": 6,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/PCR-deep-dive.md"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/PCR-updates.json. 0 updates, 2 issues."
+        },
+        {
+          "step": 8,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: EN 15804 EPDs for precast, InformationsZentrum Beton tools, Eurocode 2 second gen"
+        },
+        {
+          "step": 9,
+          "source": "Review-queue update",
+          "finding": "Added 2 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 5."
+        }
+      ],
+      "issues_found": 5,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "DWS": {
+      "batch": 1,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for DWS in 2026. 2026/284 does not affect DWS."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP 2025",
+          "finding": "TC 33 active, M/XXX no formal mandate. prEN 14351-3 exists. 15 deliverables in SReq."
+        },
+        {
+          "step": 3,
+          "source": "EC Notification",
+          "finding": "SReq draft 21 Jan 2026, feedback closed 18 Feb 2026. CPR 2024/3110. Not yet adopted."
+        },
+        {
+          "step": 4,
+          "source": "EOTA",
+          "finding": "7 legacy EADs confirmed. No new EADs. Expiry 9 Jan 2031."
+        },
+        {
+          "step": 5,
+          "source": "Cross-ref",
+          "finding": "NT-4 status/data disagreement found. 3 empty content sections. CWP cross-family flag."
+        },
+        {
+          "step": 6,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/DWS-deep-dive.md"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/DWS-updates.json. 4 updates, 4 issues."
+        },
+        {
+          "step": 8,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: EuroWindoor 76M units/yr, Schüco/Reynaers EPDs, EPBD renovation wave"
+        },
+        {
+          "step": 9,
+          "source": "Review-queue update",
+          "finding": "Added 2 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 10."
+        }
+      ],
+      "issues_found": 10,
+      "updates_proposed": 4,
+      "quality_gate_passed": true
+    },
+    "CHI": {
+      "batch": 2,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for CHI. 2026/284 affects SHA/FIX only."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 166 active. prEN 1856-1 status uncertain (project deleted Mar 2021, may have restarted). prEN 13384-2 at stage 40.10."
+        },
+        {
+          "step": 3,
+          "source": "EC Notification",
+          "finding": "No Art. 12 notification. SReq planned Q3 2026 per COM(2025) 772."
+        },
+        {
+          "step": 4,
+          "source": "EOTA",
+          "finding": "11 legacy EADs in PA 06. EAD 060017 pending OJ citation. No new EADs."
+        },
+        {
+          "step": 5,
+          "source": "Cross-ref",
+          "finding": "EN 1443 and EN 12391-1 citation status unverified. EN 13084 intentionally excluded. 3 empty content sections."
+        },
+        {
+          "step": 6,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/CHI-deep-dive.md"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/CHI-updates.json. 0 updates, 3 issues."
+        },
+        {
+          "step": 8,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: Chimney market niche, SCHIEDEL EPDs, wood stove resurgence post-energy crisis"
+        },
+        {
+          "step": 9,
+          "source": "Review-queue update",
+          "finding": "Added 2 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 7."
+        }
+      ],
+      "issues_found": 7,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "FFF": {
+      "batch": 2,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for FFF. 2026/284 does not affect FFF."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 72: no active EN 54 revisions. CEN/TC 191/WG 5 not begun revising sprinkler hENs. EN 50130-4 EMC revision ongoing."
+        },
+        {
+          "step": 3,
+          "source": "EC/Euralarm",
+          "finding": "No Art. 12 notification. Acquis not started. M-I targeted Q2 2026. Euralarm confirms no immediate changes."
+        },
+        {
+          "step": 4,
+          "source": "EOTA",
+          "finding": "4 legacy EADs in PA 10. No new EADs."
+        },
+        {
+          "step": 5,
+          "source": "Cross-ref",
+          "finding": "Standards_landscape says ~32 but count is 33. EN 12101-2 absent. 3 empty content sections."
+        },
+        {
+          "step": 6,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/FFF-deep-dive.md"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/FFF-updates.json. 0 updates, 4 issues."
+        },
+        {
+          "step": 8,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: European fire safety €25B, EN 54 IoT/AI integration, Euralarm industry position"
+        },
+        {
+          "step": 9,
+          "source": "Review-queue update",
+          "finding": "Added 4 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 9."
+        }
+      ],
+      "issues_found": 9,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "FPP": {
+      "batch": 2,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for FPP. 2026/284 does not affect FPP."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 127 develops test methods only. No CPR product standard development for FPP."
+        },
+        {
+          "step": 3,
+          "source": "EC Notification",
+          "finding": "No Art. 12 notification. Acquis not started. SReq planned 2029 (latest in Batch 2)."
+        },
+        {
+          "step": 4,
+          "source": "EOTA",
+          "finding": "6 legacy EADs in PA 35. Based on ETAG 018/026. 800+ ETAs issued. No new EADs."
+        },
+        {
+          "step": 5,
+          "source": "Cross-ref",
+          "finding": "EAD-only family (0 hENs). Timeline gap: EADs expire 2031 vs SReq 2029. 5 empty content sections."
+        },
+        {
+          "step": 6,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/FPP-deep-dive.md"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/FPP-updates.json. 0 updates, 3 issues."
+        },
+        {
+          "step": 8,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: European fire protection €7.6B, intumescent coatings dominant, 800+ ETAs EOTA"
+        },
+        {
+          "step": 9,
+          "source": "Review-queue update",
+          "finding": "Added 4 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 7."
+        }
+      ],
+      "issues_found": 7,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "ROC": {
+      "batch": 3,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for ROC. 2026/284 and 2025/871 do not directly affect ROC."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 128 active. No specific development details for 2025-2026."
+        },
+        {
+          "step": 3,
+          "source": "EC Notification",
+          "finding": "No Art. 12 notification. Acquis not started. SReq planned 2028."
+        },
+        {
+          "step": 4,
+          "source": "EOTA",
+          "finding": "31 legacy EADs in PA 22. No new EADs found."
+        },
+        {
+          "step": 5,
+          "source": "Cross-ref",
+          "finding": "EN 14509 cross-family confirmed. EAD 020011 overlap with DWS flagged. 4 empty content."
+        },
+        {
+          "step": 6,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/ROC-deep-dive.md"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/ROC-updates.json. 0 updates, 3 issues."
+        },
+        {
+          "step": 8,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: European roofing €38B, BMI/Wienerberger EPDs, solar roof integration trend"
+        },
+        {
+          "step": 9,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 8."
+        }
+      ],
+      "issues_found": 8,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "WCF": {
+      "batch": 3,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for WCF."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 128 shared with ROC. No specific info."
+        },
+        {
+          "step": 3,
+          "source": "EC Notification",
+          "finding": "No Art. 12 notification. Acquis not started. SReq planned 2028."
+        },
+        {
+          "step": 4,
+          "source": "EOTA",
+          "finding": "No EADs for WCF. hEN-only family."
+        },
+        {
+          "step": 5,
+          "source": "Cross-ref",
+          "finding": "EN 14509 cross-family. No Pipeline C. 3 empty content."
+        },
+        {
+          "step": 6,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/WCF-deep-dive.md"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/WCF-updates.json. 0 updates, 2 issues."
+        },
+        {
+          "step": 8,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: European fibre-cement €2.8B, Etex/James Hardie EPDs, asbestos legacy, CO2 curing"
+        },
+        {
+          "step": 9,
+          "source": "Review-queue update",
+          "finding": "Added 2 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 5."
+        }
+      ],
+      "issues_found": 5,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "GLA": {
+      "batch": 3,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "Implementing Decision 2025/871 adds EAD for PET foils in insulating glass. May affect GLA."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 129 active. 30+ standards to revise. EN 17074 c-PCR update expected 2026."
+        },
+        {
+          "step": 3,
+          "source": "EC/Glass for Europe",
+          "finding": "SReq Q1 2026 target. No Art. 12 notification found. Glass for Europe confirms planned for 2026."
+        },
+        {
+          "step": 4,
+          "source": "EOTA",
+          "finding": "4 legacy EADs in PA 30. Potential new EAD from 2025/871."
+        },
+        {
+          "step": 5,
+          "source": "Cross-ref",
+          "finding": "SReq timing flag. New EAD citation possible. 3 empty content."
+        },
+        {
+          "step": 6,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/GLA-deep-dive.md"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/GLA-updates.json. 0 updates, 3 issues."
+        },
+        {
+          "step": 8,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: European flat glass €7.3B, Glass for Europe EPDs, smart glass/electrochromic emerging"
+        },
+        {
+          "step": 9,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 6."
+        }
+      ],
+      "issues_found": 6,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "TIP": {
+      "batch": 3,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "2025/871 adds EAD for insulating foils. May affect TIP tangentially."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 88 active on EN 13162-13171 series."
+        },
+        {
+          "step": 3,
+          "source": "EC Notification",
+          "finding": "No Art. 12 notification. Acquis done, SReq targeted Q3 2026."
+        },
+        {
+          "step": 4,
+          "source": "EOTA",
+          "finding": "18 legacy EADs. New EAD 042461 (green roof mineral wool) published May 2025 not in tracker."
+        },
+        {
+          "step": 5,
+          "source": "Cross-ref",
+          "finding": "hEN count discrepancy (content says 13, data has 12). New EAD not tracked. 3 empty content."
+        },
+        {
+          "step": 6,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/TIP-deep-dive.md"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/TIP-updates.json. 0 updates, 3 issues."
+        },
+        {
+          "step": 8,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: European insulation $21B, EUMEPS sector EPDs, waste mostly landfilled, EPBD 35M target"
+        },
+        {
+          "step": 9,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 6."
+        }
+      ],
+      "issues_found": 6,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "CMG": {
+      "batch": 4,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for CMG. 2026/284 does not affect CMG."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 104 active. No specific EN 934/EN 1504 revisions found. Family spans 4 TCs (104, 125, 303, 67)."
+        },
+        {
+          "step": 3,
+          "source": "EC Notification",
+          "finding": "No Art. 12 notification. Acquis ongoing. SReq targeted Q4 2026."
+        },
+        {
+          "step": 4,
+          "source": "EOTA",
+          "finding": "19 legacy EADs in PA 26. EAD 340392 (CRM for concrete/masonry) found but different PA."
+        },
+        {
+          "step": 5,
+          "source": "Cross-ref",
+          "finding": "EN 998-1/2 cross-listed with MAS — AVCP mismatch. 5 empty content sections."
+        },
+        {
+          "step": 6,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/CMG-deep-dive.md"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/CMG-updates.json. 0 updates, 2 issues."
+        },
+        {
+          "step": 8,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: European construction chemicals €16.4B, Sika/BASF EPDs, EN 934 admixture revision"
+        },
+        {
+          "step": 9,
+          "source": "Review-queue update",
+          "finding": "Added 1 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 5."
+        }
+      ],
+      "issues_found": 5,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "AGG": {
+      "batch": 4,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for AGG."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 154 active. prEN 17555-1 consolidation confirmed (stage ~40.60 in 2021) but current status unclear."
+        },
+        {
+          "step": 3,
+          "source": "EC Notification",
+          "finding": "No Art. 12 notification. Acquis ongoing. SReq targeted Q1 2027."
+        },
+        {
+          "step": 4,
+          "source": "EOTA",
+          "finding": "1 legacy EAD in PA 24. No new EADs."
+        },
+        {
+          "step": 5,
+          "source": "Cross-ref",
+          "finding": "prEN 17555-1 status unclear. EN 12620 formal objection pending. 5 empty content sections."
+        },
+        {
+          "step": 6,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/AGG-deep-dive.md"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/AGG-updates.json. 0 updates, 2 issues."
+        },
+        {
+          "step": 8,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: European aggregates €50B+, MPA sector EPDs, 3B tonnes/yr, UEPG circular economy"
+        },
+        {
+          "step": 9,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 5."
+        }
+      ],
+      "issues_found": 5,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "MAS": {
+      "batch": 4,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for MAS. EAD 170051 citation via 2025/2355 already in data."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 125 active in acquis. EN 771-1 revision abandoned Sept 2021 (stage 00.98)."
+        },
+        {
+          "step": 3,
+          "source": "EC Notification",
+          "finding": "No Art. 12 notification. Acquis ongoing. SReq targeted Q1 2027."
+        },
+        {
+          "step": 4,
+          "source": "EOTA",
+          "finding": "10 legacy EADs in PA 17. No new EADs. Recycled clay and earth block EADs noted."
+        },
+        {
+          "step": 5,
+          "source": "Cross-ref",
+          "finding": "EN 998-1/2 cross-listed with CMG — AVCP and name mismatches. 5 empty content sections."
+        },
+        {
+          "step": 6,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/MAS-deep-dive.md"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/MAS-updates.json. 0 updates, 3 issues."
+        },
+        {
+          "step": 8,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: AAC $1.75B, Wienerberger electric kiln 90% emission reduction, K-Briq 90% recycled"
+        },
+        {
+          "step": 9,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 6."
+        }
+      ],
+      "issues_found": 6,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "GYP": {
+      "batch": 4,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for GYP."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 241 active. No specific revision projects found for 2025-2026."
+        },
+        {
+          "step": 3,
+          "source": "EC Notification",
+          "finding": "No Art. 12 notification. Acquis not started. SReq targeted 2028."
+        },
+        {
+          "step": 4,
+          "source": "EOTA",
+          "finding": "3 legacy EADs in PA 7. No new EADs."
+        },
+        {
+          "step": 5,
+          "source": "Cross-ref",
+          "finding": "Self-contained TC portfolio (all 14 hENs under TC 241). 4 empty content sections."
+        },
+        {
+          "step": 6,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/GYP-deep-dive.md"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/GYP-updates.json. 0 updates, 1 issue."
+        },
+        {
+          "step": 8,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: European plasterboard $7.1B, FGD gypsum declining, 100% recycled plasterboard (Siniat)"
+        },
+        {
+          "step": 9,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 4."
+        }
+      ],
+      "issues_found": 4,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "RCP": {
+      "batch": 5,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for RCP."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 227 active. No specific EN 13108 revisions found."
+        },
+        {
+          "step": 3,
+          "source": "EC Notification",
+          "finding": "No Art. 12 notification. Acquis not started. SReq targeted 2027."
+        },
+        {
+          "step": 4,
+          "source": "EOTA",
+          "finding": "No EADs for RCP. hEN-only family."
+        },
+        {
+          "step": 5,
+          "source": "Cross-ref",
+          "finding": "EN 13043, EN 13055 AVCP mismatch with AGG. 3 empty content."
+        },
+        {
+          "step": 6,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/RCP-deep-dive.md"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/RCP-updates.json. 0 updates, 2 issues."
+        },
+        {
+          "step": 8,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: European asphalt €30B+, EAPA sustainability, warm-mix asphalt 30% energy savings"
+        },
+        {
+          "step": 9,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 5."
+        }
+      ],
+      "issues_found": 5,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "FLO": {
+      "batch": 5,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for FLO."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "EPLF working on EN 14041 revision. EN 14041:2018 published but OJ citation unclear."
+        },
+        {
+          "step": 3,
+          "source": "EC Notification",
+          "finding": "No Art. 12 notification. Acquis not started. SReq targeted 2027."
+        },
+        {
+          "step": 4,
+          "source": "EOTA",
+          "finding": "No EADs for FLO. hEN-only family."
+        },
+        {
+          "step": 5,
+          "source": "Cross-ref",
+          "finding": "EN 13813 AVCP mismatch with CMG. 8-TC span record. 3 empty content."
+        },
+        {
+          "step": 6,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/FLO-deep-dive.md"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/FLO-updates.json. 0 updates, 3 issues."
+        },
+        {
+          "step": 8,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: European flooring €36B, EPLF sustainability, 8-TC span record, EN 14041 VOC gap"
+        },
+        {
+          "step": 9,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 6."
+        }
+      ],
+      "issues_found": 6,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "SBE": {
+      "batch": 5,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for SBE."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 167 active. No specific revision details found."
+        },
+        {
+          "step": 3,
+          "source": "EC Notification",
+          "finding": "No Art. 12 notification. Acquis not started. SReq targeted 2028."
+        },
+        {
+          "step": 4,
+          "source": "EOTA",
+          "finding": "8 legacy EADs in PA 5. No new EADs."
+        },
+        {
+          "step": 5,
+          "source": "Cross-ref",
+          "finding": "Uniform System 1. Bridge domain overlap with CIF. 4 empty content."
+        },
+        {
+          "step": 6,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/SBE-deep-dive.md"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/SBE-updates.json. 0 updates, 1 issue."
+        },
+        {
+          "step": 8,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: Bridge bearings $3.28B, mageba first EPD ever (Dec 2024), PTFE PFAS restriction risk"
+        },
+        {
+          "step": 9,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 4."
+        }
+      ],
+      "issues_found": 4,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "CIF": {
+      "batch": 5,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for CIF."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 226 active. CEN/TS 1317-7:2023 published (not harmonised). IRMA autonomous vehicle work."
+        },
+        {
+          "step": 3,
+          "source": "EC Notification",
+          "finding": "No Art. 12 notification. Acquis not started. SReq targeted 2028."
+        },
+        {
+          "step": 4,
+          "source": "EOTA",
+          "finding": "11 legacy EADs in PA 12. No new EADs."
+        },
+        {
+          "step": 5,
+          "source": "Cross-ref",
+          "finding": "80% System 1. Bridge overlap with SBE. Multi-directive for EN 12966. 4 empty content."
+        },
+        {
+          "step": 6,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/CIF-deep-dive.md"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/CIF-updates.json. 0 updates, 2 issues."
+        },
+        {
+          "step": 8,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: Road safety barriers $1.8B, VMS multi-directive (CPR+EMC+LVD+CRA), ArcelorMittal EPD"
+        },
+        {
+          "step": 9,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 5."
+        }
+      ],
+      "issues_found": 5,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "FIX": {
+      "batch": 6,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "Implementing Decision 2026/284 affects FIX. Specific EADs impacted not confirmed."
+        },
+        {
+          "step": 2,
+          "source": "EOTA",
+          "finding": "~98 EADs for fixings in EOTA database. 34 tracked. 66 EADs published Nov 2025 + 9 Jan 2026 across all PAs."
+        },
+        {
+          "step": 3,
+          "source": "EOTA Conference",
+          "finding": "Nov 2025: 12-month fast-track EAD development. New sustainability requirements (GWP, LCA-EPD). ETAs no expiry under new CPR."
+        },
+        {
+          "step": 4,
+          "source": "Cross-ref",
+          "finding": "EAD 330031 cross-family with KAS. standards_summary omits EAD count. 5 empty content sections."
+        },
+        {
+          "step": 5,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/FIX-deep-dive.md"
+        },
+        {
+          "step": 6,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/FIX-updates.json. 0 updates, 3 issues."
+        },
+        {
+          "step": 7,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: European construction fasteners €8.4B, Hilti/Fischer EPDs, EAD fast-track 12mo"
+        },
+        {
+          "step": 8,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 7."
+        }
+      ],
+      "issues_found": 7,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "KAS": {
+      "batch": 6,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for KAS. 66 EADs Nov 2025 + 9 Jan 2026 — some may be PA 34."
+        },
+        {
+          "step": 2,
+          "source": "EOTA",
+          "finding": "32 EADs: 12 ETICS, 5 prefab units, 15 construction kits. Most diverse family. M-I Q2 2026 imminent."
+        },
+        {
+          "step": 3,
+          "source": "Renovation Wave",
+          "finding": "~75% EU buildings energy-inefficient. ETICS/prefab central to EPBD targets. 7th ETICS Forum Nov 2025."
+        },
+        {
+          "step": 4,
+          "source": "Cross-ref",
+          "finding": "EAD 340033 cross-family CHI. PA 36 overlap with LAD. 4 empty content sections."
+        },
+        {
+          "step": 5,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/KAS-deep-dive.md"
+        },
+        {
+          "step": 6,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/KAS-updates.json. 0 updates, 3 issues."
+        },
+        {
+          "step": 7,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: European ETICS €6B+, EAE sustainability charter, 75% EU buildings energy-inefficient"
+        },
+        {
+          "step": 8,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 6."
+        }
+      ],
+      "issues_found": 6,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "SEA": {
+      "batch": 6,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for SEA."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 349 active. No revision projects found for EN 15651 parts 1-5. Current editions 2012/2017."
+        },
+        {
+          "step": 3,
+          "source": "EC Notification",
+          "finding": "No Art. 12 notification. Acquis not started. SReq targeted 2029."
+        },
+        {
+          "step": 4,
+          "source": "Cross-ref",
+          "finding": "Self-contained family. No cross-family standards. 5 empty content sections."
+        },
+        {
+          "step": 5,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/SEA-deep-dive.md"
+        },
+        {
+          "step": 6,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/SEA-updates.json. 0 updates, 1 issue."
+        },
+        {
+          "step": 7,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: Construction A&S $4.78B, FEICA Model EPDs, VOC/REACH compound burden, MS polymer shift"
+        },
+        {
+          "step": 8,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 4."
+        }
+      ],
+      "issues_found": 4,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "ADH": {
+      "batch": 6,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for ADH."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 193 (family TC) and CEN/TC 67 (standards TC). EN 12004-1:2017 current. No active revision."
+        },
+        {
+          "step": 3,
+          "source": "Cross-ref",
+          "finding": "EN 12004-1 AVCP mismatch: ADH '3' vs CMG '3, 4'. 6th AVCP mismatch. TC mismatch deliberate. 5 empty content."
+        },
+        {
+          "step": 4,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/ADH-deep-dive.md"
+        },
+        {
+          "step": 5,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/ADH-updates.json. 0 updates, 3 issues."
+        },
+        {
+          "step": 6,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: European construction adhesives €3.2B, FEICA Model EPDs (shared with SEA), Sika leads"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 6."
+        }
+      ],
+      "issues_found": 6,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "SHA": {
+      "batch": 7,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "Implementing Decision 2026/284 harmonizes EN 16510-2-7:2025. OJ 9 Feb 2026. Coexistence ends 9 Feb 2027."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 295 active. EN 16510-2-7:2025 published. EN 16510-2-5 still in development."
+        },
+        {
+          "step": 3,
+          "source": "EC",
+          "finding": "Old SReq C(2021) 5359 delivery 31 Dec 2024 passed. New SReq targeted 2028. ESPR overlap."
+        },
+        {
+          "step": 4,
+          "source": "Cross-ref",
+          "finding": "TC mismatch (TC 130 vs TC 295) — deliberate. 3 empty content. No cross-listed standards."
+        },
+        {
+          "step": 5,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/SHA-deep-dive.md"
+        },
+        {
+          "step": 6,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/SHA-updates.json. 0 updates, 2 issues."
+        },
+        {
+          "step": 7,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: European heating appliances €10.5B, Ecodesign Lot 15 overlap, EN 16510 series"
+        },
+        {
+          "step": 8,
+          "source": "Review-queue update",
+          "finding": "Added 2 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 5."
+        }
+      ],
+      "issues_found": 5,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "PTA": {
+      "batch": 7,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No implementing decisions for PTA. No OJ citations for plastic piping."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 155 active. EN 1401-1:2019+A1:2023 latest edition but not OJ-cited."
+        },
+        {
+          "step": 3,
+          "source": "TEPPFA",
+          "finding": "Confirms no plastic pipe hEN cited in OJEU. Only family with ALL hENs uncited."
+        },
+        {
+          "step": 4,
+          "source": "Cross-ref",
+          "finding": "Self-contained (TC 155). Twins with SAP (identical timeline). 4 empty content."
+        },
+        {
+          "step": 5,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/PTA-deep-dive.md"
+        },
+        {
+          "step": 6,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/PTA-updates.json. 0 updates, 1 issue."
+        },
+        {
+          "step": 7,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: European plastic pipes €27.3B, TEPPFA sector EPDs, no OJ-cited hENs unique"
+        },
+        {
+          "step": 8,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 4."
+        }
+      ],
+      "issues_found": 4,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "SAP": {
+      "batch": 7,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No implementing decisions for SAP."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 163 active. No specific revision projects found."
+        },
+        {
+          "step": 3,
+          "source": "Cross-ref",
+          "finding": "Self-contained (TC 163). Uniform AVCP 4. Twins with PTA. 4 empty content."
+        },
+        {
+          "step": 4,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/SAP-deep-dive.md"
+        },
+        {
+          "step": 5,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/SAP-updates.json. 0 updates, 1 issue."
+        },
+        {
+          "step": 6,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: Sanitary ware $11.3B, V&B 14,000+ EPDs, European Water Label 90+ brands"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 4."
+        }
+      ],
+      "issues_found": 4,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "RPS": {
+      "batch": 7,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions. EN 10080:2005 withdrawal (2006/893/EC) remains."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "prEN 10080:2023 at stage 40.60. prEN 10138-3 at 40.60. prEN 10370 under development."
+        },
+        {
+          "step": 3,
+          "source": "EC",
+          "finding": "SReq in preparation, target Q2 2026. M-I done, M-III Q4 2025 may be stale. Ombudsman case."
+        },
+        {
+          "step": 4,
+          "source": "Cross-ref",
+          "finding": "EAD 200029 flag (SMP↔RPS) — NOT in RPS data, flag may be incorrect. 2 empty content."
+        },
+        {
+          "step": 5,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/RPS-deep-dive.md"
+        },
+        {
+          "step": 6,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/RPS-updates.json. 0 updates, 2 issues."
+        },
+        {
+          "step": 7,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: Green steel via H2-DRI, prEN 10080 20-year saga, Ombudsman case, Eurocode 2 gap"
+        },
+        {
+          "step": 8,
+          "source": "Review-queue update",
+          "finding": "Added 4 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 8."
+        }
+      ],
+      "issues_found": 8,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "WWD": {
+      "batch": 8,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for WWD. 2026/284 does not affect WWD."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 165 active. No specific CPR-relevant revision projects found."
+        },
+        {
+          "step": 3,
+          "source": "Cross-ref",
+          "finding": "Self-contained family. No cross-family standards. 5 empty content sections."
+        },
+        {
+          "step": 4,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/WWD-deep-dive.md"
+        },
+        {
+          "step": 5,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/WWD-updates.json. 0 updates, 1 issue."
+        },
+        {
+          "step": 6,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: Wastewater treatment $12.35B, UWWTD recast extends to 1,000 PE, EN 12566 38-week test"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 4."
+        }
+      ],
+      "issues_found": 4,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "WBP": {
+      "batch": 8,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new CPR implementing decisions. REACH (EU) 2023/1464 halves formaldehyde limit to E0.5 from Aug 2026."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 112 active. EN 13986 revision not started. SG 20: 'at minimum 3 years away.'"
+        },
+        {
+          "step": 3,
+          "source": "Cross-ref",
+          "finding": "Acquis=Yes but ALL Table 3 milestones empty — unique gap. EN 13986 cross-listed with STP. 6 empty content."
+        },
+        {
+          "step": 4,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/WBP-deep-dive.md"
+        },
+        {
+          "step": 5,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/WBP-updates.json. 0 updates, 3 issues."
+        },
+        {
+          "step": 6,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: REACH E0.5 formaldehyde Aug 2026, EN 13986 bottleneck, EUDR/biocide cross-regulatory"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue update",
+          "finding": "Added 4 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 9."
+        }
+      ],
+      "issues_found": 9,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "MEM": {
+      "batch": 8,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for MEM."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 254 active. No specific CPR-relevant revision projects found."
+        },
+        {
+          "step": 3,
+          "source": "Cross-ref",
+          "finding": "Self-contained family. Functional overlap with ROC noted. 5 empty content sections."
+        },
+        {
+          "step": 4,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/MEM-deep-dive.md"
+        },
+        {
+          "step": 5,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/MEM-updates.json. 0 updates, 1 issue."
+        },
+        {
+          "step": 6,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: Waterproofing membranes $4.6B, prEN 17388-2 PCR, PVC ROOFCOLLECT, bitumen landfilled"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 4."
+        }
+      ],
+      "issues_found": 4,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "GEO": {
+      "batch": 8,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for GEO."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 189 active. No specific CPR-relevant revision projects found."
+        },
+        {
+          "step": 3,
+          "source": "Cross-ref",
+          "finding": "Self-contained. EAD 042461 resolved (PA 04 / TIP). Uniform AVCP 2+. 5 empty content."
+        },
+        {
+          "step": 4,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/GEO-deep-dive.md"
+        },
+        {
+          "step": 5,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/GEO-updates.json. 0 updates, 1 issue."
+        },
+        {
+          "step": 6,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: Geosynthetics $2.94B, PFAS dual pressure on geomembranes, first geogrid EPD (HUESKER)"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 4."
+        }
+      ],
+      "issues_found": 4,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "CWP": {
+      "batch": 9,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for CWP. 2026/284 does not affect CWP."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 33 WG 6 active. EN 13830:2015+A1:2020/AC:2022 current. No active revision — awaiting SReq."
+        },
+        {
+          "step": 3,
+          "source": "EOTA",
+          "finding": "25 legacy EADs. No new PA 09 EADs confirmed."
+        },
+        {
+          "step": 4,
+          "source": "Cross-ref",
+          "finding": "CEN/TC 33 shared with DWS. DWS SReq references curtain walling accessories. NT-5 in_progress vs awaiting SReq. 4 empty content."
+        },
+        {
+          "step": 5,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/CWP-deep-dive.md"
+        },
+        {
+          "step": 6,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/CWP-updates.json. 0 updates, 3 issues."
+        },
+        {
+          "step": 7,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: Facades $298B global, strongest EPD coverage in CPR (Schüco etc.), post-Grenfell fire gaps"
+        },
+        {
+          "step": 8,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 6."
+        }
+      ],
+      "issues_found": 6,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "LAD": {
+      "batch": 9,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for LAD."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 128. No ladder-specific revision projects. 3 hENs are 18-22 years old."
+        },
+        {
+          "step": 3,
+          "source": "Cross-ref",
+          "finding": "New family #36. 3 hENs currently under ROC (family 22). Milestones within KAS. Standards gap for broader scope. 3 empty content."
+        },
+        {
+          "step": 4,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/LAD-deep-dive.md"
+        },
+        {
+          "step": 5,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/LAD-updates.json. 0 updates, 3 issues."
+        },
+        {
+          "step": 6,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: Niche market, zero EPDs, three-regulation overlap (CPR/Machinery/PPE), ZARGES leads"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 6."
+        }
+      ],
+      "issues_found": 6,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "STP": {
+      "batch": 9,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for STP. Fire classification DRs 2017/2293 and 2017/1227 still in force."
+        },
+        {
+          "step": 2,
+          "source": "CEN WP",
+          "finding": "CEN/TC 124 active. Eurocode 5 EN 1995-1-1:2025 expanded for CLT/LVL. No specific hEN revisions found."
+        },
+        {
+          "step": 3,
+          "source": "EOTA",
+          "finding": "41 legacy EADs. EAD 130089 (finger-jointed wet/cold glued) recently published, may be missing from tracker."
+        },
+        {
+          "step": 4,
+          "source": "Cross-ref",
+          "finding": "Largest family (50 stds). EN 13986 cross-listed with WBP — consistent. M-III Q1 2026 may be stale. EUDR cross-regulatory. 3 empty content."
+        },
+        {
+          "step": 5,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/STP-deep-dive.md"
+        },
+        {
+          "step": 6,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/STP-updates.json. 0 updates, 4 issues."
+        },
+        {
+          "step": 7,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: CLT market $1.9B, EUDR traceability, biogenic carbon debate, Eurocode 5 second gen"
+        },
+        {
+          "step": 8,
+          "source": "Review-queue update",
+          "finding": "Added 2 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 10."
+        }
+      ],
+      "issues_found": 10,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "CAB": {
+      "batch": 10,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No new implementing decisions for CAB. 2016/364 fire classification still in force."
+        },
+        {
+          "step": 2,
+          "source": "CEN/CENELEC WP",
+          "finding": "CLC/TC 20. EN 50575:2014+A1:2016 current. No active revision. Only CENELEC family."
+        },
+        {
+          "step": 3,
+          "source": "Cross-ref",
+          "finding": "Latest milestones (M-I & M-III both 2029). Single hEN. 4 empty content."
+        },
+        {
+          "step": 4,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/CAB-deep-dive.md"
+        },
+        {
+          "step": 5,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/CAB-updates.json. 0 updates, 1 issue."
+        },
+        {
+          "step": 6,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: Wire/cable $36-63B, Prysmian/Nexans EPDs, EN 50575 scope expansion, REACH lead on PVC"
+        },
+        {
+          "step": 7,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 4."
+        }
+      ],
+      "issues_found": 4,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "DWP": {
+      "batch": 10,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "DWD 2020/2184 — Delegated Reg (EU) 2024/371 (marking) and Impl Decision (EU) 2024/367 (positive lists) adopted."
+        },
+        {
+          "step": 2,
+          "source": "Cross-ref",
+          "finding": "Most sparse family: 0 standards, no TC, all TBD. CPR vs DWD jurisdiction unclear. 6 empty content."
+        },
+        {
+          "step": 3,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/DWP-deep-dive.md"
+        },
+        {
+          "step": 4,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/DWP-updates.json. 0 updates, 3 issues."
+        },
+        {
+          "step": 5,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: Plastics pipes $27.3B, DWD far more advanced than CPR, ECHA positive lists Dec 2026"
+        },
+        {
+          "step": 6,
+          "source": "Review-queue update",
+          "finding": "Added 4 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 6."
+        }
+      ],
+      "issues_found": 6,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    },
+    "DPW": {
+      "batch": 10,
+      "status": "complete",
+      "phase": "done",
+      "research_log": [
+        {
+          "step": 1,
+          "source": "EUR-Lex",
+          "finding": "No CPR implementing decisions. Decopaint Directive 2004/42/EC cross-regulatory."
+        },
+        {
+          "step": 2,
+          "source": "Cross-ref",
+          "finding": "New family, no Annex VII number. 0 standards. DPP 2035+ (most distant). 4 empty content."
+        },
+        {
+          "step": 3,
+          "source": "Report",
+          "finding": "Written to deep-dives/reports/DPW-deep-dive.md"
+        },
+        {
+          "step": 4,
+          "source": "Review-queue",
+          "finding": "Written to deep-dives/review-queue/DPW-updates.json. 0 updates, 2 issues."
+        },
+        {
+          "step": 5,
+          "source": "Supplementary (6 web searches)",
+          "finding": "Wide-scope research: Paints & coatings $38.7B, AkzoNobel/Jotun EPDs, Decopaint+A++AgBB fragmentation"
+        },
+        {
+          "step": 6,
+          "source": "Review-queue update",
+          "finding": "Added 3 supplementary issues (dpp_readiness, market_context, cross_regulatory, circular_economy). Total issues now: 5."
+        }
+      ],
+      "issues_found": 5,
+      "updates_proposed": 0,
+      "quality_gate_passed": true
+    }
+  }
+}

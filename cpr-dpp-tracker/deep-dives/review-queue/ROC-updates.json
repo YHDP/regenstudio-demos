@@ -1,0 +1,90 @@
+{
+  "family": "ROC",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-ROC-001",
+      "families": ["ROC"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "Four content sections empty",
+      "description": "content.standards_landscape, content.standards_development, content.key_risks, and content.sources_summary are all empty. ROC has 52 standards (21 hEN + 31 EAD) — the 2nd-largest EAD portfolio — with significant context worth documenting.",
+      "action_required": "Populate with proposed content from deep-dive report §8.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-ROC-002",
+      "families": ["ROC", "SMP", "WCF"],
+      "severity": "info",
+      "type": "cross_family",
+      "title": "EN 14509 (sandwich panels) cross-listed in SMP, ROC, WCF",
+      "description": "EN 14509 is tracked in SMP, ROC, and WCF standards[]. Data (AVCP, cited, DPP estimate) should be consistent across all three families. SMP deep-dive (Batch 1) flagged this as iss-SMP-003.",
+      "action_required": "Verify EN 14509 data consistency across SMP, ROC, WCF.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-ROC-003",
+      "families": ["ROC", "DWS"],
+      "severity": "info",
+      "type": "cross_family",
+      "title": "EAD 020011 (roof hatches) potentially overlaps with ROC",
+      "description": "EAD 020011-00-0404 (roof hatches/smoke vents) is tracked in DWS but was flagged in Batch 1 as potentially relevant to ROC. Verify whether this EAD should also appear in ROC's standards[].",
+      "action_required": "Check EAD 020011 product scope against ROC family definition.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-ROC-004",
+      "families": ["ROC"],
+      "severity": "warning",
+      "type": "missing_standard",
+      "title": "Implementing Decision 2025/871 cites ROC-relevant EADs not in standards[]",
+      "description": "Commission Implementing Decision (EU) 2025/871 (30 Apr 2025, amending 2019/450) cites 14 EADs. At least 2 are directly relevant to ROC: EAD 042461-00-1201 'Hydrophilic thermal insulation product of mineral wool for green roofs' and EAD 210195-00-0404 'Ultra-thin natural stone veneer sheets for walls and roofs'. EAD 230328-00-0108 'Rubber modified bitumen binders' is also tangentially relevant (bitumen input for roof coverings). None appear in ROC standards[]. EAD count (31) may need updating.",
+      "action_required": "Evaluate EAD 042461 and EAD 210195 for inclusion in ROC standards[]. If added, update ead_count and total. Check whether these EADs' product area matches ROC (PA 22) or are in adjacent PAs.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-ROC-005",
+      "families": ["ROC"],
+      "severity": "info",
+      "type": "cross_regulatory",
+      "title": "EPBD 2024/1275 solar rooftop obligations interact with ROC photovoltaic EADs",
+      "description": "EPBD recast (Directive (EU) 2024/1275) mandates solar-ready rooftops: non-residential >250m² by 31 Dec 2026, residential by 31 Dec 2029. BIPV products (solar tiles, solar roof panels) require dual compliance: CPR (construction performance) + LVD/EMC (electrical). Several ROC EADs cover photovoltaic roof systems. EPBD obligation will massively increase BIPV demand and regulatory scrutiny. Transposition deadline 29 May 2026.",
+      "action_required": "Document EPBD interaction in content.key_risks. Monitor BIPV product standard development. Consider flagging photovoltaic roof EADs for dual-regulation note.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-ROC-006",
+      "families": ["ROC"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "Wienerberger leads EPD readiness but BMI Group (largest EU roofing manufacturer) has no EPDs",
+      "description": "Wienerberger publishes EPDs for clay roof tiles (DE, FR), accessories, and Sandtoft In-Roof Solar (UK) — the latter a BIPV product with both EN 15804 environmental data and BROOF[t4] fire certification. However, BMI Group (formed by Standard Industries combining Braas Monier + Icopal, largest EU roofing manufacturer) has no EPDs found. Split EPD readiness mirrors WBP pattern (Kronospan gap vs EGGER/Pfleiderer readiness).",
+      "source": "Wienerberger UK EPDs (https://www.wienerberger.co.uk/about-us/sustainability/environmental-product-declarations.html); Sandtoft Solar EPD (https://www.wienerberger.co.uk/about-us/news-blogs/in-roof-solar-epd.html); BMI Group (https://bmigroupinternational.com/)",
+      "action_required": "Document EPD readiness split in content. Note Wienerberger BIPV EPD as DPP-ready exemplar.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-ROC-007",
+      "families": ["ROC"],
+      "severity": "info",
+      "type": "dpp_complexity",
+      "title": "BIPV roof products need dual DPP data: CPR construction + IEC electrical performance",
+      "description": "Building-Integrated Photovoltaic (BIPV) roof products require dual certification: CPR (construction performance, fire safety BROOF) + IEC 61215/61730 (photovoltaic module electrical safety). European BIPV market growing from $7.4B (2022) to $16.5B (2033). Italy Dec 2025 heritage reform unlocked protected buildings for 'virtually invisible' solar tiles. No harmonised approach to dual-regulation DPP (construction + electrical in single passport) exists.",
+      "source": "Electrek Roofit.Solar (https://electrek.co/2026/02/18/european-company-sleek-solar-roof-just-made-its-us-debut/); PV Magazine ML System (https://www.pv-magazine.com/2026/01/06/ml-system-unveils-solar-facade-panels-roof-integrated-pv-tiles/)",
+      "action_required": "Document BIPV dual-DPP challenge in content. Monitor harmonisation of CPR/IEC product classification for BIPV.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-ROC-008",
+      "families": ["ROC"],
+      "severity": "info",
+      "type": "regulatory_development",
+      "title": "Green roofs recognised in EPBD for first time — new product demand and DPP complexity",
+      "description": "EPBD recast (Directive 2024/1275) acknowledges green roofs for first time: member states must consider green roofs when meeting solar energy obligations. EAD 042461-00-1201 (hydrophilic mineral wool for green roofs) newly cited via Implementing Decision 2025/871. Green roofs lower surface temperatures 20-30°C. Multi-layer green roof systems (waterproofing + insulation + drainage + growing medium + vegetation) create component vs system DPP data challenge.",
+      "source": "WGIN EPBD recognition (https://worldgreeninfrastructurenetwork.org/green-roof-acknowledged-for-the-first-time-in-epbd/); EFB/UNEP/GlobalABC (https://globalabc.org/sites/default/files/2025-02/EFB_ENZI_UNEP_GLOBALABC_06_02_2025.pdf)",
+      "action_required": "Document green roof EPBD integration in content. Consider DPP implications for multi-layer roof systems.",
+      "status": "pending"
+    }
+  ]
+}

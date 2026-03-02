@@ -1,0 +1,64 @@
+{
+  "family": "KAS",
+  "review_date": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-KAS-001",
+      "type": "empty_content",
+      "severity": "low",
+      "field": "content",
+      "description": "4 content sections empty: standards_development, stakeholder_notes, key_risks, sources_summary.",
+      "action": "Populate in future content pass"
+    },
+    {
+      "id": "iss-KAS-002",
+      "type": "cross_family",
+      "severity": "info",
+      "field": "standards",
+      "description": "EAD 340033 (prefab chimney kits with flue liner) — potential overlap with CHI (chimneys) family. Product boundary: prefab kit vs chimney component.",
+      "action": "Note for cross-family tracking"
+    },
+    {
+      "id": "iss-KAS-003",
+      "type": "cross_family",
+      "severity": "info",
+      "field": "content.about",
+      "description": "KAS includes PA 36 (attached ladders) per COM(2025) 772 Working Plan — potential overlap with LAD family in Batch 9. Verify family boundary when processing LAD.",
+      "action": "Verify against LAD in Batch 9"
+    },
+    {
+      "id": "iss-KAS-004",
+      "families": ["KAS"],
+      "severity": "warning",
+      "type": "dpp_readiness",
+      "title": "Only ~15 ETICS EPDs found vs 798 ETAs issued — 50:1 gap in environmental data readiness",
+      "description": "Systematic review found only ~15 EPDs for ETICS (EPS, XPS, mineral wool) against 798 issued ETAs. Kit system LCA complexity (insulation + adhesive + mesh + render + fixings) makes EPD boundaries complex. AVCP System 1 ensures structural/fire safety testing but environmental data infrastructure severely lacking. AVCP for ETICS sustainability 'will be challenging to implement in practice based only on environmental indicators according to EN 15804.' Some individual ETICS EPDs exist (Berger S-P-01418 on EPD International).",
+      "source": "MDPI Sustainability 13(24):13705 (https://www.mdpi.com/2071-1050/13/24/13705); EPD International (https://www.environdec.com/library/epd1418)",
+      "action_required": "Document ETICS EPD readiness gap in content. Flag as major DPP implementation barrier for kit systems.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-KAS-005",
+      "families": ["KAS"],
+      "severity": "info",
+      "type": "market_context",
+      "title": "ETICS market €7.7B + prefab market €78B — combined KAS among largest CPR families by value",
+      "description": "ETICS system materials market: $7.73B (2023) → $12.24B by 2031 (CAGR 5.9%). EPS 77% of ETICS insulation. Building renovation 52% of ETICS applications. European prefab buildings market: $78B (2025) → $109.3B by 2030 (CAGR 7%). Timber 36.12% market share. Modular systems 46% revenue share. Germany leads (19.2%). Combined KAS market value rivals largest CPR families. EU Renovation Wave and EPBD targets are primary demand drivers.",
+      "source": "Insight Partners ETICS Market (https://www.theinsightpartners.com/reports/europe-etics-system-materials-market); Mordor Intelligence Prefab (https://www.mordorintelligence.com/industry-reports/european-prefabricated-buildings-industry-study); Fortune BI Modular (https://www.fortunebusinessinsights.com/europe-modular-construction-market-107747)",
+      "action_required": "Include market context in content for DPP impact assessment.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-KAS-006",
+      "families": ["KAS"],
+      "severity": "warning",
+      "type": "dpp_complexity",
+      "title": "Kit/system DPP architecture — most complex compound data challenge of any CPR family",
+      "description": "KAS kits require 3-layer DPP data: (1) component-level (insulation, adhesive, mesh, render, fixing), (2) system-level (ETICS or prefab unit performance), (3) building-level (EPBD energy calculations). EC CPR DPP feasibility study (May 2025) has limited kit-specific guidance. DPP registry (July 2026) must handle kit-to-component relationships. New EADs require: GWP immediately, LCA-EPD core by 2029, full lifecycle by 2031. Fire safety classification (EN 13501-1, AVCP System 1) is safety-critical system-level DPP data that depends on component interaction.",
+      "source": "EC DPP feasibility study (https://op.europa.eu/en/publication-detail/-/publication/cf329d5e-3464-11f0-8a44-01aa75ed71a1/language-en); EC CPR announcement (https://single-market-economy.ec.europa.eu/news/new-eu-rules-safety-and-sustainability-construction-products-mark-new-step-sectors-competitiveness-2025-01-07_en)",
+      "action_required": "Document kit DPP architecture challenge in content.key_risks. Flag for DPP system design considerations.",
+      "status": "pending"
+    }
+  ]
+}

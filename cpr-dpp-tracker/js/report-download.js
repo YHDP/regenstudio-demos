@@ -74,9 +74,10 @@
   }
 
   function generateReport(reportType, familyLetter) {
-    fetch('data/families.json')
+    fetch('data/families-v2.json')
       .then(function (r) { return r.json(); })
-      .then(function (families) {
+      .then(function (data) {
+        var families = data.families || data;
         waitForJsPDF(function () {
           var progressText = document.getElementById('progressText');
           var progressFill = document.getElementById('progressFill');

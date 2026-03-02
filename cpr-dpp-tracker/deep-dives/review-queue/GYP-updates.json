@@ -1,0 +1,50 @@
+{
+  "family": "GYP",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-GYP-001",
+      "families": ["GYP"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "Four content sections empty",
+      "description": "content.standards_landscape, content.standards_development, content.key_risks, and content.sources_summary are empty.",
+      "action_required": "Populate with proposed content from deep-dive report §8.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-GYP-002",
+      "families": ["GYP"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "Big-3 all publish EN 15804 EPDs — strong DPP readiness among market leaders",
+      "description": "Knauf publishes EN 15804+A2 EPDs via EPD International (GKB, GKI, A-ZERO). Saint-Gobain publishes via Gyproc/British Gypsum brands, IBU-verified. British Gypsum launched Gyproc SoundBloc Infinaé 100 (UK's first 100% recycled plasterboard, Jan 2025). Etex/Siniat has RECYPLAC (100% recycled, Jul 2025). Strong EPD infrastructure among top-3 producers who dominate ~90% of market. Smaller regional producers may lack EPDs — similar split to other families.",
+      "source": "Knauf EPDs (https://www.environdec.com/); Saint-Gobain/Gyproc (https://www.gyproc.co.uk/sustainability); British Gypsum (https://www.british-gypsum.com/); IBU (https://ibu-epd.com/)",
+      "action_required": "Document Big-3 EPD readiness in content. Note 100% recycled products as DPP exemplars.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-GYP-003",
+      "families": ["GYP"],
+      "severity": "warning",
+      "type": "raw_material_transition",
+      "title": "FGD gypsum supply declining as coal plants close — recycled gypsum becoming critical raw material",
+      "description": "More than 50% of German gypsum demand (~4Mt/yr) is met by FGD gypsum from coal power stations. European coal phase-out (Germany target 2038) will sharply reduce FGD supply. Plasterboard plants built adjacent to power stations will become 'orphans'. Raw material transition: FGD synthetic → recycled C&D gypsum + natural quarrying. Recycled gypsum market projected $3.21B by 2030. For DPP: raw material source (natural, FGD, recycled) is an emerging data attribute. EN 14190 (reprocessed gypsum) already provides the hEN framework. Siniat RECYPLAC (100% recycled) and Etex (35%+ recycled content) lead the transition.",
+      "source": "Clean Energy Wire (https://www.cleanenergywire.org/news/germanys-gypsum-supply-threatened-coal-exit-report); Global Gypsum (https://www.globalgypsum.com/magazine/the-last-word/744-often-overlooked-gypsum-is-the-wonder-material-we-cannot-do-without); ZKG (https://www.zkg.de/en/artikel/zkg_Latest_market_trends_for_FGD_gypsum-3749442.html)",
+      "action_required": "Document FGD supply transition in content.key_risks. Flag raw material source as DPP data attribute.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-GYP-004",
+      "families": ["GYP"],
+      "severity": "info",
+      "type": "market_context",
+      "title": "European plasterboard $7.1B (2023), CAGR 7.09% — mid-sized CPR family dominated by Big-3",
+      "description": "European gypsum plasterboard market $7.10B (2023), growing to $14.08B by 2033 (CAGR 7.09%). Dominated by Saint-Gobain (Gyproc, British Gypsum, Rigips), Knauf, and Etex (Siniat, Fermacell). Growth drivers: EPBD renovation wave, fire safety (A1/A2 classification), acoustic performance, modular construction. Emerging alternatives: hempcrete (Hemspan), bio-based panels (Adaptavate). Single-TC structure (CEN/TC 241) and A2-s1,d0 CWFT classification simplify DPP implementation compared to multi-TC families.",
+      "source": "GlobeNewsWire (https://www.globenewswire.com/news-release/2024/11/01/2973239/28124/en/Europe-Gypsum-Based-Plasterboard-and-Alternatives-Market-Report-2023-2033); Mordor Intelligence (https://www.mordorintelligence.com/industry-reports/europe-gypsum-board-market)",
+      "action_required": "Include market context in content for DPP impact assessment.",
+      "status": "pending"
+    }
+  ]
+}

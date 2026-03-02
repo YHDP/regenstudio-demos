@@ -1,0 +1,73 @@
+{
+  "family": "RPS",
+  "review_date": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-RPS-001",
+      "type": "empty_content",
+      "severity": "low",
+      "field": "content",
+      "description": "2 content sections empty: stakeholder_notes, key_risks, sources_summary.",
+      "action": "Populate in future content pass"
+    },
+    {
+      "id": "iss-RPS-002",
+      "type": "stale_status",
+      "severity": "medium",
+      "field": "pipelines.A.nodes[1]",
+      "current": "status: not_started",
+      "expected": "status: in_progress or complete",
+      "description": "NT-3 (Milestone III) was targeted Q4 2025 but status still shows 'not_started' as of Mar 2026. May now be complete or in progress. Requires verification with Commission/TC 459.",
+      "action": "Verify M-III status and update accordingly"
+    },
+    {
+      "id": "iss-RPS-003",
+      "type": "cross_regulatory",
+      "severity": "warning",
+      "description": "CBAM full financial implementation Jan 2026 for steel. Embedded emissions tracking requirement highly synergistic with DPP environmental performance data under CPR. Steel producers building CBAM compliance systems are de facto building DPP infrastructure. Clean Industrial Deal proposes steel as first sector for mandatory carbon label (GWP in DoPC). Triple compliance burden: CBAM + ESPR + potential safeguard tariffs.",
+      "action": "Document CBAM cross-regulatory in content. Monitor carbon label delegated act timeline."
+    },
+    {
+      "id": "iss-RPS-004",
+      "type": "regulatory_development",
+      "severity": "info",
+      "description": "Eurocode 2 (EN 1992-1-1:2023) published Nov 2023. References EN 10080 and prEN 10138 as normative standards despite neither being harmonised. Creates design code/product standard gap: engineers design per Eurocode 2 referencing EN 10080, but manufacturers cannot CE-mark to it. National adoption with annexes expected ~2028.",
+      "action": "Document Eurocode 2 gap in content.stakeholder_notes."
+    },
+    {
+      "id": "iss-RPS-005",
+      "type": "timeline_context",
+      "severity": "info",
+      "description": "Only CPR family where CE marking is impossible (since withdrawal of EN 10080:2005 by Decision 2006/893/EC in 2006). 20-year harmonisation failure. prEN 10080:2023 at stage 40.60 but not yet at formal vote. prEN 10138 series also stuck at prEN for 20+ years. Ombudsman case 2145/2018/JAP opened Jan 2019 on Commission's failure to act — status unconfirmed. This institutional history provides strong pressure for RPS prioritisation (priority 03, SReq Q2 2026).",
+      "action": "Verify Ombudsman case status. Document 20-year timeline context in key_risks."
+    },
+    {
+      "id": "iss-RPS-006",
+      "type": "cross_regulatory",
+      "severity": "warning",
+      "title": "ESPR iron & steel delegated act creates parallel DPP track (~2027)",
+      "description": "ESPR lists iron & steel as priority product group. Delegated acts may be adopted Q3-Q4 2025 with 18+ month preparation → compliance ~mid-2027. ESPR DPP applies to steel as intermediate product regardless of CPR hEN status. RPS may get ESPR DPP before CPR DPP, creating dual regulatory pathway.",
+      "source": "EUROFER ESPR Position Paper Jul 2022 (https://www.eurofer.eu/assets/publications/position-papers/ecodesign-for-sustainable-products-regulation/20220713-Ecodesign-Sustainable-Product-Initiative-position-paper-final.pdf); Fluxy DPP Guide (https://fluxy.one/post/digital-product-passport-dpp-eu-guide-2025-2030)",
+      "action": "Monitor ESPR delegated act adoption. Assess whether ESPR DPP will precede CPR DPP for rebar."
+    },
+    {
+      "id": "iss-RPS-007",
+      "type": "dpp_readiness",
+      "severity": "info",
+      "title": "European EAF rebar EPD infrastructure ready — data exists, hEN is sole blocker",
+      "description": "Multiple European EAF rebar producers have EN 15804+A2 verified EPDs: ArcelorMittal XCarb 300 kg CO₂e/t (IBU verified, Warsaw/Hamburg), Feralpi FERGreen 368 kg CO₂e/t (98.7% recycled, Riesa), JSC SERFAS 100% renewable EAF (EPD-IES-0011616, valid to 2028). European EAF market share 45%, projected 57% by 2030. The environmental data infrastructure for CPR DPP exists; the missing harmonised standard (EN 10080) is the sole blocker.",
+      "source": "ArcelorMittal XCarb (https://barsandrods.arcelormittal.com/news/3406/XCarb_for_rebars); Feralpi FERGreen (https://feralpi-stahl.com/en/fergreen); SERFAS EPD (https://www.environdec.com/library/epd11616)",
+      "action": "Document EPD readiness in content. Note that data exists but CPR pathway is blocked."
+    },
+    {
+      "id": "iss-RPS-008",
+      "type": "market_signal",
+      "severity": "info",
+      "title": "SteelZero/ResponsibleSteel demand-side pressure for GWP-transparent steel",
+      "description": "SteelZero (Climate Group): 40+ organisations commit to 50% lower-emission steel by 2030. Construction members include Lendlease, Mace, Multiplex, BHC, Bourne, Grosvenor, WSP UK. Endorsed ResponsibleSteel V2.0 sliding scale as measurement framework. Climate Group states 2026 is 'year rules are changing for steel and concrete.' Demand-side pressure precedes CPR supply-side mandate.",
+      "source": "SteelZero (https://www.theclimategroup.org/steelzero); SteelZero Members (https://www.theclimategroup.org/steelzero-members); ResponsibleSteel endorsement (https://www.theclimategroup.org/our-work/news/steelzero-endorses-responsiblesteel-standard-v20)",
+      "action": "Document demand-side drivers in content. Monitor ResponsibleSteel V2.0 alignment with CPR GWP methodology."
+    }
+  ]
+}

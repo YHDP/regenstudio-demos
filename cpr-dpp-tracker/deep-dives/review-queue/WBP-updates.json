@@ -1,0 +1,100 @@
+{
+  "family": "WBP",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-WBP-001",
+      "families": ["WBP"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "Six content sections empty",
+      "description": "content.standards_landscape, content.standards_development, content.sreq_analysis, content.stakeholder_notes, content.key_risks, and content.sources_summary are empty. Most empty sections of any Batch 8 family.",
+      "action_required": "Populate with proposed content from deep-dive report \u00a78.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-WBP-002",
+      "families": ["WBP"],
+      "severity": "warning",
+      "type": "content_data_disagreement",
+      "title": "Acquis=Yes but all Table 3 milestones empty",
+      "description": "WBP has acquis=Yes but milestones.i, milestones.iii, milestones.sreq, milestones.delivery, and milestones.mandatory are all empty strings. milestones.dpp is 'TBD'. dpp-range hen_earliest and hen_latest are 'TBD'. This is unique among acquis-classified families \u2014 all others (CEM, SMP, PCR, etc.) have confirmed milestone dates.",
+      "action_required": "Investigate whether COM(2025) 772 or subsequent working plan updates provide milestone dates for WBP. If dates exist, add them. If genuinely absent, add explanatory note to content.sreq_analysis.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-WBP-003",
+      "families": ["WBP"],
+      "severity": "info",
+      "type": "cross_regulatory",
+      "title": "REACH E0.5 formaldehyde threshold impacts WBP from August 2026",
+      "description": "Commission Regulation (EU) 2023/1464 amends REACH Annex XVII, halving the formaldehyde emission limit for wood-based panels from 0.124 mg/m\u00b3 to 0.062 mg/m\u00b3 (E0.5 class), effective August 2026. This directly impacts EN 13986 formaldehyde classification and testing requirements. While not a CPR change, it affects future DPP data content (emission declarations) and may accelerate EN 13986 revision needs.",
+      "action_required": "Document in content.key_risks. Consider adding a cross_regulatory field or note to the WBP data model.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-WBP-004",
+      "families": ["WBP", "STP"],
+      "severity": "warning",
+      "type": "regulatory_development",
+      "title": "COM(2025) 772 merged STP and WBP workstreams",
+      "description": "The CPR Working Plan COM(2025) 772 merged structural timber products (family 13/STP, priority 7) and wood-based panels (family 14/WBP, priority 16) workstreams. WBP milestones may be derived from STP's timeline rather than independently set. This partially explains the empty milestones in WBP (iss-WBP-002). The merger creates a dependency: WBP progress depends on STP workstream pace. STP cannot use fast-track but WBP can — may need separate tracks during standards development.",
+      "action_required": "Monitor whether WBP gets independent milestones or follows STP. Document merger in content.sreq_analysis.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-WBP-005",
+      "families": ["WBP"],
+      "severity": "info",
+      "type": "timeline_context",
+      "title": "SG 20 confirmed 3-year minimum for wood standards; 2040 full transition",
+      "description": "30th SG 20 meeting (7 May 2025) confirmed wood product standards are 'at minimum 3 years away.' Full CPR transition target is 2040 (gradual by product group). Until new harmonised standards published, old CPR applies — dual-system period. Notified body obligations expanded under new CPR.",
+      "action_required": "Document SG 20 findings in content. Update DPP outlook with 2040 backstop context.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-WBP-006",
+      "families": ["WBP"],
+      "severity": "info",
+      "type": "priority_context",
+      "title": "WBP is priority 16/34 with fast-track available",
+      "description": "WBP is priority 16 of 34 product families per COM(2025) 772. Unlike STP (priority 7, no fast-track), WBP has fast-track standards updating available. Fast-track not yet initiated. Could theoretically accelerate standards updating once SReq bottleneck is cleared. Priority 16 explains why milestones are absent in first working plan cycle.",
+      "action_required": "Document priority and fast-track in content. Consider impact on DPP range estimate.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-WBP-007",
+      "families": ["WBP"],
+      "severity": "warning",
+      "type": "dpp_readiness",
+      "title": "Kronospan lacks EPDs for highest-volume products — industry readiness varies dramatically",
+      "description": "Kronospan (largest EU panel producer) has NO EPD for particleboard or MFC — its highest-volume products. Meanwhile Pfleiderer already converted entire German production to E0.5, achieved 53.5% post-consumer recycled content, and offers OrganicBoard Pure (100% renewable binder + 100% recycled fibre). EGGER has IBU-verified EPDs and 66% recycled wood. Industry EPD readiness varies dramatically and will be exposed by DPP rollout.",
+      "source": "EPD Guide Kronospan analysis (https://epd.guide/manufacturers/kronospan-luxembourg-product-range-and-epd-reality); Pfleiderer materials (https://www.pfleiderer.com/global-en/sustainability/materials); EGGER product transparency (https://www.egger.com/en/about-us/sustainability/product-transparency?country=US)",
+      "action_required": "Document readiness disparity in content. Flag Kronospan EPD gap as risk for CPR GWP disclosure.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-WBP-008",
+      "families": ["WBP"],
+      "severity": "info",
+      "type": "cross_regulatory",
+      "title": "Triple regulatory overlay: REACH E0.5 + CPR dangerous substances + national IAQ schemes",
+      "description": "WBP faces three overlapping formaldehyde/VOC regimes: (1) REACH E0.5 (0.062 mg/m³, 6 Aug 2026) — market access restriction; (2) CPR dangerous substances SReq via CEN/TC 351 (15 deliverables due 31 Dec 2029) — declaration requirement, CPR still references E1 creating mismatch; (3) National IAQ schemes operating in parallel with different thresholds: Germany AgBB 2024, France mandatory A+ labelling, Belgium flooring decree, Italy CAM. EU-LCI harmonised value for formaldehyde has been POSTPONED pending ECHA classification.",
+      "source": "REACH (EU) 2023/1464 (https://www.ul.com/news/new-eu-restriction-formaldehyde-regulation-eu-20231464); AgBB 2024 (https://www.eco-institut.de/en/2024/10/federal-environment-agency-publication-agbb-scheme-2024/); EU-LCI values (https://single-market-economy.ec.europa.eu/sectors/construction/eu-lci-subgroup/eu-lci-values_en); ANSES France (https://www.anses.fr/en/content/labelling-building-and-decoration-products-respect-voc-emissions)",
+      "action_required": "Document triple overlay in content.key_risks. Note E1/E0.5 CPR-REACH mismatch. Monitor EU-LCI formaldehyde derivation.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-WBP-009",
+      "families": ["WBP"],
+      "severity": "info",
+      "type": "circular_economy",
+      "title": "Waste wood classification NOT harmonised — DPP recycled content declaration obstacle",
+      "description": "No unified EU legislative framework for waste wood classification. Recycled content varies: Italy ~95% in particleboard, Belgium/Denmark 50-70%, Germany/France/Spain 15-30%, EU average ~25%. EPF standard limits contamination to 2% dry weight, but countries apply different categories (Germany AltholzV I-IV, others use A-D). Lack of harmonised classification is a direct obstacle for DPP recycled content declarations. 38M m³ post-consumer wood recovered globally (2022), Europe 82.9%.",
+      "source": "PMC Sustainability in WBP (https://pmc.ncbi.nlm.nih.gov/articles/PMC11499423/); CEPS waste wood circularity (https://cdn.ceps.eu/wp-content/uploads/2024/11/2024-14_ERCC_Wood2Wood.pdf); EU Circular Economy Platform (https://circulareconomy.europa.eu/platform/en/knowledge/improving-waste-wood-circularity-eu-classification-frameworks-and-policy-options)",
+      "action_required": "Document waste wood classification gap in content. Flag as DPP implementation obstacle. Monitor EU harmonisation efforts.",
+      "status": "pending"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "family": "SEA",
+  "review_date": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-SEA-001",
+      "type": "empty_content",
+      "severity": "low",
+      "field": "content",
+      "description": "5 content sections empty: standards_landscape, standards_development, stakeholder_notes, key_risks, sources_summary.",
+      "action": "Populate in future content pass"
+    },
+    {
+      "id": "iss-SEA-002",
+      "families": ["SEA"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "FEICA Model EPDs cover sealant formulations — shared DPP infrastructure with ADH",
+      "description": "FEICA Model EPD system provides 21 published third-party verified EPDs per EN 15804+A2 for adhesive and sealant formulations. Developed jointly by FEICA, IVK, EFCC, Deutsche Bauchemie since 2016, updated 2022. Formulation-based (not product-specific) — any member can declare compliance. Sika publishes product-specific EPDs since 2012. Bostik has silicone EPDs. This infrastructure directly serves both SEA and ADH families. DPP environmental data largely pre-solved for FEICA members (~800 companies, 90% SME).",
+      "source": "FEICA EPDs (https://www.feica.eu/our-projects/epds); Sika (https://gbr.sika.com/en/sustainability/sustainable-solutions/lca-and-epd-s.html)",
+      "action_required": "Document FEICA Model EPD infrastructure in content. Cross-reference with ADH-004.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-SEA-003",
+      "families": ["SEA"],
+      "severity": "warning",
+      "type": "cross_regulatory",
+      "title": "VOC + REACH + CEN/TC 351 = compound regulatory burden for sealants, especially PU formulations",
+      "description": "Construction sealants face compound regulation: VOC emission limits (AgBB/DIBt strictest), REACH SVHC restrictions (isocyanates for PU, phthalates), and CEN/TC 351 dangerous substances horizontal standards under new CPR M/366. PU sealants face isocyanate exposure controls — market shifting to MS polymer hybrids with safer emissions. DPP declarations will need: VOC emission class, SVHC content, indoor air quality data alongside mechanical performance. CEN/TC 351 will standardise dangerous substance data generation methods for DPP.",
+      "source": "CEN/TC 351 (https://www.cencenelec.eu/news-events/events/2023/2023-05-10-cen-tc-351-conference-riga/); REACH (https://echa.europa.eu/substances-restricted-under-reach)",
+      "action_required": "Document compound regulatory burden in content.key_risks. Flag CEN/TC 351 as DPP data requirement.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-SEA-004",
+      "families": ["SEA"],
+      "severity": "info",
+      "type": "market_context",
+      "title": "European construction A&S $4.78B (2024) — silicone fastest-growing, MS polymer replacing PU",
+      "description": "European construction adhesives & sealants market $4.78B (2024), projected $9.39B by 2035 (CAGR 5.69%). Sealants ~43% of market. Silicone holds largest share, MS polymer hybrids growing fastest (replacing PU and silicone). Germany 15% of European market. Key players: Sika, Henkel, MAPEI, Soudal, Arkema. Broader FEICA market: €19.88B (2023), 4.57Mt. FEICA market report 2025-2030 available. SEA shares FEICA ecosystem with ADH.",
+      "source": "Mordor Intelligence (https://www.mordorintelligence.com/industry-reports/europe-construction-adhesives-and-sealants-market); FEICA (https://www.feica.eu/our-industry/market-reports)",
+      "action_required": "Include market context in content.",
+      "status": "pending"
+    }
+  ]
+}

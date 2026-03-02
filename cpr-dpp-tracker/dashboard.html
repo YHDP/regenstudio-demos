@@ -210,11 +210,11 @@
 
   <div class="dash-header">
     <h1>Data Integrity Dashboard</h1>
-    <p>CPR DPP Tracker — families.json diagnostic view</p>
+    <p>CPR DPP Tracker — families-v2.json diagnostic view</p>
   </div>
 
   <div class="dash-container" id="main-content">
-    <div class="loading" id="loading">Loading families.json&hellip;</div>
+    <div class="loading" id="loading">Loading families-v2.json&hellip;</div>
 
     <!-- Summary cards -->
     <div class="summary-row" id="summaryRow" style="display:none;"></div>
@@ -247,8 +247,9 @@
 
     const ALL_KEYS = [
       'full-name','letter','family','priority','updated','acquis','sreq',
-      'tc','dpp-est','milestones','dpp-range','standards','info',
-      'icon','display_name','family_label','tc_label'
+      'tc','dpp-est','milestones','dpp-range','standards','content',
+      'icon','display_name','family_label','tc_label','convergence',
+      'active_pipelines','pipelines'
     ];
 
     let families = [];
@@ -265,8 +266,9 @@
     }
 
     function countActual(fam, type) {
-      if (!fam.standards || !fam.standards.standards) return null;
-      return fam.standards.standards.filter(s => s.type === type).length;
+      var stds = Array.isArray(fam.standards) ? fam.standards : [];
+      if (!stds.length) return null;
+      return stds.filter(s => s.type === type).length;
     }
 
     function countClaimed(fam, type) {
@@ -277,8 +279,8 @@
 
     function countSummary(fam, type) {
       const key = type === 'hEN' ? 'hen_count' : 'ead_count';
-      if (!fam.standards || !fam.standards.summary) return null;
-      return fam.standards.summary[key];
+      if (!fam.standards_summary) return null;
+      return fam.standards_summary[key];
     }
 
     function hasMismatch(fam) {
@@ -317,7 +319,7 @@
       const total = families.length;
       let totalStandards = 0;
       families.forEach(f => {
-        if (f.standards && f.standards.standards) totalStandards += f.standards.standards.length;
+        if (Array.isArray(f.standards)) totalStandards += f.standards.length;
       });
       const mismatches = families.filter(hasMismatch).length;
       const missingAny = families.filter(f => ALL_KEYS.some(k => !(k in f))).length;
@@ -534,7 +536,7 @@
 
       const inner = document.getElementById('detail-inner-' + idx);
       const fam = families[idx];
-      const stds = (fam.standards && fam.standards.standards) || [];
+      const stds = Array.isArray(fam.standards) ? fam.standards : [];
       const henCount = stds.filter(s => s.type === 'hEN').length;
       const eadCount = stds.filter(s => s.type === 'EAD').length;
 
@@ -549,7 +551,7 @@
       html += renderStandardsTable(stds, 'EAD');
 
       if (stds.length === 0) {
-        html = '<p class="detail-none">No standards object — this family has no standards.standards[] array.</p>';
+        html = '<p class="detail-none">No standards array — this family has no standards[] data.</p>';
       }
 
       // JSON toggle
@@ -563,10 +565,10 @@
 
     // --- Init ---
 
-    fetch('data/families.json')
+    fetch('data/families-v2.json')
       .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(data => {
-        families = data;
+        families = data.families || data;
         document.getElementById('loading').style.display = 'none';
         renderSummary();
         renderHeatmap();
@@ -574,7 +576,7 @@
       })
       .catch(err => {
         document.getElementById('loading').innerHTML =
-          '<strong style="color:#DC2626;">Failed to load families.json</strong><br>' + err.message;
+          '<strong style="color:#DC2626;">Failed to load families-v2.json</strong><br>' + err.message;
       });
   })();
   </script>

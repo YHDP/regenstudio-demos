@@ -1,0 +1,113 @@
+{
+  "family": "STP",
+  "generated": "2026-03-01",
+  "dataUpdates": [
+    {
+      "id": "upd-STP-001",
+      "family": "STP",
+      "action": "set",
+      "field": "standards[EAD 130089].version",
+      "current_value": "EAD 130089-00-0304",
+      "proposed_value": "EAD 130089-01-0304",
+      "reason": "EAD 130089 updated from version -00- to -01-. Published OJEU May 2025. New version covers same scope (structural finger-jointed wet/cold glued solid timber) but with updated assessment methodology.",
+      "source": "EOTA download (filename references OJEU 2025), eco-Institut May 2025",
+      "confidence": "medium",
+      "status": "pending"
+    }
+  ],
+  "structuralIssues": [
+    {
+      "id": "iss-STP-001",
+      "family": "STP",
+      "severity": "info",
+      "type": "empty_content",
+      "title": "3 content sections empty",
+      "description": "standards_development, key_risks, and sources_summary are empty.",
+      "action": "Populate with proposed content from deep-dive report."
+    },
+    {
+      "id": "iss-STP-002",
+      "family": "STP",
+      "severity": "warning",
+      "type": "stale_status",
+      "title": "NT-3 (M-III) targeted Q1 2026, still not_started",
+      "description": "Milestone III (Essential Characteristics) was targeted for Q1 2026 per COM(2025) 772. It is now March 2026, so M-III may have started or been completed. The current 'not_started' status may be stale.",
+      "action": "Verify M-III status via Commission or CEN/TC 124 sources. Update to 'in_progress' or 'complete' if warranted."
+    },
+    {
+      "id": "iss-STP-003",
+      "family": "STP",
+      "severity": "info",
+      "type": "cross_family",
+      "title": "EN 13986 cross-listed with WBP",
+      "description": "EN 13986 (Wood-based panels for use in construction) appears in both STP and WBP standards lists. Data is consistent between families: both list AVCP '1, 2+, 3, 4', CEN/TC 112, and CPR 2011 revision.",
+      "action": "Document cross-listing explicitly. Ensure any future updates to EN 13986 data are applied in both families."
+    },
+    {
+      "id": "iss-STP-004",
+      "family": "STP",
+      "severity": "info",
+      "type": "missing_standard",
+      "title": "EAD 130089 (finger-jointed wet/cold glued timber) may be missing",
+      "description": "EAD 130089-01-0304 (Structural finger-jointed, wet, cold or wet and cold glued solid timber) was confirmed as recently published by EOTA. It may not be in the tracker's 41-EAD count if published after the Feb 2026 data snapshot.",
+      "action": "Verify publication date and OJ citation status of EAD 130089. Add to standards[] if cited and not yet tracked."
+    },
+    {
+      "id": "iss-STP-005",
+      "family": "STP",
+      "severity": "info",
+      "type": "regulatory_development",
+      "title": "Eurocode 5 (EN 1995-1-1:2025) published — informs SReq scope",
+      "description": "EN 1995-1-1:2025 (second generation Eurocode 5) published Aug 2025. Substantially expanded to include CLT, LVL, and GL design rules. NSB national annexes in progress. Will directly inform the SReq essential characteristics scope for STP family.",
+      "action": "Document in content.standards_development. Monitor NSB adoption timeline."
+    },
+    {
+      "id": "iss-STP-006",
+      "family": "STP",
+      "severity": "info",
+      "type": "priority_context",
+      "title": "STP is priority 7/34 but fast-track NOT available",
+      "description": "STP is priority 7 of 34 product families per COM(2025) 772, but fast-track standards updating is NOT possible (confirmed by Innovawood/EOS). Must go through full acquis→SReq→CEN→OJ pipeline. This supports the wider DPP range (~2029-2033) compared to families with fast-track availability.",
+      "action": "Document priority and fast-track status in content. Consider impact on DPP range certainty."
+    },
+    {
+      "id": "iss-STP-007",
+      "family": "STP",
+      "severity": "info",
+      "type": "cross_regulatory",
+      "title": "EUDR enforcement 30 Dec 2026 — parallel timber traceability obligation",
+      "description": "EU Deforestation Regulation enforcement confirmed: 30 Dec 2026 for large/medium operators, 30 Jun 2027 for small/micro. Timber is one of 7 regulated commodities. Construction timber products (glulam, CLT, LVL) fall within scope. Creates parallel supply chain traceability requirements that precede DPP. No formal DPP-EUDR data linkage mechanism exists yet, but data reuse potential noted.",
+      "action": "Monitor EUDR-DPP convergence. Document in content.key_risks."
+    },
+    {
+      "id": "iss-STP-008",
+      "family": "STP",
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "CEI-Bois TIMBIM: 12 data templates on 7 hENs in bSDD — DPP groundwork underway",
+      "description": "CEI-Bois TIMBIM initiative delivered 12 data templates based on 7 harmonised standards, published on buildingSMART Data Dictionary (bSDD) since 2023. Templates cover product properties, GS1 identifiers (GTIN, GLN, GMN), EPD data, and circularity data. GS1 identifiers align with CPR DPP unique product identifier requirements. Industry DPP groundwork is underway but manufacturer adoption level is unclear.",
+      "source": "CEI-Bois Digital Templates (https://www.cei-bois.org/digital-templates); bSDD Wood Dictionary (https://search.bsdd.buildingsmart.org/uri/cei-bois.org/wood/1.0.0); Swedish Wood TIMBIM launch (https://www.swedishwood.com/about_us/news/2021/3/the-european-timber-industry-is-starting-its-digitization-initiative/)",
+      "action": "Document in content. Assess whether TIMBIM templates map to CPR DPP data requirements. Monitor manufacturer adoption."
+    },
+    {
+      "id": "iss-STP-009",
+      "family": "STP",
+      "severity": "info",
+      "type": "regulatory_development",
+      "title": "CLT fire safety delamination creates national regulatory divergences affecting DPP data",
+      "description": "CLT susceptible to delamination at elevated temperatures — adhesive failure causes cyclical burning, no reliable self-extinguishment (MDPI Fire, CROSS-UK Report 966). EN 1995-1-2:2025 published with CLT-specific charring rules (0.65 mm/min). Arup 'Code Red' research found CLT ceiling fire spread faster than predicted. National regulatory approaches diverge significantly (UK cautious, Austria positive, France mixed). DPP fire performance data may need national context.",
+      "source": "MDPI Fire CLT review (https://www.mdpi.com/2571-6255/8/10/406); CROSS-UK Report 966 (https://www.cross-safety.org/uk/safety-information/cross-safety-report/risk-collapse-multi-storey-clt-buildings-during-966); Arup Mass Timber Fire Guide (https://www.arup.com/en-us/insights/fire-safe-design-of-mass-timber-buildings/)",
+      "action": "Document fire safety regulatory divergence in content.key_risks. Monitor national building code developments for CLT."
+    },
+    {
+      "id": "iss-STP-010",
+      "family": "STP",
+      "severity": "info",
+      "type": "timeline_context",
+      "title": "CPR Working Plan 2026-2029 confirms STP NOT in first DPP cohort",
+      "description": "CPR Working Plan (16 Dec 2025) sequences DPP rollout: DPP Registry Jul 2026, Service Provider rules Q4 2026, CEM first DPP-ready hENs Q4 2027, DWS 2028-2029. STP is Priority 7 overall but is NOT among the first DPP cohort. STP DPP timeline likely 2029+. CPR DPP Feasibility Study (May 2025) recommends decentralised system with authorised service providers.",
+      "source": "Cobuilder CPR Working Plan analysis (https://cobuilder.com/en/digital-product-passport-dpp/digital-product-passports-for-construction-what-the-eus-2026-2029-cpr-working-plan-means-for-stakeholders/); EU Publications CPR DPP Feasibility Study (https://op.europa.eu/en/publication-detail/-/publication/cf329d5e-3464-11f0-8a44-01aa75ed71a1/language-en)",
+      "action": "Update DPP timeline context. Document CPR Working Plan sequencing in content."
+    }
+  ]
+}

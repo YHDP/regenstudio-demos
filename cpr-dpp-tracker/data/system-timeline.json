@@ -1,0 +1,131 @@
+{
+  "updated": "2026-02-27",
+  "nodes": [
+    {
+      "id": "sys-feasibility",
+      "type": "NT-10",
+      "label": "Feasibility Study",
+      "status": "complete",
+      "certainty": "green",
+      "date": "2025-05",
+      "detail": "TECNALIA/Cobuilder/UNE. Published May 2025.",
+      "sources": ["S80"]
+    },
+    {
+      "id": "sys-jtc24",
+      "type": "NT-11",
+      "label": "JTC24 DPP Standards (x8)",
+      "status": "in_progress",
+      "certainty": "amber",
+      "target_date": "2026-03-31",
+      "detail": "5 of 8 prENs known. Target 31 Mar 2026. Slipped from Dec 2025.",
+      "sources": ["S124", "S51", "S53", "S54", "S55", "S56", "S57"],
+      "sub_items": [
+        { "id": "prEN 18219", "label": "Unique identifiers (WG2)", "status": "in_progress" },
+        { "id": "prEN 18223", "label": "System interoperability (WG4)", "status": "in_progress" },
+        { "id": "prEN 18221", "label": "Data storage & persistence (WG4)", "status": "in_progress" },
+        { "id": "prEN 18222", "label": "Data exchange protocols (WG4)", "status": "in_progress" },
+        { "id": "prEN 18216", "label": "APIs for DPP lifecycle (WG4)", "status": "in_progress" },
+        { "id": "data-carriers", "label": "Data carriers (WG2)", "status": "unknown" },
+        { "id": "security-1", "label": "Security standard 1 (WG3)", "status": "unknown" },
+        { "id": "security-2", "label": "Security standard 2 (WG3)", "status": "unknown" }
+      ]
+    },
+    {
+      "id": "sys-espr-registry",
+      "type": "NT-12",
+      "label": "ESPR DPP Registry",
+      "status": "pending",
+      "certainty": "amber",
+      "statutory_deadline": "2026-07-19",
+      "detail": "Art. 13 ESPR. Default for construction DPP unless Art. 75 DA overrides.",
+      "sources": ["S3", "S30"]
+    },
+    {
+      "id": "sys-espr-portal",
+      "type": "NT-13",
+      "label": "ESPR Web Portal",
+      "status": "unknown",
+      "certainty": "red",
+      "detail": "Art. 14 ESPR. Hard dependency via Art. 79(3) — no override. Almost zero public info.",
+      "sources": ["S1", "S3"]
+    },
+    {
+      "id": "sys-espr-sp-da",
+      "type": "NT-14",
+      "label": "ESPR Service Provider DA",
+      "status": "in_progress",
+      "certainty": "amber",
+      "detail": "Consultation Apr 2025, summary Aug 2025. Not yet adopted.",
+      "sources": ["S130", "S93"]
+    },
+    {
+      "id": "sys-cpr-registry",
+      "type": "NT-14",
+      "label": "CPR DPP Registry",
+      "status": "pending",
+      "certainty": "amber",
+      "statutory_deadline": "2026-07-19",
+      "detail": "Art. 75(3). May be same system as ESPR registry or separate.",
+      "sources": ["S1", "S30"]
+    },
+    {
+      "id": "sys-art75-da",
+      "type": "NT-15",
+      "label": "Art. 75(1) Delegated Act",
+      "status": "not_started",
+      "certainty": "red",
+      "estimated_date": "Q2-Q3 2027",
+      "detail": "Single most important unknown. No Better Regulation entry. 'Q4 2026' is industry aspiration, not EC commitment.",
+      "sources": ["S1", "S120"]
+    },
+    {
+      "id": "sys-operational",
+      "type": "NT-16",
+      "label": "System Operational (+6mo)",
+      "status": "pending",
+      "certainty": "gray",
+      "detail": "Art. 80(1). 6 months after Art. 75(1) DA entry into force.",
+      "sources": ["S1"]
+    },
+    {
+      "id": "sys-dpp-mandatory",
+      "type": "NT-17",
+      "label": "DPP Obligation Mandatory (+18mo)",
+      "status": "pending",
+      "certainty": "red-orange",
+      "estimated_date": "Q1-Q2 2029",
+      "detail": "Art. 22(7) + Art. 80(1). 18 months after Art. 75(1) DA entry into force.",
+      "sources": ["S1"]
+    }
+  ],
+  "cross_cutting": [
+    {
+      "id": "cc-avs-da",
+      "type": "NT-18",
+      "label": "AVS Delegated Act (Art. 10)",
+      "status": "in_progress",
+      "certainty": "amber",
+      "detail": "Revised draft Dec 2025. Feedback closed 7 Jan 2026. Adoption H1 2026.",
+      "sources": ["S90", "S97"]
+    },
+    {
+      "id": "cc-horizontal-sreq",
+      "type": "NT-19",
+      "label": "Horizontal SReq (Dangerous Substances)",
+      "status": "draft",
+      "certainty": "amber",
+      "detail": "Draft Sep 2025. Covers all 37 families via CEN/TC 351.",
+      "sources": ["S42"]
+    },
+    {
+      "id": "cc-annex-ii",
+      "type": "NT-20",
+      "label": "Annex II Environmental Indicators",
+      "status": "phase_1_active",
+      "certainty": "green",
+      "detail": "Phase 1 (GWP): applicable 8 Jan 2026, enforcement 8 Jan 2027. Phase 2: 9 Jan 2030. Phase 3: 9 Jan 2032.",
+      "sources": ["S1"]
+    }
+  ]
+}

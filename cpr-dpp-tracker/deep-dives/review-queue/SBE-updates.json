@@ -1,0 +1,50 @@
+{
+  "family": "SBE",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-SBE-001",
+      "families": ["SBE"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "Four content sections empty",
+      "description": "content.standards_landscape, content.standards_development, content.key_risks, and content.sources_summary are empty.",
+      "action_required": "Populate with proposed content from deep-dive report §8.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-SBE-002",
+      "families": ["SBE"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "Mageba first EPD in structural bearings industry (Dec 2024) — sole DPP-ready manufacturer",
+      "description": "Mageba published first externally verified EPD for structural bearings (RESTON SPHERICAL, Dec 2024, EPD HUB-2481). EN 15804+A2 compliant. GWP 3.90 kgCO₂e/kg (A1-A3), 33.1% secondary material input, 85.7% secondary material output. Manufactured in Hungary. This demonstrates LCA data generation is feasible for structural bearings but the rest of the industry (Maurer, FIP Industriale, Freyssinet, etc.) has not yet followed. EPD coverage in SBE is minimal — one manufacturer out of ~50+ European producers.",
+      "source": "Mageba EPD (https://www.mageba-group.com/latam/en/1078/284902/Environmental-Product-Declaration-for-mageba-spherical-bearings.htm); EPD Hub (https://manage.epdhub.com/declarations/metal-based-products/mageba-services-technologies-ag/3046/reston-spherical-bearing/)",
+      "action_required": "Document mageba EPD as industry first in content. Note gap between pioneer and rest of industry.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-SBE-003",
+      "families": ["SBE"],
+      "severity": "warning",
+      "type": "cross_regulatory",
+      "title": "PTFE is a PFAS — proposed EU universal restriction could affect structural bearing production",
+      "description": "PTFE (polytetrafluoroethylene) is the primary sliding material in structural bearings and is classified as a PFAS (per- and polyfluoroalkyl substance). The proposed EU universal PFAS restriction could affect PTFE bearing production if critical-use exemptions are not granted. UHMWPE and modified polyamide alternatives exist but may not match PTFE performance at high temperatures (UHMWPE degrades >80°C). 7 of 8 SBE EADs cover innovative bearing materials including UHMWPE and fluoropolymer alternatives — these EADs may become strategically important if PTFE is restricted. Bearing material substitution would require re-testing and new CE marking.",
+      "source": "PTFE PFAS debate (https://polyfluoroltd.com/blog/ptfe-and-the-pfas-debate-why-one-polymer-deserves-a-closer-look/); DREYPLAS alternatives (https://www.dreyplas.com/en/better-than-ptfe-and-uhmwpe/)",
+      "action_required": "Document PFAS restriction risk in content.key_risks. Monitor EU PFAS restriction timeline for PTFE exemption status.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-SBE-004",
+      "families": ["SBE"],
+      "severity": "info",
+      "type": "market_context",
+      "title": "Global bridge bearings $3.28B (2024), 10% of European bridges deficient — ageing infrastructure drives demand",
+      "description": "Global bridge bearings market $3.28B (2024), projected $5.56B by 2033 (CAGR 6.03%). EU expansion joints CAGR 5.7%. Around 10% of European bridges significantly deficient, 30% not regularly surveyed. Total built value ~€2 trillion, annual maintenance needed ~€30B/year. 35+ bridges adopted sensor-integrated bearings in 2024. CEF budget €33.71B (2021-2027). Ageing infrastructure drives bearing replacement demand. Sensor-integrated bearings and digital twin monitoring emerging — potential future DPP extension to in-service performance data.",
+      "source": "Bridge bearings market (https://www.openpr.com/news/4340139/bridge-bearings-market-valued-at-3-28-billion-in-2024); Construction Briefing (https://www.constructionbriefing.com/news/europes-ageing-bridges-are-crumbling-what-can-be-done-to-prevent-collapses/8036646.article)",
+      "action_required": "Include ageing infrastructure context and sensor-integrated bearings trend in content.",
+      "status": "pending"
+    }
+  ]
+}

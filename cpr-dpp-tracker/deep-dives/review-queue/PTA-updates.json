@@ -1,0 +1,48 @@
+{
+  "family": "PTA",
+  "review_date": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-PTA-001",
+      "type": "empty_content",
+      "severity": "low",
+      "field": "content",
+      "description": "4 content sections empty: standards_landscape, standards_development, stakeholder_notes, key_risks, sources_summary.",
+      "action": "Populate in future content pass"
+    },
+    {
+      "id": "iss-PTA-002",
+      "families": ["PTA"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "TEPPFA EPD app and VinylPlus recycling create DPP data foundation, but product-level EPDs still rare",
+      "description": "TEPPFA has developed an EPD application tool for plastic piping. VinylPlus achieved 724,638 tonnes PVC recycled in 2024, with ~50,000 tonnes recycled PVC used in new pipes annually. CEN TS 18116:2025 provides design-for-recycling guidelines. PPFA (US) released 22 new pipe EPDs showing 6% embodied carbon reduction. However, European plastic pipe product-specific EPDs remain rare. Foundation exists but gap remains for DPP environmental data.",
+      "source": "TEPPFA (https://www.teppfa.eu/); VinylPlus (https://www.vinylplus.eu/); PVC4Pipes (https://www.pvc4pipes.com/); CEN TS 18116:2025 via TEPPFA",
+      "action_required": "Document EPD readiness status in content. Note TEPPFA EPD app and VinylPlus as emerging DPP infrastructure.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-PTA-003",
+      "families": ["PTA"],
+      "severity": "info",
+      "type": "cross_regulatory",
+      "title": "Triple microplastics regulation creates cross-regulatory pressure on plastic pipe manufacturing",
+      "description": "Three EU regulations affect plastic pipe manufacturing: (1) REACH 2023/2055 restricts intentionally added microplastics (phased from Oct 2025). (2) EU 2025/2365 (16 Dec 2025) targets plastic pellet losses at manufacturing facilities handling 5+ tonnes/year. (3) Drinking Water Directive recast requires new leaching/microbial standards for pipe materials by 31 Dec 2026. While PTA covers pipes NOT in contact with drinking water, the regulatory trend tightens around all plastic products. DPP may eventually need microplastics/leaching data fields.",
+      "source": "EC microplastics (https://environment.ec.europa.eu/topics/plastics/microplastics_en); REACH 2023/2055 (https://en.reach24h.com/news/insights/chemical/eu-microplastics-spm-restriction-deadline); EU 2025/2365 (https://environment.ec.europa.eu/news/new-law-reducing-microplastic-pollution-enters-force-2025-12-16_en); DWD recast (https://environment.ec.europa.eu/topics/water/drinking-water_en)",
+      "action_required": "Document cross-regulatory microplastics pressure in content.key_risks. Note pellet regulation impact on pipe manufacturers.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-PTA-004",
+      "families": ["PTA"],
+      "severity": "info",
+      "type": "market_context",
+      "title": "European PVC pipe market ~$2.22B (2024) with 5.25% CAGR — large future DPP compliance volume",
+      "description": "European PVC pipes market valued at ~$2.22B (2024), CAGR 5.25%. Sewerage/drainage is the largest segment, aligning with PTA's EN 1401-1 and EN 12666-1. Germany, France, and UK are largest markets. At current growth rates, market will be significantly larger by PTA's ~2033-2034 DPP timeline. TEPPFA represents 350 companies. Market is driven by infrastructure renewal and replacement of aging metal/concrete pipe networks.",
+      "source": "Mordor Intelligence (https://www.mordorintelligence.com/); TEPPFA (https://www.teppfa.eu/)",
+      "action_required": "Include market size context in content for DPP impact assessment.",
+      "status": "pending"
+    }
+  ]
+}

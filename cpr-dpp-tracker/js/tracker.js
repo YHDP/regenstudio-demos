@@ -1,47 +1,127 @@
-// CPR DPP Tracker — main app logic
-// Fetches families.json, renders card grid, handles modal popups.
+// CPR DPP Tracker — main app logic (v2: convergence view)
+// Fetches families-v2.json + system-timeline.json, renders card grid,
+// card click opens full-page convergence timeline view.
 
 (function () {
   'use strict';
 
   // ---------- CONFIG ----------
-  var OLD_CPR_SREQ_FAMILIES = { PCR: true, SMP: true };
-  var STAGE_LABELS = ['Pending', 'Mandated', 'In dev', 'Delivered', 'Mandatory', 'DPP'];
-  var EAD_STAGE_LABELS = ['None', 'Legacy EAD', 'In development', 'Adopted', 'Art 75 DA', 'DPP'];
   var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-  // ---------- DOM refs ----------
+  var CERTAINTY_LABELS = {
+    'green': 'Confirmed',
+    'yellow-green': 'Scheduled',
+    'amber': 'Estimated',
+    'orange': 'Moderate confidence',
+    'red-orange': 'Speculative',
+    'red': 'Speculative',
+    'gray': 'Unknown'
+  };
+
+  // Content section labels and rendering now handled by ContentRenderer (content-renderer.js)
+
+  // ---------- DOM REFS ----------
   var grid = document.getElementById('trackerGrid');
-  var modal = document.getElementById('cprModal');
-  var modalTitle = modal.querySelector('.cpr-modal__title');
-  var modalSubtitle = modal.querySelector('.cpr-modal__subtitle');
-  var modalIcon = modal.querySelector('.cpr-modal__icon img');
-  var modalTags = modal.querySelector('.cpr-modal__tags');
-  var modalUpdated = modal.querySelector('.cpr-modal__updated');
-  var modalIntro = modal.querySelector('.cpr-modal__intro');
-  var modalDppBox = modal.querySelector('.cpr-modal__dpp-box');
-  var modalStandards = modal.querySelector('.cpr-modal__standards');
-  var modalStdsContent = modal.querySelector('.cpr-modal__stds-content');
-  var modalAnnex = modal.querySelector('.cpr-modal__annex');
-  var modalBody = modal.querySelector('.cpr-modal__body');
-  var backdrop = modal.querySelector('.cpr-modal__backdrop');
-  var closeBtn = modal.querySelector('.cpr-modal__close');
   var metaEl = document.getElementById('trackerMeta');
+
+  // Convergence view
+  var convView = document.getElementById('convView');
+  var convTitle = document.getElementById('convTitle');
+  var convSubtitle = document.getElementById('convSubtitle');
+  var convIcon = document.getElementById('convIcon');
+  var convClose = document.getElementById('convClose');
+  var convChartWrap = document.getElementById('convChartWrap');
+  var convDppOutlook = document.getElementById('convDppOutlook');
+  var convContentSections = document.getElementById('convContentSections');
+  var convStandards = document.getElementById('convStandards');
+  var convStdsContent = document.getElementById('convStdsContent');
+  var convExpansion = document.getElementById('convExpansion');
+  var convDisclaimer = document.getElementById('convDisclaimer');
+
+  // Convergence view breadcrumb + print
+  var convBreadcrumb = document.getElementById('convBreadcrumb');
+  var convBreadcrumbBack = document.getElementById('convBreadcrumbBack');
+  var convBreadcrumbCurrent = document.getElementById('convBreadcrumbCurrent');
+  var convPrint = document.getElementById('convPrint');
+
+  // Page sections to hide/show when toggling between grid and conv view
+  var heroEl = document.querySelector('.tracker-hero');
+  var disclaimerBanner = document.querySelector('.tracker-disclaimer');
+  var landingEl = document.querySelector('.tracker-landing');
+  var gridContainer = document.querySelector('.tracker-container');
+  var trackerNav = document.getElementById('trackerNav');
+  var filterBar = document.getElementById('filterBar');
+  var compareView = document.getElementById('compareView');
+  var sourceToggle = document.getElementById('sourceToggle');
 
   // ---------- DATA ----------
   var families = [];
+  var systemTimeline = null;
+  var currentFamily = null;
+  window._cprSources = null;
+
+  // ---------- SKELETON LOADING ----------
+  function renderSkeletons() {
+    var html = '';
+    for (var s = 0; s < 12; s++) {
+      html += '<div class="cpr-card cpr-card--skeleton" role="listitem">';
+      html += '<div class="cpr-card__skeleton-img"></div>';
+      html += '<div class="cpr-card__skeleton-line cpr-card__skeleton-line--title"></div>';
+      html += '<div class="cpr-card__skeleton-line cpr-card__skeleton-line--sub"></div>';
+      html += '<div class="cpr-card__skeleton-line cpr-card__skeleton-line--short"></div>';
+      html += '</div>';
+    }
+    grid.innerHTML = html;
+  }
+
+  // Show skeleton cards while loading
+  renderSkeletons();
 
   // ---------- INIT ----------
-  fetch('data/families.json')
-    .then(function (r) { return r.json(); })
-    .then(function (data) {
-      families = data.slice().sort(function (a, b) {
-        return dppSortKey(a) - dppSortKey(b);
-      });
-      renderGrid();
-      populateHeroIcons();
-      if (metaEl) metaEl.textContent = families.length + ' product families \u00b7 Regulation (EU) 2024/3110';
+  Promise.all([
+    fetch('data/families-v2.json').then(function (r) { return r.json(); }),
+    fetch('data/system-timeline.json').then(function (r) { return r.json(); }),
+    fetch('data/sources.json').then(function (r) { return r.json(); }).catch(function () { return {}; })
+  ]).then(function (results) {
+    var v2Data = results[0];
+    systemTimeline = results[1];
+    window._cprSources = results[2] || {};
+
+    families = v2Data.families.slice().sort(function (a, b) {
+      return dppSortKey(a) - dppSortKey(b);
     });
+
+    // Render filters + initial grid (filters callback renders the grid)
+    if (window.renderFilters && filterBar) {
+      renderFilters(filterBar, families, function (filtered) {
+        renderGrid(filtered);
+      });
+    } else {
+      renderGrid(families);
+    }
+
+    // Initialize comparison mode
+    if (window.initComparison && compareView) {
+      initComparison(grid, compareView, families, systemTimeline, openConvergenceView);
+    }
+
+    // Initialize source layer
+    if (window.initSourceLayer && sourceToggle) {
+      initSourceLayer(sourceToggle);
+    }
+
+    populateHeroIcons();
+    if (metaEl) metaEl.textContent = families.length + ' product families \u00b7 Regulation (EU) 2024/3110';
+
+    // Handle deep-link: #family=PCR or #compare=PCR,SMP
+    var hash = window.location.hash;
+    var familyMatch = hash.match(/family=([A-Z]+)/i);
+    if (familyMatch) {
+      var target = familyMatch[1].toUpperCase();
+      var fam = families.find(function (f) { return f.letter === target; });
+      if (fam) openConvergenceView(fam);
+    }
+  });
 
   // ---------- HERO ICONS ----------
   function populateHeroIcons() {
@@ -57,518 +137,599 @@
   }
 
   // ---------- GRID ----------
-  function renderGrid() {
+  function renderGrid(displayFamilies) {
+    var list = displayFamilies || families;
     var html = '';
-    families.forEach(function (fam, idx) {
-      html += buildCard(fam, idx);
+    list.forEach(function (fam) {
+      // Store the family letter as data attribute for click lookup
+      html += buildCard(fam);
     });
     grid.innerHTML = html;
-    enrichCards();
+    enrichCards(list);
+
+    // Add comparison checkboxes
+    if (window.addCompareCheckboxes) {
+      addCompareCheckboxes(grid);
+    }
   }
 
-  function buildCard(fam, idx) {
+  // Map 7-level node certainty to 5-level card indicator
+  var CARD_CERTAINTY_MAP = {
+    'green': 'confirmed',
+    'yellow-green': 'likely',
+    'amber': 'uncertain',
+    'orange': 'speculative',
+    'red-orange': 'speculative',
+    'red': 'speculative',
+    'gray': 'unknown'
+  };
+
+  var CARD_CERT_LABELS = {
+    'confirmed': 'Confirmed',
+    'likely': 'Likely',
+    'uncertain': 'Uncertain',
+    'speculative': 'Speculative',
+    'unknown': 'Unknown'
+  };
+
+  function buildCard(fam) {
     var icon = fam.icon ? 'Images/' + fam.icon : '';
-    var name = fam.display_name || fam['full-name'] || '';
+    var name = fam.display_name || fam.full_name || fam['full-name'] || '';
     var familyLabel = fam.family_label || ('Annex VII #' + (fam.family || '') + ' \u00b7 ' + (fam.letter || ''));
-    var tc = fam.tc || '';
-    var h = '<div class="cpr-card" data-idx="' + idx + '">';
-    if (icon) h += '<img src="' + icon + '" alt="' + esc(name) + '" loading="lazy">';
+    var letter = fam.letter || '';
+    var convergence = fam.convergence;
+    var dppDate = (convergence && convergence.dpp_date) || '';
+    var dppCert = (convergence && convergence.dpp_certainty) || 'gray';
+    var cardCert = CARD_CERTAINTY_MAP[dppCert] || 'unknown';
+
+    var h = '<div class="cpr-card cpr-card--cert-' + cardCert + '" data-letter="' + esc(letter) + '" role="listitem">';
+
+    // Top row: icon + name + family label
+    h += '<div class="cpr-card__top">';
+    if (icon) h += '<img class="cpr-card__icon" src="' + icon + '" alt="" loading="lazy">';
+    h += '<div class="cpr-card__info">';
     h += '<span class="cpr-card__name">' + esc(name) + '</span>';
     h += '<span class="cpr-card__family">' + esc(familyLabel) + '</span>';
-    if (tc) h += '<span class="cpr-card__tc">' + esc(tc) + '</span>';
+    h += '</div>';
+    h += '</div>';
+
+    // Hero metric: DPP date
+    if (dppDate) {
+      h += '<div class="cpr-card__hero-date">' + esc(dppDate) + '</div>';
+      h += '<div class="cpr-card__cert-label">';
+      h += '<span class="cpr-card__cert-dot cpr-card__cert-dot--' + cardCert + '"></span>';
+      h += esc(CARD_CERT_LABELS[cardCert] || '') + ' DPP estimate';
+      h += '</div>';
+    } else {
+      h += '<div class="cpr-card__hero-date cpr-card__hero-date--tbd">TBD</div>';
+      h += '<div class="cpr-card__cert-label">';
+      h += '<span class="cpr-card__cert-dot cpr-card__cert-dot--unknown"></span>';
+      h += 'DPP date not yet estimated';
+      h += '</div>';
+    }
+
     h += '</div>';
     return h;
   }
 
-  function enrichCards() {
-    var cards = grid.querySelectorAll('.cpr-card');
-    cards.forEach(function (card) {
-      var idx = parseInt(card.getAttribute('data-idx'), 10);
-      var fam = families[idx];
-      if (!fam) return;
+  // ---------- STATUS COMPUTATION (pipeline-derived) ----------
+  // Derives card label + standards count directly from pipeline nodes and
+  // standards array. Labels always show which CPR regulation applies.
+  // Rule: if ANY standard achieves HTS-in-force under CPR 2024 → DPP applies.
 
-      var ms = fam.milestones;
-      var sreq = fam.sreq || '';
-      var dpp = fam['dpp-est'] || '';
-      var range = fam['dpp-range'];
+  // CPR label per pipeline
+  var PIPE_CPR = { 'A': 'CPR 2024', 'B': 'CPR 2011' };
 
-      // Status pill
-      if (ms) {
-        var statusInfo = computeStatus(ms, sreq);
-        if (statusInfo.text) {
-          var pill = document.createElement('span');
-          pill.className = 'cpr-card__status cpr-card__status--' + statusInfo.cls;
-          pill.textContent = statusInfo.text;
-          card.appendChild(pill);
-        }
-      }
+  // Node type advancement order (higher = further along toward DPP)
+  var NODE_RANK = {
+    'NT-2': 1, 'NT-3': 2, 'NT-4': 3, 'NT-5': 4,
+    'NT-7': 5, 'NT-8': 6, 'NT-9': 7
+  };
 
-      // DPP date label
-      var dppLabel = (range && range.envelope) ? range.envelope : dpp;
-      if (dppLabel) {
-        var dppEl = document.createElement('span');
-        dppEl.className = 'cpr-card__dpp';
-        dppEl.textContent = 'DPP ' + dppLabel;
-        card.appendChild(dppEl);
-      }
+  // Count cited standards by type
+  function countStandards(fam) {
+    var stds = fam.standards || [];
+    var hen = 0, ead = 0;
+    stds.forEach(function (s) {
+      if (!s.cited) return;
+      if (s.type === 'hEN') hen++;
+      else if (s.type === 'EAD') ead++;
     });
+    return { hen: hen, ead: ead };
   }
 
-  // ---------- STATUS COMPUTATION ----------
-  function isDone(v) { return v === 'done' || v === 'finished' || v === 'adopted'; }
+  // Derive the card status label from pipeline nodes.
+  // Scans Pipeline A (DPP path) and Pipeline B (old CPR) — skips Pipeline C
+  // (EAD sunset has no standards-development progression).
+  // Returns { text, cls, cpr } where cpr is 'CPR 2024' or 'CPR 2011'.
+  function computeStatus(fam) {
+    var pipelines = fam.pipelines || {};
+    // Scan A and B in both active and future lists
+    var candidatePipes = ['A', 'B'];
+    var best = null;
 
-  function computeStatus(ms, sreq) {
-    var sreqAdopted = sreq === 'Adopted';
-    var msC = {};
-    ['i', 'iii', 'sreq', 'delivery', 'mandatory'].forEach(function (k) { msC[k] = ms[k] || ''; });
-    if (sreqAdopted) msC.sreq = 'done';
+    candidatePipes.forEach(function (pKey) {
+      var pipe = pipelines[pKey];
+      if (!pipe || !pipe.nodes) return;
+      var cpr = PIPE_CPR[pKey] || pKey;
 
-    var sreqObj = typeof ms.sreq === 'object' && ms.sreq;
-    var deliveryObj = typeof ms.delivery === 'object' && ms.delivery;
+      pipe.nodes.forEach(function (node) {
+        var t = node.type;
+        var s = node.status;
+        var rank = NODE_RANK[t] || 0;
+        var candidate = null;
 
-    if (isDone(msC.mandatory))                             return { text: 'Standard mandatory', cls: 'green' };
-    if (isDone(msC.delivery))                              return { text: 'Standards delivered', cls: 'green' };
-    if (deliveryObj && deliveryObj.status === 'overdue')    return { text: 'Delivery overdue', cls: 'orange' };
-    if (isDone(msC.sreq))                                  return { text: 'Standardisation request adopted', cls: 'green' };
-    if (sreqObj && sreqObj.status === 'adopted')            return { text: 'Standardisation request adopted', cls: 'green' };
-    if (sreqObj && sreqObj.status === 'draft')              return { text: 'Standardisation request draft published', cls: 'teal' };
-    if (isDone(msC.iii))                                   return { text: 'Characteristics defined', cls: 'green' };
-    if (msC.iii === 'ongoing')                             return { text: 'Defining characteristics', cls: 'teal' };
-    if (isDone(msC.i))                                     return { text: 'Product scope defined', cls: 'green' };
-    if (msC.i === 'ongoing')                               return { text: 'Defining product scope', cls: 'teal' };
-    if (msC.i)                                             return { text: 'Scope planned', cls: 'blue' };
-    if (msC.iii)                                           return { text: 'Characteristics planned', cls: 'blue' };
-    return { text: 'Not started', cls: 'grey' };
+        // --- DPP obligations in place (endgame) ---
+        if (t === 'NT-9' && s === 'complete' && pKey === 'A') {
+          candidate = { text: 'DPP obligations in place', cls: 'on-track', priority: 300, cpr: cpr };
+        }
+        // --- Coexistence period ---
+        else if (t === 'NT-8' && (s === 'active' || s === 'in_progress')) {
+          candidate = { text: 'Coexistence period', cls: 'in-progress', priority: 250 + rank, cpr: cpr };
+        }
+        // --- Overdue ---
+        else if (s === 'overdue') {
+          candidate = { text: 'Delivery overdue', cls: 'attention', priority: 200 + rank, cpr: cpr };
+        }
+        // --- Active work ---
+        else if (s === 'in_progress') {
+          if (t === 'NT-5') candidate = { text: 'Standards in development', cls: 'in-progress', priority: 100 + rank, cpr: cpr };
+          else if (t === 'NT-3') candidate = { text: 'Defining characteristics', cls: 'in-progress', priority: 100 + rank, cpr: cpr };
+          else if (t === 'NT-2') candidate = { text: 'Defining scope', cls: 'in-progress', priority: 100 + rank, cpr: cpr };
+          else candidate = { text: node.label + ' in progress', cls: 'in-progress', priority: 100 + rank, cpr: cpr };
+        }
+        else if (s === 'draft') {
+          if (t === 'NT-4') candidate = { text: 'SReq draft published', cls: 'in-progress', priority: 100 + rank, cpr: cpr };
+          else candidate = { text: node.label + ' draft', cls: 'in-progress', priority: 95 + rank, cpr: cpr };
+        }
+        // --- Completed milestones ---
+        else if (s === 'complete') {
+          if (t === 'NT-9') candidate = { text: 'HTS in force', cls: 'on-track', priority: 80 + rank, cpr: cpr };
+          else if (t === 'NT-7') candidate = { text: 'OJ citation published', cls: 'on-track', priority: 80 + rank, cpr: cpr };
+          else if (t === 'NT-5') candidate = { text: 'Standards delivered', cls: 'on-track', priority: 80 + rank, cpr: cpr };
+          else if (t === 'NT-4') candidate = { text: 'SReq adopted', cls: 'on-track', priority: 80 + rank, cpr: cpr };
+          else if (t === 'NT-3') candidate = { text: 'Characteristics defined', cls: 'on-track', priority: 80 + rank, cpr: cpr };
+          else if (t === 'NT-2') candidate = { text: 'Scope defined', cls: 'on-track', priority: 80 + rank, cpr: cpr };
+        }
+
+        if (candidate && (!best || candidate.priority > best.priority)) {
+          best = candidate;
+        }
+      });
+    });
+
+    // Fallback: no Pipeline A/B progress found
+    if (!best) {
+      var activePipes = fam.active_pipelines || [];
+      var aIsActive = activePipes.indexOf('A') !== -1;
+      var hasEadActive = pipelines.C && pipelines.C.nodes && pipelines.C.nodes.some(function (n) {
+        return n.type === 'NT-C1' && n.status === 'active';
+      });
+      // "EAD only" = Pipeline C active but A is NOT active (it's in future_pipelines)
+      if (hasEadActive && !aIsActive) {
+        return { text: 'EAD only \u2014 awaiting SReq', cls: 'attention', cpr: 'CPR 2024' };
+      }
+    }
+
+    return best || { text: 'Awaiting SReq', cls: 'attention', cpr: 'CPR 2024' };
+  }
+
+  function enrichCards(displayFamilies) {
+    var list = displayFamilies || families;
+    var byLetter = {};
+    list.forEach(function (f) { byLetter[f.letter] = f; });
+
+    var cards = grid.querySelectorAll('.cpr-card');
+    cards.forEach(function (card) {
+      var letter = card.getAttribute('data-letter');
+      var fam = byLetter[letter];
+      if (!fam) return;
+
+      var bottomEl = document.createElement('div');
+      bottomEl.className = 'cpr-card__bottom';
+
+      // --- Status badge: label + CPR version ---
+      var statusInfo = computeStatus(fam);
+      var actionCls = 'cpr-card__action';
+      if (statusInfo.cls === 'attention') actionCls += ' cpr-card__action--attention';
+      else if (statusInfo.cls === 'on-track') actionCls += ' cpr-card__action--on-track';
+      else actionCls += ' cpr-card__action--in-progress';
+      var actionEl = document.createElement('span');
+      actionEl.className = actionCls;
+      actionEl.textContent = statusInfo.text;
+      bottomEl.appendChild(actionEl);
+
+      // --- CPR route + standards counter ---
+      var counts = countStandards(fam);
+      var parts = [statusInfo.cpr];
+      if (counts.hen > 0) parts.push('hEN ' + counts.hen);
+      if (counts.ead > 0) parts.push('EAD ' + counts.ead);
+      var counterEl = document.createElement('span');
+      counterEl.className = 'cpr-card__standards';
+      counterEl.textContent = parts.join(' \u00B7 ');
+      bottomEl.appendChild(counterEl);
+
+      // --- Updated date ---
+      if (fam.updated) {
+        var ud = new Date(fam.updated + 'T00:00:00');
+        var updEl = document.createElement('span');
+        updEl.className = 'cpr-card__updated';
+        updEl.textContent = ud.getDate() + ' ' + MONTHS[ud.getMonth()] + ' ' + ud.getFullYear();
+        bottomEl.appendChild(updEl);
+      }
+
+      card.appendChild(bottomEl);
+    });
   }
 
   // ---------- DPP SORT KEY ----------
   function dppSortKey(fam) {
-    var str = (fam['dpp-range'] && fam['dpp-range'].envelope) || fam['dpp-est'] || '';
+    var conv = fam.convergence;
+    var str = (conv && conv.dpp_date) || (fam['dpp-range'] && fam['dpp-range'].envelope) || fam['dpp-est'] || '';
     if (!str || str === 'TBD') return 9999;
     var m = str.match(/(\d{4})/);
     return m ? parseInt(m[1], 10) : 9999;
   }
 
-  // ---------- STAGE COMPUTATION ----------
-  function computeHenStage(s) {
-    var today = new Date().toISOString().slice(0, 10);
-    if (s.dev_stage || s.stage) {
-      if (s.mand_est && /^\d{4}/.test(s.mand_est) && s.mand_est <= today) return 4;
-      if (s.pub_est && /^\d{4}/.test(s.pub_est) && s.pub_est <= today) return 3;
-      return 2;
-    }
-    if (s.sreq_table || s.delivery) return 1;
-    return 0;
-  }
+  // ============================================================
+  // CONVERGENCE VIEW — replaces the old modal
+  // ============================================================
 
-  function computeEadStage(s) {
-    if (s.regime === 'new') return 3;
-    if (s.new_ead) return 2;
-    return 1;
-  }
+  function openConvergenceView(fam) {
+    currentFamily = fam;
 
-  // ---------- MODAL ----------
-  function openModal(fam) {
     var letter = fam.letter || '';
     var family = fam.family || '';
     var tc = fam.tc || '';
-    var sreq = fam.sreq || '';
-    var info = fam.info || '';
-    var dppEst = fam['dpp-est'] || '';
-    var ms = fam.milestones;
-    var stdsData = fam.standards;
-    var rangeData = fam['dpp-range'];
     var icon = fam.icon ? 'Images/' + fam.icon : '';
 
     // Header
-    if (icon) { modalIcon.src = icon; modalIcon.alt = fam['full-name'] || ''; }
-    modalTitle.textContent = fam['full-name'] || fam.display_name || '';
+    if (icon) { convIcon.src = icon; convIcon.alt = fam.full_name || fam['full-name'] || ''; }
+    convTitle.textContent = fam.full_name || fam['full-name'] || fam.display_name || '';
+
     var sub = [];
     if (letter) sub.push(letter);
     if (family) sub.push('Annex VII #' + family);
     if (tc) sub.push(tc);
-    modalSubtitle.textContent = sub.join(' \u00b7 ');
+    if (fam.updated) {
+      var ud = new Date(fam.updated + 'T00:00:00');
+      sub.push('Updated ' + ud.getDate() + ' ' + MONTHS[ud.getMonth()] + ' ' + ud.getFullYear());
+    }
+    convSubtitle.textContent = sub.join(' \u00b7 ');
 
-    // Updated date
-    var cardUpdated = fam.updated || '';
-    if (cardUpdated) {
-      var ud = new Date(cardUpdated + 'T00:00:00');
-      modalUpdated.textContent = 'Last updated: ' + ud.getDate() + ' ' + MONTHS[ud.getMonth()] + ' ' + ud.getFullYear();
-      modalUpdated.style.display = '';
-    } else {
-      modalUpdated.textContent = '';
-      modalUpdated.style.display = 'none';
+    // Convergence chart (time-aligned multi-column with per-standard nodes)
+    if (window.renderConvergenceChart) {
+      renderConvergenceChart(convChartWrap, fam, systemTimeline, fam.standards);
     }
 
-    // Reconcile milestones
-    if (ms) {
-      var sreqOrig = ms.sreq;
-      if (sreq === 'Adopted') ms.sreq = 'done';
-    }
+    // DPP Outlook box (above chart)
+    renderDppOutlook(convDppOutlook, fam, systemTimeline);
 
-    // Status tag
-    var tags = '';
-    if (ms) {
-      var statusInfo = computeStatus(ms, sreq);
-      if (statusInfo.text) {
-        tags = '<span class="cpr-modal__tag cpr-modal__tag--' + statusInfo.cls + '">' + statusInfo.text + '</span>';
-      }
-    }
-    modalTags.innerHTML = tags;
+    // Content sections (expandable narrative)
+    renderContentSections(convContentSections, fam);
 
-    // Standards section
-    renderStandards(fam, ms, stdsData, rangeData, letter);
-
-    // Info sections
-    var sections = categoriseInfo(info);
-
-    if (sections.intro.length) {
-      modalIntro.innerHTML = sections.intro.join('');
-      modalIntro.style.display = '';
-    } else {
-      modalIntro.innerHTML = '';
-      modalIntro.style.display = 'none';
-    }
-
-    // DPP box
-    var dppDate = (rangeData && rangeData.envelope) ? rangeData.envelope : dppEst;
-    var hasDppText = sections.dpp.length > 0;
-    if (dppDate || hasDppText) {
-      var dppBoxHtml = '<div class="cpr-dpp-box__title">DPP outlook</div>';
-      if (dppDate) dppBoxHtml += '<div class="cpr-dpp-box__date">DPP ' + dppDate + '</div>';
-      if (hasDppText) {
-        var dppHtml = sections.dpp.join('');
-        dppHtml = dppHtml.replace(/<strong>[^<]*DPP outlook[^<]*:\s*<\/strong>/i, '');
-        dppBoxHtml += dppHtml;
-      }
-      modalDppBox.innerHTML = dppBoxHtml;
-      modalDppBox.style.display = '';
-    } else {
-      modalDppBox.innerHTML = '';
-      modalDppBox.style.display = 'none';
-    }
-
-    // Annex
-    if (sections.annex.length) {
-      var annexHtml = '<div class="cpr-modal__annex-content">';
-      sections.annex.forEach(function (pHtml) {
-        var tmp = document.createElement('div');
-        tmp.innerHTML = pHtml;
-        var p = tmp.querySelector('p');
-        if (p) {
-          var s = p.querySelector('strong');
-          if (s) {
-            var label = s.textContent.replace(/:$/, '').trim();
-            annexHtml += '<div class="cpr-annex__heading">' + label + '</div>';
-            s.parentNode.removeChild(s);
-            p.innerHTML = p.innerHTML.replace(/^\s*:\s*/, '').replace(/^\s*/, '');
-          }
-        }
-        annexHtml += '<p>' + (p ? p.innerHTML : pHtml) + '</p>';
-      });
-      annexHtml += '</div>';
-      modalAnnex.innerHTML = annexHtml;
-      modalAnnex.style.display = '';
-    } else {
-      modalAnnex.innerHTML = '';
-      modalAnnex.style.display = 'none';
-    }
+    // Standards detail — handled by expansion panels (NT-5, NT-7, NT-8, NT-C1/C2/C3)
+    // and convergence DPP node. Old renderStandards removed.
+    convStandards.style.display = 'none';
 
     // Disclaimer
-    modalBody.innerHTML = '<p style="font-size:0.72rem;line-height:1.5;color:var(--color-text-secondary,#64748b);background:var(--color-bg-card,#f8fafc);border-left:3px solid var(--color-border,#e2e8f0);padding:10px 14px;border-radius:0 8px 8px 0;margin-top:14px;"><strong>Disclaimer:</strong> The CPR regulatory landscape is dynamic and at times opaque. The information shown is for informational purposes only and should not be considered legal advice.</p>';
+    convDisclaimer.innerHTML = '<p style="font-size:0.72rem;line-height:1.5;color:var(--color-text-secondary,#64748b);background:var(--color-bg-card,#f8fafc);border-left:3px solid var(--color-border,#e2e8f0);padding:10px 14px;border-radius:0 8px 8px 0;margin-top:14px;"><strong>Disclaimer:</strong> The CPR regulatory landscape is dynamic and at times opaque. The information shown is for informational purposes only and should not be considered legal advice.</p>';
 
-    modal.setAttribute('aria-hidden', 'false');
-    closeBtn.focus();
-  }
+    // Update URL hash
+    if (letter) window.location.hash = 'family=' + letter;
 
-  // ---------- STANDARDS RENDERING ----------
-  function renderStandards(fam, ms, stdsData, rangeData, cardLetter) {
-    if (stdsData && stdsData.standards && stdsData.standards.length > 0) {
-      modalStandards.style.display = '';
-      var sh = '';
-
-      var henStds = stdsData.standards.filter(function (s) { return s.type === 'hEN'; });
-      var eadStds = stdsData.standards.filter(function (s) { return s.type === 'EAD'; });
-
-      // Enrich hEN standards
-      henStds.forEach(function (s) {
-        s._stage = computeHenStage(s);
-        s.current_cpr = (s.revision === 'CPR 2011') ? '305/2011' : '2024/3110';
-        s.sreq_cpr = OLD_CPR_SREQ_FAMILIES[cardLetter] ? '305/2011' : '2024/3110';
-      });
-
-      // hEN route
-      if (henStds.length > 0) {
-        sh += '<div style="margin-top:4px;font-size:0.62rem;font-weight:700;color:#006B7F;text-transform:uppercase;letter-spacing:0.06em;">hEN Route</div>';
-        sh += buildHenTimeline(henStds, ms);
-        sh += buildHenTable(henStds);
-        if (stdsData.summary && stdsData.summary.hen_note) {
-          sh += '<div style="font-size:0.58rem;color:#8CA9BF;margin-top:4px;line-height:1.4;font-style:italic;">' + stdsData.summary.hen_note + '</div>';
-        }
-      }
-
-      // EAD route
-      if (eadStds.length > 0) {
-        eadStds.forEach(function (s) { s._eadStage = computeEadStage(s); });
-        sh += '<div style="margin-top:18px;font-size:0.62rem;font-weight:700;color:#006B3D;text-transform:uppercase;letter-spacing:0.06em;">EAD Route</div>';
-        sh += buildEadTimeline(eadStds);
-        sh += buildEadTable(eadStds);
-        var hasOldWithDpp = eadStds.some(function (s) { return s.regime === 'old' && s.dpp_est; });
-        if (hasOldWithDpp) {
-          sh += '<div style="font-size:0.58rem;color:#8CA9BF;margin-top:4px;line-height:1.4;font-style:italic;">* DPP only applies once a new EAD is adopted under CPR 2024/3110. Estimate assumes timely replacement.</div>';
-        }
-      }
-
-      // Summary note
-      if (stdsData.summary) {
-        var sm = stdsData.summary;
-        var note = '';
-        if (sm.completeness === 'partial') {
-          var total = (sm.hen_count || 0) + (sm.ead_count || 0);
-          var listed = (sm.hen_listed || 0) + (sm.ead_listed || 0);
-          note = listed + ' of ' + total + ' standards shown \u2014 ' + sm.source;
-        } else if (sm.completeness === 'full') {
-          note = 'All standards shown \u2014 ' + sm.source;
-        }
-        if (note) sh += '<div style="font-size:0.62rem;color:#8CA9BF;margin-top:8px;line-height:1.4;">' + note + '</div>';
-      }
-
-      modalStdsContent.innerHTML = sh;
-    } else if (rangeData && rangeData.envelope && rangeData.envelope !== 'TBD') {
-      modalStandards.style.display = '';
-      var ph = '<div class="cpr-modal__stds-placeholder">';
-      if (rangeData.hen_count || rangeData.ead_count) {
-        var parts = [];
-        if (rangeData.hen_count) parts.push(rangeData.hen_count + ' harmonised standard' + (rangeData.hen_count > 1 ? 's' : ''));
-        if (rangeData.ead_count) parts.push(rangeData.ead_count + ' EAD' + (rangeData.ead_count > 1 ? 's' : ''));
-        ph += parts.join(' + ') + ' identified \u2014 detailed per-standard analysis in progress.';
-      } else {
-        ph += 'Standard identification in progress.';
-      }
-      ph += '<br><strong>DPP envelope: ' + rangeData.envelope + '</strong></div>';
-      modalStdsContent.innerHTML = ph;
-    } else {
-      modalStandards.style.display = 'none';
-      modalStdsContent.innerHTML = '';
+    // Update breadcrumb
+    if (convBreadcrumbCurrent) {
+      convBreadcrumbCurrent.textContent = fam.display_name || fam.full_name || fam['full-name'] || letter;
     }
+
+    // Toggle page visibility
+    heroEl.style.display = 'none';
+    disclaimerBanner.style.display = 'none';
+    landingEl.style.display = 'none';
+    if (filterBar) filterBar.style.display = 'none';
+    gridContainer.style.display = 'none';
+    if (compareView) compareView.setAttribute('hidden', '');
+    convView.removeAttribute('hidden');
+    window.scrollTo(0, 0);
   }
 
-  function buildHenTimeline(henStds, ms) {
-    var totalHen = henStds.length;
-    var stageCounts = [0, 0, 0, 0, 0];
-    var highestStage = 0;
-    henStds.forEach(function (s) {
-      for (var i = 0; i < 5; i++) {
-        if (s._stage >= (i + 1)) stageCounts[i]++;
-      }
-      if (s._stage > highestStage) highestStage = s._stage;
-    });
-
-    var familySteps = [
-      { key: 'i', label: 'Product scope' },
-      { key: 'iii', label: 'Essential chars' },
-      { key: 'sreq', label: 'SReq' }
-    ];
-    var stdSteps = [
-      { num: 2, label: 'In dev' },
-      { num: 3, label: 'Delivered' },
-      { num: 4, label: 'Mandatory' },
-      { num: 5, label: 'DPP' }
-    ];
-
-    var sh = '<div class="cpr-milestones cpr-milestones--7" style="margin:8px 0 12px;">';
-
-    familySteps.forEach(function (step) {
-      var raw = ms ? ms[step.key] : null;
-      var val = raw || '';
-      var isObj = typeof raw === 'object' && raw !== null;
-      var mStatus = isObj ? (raw.status || '') : '';
-      if (isObj) val = mStatus;
-
-      var mIsDone = val === 'done' || val === 'finished' || val === 'adopted';
-      var mIsDraft = val === 'draft';
-      var mIsOngoing = val === 'ongoing';
-      var dotCl, ic;
-      if (mIsDone) { dotCl = 'cpr-milestone__dot--done'; ic = '\u2713'; }
-      else if (mIsDraft || mIsOngoing) { dotCl = 'cpr-milestone__dot--active'; ic = '\u2022'; }
-      else { dotCl = 'cpr-milestone__dot--future'; ic = ''; }
-
-      sh += '<div class="cpr-milestone">';
-      sh += '<div class="cpr-milestone__dot ' + dotCl + '">' + ic + '</div>';
-      sh += '<div class="cpr-milestone__label">' + step.label + '</div>';
-      sh += '</div>';
-    });
-
-    stdSteps.forEach(function (st) {
-      var count = stageCounts[st.num - 1];
-      var isReached = count > 0;
-      var isHighest = st.num === highestStage;
-      var dotCl, dateCl, ic;
-      if (st.num < highestStage && isReached) {
-        dotCl = 'cpr-milestone__dot--done'; dateCl = 'cpr-milestone__date--done'; ic = '\u2713';
-      } else if (isHighest && isReached) {
-        dotCl = 'cpr-milestone__dot--active'; dateCl = 'cpr-milestone__date--draft'; ic = st.num;
-      } else {
-        dotCl = 'cpr-milestone__dot--future'; dateCl = ''; ic = st.num;
-      }
-      sh += '<div class="cpr-milestone">';
-      sh += '<div class="cpr-milestone__dot ' + dotCl + '">' + ic + '</div>';
-      sh += '<div class="cpr-milestone__label">' + st.label + '</div>';
-      sh += '<div class="cpr-milestone__date ' + dateCl + '">' + count + ' of ' + totalHen + '</div>';
-      sh += '</div>';
-    });
-
-    sh += '</div>';
-    return sh;
+  function closeConvergenceView() {
+    convView.setAttribute('hidden', '');
+    heroEl.style.display = '';
+    disclaimerBanner.style.display = '';
+    landingEl.style.display = '';
+    if (filterBar) filterBar.style.display = '';
+    gridContainer.style.display = '';
+    currentFamily = null;
+    if (window.hideNodeDetail) window.hideNodeDetail();
+    if (window.hideNodeExpansion) window.hideNodeExpansion();
+    window.location.hash = '';
   }
 
-  function buildHenTable(henStds) {
-    var sh = '<div class="cpr-modal__stds-table-wrap"><table class="cpr-modal__stds-table"><thead><tr>';
-    sh += '<th>Standard</th><th>Name</th><th>TC/WG</th><th>Stage</th><th>Delivery</th><th>DPP est</th>';
-    sh += '</tr></thead><tbody>';
-    henStds.forEach(function (s) {
-      var stg = s._stage;
-      var dots = '<span class="cpr-stage-dots" title="' + STAGE_LABELS[stg] + '">';
-      for (var d = 1; d <= 5; d++) {
-        if (d <= stg && stg >= 4) dots += '<span class="cpr-stage-dots__dot cpr-stage-dots__dot--done-green"></span>';
-        else if (d <= stg) dots += '<span class="cpr-stage-dots__dot cpr-stage-dots__dot--done"></span>';
-        else dots += '<span class="cpr-stage-dots__dot"></span>';
-      }
-      dots += '</span>';
-      var tcWg = s.tc_wg || '\u2014';
-      var dppCell = '<span style="font-weight:600;color:#009BBB;">' + (s.dpp_est || '\u2014') + '</span>';
-      var infoHtml = buildHenDppInfo(s, STAGE_LABELS).replace(/'/g, '&#39;').replace(/"/g, '&quot;');
-      dppCell += ' <span class="cpr-dpp-info-btn" data-info="' + infoHtml + '" title="DPP reasoning">i</span>';
-      sh += '<tr>';
-      sh += '<td>' + (s.id || '') + '</td>';
-      sh += '<td style="font-size:0.58rem;color:#3A5A6A;">' + (s.name || '\u2014') + '</td>';
-      sh += '<td style="font-size:0.58rem;color:#5A7080;">' + tcWg + '</td>';
-      sh += '<td>' + dots + ' <span style="font-size:0.58rem;color:#5A7080;margin-left:2px;">' + STAGE_LABELS[stg] + '</span></td>';
-      sh += '<td>' + (s.delivery ? s.delivery.replace(/-/g, '\u2011') : '\u2014') + '</td>';
-      sh += '<td>' + dppCell + '</td>';
-      sh += '</tr>';
-    });
-    sh += '</tbody></table></div>';
-    return sh;
-  }
+  // ---------- DPP OUTLOOK BOX (above chart) ----------
+  function renderDppOutlook(container, fam, sysTimeline) {
+    var conv = fam.convergence;
+    if (!conv || !conv.dpp_date) {
+      container.style.display = 'none';
+      return;
+    }
 
-  function buildEadTimeline(eadStds) {
-    var totalEad = eadStds.length;
-    var eadStageCounts = [0, 0, 0, 0, 0];
-    var highestEadStage = 0;
-    eadStds.forEach(function (s) {
-      for (var i = 0; i < 5; i++) {
-        if (s._eadStage >= (i + 1)) eadStageCounts[i]++;
-      }
-      if (s._eadStage > highestEadStage) highestEadStage = s._eadStage;
+    container.style.display = '';
+    var cert = conv.dpp_certainty || 'gray';
+    var certLabel = CERTAINTY_LABELS[cert] || cert;
+    var binding = conv.binding_constraint || 'unknown';
+    var bindingLabel = binding === 'product' ? 'Product timeline'
+      : binding === 'system' ? 'System timeline' : 'Unknown';
+    var bindingCls = binding === 'product' ? 'product'
+      : binding === 'system' ? 'system' : 'unknown';
+
+    // Derive hEN/EAD obligation dates from individual standards
+    var dateToYear = window.convergenceDateToYear;
+    var henDates = [];
+    var eadDates = [];
+    (fam.standards || []).forEach(function (s) {
+      if (!s.dpp_est || s.dpp_est === 'TBD') return;
+      var entry = { id: s.id || '', est: s.dpp_est };
+      if (s.type === 'EAD') eadDates.push(entry);
+      else henDates.push(entry);
     });
 
-    var eadSummaryStages = [
-      { num: 1, label: 'Legacy EAD' },
-      { num: 2, label: 'In development' },
-      { num: 3, label: 'Adopted' },
-      { num: 4, label: 'Art 75 DA' },
-      { num: 5, label: 'DPP' }
-    ];
+    // Sort by date
+    function estSort(a, b) {
+      var ya = dateToYear ? dateToYear(a.est) : 0;
+      var yb = dateToYear ? dateToYear(b.est) : 0;
+      return (ya || 9999) - (yb || 9999);
+    }
+    henDates.sort(estSort);
+    eadDates.sort(estSort);
 
-    var sh = '<div class="cpr-milestones" style="margin:8px 0 12px;">';
-    eadSummaryStages.forEach(function (st) {
-      var count = eadStageCounts[st.num - 1];
-      var isReached = count > 0;
-      var isHighest = st.num === highestEadStage;
-      var dotCl, dateCl, ic;
-      if (st.num < highestEadStage && isReached) {
-        dotCl = 'cpr-milestone__dot--done'; dateCl = 'cpr-milestone__date--done'; ic = st.num;
-      } else if (isHighest && isReached) {
-        dotCl = 'cpr-milestone__dot--active'; dateCl = 'cpr-milestone__date--draft'; ic = st.num;
-      } else {
-        dotCl = 'cpr-milestone__dot--future'; dateCl = ''; ic = st.num;
-      }
-      sh += '<div class="cpr-milestone">';
-      sh += '<div class="cpr-milestone__dot ' + dotCl + '">' + ic + '</div>';
-      sh += '<div class="cpr-milestone__label">' + st.label + '</div>';
-      sh += '<div class="cpr-milestone__date ' + dateCl + '">' + count + ' of ' + totalEad + '</div>';
-      sh += '</div>';
-    });
-    sh += '</div>';
-    return sh;
-  }
-
-  function buildEadTable(eadStds) {
-    var sh = '<div class="cpr-modal__stds-table-wrap"><table class="cpr-modal__stds-table"><thead><tr>';
-    sh += '<th>EAD</th><th>Name</th><th>Pipeline</th><th>AVCP</th><th>Validity</th><th>DPP Est</th>';
-    sh += '</tr></thead><tbody>';
-    eadStds.forEach(function (s) {
-      var isOld = s.regime !== 'new';
-      var eadStg = s._eadStage;
-      var dots = '<span class="cpr-stage-dots" title="' + EAD_STAGE_LABELS[eadStg] + '">';
-      for (var d = 1; d <= 5; d++) {
-        if (d === 1 && !isOld) dots += '<span class="cpr-stage-dots__dot"></span>';
-        else if (d <= eadStg) dots += '<span class="cpr-stage-dots__dot cpr-stage-dots__dot--done-green"></span>';
-        else dots += '<span class="cpr-stage-dots__dot"></span>';
-      }
-      dots += '</span>';
-
-      var validity = isOld ? (s.expires || '9 Jan 2031') : 'New CPR';
-      var dppCell = s.dpp_est || '\u2014';
-      var dppNote = (isOld && s.dpp_est) ? ' *' : '';
-      var eadInfoHtml = buildEadDppInfo(s).replace(/'/g, '&#39;').replace(/"/g, '&quot;');
-      var eadInfoBtn = ' <span class="cpr-dpp-info-btn cpr-dpp-info-btn--ead" data-info="' + eadInfoHtml + '" title="DPP reasoning">i</span>';
-
-      sh += '<tr>';
-      sh += '<td>' + (s.id || '') + '</td>';
-      sh += '<td>' + (s.name || '') + '</td>';
-      sh += '<td>' + dots + ' <span style="font-size:0.58rem;color:#5A7080;margin-left:2px;">' + EAD_STAGE_LABELS[eadStg] + '</span></td>';
-      sh += '<td>' + (s.avcp || '\u2014') + '</td>';
-      sh += '<td>' + validity + '</td>';
-      sh += '<td style="font-weight:600;color:#00914B;">' + dppCell + dppNote + eadInfoBtn + '</td>';
-      sh += '</tr>';
-    });
-    sh += '</tbody></table></div>';
-    return sh;
-  }
-
-  // ---------- INFO CATEGORISATION ----------
-  var introKeys = ['about this family', 'scope', 'product types', 'technical committee', 'technical body'];
-  var dppKeys = ['dpp outlook'];
-
-  function categoriseInfo(html) {
-    if (!html) return { intro: [], dpp: [], annex: [] };
-    var div = document.createElement('div');
-    div.innerHTML = html;
-    var paras = div.querySelectorAll('p');
-    var result = { intro: [], dpp: [], annex: [] };
-    paras.forEach(function (p) {
-      var strong = p.querySelector('strong');
-      var heading = strong ? strong.textContent.toLowerCase().replace(/:$/, '').trim() : '';
-      var matched = false;
-      for (var i = 0; i < dppKeys.length; i++) {
-        if (heading.indexOf(dppKeys[i]) !== -1) { result.dpp.push(p.outerHTML); matched = true; break; }
-      }
-      if (!matched) {
-        for (var j = 0; j < introKeys.length; j++) {
-          if (heading.indexOf(introKeys[j]) === 0) { result.intro.push(p.outerHTML); matched = true; break; }
+    // System DPP date
+    var sysDppDate = '';
+    if (sysTimeline && sysTimeline.nodes) {
+      sysTimeline.nodes.forEach(function (n) {
+        if (n.id === 'sys-dpp-mandatory') {
+          sysDppDate = n.estimated_date || n.date || n.target_date || '';
         }
+      });
+    }
+
+    // Identify which pipelines are active
+    var activePipes = fam.active_pipelines || [];
+    var futurePipes = fam.future_pipelines || [];
+    var pipeLabels = [];
+    var allPipes = activePipes.concat(futurePipes);
+    allPipes.forEach(function (pk) {
+      var pipe = fam.pipelines && fam.pipelines[pk];
+      if (pipe) {
+        var tag = futurePipes.indexOf(pk) !== -1 ? ' (future)' : '';
+        pipeLabels.push('Pipeline ' + pk + tag + ': ' + (pipe.label || pk));
       }
-      if (!matched && p.textContent.trim()) result.annex.push(p.outerHTML);
     });
-    return result;
+
+    // Build HTML
+    var html = '<div class="dpp-outlook">';
+
+    // Header: title + date + certainty
+    html += '<div class="dpp-outlook__header">';
+    html += '<span class="dpp-outlook__title">DPP Outlook</span>';
+    html += '<span class="dpp-outlook__date">' + esc(conv.dpp_date) + '</span>';
+    html += '<span class="dpp-outlook__cert">';
+    html += '<span class="dpp-outlook__cert-dot dpp-outlook__cert-dot--' + cert + '"></span>';
+    html += esc(certLabel);
+    html += '</span>';
+    html += '<span class="dpp-outlook__binding dpp-outlook__binding--' + bindingCls + '">';
+    html += 'binding: ' + esc(bindingLabel);
+    html += '</span>';
+    html += '</div>';
+
+    // Body
+    html += '<div class="dpp-outlook__body">';
+
+    // Explanation
+    html += '<p>The DPP obligation date is determined by whichever is later: the product timeline ';
+    html += '(when harmonised standards are in force under the new CPR) or the system timeline ';
+    html += '(when the EU DPP infrastructure is operational). ';
+    html += 'The formula is: <strong>DPP = max(Product ready, System ready)</strong>.</p>';
+
+    // Formula
+    if (conv.formula_note) {
+      html += '<div class="dpp-outlook__formula">' + esc(conv.formula_note) + '</div>';
+    }
+
+    // Product timeline section
+    html += '<div class="dpp-outlook__section">';
+    html += '<div class="dpp-outlook__section-label">Product timeline</div>';
+    if (pipeLabels.length > 0) {
+      pipeLabels.forEach(function (pl) {
+        html += '<div class="dpp-outlook__row"><span class="dpp-outlook__row-label">' + esc(pl) + '</span></div>';
+      });
+    }
+    if (henDates.length > 0) {
+      var firstHen = henDates[0];
+      var lastHen = henDates[henDates.length - 1];
+      html += '<div class="dpp-outlook__row">';
+      html += '<span class="dpp-outlook__row-label">First hEN DPP obligation</span>';
+      html += '<span class="dpp-outlook__row-value">' + esc(firstHen.est) + ' (' + esc(firstHen.id) + ')</span>';
+      html += '</div>';
+      if (henDates.length > 1 && firstHen.est !== lastHen.est) {
+        html += '<div class="dpp-outlook__row">';
+        html += '<span class="dpp-outlook__row-label">Last hEN DPP obligation</span>';
+        html += '<span class="dpp-outlook__row-value">' + esc(lastHen.est) + ' (' + esc(lastHen.id) + ')</span>';
+        html += '</div>';
+      }
+    }
+    if (eadDates.length > 0) {
+      var firstEad = eadDates[0];
+      var lastEad = eadDates[eadDates.length - 1];
+      html += '<div class="dpp-outlook__row">';
+      html += '<span class="dpp-outlook__row-label">First EAD DPP obligation</span>';
+      html += '<span class="dpp-outlook__row-value">' + esc(firstEad.est) + ' (' + esc(firstEad.id) + ')</span>';
+      html += '</div>';
+      if (eadDates.length > 1 && firstEad.est !== lastEad.est) {
+        html += '<div class="dpp-outlook__row">';
+        html += '<span class="dpp-outlook__row-label">Last EAD DPP obligation</span>';
+        html += '<span class="dpp-outlook__row-value">' + esc(lastEad.est) + ' (' + esc(lastEad.id) + ')</span>';
+        html += '</div>';
+      }
+    }
+    if (henDates.length === 0 && eadDates.length === 0) {
+      html += '<div class="dpp-outlook__row"><span class="dpp-outlook__row-label" style="color:#94a3b8;">No standards with DPP estimates yet</span></div>';
+    }
+    html += '</div>';
+
+    // System timeline section
+    html += '<div class="dpp-outlook__section">';
+    html += '<div class="dpp-outlook__section-label">System timeline</div>';
+    html += '<div class="dpp-outlook__row">';
+    html += '<span class="dpp-outlook__row-label">DPP Mandatory (+18mo after Art. 75 DA)</span>';
+    html += '<span class="dpp-outlook__row-value">' + esc(sysDppDate || 'TBD') + '</span>';
+    html += '</div>';
+    html += '</div>';
+
+    html += '</div>'; // body
+    html += '</div>'; // dpp-outlook
+
+    container.innerHTML = html;
+  }
+
+  // ---------- CONTENT SECTIONS ----------
+  function renderContentSections(container, fam) {
+    var content = fam.content;
+    if (!content) {
+      container.style.display = 'none';
+      return;
+    }
+
+    var html = window.ContentRenderer
+      ? window.ContentRenderer.renderFamilyContent(content, {
+          cssPrefix: 'cpr-content',
+          expandKeys: ['about', 'dpp_outlook'],
+          showSources: true
+        })
+      : '';
+
+    if (!html) {
+      container.style.display = 'none';
+      return;
+    }
+
+    container.style.display = '';
+    container.innerHTML = '<div class="conv-view__section-title">Analysis</div>' + html;
+
+    if (window.ContentRenderer) {
+      window.ContentRenderer.attachToggleListeners(container, 'cpr-content');
+    }
   }
 
   // ---------- EVENTS ----------
+
+  // Card click → open convergence view
   grid.addEventListener('click', function (e) {
     var card = e.target.closest('.cpr-card');
     if (!card) return;
-    var idx = parseInt(card.getAttribute('data-idx'), 10);
-    var fam = families[idx];
-    if (fam) openModal(fam);
+    var letter = card.getAttribute('data-letter');
+    var fam = families.find(function (f) { return f.letter === letter; });
+    if (fam) openConvergenceView(fam);
   });
 
-  function closeModal() { modal.setAttribute('aria-hidden', 'true'); }
-  backdrop.addEventListener('click', closeModal);
-  closeBtn.addEventListener('click', closeModal);
+  // Close convergence view
+  convClose.addEventListener('click', closeConvergenceView);
+  if (convBreadcrumbBack) {
+    convBreadcrumbBack.addEventListener('click', function (e) {
+      e.preventDefault();
+      closeConvergenceView();
+    });
+  }
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal();
+    if (e.key === 'Escape' && !convView.hasAttribute('hidden')) closeConvergenceView();
+  });
+
+  // Print convergence view
+  if (convPrint) {
+    convPrint.addEventListener('click', function () {
+      window.print();
+    });
+  }
+
+  // Nav scroll effect (add shadow on scroll)
+  if (trackerNav) {
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 20) {
+        trackerNav.classList.add('tracker-nav--scrolled');
+      } else {
+        trackerNav.classList.remove('tracker-nav--scrolled');
+      }
+    }, { passive: true });
+  }
+
+  // Node click → show detail panel + expansion for expandable nodes (event delegation)
+  convChartWrap.addEventListener('click', function (e) {
+    var nodeEl = e.target.closest('.conv-chart__node');
+    if (!nodeEl) return;
+
+    var colKey = nodeEl.getAttribute('data-col-key');
+    var nodeIdxAttr = nodeEl.getAttribute('data-node-idx');
+    if (!currentFamily || nodeIdxAttr === null) return;
+
+    var node = getNodeData(currentFamily, colKey, parseInt(nodeIdxAttr, 10));
+    if (!node) return;
+
+    // Toggle: if this node's detail is already open, close it
+    var wasActive = nodeEl.classList.contains('conv-chart__node--active-detail');
+
+    // Clear any existing active state + panels
+    var prev = convChartWrap.querySelector('.conv-chart__node--active-detail');
+    if (prev) prev.classList.remove('conv-chart__node--active-detail');
+    if (window.hideNodeDetail) window.hideNodeDetail();
+    if (window.hideNodeExpansion) window.hideNodeExpansion();
+
+    if (!wasActive) {
+      nodeEl.classList.add('conv-chart__node--active-detail');
+      // Show inline detail panel
+      if (window.showNodeDetail) window.showNodeDetail(nodeEl, node, colKey);
+      // If expandable, also open the expansion panel below chart
+      if (window.isExpandableNode && window.isExpandableNode(node, colKey)) {
+        if (window.showNodeExpansion) window.showNodeExpansion(convExpansion, node, colKey, currentFamily);
+      }
+    }
+  });
+
+  // Also handle keyboard (Enter/Space) on nodes
+  convChartWrap.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    var target = e.target.closest('.conv-chart__node');
+    if (!target) return;
+    e.preventDefault();
+    target.click();
+  });
+
+  function getNodeData(fam, colKey, idx) {
+    if (colKey === 'SYS') {
+      return systemTimeline && systemTimeline.nodes && systemTimeline.nodes[idx];
+    }
+    var pipe = fam.pipelines && fam.pipelines[colKey];
+    return pipe && pipe.nodes && pipe.nodes[idx];
+  }
+
+  // Content section toggle now handled by ContentRenderer.attachToggleListeners()
+
+  // Browser back/forward
+  window.addEventListener('hashchange', function () {
+    var hash = window.location.hash;
+    if (!hash || hash === '#') {
+      if (!convView.hasAttribute('hidden')) closeConvergenceView();
+      if (compareView && !compareView.hasAttribute('hidden') && window.closeComparison) {
+        window.closeComparison();
+      }
+    } else {
+      var familyMatch = hash.match(/family=([A-Z]+)/i);
+      if (familyMatch) {
+        var target = familyMatch[1].toUpperCase();
+        var fam = families.find(function (f) { return f.letter === target; });
+        if (fam && fam !== currentFamily) openConvergenceView(fam);
+      }
+    }
   });
 
   // ---------- UTIL ----------

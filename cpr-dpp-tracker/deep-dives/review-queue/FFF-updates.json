@@ -1,0 +1,100 @@
+{
+  "family": "FFF",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-FFF-001",
+      "families": ["FFF"],
+      "severity": "info",
+      "type": "content_inconsistency",
+      "title": "standards_landscape says '~32 harmonised standards' but actual count is 33",
+      "description": "content.standards_landscape states '~32 harmonised standards cited under old CPR 305/2011' but the actual hEN count in standards[] is 33. The narrative uses an approximation where the precise count is available and should be used.",
+      "action_required": "Update content.standards_landscape to say '33 harmonised standards'.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-FFF-002",
+      "families": ["FFF"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "standards_development field empty despite known CEN activity",
+      "description": "content.standards_development is empty despite EN 50130-4 EMC revision ongoing, EN 54 citation backlog context, and CEN/TC 191/WG 5 waiting-for-SReq status. Proposed content in deep-dive report §8.",
+      "action_required": "Populate with proposed content from deep-dive report §8.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-FFF-003",
+      "families": ["FFF"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "key_risks and sources_summary fields empty",
+      "description": "content.key_risks is empty despite EN 54 citation backlog, multi-regulatory overlap (CPR + EMC + LVD + RoHS + WEEE + CRA), and acquis-not-started status being significant risks. content.sources_summary is also empty.",
+      "action_required": "Populate with proposed content from deep-dive report §8.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-FFF-004",
+      "families": ["FFF"],
+      "severity": "info",
+      "type": "missing_standard",
+      "title": "EN 12101-2 (SHEV) absent from standards[] — may be intentional",
+      "description": "EN 12101-2 (smoke and heat exhaust ventilators) is a notable omission from the standards[] array. Parts 1, 7, 8, and 10 of the EN 12101 series are tracked. EN 12101-2 has had persistent citation issues. Either it is deliberately excluded (e.g., tracked under a different family or not currently harmonised) or it is missing.",
+      "action_required": "Verify whether EN 12101-2 should be in FFF standards[] or is intentionally excluded.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-FFF-005",
+      "families": ["FFF"],
+      "severity": "warning",
+      "type": "timeline_risk",
+      "title": "Euralarm estimates 10-year minimum for fire product standard rewriting",
+      "description": "Euralarm (European fire safety and security industry association) published a position stating that rewriting all fire product standards to align with Commission requirements under new CPR would take 'at best 10 years.' This directly challenges the FFF DPP timeline estimate of ~2030-2033. If Euralarm's estimate proves accurate, DPP for fire products could be 2035+. Euralarm describes the CPR proposal as failing to 'resolve the ongoing stagnation of the standardisation process.'",
+      "action_required": "Consider adjusting DPP range estimate or adding stakeholder risk note. Cross-reference with EN 54 citation backlog (still unresolved).",
+      "status": "pending"
+    },
+    {
+      "id": "iss-FFF-006",
+      "families": ["FFF"],
+      "severity": "info",
+      "type": "cross_regulatory",
+      "title": "CRA reporting obligations from Sep 2026, full compliance Dec 2027",
+      "description": "Cyber Resilience Act (CRA) entered into force 10 Dec 2024. Reporting obligations apply from 11 Sep 2026; full compliance from 11 Dec 2027. Euralarm fact sheet (Nov 2024) classifies most electronic fire safety products in 'default' category (self-assessment permitted). Products covered include fire detection control panels, intrusion detection, access control, cloud-based alarm software. Less burdensome than initially assessed but adds cybersecurity essential requirements to product design.",
+      "action_required": "Document CRA timeline in content.key_risks. Note self-assessment route for most fire products.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-FFF-007",
+      "families": ["FFF"],
+      "severity": "warning",
+      "type": "cross_regulatory",
+      "title": "PFAS ban (EU 2025/1988) directly impacts firefighting foam products",
+      "description": "Regulation (EU) 2025/1988 (adopted 2 Oct 2025) restricts PFAS in firefighting foams. Portable extinguishers: PFAS ban from 23 Oct 2026. Alcohol-resistant foams: 23 Apr 2027. Full market ban: 23 Oct 2030. Existing equipment: use until 31 Dec 2030. Impacts EN 12094 (gas extinguishing) and EN 12259 (sprinkler/water spray) product families — foam agent compatibility must be reassessed. Creates triple regulatory burden: CPR (product performance) + REACH (chemical restriction) + future DPP (chemical content declaration).",
+      "source": "DNV (https://www.dnv.com/news/2025/pfos-prohibited-in-fire-extinguishing-media-from-1-january-2026/); UL Solutions (https://www.ul.com/news/new-eu-restriction-pfas-firefighting-foams); CIRS Group (https://www.cirs-group.com/en/chemicals/eu-adopts-ban-on-pfas-in-firefighting-foam-reach-regulation-amendment-to-take-full-effect-by-2030)",
+      "action_required": "Document PFAS ban timeline in content.key_risks. Flag EN 12094 and EN 12259 product compatibility review needed. Monitor fluorine-free foam standard development.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-FFF-008",
+      "families": ["FFF"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "Zero fire product EPDs found — industry must build EPD capability from scratch",
+      "description": "No Environmental Product Declarations (EPDs) under EN 15804 found for fire detection, fire alarm, sprinkler, or gas extinguishing products. Unlike cement (thousands of EPDs), concrete (hundreds), or steel (dozens), fire safety products have zero EPD infrastructure. DPP GWP declarations under new CPR will require this data. Fire products are complex manufactured goods (electronics, metals, plastics, chemicals) making GWP assessment harder than for single-material products.",
+      "source": "EPD International (https://www.environdec.com/services/what-is-epd); BRE Group (https://bregroup.com/services/standards/environmental/en-15804-environmental-product-declaration-epd)",
+      "action_required": "Document EPD readiness gap in content. Flag as major DPP implementation risk for fire products.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-FFF-009",
+      "families": ["FFF"],
+      "severity": "info",
+      "type": "dpp_complexity",
+      "title": "IoT/networked fire systems blur product/system boundary for DPP",
+      "description": "Wireless fire detection market growing from $1.62B (2025) to $3.1B (2035). IoT-integrated fire systems combine alarms + HVAC + access control + BMS. EN 54 was designed for discrete product certification, but networked fire products operate as systems-of-components. DPP faces: per-component EN 54 certification vs system-level IoT integration, triple regulation (CRA cybersecurity + CPR construction performance + ESPR electronics repairability). Mesh-networked sensors and 5G-compatible systems emerging.",
+      "source": "FMI market report (https://www.fmiblog.com/2025/06/19/wireless-fire-detection-systems-market-to-reach-usd-3-1-billion-by-2035-driven-by-smart-building-adoption-and-iot-integration/); ScienceDirect IoT fire review (https://www.sciencedirect.com/science/article/pii/S2542660523001269)",
+      "action_required": "Document IoT complexity in content. Consider implications for DPP data model (product vs system granularity).",
+      "status": "pending"
+    }
+  ]
+}

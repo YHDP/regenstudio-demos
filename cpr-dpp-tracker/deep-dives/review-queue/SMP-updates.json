@@ -1,0 +1,88 @@
+{
+  "family": "SMP",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-SMP-001",
+      "families": ["SMP"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "key_risks field empty despite EN 1090-1 mandate rejection",
+      "description": "content.key_risks is empty but SMP has major identifiable risks: EN 1090-1 mandate rejected by EU member states (summer 2025), SReq delivery deadline missed, 28 legacy EADs with no transition planning, parallel new-CPR SReq track planned Q2 2026.",
+      "action_required": "Populate key_risks with proposed content from deep-dive report §8.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-SMP-002",
+      "families": ["SMP"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "sources_summary field empty",
+      "description": "content.sources_summary is empty.",
+      "action_required": "Populate with compiled source references.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-SMP-003",
+      "families": ["SMP", "ROC", "WCF"],
+      "severity": "info",
+      "type": "cross_family",
+      "title": "EN 14509 (sandwich panels) cross-listed across SMP, ROC, WCF",
+      "description": "EN 14509 (double skin metal faced insulating sandwich panels) is listed in SMP standards[] but is also relevant to ROC (roof coverings) and WCF (wall/ceiling finishes). Data consistency should be verified when those families are analyzed.",
+      "action_required": "Flag for Batch 3 (ROC, WCF) analysis.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-SMP-004",
+      "families": ["SMP", "RPS"],
+      "severity": "info",
+      "type": "cross_family",
+      "title": "EAD 200029 (duplex stainless reinforcing bars) may overlap with RPS family",
+      "description": "EAD 200029-00-0602 covers duplex stainless steel reinforcing bars, which could logically belong to either SMP or RPS (reinforcing steel). Cross-check when RPS analyzed in Batch 7.",
+      "action_required": "Flag for Batch 7 (RPS) analysis.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-SMP-005",
+      "families": ["SMP"],
+      "severity": "warning",
+      "type": "content_data_disagreement",
+      "title": "stakeholder_notes reference EAD numbers not in standards[]",
+      "description": "content.stakeholder_notes mentions EADs 200036, 200043, 200077, 200039, 200086, 200102, 200116, 200126, 200188 — these are NOT present in the standards[] array. Either the tracker is missing these EADs (actual count could be >28), or the stakeholder_notes contain inaccurate references copied from an external source.",
+      "action_required": "Cross-reference against EOTA PA 20 database to determine if additional EADs should be added to standards[] or if stakeholder_notes should be corrected.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-SMP-006",
+      "families": ["SMP"],
+      "severity": "info",
+      "type": "cross_regulatory",
+      "title": "COM(2025) 726 Steel & Metals Action Plan impacts SMP",
+      "description": "EU Steel and Metals Action Plan (COM(2025) 726, adopted 19 Mar 2025) introduces voluntary carbon-intensity label for steel (starting 2025), IDAA planned Q4 2025, and €100B Industrial Decarbonisation Bank. CBAM full financial implementation Jan 2026 creates embedded emissions tracking overlap with DPP data. Triple compliance burden: CBAM + ESPR + potential safeguard tariffs. Strong parallel with RPS cross-regulatory findings.",
+      "action_required": "Document in content.key_risks. Consider cross-referencing with RPS (iss-RPS-003) for consistent treatment of steel sector policy.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-SMP-007",
+      "families": ["SMP"],
+      "severity": "info",
+      "type": "regulatory_development",
+      "title": "CEN/TS 1090-201:2024 steel reuse specification published",
+      "description": "CEN/TS 1090-201:2024 (DIN version Jan 2025) is the first European technical specification for reuse of structural steel components. Covers reusability assessment, property declaration, and weldability for reclaimed profiles. Not harmonised but establishes technical framework that future new-CPR harmonised standards may incorporate. Relevant to DPP circular economy and end-of-life data content.",
+      "action_required": "Document in content.standards_development. Monitor for potential integration into future SReq scope under new CPR.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-SMP-008",
+      "families": ["SMP"],
+      "severity": "warning",
+      "type": "cross_regulatory",
+      "title": "ESPR iron & steel delegated act creates dual-DPP situation for SMP",
+      "description": "ESPR lists iron & steel as one of 11 priority product groups with indicative 2026 adoption. DPP requirements begin 2027/2028 (18 months after adoption). SMP faces dual-DPP: ESPR DPP for intermediate steel products may apply before CPR DPP (blocked by EN 1090-1 still at stage 10.99). Same pattern as RPS (iss-RPS-006). Steel is uniquely at intersection of both regulations. DPP registry operational Jul 2026.",
+      "source": "Circularise ESPR sectors (https://www.circularise.com/blogs/dpps-required-by-eu-legislation-across-sectors); One Click LCA ESPR Working Plan (https://oneclicklca.com/en/resources/articles/first-espr-working-plan); Sidley Austin (https://www.sidley.com/en/insights/newsupdates/2025/04/european-commission-releases-list-of-priority-products)",
+      "action_required": "Document dual-DPP situation in content. Cross-reference with iss-RPS-006. Monitor ESPR delegated act adoption.",
+      "status": "pending"
+    }
+  ]
+}

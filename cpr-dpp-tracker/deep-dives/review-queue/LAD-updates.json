@@ -1,0 +1,67 @@
+{
+  "family": "LAD",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-LAD-001",
+      "family": "LAD",
+      "severity": "info",
+      "type": "empty_content",
+      "title": "3 content sections empty",
+      "description": "standards_development, key_risks, sources_summary are empty.",
+      "action": "Populate with proposed content from deep-dive report."
+    },
+    {
+      "id": "iss-LAD-002",
+      "family": "LAD",
+      "severity": "warning",
+      "type": "cross_family",
+      "title": "3 hENs currently under ROC (family 22), not LAD (family 36)",
+      "description": "EN 12951, EN 516, and EN 517 are currently cited under product family 22 (ROC) via Implementing Decision (EU) 2019/451. Under CPR 2024/3110, they may be reclassified to family 36 (LAD). The standards[] data in LAD does not indicate their current family-22 classification.",
+      "action": "Consider adding a field to flag standards pending reclassification from ROC to LAD. Verify reclassification status once CPR 2024/3110 implementing measures are adopted."
+    },
+    {
+      "id": "iss-LAD-003",
+      "family": "LAD",
+      "severity": "info",
+      "type": "cross_family",
+      "title": "LAD milestones dependent on KAS (family 34)",
+      "description": "Per COM(2025) 772, family 36 (LAD) milestones are handled within family 34 (KAS). KAS M-I Q2 2026 is imminent. If KAS workstreams split (as noted in Table 3), LAD may get independent milestones.",
+      "action": "Monitor KAS M-I outcome for LAD implications. Update LAD milestones if independent dates are assigned."
+    },
+    {
+      "id": "iss-LAD-004",
+      "families": ["LAD"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "Zero EPDs found for roof ladders, safety hooks, or walkways — metal sector EPD inheritance possible",
+      "description": "No EPDs found for fixed roof ladders (EN 12951), roof safety hooks (EN 517), or roof walkways (EN 516). Products are predominantly aluminium and galvanised steel. Could potentially inherit environmental data from aluminium/steel sector EPDs. BAU-EPD lists CEN/TC 128 PCRs suggesting EPD methodology exists at TC level. Niche market size means DPP infrastructure costs may be disproportionately high for manufacturers like ZARGES, Kee Safety, MSA Safety.",
+      "source": "European Aluminium (https://european-aluminium.eu/); ZARGES (https://www.zarges.com/uk/fixed-vertical-ladders/); BAU-EPD (https://www.bau-epd.at/en/pcr/list/cen-tc-standards-european-specific-product-category-rules-for-construction-products)",
+      "action_required": "Document zero EPD coverage in content. Note metal sector EPD inheritance as potential pathway.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-LAD-005",
+      "families": ["LAD"],
+      "severity": "warning",
+      "type": "multi_regulatory",
+      "title": "Three-regulation overlap: CPR (EN 12951/516/517), Machinery (EN 14122-4), PPE (EN 353-1) — boundary unclear",
+      "description": "Fixed attached ladders sit at the intersection of three EU regulations: CPR 2024/3110 (construction products permanently attached to buildings, EN 12951/EN 516/EN 517), Machinery Regulation (EN 14122-4 fixed ladders on machinery), and PPE Regulation (EN 353-1 guided fall arresters). ZARGES markets fixed ladders to EN 14122-4 rather than EN 12951, suggesting market preference for machinery standard. A fixed ladder attached to a building could need CPR DPP AND machinery/PPE compliance simultaneously. Regulatory boundary needs clarification in SReq (handled within KAS).",
+      "source": "ZARGES EN 14122-4 (https://www.zarges.com/uk/fixed-vertical-ladders/); EUR-Lex Directive 2001/45/EC (https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32001L0045)",
+      "action_required": "Document multi-regulatory overlap in content.key_risks. Flag regulatory boundary as SReq clarification item.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-LAD-006",
+      "families": ["LAD"],
+      "severity": "info",
+      "type": "market_context",
+      "title": "Niche market — ZARGES leads Europe, no market sizing found, EU positions ladders as 'last resort' for height work",
+      "description": "No specific market sizing found for fixed attached ladders / roof safety products in Europe — niche segment within broader fall protection market. ZARGES (Germany, 1930s) is Europe's leading manufacturer. Key competitors: Kee Safety, MSA Safety, Layher, Hailo. Materials: aluminium, galvanised steel, stainless steel. EU Directive 2001/45/EC establishes ladders as 'last resort' for work at height — regulatory pressure toward more sophisticated access systems may limit market growth. EN 12951:2004, EN 516:2006, EN 517:2006 are 18-22 years old.",
+      "source": "ZARGES (https://www.zarges.com/uk/fixed-vertical-ladders/); EUR-Lex Directive 2001/45/EC (https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32001L0045)",
+      "action_required": "Include market context and regulatory landscape in content.",
+      "status": "pending"
+    }
+  ]
+}

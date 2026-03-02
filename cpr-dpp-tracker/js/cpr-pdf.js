@@ -1,6 +1,7 @@
 /**
  * CPR DPP Report — PDF generation using jsPDF.
  * Generates Full Overview (all 37 families) or single-family Deep-Dive reports.
+ * Reads from families-v2.json (pipeline-aware schema).
  */
 
 const CPRReport = {
@@ -20,7 +21,7 @@ const CPRReport = {
 
   /**
    * Main entry point.
-   * @param {Array} families — array of family objects from families.json
+   * @param {Array} families — array of family objects from families-v2.json
    * @param {Object} options
    * @param {boolean} options.preview — if true, generate preview (intro + 1 partial family)
    * @param {string}  options.familyLetter — if set, generate single-family deep-dive
@@ -455,84 +456,54 @@ const CPRReport = {
 
         y += 22;
 
-        // DPP date
-        var range = fam['dpp-range'];
-        var dppLabel = (range && range.envelope) ? range.envelope : (fam['dpp-est'] || '');
+        // DPP date — prefer convergence object, fall back to legacy fields
+        var conv = fam.convergence;
+        var dppLabel = (conv && conv.dpp_date) ? conv.dpp_date : ((fam['dpp-range'] && fam['dpp-range'].envelope) || fam['dpp-est'] || '');
+        var bindingConstraint = conv && conv.binding_constraint;
         if (dppLabel) {
           doc.setFillColor(240, 249, 255);
           doc.setDrawColor(...this.TEAL);
           doc.setLineWidth(0.3);
-          doc.roundedRect(margin, y, cw, 10, 2, 2, 'FD');
+          var dppBoxH = bindingConstraint ? 14 : 10;
+          doc.roundedRect(margin, y, cw, dppBoxH, 2, 2, 'FD');
           doc.setFont('helvetica', 'bold');
           doc.setFontSize(8);
           doc.setTextColor(...this.TEAL);
           doc.text('Estimated DPP: ' + dppLabel, margin + 5, y + 6.5);
-          y += 14;
+          if (bindingConstraint) {
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(6.5);
+            doc.setTextColor(80, 80, 80);
+            doc.text('Binding constraint: ' + bindingConstraint + ' timeline', margin + 5, y + 11);
+          }
+          y += dppBoxH + 4;
         }
 
-        // ── Info sections ──
-        var sections = this._categoriseInfo(fam.info || '');
+        // ── Content sections (from content{} object) ──
+        var contentSections = window.ContentRenderer
+          ? window.ContentRenderer.toPlainSections(fam.content)
+          : this._fallbackContentSections(fam.content);
 
-        // Intro sections
-        if (sections.intro.length) {
-          sections.intro.forEach(pText => {
-            var parts = this._parseInfoParagraph(pText);
-            if (parts.heading) {
-              checkPage(10);
-              doc.setFont('helvetica', 'bold');
-              doc.setFontSize(8);
-              doc.setTextColor(...this.NAVY);
-              doc.text(parts.heading, margin, y);
-              y += 4;
-            }
-            if (parts.body) {
-              bodyText(parts.body);
-              y += 2;
-            }
-          });
-        }
-
-        // DPP outlook
-        if (sections.dpp.length) {
+        contentSections.forEach(sec => {
           checkPage(10);
+          var headColor = sec.key === 'dpp_outlook' ? this.TEAL : this.NAVY;
           doc.setFont('helvetica', 'bold');
           doc.setFontSize(8);
-          doc.setTextColor(...this.TEAL);
-          doc.text('DPP Outlook', margin, y);
+          doc.setTextColor(...headColor);
+          doc.text(sec.heading, margin, y);
           y += 4;
-          sections.dpp.forEach(pText => {
-            var parts = this._parseInfoParagraph(pText);
-            if (parts.body) bodyText(parts.body);
-            y += 2;
-          });
-        }
-
-        // Annex sections
-        if (sections.annex.length) {
-          sections.annex.forEach(pText => {
-            var parts = this._parseInfoParagraph(pText);
-            if (parts.heading) {
-              checkPage(10);
-              doc.setFont('helvetica', 'bold');
-              doc.setFontSize(8);
-              doc.setTextColor(...this.NAVY);
-              doc.text(parts.heading, margin, y);
-              y += 4;
-            }
-            if (parts.body) {
-              bodyText(parts.body);
-              y += 2;
-            }
-          });
-        }
+          bodyText(sec.body);
+          y += 2;
+        });
         y += 4;
 
         // ── Standards ──
-        var stdsData = fam.standards;
-        if (stdsData && stdsData.standards && stdsData.standards.length) {
+        // v2: standards is a top-level array; standards_summary is a sibling field
+        var stdsArr = Array.isArray(fam.standards) ? fam.standards : [];
+        if (stdsArr.length) {
           var letter = fam.letter || '';
-          var henStds = stdsData.standards.filter(s => s.type === 'hEN');
-          var eadStds = stdsData.standards.filter(s => s.type === 'EAD');
+          var henStds = stdsArr.filter(s => s.type === 'hEN');
+          var eadStds = stdsArr.filter(s => s.type === 'EAD');
 
           // Enrich hEN
           henStds.forEach(s => {
@@ -638,16 +609,15 @@ const CPRReport = {
             });
           }
 
-          // Summary note
-          if (stdsData.summary) {
-            var sm = stdsData.summary;
+          // Summary note — counts computed from standards[] array
+          var sm = fam.standards_summary;
+          if (sm) {
             var note = '';
+            var listedCount = (fam.standards || []).length;
             if (sm.completeness === 'partial') {
-              var total = (sm.hen_count || 0) + (sm.ead_count || 0);
-              var listed = (sm.hen_listed || 0) + (sm.ead_listed || 0);
-              note = listed + ' of ' + total + ' standards shown \u2014 ' + sm.source;
+              note = listedCount + ' standards shown (partial) \u2014 ' + sm.source;
             } else if (sm.completeness === 'full') {
-              note = 'All standards shown \u2014 ' + sm.source;
+              note = 'All ' + listedCount + ' standards shown \u2014 ' + sm.source;
             }
             if (note) {
               checkPage(6);
@@ -831,7 +801,7 @@ const CPRReport = {
   // ═══════════════════════════════════════════════════════════
 
   _dppSortKey(fam) {
-    var str = (fam['dpp-range'] && fam['dpp-range'].envelope) || fam['dpp-est'] || '';
+    var str = (fam.convergence && fam.convergence.dpp_date) || (fam['dpp-range'] && fam['dpp-range'].envelope) || fam['dpp-est'] || '';
     if (!str || str === 'TBD') return 9999;
     var m = str.match(/(\d{4})/);
     return m ? parseInt(m[1], 10) : 9999;
@@ -877,49 +847,24 @@ const CPRReport = {
     return 1;
   },
 
-  _categoriseInfo(html) {
-    if (!html) return { intro: [], dpp: [], annex: [] };
-    var introKeys = ['about this family', 'scope', 'product types', 'technical committee', 'technical body'];
-    var dppKeys = ['dpp outlook'];
-    // Parse <p>...</p> blocks
-    var result = { intro: [], dpp: [], annex: [] };
-    var regex = /<p>([\s\S]*?)<\/p>/gi;
-    var match;
-    while ((match = regex.exec(html)) !== null) {
-      var content = match[1];
-      var strongMatch = content.match(/<strong>([\s\S]*?)<\/strong>/i);
-      var heading = strongMatch ? strongMatch[1].toLowerCase().replace(/:$/, '').trim() : '';
-      heading = this._stripHtml(heading);
-
-      var matched = false;
-      for (var i = 0; i < dppKeys.length; i++) {
-        if (heading.indexOf(dppKeys[i]) !== -1) { result.dpp.push(content); matched = true; break; }
+  /** Fallback when ContentRenderer is not loaded */
+  _fallbackContentSections(content) {
+    if (!content) return [];
+    var labels = {
+      about: 'About this family', standards_landscape: 'Standards landscape',
+      standards_development: 'Standards in development', sreq_analysis: 'Standardisation request analysis',
+      dpp_outlook: 'DPP outlook', key_risks: 'Key risks',
+      stakeholder_notes: 'Stakeholder notes', sources_summary: 'Sources'
+    };
+    var order = ['about', 'standards_landscape', 'standards_development', 'sreq_analysis', 'dpp_outlook', 'key_risks', 'stakeholder_notes', 'sources_summary'];
+    var sections = [];
+    order.forEach(function (key) {
+      var text = content[key];
+      if (text && String(text).trim()) {
+        sections.push({ key: key, heading: labels[key] || key, body: String(text).trim() });
       }
-      if (!matched) {
-        for (var j = 0; j < introKeys.length; j++) {
-          if (heading.indexOf(introKeys[j]) === 0) { result.intro.push(content); matched = true; break; }
-        }
-      }
-      if (!matched && this._stripHtml(content).trim()) result.annex.push(content);
-    }
-    return result;
-  },
-
-  _parseInfoParagraph(htmlContent) {
-    var strongMatch = htmlContent.match(/<strong>([\s\S]*?)<\/strong>/i);
-    var heading = strongMatch ? this._stripHtml(strongMatch[1]).replace(/:$/, '').trim() : '';
-    var body = this._stripHtml(htmlContent);
-    // Remove the heading from body if present
-    if (heading) {
-      var headingPlain = heading + ':';
-      if (body.startsWith(headingPlain)) body = body.substring(headingPlain.length).trim();
-      else if (body.startsWith(heading)) body = body.substring(heading.length).replace(/^:\s*/, '').trim();
-    }
-    return { heading, body };
-  },
-
-  _stripHtml(html) {
-    return html.replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ').replace(/&rarr;/g, '\u2192').replace(/&middot;/g, '\u00b7');
+    });
+    return sections;
   },
 
   _buildHenDppInfoText(s) {
@@ -1059,9 +1004,9 @@ const CPRReport = {
       doc.setFont('helvetica', 'bold');
       doc.text(fitText(sreq, colW.sreq), col.sreq, y + 4.5);
 
-      // DPP est
-      var range = fam['dpp-range'];
-      var dppLabel = (range && range.envelope) ? range.envelope : (fam['dpp-est'] || 'TBD');
+      // DPP est — prefer convergence, fall back to legacy
+      var famConv = fam.convergence;
+      var dppLabel = (famConv && famConv.dpp_date) || (fam['dpp-range'] && fam['dpp-range'].envelope) || (fam['dpp-est'] || 'TBD');
       doc.setTextColor(...this.TEAL);
       doc.setFont('helvetica', 'bold');
       doc.text(fitText(dppLabel, colW.dpp), col.dpp, y + 4.5);

@@ -1,0 +1,58 @@
+{
+  "family": "DPW",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-DPW-001",
+      "family": "DPW",
+      "severity": "info",
+      "type": "empty_content",
+      "title": "4 content sections empty",
+      "description": "standards_landscape, standards_development, stakeholder_notes, key_risks, sources_summary are all empty.",
+      "action": "Populate with proposed content from deep-dive report."
+    },
+    {
+      "id": "iss-DPW-002",
+      "family": "DPW",
+      "severity": "info",
+      "type": "content_data_disagreement",
+      "title": "standards_summary is null and family number is empty",
+      "description": "standards_summary is null (not a structured value). The 'family' field is an empty string — no Annex VII number has been assigned for this new family.",
+      "action": "Set standards_summary to structured value. Add note that Annex VII number is pending."
+    },
+    {
+      "id": "iss-DPW-003",
+      "families": ["DPW"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "AkzoNobel, PPG/Dulux, Jotun publish EN 15804+A2 EPDs — surprisingly mature for 2035+ family",
+      "description": "AkzoNobel publishes EN 15804+A2 EPDs for Sikkens exterior wall paints (modules A1-A5, C2, C4, D). PPG publishes EPDs for Dulux Pure Performance (cradle-to-gate with options). Jotun publishes EPDs via EPD Norway for facade/interior products. Despite DPW having the most distant DPP horizon (2035+), major paint manufacturers already have EN 15804+A2 EPD infrastructure. VOC data already generated under Decopaint Directive 2004/42/EC and national schemes (French A+, German AgBB). For DPP: data generation challenge is less about methodology and more about scope definition — what CPR characteristics beyond current EPD/VOC coverage?",
+      "source": "AkzoNobel EPDs (https://www.akzonobel.com/en/about-us/sustainability-/making-buildings-greener/environmental-product-declarations); Jotun EPD Norway; PPG EPD (https://www.ppgpaints.com/pdfs/epd-s/pure-performance-primer-epd)",
+      "action_required": "Document EPD readiness and VOC data availability in content. Note as surprisingly prepared for 2035+ family.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-DPW-004",
+      "families": ["DPW"],
+      "severity": "warning",
+      "type": "cross_regulatory",
+      "title": "Decopaint Directive + French A+ + German AgBB + EU Ecolabel create fragmented VOC regulatory landscape for CPR harmonisation",
+      "description": "Decopaint Directive 2004/42/EC limits VOC content in decorative paints. French 'Émissions dans l'air intérieur' label (mandatory since 2012) rates VOC emissions A+ to C. German AgBB scheme evaluates VOC emissions for indoor suitability (DIN EN 16516/ISO 16000). Belgium, Italy have additional national schemes. EU Ecolabel for paints (Decision 2022/1229) extended to Dec 2025. CPR SReq must harmonise these fragmented VOC approaches into single essential characteristic framework. CEN/TC 139 has extensive EN ISO test methods but no CPR hEN — product standards must be created from scratch referencing existing test methods.",
+      "source": "EUR-Lex Decopaint (https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32004L0042); French VOC label (https://www.anses.fr/en/content/labelling-building-and-decoration-products-respect-voc-emissions); AgBB (https://www.eco-institut.de/en/portfolio/agbb-schema/)",
+      "action_required": "Document fragmented VOC regulatory landscape in content.key_risks. Flag as critical SReq harmonisation challenge.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-DPW-005",
+      "families": ["DPW"],
+      "severity": "info",
+      "type": "market_context",
+      "title": "European paints & coatings $38.7B (2024), decorative 45% — 80% waterborne transition, CEPE sole EU trade body",
+      "description": "European paints & coatings market $38.66B (2024). Decorative/architectural 45% of value. Residential construction 48% of end-use. ~80% of European decorative paints now waterborne (driven by Decopaint Directive). CEPE (est. 1951) is sole EU-level trade association. Bio-based coatings and additives emerging. Wall paint is largest construction chemical segment — currently linear waste process. Key players: AkzoNobel, PPG, Sherwin-Williams, Jotun, Hempel, DAW. EU renovation wave (EPBD) drives growth.",
+      "source": "Towards Chem & Materials (https://www.towardschemandmaterials.com/insights/european-paints-and-coatings-market); CEPE (https://cepe.org/); European Coatings (https://www.european-coatings.com/news/markets-companies/water-borne-coatings-a-steady-stream-of-developments/)",
+      "action_required": "Include market context and CEPE/waterborne transition in content.",
+      "status": "pending"
+    }
+  ]
+}

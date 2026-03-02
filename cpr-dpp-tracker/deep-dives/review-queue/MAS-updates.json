@@ -1,0 +1,70 @@
+{
+  "family": "MAS",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-MAS-001",
+      "families": ["MAS", "CMG"],
+      "severity": "warning",
+      "type": "cross_family",
+      "title": "EN 998-1 AVCP mismatch with CMG",
+      "description": "EN 998-1 in MAS records AVCP as '4' while CMG records '2+, 4'. Per Commission Decision 97/555/EC, the correct AVCP for mortar for masonry is System 2+ for designed mortars and System 4 for prescribed mortars. MAS should likely record '2+, 4' to match. Name format also differs: MAS says 'Mortar for masonry' while CMG says 'Specification for mortar for masonry'.",
+      "action_required": "Update MAS EN 998-1 AVCP from '4' to '2+, 4' after verification. Align name format across families.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-MAS-002",
+      "families": ["MAS", "CMG"],
+      "severity": "info",
+      "type": "cross_family",
+      "title": "EN 998-2 DPP estimate differs between MAS and CMG",
+      "description": "EN 998-2 in MAS has dpp_est '~2031–2032' while in CMG it is '~2032–2033'. AVCP matches (both '2+, 4'). The difference in DPP estimate is expected since each family derives it from its own SReq timeline, but should be documented as a known variance.",
+      "action_required": "Verify DPP estimate derivation for cross-listed standards. Consider adding notes explaining the variance.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-MAS-003",
+      "families": ["MAS"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "Five content sections empty",
+      "description": "content.standards_landscape, content.standards_development, content.stakeholder_notes, content.key_risks, and content.sources_summary are empty.",
+      "action_required": "Populate with proposed content from deep-dive report §8.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-MAS-004",
+      "families": ["MAS"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "Wienerberger leads with EN 15804 EPDs, TBE requires cradle-to-grave — clay strongest, others lag",
+      "description": "Wienerberger publishes EN 15804 EPDs for clay masonry products. TBE (Tiles & Bricks Europe) agreement requires all clay product EPDs to be cradle-to-grave (modules A1-D). BAU-EPD publishes PCR Part B for construction clay products. UK BDA publishes industry average clay brick EPD. EPD coverage strongest for clay bricks, less visible for concrete blocks, AAC, and calcium silicate. For DPP: TBE cradle-to-grave requirement means clay EPDs already provide full lifecycle data. Other material types will need to catch up.",
+      "source": "Wienerberger EPDs (https://www.wienerberger.co.uk/); TBE sustainability (http://www.tiles-bricks.eu/sustainability); BAU-EPD PCR (https://www.bau-epd.at/)",
+      "action_required": "Document split EPD readiness by material type in content.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-MAS-005",
+      "families": ["MAS"],
+      "severity": "info",
+      "type": "circular_economy",
+      "title": "Clay brick reuse increasing, K-Briq 90% recycled, EAD 170005 enables recycled clay CE route",
+      "description": "Clay brick reuse from demolition increasing. Crushed brick as aggregate replacement. K-Briq: 90% C&D waste, 5% embodied carbon of traditional clay brick. EU 70% CDW recycling target. EAD 170005 (recycled clay masonry units) provides CE-marking route for recycled content. EAD 170051 (compressed earth blocks) enables low-energy earth construction. EAD 170012 (cellular glass core bricks) offers thermal innovation. MAS EADs represent some of the most circular-economy-oriented products in CPR.",
+      "source": "BDA circular principles (https://www.brick.org.uk/better-with-brick/sustainability/circular-principles); UKGBC (https://ukgbc.org/resources/bricks-made-from-industrial-waste/); EOTA EAD 170005 (https://www.eota.eu/)",
+      "action_required": "Document circular economy innovations in content. Flag EAD 170005/170051 as exemplars.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-MAS-006",
+      "families": ["MAS"],
+      "severity": "info",
+      "type": "market_context",
+      "title": "European AAC $1.75B, clay 41% — Wienerberger electric kiln achieves nearly CO₂-neutral brick production",
+      "description": "European AAC market $1.75B (2024), CAGR 5.5%. Clay bricks 41% of European market. Wienerberger inaugurated world's largest electric kiln at Uttendorf, Austria (Nov 2024) — nearly CO₂-neutral brick production with 90% emission reduction. Running on green electricity. First nearly carbon-neutral clay brick. Wienerberger targets: 25% production emission reduction by 2026, climate neutrality by 2050. For DPP: electrically-fired bricks will have dramatically lower GWP than gas-fired equivalents — creating significant within-product-category environmental data variation.",
+      "source": "Wienerberger Uttendorf (https://www.wienerberger.com/en/media/press-releases/2024/20241129-wienerberger-starts-Europes-greenest-brick-production.html); Expert Market Research AAC (https://www.expertmarketresearch.com/reports/europe-autoclaved-aerated-concrete-aac-market)",
+      "action_required": "Include market context and Wienerberger decarbonisation milestone in content.",
+      "status": "pending"
+    }
+  ]
+}

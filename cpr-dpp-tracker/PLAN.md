@@ -1,83 +1,156 @@
-# CPR DPP Tracker — Implementation Plan
+# CPR DPP Tracker — Full Redesign Plan
 
-> Crash recovery reference. If the session breaks, resume from the last completed phase.
+> Crash recovery reference. If the session breaks, resume from the last completed sprint/task.
 
-## Overview
+## Context
 
-Standalone password-protected demo at `cpr-dpp-tracker/` within the `regenstudio-demos` repo (`demos.regenstudio.world`). Extracts the CPR compliance tracker from the blog at `regenstudio-website/Blogs/cpr-digital-product-passport/content.html` into a clean, single-source-of-truth architecture.
+The CPR DPP Tracker (`regenstudio-demos/cpr-dpp-tracker/`) currently shows 37 product families as a card grid with modal popups containing milestone trackers and standards tables. Six research agents have mapped the full regulatory landscape: 5 pipelines, 20 node types, a convergence formula, and a source citation registry with ~95 verified sources.
 
-## File structure
+**Goal**: Transform the tracker from a static status table into a **regulatory intelligence platform** with convergence timeline visualizations, pipeline-aware data, cross-cutting system timeline dashboard, source transparency, and family comparison.
+
+**Key insight**: DPP obligation is NOT a single timeline per family — it's the convergence of TWO independent timelines (Product + System), each with their own upstream nodes.
+
+**Build approach**: Incremental sprints. Each sprint produces a working tracker.
+
+## Design Decisions
+
+| Decision | Choice |
+|---|---|
+| Scope | Full redesign: data model + convergence UI + admin + dashboard + filtering + comparison + source layer |
+| Timeline visualization | Vertical node chain (default) + horizontal swim lanes (toggle) |
+| System Timeline | Prominent dashboard section on main page + embedded in every family convergence view |
+| Build approach | 5 incremental sprints, each deployable |
+| Content model | Structured sections replace HTML blob; multi-level report generation |
+| Tech stack | Vanilla JS (ES5-compatible), no build step, same auth pattern |
+| Data source | `families-v2.json` (new pipeline-aware schema) + `system-timeline.json` (shared) |
+| Modal fate | Sprint 1: transitional modal with pipeline nodes. Sprint 2: replaced by convergence view |
+| Content authoring | Agent drafts → human reviews/edits/approves per section in admin panel |
+
+## Data Model v2
+
+### `data/system-timeline.json` — Shared cross-cutting timeline
+- 9 main nodes: sys-feasibility → sys-dpp-mandatory
+- 3 cross-cutting items: AVS DA, Horizontal SReq, Annex II
+- Single source of truth for system-level milestones
+
+### `data/families-v2.json` — Per-family pipeline data
+- Keeps existing fields for backwards compat (full-name, dpp-est, milestones, dpp-range)
+- Adds: `active_pipelines`, `future_pipelines`, `pipelines{}`, `convergence{}`, `content{}`
+- `content{}` replaces monolithic `info` HTML with structured sections:
+  - about, standards_landscape, standards_development, sreq_analysis, dpp_outlook, stakeholder_notes, key_risks, sources_summary
+- `info` field REMOVED — `content{}` is single source of truth
+- Old `families.json` kept as deprecated for reports compat until Sprint 5
+
+### Pipeline types
+- **A**: New-CPR hEN Route (2024/3110) — produces DPP
+- **B**: Old-CPR Fast-Track (305/2011) — PCR/SMP only, no DPP
+- **C**: Old EAD Sunset (305/2011) — families with old-regime EADs
+- **D**: New EAD Future — future path for EAD families
+- **E**: ESPR Supplementary — future
+
+### Certainty color system
+| Color | Hex | Meaning |
+|---|---|---|
+| Green | #10b981 | Confirmed, authoritative source |
+| Yellow-green | #84cc16 | Scheduled by official body |
+| Amber | #f59e0b | Estimated from precedent |
+| Orange | #f97316 | Estimated, moderate confidence |
+| Red-orange | #ef4444 | Speculative or projected |
+| Gray | #94a3b8 | Unknown, no data |
+
+## File Structure (final state)
 
 ```
 cpr-dpp-tracker/
-├── gate.html              ← password gate (uses shared gate.js)
-├── index.html             ← main app shell
+├── index.html                  ← Main app shell (redesigned)
+├── gate.html                   ← Password gate (unchanged)
+├── admin.html                  ← Admin panel (v2)
+├── reports.html                ← Reports page (reads v2 data in Sprint 5)
 ├── data/
-│   └── families.json      ← single source of truth (37 families, extracted from blog)
+│   ├── families-v2.json        ← Pipeline-aware family data (37 families)
+│   ├── system-timeline.json    ← Shared system timeline
+│   ├── families.json           ← [DEPRECATED] kept for reports compat
+│   └── review-queue.json       ← Agent review queue
 ├── css/
-│   └── tracker.css        ← extracted CPR CSS with BEM naming + custom properties
+│   ├── tracker.css             ← Main styles (heavily updated)
+│   ├── convergence.css         ← Convergence view styles (Sprint 2)
+│   ├── dashboard.css           ← System timeline dashboard styles (Sprint 3)
+│   ├── admin.css               ← Admin styles (Sprint 4)
+│   └── reports.css             ← Reports styles (Sprint 5)
 ├── js/
-│   ├── tracker.js         ← grid rendering, modal, enrichment (fetches families.json)
-│   ├── dpp-info.js        ← DPP info popup singleton + buildHenDppInfo/buildEadDppInfo
-│   └── guard.js           ← session check → redirect to gate.html if not authenticated
+│   ├── tracker.js              ← Main app: grid, cards, routing (rewritten)
+│   ├── convergence-view.js     ← Vertical node chain + horizontal toggle (Sprint 2)
+│   ├── system-dashboard.js     ← System timeline dashboard component (Sprint 3)
+│   ├── node-detail.js          ← Node click detail panel (Sprint 2)
+│   ├── filters.js              ← Filter/sort controls (Sprint 3)
+│   ├── comparison.js           ← Family comparison view (Sprint 4)
+│   ├── source-layer.js         ← Source transparency overlay (Sprint 4)
+│   ├── report-generator.js     ← Multi-level report generation (Sprint 5)
+│   ├── content-renderer.js     ← Renders content{} as formatted HTML (Sprint 5)
+│   ├── dpp-info.js             ← DPP info popup (updated)
+│   ├── admin.js                ← Admin panel logic (Sprint 4)
+│   ├── report-download.js      ← Report download (Sprint 5)
+│   ├── reports.js              ← Reports page (Sprint 5)
+│   └── vendor/                 ← Third-party libs (unchanged)
 ├── tools/
-│   └── extract-families.py ← one-time data extraction script (Python 3)
-├── Images/                ← 37 SVG product family icons (copied from blog)
-└── PLAN.md                ← this file
+│   └── migrate-v1-to-v2.js     ← One-time data migration script
+├── Images/                     ← 37 SVG icons (unchanged)
+└── PLAN.md                     ← This file
 ```
 
-## Data architecture
+## Sprint Plan
 
-`families.json` contains all 37 product families as a JSON array, preserving the blog's HTML order (sorted by estimated DPP obligation date, earliest first). Each entry has:
+### Sprint 1: Foundation (Data Model + Adapted UI) ← CURRENT
 
-- **Simple fields**: `full-name`, `letter`, `family`, `priority`, `updated`, `acquis`, `sreq`, `tc`, `dpp-est`
-- **JSON objects**: `milestones`, `dpp-range`, `standards` (with nested `standards[]` array and `summary`)
-- **HTML string**: `info` (paragraphs with section headings)
-- **Display fields**: `icon`, `display_name`, `family_label`, `tc_label`
+**Goal**: New data model in place, current card grid reads it, pipeline info visible in transitional modal.
 
-Runtime JS derives:
-- `hen_count` / `ead_count` from `standards.standards.filter(s => s.type === '...')`
-- `current_cpr` / `sreq_cpr` from `revision` field + family letter (PCR/SMP → old CPR 305/2011)
-- `computeHenStage()` returns 0–5 (Pending → Mandated → In dev → Delivered → Mandatory → DPP)
-- `computeEadStage()` returns 1–3 (Legacy → In development → Adopted)
+**Tasks**:
+1. [x] Save full redesign plan to PLAN.md
+2. [ ] Create data/system-timeline.json (hand-authored)
+3. [ ] Create tools/migrate-v1-to-v2.js (migration script)
+4. [ ] Run migration → data/families-v2.json (37 families)
+5. [ ] Create css/dashboard.css (stub)
+6. [ ] Update js/tracker.js (read v2 data, pipeline badges, modal update)
+7. [ ] Update css/tracker.css (certainty colors, pipeline badges, node styles)
+8. [ ] Update index.html (new CSS refs, modal structure)
+9. [ ] Verify in browser
 
-## Phase checklist
+**Verification checklist**:
+- [ ] Tracker loads with new data (families-v2.json)
+- [ ] All 37 cards render with pipeline badge
+- [ ] Click card → modal shows pipeline nodes with certainty colors
+- [ ] DPP date and binding constraint visible in convergence box
+- [ ] content{} sections render correctly (replacing old info HTML)
+- [ ] No info field in families-v2.json (clean break)
+- [ ] Spot-check 5 families: content sections match original info text
 
-### Phase 1: Scaffold [x]
-- [x] Create folder structure
-- [x] Write `tools/extract-families.py` (HTMLParser with void-element handling)
-- [x] Run extraction → 37 families in `data/families.json`
-- [x] Create `gate.html` (DEMO_CONFIG: demoId='cpr-dpp-tracker')
-- [x] Create `js/guard.js` (sessionStorage check)
-- [x] Register in root `demos.json` (category: Circular Economy, accentColor: #009BBB)
+### Sprint 2: Convergence View
+- convergence-view.js, node-detail.js, convergence.css
+- Card click opens convergence timeline (vertical + horizontal toggle)
+- Replaces Sprint 1 transitional modal
 
-### Phase 2: App [x]
-- [x] Create `css/tracker.css` (extracted from blog's inline styles)
-- [x] Create `js/dpp-info.js` (popup singleton + info builders)
-- [x] Create `js/tracker.js` (fetch → render → enrich → modal)
-- [x] Create `index.html` (app shell with header, grid, modal, footer)
-- [x] Copy 37 SVG icons to `Images/`
+### Sprint 3: Dashboard + Filtering + Landing
+- system-dashboard.js, filters.js, dashboard.css
+- System Timeline dashboard on main page
+- Filter/sort controls, pipeline overview
 
-### Phase 3: Blog teaser [x]
-- [x] Blog already has blur CSS (`:nth-child(n+5)`) and email gate — no changes needed
+### Sprint 4: Comparison + Source Layer + Admin v2 + Polish
+- comparison.js, source-layer.js
+- Admin panel redesign, mobile polish
 
-### Phase 4: Ship [ ]
-- [ ] Commit regenstudio-demos
-- [ ] Commit regenstudio-website (if blog changes were needed — none were)
-- [ ] Push (on user confirmation)
+### Sprint 5: Content Enrichment + Multi-Level Reports
+- report-generator.js, content-renderer.js
+- All 37 families' content reviewed and enriched
+- Reports page redesigned
 
-## Key decisions
+## Key Architecture Notes
 
-| Decision | Choice | Reason |
-|----------|--------|--------|
-| Data source | Single `families.json` | Eliminates count-drift between data-dpp-range, data-standards, data-info |
-| Auth pattern | Existing gate.js SHA-256 | Proven pattern, 4 demos already use it |
-| Blog teaser | Already implemented | Blur + email gate was already in content.html |
-| CSS approach | Extract to file | Blog keeps inline, demo gets proper file with custom properties |
-| JS modules | 3 files (guard + dpp-info + tracker) | Clean separation of concerns |
-
-## Dependencies
-
-- `demos.json` password hash (shared across all demos — already set)
-- SVG icons copied from blog repo (not symlinked — separate repos)
-- Supabase contact-form function (already deployed)
+- `system-timeline.json` is a SEPARATE file — single source of truth, not duplicated per family
+- Per-family `pipelines{}` holds only that family's active/future pipeline nodes
+- `convergence{}` pre-computes DPP date and identifies binding constraint
+- `content{}` replaces monolithic `info` HTML — each section independently updatable
+- Source citations `[S#]` link to source-registry.md on the agent side
+- Pipeline B (old CPR): PCR and SMP only — SReq under CPR 305/2011, no DPP trigger
+- Pipeline A (new CPR): All families eventually — DPP trigger via HTS + Art. 75(1) DA
+- DPP formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo) = dual gate convergence
+- System timeline ~Q1-Q2 2029 estimate; most families' product timelines are binding constraint

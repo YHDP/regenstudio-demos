@@ -1,0 +1,60 @@
+{
+  "family": "AGG",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-AGG-001",
+      "families": ["AGG"],
+      "severity": "info",
+      "type": "standards_development",
+      "title": "prEN 17555-1 consolidation status unclear",
+      "description": "CEN/TC 154 is working on prEN 17555-1 to consolidate multiple aggregate standards (EN 12620, EN 13043, EN 13139, EN 13242, possibly EN 13055) into a single comprehensive standard. The project reached CEN Enquiry stage (~40.60) around 2021, but current status is unclear. Additionally, EN 12620 has had a formal objection pending since ~2015. If the consolidation succeeds, the standards landscape would change dramatically from 7 hENs to potentially 1–2.",
+      "action_required": "Monitor prEN 17555-1 progress. If consolidation is adopted, update standards[] and counts. Check formal objection resolution for EN 12620.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-AGG-002",
+      "families": ["AGG"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "Five content sections empty",
+      "description": "content.standards_landscape, content.standards_development, content.stakeholder_notes, content.key_risks, and content.sources_summary are empty.",
+      "action_required": "Populate with proposed content from deep-dive report §8.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-AGG-003",
+      "families": ["AGG"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "MPA sector EPD model as DPP template — individual quarry EPDs also emerging across Europe",
+      "description": "UK MPA's sector EPD programme covers 90% of aggregates production with collective industry declarations per EN 15804+A2. Individual quarry EPDs appearing: Interbeton limestone (Greece), Trzuskawica basalt (Poland, ITB-verified), OCO carbon-negative aggregates (UK, from waste CO₂). Industry's 15,000 companies (mostly SME quarries) likely need collective/sector EPD approach rather than individual declarations for DPP compliance. MPA model could serve as EU-wide DPP data template.",
+      "source": "MPA EPDs (https://www.concretecentre.com/Codes/Environmental-Assessment/EPD.aspx); MPA asphalt EPDs (https://mineralproducts.org/News/2024/release17.aspx); Interbeton EPD (https://interbeton.gr/wp-content/uploads/2023/07/EPD-_Latomeio-Xirorematos.pdf); OCO Technology EPD (https://oco.co.uk/wp-content/uploads/2022/06/Environmental-Product-Declaration.pdf)",
+      "action_required": "Document sector EPD model in content. Flag as DPP readiness exemplar for SME-dominated families.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-AGG-004",
+      "families": ["AGG"],
+      "severity": "info",
+      "type": "circular_economy",
+      "title": "CDW recycled aggregates — 1/3 of EU waste, end-of-waste criteria needed for DPP recycled content",
+      "description": "Construction and demolition waste (CDW) is 1/3 of all EU waste — largest waste stream. WFD 70% recovery target met largely through backfilling/low-grade use, not high-quality recycling. EuRIC advocates EU-level end-of-waste regulations. EAD 240002 (MSWI bottom ash aggregates) and OCO carbon-negative aggregates demonstrate circular pathways. DPP for recycled aggregates needs: waste origin, processing method, end-of-waste certification, performance data. Carbon-negative products may show negative GWP — DPP data fields must handle this.",
+      "source": "EEA CDW (https://www.eea.europa.eu/highlights/improving-circular-economy-practices-in); EC CDW policy (https://environment.ec.europa.eu/topics/waste-and-recycling/construction-and-demolition-waste_en); EC end-of-waste (https://circular-cities-and-regions.ec.europa.eu/support-materials/projects/end-waste-criteria-protocol-recycled-waste-used-aggregates)",
+      "action_required": "Document CDW circular economy dimension in content. Note end-of-waste criteria as DPP data architecture requirement.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-AGG-005",
+      "families": ["AGG"],
+      "severity": "warning",
+      "type": "market_context",
+      "title": "3 billion tonnes/year, $61-106B market, 15,000 companies — largest-by-mass CPR family, most fragmented",
+      "description": "European aggregates: 3 billion tonnes annual production, $61.4-105.7B market (2024), 15,000 companies at 26,000 sites, 187,000 employees. Largest CPR product family by physical mass (orders of magnitude above cement ~185 Mt, asphalt ~209 Mt, or steel). Most fragmented producer base — overwhelmingly SME quarries. UEPG 2030 Roadmap addresses CPR and sustainability. DPP implementation uniquely challenging for this industry structure.",
+      "source": "UEPG/Aggregates Europe (https://www.aggregates-europe.eu/); Fortune Business Insights (https://www.fortunebusinessinsights.com/europe-construction-aggregates-market-104698); Credence Research (https://www.credenceresearch.com/report/europe-construction-aggregates-market)",
+      "action_required": "Include market scale and SME challenge in content for DPP impact assessment.",
+      "status": "pending"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "family": "CIF",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-CIF-001",
+      "families": ["CIF", "SBE"],
+      "severity": "info",
+      "type": "cross_family",
+      "title": "Bridge infrastructure EADs overlap with SBE domain",
+      "description": "Multiple CIF EADs (120093, 120109, 120112) cover bridge infrastructure (expansion joints, parapets) that overlaps with SBE's structural bearings domain. Not a data error — the products are correctly classified under PA 12 (road equipment) — but the domain overlap should be documented for cross-family consistency monitoring.",
+      "action_required": "Document CIF/SBE bridge infrastructure overlap. No data changes needed.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CIF-002",
+      "families": ["CIF"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "Four content sections empty",
+      "description": "content.standards_landscape, content.standards_development, content.key_risks, and content.sources_summary are empty.",
+      "action_required": "Populate with proposed content from deep-dive report §8.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CIF-003",
+      "families": ["CIF"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "EPD adoption early-stage for road equipment — ArcelorMittal and Unipromet are pioneers",
+      "description": "ArcelorMittal obtained EPD for single-sided road barriers (HSLA steel, Magnelis coating). Unipromet published EPD for noise protection panels per EN 15804+A2 (2025). EPD adoption in road equipment is early-stage compared to building materials — driven by green public procurement in Scandinavia/Benelux. System 1 AVCP dominance (80% of CIF standards) means structured crash test data already exists and is well-suited for DPP integration. New CPR 2024/3110 environmental sustainability indicators will require road equipment manufacturers to develop EPD/LCA data — a significant shift for this safety-focused sector.",
+      "source": "ArcelorMittal EPD (https://europe.arcelormittal.com/newsandmedia/europenews/3170/EPDroadbarriers); Unipromet EPD (https://unipromet.co.rs/wp-content/uploads/2025/10/EPD_HUB-4012_2025-Nois-protection-panels.pdf)",
+      "action_required": "Document emerging EPD landscape in content. Note System 1 data infrastructure as DPP advantage.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CIF-004",
+      "families": ["CIF"],
+      "severity": "warning",
+      "type": "multi_directive",
+      "title": "EN 12966 VMS face CPR + EMC + LVD + potentially Cyber Resilience Act — compound regulatory burden",
+      "description": "Variable message signs (EN 12966) require CPR CE marking plus EMC Directive (2014/30/EU) and Low Voltage Directive (2014/35/EU) compliance. As connected ITS infrastructure, VMS may also fall under Cyber Resilience Act (CRA) from 2025 — requiring cybersecurity assessment. This makes VMS potentially the most multi-directive product in CIF, similar to FFF fire alarm systems (Batch 2). DPP data declarations for VMS would need to span construction product performance, electrical safety, EMC, and potentially cybersecurity — a compound data architecture challenge.",
+      "source": "EN 12966 (https://standards.iteh.ai/catalog/standards/cen/b80b24ba-0bb1-4964-8c3e-d69cde1d4510/en-12966-2014); ARTSM VMS guidance (https://artsm.org.uk/media/Guidance-on-the-selection-of-VMS-updated-v3.1-FINAL.pdf)",
+      "action_required": "Document VMS multi-directive complexity in content.key_risks. Cross-reference with FFF multi-directive issues.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-CIF-005",
+      "families": ["CIF"],
+      "severity": "info",
+      "type": "market_context",
+      "title": "European road safety barriers $1.8B (2024) — safety-critical family with System 1 dominance",
+      "description": "European highway safety barrier market ~$1.8B (2024). Europe holds 26-29% of global road safety system market. Growth drivers: EU 50% fatality reduction target by 2030, TEN-T upgrades, smart motorway deployments. Steel guardrails dominate by volume. CIF is mid-sized CPR family but with high compliance costs per product due to System 1 crash testing requirements (~€100k+ per full-scale test). Steel barriers benefit from 100% recyclability narrative for DPP circular economy data.",
+      "source": "Road safety barrier market (https://www.wiseguyreports.com/reports/road-safety-barrier-market); Grand View Research (https://www.grandviewresearch.com/industry-analysis/barrier-systems-market)",
+      "action_required": "Include market context and System 1 compliance costs in content.",
+      "status": "pending"
+    }
+  ]
+}

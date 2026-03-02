@@ -1,0 +1,542 @@
+{
+  "S1": {
+    "title": "Regulation (EU) 2024/3110 — Construction Products Regulation (recast)",
+    "url": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng",
+    "date": "2024-11-27",
+    "status": "✓"
+  },
+  "S2": {
+    "title": "Regulation (EU) No 305/2011 — Original CPR",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32011R0305",
+    "date": "2011-03-09",
+    "status": "✓"
+  },
+  "S3": {
+    "title": "Regulation (EU) 2024/1781 — ESPR (Ecodesign for Sustainable Products)",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
+    "date": "2024-06-28",
+    "status": "✓"
+  },
+  "S4": {
+    "title": "Regulation (EU) No 1025/2012 — European Standardisation",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32012R1025",
+    "date": "2012-10-25",
+    "status": "○"
+  },
+  "S10": {
+    "title": "Implementing Decision 2019/451 — hEN citation framework (CPR 305/2011)",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019D0451",
+    "date": "2019-03-19",
+    "status": "○"
+  },
+  "S11": {
+    "title": "C(2025) 4828 — Cement SReq (under CPR 2024/3110, replaces M/114)",
+    "url": "https://ec.europa.eu/transparency/documents-register/api/files/C(2025",
+    "date": "2025-07-28",
+    "status": "✓"
+  },
+  "S12": {
+    "title": "C(2025) 6586 — Structural metallic products SReq (under CPR 305/2011, replaces M/120)",
+    "url": "https://www.itb.pl/wp-content/uploads/2026/01/C20256586_0.pdf",
+    "date": "2025-10-02",
+    "status": "✓"
+  },
+  "S13": {
+    "title": "Implementing Decision (EU) 2025/2623 — 66+9 EADs batch citation",
+    "url": "https://eur-lex.europa.eu/eli/dec_impl/2025/2623/oj/eng",
+    "date": "2025-12-16",
+    "status": "○"
+  },
+  "S14": {
+    "title": "C(2024) 5423 — ESPR DPP standardisation request to CEN/CENELEC (JTC24 mandate)",
+    "url": "",
+    "date": "2024",
+    "status": "○"
+  },
+  "S15": {
+    "title": "AVS Delegated Act draft (Art. 10 CPR 2024/3110) — first draft Jul 2025, revised Dec 2025",
+    "url": "https://ec.europa.eu/info/law/better-regulation/",
+    "date": "2025-12-10",
+    "status": "○"
+  },
+  "S30": {
+    "title": "COM(2025) 772 — CPR Working Plan 2026–2029",
+    "url": "https://single-market-economy.ec.europa.eu/document/download/cad28304-4b49-4396-81a8-6a816d8f1a93_en",
+    "date": "2025-12-16",
+    "status": "✓"
+  },
+  "S31": {
+    "title": "Council ST-6423-2026 — Omnibus simplification push",
+    "url": "https://data.consilium.europa.eu/doc/document/ST-6423-2026-INIT/en/pdf",
+    "date": "2026-02",
+    "status": "○"
+  },
+  "S32": {
+    "title": "Council ST-17096-2025 — CPR Working Plan Council document",
+    "url": "https://data.consilium.europa.eu/doc/document/ST-17096-2025-INIT/en/pdf",
+    "date": "2025-12",
+    "status": "○"
+  },
+  "S40": {
+    "title": "Draft SReq — Precast concrete products (CPR 305/2011)",
+    "url": "https://single-market-economy.ec.europa.eu/document/download/cd5f2abf-5851-41f2-8335-693a91b9db33_en",
+    "date": "2026-02-04",
+    "status": "✓"
+  },
+  "S41": {
+    "title": "Draft SReq — Doors, windows (CPR 2024/3110)",
+    "url": "https://single-market-economy.ec.europa.eu/document/download/55d5e48a-61d9-4905-92a7-e0422db8fb5f_en",
+    "date": "2026-01-21",
+    "status": "✓"
+  },
+  "S42": {
+    "title": "Draft SReq — Dangerous substances horizontal (CPR 2024/3110, all 37 families)",
+    "url": "https://single-market-economy.ec.europa.eu/document/download/4ebc38a2-6dbd-41b7-9aa7-3deabc0a6ff9_en",
+    "date": "2025-09-01",
+    "status": "○"
+  },
+  "S43": {
+    "title": "Draft SReq — Amending C(2024) 5423 for DPP (ESPR/CPR)",
+    "url": "https://single-market-economy.ec.europa.eu/document/download/f290d470-03de-44f3-8b66-656197e488f6_en",
+    "date": "2025-09-23",
+    "status": "○"
+  },
+  "S44": {
+    "title": "Draft SReq — Cement (earlier version, superseded by S11)",
+    "url": "https://ec.europa.eu/docsroom/documents/64854",
+    "date": "2025-02-24",
+    "status": "○"
+  },
+  "S45": {
+    "title": "Draft SReq — Structural metallic products (Art. 12, superseded by S12)",
+    "url": "https://ec.europa.eu/docsroom/documents/60274",
+    "date": "2024-06-19",
+    "status": "○"
+  },
+  "S46": {
+    "title": "Draft SReq — Amending C(2021) 5359 for space heating appliances",
+    "url": "https://ec.europa.eu/docsroom/documents/59074",
+    "date": "2024-04-23",
+    "status": "○"
+  },
+  "S50": {
+    "title": "CEN/BT 2025/C136 — Decision accepting CEM SReq C(2025) 4828",
+    "url": "https://experts.cenelec.eu/media/Experts/News/BT%20Newsletters/bt_newsletter_november2025.pdf",
+    "date": "2025-07",
+    "status": "○"
+  },
+  "S51": {
+    "title": "JTC24 Chair presentation (Dr Thomas Knothe) — UNECE, Feb 2025",
+    "url": "https://unece.org/sites/default/files/2025-02/DDP%20Presenation%20-%20JTC24%20-%20Dr%20Thomas%20Knothe.pdf",
+    "date": "2025-02",
+    "status": "○"
+  },
+  "S52": {
+    "title": "JTC24 introduction (Standards Norway) — 8 modules overview",
+    "url": "https://standard.no/globalassets/kurs-arrangement-og-radgiving/standard-morgen-og-andre-arr/digitalt-produktpass/2-jtc24_introduction-for-standards-norway_msc-informasjonsmote-8.-feb-espen-o.pdf",
+    "date": "2025-02",
+    "status": "○"
+  },
+  "S53": {
+    "title": "prEN 18219 — Unique identifiers (JTC24/WG2)",
+    "url": "",
+    "date": "2025",
+    "status": "★"
+  },
+  "S54": {
+    "title": "prEN 18223 — System interoperability (JTC24/WG4)",
+    "url": "",
+    "date": "2025",
+    "status": "★"
+  },
+  "S55": {
+    "title": "prEN 18221 — Data storage, archiving and persistence (JTC24/WG4)",
+    "url": "",
+    "date": "2025",
+    "status": "★"
+  },
+  "S56": {
+    "title": "prEN 18222 — Data exchange protocols (JTC24/WG4)",
+    "url": "",
+    "date": "2025",
+    "status": "★"
+  },
+  "S57": {
+    "title": "prEN 18216 — APIs for DPP lifecycle management & searchability (JTC24/WG4)",
+    "url": "",
+    "date": "2025",
+    "status": "★"
+  },
+  "S58": {
+    "title": "genorma.com — prEN 197-1 rev (stage 10.99, 2 Jul 2025)",
+    "url": "https://genorma.com/en/standards/pren-197-1-rev-1",
+    "date": "2025-07",
+    "status": "✓"
+  },
+  "S59": {
+    "title": "genorma.com — prEN 17662 EPD PCR (stage 45.99, 15 Dec 2023)",
+    "url": "https://genorma.com/en/project/show/cen:proj:66701",
+    "date": "2023-12",
+    "status": "✓"
+  },
+  "S60": {
+    "title": "genorma.com — prEN 1090-1 rev (stage 10.99)",
+    "url": "https://genorma.com/en/standards/en-1090-1-2009",
+    "date": "2025",
+    "status": "✓"
+  },
+  "S61": {
+    "title": "genorma.com — prEN 10340-2 (DELETED, stage 40.98, 29 Jan 2021)",
+    "url": "https://genorma.com/en/standards/pren-10340-2",
+    "date": "2021-01",
+    "status": "✓"
+  },
+  "S62": {
+    "title": "CEN/TC 135 Business Plan",
+    "url": "",
+    "date": "",
+    "status": "○"
+  },
+  "S63": {
+    "title": "SuStaCEM project announcement (CEN-CENELEC)",
+    "url": "https://www.cencenelec.eu/news-events/news/2024/brief-news/2024-09-20-sustacem/",
+    "date": "2024-09",
+    "status": "○"
+  },
+  "S64": {
+    "title": "CEN Work Programme 2026 — Construction sector",
+    "url": "https://wp2026.cencenelec.eu/sectors-list/construction/",
+    "date": "2026",
+    "status": "○"
+  },
+  "S65": {
+    "title": "CEN Work Programme 2025 — Construction sector",
+    "url": "https://wp2025.cencenelec.eu/sectors-list/construction/",
+    "date": "2025",
+    "status": "○"
+  },
+  "S66": {
+    "title": "CIRPASS standardisation gaps and roadmap v1.2",
+    "url": "https://cirpassproject.eu/wp-content/uploads/2024/07/CIRPASS-standardisation-gaps-and-roadmap-V1.2.pdf",
+    "date": "2024-07",
+    "status": "○"
+  },
+  "S70": {
+    "title": "EOTA Annual Report 2024",
+    "url": "https://www.eota.eu/news/eota-annual-report-2024",
+    "date": "2025",
+    "status": "○"
+  },
+  "S71": {
+    "title": "EOTA Stakeholder Conference Nov 2025 (via Fastener+Fixing)",
+    "url": "https://fastenerandfixing.com/construction-fixings/from-vision-to-action-the-eta-route-under-the-revised-cpr/",
+    "date": "2025-11",
+    "status": "✓"
+  },
+  "S72": {
+    "title": "EOTA TB Sep 2025 (via OIB summary)",
+    "url": "https://www.oib.or.at/en/nicht-kategorisiert/eu-topics/technical-board-of-the-eota-june-17-18-2025-in-brussels/",
+    "date": "2025-09",
+    "status": "✓"
+  },
+  "S73": {
+    "title": "EOTA EAD Action Plan (2023–2024)",
+    "url": "https://www.eota.eu/ead-action-plan",
+    "date": "2024",
+    "status": "○"
+  },
+  "S74": {
+    "title": "EOTA EAD list page",
+    "url": "",
+    "date": "",
+    "status": "○"
+  },
+  "S75": {
+    "title": "ETAs in Global Markets — data-based analysis",
+    "url": "",
+    "date": "",
+    "status": "○"
+  },
+  "S76": {
+    "title": "OIB — The new CPR: EADs, ETAs and CE marking",
+    "url": "https://www.oib.or.at/en/nicht-kategorisiert/the-new-construction-products-regulation-eads-etas-and-ce-marking/",
+    "date": "2025",
+    "status": "✓"
+  },
+  "S77": {
+    "title": "EOTA — 66 new EADs milestone publication",
+    "url": "https://www.eota.eu/news/publication-66-new-eads-marks-major-milestone-industry",
+    "date": "2025-11",
+    "status": "○"
+  },
+  "S78": {
+    "title": "EOTA Annual Report 2023",
+    "url": "https://www.eota.eu/news/eota-annual-report-2023",
+    "date": "2024",
+    "status": "○"
+  },
+  "S79": {
+    "title": "EOTA Position Papers page (incl. \"strong CPR framework\" Jul 2023)",
+    "url": "https://www.eota.eu/eota-positions",
+    "date": "2023",
+    "status": "○"
+  },
+  "S80": {
+    "title": "TECNALIA/Cobuilder/UNE — DPP feasibility study for construction products",
+    "url": "",
+    "date": "2025-05",
+    "status": "○"
+  },
+  "S81": {
+    "title": "CIRPASS-2 pilot (Cobuilder + GS1 France + Soprema + Velux) — 2 standardised DPP workflows",
+    "url": "",
+    "date": "2025",
+    "status": "○"
+  },
+  "S85": {
+    "title": "Joint letter on alkali-activated cement (ECOS, EEB + 17 signatories)",
+    "url": "https://ecostandard.org/wp-content/uploads/2025/05/Joint-letter-draft-standardisation-requests-for-cement-13-May-2025.pdf",
+    "date": "2025-05-13",
+    "status": "✓"
+  },
+  "S86": {
+    "title": "CFE — \"New EU CPR: obstacle to innovation or progress?\"",
+    "url": "https://construction-fixings.eu/news-positions/article/the-new-eu-construction-products-regulation-an-obstacle-to-innovation-or-progress-for-the-construction-industry.html",
+    "date": "2024",
+    "status": "✓"
+  },
+  "S87": {
+    "title": "Fastener+Fixing — \"Is the new CPR going to stop innovation?\"",
+    "url": "https://fastenerandfixing.com/construction-fixings/is-the-new-construction-product-regulation-going-to-stop-innovation/",
+    "date": "2024-05",
+    "status": "✓"
+  },
+  "S88": {
+    "title": "Fastener+Fixing — \"The ETA route for fixings under the new CPR\"",
+    "url": "https://fastenerandfixing.com/construction-fixings/the-eta-route-for-fixings-under-the-new-cpr/",
+    "date": "2025",
+    "status": "✓"
+  },
+  "S89": {
+    "title": "EuroWindoor — AVS DA position (Aug 2025)",
+    "url": "https://www.eurowindoor.eu/publications/eurowindoor-position-on-the-draft-delegated-act-establishing-the-applicable-assessment-and-verification-systems-avs-for-product-families-and-categories-under-cpr-2024-august-2025/",
+    "date": "2025-08",
+    "status": "○"
+  },
+  "S90": {
+    "title": "EuroWindoor — AVS DA comments on revised draft (Dec 2025)",
+    "url": "https://www.eurowindoor.eu/publications/eurowindoor-comments-on-revised-draft-delegated-act-on-avs-december-2025/",
+    "date": "2025-12",
+    "status": "○"
+  },
+  "S91": {
+    "title": "EuroWindoor — Worst-case LCA DoPC values position (May 2025)",
+    "url": "https://www.eurowindoor.eu/wp-content/uploads/2025/05/EW2522final-EuroWindoor-Position-on-Worst-case-LCA-DoPC-values-250426.pdf",
+    "date": "2025-05",
+    "status": "○"
+  },
+  "S92": {
+    "title": "Orgalim — DPP staged implementation position (Feb 2025)",
+    "url": "https://orgalim.eu/wp-content/uploads/Orgalim-position-paper-on-DPP-staged-implementation.pdf",
+    "date": "2025-02",
+    "status": "○"
+  },
+  "S93": {
+    "title": "Orgalim — DPP service provider consultation response (Jul 2025)",
+    "url": "https://orgalim.eu/wp-content/uploads/Orgalim_Consultation-on-DPP-service-providers.pdf",
+    "date": "2025-07",
+    "status": "○"
+  },
+  "S94": {
+    "title": "GDSO — Liaison Organization with JTC24 (Oct 2025)",
+    "url": "https://www.cencenelec.eu/news-events/news/2025/brief-news/2025-10-07-gdso-liaison-organization/",
+    "date": "2025-10",
+    "status": "○"
+  },
+  "S95": {
+    "title": "CEMBUREAU — Position on dual approach in standardisation",
+    "url": "https://cembureau.eu/media/h3kfr53y/231006-cembureau-position-dual-approach-in-standardisation-final.pdf",
+    "date": "2023-10",
+    "status": "○"
+  },
+  "S96": {
+    "title": "EuroWindoor — Contribution to CPR implementation framework (Nov 2025)",
+    "url": "https://www.eurowindoor.eu/publications/eurowindoor-contribution-to-the-implementation-framework-of-the-cpr-november-2025/",
+    "date": "2025-11",
+    "status": "○"
+  },
+  "S97": {
+    "title": "Joint industry proposal for AVS 4+ (EuroWindoor, European Aluminium, EPPA, Glass for Europe, SBS)",
+    "url": "",
+    "date": "2026-02",
+    "status": "○"
+  },
+  "S98": {
+    "title": "Fastener+Fixing — \"What are the changes in voluntary CE marking EOTA route under the new CPR?\"",
+    "url": "https://fastenerandfixing.com/construction-fixings/what-are-the-changes-in-voluntary-ce-marking-eota-route-under-the-new-cpr/",
+    "date": "2025",
+    "status": "○"
+  },
+  "S99": {
+    "title": "Construction Products Europe — CPR publications",
+    "url": "",
+    "date": "",
+    "status": "○"
+  },
+  "S100": {
+    "title": "eco-INSTITUT — EOTA release new EADs (Dec 2025 batch)",
+    "url": "https://www.eco-institut.de/en/2026/01/eota-release-new-eads-5/",
+    "date": "2026-01",
+    "status": "○"
+  },
+  "S101": {
+    "title": "EC — Voluntary CE marking (EOTA route) page",
+    "url": "",
+    "date": "",
+    "status": "○"
+  },
+  "S102": {
+    "title": "RAIN Alliance — Liaison Organization with JTC24",
+    "url": "",
+    "date": "2025",
+    "status": "?"
+  },
+  "S110": {
+    "title": "SBS SME Guide on new CPR (Jul 2025)",
+    "url": "https://sbs-sme.eu/wp-content/uploads/2024/12/July25_Guide-on-New-CPR_.pdf",
+    "date": "2025-07",
+    "status": "✓"
+  },
+  "S111": {
+    "title": "Addleshaw Goddard — CPR 2024/3110 analysis",
+    "url": "",
+    "date": "",
+    "status": "○"
+  },
+  "S112": {
+    "title": "Glass for Europe — CPR analysis",
+    "url": "",
+    "date": "",
+    "status": "○"
+  },
+  "S113": {
+    "title": "CIF Ireland — CPR analysis",
+    "url": "",
+    "date": "",
+    "status": "○"
+  },
+  "S114": {
+    "title": "DIBt — EAD transition dates (2031/2036 confirmed)",
+    "url": "",
+    "date": "",
+    "status": "○"
+  },
+  "S115": {
+    "title": "Belgian FPS Economy — EAD transition dates (2031/2036 confirmed)",
+    "url": "",
+    "date": "",
+    "status": "○"
+  },
+  "S116": {
+    "title": "ComplianceGate — CPR 2024 guide",
+    "url": "",
+    "date": "",
+    "status": "○"
+  },
+  "S117": {
+    "title": "CEN/TC 351 scope page (NEN) — dangerous substances horizontal",
+    "url": "",
+    "date": "",
+    "status": "○"
+  },
+  "S118": {
+    "title": "CEN-CENELEC — Sustainability, Safety and Accessibility (construction)",
+    "url": "",
+    "date": "",
+    "status": "○"
+  },
+  "S120": {
+    "title": "Cobuilder — DPP for Construction: CPR Working Plan analysis",
+    "url": "https://cobuilder.com/en/digital-product-passport-dpp/digital-product-passports-for-construction-what-the-eus-2026-2029-cpr-working-plan-means-for-stakeholders/",
+    "date": "2025",
+    "status": "○"
+  },
+  "S121": {
+    "title": "One Click LCA — Revised CPR to include EPD data",
+    "url": "",
+    "date": "",
+    "status": "○"
+  },
+  "S122": {
+    "title": "DPPA — CPR/GWP/EPD/DPP chain explained",
+    "url": "",
+    "date": "",
+    "status": "○"
+  },
+  "S123": {
+    "title": "EPD Guide — CPR Working Plan 2026–2029 analysis",
+    "url": "",
+    "date": "",
+    "status": "○"
+  },
+  "S124": {
+    "title": "Otto Handle (CEN/CENELEC) on EU DPP",
+    "url": "",
+    "date": "",
+    "status": "○"
+  },
+  "S125": {
+    "title": "ScienceDirect — Alkali-activated binder alignment with EU CPR 2024/3110",
+    "url": "https://www.sciencedirect.com/science/article/pii/S2666165925000869",
+    "date": "2025",
+    "status": "○"
+  },
+  "S130": {
+    "title": "EC consultation on DPP service providers (launch Apr 2025)",
+    "url": "https://single-market-economy.ec.europa.eu/news/commission-launches-consultation-digital-product-passport-2025-04-09_en",
+    "date": "2025-04",
+    "status": "○"
+  },
+  "S131": {
+    "title": "Commission GWP framework for buildings (EPBD, Dec 2025)",
+    "url": "https://energy.ec.europa.eu/topics/energy-efficiency/energy-performance-buildings/energy-performance-buildings-directive/global-warming-potential-buildings_en",
+    "date": "2025-12",
+    "status": "○"
+  },
+  "S132": {
+    "title": "EC — DPP impact assessment consultation (Jul 2025)",
+    "url": "https://single-market-economy.ec.europa.eu/news/take-part-our-impact-assessment-digital-product-passport-2025-07-25_en",
+    "date": "2025-07",
+    "status": "○"
+  },
+  "S140": {
+    "title": "genorma.com",
+    "url": "https://genorma.com",
+    "date": "",
+    "status": "○"
+  },
+  "S141": {
+    "title": "iTeh Standards",
+    "url": "https://standards.iteh.ai",
+    "date": "",
+    "status": "○"
+  },
+  "S142": {
+    "title": "CEN Standards Evolution & Forecast",
+    "url": "https://standards.cencenelec.eu/ords/f?p=CEN:84",
+    "date": "",
+    "status": "○"
+  },
+  "S143": {
+    "title": "nlfnorm.cz — EU harmonised standards database",
+    "url": "https://www.nlfnorm.cz/en/ehn",
+    "date": "2026-02",
+    "status": "○"
+  },
+  "S144": {
+    "title": "EOTA — European Assessment Documents database",
+    "url": "https://www.eota.eu/eads",
+    "date": "2026-02",
+    "status": "○"
+  }
+}

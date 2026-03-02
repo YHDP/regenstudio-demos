@@ -1,0 +1,66 @@
+{
+  "family": "ADH",
+  "review_date": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-ADH-001",
+      "type": "empty_content",
+      "severity": "low",
+      "field": "content",
+      "description": "5 content sections empty: standards_landscape, standards_development, stakeholder_notes, key_risks, sources_summary.",
+      "action": "Populate in future content pass"
+    },
+    {
+      "id": "iss-ADH-002",
+      "type": "cross_family",
+      "severity": "medium",
+      "field": "standards[0].avcp",
+      "current": "3",
+      "expected": "3 or 3, 4 — verify against Commission Decision",
+      "description": "EN 12004-1 AVCP mismatch: ADH lists '3' vs CMG lists '3, 4'. 6th cross-family AVCP mismatch identified. Requires verification against AVCP Commission Decision for PA 25/26.",
+      "action": "Cross-reference with Commission Decision for adhesives/concrete families"
+    },
+    {
+      "id": "iss-ADH-003",
+      "type": "content_data_disagreement",
+      "severity": "info",
+      "field": "content.about vs standards[]",
+      "description": "content.about mentions EN 12860 (gypsum adhesives), structural bonding adhesives, and floor covering adhesives — none tracked in standards[]. May need to add when SReq scope is defined.",
+      "action": "Review when M-I (2027) defines product scope"
+    },
+    {
+      "id": "iss-ADH-004",
+      "families": ["ADH"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "FEICA Model EPDs provide DPP-ready environmental data infrastructure for SME-dominated adhesives industry",
+      "description": "FEICA Model EPDs (since 2016, updated 2022/2024 jointly with IVK, Deutsche Bauchemie, EFCC) are structured by chemical composition, not product-specific. Third-party verified per EN 15804+A2 by IBU. Any FEICA/IVK/DBC/EFCC member can declare compliance. This covers ~800 companies (90% SME). Sika EPDs since 2012 (BRE-verified), Mapei EPD Process Certified since 2016. ADH is among most DPP-ready families via FEICA collective approach — directly applicable to DPP environmental data.",
+      "source": "FEICA EPDs (https://www.feica.eu/our-projects/epds); FEICA Model EPDs (https://www.feica.eu/information-center/latest-news/Model-EPDs); EFCC 2024 update (https://www.efcc.eu/our-actions/guidance-tools-industry/updated-2024-european-model-environmental-product-declarations)",
+      "action_required": "Document FEICA Model EPD programme in content. Flag as DPP readiness exemplar for SME-dominated families.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-ADH-005",
+      "families": ["ADH"],
+      "severity": "info",
+      "type": "cross_regulatory",
+      "title": "REACH diisocyanate restriction reshapes PU adhesive market — DPP chemical content implications",
+      "description": "REACH restriction on diisocyanates (24 Aug 2023): products >0.1% diisocyanates require mandatory user training. Affects polyurethane construction adhesives. Industry shifting to non-PU structural adhesives (epoxy, acrylic) and reformulating to <0.1%. DPP cross-regulatory: adhesive DPP must declare diisocyanate content, training requirements, VOC emissions alongside mechanical performance. CEN/TC 351 dangerous substances will mandate chemical content declarations.",
+      "source": "REACH restriction (https://www.forgeway.com/learning/blog/isocyanate-restrictions-2023); KLEIBERIT (https://www.kleiberit.com/en/company/news/isocyanate-restrictions-in-the-european-union); Adhesives Expo (https://www.adhesivesandbondingexpo-europe.com/blogs/growing-demand-for-non-pu-structural-adhesives-after-eu-diisocyanates-rule)",
+      "action_required": "Document diisocyanate restriction in content.key_risks. Flag CEN/TC 351 as DPP data requirement.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-ADH-006",
+      "families": ["ADH"],
+      "severity": "info",
+      "type": "market_context",
+      "title": "ADH scope (EN 12004 only) covers fraction of €19.9B adhesives market — SReq may expand significantly",
+      "description": "Current ADH tracks only EN 12004 tile adhesives (2 hENs). European adhesives/sealants market: €19.9B, 4.8Mt, 800 companies (FEICA data). Global tile adhesive $3.6B, flooring adhesive $5.6B. Future SReq (2029) could expand to floor covering adhesives, structural bonding, gypsum adhesives (EN 12860). Deutsche Bauchemie (140 companies, €4.6B sales) actively positioned on CPR/sustainability including Circular Economy Act and Housing Strategy.",
+      "source": "FEICA (https://www.feica.eu/our-industry); Deutsche Bauchemie (https://deutsche-bauchemie.com/); Grand View Research (https://www.grandviewresearch.com/industry-analysis/tile-adhesive-market-report)",
+      "action_required": "Include market context and potential SReq scope expansion in content.",
+      "status": "pending"
+    }
+  ]
+}

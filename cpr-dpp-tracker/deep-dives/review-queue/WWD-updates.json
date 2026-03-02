@@ -1,0 +1,50 @@
+{
+  "family": "WWD",
+  "generated": "2026-03-01",
+  "dataUpdates": [],
+  "structuralIssues": [
+    {
+      "id": "iss-WWD-001",
+      "families": ["WWD"],
+      "severity": "info",
+      "type": "empty_content",
+      "title": "Five content sections empty",
+      "description": "content.standards_landscape, content.standards_development, content.stakeholder_notes, content.key_risks, and content.sources_summary are empty.",
+      "action_required": "Populate with proposed content from deep-dive report \u00a78.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-WWD-002",
+      "families": ["WWD"],
+      "severity": "warning",
+      "type": "cross_regulatory",
+      "title": "UWWTD recast extends to 1,000 PE — directly increases EN 12566 product demand and registration aligns with DPP",
+      "description": "EU Urban Waste Water Treatment Directive recast (EU) 2024/3019 (in force 1 Jan 2025) extends coverage to agglomerations from 1,000 PE (previously 2,000). Individual treatment systems must be registered and subject to risk-based inspections. Collecting systems required for 1,000-2,000 PE agglomerations by 2035. Transposition deadline 31 Jul 2027. This directly increases the addressable market for EN 12566 products (estimated 20,000+ additional agglomerations). The UWWTD registration requirement aligns with DPP product traceability — treatment efficiency data could become part of DPP in-service performance declarations.",
+      "source": "European Commission (https://environment.ec.europa.eu/news/new-rules-urban-wastewater-management-set-enter-force-2024-12-20_en); EUR-Lex (https://eur-lex.europa.eu/eli/dir/2024/3019/oj/eng)",
+      "action_required": "Document UWWTD recast impact in content.key_risks. Flag cross-regulatory alignment with DPP traceability.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-WWD-003",
+      "families": ["WWD"],
+      "severity": "info",
+      "type": "dpp_readiness",
+      "title": "EPD coverage for WWD-scoped products minimal — Geberit has drainage EPDs but not for EN 12566 products",
+      "description": "Geberit publishes EN 15804 EPDs for PE/HDPE drainage pipes (34% of Group sales with EPDs). However, EPDs for WWD-scoped products (septic tanks, packaged treatment plants, grease separators, light-liquid separators) were not found. The small wastewater treatment sector lacks the EPD infrastructure seen in building materials families. Manufacturers of EN 12566 products (e.g., Klaro, BioDisc, Clearwater) do not appear to have published EN 15804 EPDs. For DPP: environmental data generation will need to start from scratch for most WWD manufacturers.",
+      "source": "Geberit PE EPD (https://files.etim-mapper.com/branchekataloget/4553/epd-pe-group-en.pdf); Geberit sustainability (https://www.geberit-global.com/know-how/sustainability/)",
+      "action_required": "Document EPD gap in content. Flag as DPP readiness challenge for WWD manufacturers.",
+      "status": "pending"
+    },
+    {
+      "id": "iss-WWD-004",
+      "families": ["WWD"],
+      "severity": "info",
+      "type": "market_context",
+      "title": "European wastewater treatment services $12.35B (2024) — WWD is niche but UWWTD expansion increases market",
+      "description": "European wastewater treatment services market $12.35B (2024), projected $18.36B by 2033. Broader water & wastewater treatment $93.31B (2025). WWD's EN 12566 products are a niche covering small decentralised systems up to 50 PE. UWWTD recast expansion to 1,000 PE agglomerations significantly increases addressable market. Key trends: smart monitoring, membrane bioreactors, decentralised solutions, resource recovery from wastewater.",
+      "source": "Market Data Forecast (https://www.marketdataforecast.com/market-reports/europe-waste-water-treatment-service-market); Towards Chem & Materials (https://www.towardschemandmaterials.com/insights/europe-water-and-wastewater-treatment-market)",
+      "action_required": "Include UWWTD recast market expansion context in content.",
+      "status": "pending"
+    }
+  ]
+}
