@@ -1366,6 +1366,25 @@
   font-weight: 600;
   flex-shrink: 0;
 }
+.rq-issue__std-tag {
+  padding: 1px 7px;
+  background: rgba(109, 40, 217, 0.08);
+  color: #6d28d9;
+  border-radius: 4px;
+  font-size: 0.6rem;
+  font-family: var(--font-mono, monospace);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.rq-issue__target-info {
+  font-size: 0.72rem;
+  color: #6d28d9;
+  font-family: var(--font-mono, monospace);
+  margin-bottom: 6px;
+  padding: 4px 8px;
+  background: rgba(109, 40, 217, 0.05);
+  border-radius: 4px;
+}
 .rq-issue__chevron {
   font-size: 0.6rem;
   color: var(--text-secondary);
