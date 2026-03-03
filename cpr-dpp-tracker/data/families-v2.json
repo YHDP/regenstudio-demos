@@ -6321,7 +6321,7 @@
       "family": "21",
       "priority": "",
       "tc": "CEN/TC 128",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "wall-ceiling-finishes.svg",
       "display_name": "Wall & Ceiling Finishes",
       "family_label": "Annex VII #21 · WCF",
@@ -6687,13 +6687,13 @@
       },
       "content": {
         "about": "One of the most fragmented product families, covering internal and external wall cladding, ceiling finishes, and internal partition kits. Products range from fibre-cement sheets, metal cladding, and sandwich panels to suspended ceilings, decorative wallcoverings, natural stone cladding, wood panelling, and high-pressure laminates. Standardisation is spread across seven or more technical committees, primarily CEN/TC 128 (roof and wall cladding), with secondary roles for CEN/TC 277 (suspended ceilings), CEN/TC 241 (gypsum), CEN/TC 99 (wallcoverings), CEN/TC 246 (natural stone), CEN/TC 175 (wood panelling), and CEN/TC 134 (high-pressure laminates).",
-        "standards_landscape": "~22 hENs cited under CPR 305/2011 via mandate M/121 (OJ C 092/2018, Implementing Decision (EU) 2019/451). AVCP per Commission Decision 98/437/EC (amended by 2001/596/EC): System 1 for reaction-to-fire classes A1–C (NB certification), System 3 for fire classes D–F and fire protection panels, System 4 for other uses (acoustic, thermal, moisture). Significant scope overlap with PF 22 (roof coverings — many standards dual-listed), PF 7 (gypsum — EN 14195/EN 13950), PF 19 (floorings — EN 14411 ceramics), PF 20 (structural metallic — EN 14509 sandwich panels). Note: wallpaper (EN 15102/CEN/TC 99) may be separated into a new family \"Decorative paints and wallpapers\" under CPR 2024/3110. No EADs in product area 21.",
-        "standards_development": "",
+        "standards_landscape": "~22 hENs cited under CPR 305/2011 via mandate M/121 (OJ C 092/2018, Implementing Decision (EU) 2019/451). AVCP per Commission Decision 98/437/EC (amended by 2001/596/EC): System 1 for reaction-to-fire classes A1–C (NB certification), System 3 for fire classes D–F and fire protection panels, System 4 for other uses (acoustic, thermal, moisture). Significant scope overlap with PF 22 (roof coverings — many standards dual-listed), PF 7 (gypsum — EN 14195/EN 13950), PF 19 (floorings — EN 14411 ceramics), PF 20 (structural metallic — EN 14509 sandwich panels). Note: wallpaper (EN 15102/CEN/TC 99) may be separated into a new family \"Decorative paints and wallpapers\" under CPR 2024/3110. No EADs in product area 21. EN 14509 (sandwich panels) is cross-listed in SMP, ROC, and WCF — data consistency should be verified across all three families.",
+        "standards_development": "22 hENs, 0 EADs. Pipeline A only. No active CPR-relevant revisions found. Awaiting SReq. Post-Grenfell facade fire test standard (effective Jan 2026) may drive future requirements for external wall finishing products.",
         "sreq_analysis": "Not yet adopted. Per COM(2025) 772 Table 3: Milestone I (product scope) targeted Q3 2026, Milestone III (essential characteristics) targeted Q3 2027, standardisation request targeted 2028. No standards delivery or mandatory adoption dates set yet. The future SReq will be issued under CPR 2024/3110.",
         "dpp_outlook": "The estimated DPP range is ~2032–2033, informed by two scenarios. Policy pipeline: With standardisation request targeted 2028, the regulatory pathway points to DPP by ~2032–2033. Standards-based: Per-standard DPP estimates across 22 hENs range from ~2032 to ~2033 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline.",
-        "stakeholder_notes": "Fire safety & post-Grenfell: Reaction to fire is the dominant performance characteristic — drives AVCP system assignment. New EU facade fire test standard effective Jan 2026 (temperature-based measurement replacing visual assessment, 7 years in development). Post-Grenfell (UK Phase 2 report Sep 2024): UK extending combustible materials ban to buildings >11m (Sep 2025, Euroclass A2 minimum for external facades). 14 EU member states have national fire deviations beyond the Euroclass system. UK Construction Products Reform Green Paper (Feb 2025) proposes a \"Construction Library\" central repository — proto-DPP concept.",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "Fire safety & post-Grenfell: Reaction to fire is the dominant performance characteristic — drives AVCP system assignment. New EU facade fire test standard effective Jan 2026 (temperature-based measurement replacing visual assessment, 7 years in development). Post-Grenfell (UK Phase 2 report Sep 2024): UK extending combustible materials ban to buildings >11m (Sep 2025, Euroclass A2 minimum for external facades). 14 EU member states have national fire deviations beyond the Euroclass system. UK Construction Products Reform Green Paper (Feb 2025) proposes a \"Construction Library\" central repository — proto-DPP concept. Split EPD readiness: fibre-cement excellent (James Hardie >90%, Etex Cedral), suspended ceilings good (Knauf AMF), gypsum established. Metal/stone cladding, HPL, render/plaster less visible. European cladding market $57.23B (2024), facade $7B, plasterboard $7.1B. Ventilated facade systems 51% of facade revenue. EPBD recast driving demand for energy-efficient facade solutions.",
+        "key_risks": "(1) Post-Grenfell fire testing: new EU facade fire test standard (temperature-based measurement) effective Jan 2026 — may reshape technical requirements for external wall finishes. (2) Fragmentation: 3 TCs (128, 99, 241) complicates standards coordination. (3) EN 14509 (sandwich panels) cross-family consistency with SMP and ROC.",
+        "sources_summary": "COM(2025) 772 CPR Working Plan 2026–2029 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz hEN database [S143]."
       }
     },
     {
@@ -6702,7 +6702,7 @@
       "family": "7",
       "priority": "",
       "tc": "CEN/TC 241",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "gypsum.svg",
       "display_name": "Gypsum Products",
       "family_label": "Annex VII #7 · GYP",
@@ -7065,13 +7065,13 @@
       },
       "content": {
         "about": "Covers all gypsum-based construction products including plasterboards, fibreboards, gypsum blocks, plasters, fibrous casts, composite panels, reprocessed gypsum products, metal framing for drylining systems, and ceiling elements. Two European Assessment Documents address structural/load-bearing plasterboard. A complete drylining or partition system involves boards, framing, fasteners, jointing, and adhesives, each with separate standards. Standardisation is led by CEN/TC 241 (Gypsum products).",
-        "standards_landscape": "",
-        "standards_development": "",
+        "standards_landscape": "14 hENs, all under sole TC CEN/TC 241. Self-contained family with no cross-TC dependencies. EN 520:2004+A1:2009 achieves Euroclass A2-s1,d0 WITHOUT additional testing (CWFT) if paper liner ≤220 g/m² and core classified A1 — unique in CPR.",
+        "standards_development": "No active CPR-relevant revisions. Single-TC structure (CEN/TC 241) simplifies standards coordination vs multi-TC families. EN 14190 (reprocessed gypsum) is one of the few hENs explicitly covering recycled materials. Latest SReq target in COM(2025) 772 Batch 4 (2028).",
         "sreq_analysis": "Not yet adopted. Per COM(2025) 772 Table 3: Milestone I (product scope) targeted Q3 2026, Milestone III (essential characteristics) targeted Q3 2027, standardisation request targeted 2028. No standards delivery or mandatory adoption dates set yet. The future SReq will be issued under CPR 2024/3110.",
         "dpp_outlook": "The estimated DPP range is ~2032–2033, informed by two scenarios. Policy pipeline: With standardisation request targeted 2028, the regulatory pathway points to DPP by ~2032–2033. Standards-based: Per-standard DPP estimates across 14 hENs and 3 EADs range from ~2032 to ~2033 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline.",
-        "stakeholder_notes": "AVCP & fire classification: One of the lightest AVCP regimes among all 37 product families. Per Commission Decision 95/467/EC (amended 2002/592/EC): System 3/4 for most products — manufacturer self-declaration. System 1 only for fire-critical products (composite panels, fibrous casts, jointing, metal framing). Gypsum (mineral) classified A1 without testing per Decision 96/603/EC — inherent fire safety guaranteed by material composition (paper liner ≤220 g/m² → A2-s1,d0 per EN 520 Annex B). This is a key competitive advantage: fire performance is a selling point rather than a compliance burden. Circularity & sustainability: Gypsum is 100% recyclable with no property loss, yet only ~13% post-consumer recycled (87% to landfill). Unique challenge: gypsum in mixed landfill produces toxic H₂S gas (UK banned co-disposal 2005). FGD synthetic gypsum declining as Europe decarbonises — urgency to increase C&D recycling. Siniat RECYPLAC: world's first 100% recycled gypsum plasterboard (Jul 2025). EU LIFE GtoG project demonstrated 30% recycled content. Industry: Eurogypsum (EUR 7.7B turnover, 154 quarries, 160 factories). Three European producers — Knauf, Saint-Gobain, Etex — control ~47% of global wallboard capacity. EPDs well-established (IBU Part B PCR for plasterboard). BIM-ready: Knauf Plug-in 2025, Saint-Gobain BIM portal.",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "AVCP & fire classification: One of the lightest AVCP regimes among all 37 product families. Per Commission Decision 95/467/EC (amended 2002/592/EC): System 3/4 for most products — manufacturer self-declaration. System 1 only for fire-critical products (composite panels, fibrous casts, jointing, metal framing). Gypsum (mineral) classified A1 without testing per Decision 96/603/EC — inherent fire safety guaranteed by material composition (paper liner ≤220 g/m² → A2-s1,d0 per EN 520 Annex B). This is a key competitive advantage: fire performance is a selling point rather than a compliance burden. Circularity & sustainability: Gypsum is 100% recyclable with no property loss, yet only ~13% post-consumer recycled (87% to landfill). Unique challenge: gypsum in mixed landfill produces toxic H₂S gas (UK banned co-disposal 2005). FGD synthetic gypsum declining as Europe decarbonises — urgency to increase C&D recycling. Siniat RECYPLAC: world's first 100% recycled gypsum plasterboard (Jul 2025). EU LIFE GtoG project demonstrated 30% recycled content. Industry: Eurogypsum (EUR 7.7B turnover, 154 quarries, 160 factories). Three European producers — Knauf, Saint-Gobain, Etex — control ~47% of global wallboard capacity. EPDs well-established (IBU Part B PCR for plasterboard). BIM-ready: Knauf Plug-in 2025, Saint-Gobain BIM portal. Big-3 (Knauf, Saint-Gobain, Etex/Siniat) all publish EN 15804+A2 EPDs — strong DPP readiness among market leaders (~90% market share). British Gypsum: Gyproc SoundBloc Infinaé 100% recycled plasterboard (Jan 2025). Siniat: RECYPLAC 100% recycled gypsum plasterboard (Jul 2025). European plasterboard market $7.10B (2023), CAGR 7.09%. Growth driven by EPBD renovation wave, fire safety, acoustic performance, modular construction. Eurogypsum positions gypsum as 'eternally recyclable'.",
+        "key_risks": "(1) FGD gypsum supply declining: >50% of German supply (~4 Mt/yr) from coal power plant flue gas desulphurisation. German coal phase-out target 2038 will sharply reduce supply. Plasterboard plants built adjacent to power stations will become 'orphans'. (2) Raw material source (natural, FGD, recycled) is an emerging DPP data attribute — recycled gypsum market projected $3.21B by 2030.",
+        "sources_summary": "COM(2025) 772 CPR Working Plan 2026–2029 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz hEN database [S143]. Eurogypsum data. G-to-G EU project."
       }
     },
     {
@@ -11365,7 +11365,7 @@
       "family": "18",
       "priority": "",
       "tc": "CEN/TC 165",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "waste-water.svg",
       "display_name": "Waste Water Engineering",
       "family_label": "Annex VII #18 · WWD",
@@ -11577,13 +11577,13 @@
       },
       "content": {
         "about": "Covers pipes, fittings, traps, manholes, inspection chambers, small wastewater treatment systems, and separators used for waste water disposal and drainage in buildings and civil engineering. Standardisation is led by CEN/TC 165 (Wastewater engineering).",
-        "standards_landscape": "",
-        "standards_development": "",
+        "standards_landscape": "8 hENs, all under sole TC CEN/TC 165. Self-contained family. EN 12566-3 requires 38-week treatment efficiency testing — one of the most rigorous CE marking programmes in CPR.",
+        "standards_development": "No active CPR-relevant revisions. CEN/TC 165 awaiting SReq. Standards are mature (EN 12566 series, EN 12050-1, EN 858-1, EN 1825-1). Smart monitoring (IoT sensors for treatment efficiency) and resource recovery from wastewater are emerging trends.",
         "sreq_analysis": "According to the Commission Working Plan (Table 3), Milestone I (product scope) is planned for 2027 and Milestone III (essential characteristics) for 2028. No standardisation request date has been set yet. Since no acquis exists, preparatory work on product scope must be completed first.",
         "dpp_outlook": "The estimated DPP range is ~2032–2033, informed by two scenarios. Policy pipeline: Based on the Commission Working Plan, the regulatory pathway points to DPP by ~2032–2033. Standards-based: Per-standard DPP estimates across 8 hENs range from ~2032 to ~2033 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline.",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "EPD coverage for WWD products (septic tanks, packaged treatment plants, grease/light-liquid separators) is minimal. Geberit has PE/HDPE drainage EPDs but not EN 12566 products. EN 12566 manufacturers (Klaro, BioDisc, Clearwater) appear to have no EN 15804 EPDs. European wastewater treatment services $12.35B (2024). WWD products are niche (up to 50 PE).",
+        "key_risks": "(1) No SReq date set — timeline uncertainty higher than families with confirmed milestones. (2) EN 12050-1 is AVCP System 4 (self-declaration) while rest of family is System 3 — mixed AVCP may complicate DPP data requirements. (3) EN 12566 series covers 5 of 8 standards — any revision delay in this series would affect most of the family. (4) UWWTD recast (EU) 2024/3019 extends coverage to 1,000 PE agglomerations (previously 2,000). Individual treatment systems must be registered. Transposition deadline 31 Jul 2027. Directly increases EN 12566 addressable market and aligns with DPP traceability.",
+        "sources_summary": "COM(2025) 772 CPR Working Plan 2026–2029 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz hEN database [S143]. UWWTD recast (EU) 2024/3019."
       }
     },
     {
@@ -12153,7 +12153,7 @@
       "family": "3",
       "priority": "",
       "tc": "CEN/TC 254",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "membranes.svg",
       "display_name": "Membranes",
       "family_label": "Annex VII #3 · MEM",
@@ -12365,13 +12365,13 @@
       },
       "content": {
         "about": "Covers roof waterproofing membranes (bituminous and synthetic), damp-proof membranes, vapour control layers, liquid-applied waterproofing, and complete waterproofing kits for roofs, walls, and below-ground use. Standardisation is led by CEN/TC 254 (Flexible sheets for waterproofing).",
-        "standards_landscape": "",
-        "standards_development": "",
+        "standards_landscape": "8 hENs, 0 EADs. Self-contained under sole TC CEN/TC 254. Standards are mature (EN 13956:2012, EN 13707:2013, etc.) with no active CPR revisions. Below-ground waterproofing has national fragmentation (Germany DIN 18533 imposes additional requirements beyond EN 13967).",
+        "standards_development": "No active CPR revisions. prEN 17388-2 (membrane-specific PCR) under development at CEN/TC 254 — would harmonise EPD methodology across bitumen and synthetic sheets. CEN/TC 254 awaiting SReq.",
         "sreq_analysis": "According to the Commission Working Plan (Table 3), Milestone I (product scope) and Milestone III (essential characteristics) are both planned for 2028. No standardisation request date has been set yet. Since no acquis exists, the full preparatory process must be completed first.",
         "dpp_outlook": "The estimated DPP range is ~2032–2033, informed by two scenarios. Policy pipeline: Based on the Commission Working Plan, the regulatory pathway points to DPP by ~2032–2033. Standards-based: Per-standard DPP estimates across 8 hENs range from ~2032 to ~2033 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline.",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "Market leaders publish EN 15804+A2 EPDs: Sika (SikaProof, Sikaplan), BMI Group (Icopal), Bauder, Soprema. PVC membranes: ROOFCOLLECT programme (ESWA) coordinates recovery/recycling. EPDM recycled to rubber crumb. Bitumen membranes mostly landfilled — least recyclable material in family. European market $4.6B (2024), CAGR 4.1–5.9%. DPP circular economy data varies dramatically by membrane material.",
+        "key_risks": "(1) Mixed AVCP structure: System 2+ for roof membranes vs System 4 for damp proof sheets — DPP data requirements will vary by product subcategory. (2) M-I and M-III both targeted 2028 — compressed timeline if preparatory work falls behind. (3) No SReq date — adds timeline uncertainty beyond 2028.",
+        "sources_summary": "COM(2025) 772 CPR Working Plan 2026–2029 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz hEN database [S143]. prEN 17388-2 (membrane-specific PCR at CEN/TC 254)."
       }
     },
     {
@@ -12380,7 +12380,7 @@
       "family": "8",
       "priority": "",
       "tc": "CEN/TC 189",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "geotextiles.svg",
       "display_name": "Geotextiles",
       "family_label": "Annex VII #8 · GEO",
@@ -12614,13 +12614,13 @@
       },
       "content": {
         "about": "Covers geotextiles, geomembranes, geogrids, geonets, geocomposites, and geosynthetic clay liners used for filtration, separation, drainage, reinforcement, and containment in civil engineering. Standardisation is led by CEN/TC 189 (Geosynthetics).",
-        "standards_landscape": "",
-        "standards_development": "",
+        "standards_landscape": "10 hENs, 0 EADs. Self-contained under sole TC CEN/TC 189 with Vienna Agreement partnership with ISO/TC 221. Standards dated 2016. Application-specific: one hEN per use case (roads, railways, tunnels, reservoirs, canals, solid waste, liquid waste, foundations, erosion, earth retaining).",
+        "standards_development": "No active CPR revisions. CEN/TC 189 awaiting SReq. Next TC meeting Copenhagen, 30 Jun–2 Jul 2026. Vienna Agreement with ISO/TC 221 may facilitate international alignment.",
         "sreq_analysis": "According to the Commission Working Plan (Table 3), Milestone I (product scope) and Milestone III (essential characteristics) are both planned for 2028. No standardisation request date has been set yet. Since no acquis exists, the full preparatory process must be completed first.",
         "dpp_outlook": "The estimated DPP range is ~2032–2033, informed by two scenarios. Policy pipeline: Based on the Commission Working Plan, the regulatory pathway points to DPP by ~2032–2033. Standards-based: Per-standard DPP estimates across 10 hENs range from ~2032 to ~2033 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline.",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "HUESKER publishes first geogrid EPD (Fortrac T, Kiwa-verified). Naue has Secugrid EPDs. Broader portfolio (geotextiles, geomembranes, geocomposites) lacks EPD coverage. IGS claims 65% lower carbon footprint vs alternative construction materials. European market $2.94B (2025), CAGR 4.36%. Geotextiles 38.2%, GCLs fastest-growing (9.3% CAGR). Netherlands project recycled 500,000 m² geotextiles.",
+        "key_risks": "(1) M-I and M-III both targeted 2028 — compressed timeline if preparatory work falls behind. (2) No SReq date — adds timeline uncertainty beyond 2028. (3) Application-specific standards (10 separate hENs for 10 use cases) may require coordinated revision across CEN/TC 189 working groups. (4) ECHA PFAS ban creates dual pressure on HDPE geomembranes: products contain PFAS-laden leachate but some manufacturing processes use PFAS processing aids. DPP may need to declare both PFAS containment performance AND PFAS-free manufacturing status.",
+        "sources_summary": "COM(2025) 772 CPR Working Plan 2026–2029 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz hEN database [S143]. IGS (International Geosynthetics Society)."
       }
     },
     {
@@ -12629,7 +12629,7 @@
       "family": "11",
       "priority": "",
       "tc": "CEN/TC 163",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "sanitary.svg",
       "display_name": "Sanitary Appliances",
       "family_label": "Annex VII #11 · SAP",
@@ -12842,12 +12842,12 @@
       "content": {
         "about": "Covers sanitary appliances such as WC pans, washbasins, bidets, baths, shower trays, urinals, and flushing cisterns made from ceramic, acrylic, steel, or cast iron. Standardisation is led by CEN/TC 163 (Sanitary appliances).",
         "standards_landscape": "",
-        "standards_development": "",
+        "standards_development": "8 hENs, all within CEN/TC 163. Self-contained family. EN 997:2018 is current edition (secretariat UNI Italy). No active CPR-relevant revisions, awaiting SReq. SAP + PTA share identical milestone structure (M-I 2028, M-III 2029, no SReq date, DPP ~2033–2034).",
         "sreq_analysis": "According to the Commission Working Plan (Table 3), Milestone I (product scope) is planned for 2028 and Milestone III (essential characteristics) for 2029. No standardisation request date has been set yet. Since no acquis exists and M-III is not expected until 2029, this family is among the later waves.",
         "dpp_outlook": "The estimated DPP range is ~2033–2034, informed by two scenarios. Policy pipeline: Based on the Commission Working Plan, the regulatory pathway points to DPP by ~2033–2034. Standards-based: Per-standard DPP estimates across 8 hENs range from ~2033 to ~2034 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline.",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "Surprisingly advanced DPP readiness: Villeroy & Boch Group has 14,000+ product EPDs (V&B, Ideal Standard, Gustavsberg brands). Duravit has IBU-verified EPDs for sanitary ceramic and acrylic. Comparable to fibre-cement and flat glass as DPP-ready exemplars. European sanitary ware market $11.31B (2024), CAGR 5.2%. Ceramic dominant. AVCP System 4 (lowest verification burden).",
+        "key_risks": "(1) European Water Label (voluntary, 90+ brands) may influence future CPR water efficiency essential characteristic. Water consumption data (litres/flush, litres/minute) could become mandatory DPP declaration. (2) Sanitary ceramics are difficult to recycle (high-temperature fired) — crushing for road aggregate or partial cement replacement are main options. Long product lifetime (30–50+ years) is itself a sustainability advantage.",
+        "sources_summary": "COM(2025) 772 CPR Working Plan 2026–2029 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz hEN database [S143]. European Water Label scheme."
       }
     },
     {
@@ -12856,7 +12856,7 @@
       "family": "28",
       "priority": "",
       "tc": "CEN/TC 155",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "pipes-tanks.svg",
       "display_name": "Pipes & Tanks",
       "family_label": "Annex VII #28 · PTA",
@@ -13040,12 +13040,12 @@
       "content": {
         "about": "Covers pipes, fittings, tanks, and ancillaries for non-potable water applications including rainwater, drainage, sewerage, gas supply, and industrial pipework. Standardisation is led by CEN/TC 155 (Plastics piping systems and ducting systems).",
         "standards_landscape": "",
-        "standards_development": "",
+        "standards_development": "CEN/TC 155 is one of the most productive CEN TCs. EN 1401-1:2019+A1:2023 is current edition. No active CPR-relevant revisions — standards exist but are not OJ-cited for CPR purposes. Awaiting SReq. PTA + SAP share identical milestone structure (M-I 2028, M-III 2029).",
         "sreq_analysis": "According to the Commission Working Plan (Table 3), Milestone I (product scope) is planned for 2028 and Milestone III (essential characteristics) for 2029. No standardisation request date has been set yet. Since no acquis exists and M-III is not expected until 2029, this family is among the later waves.",
         "dpp_outlook": "The estimated DPP range is ~2033–2034, informed by two scenarios. Policy pipeline: Based on the Commission Working Plan, the regulatory pathway points to DPP by ~2033–2034. Standards-based: Per-standard DPP estimates across 5 hENs range from ~2033 to ~2034 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline.",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "TEPPFA EPD application tool + VinylPlus 724,638 tonnes PVC recycled (2024) + CEN TS 18116:2025 (design-for-recycling) create DPP data foundation, but individual product EPDs still rare. ~50,000 tonnes recycled PVC used in new pipes annually (PVC4Pipes). European PVC pipe market ~$2.22B (2024), CAGR 5.25%. TEPPFA represents 350 companies.",
+        "key_risks": "(1) Triple microplastics regulation: REACH 2023/2055 (Oct 2025) + EU 2025/2365 pellet losses (Dec 2025) + Drinking Water Directive recast (leaching/microbial standards by Dec 2026). DPP may eventually need microplastics/leaching data fields. (2) TEPPFA confirms CE marking is 'currently neither possible nor legal' for plastic piping — validates pre-CPR status. Uncited like RPS but for different reasons.",
+        "sources_summary": "COM(2025) 772 CPR Working Plan 2026–2029 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz hEN database [S143]. TEPPFA position papers. VinylPlus Progress Report 2025. CEN TS 18116:2025."
       }
     },
     {
@@ -13054,7 +13054,7 @@
       "family": "31",
       "priority": "",
       "tc": "CLC/TC 20",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "cables.svg",
       "display_name": "Cables & Wires",
       "family_label": "Annex VII #31 · CAB",
@@ -13191,12 +13191,12 @@
       "content": {
         "about": "Covers power, control, communication, and fibre-optic cables permanently installed in buildings and civil engineering works, including fire-rated cables and cable accessories. Standardisation is led by CLC/TC 20 (Electric cables) under CENELEC.",
         "standards_landscape": "",
-        "standards_development": "",
+        "standards_development": "EN 50575:2014+A1:2016 is sole hEN under CENELEC CLC/TC 20 — unique among CPR families (all others use CEN). Covers reaction to fire classification only. No active revisions. Low Voltage Directive (2014/35/EU) creates dual-directive compliance for cables.",
         "sreq_analysis": "According to the Commission Working Plan (Table 3), both Milestone I (product scope) and Milestone III (essential characteristics) are planned for 2029 — the latest start date among all 37 families. No standardisation request date has been set yet.",
         "dpp_outlook": "The estimated DPP range is ~2033–2034, informed by two scenarios. Policy pipeline: Based on the Commission Working Plan, the regulatory pathway points to DPP by ~2033–2034. Standards-based: Per-standard DPP estimates across 1 hEN range from ~2033 to ~2034 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline.",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "Prysmian (PCR NPCR 027.2022) and Nexans (PCR ed4) publish EN 15804+A2 EPDs. Copper 100% recyclable, PVC recycled with 90% primary energy savings vs virgin. XLPE chemical recycling emerging (Borealis Borcycle C). Cable-specific PCR (NPCR 027) exists. European wire/cable market $36–63B (2024). Growth from renewables, EV charging, smart grids, EPBD building electrification. Ireland mandates LSZH; NL, DE, GR, CH require LSZH in high-risk environments.",
+        "key_risks": "(1) Latest start: M-I and M-III both 2029 — last of all 37 families. (2) Scope expansion risk: EN 50575 covers reaction to fire only. Future SReq may require dangerous substances (lead in PVC, PFAS in fluoropolymers), durability, recyclability. (3) CENELEC not CEN: unique standardisation body among CPR families — SReq process may differ. (4) Single standard: EN 50575 is sole hEN — single point of failure for the entire family. (5) REACH lead restriction on PVC cables (Nov 2024) and ECHA PFAS restriction affect fluoropolymer insulation (PTFE, FEP, ETFE).",
+        "sources_summary": "COM(2025) 772 CPR Working Plan 2026–2029 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz hEN database [S143]. Europacable publications."
       }
     },
     {
@@ -13205,7 +13205,7 @@
       "family": "14",
       "priority": "",
       "tc": "CEN/TC 112",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "wood-panels.svg",
       "display_name": "Wood Based Panels",
       "family_label": "Annex VII #14 · WBP",
@@ -13424,13 +13424,13 @@
       },
       "content": {
         "about": "Covers plywood, oriented strand board (OSB), particleboard, fibreboard (MDF, HDF, softboard), cement-bonded particleboard, and other wood-based panels for structural and non-structural use. Standardisation is led by CEN/TC 112 (Wood-based panels).",
-        "standards_landscape": "",
-        "standards_development": "",
-        "sreq_analysis": "",
+        "standards_landscape": "4 hENs + 1 EAD under CEN/TC 112. EN 13986:2004+A1:2015 is the umbrella standard referencing 8+ subordinate product standards. Over 20 years old with no active revision. EN 13986 is cross-listed with STP family.",
+        "standards_development": "No active CPR revisions. STP/WBP workstreams merged in COM(2025) 772. CEN/TC 351 horizontal SReq (15 deliverables, 31 Dec 2029) includes formaldehyde test methods directly affecting EN 13986. Full CPR transition target is 2040 (gradual by product group).",
+        "sreq_analysis": "WBP has acquis=Yes but uniquely has no Table 3 milestones in COM(2025) 772. SG 20 (May 2025) indicated new standards are 'at minimum 3 years away.' COM(2025) 772 merged WBP with STP workstream (STP is priority 7, WBP is priority 16). Draft SReq expected early 2026. Most timeline-uncertain acquis-classified family. WBP has fast-track available (unlike STP) but fast-track not yet initiated.",
         "dpp_outlook": "The estimated DPP range is ~2032. Standards-based: Per-standard DPP estimates across 1 hEN and 3 EADs converge on ~2032. No confirmed policy pipeline milestones are available.",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "Industry readiness varies dramatically: Pfleiderer already converted all German production to E0.5, has 53.5% post-consumer recycled content (OrganicBoard Pure = 100% renewable binder + 100% recycled fibre). EGGER has IBU-verified EPDs, 66% recycled wood. Kronospan (largest EU producer) has NO EPD for particleboard or MFC. SG 20 confirmed 'at minimum 3 years' for new wood standards; full transition target 2040.",
+        "key_risks": "(1) Milestone gap: acquis=Yes but zero Table 3 milestones — unique among acquis-classified families. (2) REACH E0.5 (EU) 2023/1464: formaldehyde emission limit halved to 0.062 mg/m³ from Aug 2026. CPR still references E1 — regulatory mismatch between REACH and CPR classifications. (3) Triple regulatory overlay: REACH E0.5 (market access, Aug 2026) + CPR dangerous substances CEN/TC 351 (15 deliverables due 31 Dec 2029) + national IAQ schemes (AgBB 2024, French A+, Belgian decree, Italian CAM). EU-LCI formaldehyde value POSTPONED pending ECHA classification. (4) Umbrella standard EN 13986 references 8+ subordinate standards — revision coordination bottleneck. Mixed AVCP (1/2+/3/4). (5) Waste wood classification NOT harmonised across EU: Italy ~95% recycled vs EU average ~25%. Direct obstacle for DPP recycled content declarations.",
+        "sources_summary": "COM(2025) 772 CPR Working Plan 2026–2029 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz hEN database [S143]; EOTA EAD database [S144]. SG 20: Standardisation Group May 2025. (EU) 2023/1464: REACH formaldehyde amendment. EPF production data."
       }
     },
     {
@@ -13439,7 +13439,7 @@
       "family": "29",
       "priority": "",
       "tc": "",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "drinking-water.svg",
       "display_name": "Drinking Water Products",
       "family_label": "Annex VII #29 · DWP",
@@ -13545,7 +13545,10 @@
         }
       },
       "standards": [],
-      "standards_summary": null,
+      "standards_summary": {
+        "completeness": "n/a",
+        "source": "No standards exist for DWP. Regulatory pathway complicated by parallel DWD 2020/2184 framework."
+      },
       "convergence": {
         "product_timeline_complete": "TBD",
         "system_timeline_ref": "sys-dpp-mandatory",
@@ -13556,13 +13559,13 @@
       },
       "content": {
         "about": "Covers pipes, fittings, tanks, valves, and coatings that come into contact with drinking water in supply and distribution systems, subject to strict hygiene and migration requirements. No technical committee has been formally assigned yet.",
-        "standards_landscape": "",
-        "standards_development": "",
-        "sreq_analysis": "",
+        "standards_landscape": "0 hENs, 0 EADs. No product standards exist under CPR for drinking water products. The Drinking Water Directive (2020/2184) provides the primary regulatory pathway for material safety.",
+        "standards_development": "No TC assigned for DWP under CPR. 4MS Initiative (France, Germany, Netherlands, UK) drove EU harmonisation of drinking water contact material approvals — now ECHA-managed under DWD, not CPR. figawa confirms: all products in contact with drinking water must comply with DWD regardless of CPR status.",
+        "sreq_analysis": "No milestones in COM(2025) 772 Table 3 for family 29. No TC assigned. Regulatory pathway complicated by parallel DWD 2020/2184 framework which has adopted its own material approval scheme (positive lists via Implementing Decision (EU) 2024/367 and marking specifications via Delegated Regulation (EU) 2024/371). Art. 11 DWD requires coherence with CPR, but whether CPR will independently regulate these products or defer to DWD is unresolved.",
         "dpp_outlook": "No DPP timeline has been confirmed for this family. No standardisation milestones or individual standard data are available.",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "EPDs for drinking water pipes/fittings exist (SANHA, Uponor, REHAU, Aquatherm, Pipelife — all EN 15804+A2) but serve PTA family under CPR, not DWP specifically. Material safety data managed under DWD positive lists (ECHA), not CPR. European plastics pipe/fittings market $27.3B (2024). PFAS monitoring in EU drinking water from 12 Jan 2026. Germany requires lead pipe replacement by 12 Jan 2026. DWP is the only family where DWD may effectively subsume CPR's role.",
+        "key_risks": "(1) Regulatory jurisdiction uncertainty: CPR vs DWD 2020/2184 — unclear which framework will govern construction products in contact with drinking water. (2) No TC assigned — standardisation cannot begin until institutional responsibility is determined. (3) Zero standards, zero milestones — most timeline-uncertain family in the tracker. (4) DWD positive lists (2024/367) may preempt CPR requirements for material safety, potentially narrowing CPR scope to structural/fire performance only. (5) DWD framework far more advanced: six delegated/implementing regulations adopted April 2024, positive lists apply 31 Dec 2026 (transitional until 2032). ECHA manages substance lists.",
+        "sources_summary": "COM(2025) 772 CPR Working Plan 2026–2029 [S30]; CPR 2024/3110 [S1]. DWD: Directive (EU) 2020/2184. (EU) 2024/371: DWD marking specifications. (EU) 2024/367: DWD positive lists."
       }
     },
     {
@@ -13571,7 +13574,7 @@
       "family": "",
       "priority": "",
       "tc": "CEN/TC 139",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "decorative-paints.svg",
       "display_name": "Decorative Paints",
       "family_label": "New family · DPW",
@@ -13678,7 +13681,10 @@
         }
       },
       "standards": [],
-      "standards_summary": null,
+      "standards_summary": {
+        "completeness": "n/a",
+        "source": "No standards exist for DPW. Greenfield family — product standards must be created from scratch. No Annex VII number assigned."
+      },
       "convergence": {
         "product_timeline_complete": "2035+",
         "system_timeline_ref": "sys-dpp-mandatory",
@@ -13689,13 +13695,13 @@
       },
       "content": {
         "about": "Covers interior and exterior decorative paints, varnishes, coatings, and wallcoverings for buildings. This is a new product family introduced under the revised CPR. Standardisation is led by CEN/TC 139 (Paints and varnishes).",
-        "standards_landscape": "",
-        "standards_development": "",
+        "standards_landscape": "0 hENs, 0 EADs. Greenfield family — no product standards exist under CPR. CEN/TC 139 has extensive EN ISO test methods for paints and coatings but no CPR-harmonised product standards. No Annex VII number assigned.",
+        "standards_development": "No CPR product standards under development. CEN/TC 139 test methods are purely EN ISO — none are CPR-harmonised. Product standards must be created from scratch. ~80% of European decorative paints are now waterborne (Decopaint Directive effect) — established formulation data could accelerate future standard development.",
         "sreq_analysis": "According to the Commission Working Plan (Table 3), Milestone I (product scope) is planned for 2029. No date for Milestone III (essential characteristics) has been set, and no standardisation request is expected for several years. As a newly added family with no existing acquis, the entire standardisation process must be built from scratch.",
         "dpp_outlook": "The estimated DPP range is 2035+. Policy pipeline: Based on the Commission Working Plan, DPP is projected by 2035+. No individual standard data is available to provide an alternative scenario.",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "EPD infrastructure surprisingly mature despite 2035+ DPP horizon: AkzoNobel (Sikkens, modules A1–A5/C2/C4/D), PPG/Dulux, and Jotun publish EN 15804+A2 EPDs. VOC data already generated under Decopaint Directive 2004/42/EC and national IAQ schemes. European paints & coatings market $38.66B (2024), decorative 45%. CEPE (est. 1951) is sole EU trade association. Bio-based coatings emerging.",
+        "key_risks": "(1) Greenfield family: no existing acquis, no hENs, no EADs — entire regulatory framework must be created from scratch. (2) 2035+ DPP horizon — most distant of all 37 families. (3) Cross-regulatory complexity: VOC already regulated under Decopaint Directive 2004/42/EC and national IAQ schemes (French A+, German AgBB, Belgian decree, Italian CAM). CPR scope must complement rather than duplicate. (4) Mixed product types: paints (liquid) and wallpapers (sheet) have fundamentally different testing needs.",
+        "sources_summary": "COM(2025) 772 CPR Working Plan 2026–2029 [S30]; CPR 2024/3110 [S1]. Decopaint Directive 2004/42/EC. CEPE."
       }
     }
   ]
