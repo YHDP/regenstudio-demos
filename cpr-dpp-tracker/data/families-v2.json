@@ -1338,7 +1338,7 @@
       "family": "6",
       "priority": "27",
       "tc": "CEN/TC 166",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "chimneys.svg",
       "display_name": "Chimneys & Flues",
       "family_label": "Annex VII #6 · CHI",
@@ -1678,7 +1678,10 @@
           "dpp_est": "~2031–2032",
           "dpp_route": "hEN",
           "revision": "CPR 2011",
-          "cited": true
+          "cited": true,
+          "content": {
+            "regulatory_history": "OJ citation status requires verification. Listed as cited=true in tracker but deep-dive could not confirm via EUR-Lex. EN 1443 is a terminology/classification standard — citation status may differ from performance testing standards."
+          }
         },
         {
           "id": "EN 1457-2",
@@ -1722,7 +1725,11 @@
           "dpp_est": "~2031–2032",
           "dpp_route": "hEN",
           "revision": "CPR 2011",
-          "cited": true
+          "cited": true,
+          "content": {
+            "regulatory_history": "Superseded by EN 15287-1:2007+A1:2010 (chimney installation/execution). EN 12391-1 is titled as an execution standard, not a harmonised product standard. Likely should NOT be in the harmonised standards list — requires verification against OJ citation records. If confirmed not harmonised, hen_count reduces from 18 to 17.",
+            "status_narrative": "Execution/installation standard, superseded by EN 15287-1. Presence in tracker's harmonised standards list is uncertain."
+          }
         },
         {
           "id": "EN 12446",
@@ -1831,9 +1838,9 @@
         "standards_development": "CEN/TC 166 is proactively revising several standards under its own work programme. These revisions are TC-driven under the existing mandate M/105 (CPR 305/2011) — they are not yet mandated under CPR 2024/3110 and do not trigger DPP obligations on their own. However, the revision work is expected to be incorporated into the forthcoming standardisation request under CPR 2024/3110.• prEN 1856-1 rev — metal system chimney products (revision status uncertain — genorma shows CEN project deleted Mar 2021, but DIN/BSI references suggest a draft was circulated and may have restarted)• prEN 1856-2 rev — metal flue liners and connecting flue pipes (under development)• prEN 13384-2 rev — thermal and fluid dynamic calculation methods Part 2 (stage 40.10, target Jan 2026)",
         "sreq_analysis": "Not yet adopted. No Art. 12 notification filed. Per COM(2025) 772 (First CPR Working Plan 2026–2029), a standardisation request covering most chimney and flue products is planned for adoption in Q3 2026. Self-standing chimneys (EN 13084 series) will be covered by a separate standardisation request for facade fire testing standards, planned for 2027. The CPR acquis sub-group for chimneys has not yet formally started but is expected to complete work in 2026. The future SReq will be issued under CPR 2024/3110 (new regulation), replacing the old mandate M/105.",
         "dpp_outlook": "The estimated DPP range is ~2031–2032, informed by two scenarios. Policy pipeline: With standardisation request targeted Q3 2026 and delivery expected 2028, the regulatory pathway points to DPP by ~2031–2032. Standards-based: Per-standard DPP estimates across 18 hENs and 11 EADs range from ~2031 to ~2032 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline.",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "Structural demand shift: heat pump sales overtook gas boiler sales in Germany in 2025, reducing gas flue demand. Biomass heating and solid fuel appliances maintain chimney relevance. Industry associations: ECA (European Chimney Association), ESCHFOE.",
+        "key_risks": "(1) prEN 1856-1 revision uncertainty — genorma shows CEN project deleted Mar 2021, but DIN/BSI references suggest draft may have restarted. Flagship metal chimney standard. (2) SReq not yet started — planned Q3 2026 but dependent on Milestone III completion. (3) 11 legacy EADs expire 9 Jan 2031 — notes indicate 'no new EAD expected under CPR 2024/3110', implying transition to hEN route only. (4) Self-standing chimneys (EN 13084) excluded from CHI SReq — separate timeline creates coordination risk. (5) Very low EPD readiness: only Schiedel has an EN 15804 chimney EPD. Industry must build environmental data infrastructure largely from scratch for DPP. (6) No hydrogen-ready chimney standard exists. As hydrogen blending in gas networks increases (EU Hydrogen Strategy), chimney products may face new performance requirements not covered by current hENs. CEN/TC 166 monitoring needed.",
+        "sources_summary": "COM(2025) 772 CPR Working Plan 2026–2029 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz hEN database [S143]; EOTA EAD database [S144]; CEN/TC 166 project listings."
       }
     },
     {
@@ -5678,7 +5685,7 @@
       "family": "10",
       "priority": "",
       "tc": "CEN/TC 191",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "fire-fighting.svg",
       "display_name": "Fixed Fire-Fighting",
       "family_label": "Annex VII #10 · FFF",
@@ -6013,7 +6020,10 @@
           "dpp_est": "~2030–2031",
           "dpp_route": "hEN",
           "revision": "CPR 2011",
-          "cited": true
+          "cited": true,
+          "content": {
+            "key_risks": "PFAS ban (EU 2025/1988): PFAS foam agents banned from Oct 2026 for fire-fighting training, full ban from Oct 2030 for fire extinguishing. CPR + REACH + DPP triple regulatory burden for foam-compatible systems."
+          }
         },
         {
           "id": "EN 12094-2",
@@ -6134,7 +6144,10 @@
           "dpp_est": "~2030–2031",
           "dpp_route": "hEN",
           "revision": "CPR 2011",
-          "cited": true
+          "cited": true,
+          "content": {
+            "key_risks": "PFAS ban (EU 2025/1988): PFAS foam agents banned from Oct 2026 for fire-fighting training, full ban from Oct 2030 for fire extinguishing. CPR + REACH + DPP triple regulatory burden for foam-compatible systems."
+          }
         },
         {
           "id": "EN 12259-2",
@@ -6261,13 +6274,13 @@
       },
       "content": {
         "about": "One of the broadest product families, spanning electronic fire detection and alarm systems, fixed sprinkler and gas extinguishing components, smoke and heat control systems, fire dampers, fire hydrants, hose reels, residential sprinklers, and explosion suppression equipment. Four European Assessment Documents cover specialty products. Standardisation is shared across multiple technical committees: CEN/TC 191 (fixed firefighting), CEN/TC 72 (fire detection and alarm), CEN/TC 295 (residential sprinklers), and CEN/TC 305 (explosion suppression), with Euralarm as the key industry body.",
-        "standards_landscape": "~32 harmonised standards cited under old CPR 305/2011 via mandate M/109 (OJ C 092/2018, Implementing Decision (EU) 2019/451). AVCP per Decision 96/577/EC: System 1 for ALL products (most stringent — NB certification required). EN 54 citation backlog: 6+ technically sound standards remain uncited since ~2014 due to James Elliott ruling fallout. Euralarm notes CPR covers \"asphalt to electronic systems\" under one framework — fire safety needs faster standards update cycles than the current process delivers.",
-        "standards_development": "",
+        "standards_landscape": "33 harmonised standards cited under old CPR 305/2011 via mandate M/109 (OJ C 092/2018, Implementing Decision (EU) 2019/451). AVCP per Decision 96/577/EC: System 1 for ALL products (most stringent — NB certification required). EN 54 citation backlog: 6+ technically sound standards remain uncited since ~2014 due to James Elliott ruling fallout. Euralarm notes CPR covers \"asphalt to electronic systems\" under one framework — fire safety needs faster standards update cycles than the current process delivers.",
+        "standards_development": "CEN/TC 72: No active revisions of EN 54 series under new CPR scope. EN 54-1:2021 was a recent editorial update. EN 50130-4 EMC revision ongoing per Euralarm (impacts fire and security industry). CEN/TC 191: WG 5 has NOT begun revising sprinkler hENs — waiting for SReq. CEN/TC 295 (residential sprinklers) and CEN/TC 305 (explosion suppression): No active CPR-relevant projects found.",
         "sreq_analysis": "Acquis NOT started. M-I targeted Q2 2026, M-III Q1 2027, SReq Q3 2027 per COM(2025) 772 Table 3. No Art. 12 notification found. Under CPR 2024/3110 (DPP applies directly). No standards delivery date set — the breadth of this family (dual TC, ~32 existing hENs) means development will take 3-4 years minimum. EFSN confirms CEN/TC 191/WG 5 has NOT begun revising sprinkler hENs — waiting for the SReq.",
         "dpp_outlook": "The estimated DPP range is ~2030–2033, informed by two scenarios. Policy pipeline: With standardisation request targeted Q3 2027, the regulatory pathway points to DPP by ~2032–2033. Standards-based: Per-standard DPP estimates across 33 hENs and 4 EADs range from ~2030 to ~2032 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). The combined range spans from the standards-based assessment’s earlier estimate (~2030–2032) to the policy pipeline’s later horizon (~2032–2033).",
-        "stakeholder_notes": "Multi-directive & environmental: Fire detection products uniquely fall under CPR + EMC (2014/30/EU) + LVD (2014/35/EU) + RoHS (2011/65/EU) + WEEE (2012/19/EU) + Cyber Resilience Act (from Dec 2027). No fire-safety-specific EPD PCR exists — active systems have unique LCA challenges (module B6 operational energy over 15-25 year lifespan, electronic end-of-life). Apollo Fire Detectors targeting EPDs by 2030 using CIBSE TM65 as interim. ESPR: fire safety NOT on priority list but horizontal EEE repairability measures (~2027) could capture electronic detection products.",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "Multi-directive & environmental: Fire detection products uniquely fall under CPR + EMC (2014/30/EU) + LVD (2014/35/EU) + RoHS (2011/65/EU) + WEEE (2012/19/EU) + Cyber Resilience Act (from Dec 2027). No fire-safety-specific EPD PCR exists — active systems have unique LCA challenges (module B6 operational energy over 15-25 year lifespan, electronic end-of-life). Apollo Fire Detectors targeting EPDs by 2030 using CIBSE TM65 as interim. ESPR: fire safety NOT on priority list but horizontal EEE repairability measures (~2027) could capture electronic detection products. IoT/networked fire systems create product/system boundary challenges: EN 54 certification is per-component, but networked fire alarm systems integrate multiple CPR-covered products with non-CPR software. CRA + CPR + ESPR overlap creates jurisdictional complexity.",
+        "key_risks": "(1) EN 54 citation backlog — 6+ technically sound parts uncited since ~2014 (James Elliott ruling legacy). New CPR Art. 5(8) may resolve but only after full SReq cycle. (2) Multi-regulatory overlap — products fall under CPR + EMC + LVD + RoHS + WEEE + Cyber Resilience Act (from Dec 2027). (3) Acquis not started — M-I targeted Q2 2026 but no evidence of sub-group formation. (4) Breadth of family — 33 hENs across 4 TCs means 3–4 years minimum for standards development. (5) Euralarm estimates 10-year minimum for fire product standard rewriting — the ~2030–2033 DPP range may be optimistic. (6) Cyber Resilience Act (CRA): reporting obligations from Sep 2026, full compliance Dec 2027. Most fire products in self-assessment 'default' category. (8) Zero fire product EPDs — industry must build environmental data infrastructure from scratch for DPP GWP declarations.",
+        "sources_summary": "COM(2025) 772 CPR Working Plan 2026–2029 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz hEN database [S143]; EOTA EAD database [S144]; Euralarm CPR compliance newsletters (Jan–Feb 2026); EFSN: CEN/TC 191/WG 5 status."
       }
     },
     {
