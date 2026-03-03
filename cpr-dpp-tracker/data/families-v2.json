@@ -276,7 +276,7 @@
       "family": "20",
       "priority": "02",
       "tc": "CEN/TC 135",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "structural-metallic.svg",
       "display_name": "Structural Metallic Products",
       "family_label": "Annex VII #20 · SMP",
@@ -984,12 +984,12 @@
       "content": {
         "about": "Covers structural steel and aluminium products used in load-bearing construction, including hot-rolled and cold-formed sections, stainless steel structural members, high-strength and non-preloaded bolting assemblies, welding consumables, and insulating sandwich panels. Conformity assessment centres on the execution of steel and aluminium structures and their components. Standardisation is led by CEN/TC 135.",
         "standards_landscape": "EN 1090-1:2009+A1:2011 is the primary conformity assessment standard, but the OJ-cited harmonised standards for this family also include EN 15088:2005, EN 10340:2007, EN 14399-1:2015, EN 15048-1:2007, EN 13479:2017, EN 10025-1:2004, EN 10210-1:2006, EN 10219-1:2006, EN 10088-4:2009, and EN 10088-5:2009 (all under mandate M/120 and CPR 305/2011). Supported by execution standards EN 1090-2:2018+A1:2024 (steel, sustainability provisions added), EN 1090-3:2019 (aluminium), EN 1090-4:2018 and EN 1090-5:2017 (cold-formed). CEN/TS 1090-201:2024 covers structural steel reuse.",
-        "standards_development": "The European standardisation mandate for the EN 1090-1 revision was rejected by a majority of EU member states. Concerns raised: unclear scope, undefined terminology, unnecessary/missing performance characteristics (welding suitability, fracture toughness, fatigue strength removed). CEN development stage dropped from 40.60 to 10.99. A revised mandate is expected early 2026. Publication now estimated ~2028–2029 at earliest. (per TC 135 work programme):• prEN 1090-1 rev — mandate rejected, back to stage 10.99• prEN 1090-4 rev — cold-formed steel (stage 40.60, vote May 2026, NOT harmonised under CPR)• prEN 1090-5 rev — cold-formed aluminium (stage 40.60, vote Jul 2026, NOT harmonised under CPR)• prEN 17662 — EPD PCR for steel/iron/aluminium (stage 45.99, FV dispatched Dec 2023 — possibly stalled)",
+        "standards_development": "The European standardisation mandate for the EN 1090-1 revision was rejected by a majority of EU member states. Concerns raised: unclear scope, undefined terminology, unnecessary/missing performance characteristics (welding suitability, fracture toughness, fatigue strength removed). CEN development stage dropped from 40.60 to 10.99. A revised mandate is expected early 2026. Publication now estimated ~2028–2029 at earliest. (per TC 135 work programme):• prEN 1090-1 rev — mandate rejected, back to stage 10.99• prEN 1090-4 rev — cold-formed steel (stage 40.60, vote May 2026, NOT harmonised under CPR)• prEN 1090-5 rev — cold-formed aluminium (stage 40.60, vote Jul 2026, NOT harmonised under CPR)• prEN 17662 — EPD PCR for steel/iron/aluminium (stage 45.99, FV dispatched Dec 2023 — possibly stalled) CEN/TS 1090-201:2024 published — first European technical specification for reuse of structural steel. Not harmonised but establishes technical framework for future SReq incorporation.",
         "sreq_analysis": "Acquis Milestone I (product scope) and Milestone III (essential characteristics) both completed. Commission Implementing Decision C(2025) 6586, adopted 2 October 2025 under CPR 305/2011 (replacing mandate M/120). 12 standards (5 new, 7 revisions), all due 15 November 2025 — deadline missed (~6 weeks from adoption). Decision expires 31 Jan 2027. COM(2025) 772 confirms SMP as first-wave priority for CPR 2024/3110. New SReq under new CPR planned Q2 2026 (delivery Q3 2027).",
         "dpp_outlook": "The estimated DPP range is ~2030–2032, informed by two scenarios. Policy pipeline: With standardisation request adopted (Oct 2025) and delivery expected 15 Nov 2025 (overdue), the regulatory pathway points to DPP by ~2031–2032. Note: this standardisation request is under CPR 305/2011 – a subsequent request under CPR 2024/3110 is needed before DPP applies. Standards-based: Per-standard DPP estimates across 12 hENs and 28 EADs range from ~2030 to ~2032 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). The combined range spans from the standards-based assessment’s earlier estimate (~2030–2032) to the policy pipeline’s later horizon (~2031–2032).",
-        "stakeholder_notes": "28+ EADs under Product Area 20: Structural steel sections (EAD 200017, 200022, 200116), tension rods/cables (EAD 200001, 200002, 200006, 200032), piles/foundations (EAD 200005, 200014, 200036, 200043, 200077), gabions/baskets (EAD 200019, 200020, 200026, 200039), connections (EAD 200033, 200086, 200102), corrosion protection (EAD 200126, 200188), and others. Previously reported as 0 EADs.",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "28+ EADs under Product Area 20: Structural steel sections (EAD 200017, 200022, 200116), tension rods/cables (EAD 200001, 200002, 200006, 200032), piles/foundations (EAD 200005, 200014, 200036, 200043, 200077), gabions/baskets (EAD 200019, 200020, 200026, 200039), connections (EAD 200033, 200086, 200102), corrosion protection (EAD 200126, 200188), and others. Previously reported as 0 EADs. Note: EADs 200036, 200043, 200077, 200039, 200086, 200102, 200116, 200126, 200188 referenced in stakeholder context but not verified against EOTA PA 20 scope. Data audit pending.",
+        "key_risks": "(1) EN 1090-1 mandate rejection (summer 2025) — major bottleneck. Revised mandate expected early 2026 but publication now ~2028–2029 at earliest. (2) SReq delivery deadline missed (15 Nov 2025) — CEN has not yet delivered. (3) 28 legacy EADs expire 9 Jan 2031 — no transition planning started. (4) New SReq under CPR 2024/3110 planned Q2 2026 — adds second parallel standards development track. (5) COM(2025) 726 Steel & Metals Action Plan: CBAM + ESPR + safeguard tariffs create multi-layered compliance environment. (6) ESPR iron & steel delegated act (~2027 compliance) may create an ESPR DPP before CPR DPP — dual regulatory pathway.",
+        "sources_summary": "C(2025) 6586 (SReq adopted Oct 2025) [S12]; COM(2025) 772 CPR Working Plan [S30]; CPR 2024/3110 [S1]; nlfnorm.cz hEN database [S143]; EOTA EAD database [S144]."
       }
     },
     {
@@ -1855,7 +1855,7 @@
       "family": "23",
       "priority": "",
       "tc": "CEN/TC 227",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "road-construction.svg",
       "display_name": "Road Construction",
       "family_label": "Annex VII #23 · RCP",
@@ -2193,7 +2193,10 @@
           "dpp_est": "~2032–2033",
           "dpp_route": "hEN",
           "revision": "CPR 2011",
-          "cited": true
+          "cited": true,
+          "content": {
+            "regulatory_history": "AVCP '2+' in RCP vs '2+, 4' in AGG. AVCP may vary by intended use (road construction vs concrete aggregates). Cross-family verification needed."
+          }
         },
         {
           "id": "EN 13242",
@@ -2215,7 +2218,10 @@
           "dpp_est": "~2032–2033",
           "dpp_route": "hEN",
           "revision": "CPR 2011",
-          "cited": true
+          "cited": true,
+          "content": {
+            "regulatory_history": "AVCP '2+' in RCP vs '2+, 4' in AGG. AVCP may vary by intended use (road construction vs concrete aggregates). Cross-family verification needed."
+          }
         },
         {
           "id": "EN 14227-14",
@@ -2291,9 +2297,9 @@
         "standards_development": "No CPR-mandated standard revisions currently under way. The CPR acquis process has not yet started for this family, so no standardisation-request-driven revisions are in the CEN/TC 227 pipeline.",
         "sreq_analysis": "Not adopted. No draft on CIRCABC. Per COM(2025) 772 (First CPR Working Plan 2026–2029), the acquis process targets: Milestone I (scope) Q1 2026, Milestone III (essential characteristics) Q3 2026, standardisation request 2027. The future SReq will be under CPR 2024/3110 (new regulation). Road construction is in the later priority group), with acquis work not yet started.",
         "dpp_outlook": "The estimated DPP range is ~2032–2033, informed by two scenarios. Policy pipeline: With standardisation request targeted 2027, the regulatory pathway points to DPP by ~2032–2033. Standards-based: Per-standard DPP estimates across 28 hENs range from ~2032 to ~2033 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline.",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "EAPA (asphalt producers) and Eurobitume (bitumen producers) coordinate as joint industry voice. EAPA 'Asphalt 4.0' digital initiative explores BIM integration and data-driven quality management — directly relevant to DPP infrastructure. Eurobitume LCA 4.0 (Mar 2025) revised bitumen GWP from 216 to 530 kgCO₂e/t (+145%). EU-27: 208.5 Mt asphalt production (2024), ~$20.5B bitumen market. One of highest-tonnage CPR families.",
+        "key_risks": "(1) Eurobitume LCA 4.0 GWP revision: bitumen GWP100 revised from 216 to 530 kgCO₂e/t (+145%, Mar 2025). All existing EPDs understated — DPP declarations must use updated figure. (2) EN 13043/13055 AVCP mismatch with AGG ('2+' vs '2+, 4'). (3) RAP recycling: 45.5 Mt/yr available, 76% reused — DPP recycled content data directly available but methodology varies by Member State.",
+        "sources_summary": "COM(2025) 772 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz [S143]; EOTA [S144]; EAPA statistics 2024; Eurobitume LCA 4.0 (Mar 2025)."
       }
     },
     {
@@ -2302,7 +2308,7 @@
       "family": "19",
       "priority": "",
       "tc": "CEN/TC 134",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "floorings.svg",
       "display_name": "Floorings",
       "family_label": "Annex VII #19 · FLO",
@@ -2422,7 +2428,11 @@
           "stage": "EN 14041:2018 published but OJ citation unclear — standardisation crisis gap likely. EPLF working on further revision.",
           "revision": "CPR 2011",
           "cited": true,
-          "notes": "Umbrella hEN for resilient/textile/laminate flooring. 2018 edition exists but 2004/AC:2006 remains OJ-cited version."
+          "notes": "Umbrella hEN for resilient/textile/laminate flooring. 2018 edition exists but 2004/AC:2006 remains OJ-cited version.",
+          "content": {
+            "regulatory_history": "EN 14041:2004/AC:2006 remains the OJ-cited edition. EN 14041:2018 published but OJ citation status unclear. EPLF working on further revision. Monitor for new OJ citation under CPR 2024/3110.",
+            "status_narrative": "Resilient, textile and laminate floor coverings. Key revision ongoing via EPLF. 2018 edition not yet confirmed as OJ-cited replacement for 2004/AC:2006."
+          }
         },
         {
           "id": "EN 14342",
@@ -2456,7 +2466,10 @@
           "dpp_est": "~2031–2032",
           "dpp_route": "hEN",
           "revision": "CPR 2011",
-          "cited": true
+          "cited": true,
+          "content": {
+            "regulatory_history": "AVCP '1, 3, 4' in FLO vs '3, 4' in CMG. System 1 applies to reaction-to-fire characteristics per Decision 97/808/EC. CMG entry may be missing System 1 for fire-related properties."
+          }
         },
         {
           "id": "EN 14904",
@@ -2642,9 +2655,9 @@
         "standards_development": "EPLF (European Producers of Laminate Flooring) working on EN 14041 revision to integrate hazardous substances and environmental aspects into CE labelling. FEP (European Federation of Parquet Industry) active in adapting wood flooring standards to revised CPR. Milestone 0 work already ongoing on test methods for slip resistance — EN 16165:2021 (CEN/TC 339) published, Commission developing assessment method before formal acquis.",
         "sreq_analysis": "Not yet adopted. No acquis sub-group formally established. Per COM(2025) 772 Table 3: Milestone I targeted Q2 2026, Milestone III targeted Q4 2026, SReq targeted 2027. No standards delivery or mandatory dates set.",
         "dpp_outlook": "The estimated DPP range is ~2031–2032, informed by two scenarios. Policy pipeline: With standardisation request targeted 2027, the regulatory pathway points to DPP by ~2031–2032. Standards-based: Per-standard DPP estimates across 19 hENs range from ~2031 to ~2032 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline.",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "Most varied DPP readiness landscape of any CPR family. Ceramics: Confindustria Ceramica industry EPD covers 82.6% of Italian production. Laminate: EPLF EPDs since 2009. Natural stone: EUROROC promotes EPDs. Vinyl: VOC/chemical data focus dominates over full EN 15804 EPDs. Wood: linked to STP family. Screed: minimal EPDs.",
+        "key_risks": "(1) 8-TC coordination: CEN/TC 134 (resilient), TC 178 (paving), TC 128 (tiles), TC 303 (floor screeds), TC 134 WG 7 (laminate), etc. Most complex TC landscape. (2) Vinyl compound regulatory burden: REACH + CPR dangerous substances (CEN/TC 351) + national VOC requirements. (3) $52–62B market with 6+ material types — DPP implementation speeds will vary by material.",
+        "sources_summary": "COM(2025) 772 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz [S143]; EOTA [S144]; EPLF laminate EPDs; Confindustria Ceramica industry EPD; EUROROC."
       }
     },
     {
@@ -3175,7 +3188,7 @@
       "family": "36",
       "priority": "",
       "tc": "CEN/TC 128 (existing)",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "ladders.svg",
       "display_name": "Attached Ladders",
       "family_label": "Annex VII #36 · LAD",
@@ -3290,7 +3303,10 @@
           "dpp_est": "~2031–2032",
           "dpp_route": "hEN",
           "revision": "CPR 2011",
-          "cited": true
+          "cited": true,
+          "content": {
+            "regulatory_history": "Currently cited under ROC (family 22) via Implementing Decision 2019/451. Pending reclassification to LAD (family 36) under CPR 2024/3110."
+          }
         },
         {
           "id": "EN 516",
@@ -3301,7 +3317,10 @@
           "dpp_est": "~2031–2032",
           "dpp_route": "hEN",
           "revision": "CPR 2011",
-          "cited": true
+          "cited": true,
+          "content": {
+            "regulatory_history": "Currently cited under ROC (family 22) via Implementing Decision 2019/451. Pending reclassification to LAD (family 36) under CPR 2024/3110."
+          }
         },
         {
           "id": "EN 517",
@@ -3312,7 +3331,10 @@
           "dpp_est": "~2031–2032",
           "dpp_route": "hEN",
           "revision": "CPR 2011",
-          "cited": true
+          "cited": true,
+          "content": {
+            "regulatory_history": "Currently cited under ROC (family 22) via Implementing Decision 2019/451. Pending reclassification to LAD (family 36) under CPR 2024/3110."
+          }
         }
       ],
       "standards_summary": {
@@ -3330,12 +3352,12 @@
       "content": {
         "about": "This is a new product family introduced in CPR 2024/3110, covering permanently attached ladders fixed to buildings and other construction works. This includes fixed roof ladders, vertical access ladders on facades and building exteriors, caged and uncaged maintenance access ladders, and fixed ladders in utility shafts. Related roof access products such as walkways, treads and safety hooks are also in scope. Portable ladders, loft ladders, and machinery access ladders are excluded. No dedicated technical committee has been assigned; existing standards are under CEN/TC 128 (roof covering products).",
         "standards_landscape": "Three standards currently cited under CPR 305/2011 in product family 22 (Roof Coverings) via Implementing Decision (EU) 2019/451 — all AVCP System 3: (1) EN 12951:2004 — permanently fixed roof ladders on pitched roofs (closest existing standard to family 36 scope); (2) EN 516:2006 — roof access walkways, treads and steps; (3) EN 517:2006 — roof safety hooks and anchorage points. Under CPR 2024/3110, these may be reclassified from family 22 to family 36. Related standards under other legislation: EN ISO 14122-4:2016 (fixed ladders for machinery — Machinery Regulation), EN 353-1:2014+A1:2017 (guided fall arresters on fixed ladders — PPE Regulation).",
-        "standards_development": "",
+        "standards_development": "No active prEN registrations. EN 12951:2004, EN 516:2006, EN 517:2006 are 18–22 years old and require significant revision. No dedicated TC — uses CEN/TC 128 (ROC), creating potential resource contention.",
         "sreq_analysis": "Not yet adopted. No independent milestone data in Table 3 — family 36 is handled within family 34 (KAS) per COM(2025) 772. KAS milestones: M-I Q2 2026, M-III Q2 2027, SReq 2027. Table 3 notes \"may be divided in several workstreams\" — ladders could follow a separate timeline from KAS's main EOTA-based track.",
-        "dpp_outlook": "The estimated DPP range is ~2031–2032, informed by two scenarios. Policy pipeline: Based on the Commission Working Plan, the regulatory pathway points to DPP by ~2031–2032. Standards-based: Per-standard DPP estimates across 3 hENs range from ~2031 to ~2032 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline.",
-        "stakeholder_notes": "Standards gap: EN 12951 covers only roof ladders on pitched roofs. Family 36's broader scope (facade ladders, utility access ladders, caged ladders) has no existing harmonised standards. New standards will need to be developed — likely via CEN mandate rather than EOTA EAD route, creating a potentially different pathway from the rest of family 34 (KAS).",
-        "key_risks": "",
-        "sources_summary": ""
+        "dpp_outlook": "The estimated DPP range is ~2031–2032, informed by two scenarios. Policy pipeline: Based on the Commission Working Plan, the regulatory pathway points to DPP by ~2031–2032. Standards-based: Per-standard DPP estimates across 3 hENs range from ~2031 to ~2032 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline. Zero EPDs for any LAD product. Metal sector EPD inheritance (from structural steel/aluminium EPDs) is a potential pathway for DPP environmental data.",
+        "stakeholder_notes": "Standards gap: EN 12951 covers only roof ladders on pitched roofs. Family 36's broader scope (facade ladders, utility access ladders, caged ladders) has no existing harmonised standards. New standards will need to be developed — likely via CEN mandate rather than EOTA EAD route, creating a potentially different pathway from the rest of family 34 (KAS). Niche market segment. ZARGES is European market leader. EU Directive 2001/45/EC positions ladders as 'last resort' for working at height.",
+        "key_risks": "(1) Standards gap: EN 12951 covers only roof ladders on pitched roofs. Family 36’s broader scope (facade ladders, utility access, caged ladders) has no existing hENs. (2) No dedicated TC — uses CEN/TC 128 (ROC), potential resource contention. (3) Family 36 handled within KAS (family 34) — may be delayed by more complex KAS product categories (ETICS, prefab). (4) EN 12951, EN 516, EN 517 are 18–22 years old. (5) Three-regulation overlap: CPR (EN 12951/516/517) + Machinery Regulation (EN 14122-4) + PPE (EN 353-1) for fixed ladders. Regulatory boundary unclear.",
+        "sources_summary": "COM(2025) 772 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz [S143]."
       }
     },
     {
@@ -7058,7 +7080,7 @@
       "family": "5",
       "priority": "",
       "tc": "CEN/TC 167",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "structural-bearings.svg",
       "display_name": "Structural Bearings",
       "family_label": "Annex VII #5 · SBE",
@@ -7388,13 +7410,13 @@
       },
       "content": {
         "about": "One of the most compact CPR families, covering structural bearings used in bridges and buildings — including sliding, elastomeric, roller, pot, rocker, spherical PTFE, and guide/restraint bearings — plus pins for structural joints. Six European Assessment Documents address innovative bearing materials, reflecting material innovation outpacing the standard revision cycle. Standardisation is led by CEN/TC 167 (Structural bearings). Anti-seismic devices are a separate product family.",
-        "standards_landscape": "",
-        "standards_development": "",
+        "standards_landscape": "14 standards (6 hEN + 8 EAD). CEN/TC 167 (structural bearings). EN 1337 series covers elastomeric, pot, spherical, roller, and PTFE bearings.",
+        "standards_development": "No active prEN registrations for SBE hENs. EN 1337 series revision will follow SReq adoption. EADs cover niche products: viscous dampers, lock-up devices, seismic isolation bearings.",
         "sreq_analysis": "Not yet adopted. Per COM(2025) 772 Table 3: Milestone I (product scope) targeted Q4 2026, Milestone III (essential characteristics) targeted Q4 2027, standardisation request targeted 2028. No standards delivery or mandatory adoption dates set yet. The future SReq will be issued under CPR 2024/3110.",
-        "dpp_outlook": "The estimated DPP range is ~2032–2033, informed by two scenarios. Policy pipeline: With standardisation request targeted 2028, the regulatory pathway points to DPP by ~2032–2033. Standards-based: Per-standard DPP estimates across 6 hENs and 8 EADs range from ~2032 to ~2033 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline.",
-        "stakeholder_notes": "Oligopolistic niche — no dedicated European trade association. Key manufacturers: mageba (CH), Maurer (DE), FIP MEC (IT), Freyssinet/VINCI (FR), Trelleborg (SE). DIBt (Germany) is the leading TAB. Market ~USD 180M (Europe). Infrastructure-driven: 200,000+ railway bridges in EU, most >50 years old. Bearings last 30–50 years vs bridge lifespan 75–120 years → replaced 1–3 times per bridge. Demand weighted toward replacement/maintenance. EPD at ground zero: first externally verified EPD published Dec 2024 (mageba RESTON SPHERICAL, EPD Hub). No bearing-specific PCR exists.",
-        "key_risks": "",
-        "sources_summary": ""
+        "dpp_outlook": "The estimated DPP range is ~2032–2033, informed by two scenarios. Policy pipeline: With standardisation request targeted 2028, the regulatory pathway points to DPP by ~2032–2033. Standards-based: Per-standard DPP estimates across 6 hENs and 8 EADs range from ~2032 to ~2033 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline. Mageba published first verified structural bearings EPD (Dec 2024, RESTON SPHERICAL, HUB-2481): 3.90 kgCO₂e/kg (A1-A3), 33.1% secondary input, 85.7% secondary output. Industry first — sets benchmark for DPP environmental data.",
+        "stakeholder_notes": "Oligopolistic niche — no dedicated European trade association. Key manufacturers: mageba (CH), Maurer (DE), FIP MEC (IT), Freyssinet/VINCI (FR), Trelleborg (SE). DIBt (Germany) is the leading TAB. Market ~USD 180M (Europe). Infrastructure-driven: 200,000+ railway bridges in EU, most >50 years old. Bearings last 30–50 years vs bridge lifespan 75–120 years → replaced 1–3 times per bridge. Demand weighted toward replacement/maintenance. EPD at ground zero: first externally verified EPD published Dec 2024 (mageba RESTON SPHERICAL, EPD Hub). No bearing-specific PCR exists. Global bridge bearings market $3.28B. 10% of EU bridges assessed as deficient. Sensor-integrated structural health monitoring bearings emerging — DPP could carry condition monitoring data alongside product performance.",
+        "key_risks": "(1) PTFE is a PFAS — EU universal PFAS restriction (ECHA proposal) could affect all structural bearings using PTFE sliding surfaces. 7 of 8 EADs cover alternative sliding materials. (2) Niche market with limited EPD infrastructure. (3) Ageing bridge infrastructure (10% EU bridges deficient) creates monitoring urgency.",
+        "sources_summary": "COM(2025) 772 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz [S143]; EOTA [S144]; mageba RESTON SPHERICAL EPD (HUB-2481, Dec 2024)."
       }
     },
     {
@@ -8484,7 +8506,7 @@
       "family": "12",
       "priority": "",
       "tc": "CEN/TC 226",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "circulation-fixtures.svg",
       "display_name": "Circulation Fixtures",
       "family_label": "Annex VII #12 · CIF",
@@ -8731,7 +8753,10 @@
           "dpp_est": "~2032–2033",
           "dpp_route": "hEN",
           "revision": "CPR 2011",
-          "cited": true
+          "cited": true,
+          "content": {
+            "key_risks": "Variable message signs face 4-directive regulatory burden: CPR (construction product), EMC (electromagnetic compatibility), LVD (low voltage), and Cyber Resilience Act (from Dec 2027). DPP may need to declare compliance across all four."
+          }
         },
         {
           "id": "EN 14388",
@@ -8946,13 +8971,13 @@
       },
       "content": {
         "about": "Covers safety-critical road infrastructure including vehicle restraint barriers, fixed and variable road signs, traffic signal heads, warning lights, lighting columns, road marking materials, noise barriers, and anti-glare screens. Eleven European Assessment Documents extend the scope into bridge expansion joints and specialty products. Standardisation is led by CEN/TC 226 (Road equipment), which also has a newer working group on road infrastructure interactions with autonomous vehicles.",
-        "standards_landscape": "",
-        "standards_development": "",
+        "standards_landscape": "26 standards (17 hEN + 9 EAD). CEN/TC 226 (road equipment). Mature portfolio with no major revisions expected before SReq.",
+        "standards_development": "CEN/TS 1317-7:2024 (road restraint terminal performance) published — not yet harmonised. No active prEN registrations for CIF hENs under new CPR.",
         "sreq_analysis": "Not yet adopted. Per COM(2025) 772 Table 3: Milestone I (product scope) targeted 2027, Milestone III (essential characteristics) targeted 2027, standardisation request targeted 2028. No standards delivery or mandatory adoption dates set yet. The future SReq will be issued under CPR 2024/3110.",
         "dpp_outlook": "The estimated DPP range is ~2032–2033, informed by two scenarios. Policy pipeline: With standardisation request targeted 2028, the regulatory pathway points to DPP by ~2032–2033. Standards-based: Per-standard DPP estimates across 15 hENs and 11 EADs range from ~2032 to ~2033 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline.",
-        "stakeholder_notes": "AVCP & safety: Commission Decision 96/579/EC — System 1 for 80% of standards (12 of 15), reflecting the safety-critical nature of road equipment. Only anti-glare screens and noise barriers carry System 3. No System 4 at all. EN 1317 has 8 parts but only Part 5 is harmonised; Parts 4/7 are under revision (splitting terminal/transition standards), Part 6 is a Technical Report (pedestrian parapets), Part 8 is a Technical Specification (motorcycle restraints). EN 1317-5 demands full-scale vehicle crash tests at speeds up to 110 km/h — one of the most physically demanding test regimes in all of CPR. Milestone 0 already ongoing for a new road restraint assessment method — a unique pre-acquis step where the Commission is developing methodology before formal standardisation begins. Environmental Noise Directive 2002/49/EC creates a parallel demand driver for EN 14388 noise barriers through mandatory noise action plans. Bridge joints & multi-directive: 7 of 11 EADs cover bridge expansion joints (EAD 120011 flexible plug, 120093 asphaltic plug, 120109 nosing, 120110 mat, 120111 cantilever, 120112 supported, 120113 modular) — the family extends well beyond road-surface equipment into bridge infrastructure, overlapping with SBE (structural bearings). Other EADs: microprismatic retroreflective sheeting (120001), wood/metal lighting columns (120003/120017), road marking products (230011). Variable message signs (EN 12966) face multi-directive complexity similar to FFF: EMC Directive 2014/30/EU, Low Voltage Directive 2014/35/EU, and potentially Cyber Resilience Act for connected/IoT signage. The IRMA working group on automated mobility signals future standards for V2I (vehicle-to-infrastructure) road equipment — a growth area for intelligent road infrastructure.",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "AVCP & safety: Commission Decision 96/579/EC — System 1 for 80% of standards (12 of 15), reflecting the safety-critical nature of road equipment. Only anti-glare screens and noise barriers carry System 3. No System 4 at all. EN 1317 has 8 parts but only Part 5 is harmonised; Parts 4/7 are under revision (splitting terminal/transition standards), Part 6 is a Technical Report (pedestrian parapets), Part 8 is a Technical Specification (motorcycle restraints). EN 1317-5 demands full-scale vehicle crash tests at speeds up to 110 km/h — one of the most physically demanding test regimes in all of CPR. Milestone 0 already ongoing for a new road restraint assessment method — a unique pre-acquis step where the Commission is developing methodology before formal standardisation begins. Environmental Noise Directive 2002/49/EC creates a parallel demand driver for EN 14388 noise barriers through mandatory noise action plans. Bridge joints & multi-directive: 7 of 11 EADs cover bridge expansion joints (EAD 120011 flexible plug, 120093 asphaltic plug, 120109 nosing, 120110 mat, 120111 cantilever, 120112 supported, 120113 modular) — the family extends well beyond road-surface equipment into bridge infrastructure, overlapping with SBE (structural bearings). Other EADs: microprismatic retroreflective sheeting (120001), wood/metal lighting columns (120003/120017), road marking products (230011). Variable message signs (EN 12966) face multi-directive complexity similar to FFF: EMC Directive 2014/30/EU, Low Voltage Directive 2014/35/EU, and potentially Cyber Resilience Act for connected/IoT signage. The IRMA working group on automated mobility signals future standards for V2I (vehicle-to-infrastructure) road equipment — a growth area for intelligent road infrastructure. EPD adoption early-stage: ArcelorMittal and Unipromet as road barrier EPD pioneers. System 1 certification data infrastructure provides DPP advantage — notified body testing data already digitised. Road safety barriers market ~$1.8B (Europe ~29% global). System 1 compliance cost is significant but provides data infrastructure foundation for DPP.",
+        "key_risks": "(1) EN 12966 (variable message signs): 4-directive compliance burden — CPR + EMC + LVD + Cyber Resilience Act (from Dec 2027). (2) System 1 dominance across most CIF hENs — high conformity assessment cost. (3) Bridge infrastructure overlap with SBE (EADs 120093, 120109, 120112).",
+        "sources_summary": "COM(2025) 772 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz [S143]; EOTA [S144]; CEN/TC 226 work programme."
       }
     },
     {
@@ -8961,7 +8986,7 @@
       "family": "26",
       "priority": "",
       "tc": "CEN/TC 104",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "concrete-mortar.svg",
       "display_name": "Concrete & Mortar",
       "family_label": "Annex VII #26 · CMG",
@@ -9284,7 +9309,10 @@
           "dpp_est": "~2032–2033",
           "dpp_route": "hEN",
           "revision": "CPR 2011",
-          "cited": true
+          "cited": true,
+          "content": {
+            "regulatory_history": "AVCP listed as '2+, 4' in CMG vs '4' in MAS and '3, 4' in ADH. Per Decision 97/555/EC, AVCP varies by intended use. CMG entry is likely most complete. Cross-family verification recommended."
+          }
         },
         {
           "id": "EN 998-2",
@@ -9521,13 +9549,13 @@
       },
       "content": {
         "about": "Covers concrete admixtures, mineral additions (fly ash, blast furnace slag, silica fume), fibres (steel and polymer), pigments, and the full range of concrete repair products — but notably excludes ready-mixed concrete itself, since the core concrete specification is not harmonised under CPR. Nineteen European Assessment Documents represent the frontier of low-carbon concrete innovation, including steel fibres from end-of-life tyres, FRP reinforcement bars, and calcined clay for low-carbon cements. Standardisation is led by CEN/TC 104 (Concrete and related products), with a close relationship to CEN/TC 51 (Cement).",
-        "standards_landscape": "",
-        "standards_development": "",
-        "sreq_analysis": "",
+        "standards_landscape": "35 standards (13 hEN + 22 EAD). CEN/TC 104 (concrete), CEN/TC 125 (masonry). Covers concrete admixtures (EN 934 series), repair products (EN 1504 series), grouts (EN 1504-6), screeds, and mortars.",
+        "standards_development": "EN 206-1:2026 ratified (DOR 19 Jan 2026) — potentially transformational if included in CPR SReq scope, covering ready-mixed concrete (~€80B market). Currently non-harmonised. Monitor SReq scope definition.",
+        "sreq_analysis": "SReq not yet started. CMG SReq depends on acquis completion. Cross-family coordination needed with CEM, PCR, and MAS through Concrete Europe (BIBM + CEMBUREAU + EFCA + ERMCO).",
         "dpp_outlook": "The estimated DPP range is ~2030–2033, informed by two scenarios. Policy pipeline: With standardisation request targeted Q4 2026 and delivery expected 2029, the regulatory pathway points to DPP by ~2030–2031. Standards-based: Per-standard DPP estimates across 16 hENs and 19 EADs range from ~2032 to ~2033 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). The combined range spans from the policy pipeline’s earlier estimate (~2030–2031) to the standards-based assessment’s later horizon (~2032–2033).",
-        "stakeholder_notes": "AVCP & complexity: Commission Decision 1999/469/EC — the most AVCP-complex family: EN 1504 repair products carry up to 4 different systems (1, 2+, 3, 4) depending on the characteristic. System 1+ for mineral additions (fly ash, slag, silica fume — safety-critical as they modify concrete strength). System 2+ for admixtures (EN 934 series) and pigments. System 1/3 for fibres (structural vs non-structural use). System 4 only for non-structural surface protection. The acquis work (Milestone I: ongoing, Milestone III: Q1 2026) could bring EN 206 into CPR scope for the first time — potentially transformational for the ~EUR 80B European ready-mixed concrete market. Circularity & innovation: 19 EADs show strong circular economy innovation: EAD 260010 (steel fibres recovered from end-of-life tyres), EAD 260009 (MSWI bottom ash as concrete addition), EAD 260023 (carbon/glass/basalt/aramid FRP reinforcement bars — alternative to steel), EAD 260014 (calcined clay as type II addition — key for LC3 low-carbon cements), EAD 260020 (catalytic calcium carbonate), EAD 260006 (polymeric addition), EAD 260035 (natural calcined pozzolana). Also includes FRP structural sections (260001), inorganic fibre grid reinforcement (260057), and zinc anode cathodic protection systems (260100). Many of these EADs represent the frontier of low-carbon concrete technology.",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "AVCP & complexity: Commission Decision 1999/469/EC — the most AVCP-complex family: EN 1504 repair products carry up to 4 different systems (1, 2+, 3, 4) depending on the characteristic. System 1+ for mineral additions (fly ash, slag, silica fume — safety-critical as they modify concrete strength). System 2+ for admixtures (EN 934 series) and pigments. System 1/3 for fibres (structural vs non-structural use). System 4 only for non-structural surface protection. The acquis work (Milestone I: ongoing, Milestone III: Q1 2026) could bring EN 206 into CPR scope for the first time — potentially transformational for the ~EUR 80B European ready-mixed concrete market. Circularity & innovation: 19 EADs show strong circular economy innovation: EAD 260010 (steel fibres recovered from end-of-life tyres), EAD 260009 (MSWI bottom ash as concrete addition), EAD 260023 (carbon/glass/basalt/aramid FRP reinforcement bars — alternative to steel), EAD 260014 (calcined clay as type II addition — key for LC3 low-carbon cements), EAD 260020 (catalytic calcium carbonate), EAD 260006 (polymeric addition), EAD 260035 (natural calcined pozzolana). Also includes FRP structural sections (260001), inorganic fibre grid reinforcement (260057), and zinc anode cathodic protection systems (260100). Many of these EADs represent the frontier of low-carbon concrete technology. Concrete Europe (BIBM + CEMBUREAU + EFCA + ERMCO) coordinates DPP data model consistency across the concrete value chain: CEM, CMG, PCR, MAS families.",
+        "key_risks": "(1) EN 206 scope expansion risk: if included in SReq, standards development doubles in complexity. (2) Split EPD readiness: EFCA admixtures excellent (EPDs since 2005), EN 1504 repair products lacking. (3) 22 legacy EADs expire 9 Jan 2031.",
+        "sources_summary": "COM(2025) 772 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz [S143]; EOTA [S144]; EFCA admixture EPD programme."
       }
     },
     {
@@ -9536,7 +9564,7 @@
       "family": "24",
       "priority": "",
       "tc": "CEN/TC 154",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "aggregates.svg",
       "display_name": "Aggregates",
       "family_label": "Annex VII #24 · AGG",
@@ -9708,7 +9736,10 @@
           "stage": "[UNVERIFIED] Being consolidated into prEN 17555-1 (stage 40.60 CEN Enquiry ~2021, current status unclear)",
           "revision": "CPR 2011",
           "cited": true,
-          "notes": "TC-driven revision under old mandate M/125 (CPR 305/2011) — does not trigger DPP. Expected to be incorporated into future SReq under CPR 2024/3110."
+          "notes": "TC-driven revision under old mandate M/125 (CPR 305/2011) — does not trigger DPP. Expected to be incorporated into future SReq under CPR 2024/3110.",
+          "content": {
+            "status_narrative": "Formal objection pending since ~2015. prEN 17555-1 consolidation could replace EN 12620 along with EN 13043, EN 13139, EN 13242, and EN 13055 into a single comprehensive standard. Status unclear post-2021 CEN Enquiry."
+          }
         },
         {
           "id": "EN 13043",
@@ -9809,13 +9840,13 @@
       },
       "content": {
         "about": "Covers natural, manufactured, and recycled aggregates used in concrete, mortar, asphalt, road construction, and railway ballast. Key standards include EN 12620 (aggregates for concrete), EN 13043 (bituminous mixtures), EN 13139 (mortar), EN 13242 (civil engineering), and EN 13450 (railway ballast). Standardisation is led by CEN/TC 154 (Aggregates).",
-        "standards_landscape": "",
-        "standards_development": "",
+        "standards_landscape": "8 standards (7 hEN + 1 EAD). CEN/TC 154 (aggregates). EN 12620 (concrete), EN 13043 (asphalt), EN 13139 (mortar), EN 13242 (civil engineering), EN 13055 (lightweight), EN 13450 (railway ballast), EN 13383-1 (armourstone). prEN 17555-1 may consolidate 5 of these into 1–2 standards.",
+        "standards_development": "prEN 17555-1 reached CEN Enquiry (~40.60) around 2021 but current status unclear. If consolidation succeeds, landscape changes from 7 hENs to 1–2. EN 12620 has had a formal objection pending since ~2015.",
         "sreq_analysis": "Not yet adopted. Per COM(2025) 772 Table 3: Milestone I (product scope) ongoing, Milestone III (essential characteristics) targeted Q2 2026, standardisation request targeted Q1 2027, standards delivery targeted 2029. The existing aggregate standards (EN 12620, EN 13043, etc.) are expected to be revised under the future SReq, which will be issued under CPR 2024/3110. Note: EN 12620 has a formal objection pending (second, since 2015).",
         "dpp_outlook": "The estimated DPP range is ~2030–2032, informed by two scenarios. Policy pipeline: With standardisation request targeted Q1 2027 and delivery expected 2029, the regulatory pathway points to DPP by ~2030–2031. Standards-based: Per-standard DPP estimates across 7 hENs and 1 EAD range from ~2030 to ~2032 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). The combined range spans from the standards-based assessment’s earlier estimate (~2030–2032) to the policy pipeline’s later horizon (~2030–2031).",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "UK MPA sector EPD model covers ~90% of production — potential EU DPP template for SME-dominated families. 3 billion tonnes/yr, $61–106B market, 15,000 companies — largest-by-mass CPR family, most fragmented.",
+        "key_risks": "(1) prEN 17555-1 consolidation uncertainty — could transform standards landscape. (2) EN 12620 formal objection unresolved since ~2015. (3) CDW recycled aggregates: end-of-waste criteria vary by Member State — DPP recycled content declaration challenge. (4) 15,000 SME companies — DPP implementation uniquely challenging at scale.",
+        "sources_summary": "COM(2025) 772 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz [S143]; EOTA [S144]; UK MPA sector EPD model; UEPG (European Aggregates Association)."
       }
     },
     {
@@ -9824,7 +9855,7 @@
       "family": "9",
       "priority": "",
       "tc": "CEN/TC 33 WG 6",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "curtain-walling.svg",
       "display_name": "Curtain Walling",
       "family_label": "Annex VII #9 · CWP",
@@ -10287,13 +10318,13 @@
       },
       "content": {
         "about": "Covers curtain walling systems, rainscreen cladding, and structural sealant glazing assemblies along with their framing and fixing components. The key standard is EN 13830 (curtain walling). Standardisation falls under CEN/TC 33, Working Group 6 (Curtain walling) — the same committee responsible for the DWS family.",
-        "standards_landscape": "",
-        "standards_development": "",
+        "standards_landscape": "26 standards (1 hEN + 25 EAD). EN 13830 (curtain walling) is the sole hEN. 25 EADs cover structural glazing, cladding kits, and facade systems. Mixed AVCP: System 1 (structural glazing) vs System 2+ (cladding kits).",
+        "standards_development": "EN 13830 status: pipeline shows in_progress but may reflect preparatory TC work rather than formal revision. CEN/TC 33 shared with DWS — potential resource contention when both SReqs are active (DWS Q1 2026, CWP Q4 2026).",
         "sreq_analysis": "Not yet adopted. Per COM(2025) 772 Table 3: Milestone I (product scope) finished, Milestone III (essential characteristics) targeted Q2 2026, standardisation request targeted Q4 2026, standards delivery targeted 2029. EN 13830 is expected to be revised under the future SReq. Curtain walling accessories are also referenced in the DWS draft SReq (Jan 2026). The future SReq will be issued under CPR 2024/3110.",
         "dpp_outlook": "The estimated DPP range is ~2030–2032, informed by two scenarios. Policy pipeline: With standardisation request targeted Q4 2026 and delivery expected 2029, the regulatory pathway points to DPP by ~2030–2031. Standards-based: Per-standard DPP estimates across 1 hEN and 25 EADs range from ~2030 to ~2032 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). The combined range spans from the standards-based assessment’s earlier estimate (~2030–2032) to the policy pipeline’s later horizon (~2030–2031).",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "Schüco, Reynaers, ALUMIL, WICONA all publish EN 15804+A2 EPDs — among strongest EPD coverage in CPR. Aluminium curtain walls benefit from 95% energy saving in recycling. Global facades market $298B (2025), curtain walls 45% of European facade value.",
+        "key_risks": "(1) 25 EADs to transition — largest EAD portfolio in CWP and 3rd largest overall. Transition critical given 9 Jan 2031 expiry. (2) CEN/TC 33 shared with DWS — resource contention risk. (3) Mixed AVCP across EADs creates different conformity assessment paths for DPP. (4) Single hEN (EN 13830) is the bottleneck — most products rely on EADs. (5) Post-Grenfell facade fire testing: EN 1364-4 gaps identified. Potential expanded fire propagation DPP data requirements.",
+        "sources_summary": "COM(2025) 772 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz [S143]; EOTA [S144]; EOTA transition guidance [S98]."
       }
     },
     {
@@ -10899,7 +10930,7 @@
       "family": "17",
       "priority": "",
       "tc": "CEN/TC 125",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "masonry.svg",
       "display_name": "Masonry Products",
       "family_label": "Annex VII #17 · MAS",
@@ -11137,7 +11168,10 @@
           "dpp_est": "~2031–2032",
           "dpp_route": "hEN",
           "revision": "CPR 2011",
-          "cited": true
+          "cited": true,
+          "content": {
+            "regulatory_history": "AVCP listed as '4' in MAS vs '2+, 4' in CMG. CMG entry likely more complete (AVCP varies by intended use per Decision 97/555/EC). Verification against OJ citation text recommended."
+          }
         },
         {
           "id": "EN 998-2",
@@ -11149,7 +11183,10 @@
           "dpp_route": "hEN",
           "revision": "CPR 2011",
           "cited": true,
-          "notes": "System 2+ for designed mortars, System 4 for prescribed mortars."
+          "notes": "System 2+ for designed mortars, System 4 for prescribed mortars.",
+          "content": {
+            "dpp_impact": "DPP estimate ~2031–2032 in MAS vs ~2032–2033 in CMG. Variance is intentional — reflects different SReq timelines for masonry vs mortar applications."
+          }
         },
         {
           "id": "EN 845-1",
@@ -11309,13 +11346,13 @@
       },
       "content": {
         "about": "Covers masonry units in clay, calcium silicate, aggregate concrete, and autoclaved aerated concrete, along with masonry mortars (EN 998-1/2), lintels, bed joint reinforcement, and ancillary components (EN 845 series). Key unit standards: EN 771 Parts 1–6. Standardisation is led by CEN/TC 125 (Masonry).",
-        "standards_landscape": "",
-        "standards_development": "",
+        "standards_landscape": "21 standards (9 hEN + 12 EAD). CEN/TC 125 (masonry). Covers clay bricks (EN 771-1), calcium silicate (EN 771-2), concrete blocks (EN 771-3), autoclaved aerated concrete (EN 771-4), natural stone (EN 771-6), mortars (EN 998 series), and ancillaries (EN 845 series).",
+        "standards_development": "No active prEN registrations found for MAS hENs under new CPR. EN 771 series and EN 998 series revision will follow SReq adoption.",
         "sreq_analysis": "Not yet adopted. Acquis sub-group established. Per COM(2025) 772 Table 3: Milestone I (product scope) ongoing, Milestone III (essential characteristics) targeted Q2 2026, standardisation request targeted Q1 2027. No standards delivery or mandatory adoption dates set yet. The EN 771 series and EN 998 series are expected to be revised under the future SReq. The future SReq will be issued under CPR 2024/3110.",
         "dpp_outlook": "The estimated DPP range is ~2031–2032, informed by two scenarios. Policy pipeline: With standardisation request targeted Q1 2027, the regulatory pathway points to DPP by ~2031–2032. Standards-based: Per-standard DPP estimates across 11 hENs and 10 EADs range from ~2031 to ~2032 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline.",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "Wienerberger leads EPD readiness (clay bricks). TBE (European brick body) requires cradle-to-grave EPDs. Concrete blocks, AAC, and calcium silicate lag. Wienerberger electric kiln at Uttendorf achieves 90% CO₂ reduction.",
+        "key_risks": "(1) Material diversity: 6 masonry material types with different EPD readiness. (2) EAD 170005 (recycled clay), EAD 170051 (compressed earth), EAD 170012 (cellular glass core) represent circular economy innovation but EADs expire 2031. (3) AAC market growing (CAGR 5.5%) but EPD infrastructure lags.",
+        "sources_summary": "COM(2025) 772 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz [S143]; EOTA [S144]; TBE masonry position; Wienerberger sustainability reports."
       }
     },
     {
