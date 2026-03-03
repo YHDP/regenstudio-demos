@@ -2666,7 +2666,7 @@
       "family": "34",
       "priority": "",
       "tc": "EOTA (EADs)",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "building-kits.svg",
       "display_name": "Building Kits & Prefab",
       "family_label": "Annex VII #34 · KAS",
@@ -3173,13 +3173,13 @@
       },
       "content": {
         "about": "Covers an exceptionally diverse range of construction kits and prefabricated elements, from timber building kits and prefabricated building units to structural sandwich panels, earthquake-resistant steel-concrete kits, falling rock protection systems, and fibre-reinforced polymer strengthening kits. This family also includes family 36 (attached ladders) under the CPR Working Plan. Uniquely, products are assessed exclusively through European Assessment Documents and European Technical Assessments, with no harmonised EN standards. Standardisation is managed by EOTA, with around 32 active EADs in this product area.",
-        "standards_landscape": "~32 active EADs cited in OJ under Commission Implementing Decision (EU) 2019/450 with amendments through (EU) 2025/1769 (3 Sep 2025). 66 new EADs published across all product areas in Nov 2025 + 9 in Jan 2026. EOTA Stakeholder Conference (5 Nov 2025): \"From Vision to Action: The New ETA Route\" discussed the transition framework. EADs under outgoing CPR can be used for issuing ETAs until 9 January 2031 (five years from entry into force). ETAs issued before that date remain valid for CE marking until 9 January 2036 (ten years from entry into force). New EADs must include environmental sustainability characteristics: GWP declaration immediately, core LCA-EPD indicators per EN 15804 by 2029, full indicator list by 2031. EADs now have 10-year validity with extension option. ETAs under the new CPR have no expiry date. Multiple entities (groups, associations, Commission) may now request ETAs — not just individual manufacturers.",
-        "standards_development": "",
+        "standards_landscape": "~32 active EADs cited in OJ under Commission Implementing Decision (EU) 2019/450 with amendments through (EU) 2025/1769 (3 Sep 2025). 66 new EADs published across all product areas in Nov 2025 + 9 in Jan 2026. EOTA Stakeholder Conference (5 Nov 2025): \"From Vision to Action: The New ETA Route\" discussed the transition framework. EADs under outgoing CPR can be used for issuing ETAs until 9 January 2031 (five years from entry into force). ETAs issued before that date remain valid for CE marking until 9 January 2036 (ten years from entry into force). New EADs must include environmental sustainability characteristics: GWP declaration immediately, core LCA-EPD indicators per EN 15804 by 2029, full indicator list by 2031. EADs now have 10-year validity with extension option. ETAs under the new CPR have no expiry date. Multiple entities (groups, associations, Commission) may now request ETAs — not just individual manufacturers. EAD 340033 (prefab chimney kits with flue liner) overlaps with the CHI family — cross-family data consistency should be verified. COM(2025) 772 lists PA 36 (attached ladders) under KAS — potential overlap with LAD family. Verify scope boundaries when SReq defined.",
+        "standards_development": "CEN/TC 88 (thermal insulation) and multiple component TCs involved. Kit standards require coordination across insulation, adhesive, mesh, render, and fixing standards — no single TC controls the full kit scope.",
         "sreq_analysis": "Not yet adopted. No acquis sub-group formally established. Per COM(2025) 772 Table 3: Milestone I targeted Q2 2026, Milestone III targeted Q2 2027, SReq targeted 2027. No standards delivery or mandatory dates set. May be divided into several workstreams given the diversity of products. Commission may request EADs for innovative kits.",
         "dpp_outlook": "The estimated DPP range is ~2032, informed by two scenarios. Policy pipeline: With standardisation request targeted 2027, the regulatory pathway points to DPP by ~2032. Standards-based: Per-standard DPP estimates across 32 EADs converge on ~2032. Both scenarios converge on the same timeline.",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "ETICS market €7.7B (2023) → €12.2B by 2031 (CAGR 5.9%). Prefab market €78B (2025) → €109.3B by 2030 (CAGR 7%). Combined KAS among the largest CPR families by market value. Renovation Wave is a major demand driver for ETICS.",
+        "key_risks": "(1) Kit/system DPP compound architecture: 3-layer data challenge (component → system → building level). EC feasibility study has limited kit-specific guidance. Most complex DPP challenge of any CPR family. (2) ETICS EPD gap: only ~15 ETICS EPDs vs 798 ETAs issued (50:1 gap). Kit LCA complexity (insulation + adhesive + mesh + render + fixings) makes EPD system boundaries particularly challenging. (3) EAD transition scale: 36 EADs expire 9 Jan 2031 — among the largest EAD portfolios requiring transition.",
+        "sources_summary": "COM(2025) 772 CPR Working Plan 2026–2029 [S30]; CPR 2024/3110 [S1]; EOTA EAD database [S144]; EAE (European Association for ETICS). EC DPP feasibility study."
       }
     },
     {
@@ -7624,6 +7624,10 @@
             "verified_at": "2026-03-02",
             "source": "EUR-Lex — Implementing Decision 2026/284",
             "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026D0284"
+          },
+          "content": {
+            "regulatory_history": "Harmonized via Implementing Decision (EU) 2026/284 (OJ 9 Feb 2026). Coexistence with EN 13240:2001 and EN 14785:2006 ends 9 Feb 2027. Part of the EN 16510 series replacing 5 legacy stove standards.",
+            "status_narrative": "Published 2025, OJ-cited Feb 2026. Covers roomheaters fired by wood pellets. Coexistence period with legacy standards until Feb 2027."
           }
         },
         {
@@ -7729,12 +7733,12 @@
       "content": {
         "about": "Covers space heating appliances and other heating and cooling appliances, including solid fuel burning residential stoves, roomheaters, cookers, slow heat release appliances, sauna stoves, solid fuel boilers, heat pumps, radiators, convectors, and underfloor heating systems. The scope is broader than the name suggests. Standardisation is led by CEN/TC 130 (Space heating appliances).",
         "standards_landscape": "SHA already has an adopted standardisation request — C(2021) 5359 (adopted 29 Jul 2021), amended Apr 2024 (Art. 12 notification 23 Apr 2024, feedback deadline 9 May 2024). Standards deadlines extended to 31 Dec 2024. Final CEN report due 1 Jun 2025. EN 16510 series is the main standard family. Alignment with Ecodesign Directive 2009/125/EC requirements (thresholds for CO, NOx, OGC, PM emissions; energy efficiency classes). This existing SReq is under old CPR 305/2011 — DPP does not apply to products under these standards (DoP, not DoPC).",
-        "standards_development": "",
+        "standards_development": "EN 16510 series (9 parts) took effect 9 Nov 2025, replacing 5 older standards (EN 13240, 13229, 12815, 12809, 14785). Manufacturers must re-test entire portfolios. EN 16510-2-7:2025 harmonized via Implementing Decision (EU) 2026/284 (OJ 9 Feb 2026) — coexistence with EN 13240:2001 and EN 14785:2006 ends 9 Feb 2027.",
         "sreq_analysis": "Table 3 milestones (M-I Q4 2026, M-III Q4 2027, SReq 2028) refer to a future new SReq under the new regulation. Acquis process not yet started. Part also regulated by ESPR — Ecodesign work aligned. DPP will only trigger once new HTS under CPR 2024/3110 replaces old harmonised standards.",
         "dpp_outlook": "The estimated DPP range is ~2032–2033, informed by two scenarios. Policy pipeline: With standardisation request targeted 2028, the regulatory pathway points to DPP by ~2032–2033. Standards-based: Per-standard DPP estimates across 10 hENs range from ~2032 to ~2033 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline.",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "Pellet stove market: Europe $430M (2025), 58.9% global share, Germany 28.3%. Biomass accounts for ~59% of EU renewable energy consumption — strategic context for SHA. SHA is one of the few families at the direct CPR/ESPR intersection.",
+        "key_risks": "(1) Triple regulation: CPR 2024/3110 + Ecodesign 2015/1185 revision + ESPR 2024/1781 create dual DPP obligation risk. EC identified CPR/Ecodesign discrepancies for solid fuel appliances — resolution pending. (2) CEFACD warns sector crisis: ~11,000 SMEs and 200,000 jobs at risk. No Notified Bodies in Europe notified for EN 16510 conformity assessment. July 2027 Ecodesign compliance date 'completely unrealistic.' European Parliament question E-000487/2025 raised. (3) Zero stove EPDs found under EN 15804 — industry focuses on Ecodesign energy labelling (A++ to G), not lifecycle environmental declarations. DPP GWP data requires entirely new LCA capability.",
+        "sources_summary": "COM(2025) 772 CPR Working Plan 2026–2029 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz hEN database [S143]. Implementing Decision (EU) 2026/284 (EN 16510-2-7 harmonization). CEFACD position papers. Ecodesign 2015/1185 revision consultation (Dec 2025)."
       }
     },
     {
@@ -10333,7 +10337,7 @@
       "family": "25",
       "priority": "",
       "tc": "CEN/TC 193",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "adhesives.svg",
       "display_name": "Construction Adhesives",
       "family_label": "Annex VII #25 · ADH",
@@ -10482,13 +10486,13 @@
       },
       "content": {
         "about": "Covers adhesives used in construction, including tile adhesives (EN 12004), gypsum-based adhesives for insulation (EN 12860), structural bonding adhesives, and floor covering adhesives. Standardisation is led by CEN/TC 193 (Adhesives), with contributions from CEN/TC 67 (ceramic tiles) and CEN/TC 241 (gypsum).",
-        "standards_landscape": "",
-        "standards_development": "",
+        "standards_landscape": "2 hENs (EN 12004-1, EN 12004-2) under CEN/TC 67. Current ADH scope covers only tile adhesives — a fraction of the €19.9B European adhesives/sealants market. Future SReq (2029) could expand to floor covering, structural bonding, and gypsum adhesives.",
+        "standards_development": "No active revisions of EN 12004 series under new CPR scope. Awaiting SReq (targeted 2029) which may significantly expand product scope beyond tile adhesives to include EN 12860 (gypsum adhesives), structural bonding, and floor covering adhesives.",
         "sreq_analysis": "Not yet adopted. No acquis sub-group formally established. Per COM(2025) 772 Table 3: Milestone I (product scope) targeted 2027, Milestone III (essential characteristics) targeted 2028, standardisation request targeted 2029. No standards delivery or mandatory adoption dates set yet. The future SReq will be issued under CPR 2024/3110.",
         "dpp_outlook": "The estimated DPP range is ~2030–2031, informed by two scenarios. Policy pipeline: With standardisation request targeted 2029, the regulatory pathway points to DPP by ~2030–2031. Standards-based: Per-standard DPP estimates across 2 hENs range from ~2030 to ~2031 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline.",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "FEICA Model EPDs (since 2016, updated 2022/2024 with IVK, Deutsche Bauchemie, EFCC): formulation-based, EN 15804+A2 verified, covering ~800 companies (90% SME). Sika has product-specific EPDs since 2012. ADH among the most DPP-ready families via collective FEICA approach. Deutsche Bauchemie: 140 members, €4.6B sales, active on CPR policy. content.about references EN 12860 (gypsum adhesives), structural bonding, and floor covering adhesives — none currently tracked in standards[]. Review scope alignment when M-I (2027) defines product scope. Global tile adhesive market $3.6B, flooring adhesive $5.6B. SReq scope expansion could significantly increase ADH's regulatory footprint.",
+        "key_risks": "(1) EN 12004-1 AVCP mismatch: ADH lists System 3, CMG lists System 3/4 — 6th cross-family AVCP discrepancy identified. Verify against Commission Decision for PA 25/26. (2) REACH diisocyanate restriction (Aug 2023): PU adhesives with >0.1% require mandatory user training. DPP must declare diisocyanate content and training requirements. Market shifting to non-PU alternatives. (3) CEN/TC 351 dangerous substances horizontal SReq affects adhesive formulations (VOCs, formaldehyde, isocyanates).",
+        "sources_summary": "COM(2025) 772 CPR Working Plan 2026–2029 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz hEN database [S143]. FEICA Model EPD programme. Deutsche Bauchemie CPR position papers."
       }
     },
     {
@@ -10497,7 +10501,7 @@
       "family": "32",
       "priority": "",
       "tc": "CEN/TC 349",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "sealants.svg",
       "display_name": "Sealants for Joints",
       "family_label": "Annex VII #32 · SEA",
@@ -10679,13 +10683,13 @@
       },
       "content": {
         "about": "Covers sealants used in building joints, including silicone, polyurethane, polysulphide, and acrylic formulations for glazing, facade, sanitary, and general construction applications. The key standard series is EN 15651 (Parts 1–5). Standardisation is led by CEN/TC 349 (Sealants for joints in building construction).",
-        "standards_landscape": "",
-        "standards_development": "",
+        "standards_landscape": "5 hENs (EN 15651 series parts 1–5) all within CEN/TC 349 — the cleanest single-TC family. No cross-family standards. Standards dated 2012–2017, no active revisions, awaiting SReq (2029).",
+        "standards_development": "No active revisions of EN 15651 series. CEN/TC 349 awaiting SReq (targeted 2029). All 5 hENs are mature standards with established test methods and industry familiarity.",
         "sreq_analysis": "Not yet adopted. No acquis sub-group formally established. Per COM(2025) 772 Table 3: Milestone I (product scope) targeted 2027, Milestone III (essential characteristics) targeted 2028, standardisation request targeted 2029. No standards delivery or mandatory adoption dates set yet. The future SReq will be issued under CPR 2024/3110.",
         "dpp_outlook": "The estimated DPP range is ~2030–2031, informed by two scenarios. Policy pipeline: With standardisation request targeted 2029, the regulatory pathway points to DPP by ~2030–2031. Standards-based: Per-standard DPP estimates across 5 hENs range from ~2030 to ~2031 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline.",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "FEICA Model EPD system: 21 published third-party verified EPDs per EN 15804+A2 for sealant formulations. Shared DPP infrastructure with ADH. Covers ~800 companies, 90% SME. European construction A&S market $4.78B (2024), CAGR 5.69%. Silicone largest share, MS polymer fastest-growing. Soudal is world's largest independent sealant manufacturer.",
+        "key_risks": "(1) VOC + REACH SVHC (isocyanates for PU, phthalates) + CEN/TC 351 dangerous substances = compound regulatory burden. DPP must declare VOC emission class, SVHC content, indoor air quality data. (2) Market material transition: MS polymer hybrids replacing traditional PU and silicone sealants — reformulated products may need new test data.",
+        "sources_summary": "COM(2025) 772 CPR Working Plan 2026–2029 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz hEN database [S143]. FEICA Model EPD programme."
       }
     },
     {
@@ -10694,7 +10698,7 @@
       "family": "35",
       "priority": "",
       "tc": "CEN/TC 127",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "fire-protection.svg",
       "display_name": "Fire Protection",
       "family_label": "Annex VII #35 · FPP",
@@ -10915,13 +10919,13 @@
       },
       "content": {
         "about": "Covers fire stopping and sealing products such as penetration seals and joint seals, reactive coatings, fire protective boards and mats, and fire retardant treatments. Key standard series include EN 13381 (fire protection to structural elements), EN 1366 (fire resistance of service installations), and EN 1634 (fire resistance of door/shutter assemblies), all under AVCP System 1. Standardisation is led by CEN/TC 127 (Fire safety in buildings).",
-        "standards_landscape": "",
-        "standards_development": "",
+        "standards_landscape": "FPP is an EAD-only family: no hENs. 6 EADs cover fire stopping (penetration seals, linear joint/gap seals), fire sealing (intumescent products), fire protective products (reactive coatings for structural steel), and fire retardant treatments. All based on former ETAGs 018 and 026. Over 800 ETAs have been issued. AVCP System 1 for all products. CEN/TC 127 develops fire test methods (EN 13381, EN 1366, EN 1634 series) but not product standards under CPR.",
+        "standards_development": "No harmonised product standards under development. CEN/TC 127 continues fire safety test method work (EN 13501 series). Product standardisation for fire stopping/sealing would be new territory — currently all market access is via EAD/ETA route.",
         "sreq_analysis": "Not yet adopted. No acquis sub-group formally established. Per COM(2025) 772 Table 3: Milestone I (product scope) targeted 2028, Milestone III (essential characteristics) targeted 2028, standardisation request targeted 2029. No standards delivery or mandatory adoption dates set yet. The future SReq will be issued under CPR 2024/3110.",
         "dpp_outlook": "The estimated DPP range is ~2030–2032, informed by two scenarios. Policy pipeline: With standardisation request targeted 2029, the regulatory pathway points to DPP by ~2030–2031. Standards-based: Per-standard DPP estimates across 6 EADs converge on ~2032. The combined range spans from the policy pipeline’s earlier estimate (~2030–2031) to the standards-based assessment’s later horizon (~2032).",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "Fire stopping market $1.7B (2024), CAGR 8.9%, Europe >30%. 800+ active ETAs confirmed by EOTA. FPP is the bellwether for EAD-only family transition under CPR 2024/3110 — lessons will inform FIX, KAS, and other EAD-heavy families. Split EPD readiness: intumescent coatings have EPDs (Nullifire SC802–804, Sherwin-Williams Firetex M71V2, Rudolf Hensel 410KS–421KS). Penetration seals and linear gap seals likely lack EPDs. Hilti BIM/digital infrastructure (Button for Firestop, Documentation Manager, NBS Source CFS-CT, CAD/BIM Typicals) demonstrates fire stopping products can be structured digitally — DPP data architecture groundwork from digital-ready manufacturers.",
+        "key_risks": "(1) Timeline gap: EADs expire 9 Jan 2031 but SReq not planned until 2029. Only ~2 years for the full SReq→development→citation cycle — typically 3–4 years. ETA backstop to 2036 mitigates but new ETA issuance stops in 2031. (2) EAD-only dependency: FPP has no hEN fallback. If hEN route doesn't materialise in time, products face a regulatory gap. (3) PFAS exposure: EU PFAS restriction may affect EAD 350865 (fire retardants). ECHA SEAC consultation spring 2026, final opinions end 2026. (4) Dual chemical reformulation pressure: PFAS + ECHA brominated flame retardant restriction (pending). Reformulated products may require new ETAs. (5) CEN/TC 127 develops test methods, not product standards — capacity for product standardisation under new CPR is untested.",
+        "sources_summary": "COM(2025) 772 CPR Working Plan 2026–2029 [S30]; CPR 2024/3110 [S1]; EOTA EAD database [S144]. ETAG 018/026: former guidelines used as EADs. Regulation (EU) 2025/1988 (PFAS)."
       }
     },
     {
@@ -12122,7 +12126,7 @@
       ],
       "standards_summary": {
         "completeness": "full",
-        "source": "COM(2025) 772 + EOTA PA 33. 0 hENs + EADs for post-installed fasteners."
+        "source": "COM(2025) 772 + EOTA PA 33. 0 hENs + 34 EADs for post-installed fasteners."
       },
       "convergence": {
         "product_timeline_complete": "~2032–2033",
@@ -12134,13 +12138,13 @@
       },
       "content": {
         "about": "Covers mechanical fasteners such as anchors, bolts, and screws, as well as chemical anchors, post-installed rebar connections, and channel bolt systems for fixing to concrete, masonry, and other substrates. This family is primarily covered through European Technical Assessments (ETAs) issued by EOTA.",
-        "standards_landscape": "",
-        "standards_development": "",
+        "standards_landscape": "EAD-only family: 0 hENs, 34 EADs for post-installed fasteners. 5,500+ ETAs issued — the largest ETA market segment. All under EOTA working area, primarily based on former ETAG 001. EAD 330031 (plastic anchors for ETICS) connects to KAS family — cross-family tracking needed for ETICS kit/fastener coordination.",
+        "standards_development": "No harmonised product standards under development. Product assessment is entirely via EAD/ETA route. EN 1992-4:2018 (Eurocode 2 Part 4) provides design rules that depend on ETA performance data. New CPR requires machine-readable EAD format for BIM/DPP integration.",
         "sreq_analysis": "According to the Commission Working Plan (Table 3), Milestone I (product scope) and Milestone III (essential characteristics) are both planned for 2028. No standardisation request date has been set yet. Since fixings rely primarily on the ETA route (EADs rather than hENs), the transition depends on how EOTA adapts its assessment documents to the new CPR framework.",
         "dpp_outlook": "The estimated DPP range is ~2032–2033, informed by two scenarios. Policy pipeline: Based on the Commission Working Plan, the regulatory pathway points to DPP by ~2032–2033. Standards-based: Per-standard DPP estimates across 34 EADs converge on ~2032. The combined range spans from the standards-based assessment’s earlier estimate (~2032) to the policy pipeline’s later horizon (~2032–2033).",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "EPD readiness highly concentrated: Hilti has ~300 product declarations including EPDs. Fischer and Würth have no visible EPD programmes. c-PCRs (complementary Product Category Rules) for fixings LCA under development. CBAM applies to imported steel fasteners from Jan 2026. New CPR requires machine-readable EAD format — enabling BIM and DPP data integration for the 5,500+ active ETAs.",
+        "key_risks": "(1) EAD transition bottleneck: ~400 EADs across all families vs ~25/yr EOTA publishing rate = 16 years needed vs 3-year window. Industry warns of 'innovation freeze' and return to national MS assessments. Systemic risk for all EAD-heavy families. (2) Seismic performance categories C1/C2 (ETAG 001 Annex E) are safety-critical DPP data fields — using C1 where C2 required = structural failure risk in earthquake zones.",
+        "sources_summary": "COM(2025) 772 CPR Working Plan 2026–2029 [S30]; CPR 2024/3110 [S1]; EOTA EAD database [S144]; EOTA transition guidance [S98]. CFE trade press (EAD bottleneck analysis). EN 1992-4 (Eurocode 2 Part 4)."
       }
     },
     {
