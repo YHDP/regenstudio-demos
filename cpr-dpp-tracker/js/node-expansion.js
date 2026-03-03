@@ -9,6 +9,14 @@
   var EAD_STAGE_LABELS = ['None', 'Legacy EAD', 'In development', 'Adopted', 'Art 75 DA', 'DPP'];
 
   var activeContainer = null;
+  var activeFamily = null;
+
+  function stdLink(stdId) {
+    var letter = activeFamily ? activeFamily.letter : '';
+    return '<a href="standard.html#std=' + encodeURIComponent(stdId) +
+      '&family=' + encodeURIComponent(letter) +
+      '" class="conv-expansion__std-link">' + esc(stdId) + '</a>';
+  }
 
   // ---------- PUBLIC API ----------
 
@@ -22,6 +30,7 @@
 
   window.showNodeExpansion = function (container, node, colKey, family) {
     hideExp();
+    activeFamily = family;
 
     var standards = family.standards || [];
     var matching = getStdsForPipeline(standards, colKey);
@@ -259,7 +268,7 @@
 
       // Header: ID + stage dots
       html += '<div class="conv-expansion__card-head">';
-      html += '<span class="conv-expansion__card-id">' + esc(s.id || 'Unknown') + '</span>';
+      html += '<span class="conv-expansion__card-id">' + (s.id ? stdLink(s.id) : 'Unknown') + '</span>';
       html += '<span class="conv-expansion__card-dots">' + buildStageDots(stage, maxDots) + ' <span class="conv-expansion__stage-label">' + esc(stgLabel) + '</span></span>';
       html += '</div>';
 
@@ -345,7 +354,7 @@
 
       html += '<div class="' + cls + '">';
       html += '<span class="conv-expansion__list-icon">' + cs.icon + '</span>';
-      html += '<span class="conv-expansion__list-id">' + esc(s.id || 'Unknown') + '</span>';
+      html += '<span class="conv-expansion__list-id">' + (s.id ? stdLink(s.id) : 'Unknown') + '</span>';
       html += '<span class="conv-expansion__list-name">' + esc(s.name || '') + '</span>';
       html += '<span class="conv-expansion__list-status">' + esc(cs.label) + '</span>';
 
@@ -412,7 +421,7 @@
 
       html += '<div class="' + itemCls + '">';
       html += '<span class="conv-expansion__list-icon">' + cs.icon + '</span>';
-      html += '<span class="conv-expansion__list-id">' + esc(s.id || 'Unknown') + '</span>';
+      html += '<span class="conv-expansion__list-id">' + (s.id ? stdLink(s.id) : 'Unknown') + '</span>';
       html += '<span class="conv-expansion__list-name">' + esc(s.name || '') + '</span>';
       html += '<span class="conv-expansion__list-status">' + esc(cs.label) + '</span>';
 
@@ -461,7 +470,7 @@
       var isCited = !!s.cited;
       html += '<div class="conv-expansion__list-item conv-expansion__list-item--legacy">';
       html += '<span class="conv-expansion__list-icon">' + (isCited ? '\u25d0' : '\u25cb') + '</span>';
-      html += '<span class="conv-expansion__list-id">' + esc(s.id || 'Unknown') + '</span>';
+      html += '<span class="conv-expansion__list-id">' + (s.id ? stdLink(s.id) : 'Unknown') + '</span>';
       html += '<span class="conv-expansion__list-name">' + esc(s.name || '') + '</span>';
       html += '<span class="conv-expansion__list-status">' + (isCited ? 'OJ cited (305/2011)' : 'Not cited') + '</span>';
       if (s.avcp) {
@@ -515,7 +524,7 @@
 
       html += '<div class="conv-expansion__list-item conv-expansion__list-item--legacy">';
       html += '<span class="conv-expansion__list-icon">\u25d0</span>';
-      html += '<span class="conv-expansion__list-id">' + esc(s.id || 'Unknown') + '</span>';
+      html += '<span class="conv-expansion__list-id">' + (s.id ? stdLink(s.id) : 'Unknown') + '</span>';
       html += '<span class="conv-expansion__list-name">' + esc(s.name || '') + '</span>';
       html += '<span class="conv-expansion__list-status">EAD ceases validity ' + esc(expires) + '</span>';
       html += '</div>';
@@ -572,7 +581,7 @@
 
       html += '<div class="' + cls + '">';
       html += '<span class="conv-expansion__list-icon">' + (hasNew ? '\u2713' : '\u25cb') + '</span>';
-      html += '<span class="conv-expansion__list-id">' + esc(s.id || 'Unknown') + '</span>';
+      html += '<span class="conv-expansion__list-id">' + (s.id ? stdLink(s.id) : 'Unknown') + '</span>';
       html += '<span class="conv-expansion__list-name">' + esc(s.name || '') + '</span>';
       html += '<span class="conv-expansion__list-status">' + (hasNew ? 'Replacement: ' + esc(s.new_ead) : 'No replacement') + '</span>';
       html += '</div>';
@@ -627,7 +636,7 @@
       var s = eads[i];
       html += '<div class="conv-expansion__list-item">';
       html += '<span class="conv-expansion__list-icon">\u25cb</span>';
-      html += '<span class="conv-expansion__list-id">' + esc(s.id || 'Unknown') + '</span>';
+      html += '<span class="conv-expansion__list-id">' + (s.id ? stdLink(s.id) : 'Unknown') + '</span>';
       html += '<span class="conv-expansion__list-name">' + esc(s.name || '') + '</span>';
       html += '<span class="conv-expansion__list-status">ETA valid until 9 Jan 2036</span>';
       html += '</div>';
@@ -651,6 +660,7 @@
 
   window.showConvergenceExpansion = function (container, family) {
     hideExp();
+    activeFamily = family;
 
     var standards = family.standards || [];
     if (standards.length === 0) {
@@ -727,7 +737,7 @@
 
         html += '<div class="' + cls + '">';
         html += '<span class="conv-expansion__list-icon">' + cs.icon + '</span>';
-        html += '<span class="conv-expansion__list-id">' + esc(s.id || '') + '</span>';
+        html += '<span class="conv-expansion__list-id">' + (s.id ? stdLink(s.id) : '') + '</span>';
         html += '<span class="conv-expansion__list-name">' + esc(s.name || '') + '</span>';
         html += '<span class="conv-expansion__list-status">' + esc(cs.label) + '</span>';
         html += '</div>';
@@ -761,7 +771,7 @@
 
         html += '<div class="' + eCls + '">';
         html += '<span class="conv-expansion__list-icon">' + eIcon + '</span>';
-        html += '<span class="conv-expansion__list-id">' + esc(e.id || '') + '</span>';
+        html += '<span class="conv-expansion__list-id">' + (e.id ? stdLink(e.id) : '') + '</span>';
         html += '<span class="conv-expansion__list-name">' + esc(e.name || '') + '</span>';
         html += '<span class="conv-expansion__list-status">' + esc(eLabel) + '</span>';
         html += '</div>';

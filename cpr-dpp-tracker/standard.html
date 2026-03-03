@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/convergence.css">
   <link rel="stylesheet" href="css/tracker.css">
   <link rel="stylesheet" href="css/standard.css">
+  <link rel="stylesheet" href="css/standard-search.css">
 </head>
 <body>
   <script>window.DEMO_GUARD = { demoId: 'cpr-dpp-tracker' };</script>
@@ -27,6 +28,11 @@
         <img src="../assets/images/logo-color.png" alt="Regen Studio" height="32">
       </a>
       <div class="tracker-nav__links">
+        <div class="std-search std-search--nav">
+          <svg class="std-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input class="std-search__input" type="text" placeholder="Search standards..." aria-label="Search standards">
+          <div class="std-search__dropdown" style="display:none;"></div>
+        </div>
         <a href="index.html" class="tracker-nav__link">Tracker</a>
         <a href="landing.html" class="tracker-nav__link">About</a>
         <a href="reports.html" class="tracker-nav__cta">Get the Report</a>
@@ -68,6 +74,7 @@
   </footer>
 
   <script src="js/content-renderer.js"></script>
+  <script src="js/standard-search.js"></script>
   <script src="js/standard-view.js"></script>
 </body>
 </html>
