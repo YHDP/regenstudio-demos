@@ -408,9 +408,8 @@
     // Content sections (expandable narrative)
     renderContentSections(convContentSections, fam);
 
-    // Standards detail — handled by expansion panels (NT-5, NT-7, NT-8, NT-C1/C2/C3)
-    // and convergence DPP node. Old renderStandards removed.
-    convStandards.style.display = 'none';
+    // Persistent standards grid — all standards as clickable cards
+    renderStandardsGrid(convStandards, fam);
 
     // Disclaimer
     convDisclaimer.innerHTML = '<p style="font-size:0.72rem;line-height:1.5;color:var(--color-text-secondary,#64748b);background:var(--color-bg-card,#f8fafc);border-left:3px solid var(--color-border,#e2e8f0);padding:10px 14px;border-radius:0 8px 8px 0;margin-top:14px;"><strong>Disclaimer:</strong> The CPR regulatory landscape is dynamic and at times opaque. The information shown is for informational purposes only and should not be considered legal advice.</p>';
@@ -620,6 +619,49 @@
     if (window.ContentRenderer) {
       window.ContentRenderer.attachToggleListeners(container, 'cpr-content');
     }
+  }
+
+  // ---------- STANDARDS GRID ----------
+
+  function renderStandardsGrid(container, fam) {
+    var stds = fam.standards || [];
+    if (stds.length === 0) {
+      container.style.display = 'none';
+      return;
+    }
+
+    var html = '<div class="conv-view__section-title">Standards (' + stds.length + ')</div>';
+    html += '<div class="std-grid">';
+
+    for (var i = 0; i < stds.length; i++) {
+      var s = stds[i];
+      var isEAD = (s.type || '').toUpperCase() === 'EAD';
+      var typeClass = isEAD ? 'std-grid__badge--ead' : 'std-grid__badge--hen';
+      var href = 'standard.html#std=' + encodeURIComponent(s.id) +
+        '&family=' + encodeURIComponent(fam.letter);
+
+      html += '<a href="' + href + '" class="std-grid__card">';
+      html += '<div class="std-grid__card-head">';
+      html += '<span class="std-grid__card-id">' + esc(s.id) + '</span>';
+      html += '<span class="std-grid__badge ' + typeClass + '">' + (isEAD ? 'EAD' : 'hEN') + '</span>';
+      html += '</div>';
+      if (s.name) {
+        html += '<div class="std-grid__card-name">' + esc(trunc(s.name, 60)) + '</div>';
+      }
+      if (s.dpp_est) {
+        html += '<div class="std-grid__card-dpp">DPP ' + esc(s.dpp_est) + '</div>';
+      }
+      html += '</a>';
+    }
+
+    html += '</div>';
+    container.innerHTML = html;
+    container.style.display = '';
+  }
+
+  function trunc(str, max) {
+    if (!str || str.length <= max) return str || '';
+    return str.substring(0, max - 1) + '\u2026';
   }
 
   // ---------- EVENTS ----------

@@ -906,6 +906,14 @@
   white-space: nowrap;
   min-width: 100px;
 }
+.conv-expansion__std-link {
+  color: var(--teal, #009BBB);
+  text-decoration: none;
+  font-weight: inherit;
+}
+.conv-expansion__std-link:hover {
+  text-decoration: underline;
+}
 .conv-expansion__list-name {
   color: #5A7080;
   font-size: 0.62rem;

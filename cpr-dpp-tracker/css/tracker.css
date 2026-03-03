@@ -1995,3 +1995,75 @@ body {
 
   .tracker-nav__link   { display: none; }
 }
+
+/* ── STANDARDS GRID (persistent in family view) ── */
+.std-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+.std-grid__card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s var(--ease), box-shadow 0.15s var(--ease);
+}
+.std-grid__card:hover {
+  border-color: var(--teal);
+  box-shadow: var(--shadow-md);
+}
+.std-grid__card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xs);
+  margin-bottom: 2px;
+}
+.std-grid__card-id {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--teal);
+}
+.std-grid__badge {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1px 5px;
+  border-radius: var(--radius-pill);
+}
+.std-grid__badge--hen {
+  background: var(--teal-light);
+  color: #0e7490;
+}
+.std-grid__badge--ead {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+.std-grid__card-name {
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+.std-grid__card-dpp {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: auto;
+}
+@media (max-width: 600px) {
+  .std-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 400px) {
+  .std-grid { grid-template-columns: 1fr; }
+}
