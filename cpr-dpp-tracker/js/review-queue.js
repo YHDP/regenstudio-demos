@@ -32,6 +32,21 @@
     'sreq': 'Standardisation Request Status'
   };
 
+  // Per-standard content field labels (used when target_level === 'standard')
+  var STD_CONTENT_LABELS = {
+    'content.description': 'Std Content: Description',
+    'content.status_narrative': 'Std Content: Current Status',
+    'content.regulatory_history': 'Std Content: Regulatory Context',
+    'content.dpp_impact': 'Std Content: DPP Impact',
+    'content.key_risks': 'Std Content: Key Risks',
+    'content.sources': 'Std Content: Sources'
+  };
+
+  var TARGET_LEVEL_LABELS = {
+    'family': 'Family',
+    'standard': 'Standard'
+  };
+
   var DPP_RANGE_LABELS = {
     'hen_count': 'Harmonised Standards Count',
     'ead_count': 'European Assessment Document Count',
@@ -1056,11 +1071,18 @@
         html += '<span class="rq-issue__family-tag">' + esc(f) + '</span>';
       });
     }
+    if (issue.target_level === 'standard' && issue.target_standard) {
+      html += '<span class="rq-issue__std-tag" title="Targets specific standard">' + esc(issue.target_standard) + '</span>';
+    }
     html += '<span class="rq-issue__chevron">\u25BC</span>';
     html += '</div>';
 
     // Body (collapsed by default)
     html += '<div class="rq-issue__body">';
+    if (issue.target_level === 'standard' && issue.target_field) {
+      var tfLabel = STD_CONTENT_LABELS[issue.target_field] || issue.target_field;
+      html += '<div class="rq-issue__target-info">Target: ' + esc(issue.target_standard || '?') + ' \u203A ' + esc(tfLabel) + '</div>';
+    }
     html += '<div class="rq-issue__description">' + esc(issue.description || '') + '</div>';
 
     if (issue.action_required) {
