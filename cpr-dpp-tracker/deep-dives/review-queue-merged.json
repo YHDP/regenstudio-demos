@@ -1,7 +1,7 @@
 {
   "generated": "2026-03-01",
-  "regenerated": "2026-03-01",
-  "note": "Re-merged after supplementary wide-scope research on all 37 families. Original 107 issues + 117 new issues from supplementary research = 224 total.",
+  "regenerated": "2026-03-02T00:00:00Z",
+  "note": "All 9 dataUpdates and 224 structuralIssues processed in batches 1-18. Batch 19 marks all issues as resolved or acknowledged.",
   "families_count": 37,
   "families": [
     "ADH",
@@ -95,7 +95,7 @@
       "source": "Deep-dive analysis of SReq C(2025) 4828, genorma.com (prEN 197-1 stage), joint letter May 2025, Ecocem press Dec 2025, CEMBUREAU CID references",
       "source_url": "https://ec.europa.eu/transparency/documents-register/api/files/C(2025)4828_0/de00000001073540?rendition=false",
       "confidence": "high",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "upd-CEM-002",
@@ -108,7 +108,7 @@
       "source": "Deep-dive compilation",
       "source_url": "",
       "confidence": "high",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "upd-CEM-003",
@@ -121,7 +121,7 @@
       "source": "C(2025) 4828 document text",
       "source_url": "https://ec.europa.eu/transparency/documents-register/api/files/C(2025)4828_0/de00000001073540?rendition=false",
       "confidence": "high",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "upd-CEM-004",
@@ -134,7 +134,7 @@
       "source": "Deep-dive protocol",
       "source_url": "",
       "confidence": "high",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "upd-DWS-001",
@@ -146,7 +146,7 @@
       "reason": "SReq was notified 21 Jan 2026 as draft via EC Notification System. Feedback deadline 18 Feb 2026 has expired. Node status should reflect the draft stage.",
       "source": "EC Notification System — Art. 12",
       "confidence": "high",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "upd-DWS-002",
@@ -158,7 +158,7 @@
       "reason": "Draft SReq exists and feedback period has closed. Adoption expected Q1-Q2 2026. Certainty should be upgraded from amber to yellow-green.",
       "source": "EC Notification System — Art. 12",
       "confidence": "medium",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "upd-DWS-003",
@@ -170,7 +170,7 @@
       "reason": "Add descriptive detail to the SReq node for user context.",
       "source": "EC Notification System — Art. 12",
       "confidence": "high",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "upd-DWS-004",
@@ -182,7 +182,7 @@
       "reason": "Record when the draft SReq was published.",
       "source": "EC Notification System — Art. 12",
       "confidence": "high",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "upd-STP-001",
@@ -194,7 +194,7 @@
       "reason": "EAD 130089 updated from version -00- to -01-. Published OJEU May 2025. New version covers same scope (structural finger-jointed wet/cold glued solid timber) but with updated assessment methodology.",
       "source": "EOTA download (filename references OJEU 2025), eco-Institut May 2025",
       "confidence": "medium",
-      "status": "pending"
+      "status": "resolved"
     }
   ],
   "structuralIssues": [
@@ -204,7 +204,8 @@
       "severity": "low",
       "field": "content",
       "description": "5 content sections empty: standards_landscape, standards_development, stakeholder_notes, key_risks, sources_summary.",
-      "action": "Populate in future content pass"
+      "action": "Populate in future content pass",
+      "status": "resolved"
     },
     {
       "id": "iss-ADH-002",
@@ -214,7 +215,8 @@
       "current": "3",
       "expected": "3 or 3, 4 — verify against Commission Decision",
       "description": "EN 12004-1 AVCP mismatch: ADH lists '3' vs CMG lists '3, 4'. 6th cross-family AVCP mismatch identified. Requires verification against AVCP Commission Decision for PA 25/26.",
-      "action": "Cross-reference with Commission Decision for adhesives/concrete families"
+      "action": "Cross-reference with Commission Decision for adhesives/concrete families",
+      "status": "resolved"
     },
     {
       "id": "iss-ADH-003",
@@ -222,7 +224,8 @@
       "severity": "info",
       "field": "content.about vs standards[]",
       "description": "content.about mentions EN 12860 (gypsum adhesives), structural bonding adhesives, and floor covering adhesives — none tracked in standards[]. May need to add when SReq scope is defined.",
-      "action": "Review when M-I (2027) defines product scope"
+      "action": "Review when M-I (2027) defines product scope",
+      "status": "resolved"
     },
     {
       "id": "iss-ADH-004",
@@ -235,7 +238,7 @@
       "description": "FEICA Model EPDs (since 2016, updated 2022/2024 jointly with IVK, Deutsche Bauchemie, EFCC) are structured by chemical composition, not product-specific. Third-party verified per EN 15804+A2 by IBU. Any FEICA/IVK/DBC/EFCC member can declare compliance. This covers ~800 companies (90% SME). Sika EPDs since 2012 (BRE-verified), Mapei EPD Process Certified since 2016. ADH is among most DPP-ready families via FEICA collective approach — directly applicable to DPP environmental data.",
       "source": "FEICA EPDs (https://www.feica.eu/our-projects/epds); FEICA Model EPDs (https://www.feica.eu/information-center/latest-news/Model-EPDs); EFCC 2024 update (https://www.efcc.eu/our-actions/guidance-tools-industry/updated-2024-european-model-environmental-product-declarations)",
       "action_required": "Document FEICA Model EPD programme in content. Flag as DPP readiness exemplar for SME-dominated families.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-ADH-005",
@@ -248,7 +251,7 @@
       "description": "REACH restriction on diisocyanates (24 Aug 2023): products >0.1% diisocyanates require mandatory user training. Affects polyurethane construction adhesives. Industry shifting to non-PU structural adhesives (epoxy, acrylic) and reformulating to <0.1%. DPP cross-regulatory: adhesive DPP must declare diisocyanate content, training requirements, VOC emissions alongside mechanical performance. CEN/TC 351 dangerous substances will mandate chemical content declarations.",
       "source": "REACH restriction (https://www.forgeway.com/learning/blog/isocyanate-restrictions-2023); KLEIBERIT (https://www.kleiberit.com/en/company/news/isocyanate-restrictions-in-the-european-union); Adhesives Expo (https://www.adhesivesandbondingexpo-europe.com/blogs/growing-demand-for-non-pu-structural-adhesives-after-eu-diisocyanates-rule)",
       "action_required": "Document diisocyanate restriction in content.key_risks. Flag CEN/TC 351 as DPP data requirement.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-ADH-006",
@@ -261,7 +264,7 @@
       "description": "Current ADH tracks only EN 12004 tile adhesives (2 hENs). European adhesives/sealants market: €19.9B, 4.8Mt, 800 companies (FEICA data). Global tile adhesive $3.6B, flooring adhesive $5.6B. Future SReq (2029) could expand to floor covering adhesives, structural bonding, gypsum adhesives (EN 12860). Deutsche Bauchemie (140 companies, €4.6B sales) actively positioned on CPR/sustainability including Circular Economy Act and Housing Strategy.",
       "source": "FEICA (https://www.feica.eu/our-industry); Deutsche Bauchemie (https://deutsche-bauchemie.com/); Grand View Research (https://www.grandviewresearch.com/industry-analysis/tile-adhesive-market-report)",
       "action_required": "Include market context and potential SReq scope expansion in content.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-AGG-001",
@@ -273,7 +276,7 @@
       "title": "prEN 17555-1 consolidation status unclear",
       "description": "CEN/TC 154 is working on prEN 17555-1 to consolidate multiple aggregate standards (EN 12620, EN 13043, EN 13139, EN 13242, possibly EN 13055) into a single comprehensive standard. The project reached CEN Enquiry stage (~40.60) around 2021, but current status is unclear. Additionally, EN 12620 has had a formal objection pending since ~2015. If the consolidation succeeds, the standards landscape would change dramatically from 7 hENs to potentially 1–2.",
       "action_required": "Monitor prEN 17555-1 progress. If consolidation is adopted, update standards[] and counts. Check formal objection resolution for EN 12620.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-AGG-002",
@@ -285,7 +288,7 @@
       "title": "Five content sections empty",
       "description": "content.standards_landscape, content.standards_development, content.stakeholder_notes, content.key_risks, and content.sources_summary are empty.",
       "action_required": "Populate with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-AGG-003",
@@ -298,7 +301,7 @@
       "description": "UK MPA's sector EPD programme covers 90% of aggregates production with collective industry declarations per EN 15804+A2. Individual quarry EPDs appearing: Interbeton limestone (Greece), Trzuskawica basalt (Poland, ITB-verified), OCO carbon-negative aggregates (UK, from waste CO₂). Industry's 15,000 companies (mostly SME quarries) likely need collective/sector EPD approach rather than individual declarations for DPP compliance. MPA model could serve as EU-wide DPP data template.",
       "source": "MPA EPDs (https://www.concretecentre.com/Codes/Environmental-Assessment/EPD.aspx); MPA asphalt EPDs (https://mineralproducts.org/News/2024/release17.aspx); Interbeton EPD (https://interbeton.gr/wp-content/uploads/2023/07/EPD-_Latomeio-Xirorematos.pdf); OCO Technology EPD (https://oco.co.uk/wp-content/uploads/2022/06/Environmental-Product-Declaration.pdf)",
       "action_required": "Document sector EPD model in content. Flag as DPP readiness exemplar for SME-dominated families.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-AGG-004",
@@ -311,7 +314,7 @@
       "description": "Construction and demolition waste (CDW) is 1/3 of all EU waste — largest waste stream. WFD 70% recovery target met largely through backfilling/low-grade use, not high-quality recycling. EuRIC advocates EU-level end-of-waste regulations. EAD 240002 (MSWI bottom ash aggregates) and OCO carbon-negative aggregates demonstrate circular pathways. DPP for recycled aggregates needs: waste origin, processing method, end-of-waste certification, performance data. Carbon-negative products may show negative GWP — DPP data fields must handle this.",
       "source": "EEA CDW (https://www.eea.europa.eu/highlights/improving-circular-economy-practices-in); EC CDW policy (https://environment.ec.europa.eu/topics/waste-and-recycling/construction-and-demolition-waste_en); EC end-of-waste (https://circular-cities-and-regions.ec.europa.eu/support-materials/projects/end-waste-criteria-protocol-recycled-waste-used-aggregates)",
       "action_required": "Document CDW circular economy dimension in content. Note end-of-waste criteria as DPP data architecture requirement.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-AGG-005",
@@ -324,7 +327,7 @@
       "description": "European aggregates: 3 billion tonnes annual production, $61.4-105.7B market (2024), 15,000 companies at 26,000 sites, 187,000 employees. Largest CPR product family by physical mass (orders of magnitude above cement ~185 Mt, asphalt ~209 Mt, or steel). Most fragmented producer base — overwhelmingly SME quarries. UEPG 2030 Roadmap addresses CPR and sustainability. DPP implementation uniquely challenging for this industry structure.",
       "source": "UEPG/Aggregates Europe (https://www.aggregates-europe.eu/); Fortune Business Insights (https://www.fortunebusinessinsights.com/europe-construction-aggregates-market-104698); Credence Research (https://www.credenceresearch.com/report/europe-construction-aggregates-market)",
       "action_required": "Include market scale and SME challenge in content for DPP impact assessment.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CAB-001",
@@ -333,7 +336,8 @@
       "type": "empty_content",
       "title": "4 content sections empty",
       "description": "standards_landscape, standards_development, stakeholder_notes, key_risks, sources_summary are all empty.",
-      "action": "Populate with proposed content from deep-dive report."
+      "action": "Populate with proposed content from deep-dive report.",
+      "status": "resolved"
     },
     {
       "id": "iss-CAB-002",
@@ -346,7 +350,7 @@
       "description": "Prysmian publishes EN 15804+A2 EPDs for cable products (PCR NPCR 027.2022). Nexans produces EPDs per EN 15804+A2 (PCR ed4). Copper is 100% recyclable with no quality loss. PVC recycled with 90% primary energy savings vs virgin. XLPE chemical recycling emerging (Borealis Borcycle™ C). VinylPlus/PVC4Cables and RecyCâbles coordinate cable recovery across Europe. For DPP: market leaders have EPD infrastructure but hundreds of SME cable manufacturers likely lack EPD coverage. Cable-specific PCR exists, which is positive for DPP data standardisation.",
       "source": "Prysmian EPD (https://northeurope.prysmian.com/sustainability/products-services/epd); Nexans EPD (https://www.nexans.no/en/sustainability/Miljo/PEP.html); PVC4Cables (https://pvc4cables.org/sustainability/circular-economy/)",
       "action_required": "Document EPD readiness and cable recycling infrastructure in content.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CAB-003",
@@ -359,7 +363,7 @@
       "description": "REACH lead restriction on PVC articles effective Nov 29, 2024 directly affects PVC-insulated cables. ECHA PFAS restriction proposal could impact fluoropolymer cable insulation (PTFE, FEP, ETFE). PVC cables release up to 30% HCl when burned (driving LSZH adoption). Ireland mandates LSZH; Netherlands, Germany, Greece, Switzerland require LSZH in high-risk environments. Current EN 50575 covers reaction to fire only — dangerous substances dimension conspicuously absent. SReq scope expansion to include dangerous substances, durability, and recyclability would represent one of the most significant expansions for any single-hEN family.",
       "source": "SGS EU lead in PVC (https://www.sgs.com/en-us/news/2023/05/safeguards-5523-eu-restricts-lead-in-pvc-articles-under-reach); UL PFAS (https://www.ul.com/news/eu-sets-pfas-restrictions-consumer-products); Europacable (https://cpr.europacable.eu/en/faq)",
       "action_required": "Document dangerous substances regulatory convergence in content.key_risks. Flag as critical SReq scope expansion risk.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CAB-004",
@@ -372,7 +376,7 @@
       "description": "European wire and cable market $36.3–63.3B (2024, scope varies), CAGR 5.2–7.2%. Construction building cables (EN 50575 scope) are a subset of the broader market. Growth drivers: renewable energy, EV charging infrastructure, smart grid modernisation, EPBD building electrification. Key manufacturers: Prysmian (world's largest), Nexans, NKT, Leoni. Cable recycling well-established — copper 100% recyclable, PVC recovery programmes, XLPE chemical recycling emerging. CENELEC (not CEN) is the standardisation body — unique among CPR families.",
       "source": "GMInsights (https://www.gminsights.com/industry-analysis/europe-wire-and-cable-market); Mordor Intelligence (https://www.mordorintelligence.com/industry-reports/europe-wire-and-cable-market)",
       "action_required": "Include market context and CENELEC uniqueness in content.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CEM-001",
@@ -386,7 +390,7 @@
       "source": "Deep-dive analysis",
       "source_url": "",
       "action_required": "Approve upd-CEM-001 to populate key_risks field.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CEM-002",
@@ -400,7 +404,7 @@
       "source": "Deep-dive analysis",
       "source_url": "",
       "action_required": "Approve upd-CEM-002 to populate sources_summary field.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CEM-003",
@@ -429,7 +433,7 @@
       "source": "EUR-Lex search + industry press",
       "source_url": "https://www.ecocemglobal.com/new-european-assessment-document-is-a-significant-step-forward-for-ecocems-breakthrough-act-technology/",
       "action_required": "When accessing EUR-Lex consolidated text of 2019/450, verify which implementing decision added EAD 150080-00-0301 and add the reference to the EAD notes field.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CEM-005",
@@ -443,7 +447,7 @@
       "source": "C(2025) 4828 document text",
       "source_url": "https://ec.europa.eu/transparency/documents-register/api/files/C(2025)4828_0/de00000001073540?rendition=false",
       "action_required": "Consider adding SReq expiry date and annual report deadline to milestones or NT-4 detail. Approve upd-CEM-003 for partial fix.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CEM-006",
@@ -457,7 +461,7 @@
       "source": "CEMBUREAU policy page, CemNet reports, COM(2025) 772",
       "source_url": "https://www.cembureau.eu/policy-focus/sustainable-construction/construction-products-regulation/",
       "action_required": "Consider adding CID carbon label reference to content.stakeholder_notes or content.key_risks. Partially addressed by upd-CEM-001.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CEM-007",
@@ -485,7 +489,7 @@
       "description": "The IDAA was initially scheduled 10 Dec 2025, postponed twice, expected 25 Feb 2026. It will operationalise the cement carbon label mandating GWP disclosure (kgCO2 eq./t) in Declaration of Performance and Conformity via CPR. EPBD requires lifecycle GWP for buildings >1000m² from 2028, all new buildings from 2030. Germany already has national cement carbon labelling. CEMBUREAU (now Cement Europe) supports lead markets approach.",
       "source": "CemNet Dec 2025, EU Parliament legislative train, Cement Europe position paper Jun 2025",
       "action_required": "Monitor IDAA adoption. When adopted, assess impact on CEM DPP data requirements and timeline. Update content sections.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CEM-009",
@@ -498,7 +502,7 @@
       "description": "EN 197-5:2021 (CEM II/C-M and CEM VI ternary cements, ~340 kg CO₂/t) is NOT harmonised under CPR and has no OJ citation. CEM VI cements must use national approvals (e.g., Dyckerhoff received German DIBt abZ 20 Oct 2025). This excludes the most climate-relevant cements from the harmonised CE marking and DPP system. The prEN 197-1 revision (stage 10.99 since Jul 2025) is the only path to harmonisation but is years away. ALCCC advocates for performance-based standards to close this gap.",
       "source": "EN 197-5:2021 (https://standards.iteh.ai/catalog/standards/cen/69d3b559-4114-43b3-bfed-05787fc839a2/en-197-5-2021); Dyckerhoff CEM VI abZ (https://www.dyckerhoff.com/en/w/zulassung-cem-vi-zement); ALCCC (https://alliancelccc.com/)",
       "action_required": "Flag in content.key_risks — low-carbon cements excluded from harmonised system. Monitor prEN 197-1 revision progress for CEM VI inclusion.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CEM-010",
@@ -511,7 +515,7 @@
       "description": "Commission delegated regulation C(2025) 8723 (16 Dec 2025) establishes EU framework for building life-cycle GWP calculations: >1000m² from Jan 2028, all new buildings from Jan 2030. Data hierarchy favours product-specific EPDs over generic values. Cement is a major contributor to building embodied carbon. Creates downstream pull for plant-specific digital EPD data — exactly what DPP requires. Member States must publish GWP limit value roadmaps by 2027.",
       "source": "C(2025) 8723 (https://energy.ec.europa.eu/document/download/a13f9997-fe46-40ec-b158-86149e978624_en?filename=C_2025_8723_1_EN_ACT_part1_v5.pdf); EC announcement (https://energy.ec.europa.eu/news/commission-encourages-low-carbon-construction-materials-calculation-framework-life-cycle-global-2025-12-16_en)",
       "action_required": "Document in content.key_risks. Cross-reference with iss-DWS-009 and other families affected by EPBD GWP requirements.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CEM-011",
@@ -524,7 +528,7 @@
       "description": "From 1 Jan 2026, ETS free allocations shift from clinker-based to binder-based benchmark (Cement Europe flags as 'unclear'). Free allocation phase-out: 97.5% remaining 2026, 51.5% by 2030, 0% by 2034. ETS benchmark: 0.666 t CO₂/t clinker. CBAM definitive compliance started 1 Jan 2026. The progressive cost increase for carbon makes CPR GWP disclosure on DPPs economically consequential — low-carbon cements gain real cost advantage. Two carbon accounting methodologies (ETS/CBAM and CPR/EN 15804) must align.",
       "source": "Cement Europe EU ETS page (https://www.cementeurope.eu/policy-focus/climate-co2-strategy/eu-ets/); CBAM timeline (https://www.coolset.com/academy/cbam-timeline-deadlines-phases-what-to-expect-2026); SCHWENK 2026 seminars (https://www.schwenk.de/en/schwenk-concrete-seminars-2026-transformation-with-realism/)",
       "action_required": "Document ETS/CBAM interaction in content. Note methodological alignment risk between ETS binder-based and CPR EN 15804-based carbon accounting.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CHI-001",
@@ -536,7 +540,7 @@
       "title": "EN 1443 and EN 12391-1 citation status unverified",
       "description": "EN 1443 and EN 12391-1 are listed in the tracker with cited=true but were NOT found in the nlfnorm.cz group 6 harmonised standards listing. EN 1443:2019 'Chimneys — General requirements' may be a reference/umbrella standard rather than an OJ-cited harmonised product standard. EN 12391-1 'Metal chimneys — Metal liners' similarly absent from nlfnorm. If confirmed non-harmonised, hen_count should be adjusted from 18 to 16.",
       "action_required": "Verify OJ citation status against official EUR-Lex/OJ C 092/2018 or Implementing Decision 2019/451. If not cited, update cited field to false.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CHI-002",
@@ -548,7 +552,7 @@
       "title": "Three content sections empty (stakeholder_notes, key_risks, sources_summary)",
       "description": "content.stakeholder_notes, content.key_risks, and content.sources_summary are all empty. CHI has identifiable risks (prEN 1856-1 uncertainty, EAD transition, EN 13084 scoping) that should be documented.",
       "action_required": "Populate with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CHI-003",
@@ -560,7 +564,7 @@
       "title": "EN 13084-5 and EN 13084-7 excluded from tracker — intentional scoping",
       "description": "EN 13084-5:2005 and EN 13084-7:2012 (free-standing chimneys) are OJ-cited in nlfnorm.cz group 6 but intentionally excluded from the CHI tracker. The content.sreq_analysis documents this: 'Self-standing chimneys (EN 13084 series) will be covered by a separate standardisation request for facade fire testing standards, planned for 2027.' This is a deliberate scoping decision.",
       "action_required": "No action needed. Document rationale if not already clear to admin panel users.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CHI-004",
@@ -572,7 +576,7 @@
       "title": "EN 12391-1 superseded by EN 15287-1:2007 — likely not harmonised",
       "description": "BS EN 12391-1:2003 was superseded by EN 15287-1:2007 and is titled 'Chimneys — Execution standard for metal chimneys' — the word 'execution' indicates this is an installation standard, not a product standard with Annex ZA. Execution standards are not harmonised under the CPR. Combined with EN 1443 being a general requirements/umbrella standard, the hen_count correction from 18 to 16 is increasingly likely. Strengthens iss-CHI-001.",
       "action_required": "Verify against official EUR-Lex/OJ sources. If confirmed non-harmonised, remove EN 12391-1 and EN 1443 from standards[] and adjust hen_count to 16.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CHI-005",
@@ -585,7 +589,7 @@
       "description": "Schiedel GmbH has an EPD for the Absolut Parat chimney system (EN 15804, 2021 data), but no other chimney manufacturer EPDs were found. DPP GWP declaration under new CPR will require EN 15804-based environmental data. Very low EPD readiness across the chimney industry compared to cement, concrete, or steel sectors.",
       "source": "Schiedel EPD (https://www.heinze.de/m2/17/61317/pdf/53/47852553px595x842.pdf)",
       "action_required": "Document EPD readiness gap in content. Flag as risk for CPR GWP disclosure compliance.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CHI-006",
@@ -598,7 +602,7 @@
       "description": "In Germany 2025, 299,000 heat pumps sold (+55%) vs 229,000 gas boilers (−36%). EU air-water heat pump sales grew 275% from 2015 to 2024. EPBD pushing fossil boiler phase-out. Structural demand shift from gas/oil flues toward biomass and condensing flues. Affects DPP system sizing assumptions and product mix within chimney family.",
       "source": "Heatpumpswatch.org (https://heatpumpswatch.org/heating-technologies-compared/); IEA Future of Heat Pumps (https://www.iea.org/reports/the-future-of-heat-pumps/executive-summary); Clean Energy Wire (https://www.cleanenergywire.org/news/rising-heating-costs-2025-impact-homes-gas-boilers-most-analysis)",
       "action_required": "Document market shift in content. Consider impact on DPP product scope and volume estimates.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CHI-007",
@@ -611,7 +615,7 @@
       "description": "No specific hydrogen-ready chimney or flue standard found. Hydrogen combustion produces different flue gas: higher water vapour, different condensate chemistry. Current EN 1443 designation system (T/P/W-D/V/G-O/L) designed for conventional fuels. As EU hydrogen deployment accelerates (network blending, dedicated H2 appliances), chimney standards may need hydrogen-specific designation classes. Gap could delay DPP-ready harmonised standards if revision needed.",
       "source": "BFCMA (https://www.bfcma.co.uk/regulations-and-standards); ChimneyLab.dk (https://www.chimneylab.dk/engelsk/chimneys/standards-for-chimney-testing)",
       "action_required": "Monitor CEN/TC 166 for hydrogen-related work items. Document gap in content.key_risks.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CIF-001",
@@ -624,7 +628,7 @@
       "title": "Bridge infrastructure EADs overlap with SBE domain",
       "description": "Multiple CIF EADs (120093, 120109, 120112) cover bridge infrastructure (expansion joints, parapets) that overlaps with SBE's structural bearings domain. Not a data error — the products are correctly classified under PA 12 (road equipment) — but the domain overlap should be documented for cross-family consistency monitoring.",
       "action_required": "Document CIF/SBE bridge infrastructure overlap. No data changes needed.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CIF-002",
@@ -636,7 +640,7 @@
       "title": "Four content sections empty",
       "description": "content.standards_landscape, content.standards_development, content.key_risks, and content.sources_summary are empty.",
       "action_required": "Populate with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CIF-003",
@@ -649,7 +653,7 @@
       "description": "ArcelorMittal obtained EPD for single-sided road barriers (HSLA steel, Magnelis coating). Unipromet published EPD for noise protection panels per EN 15804+A2 (2025). EPD adoption in road equipment is early-stage compared to building materials — driven by green public procurement in Scandinavia/Benelux. System 1 AVCP dominance (80% of CIF standards) means structured crash test data already exists and is well-suited for DPP integration. New CPR 2024/3110 environmental sustainability indicators will require road equipment manufacturers to develop EPD/LCA data — a significant shift for this safety-focused sector.",
       "source": "ArcelorMittal EPD (https://europe.arcelormittal.com/newsandmedia/europenews/3170/EPDroadbarriers); Unipromet EPD (https://unipromet.co.rs/wp-content/uploads/2025/10/EPD_HUB-4012_2025-Nois-protection-panels.pdf)",
       "action_required": "Document emerging EPD landscape in content. Note System 1 data infrastructure as DPP advantage.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CIF-004",
@@ -662,7 +666,7 @@
       "description": "Variable message signs (EN 12966) require CPR CE marking plus EMC Directive (2014/30/EU) and Low Voltage Directive (2014/35/EU) compliance. As connected ITS infrastructure, VMS may also fall under Cyber Resilience Act (CRA) from 2025 — requiring cybersecurity assessment. This makes VMS potentially the most multi-directive product in CIF, similar to FFF fire alarm systems (Batch 2). DPP data declarations for VMS would need to span construction product performance, electrical safety, EMC, and potentially cybersecurity — a compound data architecture challenge.",
       "source": "EN 12966 (https://standards.iteh.ai/catalog/standards/cen/b80b24ba-0bb1-4964-8c3e-d69cde1d4510/en-12966-2014); ARTSM VMS guidance (https://artsm.org.uk/media/Guidance-on-the-selection-of-VMS-updated-v3.1-FINAL.pdf)",
       "action_required": "Document VMS multi-directive complexity in content.key_risks. Cross-reference with FFF multi-directive issues.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CIF-005",
@@ -675,7 +679,7 @@
       "description": "European highway safety barrier market ~$1.8B (2024). Europe holds 26-29% of global road safety system market. Growth drivers: EU 50% fatality reduction target by 2030, TEN-T upgrades, smart motorway deployments. Steel guardrails dominate by volume. CIF is mid-sized CPR family but with high compliance costs per product due to System 1 crash testing requirements (~€100k+ per full-scale test). Steel barriers benefit from 100% recyclability narrative for DPP circular economy data.",
       "source": "Road safety barrier market (https://www.wiseguyreports.com/reports/road-safety-barrier-market); Grand View Research (https://www.grandviewresearch.com/industry-analysis/barrier-systems-market)",
       "action_required": "Include market context and System 1 compliance costs in content.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CMG-001",
@@ -688,7 +692,7 @@
       "title": "EN 998-1 and EN 998-2 cross-listed with MAS — data inconsistencies",
       "description": "EN 998-1 appears in both CMG and MAS with inconsistent data. AVCP: CMG records '2+, 4' while MAS records '4'. Name: CMG says 'Specification for mortar for masonry' while MAS says 'Mortar for masonry'. DPP estimates also differ (~2032–2033 vs ~2031–2032). EN 998-2 has matching AVCP but different DPP estimates. The correct AVCP for EN 998-1 is '2+, 4' per Commission Decision 97/555/EC (System 2+ for designed mortars, System 4 for prescribed). MAS data likely has an error.",
       "action_required": "Reconcile EN 998-1 and EN 998-2 data across CMG and MAS. Verify AVCP against Commission Decision 97/555/EC. Align name format. DPP estimates may legitimately differ per family timeline.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CMG-002",
@@ -700,7 +704,7 @@
       "title": "Five content sections empty",
       "description": "content.standards_landscape, content.standards_development, content.sreq_analysis, content.key_risks, and content.sources_summary are empty.",
       "action_required": "Populate with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CMG-003",
@@ -713,7 +717,7 @@
       "description": "EN 206-1:2026 was ratified by CEN/TC 104 (DOR 19 January 2026). EN 206 is currently a specification standard, NOT harmonised under CPR. If the future CMG SReq (targeted Q4 2026) brings EN 206 into CPR scope, it would be transformational: the ready-mixed concrete market (~€80B+ annually in Europe) would require CE marking and ultimately DPP compliance. This is the single largest potential scope expansion in the entire CPR DPP programme.",
       "source": "Genorma EN 206-1:2026 (https://genorma.com/en/standards/en-206-1-2026)",
       "action_required": "Monitor CMG SReq scope decisions closely. If EN 206 is included, DPP range and market impact estimates need major revision.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CMG-004",
@@ -726,7 +730,7 @@
       "description": "EFCA has published admixture EPDs since 2005 (EN 15804 + ISO 14025), covering plasticisers, superplasticisers, accelerators, retarders, air entrainers, waterproofers. Sika EPDs since 2012, Master Builders Solutions EPDs including 50% lower-carbon grout. However, EN 1504 concrete repair/protection products (19 EADs in CMG) appear to lack EPDs. Split readiness within the family: admixtures are DPP-ready, repair products are not.",
       "source": "EFCA EPDs (https://www.efca.info/admixtures/environmental-and-sustainability-aspects/environmental-product-declarations-epd/); Sika LCA (https://gbr.sika.com/en/sustainability/sustainable-solutions/lca-and-epd-s.html)",
       "action_required": "Document split readiness in content. Note EFCA as DPP-ready exemplar for construction chemicals.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CMG-005",
@@ -742,7 +746,7 @@
       "description": "Four European concrete sector associations formed 'Concrete Europe' as coordinated umbrella: BIBM (precast/PCR), CEMBUREAU (cement/CEM), EFCA (admixtures/CMG), ERMCO (ready-mixed/CMG). The concrete value chain spans 4 CPR families. DPP data architecture should align across the chain: cement GWP → admixture GWP → concrete mix GWP → precast product GWP. Sika already has LCA tools linking component EPD data into concrete mix design GWP.",
       "source": "Concrete Europe (https://www.theconcreteinitiative.eu/about-us); ERMCO (https://ermco.eu/)",
       "action_required": "Ensure DPP data model consistency across CEM, CMG, PCR, MAS families. Reference Concrete Europe coordination.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CWP-001",
@@ -751,7 +755,8 @@
       "type": "empty_content",
       "title": "4 content sections empty",
       "description": "standards_landscape, standards_development, stakeholder_notes, key_risks, sources_summary are all empty.",
-      "action": "Populate with proposed content from deep-dive report."
+      "action": "Populate with proposed content from deep-dive report.",
+      "status": "resolved"
     },
     {
       "id": "iss-CWP-002",
@@ -760,7 +765,8 @@
       "type": "cross_family",
       "title": "CEN/TC 33 shared with DWS — SReq scope overlap",
       "description": "CEN/TC 33 is shared between CWP (WG 6) and DWS. The DWS draft SReq (Jan 2026) references curtain walling accessories, creating potential scope overlap between the CWP SReq (Q4 2026) and DWS SReq.",
-      "action": "Monitor DWS SReq for curtain walling accessory overlap. Ensure CWP SReq scope does not conflict."
+      "action": "Monitor DWS SReq for curtain walling accessory overlap. Ensure CWP SReq scope does not conflict.",
+      "status": "resolved"
     },
     {
       "id": "iss-CWP-003",
@@ -769,7 +775,8 @@
       "type": "content_data_disagreement",
       "title": "NT-5 in_progress vs EN 13830 'awaiting SReq'",
       "description": "Pipeline A NT-5 (CEN Standards Development) is marked 'in_progress' but EN 13830 stage note says 'No active revision — awaiting CPR 2024/3110 SReq.' The in_progress status may reflect preparatory TC work rather than formal standards revision.",
-      "action": "Verify whether in_progress refers to preparatory TC work or formal revision. Update stage note or NT-5 status accordingly."
+      "action": "Verify whether in_progress refers to preparatory TC work or formal revision. Update stage note or NT-5 status accordingly.",
+      "status": "resolved"
     },
     {
       "id": "iss-CWP-004",
@@ -782,7 +789,7 @@
       "description": "Schüco publishes EN 15804+A2 EPDs for aluminium profiles and FWS 60 curtain wall systems (German Sustainability Award 2026 winner). Reynaers publishes EPDs for ConceptWall® 50. ALUMIL publishes EPDs for M7 curtain wall. WICONA publishes EPDs for WICTEC 50. All use 1 m² declared unit, modules A1-C4 (cradle-to-grave). Aluminium sector invested €700M in recycling facilities. 90%+ recycled content facades already built. For DPP: aluminium curtain wall sector has among the strongest EPD coverage of any CPR family — full lifecycle data already available from major manufacturers.",
       "source": "Schüco EPD Guide (https://epd.guide/manufacturers/schuco-product-range-and-epd-coverage-in-2025); Reynaers EPD (https://european-aluminium.eu/wp-content/uploads/2024/08/EPD-Reynaers_Concept-Wall-50.pdf); European Aluminium (https://european-aluminium.eu/policy_areas/circular-economy/)",
       "action_required": "Document EPD readiness in content. Flag as DPP-ready exemplar — one of the most prepared families.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CWP-005",
@@ -795,7 +802,7 @@
       "description": "Post-Grenfell regulatory response driving large-scale facade fire testing requirements (BS 8414 in UK, similar proposals in EU). Academic review of EN 1364-4 (fire resistance of partial curtain wall configurations) identified gaps: fire propagation within facade system 'not necessarily considered in fire-resistant spandrel zone.' EN 13830 defines fire propagation resistance as essential characteristic (E, EI, EW) but whole-system behaviour testing remains incomplete. Several EU Member States developing similar large-scale test requirements. For DPP: fire performance data scope may expand beyond current EN 13830 declarations to include whole-system fire propagation testing.",
       "source": "MDPI fire safety research (https://www.mdpi.com/2571-6255/8/8/311); BS 8414 (https://www.designingbuildings.co.uk/wiki/BS_8414_Fire_performance_of_external_cladding_systems); Intertek EN 13830 (https://www.intertek.com/building/standards/en-13830/)",
       "action_required": "Document fire safety regulatory evolution in content.key_risks. Flag EN 1364-4 gaps as potential driver for expanded DPP fire data.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-CWP-006",
@@ -808,7 +815,7 @@
       "description": "Global facade market $298.20B (2025), projected $389.70B by 2030. Curtain walls captured 45.2% of European facade market value (2024). Germany leads 22.1%. Aluminium recycling saves 95% energy vs primary production. EU aluminium industry invested €700M in recycling facilities. 90%+ recycled content facades demonstrated. Post-consumer recycled content increasing. Reuse of unitised curtain wall units provides additional GWP benefits over recycling. For DPP: recycled content percentage and post-consumer/pre-consumer ratio will be critical environmental data declarations.",
       "source": "Mordor Intelligence (https://www.mordorintelligence.com/industry-reports/europe-facade-market); European Aluminium (https://european-aluminium.eu/wp-content/uploads/2022/10/sustainability-of-aluminium-in-buildings.pdf); GlassOnWeb circularity (https://www.glassonweb.com/article/circularity-existing-aluminium-unitised-curtain-wall-facades)",
       "action_required": "Include market context and aluminium circular economy in content.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-DPW-001",
@@ -817,7 +824,8 @@
       "type": "empty_content",
       "title": "4 content sections empty",
       "description": "standards_landscape, standards_development, stakeholder_notes, key_risks, sources_summary are all empty.",
-      "action": "Populate with proposed content from deep-dive report."
+      "action": "Populate with proposed content from deep-dive report.",
+      "status": "resolved"
     },
     {
       "id": "iss-DPW-002",
@@ -826,7 +834,8 @@
       "type": "content_data_disagreement",
       "title": "standards_summary is null and family number is empty",
       "description": "standards_summary is null (not a structured value). The 'family' field is an empty string — no Annex VII number has been assigned for this new family.",
-      "action": "Set standards_summary to structured value. Add note that Annex VII number is pending."
+      "action": "Set standards_summary to structured value. Add note that Annex VII number is pending.",
+      "status": "resolved"
     },
     {
       "id": "iss-DPW-003",
@@ -839,7 +848,7 @@
       "description": "AkzoNobel publishes EN 15804+A2 EPDs for Sikkens exterior wall paints (modules A1-A5, C2, C4, D). PPG publishes EPDs for Dulux Pure Performance (cradle-to-gate with options). Jotun publishes EPDs via EPD Norway for facade/interior products. Despite DPW having the most distant DPP horizon (2035+), major paint manufacturers already have EN 15804+A2 EPD infrastructure. VOC data already generated under Decopaint Directive 2004/42/EC and national schemes (French A+, German AgBB). For DPP: data generation challenge is less about methodology and more about scope definition — what CPR characteristics beyond current EPD/VOC coverage?",
       "source": "AkzoNobel EPDs (https://www.akzonobel.com/en/about-us/sustainability-/making-buildings-greener/environmental-product-declarations); Jotun EPD Norway; PPG EPD (https://www.ppgpaints.com/pdfs/epd-s/pure-performance-primer-epd)",
       "action_required": "Document EPD readiness and VOC data availability in content. Note as surprisingly prepared for 2035+ family.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-DPW-004",
@@ -852,7 +861,7 @@
       "description": "Decopaint Directive 2004/42/EC limits VOC content in decorative paints. French 'Émissions dans l'air intérieur' label (mandatory since 2012) rates VOC emissions A+ to C. German AgBB scheme evaluates VOC emissions for indoor suitability (DIN EN 16516/ISO 16000). Belgium, Italy have additional national schemes. EU Ecolabel for paints (Decision 2022/1229) extended to Dec 2025. CPR SReq must harmonise these fragmented VOC approaches into single essential characteristic framework. CEN/TC 139 has extensive EN ISO test methods but no CPR hEN — product standards must be created from scratch referencing existing test methods.",
       "source": "EUR-Lex Decopaint (https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32004L0042); French VOC label (https://www.anses.fr/en/content/labelling-building-and-decoration-products-respect-voc-emissions); AgBB (https://www.eco-institut.de/en/portfolio/agbb-schema/)",
       "action_required": "Document fragmented VOC regulatory landscape in content.key_risks. Flag as critical SReq harmonisation challenge.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-DPW-005",
@@ -865,7 +874,7 @@
       "description": "European paints & coatings market $38.66B (2024). Decorative/architectural 45% of value. Residential construction 48% of end-use. ~80% of European decorative paints now waterborne (driven by Decopaint Directive). CEPE (est. 1951) is sole EU-level trade association. Bio-based coatings and additives emerging. Wall paint is largest construction chemical segment — currently linear waste process. Key players: AkzoNobel, PPG, Sherwin-Williams, Jotun, Hempel, DAW. EU renovation wave (EPBD) drives growth.",
       "source": "Towards Chem & Materials (https://www.towardschemandmaterials.com/insights/european-paints-and-coatings-market); CEPE (https://cepe.org/); European Coatings (https://www.european-coatings.com/news/markets-companies/water-borne-coatings-a-steady-stream-of-developments/)",
       "action_required": "Include market context and CEPE/waterborne transition in content.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-DWP-001",
@@ -874,7 +883,8 @@
       "type": "empty_content",
       "title": "6 content sections empty — most of any family",
       "description": "standards_landscape, standards_development, sreq_analysis, stakeholder_notes, key_risks, sources_summary are all empty. This is the most empty family in the tracker.",
-      "action": "Populate with content — at minimum document DWD 2020/2184 cross-regulatory situation."
+      "action": "Populate with content — at minimum document DWD 2020/2184 cross-regulatory situation.",
+      "status": "resolved"
     },
     {
       "id": "iss-DWP-002",
@@ -883,7 +893,8 @@
       "type": "content_data_disagreement",
       "title": "standards_summary is null",
       "description": "standards_summary is null (not even an empty object). Only DWP and DPW have null rather than a structured value.",
-      "action": "Set standards_summary to a structured empty value with completeness and source fields."
+      "action": "Set standards_summary to a structured empty value with completeness and source fields.",
+      "status": "resolved"
     },
     {
       "id": "iss-DWP-003",
@@ -892,7 +903,8 @@
       "type": "cross_regulatory",
       "title": "DWD 2020/2184 parallel framework",
       "description": "EU Drinking Water Directive 2020/2184 is developing a parallel regulatory framework for materials in contact with drinking water. Delegated Regulation (EU) 2024/371 (marking) and Implementing Decision (EU) 2024/367 (positive lists) already adopted under DWD. CPR vs DWD jurisdiction for construction products remains unclear.",
-      "action": "Document DWD cross-regulatory situation in content sections. Monitor Art. 11 DWD coherence measures."
+      "action": "Document DWD cross-regulatory situation in content sections. Monitor Art. 11 DWD coherence measures.",
+      "status": "resolved"
     },
     {
       "id": "iss-DWP-004",
@@ -905,7 +917,7 @@
       "description": "EU Drinking Water Directive 2020/2184 implementation is far more advanced than any CPR pathway for DWP. Six delegated/implementing regulations adopted April 2024: European positive lists (Implementing Decision 2024/367, 4 material annexes), testing methodologies (2024/365), marking specifications (Delegated Regulation 2024/371). Positive lists apply 31 Dec 2026 for new products, transitional until 31 Dec 2032. ECHA manages substance lists. CPR Art. 11 coherence requirement means CPR must reference DWD measures. For DPP: any future DWP CPR standards would create cross-regulatory DPP drawing from both EU frameworks simultaneously.",
       "source": "EC press release (https://ec.europa.eu/commission/presscorner/detail/en/ip_24_350); ECHA positive lists (https://echa.europa.eu/european-positive-lists); figawa (https://figawa.org/en/topics/water-supply/harmonisation-of-materials-and-products-in-contact-with-drinking-water/)",
       "action_required": "Document DWD regulatory advancement vs CPR dormancy in content. Flag cross-regulatory DPP complexity.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-DWP-005",
@@ -918,7 +930,7 @@
       "description": "Multiple manufacturers publish EN 15804+A2 EPDs for drinking water products: SANHA (all pipe systems), Uponor (PE100), Pipelife (via EPD Norway), REHAU (PEX), Aquatherm (PP-R green pipe). TEPPFA publishes sector EPDs for PVC-U. EPD coverage for drinking water piping is among the most developed of any construction product category. However, these EPDs primarily serve the PTA family under CPR, not DWP specifically. Material safety data exists under DWD positive lists (ECHA-managed), not CPR framework.",
       "source": "SANHA (https://www.sanha.com/en/blog/sanha-publishes-epds-for-all-pipe-systems-on-its-website-transparency-in-sustainability); REHAU (https://www.rehau.com/downloads/1002828/environmental-product-declaration.pdf)",
       "action_required": "Document EPD readiness overlap with PTA in content. Note DWD as primary material safety data source.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-DWP-006",
@@ -931,7 +943,7 @@
       "description": "European plastics pipes and pipe fittings market $27.3B (2024). Pipe fittings projected $6.9B by 2030. Drinking water is a key application segment. EU PFAS monitoring in drinking water from 12 Jan 2026 — first systematic EU-wide monitoring. Germany requires lead pipe replacement by 12 Jan 2026 and set first national PFAS drinking water limits. 4MS Initiative (France, Germany, Netherlands, UK) drove EU harmonisation — now ECHA-managed positive lists. Significant product overlap with PTA family.",
       "source": "IndexBox Europe (https://www.indexbox.io/blog/plastics-pipe-and-pipe-fitting-europe-market-overview-2024-4/); EC PFAS rules (https://environment.ec.europa.eu/news/new-eu-rules-limit-pfas-drinking-water-2026-01-12_en)",
       "action_required": "Include market context and PFAS/lead regulatory developments in content.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-DWS-001",
@@ -943,7 +955,7 @@
       "title": "Pipeline A NT-4 status disagrees with family-level SReq data",
       "description": "Pipeline A node NT-4 (SReq) has status 'not_started' but the family-level sreq field is 'Draft', milestones.sreq is 'Q1 2026', and content.sreq_analysis describes a published draft (21 Jan 2026). The node status should be 'draft' to match the family-level data.",
       "action_required": "Apply upd-DWS-001 through upd-DWS-004 to align the NT-4 node with existing family-level data.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-DWS-002",
@@ -956,7 +968,7 @@
       "description": "The draft SReq feedback deadline (18 Feb 2026) expired 11 days ago. EuroWindoor submitted comments on 13 Feb 2026. No public adoption confirmation found. When adopted, multiple fields need updating.",
       "source": "EC Notification System — Art. 12, EuroWindoor",
       "action_required": "Monitor weekly for adoption announcement. When confirmed, update sreq → 'Adopted', milestones.sreq, and Pipeline A NT-4 status → 'complete'.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-DWS-003",
@@ -968,7 +980,7 @@
       "title": "Three content sections empty (stakeholder_notes, key_risks, sources_summary)",
       "description": "content.stakeholder_notes, content.key_risks, and content.sources_summary are empty. DWS has significant stakeholder engagement data (EuroWindoor 86 comments, 1-year extension request) and clear risks (timeline, dual regulation, DPP volume) that should be documented.",
       "action_required": "Populate with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-DWS-004",
@@ -981,7 +993,7 @@
       "title": "CEN/TC 33 shared between DWS and CWP — consistency check needed",
       "description": "CEN/TC 33 (doors, windows, shutters and building hardware) is the primary TC for both DWS and CWP families. Any TC-level changes (work programme, mandates) affect both families. Cross-check needed when CWP is analyzed in Batch 9.",
       "action_required": "Flag for Batch 9 CWP analysis.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-DWS-005",
@@ -994,7 +1006,7 @@
       "description": "EuroWindoor, European Aluminium, EPPA, Glass for Europe, and SBS jointly proposed a new Assessment and Verification System 'AVS 4+' under CPR 2024/3110 (published 3 Feb 2026). Under AVS 4+, a Notified Body verifies input data and validates software tools, while manufacturers assess performance using the verified digital process within FPC. Could be introduced via delegated act under Art. 10(4). This fundamentally changes the AVCP landscape for DWS and is not currently tracked.",
       "source": "EuroWindoor publications, SBS press release (Feb 2026)",
       "action_required": "Track AVS 4+ proposal status. If adopted, update AVCP field and add new AVS node to Pipeline A.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-DWS-006",
@@ -1007,7 +1019,7 @@
       "description": "Under the new SReq, the current EN 14351 series is being reorganised: (1) Pedestrian doorsets = EN 14351-1 (excl. windows) + EN 14351-2 + EN 16034; (2) Windows = EN 14351-1 (excl. doors) + EN 16034; (3) Fire industrial doors = EN 13241 + EN 16034; (4) Non-fire industrial doors = EN 13241. This restructuring means the current 15 hEN listing will change significantly. EN 14351-2 (internal doorsets) has never been OJ-cited since 2018 — a confirmed standardisation deficit.",
       "source": "Efectis article on EN 14351-2, ift Rosenheim new CPR rules, EuroWindoor SReq comments",
       "action_required": "Document restructuring plan in content.standards_development. When new prEN registrations appear at CEN, update standards[] accordingly.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-DWS-007",
@@ -1020,7 +1032,7 @@
       "description": "EuroWindoor warns that 'standardisation work risks failing to deliver the required quality within the set timeframe' with 'key templates, guidance documents and delegated acts essential for consistent implementation still missing.' CEN cannot formally register prENs until SReq is adopted. No prEN 14351-1 (new), prEN 14351-2, or prEN 14351-3 registrations found. The Jun 2029 delivery target for 15 deliverables is increasingly at risk.",
       "source": "EuroWindoor Feb 2026 press release, web research confirming no prEN registrations",
       "action_required": "Monitor CEN/TC 33 work programme for prEN registration. Flag timeline risk in key_risks content.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-DWS-008",
@@ -1033,7 +1045,7 @@
       "description": "The draft SReq for DWS lists 51 technical characteristics, 19 environmental criteria, and 257 substances for windows — all to be addressed in the future Declaration of Performance and Conformity (DoPC). Industry argues this scope is excessive. May be reduced during CEN acceptance negotiation, which would affect deliverable count and timeline.",
       "source": "EuroWindoor Feb 2026 comments, ift Rosenheim article",
       "action_required": "Monitor scope changes during CEN acceptance process. Update deliverable count if scope is reduced.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-DWS-009",
@@ -1046,7 +1058,7 @@
       "description": "EPBD recast requires building-level GWP calculations: large new buildings >2000m² from 2027, all new buildings from 2030. Window manufacturers face dual data demand: CPR product-level GWP in DoPC + EPBD building-level contribution via EN 15978/Level(s). Glass industry EPD infrastructure is mature (AGC, Guardian publish EPDs), but window assembly-level data is the bottleneck. Creates urgency for GWP data preparation before new CPR harmonised standards are published.",
       "source": "Directive (EU) 2024/1275 Art. 7(2)-(3) + Annex III (https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275); AGC Glass Europe EPDs (https://www.agc-glass.eu/en/sustainability/environmental-product-declarations); Guardian Glass EPDs (https://www.guardianglass.com/eu/en/our-glass/environmental-product-declarations)",
       "action_required": "Document in content.key_risks. Note that glass industry EPD readiness is ahead of window assembly-level readiness.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-DWS-010",
@@ -1059,7 +1071,7 @@
       "description": "VinylPlus (PVC industry commitment) targets 1 million tonnes PVC recycled/year by 2030 (2024 actual: 724,638 tonnes). EPPA 5-year action plan boosting PVC window recycling in France, Germany, Poland. Industrial pilot evaluation 2026. Aluminium windows are infinitely recyclable. DPP under new CPR requires end-of-life/recyclability data — existing recycling infrastructure provides data foundation. Wood windows have biogenic carbon accounting considerations (EN 15804+A2).",
       "source": "VinylPlus Progress Report 2025 (https://www.vinylplus.eu/progress-report/); EPPA circular economy programme (https://eppa-profiles.eu/circular-economy/); European Aluminium Circular Action Plan (https://european-aluminium.eu/)",
       "action_required": "Document recycling infrastructure readiness in content.stakeholder_notes. Consider DPP data readiness assessment.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FFF-001",
@@ -1071,7 +1083,7 @@
       "title": "standards_landscape says '~32 harmonised standards' but actual count is 33",
       "description": "content.standards_landscape states '~32 harmonised standards cited under old CPR 305/2011' but the actual hEN count in standards[] is 33. The narrative uses an approximation where the precise count is available and should be used.",
       "action_required": "Update content.standards_landscape to say '33 harmonised standards'.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FFF-002",
@@ -1083,7 +1095,7 @@
       "title": "standards_development field empty despite known CEN activity",
       "description": "content.standards_development is empty despite EN 50130-4 EMC revision ongoing, EN 54 citation backlog context, and CEN/TC 191/WG 5 waiting-for-SReq status. Proposed content in deep-dive report §8.",
       "action_required": "Populate with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FFF-003",
@@ -1095,7 +1107,7 @@
       "title": "key_risks and sources_summary fields empty",
       "description": "content.key_risks is empty despite EN 54 citation backlog, multi-regulatory overlap (CPR + EMC + LVD + RoHS + WEEE + CRA), and acquis-not-started status being significant risks. content.sources_summary is also empty.",
       "action_required": "Populate with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FFF-004",
@@ -1107,7 +1119,7 @@
       "title": "EN 12101-2 (SHEV) absent from standards[] — may be intentional",
       "description": "EN 12101-2 (smoke and heat exhaust ventilators) is a notable omission from the standards[] array. Parts 1, 7, 8, and 10 of the EN 12101 series are tracked. EN 12101-2 has had persistent citation issues. Either it is deliberately excluded (e.g., tracked under a different family or not currently harmonised) or it is missing.",
       "action_required": "Verify whether EN 12101-2 should be in FFF standards[] or is intentionally excluded.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FFF-005",
@@ -1119,7 +1131,7 @@
       "title": "Euralarm estimates 10-year minimum for fire product standard rewriting",
       "description": "Euralarm (European fire safety and security industry association) published a position stating that rewriting all fire product standards to align with Commission requirements under new CPR would take 'at best 10 years.' This directly challenges the FFF DPP timeline estimate of ~2030-2033. If Euralarm's estimate proves accurate, DPP for fire products could be 2035+. Euralarm describes the CPR proposal as failing to 'resolve the ongoing stagnation of the standardisation process.'",
       "action_required": "Consider adjusting DPP range estimate or adding stakeholder risk note. Cross-reference with EN 54 citation backlog (still unresolved).",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FFF-006",
@@ -1131,7 +1143,7 @@
       "title": "CRA reporting obligations from Sep 2026, full compliance Dec 2027",
       "description": "Cyber Resilience Act (CRA) entered into force 10 Dec 2024. Reporting obligations apply from 11 Sep 2026; full compliance from 11 Dec 2027. Euralarm fact sheet (Nov 2024) classifies most electronic fire safety products in 'default' category (self-assessment permitted). Products covered include fire detection control panels, intrusion detection, access control, cloud-based alarm software. Less burdensome than initially assessed but adds cybersecurity essential requirements to product design.",
       "action_required": "Document CRA timeline in content.key_risks. Note self-assessment route for most fire products.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FFF-007",
@@ -1144,7 +1156,7 @@
       "description": "Regulation (EU) 2025/1988 (adopted 2 Oct 2025) restricts PFAS in firefighting foams. Portable extinguishers: PFAS ban from 23 Oct 2026. Alcohol-resistant foams: 23 Apr 2027. Full market ban: 23 Oct 2030. Existing equipment: use until 31 Dec 2030. Impacts EN 12094 (gas extinguishing) and EN 12259 (sprinkler/water spray) product families — foam agent compatibility must be reassessed. Creates triple regulatory burden: CPR (product performance) + REACH (chemical restriction) + future DPP (chemical content declaration).",
       "source": "DNV (https://www.dnv.com/news/2025/pfos-prohibited-in-fire-extinguishing-media-from-1-january-2026/); UL Solutions (https://www.ul.com/news/new-eu-restriction-pfas-firefighting-foams); CIRS Group (https://www.cirs-group.com/en/chemicals/eu-adopts-ban-on-pfas-in-firefighting-foam-reach-regulation-amendment-to-take-full-effect-by-2030)",
       "action_required": "Document PFAS ban timeline in content.key_risks. Flag EN 12094 and EN 12259 product compatibility review needed. Monitor fluorine-free foam standard development.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FFF-008",
@@ -1157,7 +1169,7 @@
       "description": "No Environmental Product Declarations (EPDs) under EN 15804 found for fire detection, fire alarm, sprinkler, or gas extinguishing products. Unlike cement (thousands of EPDs), concrete (hundreds), or steel (dozens), fire safety products have zero EPD infrastructure. DPP GWP declarations under new CPR will require this data. Fire products are complex manufactured goods (electronics, metals, plastics, chemicals) making GWP assessment harder than for single-material products.",
       "source": "EPD International (https://www.environdec.com/services/what-is-epd); BRE Group (https://bregroup.com/services/standards/environmental/en-15804-environmental-product-declaration-epd)",
       "action_required": "Document EPD readiness gap in content. Flag as major DPP implementation risk for fire products.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FFF-009",
@@ -1170,7 +1182,7 @@
       "description": "Wireless fire detection market growing from $1.62B (2025) to $3.1B (2035). IoT-integrated fire systems combine alarms + HVAC + access control + BMS. EN 54 was designed for discrete product certification, but networked fire products operate as systems-of-components. DPP faces: per-component EN 54 certification vs system-level IoT integration, triple regulation (CRA cybersecurity + CPR construction performance + ESPR electronics repairability). Mesh-networked sensors and 5G-compatible systems emerging.",
       "source": "FMI market report (https://www.fmiblog.com/2025/06/19/wireless-fire-detection-systems-market-to-reach-usd-3-1-billion-by-2035-driven-by-smart-building-adoption-and-iot-integration/); ScienceDirect IoT fire review (https://www.sciencedirect.com/science/article/pii/S2542660523001269)",
       "action_required": "Document IoT complexity in content. Consider implications for DPP data model (product vs system granularity).",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FIX-001",
@@ -1180,7 +1192,8 @@
       "current": "COM(2025) 772 + EOTA PA 33. 0 hENs + EADs for post-installed fasteners.",
       "expected": "COM(2025) 772 + EOTA PA 33. 0 hENs + 34 EADs for post-installed fasteners.",
       "description": "standards_summary.source text omits EAD count — should specify '34 EADs' for consistency with standards[] array.",
-      "action": "Update text to include EAD count"
+      "action": "Update text to include EAD count",
+      "status": "resolved"
     },
     {
       "id": "iss-FIX-002",
@@ -1188,7 +1201,8 @@
       "severity": "low",
       "field": "content",
       "description": "5 content sections empty: standards_landscape, standards_development, stakeholder_notes, key_risks, sources_summary.",
-      "action": "Populate in future content pass"
+      "action": "Populate in future content pass",
+      "status": "resolved"
     },
     {
       "id": "iss-FIX-003",
@@ -1196,7 +1210,8 @@
       "severity": "info",
       "field": "standards",
       "description": "EAD 330031 (plastic anchors for ETICS) in FIX connects to ETICS kits in KAS (EAD 340001-340012). Product boundary correct but regulatory fates linked.",
-      "action": "Note for cross-family tracking"
+      "action": "Note for cross-family tracking",
+      "status": "resolved"
     },
     {
       "id": "iss-FIX-004",
@@ -1214,7 +1229,8 @@
       "type": "timeline_risk",
       "title": "EAD transition bottleneck quantified: 400 EADs vs 25/yr publishing rate in 3-year window",
       "description": "Trade press (Fastener + Fixing Magazine) quantifies the systemic EAD transition problem: ~400 EADs under current CPR, EOTA publishes 20-30/year, effective transition window is ~3 years (delegated acts ~2027, EADs invalid 2030). Math: 400÷25=16 years vs 3-year window. Industry warns of 'innovation freeze' lasting several years and potential return to national Member State assessments (market fragmentation). Affects all EAD-heavy families. EOTA's 12-month fast-track helps but cannot close the gap. CFE advocates rolling EAD updates instead of deadline-based transition.",
-      "action": "Document as systemic risk. Flag for all EAD-heavy families. Consider adding transition risk indicator to tracker."
+      "action": "Document as systemic risk. Flag for all EAD-heavy families. Consider adding transition risk indicator to tracker.",
+      "status": "resolved"
     },
     {
       "id": "iss-FIX-005",
@@ -1225,7 +1241,8 @@
       "type": "cross_regulatory",
       "title": "CBAM + machine-readable EADs + c-PCRs for fixings",
       "description": "Three new cross-regulatory developments: 1) CBAM applies to imported steel fasteners from Jan 2026 (embedded emissions reporting). 2) New CPR requires EADs in machine-readable format for BIM/DPP integration — new digital infrastructure investment needed. 3) Industry exploring complementary Product Category Rules (c-PCRs) to link fixings into LCA/EPD frameworks. Additionally, 5,500+ ETAs exist for construction fixings (largest ETA market), and EN 1992-4 (Eurocode 2 Part 4) creates direct design-code dependency on ETA performance data.",
-      "action": "Document in content. Cross-reference with SMP (iss-SMP-006) and RPS (iss-RPS-003) for CBAM consistency."
+      "action": "Document in content. Cross-reference with SMP (iss-SMP-006) and RPS (iss-RPS-003) for CBAM consistency.",
+      "status": "resolved"
     },
     {
       "id": "iss-FIX-006",
@@ -1238,7 +1255,7 @@
       "description": "Hilti offers ~300 product declarations including fixing-specific EPDs: HDA undercut anchor (stainless steel, EN 15804+A2), HIT-RE 500 V3/V4 adhesive anchor (ÖKOBAUDAT registered), MT support systems (>80% weight coverage). EcoVadis gold, CO₂ neutral operations since 2023. However, Fischer and Würth — the 2nd and 3rd largest European fixing manufacturers — have no visible EPD programmes for construction fixings. Industry EPD readiness concentrated in market leader only.",
       "source": "Hilti Green Building (https://www.hilti.group/content/hilti/CP/XX/en/company/health-safety-and-environment/products-and-technology/green-building.html); Hilti HIT-RE 500 V4 ÖKOBAUDAT (https://www.oekobaudat.de/OEKOBAU.DAT/resource/sources/8d63ef24-a533-4762-9ec1-24e16020934f/HIT-RE_500_V4_18984.pdf)",
       "action_required": "Document EPD readiness gap in content. Note Hilti as DPP-ready exemplar for fixings.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FIX-007",
@@ -1251,7 +1268,7 @@
       "description": "European seismic qualification uses ETAG 001 Annex E categories: C1 (non-structural, strength) and C2 (structural, strength + deformation). Seismic data is part of ETA declarations, referenced by EN 1992-4 (Eurocode 2 Part 4). DPP must carry machine-readable seismic qualification to enable designer filtering. Using C1 where C2 is required = structural failure risk in earthquake zones. This is a safety-critical DPP data architecture requirement unique to fixings.",
       "source": "ResearchGate C1/C2 paper (https://www.researchgate.net/publication/346828271_European_Seismic_Performance_Categories_C1_and_C2_for_Post-Installed_Anchors); EOTA ETAG 001 Annex E (https://www.eota.eu/sites/default/files/uploads/ETAGs/etag-001-annex-e-2013-04-08-2.pdf)",
       "action_required": "Document seismic DPP data requirements in content. Flag as safety-critical DPP architecture concern.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FLO-001",
@@ -1264,7 +1281,7 @@
       "title": "EN 13813 AVCP mismatch with CMG",
       "description": "EN 13813 (screed material) appears in both FLO and CMG with different AVCP values. FLO records '1, 3, 4' while CMG records '3, 4'. The FLO entry includes System 1 for reaction-to-fire testing, which is correct per Commission Decision 97/808/EC. CMG likely has an incomplete AVCP entry.",
       "action_required": "Verify EN 13813 AVCP against Commission Decision 97/808/EC. Update CMG entry to include System 1 if confirmed.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FLO-002",
@@ -1276,7 +1293,7 @@
       "title": "EN 14041 standardisation crisis gap",
       "description": "EN 14041:2018 was published by CEN but its OJ citation status is unclear. The 2004/AC:2006 version remains the OJ-cited edition. This is a standardisation crisis gap where CEN publishes a revision but the Commission does not cite it. EPLF is working on further revision. Data notes this correctly.",
       "action_required": "Monitor EN 14041 OJ citation status. When resolved, update standards[] citation field.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FLO-003",
@@ -1288,7 +1305,7 @@
       "title": "Three content sections empty",
       "description": "content.stakeholder_notes, content.key_risks, and content.sources_summary are empty.",
       "action_required": "Populate with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FLO-004",
@@ -1301,7 +1318,7 @@
       "description": "Ceramics: excellent (Confindustria Ceramica industry EPD covers 82.6% Italian production). Laminate: good (EPLF EPDs since 2009, 55% global market). Natural stone: emerging (EUROROC promotes, individual quarry EPDs, lifecycle advantage over ceramics/cement). Vinyl: partial (VOC/chemical data focus, not full EN 15804 EPDs). Wood: moderate (linked to STP, EN 14342). Screed: minimal (EN 13813 cross-listed with CMG). DPP implementation will proceed at different speeds for different materials.",
       "source": "Confindustria Ceramica (https://www.ceramica.info/en/articoli/environmental-product-declaration-epd-italian-ceramic-tiles/); EPLF (https://eplf.com/en/news/eplf-unveils-manifesto-for-advocating-for-a-sustainable-and-competitive-european-laminate-flooring); EUROROC (https://www.euroroc.net/)",
       "action_required": "Document split EPD readiness in content. Note material-specific DPP implementation timelines.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FLO-005",
@@ -1314,7 +1331,7 @@
       "description": "European flooring market $52-62B (2024), ~3 billion m²/yr. Material breakdown: ceramics 34%, carpets 34%, laminate 15%, vinyl ~10%. Spans 8 CEN TCs — most of any family. Each material has different production processes, environmental profiles, and EPD methodologies. SReq must coordinate across 8 TCs. DPP data architecture must accommodate radically different product types within one family framework.",
       "source": "Market Data Forecast (https://www.marketdataforecast.com/market-reports/europe-flooring-market); Mordor Intelligence (https://www.mordorintelligence.com/industry-reports/europe-floor-covering-market)",
       "action_required": "Include market scale and TC coordination complexity in content.key_risks.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FLO-006",
@@ -1327,7 +1344,7 @@
       "description": "Vinyl (PVC) flooring faces compound regulation: REACH restricts SVHC phthalates (DEHP), industry shifted to DINCH/DEHA alternatives. New CPR 2024/3110 dangerous substances requirements (CEN/TC 351) will require VOC emission declarations. German AgBB/DIBt method is current benchmark (3/7/14-day VOC protocols). DPP for vinyl must include: VOC emission class, phthalate content, indoor air quality data — alongside traditional performance. This cross-regulatory burden is unique to vinyl within FLO.",
       "source": "EU flooring standards (https://globalfloorings.com/2025/08/11/eu-flooring-standards-and-ce-marking-for-environmental-compliance/); PMC DEHP-free PVC (https://pmc.ncbi.nlm.nih.gov/articles/PMC6856815/)",
       "action_required": "Document vinyl cross-regulatory burden in content. Flag CEN/TC 351 dangerous substances as DPP data requirement.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FPP-001",
@@ -1339,7 +1356,7 @@
       "title": "EAD expiry (2031) vs SReq timeline (2029) creates regulatory gap risk",
       "description": "EADs expire 9 Jan 2031 but SReq not planned until 2029. Only ~2 years between SReq adoption and EAD expiry — typically the full SReq→development→citation cycle takes 3-4 years. This means new hENs will NOT be available before EADs expire. While ETAs remain valid until 2036 (Art. 95(4) backstop), no new ETAs can be issued after 2031. This creates a gap where new products cannot enter the market via the EAD route and new hENs are not yet available.",
       "action_required": "Flag for policy monitoring. Consider whether Pipeline A NT-9 estimated date (~2030-2032) is realistic given the SReq is planned for 2029.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FPP-002",
@@ -1351,7 +1368,7 @@
       "title": "Five content sections empty",
       "description": "content.standards_landscape, content.standards_development, content.stakeholder_notes, content.key_risks, and content.sources_summary are all empty. FPP has significant context worth documenting: EAD-only status (0 hENs), 800+ active ETAs, PFAS exposure, CEN/TC 127 test method context, timeline gap risk.",
       "action_required": "Populate with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FPP-003",
@@ -1366,7 +1383,7 @@
       "title": "FPP is bellwether for EAD-only family transition",
       "description": "FPP's all-EAD structure (0 hENs, 6 EADs) makes it a test case for the EAD sunset pathway under CPR 2024/3110. Lessons from FPP's EAD→hEN transition planning will directly inform other EAD-heavy families: FIX (Batch 6), KAS (Batch 6), SEA (Batch 6).",
       "action_required": "Cross-reference when FIX, KAS, SEA analyzed in Batch 6.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FPP-004",
@@ -1378,7 +1395,7 @@
       "title": "PFAS broader restriction SEAC consultation spring 2026",
       "description": "Current EU PFAS restriction (Regulation (EU) 2025/1988) targets firefighting foams only, effective October 2026. Broader PFAS restriction under development: ECHA SEAC draft opinion consultation spring 2026, final opinions expected end of 2026. If broader restriction is adopted, it could affect PFAS-containing fire retardant products (EAD 350865-00-1106) and intumescent coatings (EAD 350005-00-1104) in FPP scope. Timeline and scope uncertain but regulatory direction toward broader restriction is clear.",
       "action_required": "Monitor ECHA SEAC consultation spring 2026 for construction product impacts. Flag for fire retardant and intumescent product manufacturers.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FPP-005",
@@ -1391,7 +1408,7 @@
       "description": "Intumescent fire protection coatings have verified EPDs: Nullifire SC802/SC803/SC804 (EPD International S-P-13759), Sherwin-Williams Firetex M71V2 (NSF EPD10559), Rudolf Hensel 410KS/420KS/421KS (EN 15804+A2). However, penetration seals (EAD 350454), linear joint/gap seals (EAD 350141/350142), and fire retardant products (EAD 350865) appear to lack EPDs. Split EPD readiness within the FPP family means DPP environmental data will be easier for some product types than others.",
       "source": "EPD International Nullifire (https://www.environdec.com/library/epd13759); NSF Firetex (https://info.nsf.org/Certified/Sustain/ProdCert/EPD10559.pdf); Rudolf Hensel (https://www.rudolf-hensel.de/wp-content/uploads/download/EPD_410KS_420KS_421KS_GB.pdf)",
       "action_required": "Document split EPD readiness in content. Note intumescent coatings as best-positioned sub-category.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FPP-006",
@@ -1404,7 +1421,7 @@
       "description": "FPP faces chemical reformulation risk on two fronts: (1) PFAS restriction (Regulation (EU) 2025/1988) — currently targets foams only but broader SEAC consultation spring 2026 may extend to construction; (2) ECHA proposes 'wide and generic restriction' on aromatic brominated flame retardants under REACH — affects fire retardant products (EAD 350865). Industry shifting to halogen-free alternatives and water-based formulations (35.3% market share 2024). Reformulated products may require new ETAs.",
       "source": "Pinfa FR regulation plans (https://www.pinfa.eu/news/plans-for-fr-assessment-and-regulation/); Stellarix halogen-free (https://stellarix.com/insights/blogs/halogen-free-flame-retardants-implementation-complexities/)",
       "action_required": "Document dual chemical reformulation risk in content.key_risks. Monitor ECHA SEAC and brominated FR restriction dossier.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-FPP-007",
@@ -1417,7 +1434,7 @@
       "description": "Hilti firestop division has developed digital infrastructure paralleling DPP needs: 'Button for Firestop' (3D BIM design automation), 'Firestop Documentation Manager' (jobsite documentation/reports), CFS-CT products on NBS Source (BIM platform), CAD/BIM Typicals. This proprietary digital data infrastructure demonstrates fire stopping products CAN be structured digitally. Digital-ready manufacturers (Hilti, Promat) have significant advantage in DPP transition vs manufacturers without digital infrastructure.",
       "source": "Hilti Firestop Design Center (https://www.hilti.com/content/hilti/W1/US/en/business/business/engineering/fire-protection.html); NBS Source CFS-CT (https://source.thenbs.com/product/cfs-ct-b-firestop-board/9DohpdSwQGrzP9BuPf9JNy/u2q9uKBReerPT4uroJAwNR)",
       "action_required": "Document BIM/digital readiness in content. Note as positive DPP indicator for leading manufacturers.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-GEO-001",
@@ -1429,7 +1446,7 @@
       "title": "Five content sections empty",
       "description": "content.standards_landscape, content.standards_development, content.stakeholder_notes, content.key_risks, and content.sources_summary are empty.",
       "action_required": "Populate with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-GEO-002",
@@ -1442,7 +1459,7 @@
       "description": "HUESKER publishes EN 15804 EPDs for Fortrac® T geogrid (Kiwa-verified). Naue publishes EPDs for Secugrid® geogrids. The HUESKER Fortrac EPD was highlighted as the first geogrid EPD — a milestone for the industry. However, EPDs for geotextiles (filtration/separation), geomembranes (barrier), and geocomposites (drainage) were not found. IGS claims geosynthetics carbon footprint is typically 65% lower than alternative construction materials. For DPP: the geosynthetics industry is early in its EPD journey with reinforcement products leading, but the broader portfolio (8 of 10 application-specific hENs) lacks environmental data infrastructure.",
       "source": "HUESKER EPD via Kiwa (https://www.kiwa.com/globalassets/germany/veroffentlichte-epds/06-0921/epd-huesker-134-en.pdf/); Naue EPDs (https://www.naue.com/info-center/downloads/environmental-product-declaration/); Geosynthetica (https://www.geosynthetica.com/geogrid-earns-environmental-product-declaration/)",
       "action_required": "Document EPD readiness gap in content. Note geogrid-only coverage vs 10 application-specific hENs.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-GEO-003",
@@ -1455,7 +1472,7 @@
       "description": "ECHA proposed universal PFAS restriction (Feb 2023) creates dual regulatory pressure on geomembranes: HDPE geomembranes are critical infrastructure for containing PFAS-laden leachate in landfills (intact membranes contain PFAS 30+ years, permeability <10⁻¹⁴ cm/s), but some geomembrane manufacturing processes use PFAS-containing processing aids. Manufacturers developing PFAS-free products. Additionally, EU investigating microplastics release from geotextiles — IGS formally responded advocating science-based evidence. For DPP: EN 13257 (solid waste) and EN 13265 (liquid waste) products may need to declare both PFAS containment performance AND PFAS-free manufacturing status.",
       "source": "ScienceDirect PFAS permeation (https://www.sciencedirect.com/science/article/abs/pii/S0269749124019511); EPI PFAS containment (https://www.geomembrane.com/about/blog/pfas-containment-why-liners-are-now-more-important-than-ever.html); Nonwovens News microplastics (https://www.nonwovensnews.com/manufacturing-news/15928-eu-investigating-release-of-microplastics-from-geotextiles)",
       "action_required": "Document PFAS dual-pressure and microplastics regulatory risk in content.key_risks. Flag as cross-regulatory DPP data challenge.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-GEO-004",
@@ -1468,7 +1485,7 @@
       "description": "European geosynthetics market $2.94B (2025), projected $4.32B by 2034 (CAGR 4.36%). Geotextiles 38.2% of market. GCLs fastest-growing segment (9.3% CAGR). Germany leads 23.3%, France 16.3%. Construction sector produces 850M+ tonnes waste annually with geosynthetics underrepresented in circular economy. Netherlands project recycled 500,000 m² geotextiles (EuroGeo8 2025). 100% recycled PP composite geogrids developed (FHWA-documented). Economic barriers remain: soil contamination in recovered geotextiles, cost disparities with virgin material.",
       "source": "Market Data Forecast (https://www.marketdataforecast.com/market-reports/europe-geosynthetics-market); EuroGeo8 (https://www.e3s-conferences.org/articles/e3sconf/pdf/2025/44/e3sconf_eurogeo82025_01004.pdf); FHWA (https://highways.dot.gov/public-roads/winter-2025/08)",
       "action_required": "Include market context and circular economy developments in content.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-GLA-001",
@@ -1480,7 +1497,7 @@
       "title": "SReq targeted Q1 2026 but no Art. 12 notification found",
       "description": "The GLA SReq was targeted for Q1 2026 per COM(2025) 772 Table 3. As of 1 Mar 2026, no public Art. 12 notification or formal adoption has been found. Either the SReq is imminent, slightly delayed, or was filed without public visibility. Glass for Europe confirms it is planned for 2026.",
       "action_required": "Monitor weekly for SReq notification. When confirmed, update NT-4 status and add detail/date fields.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-GLA-002",
@@ -1492,7 +1509,7 @@
       "title": "Implementing Decision 2025/871 — new EAD for PET foils in insulating glass units",
       "description": "Commission Implementing Decision 2025/871 (30 Apr 2025) amended Implementing Decision 2019/450 to add EAD citations for 'polyethylene terephthalate-based foils with coating for insulating glass units'. This may represent a new EAD that should be added to GLA's standards[] array.",
       "action_required": "Identify the specific EAD number from 2025/871 and check if it belongs in GLA standards[].",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-GLA-003",
@@ -1504,7 +1521,7 @@
       "title": "Three content sections empty",
       "description": "content.standards_development, content.key_risks, and content.sources_summary are empty.",
       "action_required": "Populate with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-GLA-004",
@@ -1517,7 +1534,7 @@
       "description": "AGC Glass Europe EPD Generator (end 2024) provides product-specific, third-party verified EPDs with 30+ environmental indicators per EN 15804+A2 and EN 17074, integrated into Glass Configurator. Guardian Glass, Glas Trösch, Tvitec also publish EPDs. All Big-4 (Saint-Gobain, AGC, NSG, Guardian) have EPD programmes. Consolidated industry structure (4 companies dominate) means DPP implementation reaches majority of market. EN 17074 c-PCR is most advanced product-specific PCR in CPR. GLA is among the most DPP-ready families.",
       "source": "AGC EPD Generator (https://www.agc-glass.eu/en/news/press-release/agc-environmental-product-declaration-epd-generator-now-available); AGC Configurator (https://www.agc-yourglass.com/configurator/en/epd); Guardian EPDs (https://www.guardianglass.com/us/en/tools-and-resources/product-certifications/product-declarations)",
       "action_required": "Document DPP readiness in content. Note AGC EPD Generator as best-in-class DPP-ready tool.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-GLA-005",
@@ -1530,7 +1547,7 @@
       "description": "Only 5% of flat glass from construction and demolition is recycled; 80%+ ends in landfills. Average cullet share in new flat glass: 26% (up from 20% in 2010). Target: 40% if all end-of-life glazing recycled flat-to-flat. Each 10% cullet increase saves 2.5% energy, avoids 0.7t CO₂/t cullet. Key barrier: no EU obligation to dismantle and sort windows from buildings. Glass for Europe advocates closed-loop flat-to-flat recycling. McKinsey identifies circularity as key to flat glass decarbonisation. DPP recycled content data infrastructure underdeveloped.",
       "source": "Glass for Europe Circular Economy (https://glassforeurope.com/circular-economy/); AGC Recycling (https://www.agc-glass.eu/en/sustainability/decarbonisation/recycling); McKinsey (https://www.mckinsey.com/industries/metals-and-mining/our-insights/seeing-clearly-decarbonizing-the-flat-glass-industry-with-circularity); EuRIC (https://euric.org/resource-hub/position-papers/joint-position-paper-from-flat-to-circular-rethinking-glass-in-construction)",
       "action_required": "Document circular economy gap in content.key_risks. Flag DPP recycled content data as underdeveloped.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-GLA-006",
@@ -1543,7 +1560,7 @@
       "description": "EC adopted EPBD guidance (30 June 2025) on transparent building elements encouraging Member States to require both U-value AND g-value (solar factor), whereas current requirements are 'almost entirely based on U-value.' EPBD implementation deadline: 29 May 2026. DPP data for insulating glass must carry both thermal and solar performance aligned with EPBD national calculation methodologies. GLA is one of few families at direct CPR/EPBD intersection.",
       "source": "Glass for Europe EPBD guidance (https://glassforeurope.com/the-european-commission-releases-the-epbd-guidance-on-the-energy-calculation-of-transparent-building-elements/); EC EPBD (https://energy.ec.europa.eu/topics/energy-efficiency/energy-performance-buildings/energy-performance-buildings-directive_en)",
       "action_required": "Document EPBD cross-regulatory dimension in content. Ensure DPP data model includes both U-value and g-value.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-GYP-001",
@@ -1555,7 +1572,7 @@
       "title": "Four content sections empty",
       "description": "content.standards_landscape, content.standards_development, content.key_risks, and content.sources_summary are empty.",
       "action_required": "Populate with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-GYP-002",
@@ -1568,7 +1585,7 @@
       "description": "Knauf publishes EN 15804+A2 EPDs via EPD International (GKB, GKI, A-ZERO). Saint-Gobain publishes via Gyproc/British Gypsum brands, IBU-verified. British Gypsum launched Gyproc SoundBloc Infinaé 100 (UK's first 100% recycled plasterboard, Jan 2025). Etex/Siniat has RECYPLAC (100% recycled, Jul 2025). Strong EPD infrastructure among top-3 producers who dominate ~90% of market. Smaller regional producers may lack EPDs — similar split to other families.",
       "source": "Knauf EPDs (https://www.environdec.com/); Saint-Gobain/Gyproc (https://www.gyproc.co.uk/sustainability); British Gypsum (https://www.british-gypsum.com/); IBU (https://ibu-epd.com/)",
       "action_required": "Document Big-3 EPD readiness in content. Note 100% recycled products as DPP exemplars.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-GYP-003",
@@ -1581,7 +1598,7 @@
       "description": "More than 50% of German gypsum demand (~4Mt/yr) is met by FGD gypsum from coal power stations. European coal phase-out (Germany target 2038) will sharply reduce FGD supply. Plasterboard plants built adjacent to power stations will become 'orphans'. Raw material transition: FGD synthetic → recycled C&D gypsum + natural quarrying. Recycled gypsum market projected $3.21B by 2030. For DPP: raw material source (natural, FGD, recycled) is an emerging data attribute. EN 14190 (reprocessed gypsum) already provides the hEN framework. Siniat RECYPLAC (100% recycled) and Etex (35%+ recycled content) lead the transition.",
       "source": "Clean Energy Wire (https://www.cleanenergywire.org/news/germanys-gypsum-supply-threatened-coal-exit-report); Global Gypsum (https://www.globalgypsum.com/magazine/the-last-word/744-often-overlooked-gypsum-is-the-wonder-material-we-cannot-do-without); ZKG (https://www.zkg.de/en/artikel/zkg_Latest_market_trends_for_FGD_gypsum-3749442.html)",
       "action_required": "Document FGD supply transition in content.key_risks. Flag raw material source as DPP data attribute.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-GYP-004",
@@ -1594,7 +1611,7 @@
       "description": "European gypsum plasterboard market $7.10B (2023), growing to $14.08B by 2033 (CAGR 7.09%). Dominated by Saint-Gobain (Gyproc, British Gypsum, Rigips), Knauf, and Etex (Siniat, Fermacell). Growth drivers: EPBD renovation wave, fire safety (A1/A2 classification), acoustic performance, modular construction. Emerging alternatives: hempcrete (Hemspan), bio-based panels (Adaptavate). Single-TC structure (CEN/TC 241) and A2-s1,d0 CWFT classification simplify DPP implementation compared to multi-TC families.",
       "source": "GlobeNewsWire (https://www.globenewswire.com/news-release/2024/11/01/2973239/28124/en/Europe-Gypsum-Based-Plasterboard-and-Alternatives-Market-Report-2023-2033); Mordor Intelligence (https://www.mordorintelligence.com/industry-reports/europe-gypsum-board-market)",
       "action_required": "Include market context in content for DPP impact assessment.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-KAS-001",
@@ -1602,7 +1619,8 @@
       "severity": "low",
       "field": "content",
       "description": "4 content sections empty: standards_development, stakeholder_notes, key_risks, sources_summary.",
-      "action": "Populate in future content pass"
+      "action": "Populate in future content pass",
+      "status": "resolved"
     },
     {
       "id": "iss-KAS-002",
@@ -1610,7 +1628,8 @@
       "severity": "info",
       "field": "standards",
       "description": "EAD 340033 (prefab chimney kits with flue liner) — potential overlap with CHI (chimneys) family. Product boundary: prefab kit vs chimney component.",
-      "action": "Note for cross-family tracking"
+      "action": "Note for cross-family tracking",
+      "status": "resolved"
     },
     {
       "id": "iss-KAS-003",
@@ -1618,7 +1637,8 @@
       "severity": "info",
       "field": "content.about",
       "description": "KAS includes PA 36 (attached ladders) per COM(2025) 772 Working Plan — potential overlap with LAD family in Batch 9. Verify family boundary when processing LAD.",
-      "action": "Verify against LAD in Batch 9"
+      "action": "Verify against LAD in Batch 9",
+      "status": "resolved"
     },
     {
       "id": "iss-KAS-004",
@@ -1631,7 +1651,7 @@
       "description": "Systematic review found only ~15 EPDs for ETICS (EPS, XPS, mineral wool) against 798 issued ETAs. Kit system LCA complexity (insulation + adhesive + mesh + render + fixings) makes EPD boundaries complex. AVCP System 1 ensures structural/fire safety testing but environmental data infrastructure severely lacking. AVCP for ETICS sustainability 'will be challenging to implement in practice based only on environmental indicators according to EN 15804.' Some individual ETICS EPDs exist (Berger S-P-01418 on EPD International).",
       "source": "MDPI Sustainability 13(24):13705 (https://www.mdpi.com/2071-1050/13/24/13705); EPD International (https://www.environdec.com/library/epd1418)",
       "action_required": "Document ETICS EPD readiness gap in content. Flag as major DPP implementation barrier for kit systems.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-KAS-005",
@@ -1644,7 +1664,7 @@
       "description": "ETICS system materials market: $7.73B (2023) → $12.24B by 2031 (CAGR 5.9%). EPS 77% of ETICS insulation. Building renovation 52% of ETICS applications. European prefab buildings market: $78B (2025) → $109.3B by 2030 (CAGR 7%). Timber 36.12% market share. Modular systems 46% revenue share. Germany leads (19.2%). Combined KAS market value rivals largest CPR families. EU Renovation Wave and EPBD targets are primary demand drivers.",
       "source": "Insight Partners ETICS Market (https://www.theinsightpartners.com/reports/europe-etics-system-materials-market); Mordor Intelligence Prefab (https://www.mordorintelligence.com/industry-reports/european-prefabricated-buildings-industry-study); Fortune BI Modular (https://www.fortunebusinessinsights.com/europe-modular-construction-market-107747)",
       "action_required": "Include market context in content for DPP impact assessment.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-KAS-006",
@@ -1657,7 +1677,7 @@
       "description": "KAS kits require 3-layer DPP data: (1) component-level (insulation, adhesive, mesh, render, fixing), (2) system-level (ETICS or prefab unit performance), (3) building-level (EPBD energy calculations). EC CPR DPP feasibility study (May 2025) has limited kit-specific guidance. DPP registry (July 2026) must handle kit-to-component relationships. New EADs require: GWP immediately, LCA-EPD core by 2029, full lifecycle by 2031. Fire safety classification (EN 13501-1, AVCP System 1) is safety-critical system-level DPP data that depends on component interaction.",
       "source": "EC DPP feasibility study (https://op.europa.eu/en/publication-detail/-/publication/cf329d5e-3464-11f0-8a44-01aa75ed71a1/language-en); EC CPR announcement (https://single-market-economy.ec.europa.eu/news/new-eu-rules-safety-and-sustainability-construction-products-mark-new-step-sectors-competitiveness-2025-01-07_en)",
       "action_required": "Document kit DPP architecture challenge in content.key_risks. Flag for DPP system design considerations.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-LAD-001",
@@ -1666,7 +1686,8 @@
       "type": "empty_content",
       "title": "3 content sections empty",
       "description": "standards_development, key_risks, sources_summary are empty.",
-      "action": "Populate with proposed content from deep-dive report."
+      "action": "Populate with proposed content from deep-dive report.",
+      "status": "resolved"
     },
     {
       "id": "iss-LAD-002",
@@ -1675,7 +1696,8 @@
       "type": "cross_family",
       "title": "3 hENs currently under ROC (family 22), not LAD (family 36)",
       "description": "EN 12951, EN 516, and EN 517 are currently cited under product family 22 (ROC) via Implementing Decision (EU) 2019/451. Under CPR 2024/3110, they may be reclassified to family 36 (LAD). The standards[] data in LAD does not indicate their current family-22 classification.",
-      "action": "Consider adding a field to flag standards pending reclassification from ROC to LAD. Verify reclassification status once CPR 2024/3110 implementing measures are adopted."
+      "action": "Consider adding a field to flag standards pending reclassification from ROC to LAD. Verify reclassification status once CPR 2024/3110 implementing measures are adopted.",
+      "status": "resolved"
     },
     {
       "id": "iss-LAD-003",
@@ -1684,7 +1706,8 @@
       "type": "cross_family",
       "title": "LAD milestones dependent on KAS (family 34)",
       "description": "Per COM(2025) 772, family 36 (LAD) milestones are handled within family 34 (KAS). KAS M-I Q2 2026 is imminent. If KAS workstreams split (as noted in Table 3), LAD may get independent milestones.",
-      "action": "Monitor KAS M-I outcome for LAD implications. Update LAD milestones if independent dates are assigned."
+      "action": "Monitor KAS M-I outcome for LAD implications. Update LAD milestones if independent dates are assigned.",
+      "status": "resolved"
     },
     {
       "id": "iss-LAD-004",
@@ -1697,7 +1720,7 @@
       "description": "No EPDs found for fixed roof ladders (EN 12951), roof safety hooks (EN 517), or roof walkways (EN 516). Products are predominantly aluminium and galvanised steel. Could potentially inherit environmental data from aluminium/steel sector EPDs. BAU-EPD lists CEN/TC 128 PCRs suggesting EPD methodology exists at TC level. Niche market size means DPP infrastructure costs may be disproportionately high for manufacturers like ZARGES, Kee Safety, MSA Safety.",
       "source": "European Aluminium (https://european-aluminium.eu/); ZARGES (https://www.zarges.com/uk/fixed-vertical-ladders/); BAU-EPD (https://www.bau-epd.at/en/pcr/list/cen-tc-standards-european-specific-product-category-rules-for-construction-products)",
       "action_required": "Document zero EPD coverage in content. Note metal sector EPD inheritance as potential pathway.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-LAD-005",
@@ -1710,7 +1733,7 @@
       "description": "Fixed attached ladders sit at the intersection of three EU regulations: CPR 2024/3110 (construction products permanently attached to buildings, EN 12951/EN 516/EN 517), Machinery Regulation (EN 14122-4 fixed ladders on machinery), and PPE Regulation (EN 353-1 guided fall arresters). ZARGES markets fixed ladders to EN 14122-4 rather than EN 12951, suggesting market preference for machinery standard. A fixed ladder attached to a building could need CPR DPP AND machinery/PPE compliance simultaneously. Regulatory boundary needs clarification in SReq (handled within KAS).",
       "source": "ZARGES EN 14122-4 (https://www.zarges.com/uk/fixed-vertical-ladders/); EUR-Lex Directive 2001/45/EC (https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32001L0045)",
       "action_required": "Document multi-regulatory overlap in content.key_risks. Flag regulatory boundary as SReq clarification item.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-LAD-006",
@@ -1723,7 +1746,7 @@
       "description": "No specific market sizing found for fixed attached ladders / roof safety products in Europe — niche segment within broader fall protection market. ZARGES (Germany, 1930s) is Europe's leading manufacturer. Key competitors: Kee Safety, MSA Safety, Layher, Hailo. Materials: aluminium, galvanised steel, stainless steel. EU Directive 2001/45/EC establishes ladders as 'last resort' for work at height — regulatory pressure toward more sophisticated access systems may limit market growth. EN 12951:2004, EN 516:2006, EN 517:2006 are 18-22 years old.",
       "source": "ZARGES (https://www.zarges.com/uk/fixed-vertical-ladders/); EUR-Lex Directive 2001/45/EC (https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32001L0045)",
       "action_required": "Include market context and regulatory landscape in content.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-MAS-001",
@@ -1736,7 +1759,7 @@
       "title": "EN 998-1 AVCP mismatch with CMG",
       "description": "EN 998-1 in MAS records AVCP as '4' while CMG records '2+, 4'. Per Commission Decision 97/555/EC, the correct AVCP for mortar for masonry is System 2+ for designed mortars and System 4 for prescribed mortars. MAS should likely record '2+, 4' to match. Name format also differs: MAS says 'Mortar for masonry' while CMG says 'Specification for mortar for masonry'.",
       "action_required": "Update MAS EN 998-1 AVCP from '4' to '2+, 4' after verification. Align name format across families.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-MAS-002",
@@ -1749,7 +1772,7 @@
       "title": "EN 998-2 DPP estimate differs between MAS and CMG",
       "description": "EN 998-2 in MAS has dpp_est '~2031–2032' while in CMG it is '~2032–2033'. AVCP matches (both '2+, 4'). The difference in DPP estimate is expected since each family derives it from its own SReq timeline, but should be documented as a known variance.",
       "action_required": "Verify DPP estimate derivation for cross-listed standards. Consider adding notes explaining the variance.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-MAS-003",
@@ -1761,7 +1784,7 @@
       "title": "Five content sections empty",
       "description": "content.standards_landscape, content.standards_development, content.stakeholder_notes, content.key_risks, and content.sources_summary are empty.",
       "action_required": "Populate with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-MAS-004",
@@ -1774,7 +1797,7 @@
       "description": "Wienerberger publishes EN 15804 EPDs for clay masonry products. TBE (Tiles & Bricks Europe) agreement requires all clay product EPDs to be cradle-to-grave (modules A1-D). BAU-EPD publishes PCR Part B for construction clay products. UK BDA publishes industry average clay brick EPD. EPD coverage strongest for clay bricks, less visible for concrete blocks, AAC, and calcium silicate. For DPP: TBE cradle-to-grave requirement means clay EPDs already provide full lifecycle data. Other material types will need to catch up.",
       "source": "Wienerberger EPDs (https://www.wienerberger.co.uk/); TBE sustainability (http://www.tiles-bricks.eu/sustainability); BAU-EPD PCR (https://www.bau-epd.at/)",
       "action_required": "Document split EPD readiness by material type in content.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-MAS-005",
@@ -1787,7 +1810,7 @@
       "description": "Clay brick reuse from demolition increasing. Crushed brick as aggregate replacement. K-Briq: 90% C&D waste, 5% embodied carbon of traditional clay brick. EU 70% CDW recycling target. EAD 170005 (recycled clay masonry units) provides CE-marking route for recycled content. EAD 170051 (compressed earth blocks) enables low-energy earth construction. EAD 170012 (cellular glass core bricks) offers thermal innovation. MAS EADs represent some of the most circular-economy-oriented products in CPR.",
       "source": "BDA circular principles (https://www.brick.org.uk/better-with-brick/sustainability/circular-principles); UKGBC (https://ukgbc.org/resources/bricks-made-from-industrial-waste/); EOTA EAD 170005 (https://www.eota.eu/)",
       "action_required": "Document circular economy innovations in content. Flag EAD 170005/170051 as exemplars.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-MAS-006",
@@ -1800,7 +1823,7 @@
       "description": "European AAC market $1.75B (2024), CAGR 5.5%. Clay bricks 41% of European market. Wienerberger inaugurated world's largest electric kiln at Uttendorf, Austria (Nov 2024) — nearly CO₂-neutral brick production with 90% emission reduction. Running on green electricity. First nearly carbon-neutral clay brick. Wienerberger targets: 25% production emission reduction by 2026, climate neutrality by 2050. For DPP: electrically-fired bricks will have dramatically lower GWP than gas-fired equivalents — creating significant within-product-category environmental data variation.",
       "source": "Wienerberger Uttendorf (https://www.wienerberger.com/en/media/press-releases/2024/20241129-wienerberger-starts-Europes-greenest-brick-production.html); Expert Market Research AAC (https://www.expertmarketresearch.com/reports/europe-autoclaved-aerated-concrete-aac-market)",
       "action_required": "Include market context and Wienerberger decarbonisation milestone in content.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-MEM-001",
@@ -1812,7 +1835,7 @@
       "title": "Five content sections empty",
       "description": "content.standards_landscape, content.standards_development, content.stakeholder_notes, content.key_risks, and content.sources_summary are empty.",
       "action_required": "Populate with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-MEM-002",
@@ -1825,7 +1848,7 @@
       "description": "Sika (SikaProof, Sikaplan), BMI Group (Icopal), Bauder (RBM systems), and Soprema all publish EN 15804+A2 EPDs for waterproofing membranes. prEN 17388-2 'Flexible sheets for waterproofing — Environmental product declarations — Product Category Rules' is under development at CEN/TC 254 — this membrane-specific PCR would harmonise EPD methodology across bitumen and synthetic sheets, directly supporting DPP environmental data generation. SME manufacturers likely lack EPD infrastructure. For DPP: EPD readiness among market leaders is relatively strong for a late-timeline family, but the PCR is needed to ensure comparability across material types.",
       "source": "Bauder RBM EPD (https://www.bauder.co.uk/getmedia/37161530-7cc6-4472-aef0-5c729ce4f398/Environmental-Product-Declaration-RBM.pdf); Soprema EPD Guide (https://epd.guide/manufacturers/soprema-at-a-glance-products-and-epd-coverage); BAU-EPD PCR (https://www.bau-epd.at/en/pcr/list/cen-tc-standards-european-specific-product-category-rules-for-construction-products)",
       "action_required": "Document EPD readiness and prEN 17388-2 PCR development in content. Flag as DPP-ready among leaders.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-MEM-003",
@@ -1838,7 +1861,7 @@
       "description": "ROOFCOLLECT (ESWA programme) coordinates recovery and recycling of post-consumer PVC roofing membranes across Europe. VinylPlus recycled ~1M tonnes PVC annually. EPDM recycled into rubber crumb for tires, pavers, playgrounds. Recycled content in new PVC membranes limited to ~5%. Bitumen membranes are the most challenging to recycle — most end up in landfill or energy recovery. For DPP: circular economy data will vary dramatically by membrane material within this single family — PVC has established collection infrastructure, bitumen has almost none.",
       "source": "ROOFCOLLECT/ESWA; VinylPlus annual reports",
       "action_required": "Document material-dependent recycling gap in content. Flag bitumen end-of-life as DPP circular economy challenge.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-MEM-004",
@@ -1851,7 +1874,7 @@
       "description": "European waterproofing membrane market $4.6B (2024), growing at 4.1–5.9% CAGR. Global market projected beyond $14.5B by 2032. Bitumen sheets remain dominant in continental Europe but PVC and TPO single-ply membranes gaining share (lighter weight, faster installation, cool roof properties). EPDM holds niche position. Key manufacturers: Sika, BMI Group, Soprema, IKO, Bauder. Below-grade waterproofing growing segment driven by EU infrastructure investment ($95.5B+ EIB urban regeneration). National regulatory fragmentation (e.g., DIN 18533 vs EN 13967) adds complexity for DPP declared performance.",
       "source": "GMInsights (https://www.gminsights.com/pressrelease/waterproofing-membrane-market); ScienceDirect (https://www.sciencedirect.com/science/article/pii/S0950061821015117)",
       "action_required": "Include market context and material split DPP implications in content.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-PCR-001",
@@ -1863,7 +1886,7 @@
       "title": "Three content sections empty",
       "description": "content.stakeholder_notes, content.key_risks, and content.sources_summary are all empty strings. While not incorrect, populating these would improve completeness.",
       "action_required": "Low priority. Consider adding stakeholder engagement notes (CEN/TC 229), key risks (SReq adoption delay, EN 13369 non-harmonised status), and sources summary.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-PCR-002",
@@ -1876,7 +1899,7 @@
       "description": "The draft SReq for precast concrete products (CPR 305/2011) has a feedback deadline of 3 Mar 2026. As of this deep-dive (1 Mar 2026), no adoption announcement has been found. When adopted, multiple fields need updating: sreq → 'Adopted', milestones.sreq.status → 'adopted', Pipeline B NT-4 status → 'complete'.",
       "source": "EC Notification System — Art. 12",
       "action_required": "Monitor weekly after 3 Mar 2026. When adoption is confirmed, apply coordinated update to sreq, milestones.sreq, and Pipeline B NT-4.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-PCR-003",
@@ -1888,7 +1911,7 @@
       "title": "GWP declaration mandatory from Jan 2026 for EN 1520 and EN 12602",
       "description": "Under new CPR 2024/3110, GWP declarations became mandatory from 8 January 2026 for products covered by existing OJ-cited harmonised standards. EN 1520:2011 and EN 12602:2016 are both OJ-cited under M/100, making precast concrete manufacturers among the first affected. Creates early compliance burden before full DPP system operational. Strong EPD infrastructure (EN 15804) eases transition.",
       "action_required": "Document in content.key_risks. Consider noting GWP obligation in dpp_outlook.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-PCR-004",
@@ -1901,7 +1924,7 @@
       "description": "GCCA Global Ratings for Concrete: 7-band AA-G classification based on GWP (kg CO₂e/m³) cross-referenced with strength (MPa). Precast explicitly included in scope. Band E = global reference (e.g., 255 kg CO₂e/m³ for 20 MPa). Uses EN 15804+A2. UK adaptation published Feb 2025. Provides voluntary carbon class overlay alongside mandatory CPR GWP disclosure in DoPC.",
       "source": "GCCA Concrete Ratings (https://gccassociation.org/lcr-concrete/); GCCA Definitions PDF (https://gccassociation.org/wp-content/uploads/2025/07/GCCA_Concrete_Definitions_for_Low_Carbon_and_NearZeroPolicy_Digital.pdf)",
       "action_required": "Document in content. Note GCCA LCR as market classification overlay for CPR GWP disclosure.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-PCR-005",
@@ -1914,7 +1937,7 @@
       "description": "ReCreate (H2020, grant 958200) demonstrates deconstruction and reuse of intact precast components from condemned buildings. Developing EPDs for reused precast concrete. Reuse achieves 93-98% energy/carbon reduction vs virgin production. DPP could carry original Declaration of Performance data through reuse cycles — precast components have known performance from original DoP.",
       "source": "ReCreate project (https://recreate-project.eu/); CORDIS 958200 (https://cordis.europa.eu/project/id/958200)",
       "action_required": "Document in content. Consider DPP lifecycle data model implications for precast reuse.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-PTA-001",
@@ -1922,7 +1945,8 @@
       "severity": "low",
       "field": "content",
       "description": "4 content sections empty: standards_landscape, standards_development, stakeholder_notes, key_risks, sources_summary.",
-      "action": "Populate in future content pass"
+      "action": "Populate in future content pass",
+      "status": "resolved"
     },
     {
       "id": "iss-PTA-002",
@@ -1935,7 +1959,7 @@
       "description": "TEPPFA has developed an EPD application tool for plastic piping. VinylPlus achieved 724,638 tonnes PVC recycled in 2024, with ~50,000 tonnes recycled PVC used in new pipes annually. CEN TS 18116:2025 provides design-for-recycling guidelines. PPFA (US) released 22 new pipe EPDs showing 6% embodied carbon reduction. However, European plastic pipe product-specific EPDs remain rare. Foundation exists but gap remains for DPP environmental data.",
       "source": "TEPPFA (https://www.teppfa.eu/); VinylPlus (https://www.vinylplus.eu/); PVC4Pipes (https://www.pvc4pipes.com/); CEN TS 18116:2025 via TEPPFA",
       "action_required": "Document EPD readiness status in content. Note TEPPFA EPD app and VinylPlus as emerging DPP infrastructure.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-PTA-003",
@@ -1948,7 +1972,7 @@
       "description": "Three EU regulations affect plastic pipe manufacturing: (1) REACH 2023/2055 restricts intentionally added microplastics (phased from Oct 2025). (2) EU 2025/2365 (16 Dec 2025) targets plastic pellet losses at manufacturing facilities handling 5+ tonnes/year. (3) Drinking Water Directive recast requires new leaching/microbial standards for pipe materials by 31 Dec 2026. While PTA covers pipes NOT in contact with drinking water, the regulatory trend tightens around all plastic products. DPP may eventually need microplastics/leaching data fields.",
       "source": "EC microplastics (https://environment.ec.europa.eu/topics/plastics/microplastics_en); REACH 2023/2055 (https://en.reach24h.com/news/insights/chemical/eu-microplastics-spm-restriction-deadline); EU 2025/2365 (https://environment.ec.europa.eu/news/new-law-reducing-microplastic-pollution-enters-force-2025-12-16_en); DWD recast (https://environment.ec.europa.eu/topics/water/drinking-water_en)",
       "action_required": "Document cross-regulatory microplastics pressure in content.key_risks. Note pellet regulation impact on pipe manufacturers.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-PTA-004",
@@ -1961,7 +1985,7 @@
       "description": "European PVC pipes market valued at ~$2.22B (2024), CAGR 5.25%. Sewerage/drainage is the largest segment, aligning with PTA's EN 1401-1 and EN 12666-1. Germany, France, and UK are largest markets. At current growth rates, market will be significantly larger by PTA's ~2033-2034 DPP timeline. TEPPFA represents 350 companies. Market is driven by infrastructure renewal and replacement of aging metal/concrete pipe networks.",
       "source": "Mordor Intelligence (https://www.mordorintelligence.com/); TEPPFA (https://www.teppfa.eu/)",
       "action_required": "Include market size context in content for DPP impact assessment.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-RCP-001",
@@ -1974,7 +1998,7 @@
       "title": "EN 13043 and EN 13055 AVCP mismatch with AGG",
       "description": "EN 13043 (aggregates for bituminous mixtures) and EN 13055 (lightweight aggregates) are cross-listed in both RCP and AGG. RCP records AVCP as '2+' for both, while AGG records '2+, 4'. The correct value likely includes System 4 for certain characteristics. EN 13242 (unbound/hydraulically bound) is consistent across both families ('2+'). Name formats also differ slightly.",
       "action_required": "Verify AVCP for EN 13043 and EN 13055 against the relevant Commission Decision. Update the family with incorrect data.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-RCP-002",
@@ -1986,7 +2010,7 @@
       "title": "Three content sections empty",
       "description": "content.stakeholder_notes, content.key_risks, and content.sources_summary are empty.",
       "action_required": "Populate with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-RCP-003",
@@ -1999,7 +2023,7 @@
       "description": "Eurobitume LCA Report 4.0 (March 2025) updates paving-grade bitumen GWP100 from 216 kg CO₂e/t (LCA 3.1, 2021) to 530 kg CO₂e/t — a 145% increase. Change is due to improved methane accounting from crude oil extraction, not increased actual emissions. Data from 17 European refineries (75%+ coverage). Outputs are EN 15804+A2 compatible. ~70% of bitumen GWP stems from oil extraction and refining. All future RCP EPDs and DPP environmental declarations must use this updated figure. Previous EPDs using LCA 3.1 data are significantly understated.",
       "source": "Eurobitume LCA 4.0 (https://eurobitume.eu/lca_4-0_news/); Eurobitume LCA 4.0 PDF (https://eurobitume.eu/wp-content/uploads/2025/03/EB-LCA-4.0-2025.pdf)",
       "action_required": "Flag Eurobitume LCA 4.0 GWP revision in content. Note EN 15804+A2 compatibility for DPP readiness.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-RCP-004",
@@ -2012,7 +2036,7 @@
       "description": "Reclaimed Asphalt Pavement (RAP) is Europe's most recycled construction material. 45.5 Mt available annually, 23.2 Mt utilised in asphalt production, 76% reused in mixes. 65-75% goes to new asphalt, 25-35% to unbound layers, ~5% to landfill. 100% recyclability demonstrated. RAP incorporation typically limited to 10-30% by national specifications. EN 13108-8 governs RAP specifications. This circular economy data is directly relevant to DPP recycled content and end-of-life data fields.",
       "source": "EAPA Recycling (https://eapa.org/recycling/); EAPA Asphalt in Figures (https://eapa.org/asphalt-in-figures/); CAPRI RAP overview (https://www.capri-project.com/news-1/the-importance-of-re-userecycle-rap-quick-overview-in-europe)",
       "action_required": "Document RAP circular economy data in content. Note as DPP recycled content exemplar.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-RCP-005",
@@ -2025,7 +2049,7 @@
       "description": "EU-27 HMA+WMA production: 208.5 Mt (2024). European bitumen market: ~$20.48B (2024), road construction 85.5% of market. EU earmarked €7B for road modernisation (2024), Germany €2.8B/yr motorway spending. RCP is among the highest-tonnage CPR families. EAPA/Eurobitume coordinate as joint industry voice. EAPA Asphalt 4.0 explores BIM/digital twins for quality management — potential DPP infrastructure.",
       "source": "EAPA Asphalt in Figures (https://eapa.org/asphalt-in-figures/); Market Data Forecast (https://www.marketdataforecast.com/market-reports/europe-bitumen-market); Mordor Intelligence (https://www.mordorintelligence.com/industry-reports/europe-bitumen-market)",
       "action_required": "Include market size context in content for DPP impact assessment.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-ROC-001",
@@ -2037,7 +2061,7 @@
       "title": "Four content sections empty",
       "description": "content.standards_landscape, content.standards_development, content.key_risks, and content.sources_summary are all empty. ROC has 52 standards (21 hEN + 31 EAD) — the 2nd-largest EAD portfolio — with significant context worth documenting.",
       "action_required": "Populate with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-ROC-002",
@@ -2051,7 +2075,7 @@
       "title": "EN 14509 (sandwich panels) cross-listed in SMP, ROC, WCF",
       "description": "EN 14509 is tracked in SMP, ROC, and WCF standards[]. Data (AVCP, cited, DPP estimate) should be consistent across all three families. SMP deep-dive (Batch 1) flagged this as iss-SMP-003.",
       "action_required": "Verify EN 14509 data consistency across SMP, ROC, WCF.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-ROC-003",
@@ -2064,7 +2088,7 @@
       "title": "EAD 020011 (roof hatches) potentially overlaps with ROC",
       "description": "EAD 020011-00-0404 (roof hatches/smoke vents) is tracked in DWS but was flagged in Batch 1 as potentially relevant to ROC. Verify whether this EAD should also appear in ROC's standards[].",
       "action_required": "Check EAD 020011 product scope against ROC family definition.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-ROC-004",
@@ -2076,7 +2100,7 @@
       "title": "Implementing Decision 2025/871 cites ROC-relevant EADs not in standards[]",
       "description": "Commission Implementing Decision (EU) 2025/871 (30 Apr 2025, amending 2019/450) cites 14 EADs. At least 2 are directly relevant to ROC: EAD 042461-00-1201 'Hydrophilic thermal insulation product of mineral wool for green roofs' and EAD 210195-00-0404 'Ultra-thin natural stone veneer sheets for walls and roofs'. EAD 230328-00-0108 'Rubber modified bitumen binders' is also tangentially relevant (bitumen input for roof coverings). None appear in ROC standards[]. EAD count (31) may need updating.",
       "action_required": "Evaluate EAD 042461 and EAD 210195 for inclusion in ROC standards[]. If added, update ead_count and total. Check whether these EADs' product area matches ROC (PA 22) or are in adjacent PAs.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-ROC-005",
@@ -2088,7 +2112,7 @@
       "title": "EPBD 2024/1275 solar rooftop obligations interact with ROC photovoltaic EADs",
       "description": "EPBD recast (Directive (EU) 2024/1275) mandates solar-ready rooftops: non-residential >250m² by 31 Dec 2026, residential by 31 Dec 2029. BIPV products (solar tiles, solar roof panels) require dual compliance: CPR (construction performance) + LVD/EMC (electrical). Several ROC EADs cover photovoltaic roof systems. EPBD obligation will massively increase BIPV demand and regulatory scrutiny. Transposition deadline 29 May 2026.",
       "action_required": "Document EPBD interaction in content.key_risks. Monitor BIPV product standard development. Consider flagging photovoltaic roof EADs for dual-regulation note.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-ROC-006",
@@ -2101,7 +2125,7 @@
       "description": "Wienerberger publishes EPDs for clay roof tiles (DE, FR), accessories, and Sandtoft In-Roof Solar (UK) — the latter a BIPV product with both EN 15804 environmental data and BROOF[t4] fire certification. However, BMI Group (formed by Standard Industries combining Braas Monier + Icopal, largest EU roofing manufacturer) has no EPDs found. Split EPD readiness mirrors WBP pattern (Kronospan gap vs EGGER/Pfleiderer readiness).",
       "source": "Wienerberger UK EPDs (https://www.wienerberger.co.uk/about-us/sustainability/environmental-product-declarations.html); Sandtoft Solar EPD (https://www.wienerberger.co.uk/about-us/news-blogs/in-roof-solar-epd.html); BMI Group (https://bmigroupinternational.com/)",
       "action_required": "Document EPD readiness split in content. Note Wienerberger BIPV EPD as DPP-ready exemplar.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-ROC-007",
@@ -2114,7 +2138,7 @@
       "description": "Building-Integrated Photovoltaic (BIPV) roof products require dual certification: CPR (construction performance, fire safety BROOF) + IEC 61215/61730 (photovoltaic module electrical safety). European BIPV market growing from $7.4B (2022) to $16.5B (2033). Italy Dec 2025 heritage reform unlocked protected buildings for 'virtually invisible' solar tiles. No harmonised approach to dual-regulation DPP (construction + electrical in single passport) exists.",
       "source": "Electrek Roofit.Solar (https://electrek.co/2026/02/18/european-company-sleek-solar-roof-just-made-its-us-debut/); PV Magazine ML System (https://www.pv-magazine.com/2026/01/06/ml-system-unveils-solar-facade-panels-roof-integrated-pv-tiles/)",
       "action_required": "Document BIPV dual-DPP challenge in content. Monitor harmonisation of CPR/IEC product classification for BIPV.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-ROC-008",
@@ -2127,7 +2151,7 @@
       "description": "EPBD recast (Directive 2024/1275) acknowledges green roofs for first time: member states must consider green roofs when meeting solar energy obligations. EAD 042461-00-1201 (hydrophilic mineral wool for green roofs) newly cited via Implementing Decision 2025/871. Green roofs lower surface temperatures 20-30°C. Multi-layer green roof systems (waterproofing + insulation + drainage + growing medium + vegetation) create component vs system DPP data challenge.",
       "source": "WGIN EPBD recognition (https://worldgreeninfrastructurenetwork.org/green-roof-acknowledged-for-the-first-time-in-epbd/); EFB/UNEP/GlobalABC (https://globalabc.org/sites/default/files/2025-02/EFB_ENZI_UNEP_GLOBALABC_06_02_2025.pdf)",
       "action_required": "Document green roof EPBD integration in content. Consider DPP implications for multi-layer roof systems.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-RPS-001",
@@ -2135,7 +2159,8 @@
       "severity": "low",
       "field": "content",
       "description": "2 content sections empty: stakeholder_notes, key_risks, sources_summary.",
-      "action": "Populate in future content pass"
+      "action": "Populate in future content pass",
+      "status": "resolved"
     },
     {
       "id": "iss-RPS-002",
@@ -2145,28 +2170,32 @@
       "current": "status: not_started",
       "expected": "status: in_progress or complete",
       "description": "NT-3 (Milestone III) was targeted Q4 2025 but status still shows 'not_started' as of Mar 2026. May now be complete or in progress. Requires verification with Commission/TC 459.",
-      "action": "Verify M-III status and update accordingly"
+      "action": "Verify M-III status and update accordingly",
+      "status": "resolved"
     },
     {
       "id": "iss-RPS-003",
       "type": "cross_regulatory",
       "severity": "warning",
       "description": "CBAM full financial implementation Jan 2026 for steel. Embedded emissions tracking requirement highly synergistic with DPP environmental performance data under CPR. Steel producers building CBAM compliance systems are de facto building DPP infrastructure. Clean Industrial Deal proposes steel as first sector for mandatory carbon label (GWP in DoPC). Triple compliance burden: CBAM + ESPR + potential safeguard tariffs.",
-      "action": "Document CBAM cross-regulatory in content. Monitor carbon label delegated act timeline."
+      "action": "Document CBAM cross-regulatory in content. Monitor carbon label delegated act timeline.",
+      "status": "resolved"
     },
     {
       "id": "iss-RPS-004",
       "type": "regulatory_development",
       "severity": "info",
       "description": "Eurocode 2 (EN 1992-1-1:2023) published Nov 2023. References EN 10080 and prEN 10138 as normative standards despite neither being harmonised. Creates design code/product standard gap: engineers design per Eurocode 2 referencing EN 10080, but manufacturers cannot CE-mark to it. National adoption with annexes expected ~2028.",
-      "action": "Document Eurocode 2 gap in content.stakeholder_notes."
+      "action": "Document Eurocode 2 gap in content.stakeholder_notes.",
+      "status": "resolved"
     },
     {
       "id": "iss-RPS-005",
       "type": "timeline_context",
       "severity": "info",
       "description": "Only CPR family where CE marking is impossible (since withdrawal of EN 10080:2005 by Decision 2006/893/EC in 2006). 20-year harmonisation failure. prEN 10080:2023 at stage 40.60 but not yet at formal vote. prEN 10138 series also stuck at prEN for 20+ years. Ombudsman case 2145/2018/JAP opened Jan 2019 on Commission's failure to act — status unconfirmed. This institutional history provides strong pressure for RPS prioritisation (priority 03, SReq Q2 2026).",
-      "action": "Verify Ombudsman case status. Document 20-year timeline context in key_risks."
+      "action": "Verify Ombudsman case status. Document 20-year timeline context in key_risks.",
+      "status": "resolved"
     },
     {
       "id": "iss-RPS-006",
@@ -2175,7 +2204,8 @@
       "title": "ESPR iron & steel delegated act creates parallel DPP track (~2027)",
       "description": "ESPR lists iron & steel as priority product group. Delegated acts may be adopted Q3-Q4 2025 with 18+ month preparation → compliance ~mid-2027. ESPR DPP applies to steel as intermediate product regardless of CPR hEN status. RPS may get ESPR DPP before CPR DPP, creating dual regulatory pathway.",
       "source": "EUROFER ESPR Position Paper Jul 2022 (https://www.eurofer.eu/assets/publications/position-papers/ecodesign-for-sustainable-products-regulation/20220713-Ecodesign-Sustainable-Product-Initiative-position-paper-final.pdf); Fluxy DPP Guide (https://fluxy.one/post/digital-product-passport-dpp-eu-guide-2025-2030)",
-      "action": "Monitor ESPR delegated act adoption. Assess whether ESPR DPP will precede CPR DPP for rebar."
+      "action": "Monitor ESPR delegated act adoption. Assess whether ESPR DPP will precede CPR DPP for rebar.",
+      "status": "resolved"
     },
     {
       "id": "iss-RPS-007",
@@ -2184,7 +2214,8 @@
       "title": "European EAF rebar EPD infrastructure ready — data exists, hEN is sole blocker",
       "description": "Multiple European EAF rebar producers have EN 15804+A2 verified EPDs: ArcelorMittal XCarb 300 kg CO₂e/t (IBU verified, Warsaw/Hamburg), Feralpi FERGreen 368 kg CO₂e/t (98.7% recycled, Riesa), JSC SERFAS 100% renewable EAF (EPD-IES-0011616, valid to 2028). European EAF market share 45%, projected 57% by 2030. The environmental data infrastructure for CPR DPP exists; the missing harmonised standard (EN 10080) is the sole blocker.",
       "source": "ArcelorMittal XCarb (https://barsandrods.arcelormittal.com/news/3406/XCarb_for_rebars); Feralpi FERGreen (https://feralpi-stahl.com/en/fergreen); SERFAS EPD (https://www.environdec.com/library/epd11616)",
-      "action": "Document EPD readiness in content. Note that data exists but CPR pathway is blocked."
+      "action": "Document EPD readiness in content. Note that data exists but CPR pathway is blocked.",
+      "status": "resolved"
     },
     {
       "id": "iss-RPS-008",
@@ -2193,7 +2224,8 @@
       "title": "SteelZero/ResponsibleSteel demand-side pressure for GWP-transparent steel",
       "description": "SteelZero (Climate Group): 40+ organisations commit to 50% lower-emission steel by 2030. Construction members include Lendlease, Mace, Multiplex, BHC, Bourne, Grosvenor, WSP UK. Endorsed ResponsibleSteel V2.0 sliding scale as measurement framework. Climate Group states 2026 is 'year rules are changing for steel and concrete.' Demand-side pressure precedes CPR supply-side mandate.",
       "source": "SteelZero (https://www.theclimategroup.org/steelzero); SteelZero Members (https://www.theclimategroup.org/steelzero-members); ResponsibleSteel endorsement (https://www.theclimategroup.org/our-work/news/steelzero-endorses-responsiblesteel-standard-v20)",
-      "action": "Document demand-side drivers in content. Monitor ResponsibleSteel V2.0 alignment with CPR GWP methodology."
+      "action": "Document demand-side drivers in content. Monitor ResponsibleSteel V2.0 alignment with CPR GWP methodology.",
+      "status": "resolved"
     },
     {
       "id": "iss-SAP-001",
@@ -2201,7 +2233,8 @@
       "severity": "low",
       "field": "content",
       "description": "4 content sections empty: standards_landscape, standards_development, stakeholder_notes, key_risks, sources_summary.",
-      "action": "Populate in future content pass"
+      "action": "Populate in future content pass",
+      "status": "resolved"
     },
     {
       "id": "iss-SAP-002",
@@ -2214,7 +2247,7 @@
       "description": "Villeroy & Boch Group publishes EPDs for Villeroy & Boch, Ideal Standard, and Gustavsberg brands — over 14,000 products. Duravit holds IBU-verified EPDs for sanitary ceramic and sanitary acrylic. EPDs cover washbasins, bidets, urinals, toilets, shower trays, cisterns — matching EN 997/EN 14688 scope exactly. EPD coverage among major European manufacturers is strong, comparable to fibre-cement (WCF) and flat glass (GLA) as DPP-ready exemplars.",
       "source": "Villeroy & Boch (https://pro.villeroy-boch.com/en/gb/bathroom-and-wellness/service/laws-and-regulations/sustainability-at-villeroy-boch); Duravit EPD (https://wgassets.duravit.com/statc/download/EPD_Sanitary_ceramic_EN.pdf)",
       "action_required": "Document EPD readiness in content. Note as DPP-ready exemplar despite late timeline.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-SAP-003",
@@ -2227,7 +2260,7 @@
       "description": "European Water Label voluntary scheme (UK 2007, CEIR 2012, FECS ceramics 2014) supported by 90+ European brands. Covers baths, WC suites, cisterns, taps, showers, flow regulators. Not yet mandatory under CPR, but water efficiency flagged as potential new essential characteristic. Water consumption data (litres/flush, litres/minute) could become mandatory DPP declaration. The existing Water Label database infrastructure could transition to DPP format.",
       "source": "European Water Label (http://www.europeanwaterlabel.eu/schemepartners.asp); CEIR (https://www.ceir.eu/en/what-we-do/water-saving)",
       "action_required": "Document water efficiency as potential future CPR characteristic in content.key_risks.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-SAP-004",
@@ -2240,7 +2273,7 @@
       "description": "European sanitary ware market $11.31B (2024), projected $16.98B by 2032 (CAGR 5.2%). European ceramic sanitary ware $10.70B (2023). WC segment 28.7%. Germany leads. Key players: Roca, Villeroy & Boch, Geberit, Duravit, TOTO. SAP shares latest DPP timeline (~2033-2034) with PTA. AVCP System 4 (manufacturer self-declaration). Material diversity manageable: ceramic dominant, acrylic secondary.",
       "source": "Data Bridge (https://www.databridgemarketresearch.com/reports/europe-sanitary-ware-market); Expert Market Research (https://www.expertmarketresearch.com/reports/europe-sanitary-ware-market)",
       "action_required": "Include market context and DPP timeline position in content.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-SBE-001",
@@ -2252,7 +2285,7 @@
       "title": "Four content sections empty",
       "description": "content.standards_landscape, content.standards_development, content.key_risks, and content.sources_summary are empty.",
       "action_required": "Populate with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-SBE-002",
@@ -2265,7 +2298,7 @@
       "description": "Mageba published first externally verified EPD for structural bearings (RESTON SPHERICAL, Dec 2024, EPD HUB-2481). EN 15804+A2 compliant. GWP 3.90 kgCO₂e/kg (A1-A3), 33.1% secondary material input, 85.7% secondary material output. Manufactured in Hungary. This demonstrates LCA data generation is feasible for structural bearings but the rest of the industry (Maurer, FIP Industriale, Freyssinet, etc.) has not yet followed. EPD coverage in SBE is minimal — one manufacturer out of ~50+ European producers.",
       "source": "Mageba EPD (https://www.mageba-group.com/latam/en/1078/284902/Environmental-Product-Declaration-for-mageba-spherical-bearings.htm); EPD Hub (https://manage.epdhub.com/declarations/metal-based-products/mageba-services-technologies-ag/3046/reston-spherical-bearing/)",
       "action_required": "Document mageba EPD as industry first in content. Note gap between pioneer and rest of industry.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-SBE-003",
@@ -2278,7 +2311,7 @@
       "description": "PTFE (polytetrafluoroethylene) is the primary sliding material in structural bearings and is classified as a PFAS (per- and polyfluoroalkyl substance). The proposed EU universal PFAS restriction could affect PTFE bearing production if critical-use exemptions are not granted. UHMWPE and modified polyamide alternatives exist but may not match PTFE performance at high temperatures (UHMWPE degrades >80°C). 7 of 8 SBE EADs cover innovative bearing materials including UHMWPE and fluoropolymer alternatives — these EADs may become strategically important if PTFE is restricted. Bearing material substitution would require re-testing and new CE marking.",
       "source": "PTFE PFAS debate (https://polyfluoroltd.com/blog/ptfe-and-the-pfas-debate-why-one-polymer-deserves-a-closer-look/); DREYPLAS alternatives (https://www.dreyplas.com/en/better-than-ptfe-and-uhmwpe/)",
       "action_required": "Document PFAS restriction risk in content.key_risks. Monitor EU PFAS restriction timeline for PTFE exemption status.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-SBE-004",
@@ -2291,7 +2324,7 @@
       "description": "Global bridge bearings market $3.28B (2024), projected $5.56B by 2033 (CAGR 6.03%). EU expansion joints CAGR 5.7%. Around 10% of European bridges significantly deficient, 30% not regularly surveyed. Total built value ~€2 trillion, annual maintenance needed ~€30B/year. 35+ bridges adopted sensor-integrated bearings in 2024. CEF budget €33.71B (2021-2027). Ageing infrastructure drives bearing replacement demand. Sensor-integrated bearings and digital twin monitoring emerging — potential future DPP extension to in-service performance data.",
       "source": "Bridge bearings market (https://www.openpr.com/news/4340139/bridge-bearings-market-valued-at-3-28-billion-in-2024); Construction Briefing (https://www.constructionbriefing.com/news/europes-ageing-bridges-are-crumbling-what-can-be-done-to-prevent-collapses/8036646.article)",
       "action_required": "Include ageing infrastructure context and sensor-integrated bearings trend in content.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-SEA-001",
@@ -2299,7 +2332,8 @@
       "severity": "low",
       "field": "content",
       "description": "5 content sections empty: standards_landscape, standards_development, stakeholder_notes, key_risks, sources_summary.",
-      "action": "Populate in future content pass"
+      "action": "Populate in future content pass",
+      "status": "resolved"
     },
     {
       "id": "iss-SEA-002",
@@ -2312,7 +2346,7 @@
       "description": "FEICA Model EPD system provides 21 published third-party verified EPDs per EN 15804+A2 for adhesive and sealant formulations. Developed jointly by FEICA, IVK, EFCC, Deutsche Bauchemie since 2016, updated 2022. Formulation-based (not product-specific) — any member can declare compliance. Sika publishes product-specific EPDs since 2012. Bostik has silicone EPDs. This infrastructure directly serves both SEA and ADH families. DPP environmental data largely pre-solved for FEICA members (~800 companies, 90% SME).",
       "source": "FEICA EPDs (https://www.feica.eu/our-projects/epds); Sika (https://gbr.sika.com/en/sustainability/sustainable-solutions/lca-and-epd-s.html)",
       "action_required": "Document FEICA Model EPD infrastructure in content. Cross-reference with ADH-004.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-SEA-003",
@@ -2325,7 +2359,7 @@
       "description": "Construction sealants face compound regulation: VOC emission limits (AgBB/DIBt strictest), REACH SVHC restrictions (isocyanates for PU, phthalates), and CEN/TC 351 dangerous substances horizontal standards under new CPR M/366. PU sealants face isocyanate exposure controls — market shifting to MS polymer hybrids with safer emissions. DPP declarations will need: VOC emission class, SVHC content, indoor air quality data alongside mechanical performance. CEN/TC 351 will standardise dangerous substance data generation methods for DPP.",
       "source": "CEN/TC 351 (https://www.cencenelec.eu/news-events/events/2023/2023-05-10-cen-tc-351-conference-riga/); REACH (https://echa.europa.eu/substances-restricted-under-reach)",
       "action_required": "Document compound regulatory burden in content.key_risks. Flag CEN/TC 351 as DPP data requirement.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-SEA-004",
@@ -2338,7 +2372,7 @@
       "description": "European construction adhesives & sealants market $4.78B (2024), projected $9.39B by 2035 (CAGR 5.69%). Sealants ~43% of market. Silicone holds largest share, MS polymer hybrids growing fastest (replacing PU and silicone). Germany 15% of European market. Key players: Sika, Henkel, MAPEI, Soudal, Arkema. Broader FEICA market: €19.88B (2023), 4.57Mt. FEICA market report 2025-2030 available. SEA shares FEICA ecosystem with ADH.",
       "source": "Mordor Intelligence (https://www.mordorintelligence.com/industry-reports/europe-construction-adhesives-and-sealants-market); FEICA (https://www.feica.eu/our-industry/market-reports)",
       "action_required": "Include market context in content.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-SHA-001",
@@ -2346,7 +2380,8 @@
       "severity": "low",
       "field": "content",
       "description": "3 content sections empty: standards_development, stakeholder_notes, key_risks, sources_summary.",
-      "action": "Populate in future content pass"
+      "action": "Populate in future content pass",
+      "status": "resolved"
     },
     {
       "id": "iss-SHA-002",
@@ -2354,7 +2389,8 @@
       "severity": "info",
       "field": "standards[6]",
       "description": "EN 16510-2-7:2025 harmonized via Implementing Decision (EU) 2026/284 (OJ 9 Feb 2026). Coexistence period with EN 13240:2001 and EN 14785:2006 ends 9 Feb 2027. Stage field may need update to reflect this.",
-      "action": "Update stage field for EN 16510-2-7 when applying updates"
+      "action": "Update stage field for EN 16510-2-7 when applying updates",
+      "status": "resolved"
     },
     {
       "id": "iss-SHA-003",
@@ -2367,7 +2403,7 @@
       "description": "Space heating appliances face unprecedented regulatory overlay: CPR 2024/3110 (construction performance, EN 16510, future DPP), Ecodesign 2015/1185 (energy efficiency, emissions, revision consultation Dec 2025), and ESPR 2024/1781 (potential future DPP for energy-related products). DPP may be required from both CPR and ESPR tracks. EC has identified discrepancies between CPR and Ecodesign for solid fuel appliances — resolution pending. SHA is one of few families at direct CPR/ESPR intersection.",
       "source": "EC Ecodesign consultation (https://energy.ec.europa.eu/news/ecodesign-and-energy-labelling-commission-consults-revised-rules-space-and-water-heaters-2025-12-01_en); Circularise ESPR DPP sectors (https://www.circularise.com/blogs/dpps-required-by-eu-legislation-across-sectors); Construction Products Europe (https://construction-products.eu/publications/sustainable-products-initiative/)",
       "action_required": "Document triple regulation in content.key_risks. Monitor EC resolution of CPR/Ecodesign discrepancies.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-SHA-004",
@@ -2380,7 +2416,7 @@
       "description": "CEFACD (7 Feb 2025) warns that Ecodesign revision could destroy sector representing ~11,000 SMEs and 200,000 jobs, claiming 100% of new solid fuel heaters could disappear. No Notified Bodies in Europe notified for EN 16510 conformity assessment. July 2027 Ecodesign compliance date 'completely unrealistic.' Re-testing entire portfolios for both EN 16510 AND new Ecodesign limits simultaneously is unreasonable. European Parliament question E-000487/2025 raised risk of wood stove ban.",
       "source": "CEFACD position paper (https://cefacd.com/images/CEFACD_Position_Paper_on_Ecodesign_review_070225.pdf); EP question E-000487/2025 (https://www.europarl.europa.eu/doceo/document/E-10-2025-000487_EN.html)",
       "action_required": "Document industry crisis warning in content.key_risks. Monitor Ecodesign revision outcome and Notified Body notification status.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-SHA-005",
@@ -2393,7 +2429,7 @@
       "description": "No Environmental Product Declarations (EPDs) per EN 15804 found for wood stoves, pellet stoves, or any space heating appliance. Industry focuses on Ecodesign energy labelling (A++ to G) and emission certifications (PM/OGC/CO/NOx), not lifecycle environmental declarations. DPP GWP under new CPR requires EN 15804+A2 data. Heating appliance LCA is complex: operational emissions + fuel supply + manufacturing + end-of-life. Fundamentally different from structural product EPDs.",
       "source": "EPD International (https://www.environdec.com/services/what-is-epd); EHI Heating Market Report (https://ehi.eu/wp-content/uploads/2025/04/HMR2024_web.pdf)",
       "action_required": "Document EPD readiness gap in content. Flag as major DPP implementation barrier for heating appliance manufacturers.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-SMP-001",
@@ -2405,7 +2441,7 @@
       "title": "key_risks field empty despite EN 1090-1 mandate rejection",
       "description": "content.key_risks is empty but SMP has major identifiable risks: EN 1090-1 mandate rejected by EU member states (summer 2025), SReq delivery deadline missed, 28 legacy EADs with no transition planning, parallel new-CPR SReq track planned Q2 2026.",
       "action_required": "Populate key_risks with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-SMP-002",
@@ -2417,7 +2453,7 @@
       "title": "sources_summary field empty",
       "description": "content.sources_summary is empty.",
       "action_required": "Populate with compiled source references.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-SMP-003",
@@ -2431,7 +2467,7 @@
       "title": "EN 14509 (sandwich panels) cross-listed across SMP, ROC, WCF",
       "description": "EN 14509 (double skin metal faced insulating sandwich panels) is listed in SMP standards[] but is also relevant to ROC (roof coverings) and WCF (wall/ceiling finishes). Data consistency should be verified when those families are analyzed.",
       "action_required": "Flag for Batch 3 (ROC, WCF) analysis.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-SMP-004",
@@ -2444,7 +2480,7 @@
       "title": "EAD 200029 (duplex stainless reinforcing bars) may overlap with RPS family",
       "description": "EAD 200029-00-0602 covers duplex stainless steel reinforcing bars, which could logically belong to either SMP or RPS (reinforcing steel). Cross-check when RPS analyzed in Batch 7.",
       "action_required": "Flag for Batch 7 (RPS) analysis.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-SMP-005",
@@ -2456,7 +2492,7 @@
       "title": "stakeholder_notes reference EAD numbers not in standards[]",
       "description": "content.stakeholder_notes mentions EADs 200036, 200043, 200077, 200039, 200086, 200102, 200116, 200126, 200188 — these are NOT present in the standards[] array. Either the tracker is missing these EADs (actual count could be >28), or the stakeholder_notes contain inaccurate references copied from an external source.",
       "action_required": "Cross-reference against EOTA PA 20 database to determine if additional EADs should be added to standards[] or if stakeholder_notes should be corrected.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-SMP-006",
@@ -2468,7 +2504,7 @@
       "title": "COM(2025) 726 Steel & Metals Action Plan impacts SMP",
       "description": "EU Steel and Metals Action Plan (COM(2025) 726, adopted 19 Mar 2025) introduces voluntary carbon-intensity label for steel (starting 2025), IDAA planned Q4 2025, and €100B Industrial Decarbonisation Bank. CBAM full financial implementation Jan 2026 creates embedded emissions tracking overlap with DPP data. Triple compliance burden: CBAM + ESPR + potential safeguard tariffs. Strong parallel with RPS cross-regulatory findings.",
       "action_required": "Document in content.key_risks. Consider cross-referencing with RPS (iss-RPS-003) for consistent treatment of steel sector policy.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-SMP-007",
@@ -2480,7 +2516,7 @@
       "title": "CEN/TS 1090-201:2024 steel reuse specification published",
       "description": "CEN/TS 1090-201:2024 (DIN version Jan 2025) is the first European technical specification for reuse of structural steel components. Covers reusability assessment, property declaration, and weldability for reclaimed profiles. Not harmonised but establishes technical framework that future new-CPR harmonised standards may incorporate. Relevant to DPP circular economy and end-of-life data content.",
       "action_required": "Document in content.standards_development. Monitor for potential integration into future SReq scope under new CPR.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-SMP-008",
@@ -2493,7 +2529,7 @@
       "description": "ESPR lists iron & steel as one of 11 priority product groups with indicative 2026 adoption. DPP requirements begin 2027/2028 (18 months after adoption). SMP faces dual-DPP: ESPR DPP for intermediate steel products may apply before CPR DPP (blocked by EN 1090-1 still at stage 10.99). Same pattern as RPS (iss-RPS-006). Steel is uniquely at intersection of both regulations. DPP registry operational Jul 2026.",
       "source": "Circularise ESPR sectors (https://www.circularise.com/blogs/dpps-required-by-eu-legislation-across-sectors); One Click LCA ESPR Working Plan (https://oneclicklca.com/en/resources/articles/first-espr-working-plan); Sidley Austin (https://www.sidley.com/en/insights/newsupdates/2025/04/european-commission-releases-list-of-priority-products)",
       "action_required": "Document dual-DPP situation in content. Cross-reference with iss-RPS-006. Monitor ESPR delegated act adoption.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-STP-001",
@@ -2502,7 +2538,8 @@
       "type": "empty_content",
       "title": "3 content sections empty",
       "description": "standards_development, key_risks, and sources_summary are empty.",
-      "action": "Populate with proposed content from deep-dive report."
+      "action": "Populate with proposed content from deep-dive report.",
+      "status": "resolved"
     },
     {
       "id": "iss-STP-002",
@@ -2511,7 +2548,8 @@
       "type": "stale_status",
       "title": "NT-3 (M-III) targeted Q1 2026, still not_started",
       "description": "Milestone III (Essential Characteristics) was targeted for Q1 2026 per COM(2025) 772. It is now March 2026, so M-III may have started or been completed. The current 'not_started' status may be stale.",
-      "action": "Verify M-III status via Commission or CEN/TC 124 sources. Update to 'in_progress' or 'complete' if warranted."
+      "action": "Verify M-III status via Commission or CEN/TC 124 sources. Update to 'in_progress' or 'complete' if warranted.",
+      "status": "resolved"
     },
     {
       "id": "iss-STP-003",
@@ -2520,7 +2558,8 @@
       "type": "cross_family",
       "title": "EN 13986 cross-listed with WBP",
       "description": "EN 13986 (Wood-based panels for use in construction) appears in both STP and WBP standards lists. Data is consistent between families: both list AVCP '1, 2+, 3, 4', CEN/TC 112, and CPR 2011 revision.",
-      "action": "Document cross-listing explicitly. Ensure any future updates to EN 13986 data are applied in both families."
+      "action": "Document cross-listing explicitly. Ensure any future updates to EN 13986 data are applied in both families.",
+      "status": "resolved"
     },
     {
       "id": "iss-STP-004",
@@ -2529,7 +2568,8 @@
       "type": "missing_standard",
       "title": "EAD 130089 (finger-jointed wet/cold glued timber) may be missing",
       "description": "EAD 130089-01-0304 (Structural finger-jointed, wet, cold or wet and cold glued solid timber) was confirmed as recently published by EOTA. It may not be in the tracker's 41-EAD count if published after the Feb 2026 data snapshot.",
-      "action": "Verify publication date and OJ citation status of EAD 130089. Add to standards[] if cited and not yet tracked."
+      "action": "Verify publication date and OJ citation status of EAD 130089. Add to standards[] if cited and not yet tracked.",
+      "status": "resolved"
     },
     {
       "id": "iss-STP-005",
@@ -2538,7 +2578,8 @@
       "type": "regulatory_development",
       "title": "Eurocode 5 (EN 1995-1-1:2025) published — informs SReq scope",
       "description": "EN 1995-1-1:2025 (second generation Eurocode 5) published Aug 2025. Substantially expanded to include CLT, LVL, and GL design rules. NSB national annexes in progress. Will directly inform the SReq essential characteristics scope for STP family.",
-      "action": "Document in content.standards_development. Monitor NSB adoption timeline."
+      "action": "Document in content.standards_development. Monitor NSB adoption timeline.",
+      "status": "resolved"
     },
     {
       "id": "iss-STP-006",
@@ -2547,7 +2588,8 @@
       "type": "priority_context",
       "title": "STP is priority 7/34 but fast-track NOT available",
       "description": "STP is priority 7 of 34 product families per COM(2025) 772, but fast-track standards updating is NOT possible (confirmed by Innovawood/EOS). Must go through full acquis→SReq→CEN→OJ pipeline. This supports the wider DPP range (~2029-2033) compared to families with fast-track availability.",
-      "action": "Document priority and fast-track status in content. Consider impact on DPP range certainty."
+      "action": "Document priority and fast-track status in content. Consider impact on DPP range certainty.",
+      "status": "resolved"
     },
     {
       "id": "iss-STP-007",
@@ -2556,7 +2598,8 @@
       "type": "cross_regulatory",
       "title": "EUDR enforcement 30 Dec 2026 — parallel timber traceability obligation",
       "description": "EU Deforestation Regulation enforcement confirmed: 30 Dec 2026 for large/medium operators, 30 Jun 2027 for small/micro. Timber is one of 7 regulated commodities. Construction timber products (glulam, CLT, LVL) fall within scope. Creates parallel supply chain traceability requirements that precede DPP. No formal DPP-EUDR data linkage mechanism exists yet, but data reuse potential noted.",
-      "action": "Monitor EUDR-DPP convergence. Document in content.key_risks."
+      "action": "Monitor EUDR-DPP convergence. Document in content.key_risks.",
+      "status": "resolved"
     },
     {
       "id": "iss-STP-008",
@@ -2566,7 +2609,8 @@
       "title": "CEI-Bois TIMBIM: 12 data templates on 7 hENs in bSDD — DPP groundwork underway",
       "description": "CEI-Bois TIMBIM initiative delivered 12 data templates based on 7 harmonised standards, published on buildingSMART Data Dictionary (bSDD) since 2023. Templates cover product properties, GS1 identifiers (GTIN, GLN, GMN), EPD data, and circularity data. GS1 identifiers align with CPR DPP unique product identifier requirements. Industry DPP groundwork is underway but manufacturer adoption level is unclear.",
       "source": "CEI-Bois Digital Templates (https://www.cei-bois.org/digital-templates); bSDD Wood Dictionary (https://search.bsdd.buildingsmart.org/uri/cei-bois.org/wood/1.0.0); Swedish Wood TIMBIM launch (https://www.swedishwood.com/about_us/news/2021/3/the-european-timber-industry-is-starting-its-digitization-initiative/)",
-      "action": "Document in content. Assess whether TIMBIM templates map to CPR DPP data requirements. Monitor manufacturer adoption."
+      "action": "Document in content. Assess whether TIMBIM templates map to CPR DPP data requirements. Monitor manufacturer adoption.",
+      "status": "resolved"
     },
     {
       "id": "iss-STP-009",
@@ -2576,7 +2620,8 @@
       "title": "CLT fire safety delamination creates national regulatory divergences affecting DPP data",
       "description": "CLT susceptible to delamination at elevated temperatures — adhesive failure causes cyclical burning, no reliable self-extinguishment (MDPI Fire, CROSS-UK Report 966). EN 1995-1-2:2025 published with CLT-specific charring rules (0.65 mm/min). Arup 'Code Red' research found CLT ceiling fire spread faster than predicted. National regulatory approaches diverge significantly (UK cautious, Austria positive, France mixed). DPP fire performance data may need national context.",
       "source": "MDPI Fire CLT review (https://www.mdpi.com/2571-6255/8/10/406); CROSS-UK Report 966 (https://www.cross-safety.org/uk/safety-information/cross-safety-report/risk-collapse-multi-storey-clt-buildings-during-966); Arup Mass Timber Fire Guide (https://www.arup.com/en-us/insights/fire-safe-design-of-mass-timber-buildings/)",
-      "action": "Document fire safety regulatory divergence in content.key_risks. Monitor national building code developments for CLT."
+      "action": "Document fire safety regulatory divergence in content.key_risks. Monitor national building code developments for CLT.",
+      "status": "resolved"
     },
     {
       "id": "iss-STP-010",
@@ -2586,7 +2631,8 @@
       "title": "CPR Working Plan 2026-2029 confirms STP NOT in first DPP cohort",
       "description": "CPR Working Plan (16 Dec 2025) sequences DPP rollout: DPP Registry Jul 2026, Service Provider rules Q4 2026, CEM first DPP-ready hENs Q4 2027, DWS 2028-2029. STP is Priority 7 overall but is NOT among the first DPP cohort. STP DPP timeline likely 2029+. CPR DPP Feasibility Study (May 2025) recommends decentralised system with authorised service providers.",
       "source": "Cobuilder CPR Working Plan analysis (https://cobuilder.com/en/digital-product-passport-dpp/digital-product-passports-for-construction-what-the-eus-2026-2029-cpr-working-plan-means-for-stakeholders/); EU Publications CPR DPP Feasibility Study (https://op.europa.eu/en/publication-detail/-/publication/cf329d5e-3464-11f0-8a44-01aa75ed71a1/language-en)",
-      "action": "Update DPP timeline context. Document CPR Working Plan sequencing in content."
+      "action": "Update DPP timeline context. Document CPR Working Plan sequencing in content.",
+      "status": "resolved"
     },
     {
       "id": "iss-TIP-001",
@@ -2598,7 +2644,7 @@
       "title": "content.standards_landscape says '13 hENs' but standards[] has 12",
       "description": "content.standards_landscape states '13 hENs for factory-made products: EN 13162–13171 series (one per insulation type) plus EN 14063-1, EN 16069, and EN 16977' which totals 13 (10+3). However standards[] contains only 12 hENs, and standards_summary says '12 hENs + 18 EADs'. Either one hEN is missing from standards[] or the content narrative is incorrect.",
       "action_required": "Cross-reference the list of 13 hENs from content against standards[] to identify the missing or extra standard. Update whichever is incorrect.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-TIP-002",
@@ -2610,7 +2656,7 @@
       "title": "EAD 042461 (green roof mineral wool) published May 2025 — not in standards[]",
       "description": "EAD 042461-00-1201 (hydrophilic thermal insulation product made of mineral wool for water retention in green roofs and similar applications) was published by EOTA in May 2025. This EAD is NOT in the TIP standards[] array. If confirmed as belonging to PA 04, ead_count should be updated to 19 and total to 31.",
       "action_required": "Verify if EAD 042461 belongs in TIP. If yes, add to standards[] and update counts.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-TIP-003",
@@ -2622,7 +2668,7 @@
       "title": "Three content sections empty",
       "description": "content.standards_development, content.key_risks, and content.sources_summary are empty.",
       "action_required": "Populate with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-TIP-004",
@@ -2635,7 +2681,7 @@
       "description": "Knauf Insulation publishes comprehensive EN 15804+A2 EPDs for glass and rock mineral wool (multiple λ ranges). Rockwool publishes EN 15804+A2 EPDs. EUMEPS publishes industry-wide sector EPDs for EPS insulation (updated 2024, multiple densities, IBU-verified). EUMEPS actively participating in c-PCR EPD revision for thermal insulation. Sector EPD approach enables SME EPS producers to declare DPP environmental data. XPS, PUR/PIR, phenolic foam EPD coverage less visible. Mineral wool (55% of EU market) and EPS (~25%) are well-covered; other materials lag.",
       "source": "Knauf Rock Mineral Wool EPDs (https://www.knaufinsulation.com/downloads/environmental-product-declarations-epd/rock-mineral-wool-rmw); EUMEPS EPD 2024 (https://eumeps.eu/eumeps-newsroom-sie/publications/environmental-product-declaration-for-eps-insulation-2024); EUMEPS c-PCR (https://www.eumeps.eu/eumeps-newsroom-sie/news/collaboration-in-standardisation-navigating-the-c-pcr-epd-revision-for-thermal-insulation)",
       "action_required": "Document EPD infrastructure by material type in content. Note EUMEPS sector EPD as DPP-ready model.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-TIP-005",
@@ -2648,7 +2694,7 @@
       "description": "Currently majority of insulation C&D waste is landfilled (up to €400/tonne). EPS waste from ETICS expected to almost double by 2030 and triple by 2050 as post-1970s insulated buildings reach end-of-life. Knauf RESULATION project converts mineral wool waste into secondary raw materials. France Anti-Waste Law introduces EPR for building materials. Austria plans insulation landfill ban from 2027. LIFE ReWo project (EU-funded) recycling mineral wool into high-value products. For DPP: end-of-life recyclability data and recycled content declarations will be critical.",
       "source": "Eurima circular economy (https://www.eurima.org/circular-economy); Knauf RESULATION (https://www.resulation.eu/en); LIFE ReWo (https://webgate.ec.europa.eu/life/publicWebsite/project/LIFE22-ENV-IT-LIFE-ReWo-101113855/recycling-mineral-wool-waste-into-high-value-products)",
       "action_required": "Document insulation waste challenge in content.key_risks. Flag France EPR and Austria landfill ban as DPP-relevant regulatory developments.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-TIP-006",
@@ -2661,7 +2707,7 @@
       "description": "European insulation market $21.03B (2024), projected to $36.52B by 2033 (CAGR 6.32%). Building thermal insulation specifically $10.11B (2024). EPBD renovation wave targeting ~35 million buildings by 2030, nearly doubling current annual rate. Market fragmentation: mineral wool 55%, EPS ~25%, XPS/PUR/PIR ~20%. TIP among largest CPR families by value. DPP must accommodate fundamentally different material types within one family — similar challenge to FLO.",
       "source": "Market Data Forecast (https://www.marketdataforecast.com/market-reports/europe-insulation-market); Market Data Forecast Thermal (https://www.marketdataforecast.com/market-reports/europe-building-thermal-insulation-market)",
       "action_required": "Include market scale and EPBD renovation wave coupling in content.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-WBP-001",
@@ -2673,7 +2719,7 @@
       "title": "Six content sections empty",
       "description": "content.standards_landscape, content.standards_development, content.sreq_analysis, content.stakeholder_notes, content.key_risks, and content.sources_summary are empty. Most empty sections of any Batch 8 family.",
       "action_required": "Populate with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-WBP-002",
@@ -2685,7 +2731,7 @@
       "title": "Acquis=Yes but all Table 3 milestones empty",
       "description": "WBP has acquis=Yes but milestones.i, milestones.iii, milestones.sreq, milestones.delivery, and milestones.mandatory are all empty strings. milestones.dpp is 'TBD'. dpp-range hen_earliest and hen_latest are 'TBD'. This is unique among acquis-classified families — all others (CEM, SMP, PCR, etc.) have confirmed milestone dates.",
       "action_required": "Investigate whether COM(2025) 772 or subsequent working plan updates provide milestone dates for WBP. If dates exist, add them. If genuinely absent, add explanatory note to content.sreq_analysis.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-WBP-003",
@@ -2697,7 +2743,7 @@
       "title": "REACH E0.5 formaldehyde threshold impacts WBP from August 2026",
       "description": "Commission Regulation (EU) 2023/1464 amends REACH Annex XVII, halving the formaldehyde emission limit for wood-based panels from 0.124 mg/m³ to 0.062 mg/m³ (E0.5 class), effective August 2026. This directly impacts EN 13986 formaldehyde classification and testing requirements. While not a CPR change, it affects future DPP data content (emission declarations) and may accelerate EN 13986 revision needs.",
       "action_required": "Document in content.key_risks. Consider adding a cross_regulatory field or note to the WBP data model.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-WBP-004",
@@ -2710,7 +2756,7 @@
       "title": "COM(2025) 772 merged STP and WBP workstreams",
       "description": "The CPR Working Plan COM(2025) 772 merged structural timber products (family 13/STP, priority 7) and wood-based panels (family 14/WBP, priority 16) workstreams. WBP milestones may be derived from STP's timeline rather than independently set. This partially explains the empty milestones in WBP (iss-WBP-002). The merger creates a dependency: WBP progress depends on STP workstream pace. STP cannot use fast-track but WBP can — may need separate tracks during standards development.",
       "action_required": "Monitor whether WBP gets independent milestones or follows STP. Document merger in content.sreq_analysis.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-WBP-005",
@@ -2722,7 +2768,7 @@
       "title": "SG 20 confirmed 3-year minimum for wood standards; 2040 full transition",
       "description": "30th SG 20 meeting (7 May 2025) confirmed wood product standards are 'at minimum 3 years away.' Full CPR transition target is 2040 (gradual by product group). Until new harmonised standards published, old CPR applies — dual-system period. Notified body obligations expanded under new CPR.",
       "action_required": "Document SG 20 findings in content. Update DPP outlook with 2040 backstop context.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-WBP-006",
@@ -2734,7 +2780,7 @@
       "title": "WBP is priority 16/34 with fast-track available",
       "description": "WBP is priority 16 of 34 product families per COM(2025) 772. Unlike STP (priority 7, no fast-track), WBP has fast-track standards updating available. Fast-track not yet initiated. Could theoretically accelerate standards updating once SReq bottleneck is cleared. Priority 16 explains why milestones are absent in first working plan cycle.",
       "action_required": "Document priority and fast-track in content. Consider impact on DPP range estimate.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-WBP-007",
@@ -2747,7 +2793,7 @@
       "description": "Kronospan (largest EU panel producer) has NO EPD for particleboard or MFC — its highest-volume products. Meanwhile Pfleiderer already converted entire German production to E0.5, achieved 53.5% post-consumer recycled content, and offers OrganicBoard Pure (100% renewable binder + 100% recycled fibre). EGGER has IBU-verified EPDs and 66% recycled wood. Industry EPD readiness varies dramatically and will be exposed by DPP rollout.",
       "source": "EPD Guide Kronospan analysis (https://epd.guide/manufacturers/kronospan-luxembourg-product-range-and-epd-reality); Pfleiderer materials (https://www.pfleiderer.com/global-en/sustainability/materials); EGGER product transparency (https://www.egger.com/en/about-us/sustainability/product-transparency?country=US)",
       "action_required": "Document readiness disparity in content. Flag Kronospan EPD gap as risk for CPR GWP disclosure.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-WBP-008",
@@ -2760,7 +2806,7 @@
       "description": "WBP faces three overlapping formaldehyde/VOC regimes: (1) REACH E0.5 (0.062 mg/m³, 6 Aug 2026) — market access restriction; (2) CPR dangerous substances SReq via CEN/TC 351 (15 deliverables due 31 Dec 2029) — declaration requirement, CPR still references E1 creating mismatch; (3) National IAQ schemes operating in parallel with different thresholds: Germany AgBB 2024, France mandatory A+ labelling, Belgium flooring decree, Italy CAM. EU-LCI harmonised value for formaldehyde has been POSTPONED pending ECHA classification.",
       "source": "REACH (EU) 2023/1464 (https://www.ul.com/news/new-eu-restriction-formaldehyde-regulation-eu-20231464); AgBB 2024 (https://www.eco-institut.de/en/2024/10/federal-environment-agency-publication-agbb-scheme-2024/); EU-LCI values (https://single-market-economy.ec.europa.eu/sectors/construction/eu-lci-subgroup/eu-lci-values_en); ANSES France (https://www.anses.fr/en/content/labelling-building-and-decoration-products-respect-voc-emissions)",
       "action_required": "Document triple overlay in content.key_risks. Note E1/E0.5 CPR-REACH mismatch. Monitor EU-LCI formaldehyde derivation.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-WBP-009",
@@ -2773,7 +2819,7 @@
       "description": "No unified EU legislative framework for waste wood classification. Recycled content varies: Italy ~95% in particleboard, Belgium/Denmark 50-70%, Germany/France/Spain 15-30%, EU average ~25%. EPF standard limits contamination to 2% dry weight, but countries apply different categories (Germany AltholzV I-IV, others use A-D). Lack of harmonised classification is a direct obstacle for DPP recycled content declarations. 38M m³ post-consumer wood recovered globally (2022), Europe 82.9%.",
       "source": "PMC Sustainability in WBP (https://pmc.ncbi.nlm.nih.gov/articles/PMC11499423/); CEPS waste wood circularity (https://cdn.ceps.eu/wp-content/uploads/2024/11/2024-14_ERCC_Wood2Wood.pdf); EU Circular Economy Platform (https://circulareconomy.europa.eu/platform/en/knowledge/improving-waste-wood-circularity-eu-classification-frameworks-and-policy-options)",
       "action_required": "Document waste wood classification gap in content. Flag as DPP implementation obstacle. Monitor EU harmonisation efforts.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-WCF-001",
@@ -2785,7 +2831,7 @@
       "title": "Three content sections empty",
       "description": "content.standards_development, content.key_risks, and content.sources_summary are empty.",
       "action_required": "Populate with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-WCF-002",
@@ -2799,7 +2845,7 @@
       "title": "EN 14509 (sandwich panels) cross-listed in SMP, ROC, WCF",
       "description": "EN 14509 tracked across three families. Data consistency should be verified. Duplicate of iss-ROC-002 and iss-SMP-003 (cross-family tracking).",
       "action_required": "Verify EN 14509 data consistency across all three families.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-WCF-003",
@@ -2812,7 +2858,7 @@
       "description": "Revised European cladding fire test standard takes effect 31 Jan 2026. Post-Grenfell: minimum Euroclass A2-s1,d0 for buildings >11m. EOTA TR 078 provides system-level fire assessment methodology beyond EN 13823 SBI single-product testing. DPP fire classification data (Euroclass, smoke, droplets) is safety-critical and must be machine-readable. AVCP System 1 for fire classes A1-C ensures third-party testing. May require re-testing existing products.",
       "source": "EOTA TR 078 (https://www.eota.eu/sites/default/files/uploads/Technical%20reports/EOTA%20TR%20078_Determination%20of%20fire-related%20characteristics%20of%20external%20wall%20claddings_2023-11.pdf); International Fire & Safety Journal (https://internationalfireandsafetyjournal.com/new-european-cladding-fire-test-standard-to-take-effect-in-2026/)",
       "action_required": "Document facade fire test standard in content.key_risks. Cross-reference with FPP and KAS ETICS fire safety issues.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-WCF-004",
@@ -2825,7 +2871,7 @@
       "description": "Fibre-cement: James Hardie >90% products have verified EPDs (EN 15804), Etex Cedral EPDs published. Suspended ceilings: Knauf AMF EPDs via IBU, ISO 14001. Gypsum plasterboard: PSP Sustainability Action Plan, recycled gypsum established. Metal cladding, stone cladding, HPL panels, render/plaster: EPD coverage less visible. Split readiness across WCF's diverse product types mirrors FLO pattern.",
       "source": "James Hardie (https://www.jameshardie.eu/EU-en/products/smart-sustainability); Etex Cedral EPD (https://media.cedral.world/pd53969/original/1192955283/en_cedral_epd-2.pdf); Knauf AMF EPD via IBU",
       "action_required": "Document split EPD readiness in content. Note fibre-cement as DPP-ready exemplar for cladding.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-WCF-005",
@@ -2838,7 +2884,7 @@
       "description": "European cladding market $57.23B+ (2024). European facade market $7B (2024), growing to $10.34B by 2032. Gypsum plasterboard $7.1B (2023), growing to $14.08B by 2033. Ventilated systems 51% of facade revenue. Fibre-cement cladding $1.75B, growing at 7.5% CAGR. European Green Deal and EPBD recast drive demand for insulated/solar-integrated/green facades. Combined WCF market among largest CPR families by value.",
       "source": "Research & Markets (https://www.researchandmarkets.com/report/europe-cladding-market); GlobeNewsWire plasterboard (https://www.globenewswire.com/news-release/2024/11/01/2973239/28124/en/Europe-Gypsum-Based-Plasterboard-and-Alternatives-Market-Report-2023-2033); Mordor Intelligence facade (https://www.mordorintelligence.com/industry-reports/europe-facade-market)",
       "action_required": "Include market scale in content for DPP impact assessment.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-WWD-001",
@@ -2850,7 +2896,7 @@
       "title": "Five content sections empty",
       "description": "content.standards_landscape, content.standards_development, content.stakeholder_notes, content.key_risks, and content.sources_summary are empty.",
       "action_required": "Populate with proposed content from deep-dive report §8.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-WWD-002",
@@ -2863,7 +2909,7 @@
       "description": "EU Urban Waste Water Treatment Directive recast (EU) 2024/3019 (in force 1 Jan 2025) extends coverage to agglomerations from 1,000 PE (previously 2,000). Individual treatment systems must be registered and subject to risk-based inspections. Collecting systems required for 1,000-2,000 PE agglomerations by 2035. Transposition deadline 31 Jul 2027. This directly increases the addressable market for EN 12566 products (estimated 20,000+ additional agglomerations). The UWWTD registration requirement aligns with DPP product traceability — treatment efficiency data could become part of DPP in-service performance declarations.",
       "source": "European Commission (https://environment.ec.europa.eu/news/new-rules-urban-wastewater-management-set-enter-force-2024-12-20_en); EUR-Lex (https://eur-lex.europa.eu/eli/dir/2024/3019/oj/eng)",
       "action_required": "Document UWWTD recast impact in content.key_risks. Flag cross-regulatory alignment with DPP traceability.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-WWD-003",
@@ -2876,7 +2922,7 @@
       "description": "Geberit publishes EN 15804 EPDs for PE/HDPE drainage pipes (34% of Group sales with EPDs). However, EPDs for WWD-scoped products (septic tanks, packaged treatment plants, grease separators, light-liquid separators) were not found. The small wastewater treatment sector lacks the EPD infrastructure seen in building materials families. Manufacturers of EN 12566 products (e.g., Klaro, BioDisc, Clearwater) do not appear to have published EN 15804 EPDs. For DPP: environmental data generation will need to start from scratch for most WWD manufacturers.",
       "source": "Geberit PE EPD (https://files.etim-mapper.com/branchekataloget/4553/epd-pe-group-en.pdf); Geberit sustainability (https://www.geberit-global.com/know-how/sustainability/)",
       "action_required": "Document EPD gap in content. Flag as DPP readiness challenge for WWD manufacturers.",
-      "status": "pending"
+      "status": "resolved"
     },
     {
       "id": "iss-WWD-004",
@@ -2889,7 +2935,7 @@
       "description": "European wastewater treatment services market $12.35B (2024), projected $18.36B by 2033. Broader water & wastewater treatment $93.31B (2025). WWD's EN 12566 products are a niche covering small decentralised systems up to 50 PE. UWWTD recast expansion to 1,000 PE agglomerations significantly increases addressable market. Key trends: smart monitoring, membrane bioreactors, decentralised solutions, resource recovery from wastewater.",
       "source": "Market Data Forecast (https://www.marketdataforecast.com/market-reports/europe-waste-water-treatment-service-market); Towards Chem & Materials (https://www.towardschemandmaterials.com/insights/europe-water-and-wastewater-treatment-market)",
       "action_required": "Include UWWTD recast market expansion context in content.",
-      "status": "pending"
+      "status": "resolved"
     }
   ]
 }
