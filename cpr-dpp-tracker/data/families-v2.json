@@ -8,7 +8,7 @@
       "family": "1",
       "priority": "01",
       "tc": "CEN/TC 229",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "precast-concrete.svg",
       "display_name": "Precast Concrete Products",
       "family_label": "Annex VII #1 · PCR",
@@ -221,7 +221,10 @@
           "pub_est": "Q4 2026",
           "revision": "CPR 2011",
           "cited": true,
-          "notes": "Revision. Developed by CEN/TC 177 (not TC 229)."
+          "notes": "Revision. Developed by CEN/TC 177 (not TC 229).",
+          "content": {
+            "regulatory_history": "OJ-cited under M/100 (CPR 305/2011). GWP declarations mandatory from 8 Jan 2026 for EN 1520 products — early compliance burden before DPP system is operational."
+          }
         },
         {
           "id": "EN 12602",
@@ -238,7 +241,10 @@
           "pub_est": "Q4 2026",
           "revision": "CPR 2011",
           "cited": true,
-          "notes": "Revision. Developed by CEN/TC 177. Draft BS EN 12602 dated 24 Jul 2025 confirms revision already underway."
+          "notes": "Revision. Developed by CEN/TC 177. Draft BS EN 12602 dated 24 Jul 2025 confirms revision already underway.",
+          "content": {
+            "regulatory_history": "OJ-cited under M/100 (CPR 305/2011). GWP declarations mandatory from 8 Jan 2026 for EN 12602 products — early compliance burden before DPP system is operational."
+          }
         }
       ],
       "standards_summary": {
@@ -258,10 +264,10 @@
         "standards_landscape": "EN 1520:2011 (lightweight aggregate, AVCP System 2+), EN 12602:2016 (autoclaved aerated concrete, AVCP System 2+). Both cited in OJ under old CPR 305/2011 via mandate M/100 (1994). EN 13369:2023 (common rules; national adoptions 2024) replacing EN 13369:2018 — this is a non-harmonised reference standard (no Annex ZA), but underpins all precast product standards. AVCP per Commission Decision 1999/94/EC (System 2+ for structural, System 4 for non-structural).",
         "standards_development": "prEN 12602 — draft standard dated 24 July 2025 (BSI reference 25/30510163 DC), confirming revision already underway under CEN/TC 177. EN 1170:2024 (test methods for fibre-reinforced precast) published Dec 2024 — supporting standard development is active.",
         "sreq_analysis": "Acquis Milestone I (product scope) and Milestone III (essential characteristics) both completed. Draft implementing decision published 4 Feb 2026 via Art. 12 notification (earlier draft from April 2024). Feedback until 3 Mar 2026. Under CPR 305/2011 (old regulation). Replaces mandate M/100 (1994). 4 deliverables, all due 30 Oct 2026: (1) new hEN for precast concrete performance assessment (Table 1), (2) EPD product category rules for lightweight and AAC products (Table 1), (3) revision of EN 1520:2011 (Table 2), (4) revision of EN 12602:2016 (Table 2). Decision expires 30 Jun 2027. CEN reports due 31 Jan 2027. Table 3 target of SReq Q2 2025 was missed by ~8 months. NOT yet adopted — CEN WP 2025 still lists as \"M/XXX\" (no mandate number assigned).",
-        "dpp_outlook": "The estimated DPP range is ~2030–2031, informed by two scenarios. Policy pipeline: With standardisation request draft published (Feb 2026) and delivery expected Q4 2026, the regulatory pathway points to DPP by ~2030–2031. Note: this standardisation request is under CPR 305/2011 – a subsequent request under CPR 2024/3110 is needed before DPP applies. Standards-based: Per-standard DPP estimates across 4 hENs range from ~2030 to ~2031 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline.",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "dpp_outlook": "The estimated DPP range is ~2030–2031, informed by two scenarios. Policy pipeline: With standardisation request draft published (Feb 2026) and delivery expected Q4 2026, the regulatory pathway points to DPP by ~2030–2031. Note: this standardisation request is under CPR 305/2011 – a subsequent request under CPR 2024/3110 is needed before DPP applies. Standards-based: Per-standard DPP estimates across 4 hENs range from ~2030 to ~2031 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline. GCCA Low Carbon Ratings (7-band AA–G, launched Apr 2025) explicitly includes precast concrete. Provides voluntary carbon class overlay alongside mandatory CPR GWP.",
+        "stakeholder_notes": "CEN/TC 229 (EN 13369, EN 1520) and CEN/TC 177 (EN 12602) are active. BIBM Decarbonisation Pledge. GCCA Low Carbon Ratings (7-band AA–G, Apr 2025) explicitly includes precast. ReCreate (H2020) demonstrates 93–98% energy/carbon savings from reusing intact precast components, with EPDs for reused products.",
+        "key_risks": "(1) SReq feedback deadline 3 Mar 2026 — monitor for adoption. (2) EN 13369 is a non-harmonised reference standard underpinning multiple precast hENs. (3) GWP declarations mandatory from 8 Jan 2026 for EN 1520 and EN 12602 products (OJ-cited under M/100) — early compliance burden before DPP system is operational. (4) Future new-CPR SReq may cover all 24 hENs (not just 4 currently tracked).",
+        "sources_summary": "COM(2025) 772 CPR Working Plan [S30]; CPR 2024/3110 [S1]; nlfnorm.cz hEN database [S143]; EOTA EAD database [S144]; SReq notification system Art. 12; BIBM; GCCA LCR."
       }
     },
     {
@@ -3338,7 +3344,7 @@
       "family": "16",
       "priority": "03",
       "tc": "CEN/TC 459/SC 4",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "reinforcing-steel.svg",
       "display_name": "Reinforcing Steel",
       "family_label": "Annex VII #16 · RPS",
@@ -3511,7 +3517,11 @@
           "pub_est": "~2029",
           "mand_est": "~2029",
           "cited": false,
-          "notes": "Only CPR family where main hEN was WITHDRAWN (Decision 2006/893/EC). prEN 10080:2023 comprehensive revision (183 pages)."
+          "notes": "Only CPR family where main hEN was WITHDRAWN (Decision 2006/893/EC). prEN 10080:2023 comprehensive revision (183 pages).",
+          "content": {
+            "status_narrative": "Withdrawn 2006. prEN 10080 at CEN Enquiry stage 40.60, no advancement found. Only CPR family where CE marking is impossible. Eurocode 2 (EN 1992-1-1:2023) normatively references EN 10080 despite it being non-harmonised.",
+            "dpp_impact": "CE marking impossible but EPD data exists: ArcelorMittal XCarb (300 kg CO₂e/t), Feralpi FERGreen (368 kg CO₂e/t), SERFAS — all EN 15804+A2 verified. EN 10080 harmonisation is the sole blocker to DPP readiness."
+          }
         },
         {
           "id": "EN 10138-3 (new)",
@@ -3567,9 +3577,9 @@
         "standards_development": "prEN 10080:2023 — comprehensive revision (183 pages) went to CEN Enquiry in early 2023. Status post-enquiry unclear but likely being coordinated with the new SReq. prEN 10138-3:2023 (strand) at stage 40.60 (close of voting, Aug 2023). prEN 10138-2 (wire) at stage 20.60. prEN 10370 (stainless steel reinforcement) under development. Second-generation Eurocode 2 (EN 1992-1-1:2023) extends steel grades to B700 and adds stainless reinforcement — references EN 10080 and prEN 10138 despite neither functioning as a harmonised standard.",
         "sreq_analysis": "Currently under preparation per COM(2025) 772 (one of 4 SReqs being prepared). CEN WP 2025 confirms CEN/TC 459/SC 4 \"will participate in the consultation process around the draft Standardization Request.\" Old mandate M/115 (1997, revised 2009) is dormant. Assigned placeholder \"M/XXX\" — no mandate number yet. Target adoption Q2 2026. Delivery 2029, standard mandatory + DA 2029. Product requirements delegated act under discussion. CPR Acquis sub-group established Q4 2022 (M-I finished, M-III targeted Q4 2025). AVCP System 1+ (Decision 97/597/EC). European Ombudsman case opened Jan 2019 on Commission's failure to follow up on M/115.",
         "dpp_outlook": "The estimated DPP range is ~2030–2032, informed by two scenarios. Policy pipeline: With standardisation request targeted Q2 2026 and delivery expected 2029, the regulatory pathway points to DPP by ~2030–2031. Standards-based: Per-standard DPP estimates across 2 hENs and 2 EADs range from ~2030 to ~2032. The combined range spans from the standards-based assessment’s earlier estimate (~2030–2032) to the policy pipeline’s later horizon (~2030–2031).",
-        "stakeholder_notes": "",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "CEN/TC 459/SC 4 feeds into acquis subgroup. Eurocode 2 (EN 1992-1-1:2023) published Nov 2023, normatively references EN 10080 and prEN 10138 despite neither being harmonised — design code/product standard gap persists until ~2028. SteelZero (40+ organisations) commits to 50% lower-emission steel by 2030, creating demand-side GWP transparency pressure. ResponsibleSteel certification. ArcelorMittal XCarb (300 kg CO₂e/t), Feralpi FERGreen (368 kg CO₂e/t), SERFAS all have EN 15804+A2 EPDs — data infrastructure exists; EN 10080 harmonisation is the sole blocker.",
+        "key_risks": "(1) 20-year CE marking void: EN 10080:2005 withdrawn 2006, no replacement harmonised. Only CPR family where CE marking is impossible. (2) prEN 10080 at stage 40.60 with no advancement found. (3) EU Ombudsman case 2145/2018/JAP (opened Jan 2019) — status unresolved. (4) ESPR iron & steel delegated act (~2027 compliance) may give RPS an ESPR DPP before its CPR DPP — dual regulatory pathway unique to this family. (5) CBAM full financial implementation Jan 2026 — triple-compliance burden (CBAM + CPR DPP + ESPR DPP). (6) Pipeline A NT-3 (Milestone III) targeted Q4 2025, still shows not_started as of Mar 2026 — likely stale. Verify against Commission/CEN sources.",
+        "sources_summary": "COM(2025) 772 CPR Working Plan [S30]; CPR 2024/3110 [S1]; Concrete Centre (CE marking impossibility reference); EU Ombudsman case 2145/2018/JAP; EUROFER ESPR position; ArcelorMittal/Feralpi/SERFAS EPD sources."
       }
     },
     {
@@ -4047,7 +4057,7 @@
       "family": "4",
       "priority": "06",
       "tc": "CEN/TC 88",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "thermal-insulation.svg",
       "display_name": "Thermal Insulation",
       "family_label": "Annex VII #4 · TIP",
@@ -4551,13 +4561,13 @@
       },
       "content": {
         "about": "The largest insulation product family under the CPR, covering factory-made thermal insulation products across 13 material types including mineral wool, expanded and extruded polystyrene, rigid polyurethane, phenolic foam, cellular glass, wood wool, wood fibre, expanded cork, expanded perlite, polyethylene, and calcium silicate. Also includes external thermal insulation composite systems (ETICS) assessed via the EAD route, vacuum insulation panels, and reflective insulation. This is a substantial market, valued at approximately USD 21 billion globally. Standardisation is led by CEN/TC 88.",
-        "standards_landscape": "13 hENs for factory-made products: EN 13162–13171 series (one per insulation type) plus EN 14063-1, EN 16069, and EN 16977. All cited under old CPR 305/2011 via mandate M/103 (last OJ citation: OJ C 092, 2018 / Implementing Decision 2019/451). Important correction: EN 13499 and EN 13500 (ETICS with EPS/mineral wool) are not cited in the Official Journal and never functioned as true harmonised standards — ETICS products use the EAD/ETA route instead. AVCP: System 3/4 for factory-made products (Decision 99/91/EC); System 1 for ETICS (Decision 97/556/EC, amended by 2011/14/EU).",
+        "standards_landscape": "12 hENs for factory-made products: EN 13162–13171 series (one per insulation type) plus EN 14063-1, EN 16069, and EN 16977. All cited under old CPR 305/2011 via mandate M/103 (last OJ citation: OJ C 092, 2018 / Implementing Decision 2019/451). Important correction: EN 13499 and EN 13500 (ETICS with EPS/mineral wool) are not cited in the Official Journal and never functioned as true harmonised standards — ETICS products use the EAD/ETA route instead. AVCP: System 3/4 for factory-made products (Decision 99/91/EC); System 1 for ETICS (Decision 97/556/EC, amended by 2011/14/EU). EAD 042461-00-1201 (hydrophilic mineral wool for green roofs, published May 2025, cited via Implementing Decision 2025/871) is not yet in TIP standards[]. If confirmed in PA 04, ead_count increases from 18 to 19.",
         "standards_development": "",
         "sreq_analysis": "In preparation — targeted Q3 2026 per COM(2025) 772 Table 3. Not yet notified under Art. 12 (as of Feb 2026). Acquis Milestone I (scope definition) finished; Milestone III (technical content for SReq + delegated acts) ongoing. Product requirements delegated act under discussion. The SReq will be under CPR 2024/3110 (new CPR), meaning DPP obligations apply directly once the resulting HTS is in force. Separately, the horizontal dangerous substances SReq (CEN/TC 351) was notified 1 Sep 2025 and covers all families including TIP — key substances: HBCDD, formaldehyde, biocides, mineral fibres. M/103 (mid-1990s) will be superseded by the new SReq.",
-        "dpp_outlook": "The estimated DPP range is ~2029–2032, informed by two scenarios. Policy pipeline: With standardisation request targeted Q3 2026 and delivery expected 2029, the regulatory pathway points to DPP by ~2029–2030. Standards-based: Per-standard DPP estimates across 12 hENs and 18 EADs range from ~2031 to ~2032 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). The combined range spans from the policy pipeline’s earlier estimate (~2029–2030) to the standards-based assessment’s later horizon (~2031–2032).",
-        "stakeholder_notes": "ETICS dual pathway: ETICS kits currently rely exclusively on the EAD/ETA route. ETAG 004 was fully converted to EAD 040083-01-0404 in 2025, with approximately 798 valid ETAs. A future harmonised product standard — EN 17237 — is in development by CEN/TC 88/WG 18 under mandate M/489, but is estimated to be 7+ years from completion. No harmonised facade fire test exists at EU level — national divergence persists (BS 8414 UK, DIN 4102-20 DE, LEPIR 2 FR). The European Association for ETICS (EAE) represents >80% of Europe's ETICS revenue. Around 15–20 active EADs cover innovative products including VIPs, aerogels, and bio-based insulation. Environmental & sustainability: EN 16783:2024 (EPD Product Category Rules for insulation) published. GWP declaration becomes mandatory from January 2026 under CPR 2024/3110. AVS delegated act circulated to Member States July 2025. ESPR: thermal insulation is not on the first priority product list (2025–2030 working plan) — CPR 2024/3110 is the primary instrument for environmental performance requirements. No dual ESPR/CPR DPP obligation expected in the near term (ESPR mid-term review in 2028 could add construction products).",
-        "key_risks": "",
-        "sources_summary": ""
+        "dpp_outlook": "The estimated DPP range is ~2029–2032, informed by two scenarios. Policy pipeline: With standardisation request targeted Q3 2026 and delivery expected 2029, the regulatory pathway points to DPP by ~2029–2030. Standards-based: Per-standard DPP estimates across 12 hENs and 18 EADs range from ~2031 to ~2032 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). The combined range spans from the policy pipeline’s earlier estimate (~2029–2030) to the standards-based assessment’s later horizon (~2031–2032). Knauf Insulation, Rockwool, and EUMEPS all publish EN 15804+A2 EPDs. EUMEPS sector EPD model (2024) enables SME EPS producers. Strong mineral wool and EPS EPD infrastructure.",
+        "stakeholder_notes": "ETICS dual pathway: ETICS kits currently rely exclusively on the EAD/ETA route. ETAG 004 was fully converted to EAD 040083-01-0404 in 2025, with approximately 798 valid ETAs. A future harmonised product standard — EN 17237 — is in development by CEN/TC 88/WG 18 under mandate M/489, but is estimated to be 7+ years from completion. No harmonised facade fire test exists at EU level — national divergence persists (BS 8414 UK, DIN 4102-20 DE, LEPIR 2 FR). The European Association for ETICS (EAE) represents >80% of Europe's ETICS revenue. Around 15–20 active EADs cover innovative products including VIPs, aerogels, and bio-based insulation. Environmental & sustainability: EN 16783:2024 (EPD Product Category Rules for insulation) published. GWP declaration becomes mandatory from January 2026 under CPR 2024/3110. AVS delegated act circulated to Member States July 2025. ESPR: thermal insulation is not on the first priority product list (2025–2030 working plan) — CPR 2024/3110 is the primary instrument for environmental performance requirements. No dual ESPR/CPR DPP obligation expected in the near term (ESPR mid-term review in 2028 could add construction products). European insulation market $21B (2024), CAGR 6.32% to $36.5B by 2033. EPBD renovation wave targets 35M buildings by 2030. TIP is among the largest CPR families by market value.",
+        "key_risks": "(1) ETICS transition: ~798 ETAs under EAD 040083 — massive transition burden if EAD route closes before hEN alternative is ready. (2) hEN count discrepancy: content references 13 but data has 12 — resolved to 12. (3) New EAD 042461 (green roof mineral wool) may expand portfolio. (4) Energy efficiency coupling: thermal insulation performance directly impacts building energy requirements under EPBD — regulatory interdependency. (5) EPS ETICS waste expected to triple by 2050 (up to €400/t disposal). France EPR for building materials and Austria 2027 landfill ban add regulatory urgency.",
+        "sources_summary": "COM(2025) 772 CPR Working Plan [S30]; CPR 2024/3110 [S1]; nlfnorm.cz hEN database [S143]; EOTA EAD database [S144]; DIBt hEN list; Implementing Decision 2025/871."
       }
     },
     {
@@ -4566,7 +4576,7 @@
       "family": "30",
       "priority": "28",
       "tc": "CEN/TC 129",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "flat-glass.svg",
       "display_name": "Flat Glass Products",
       "family_label": "Annex VII #30 · GLA",
@@ -4916,13 +4926,13 @@
       },
       "content": {
         "about": "Covers all types of flat glass, profiled glass, and glass blocks used in buildings — from basic float glass and toughened safety glass to laminated glass, insulating glass units, coated glass, and specialty products like borosilicate and chemically strengthened glass. Six European Assessment Documents also cover niche innovations such as vacuum-insulated glass units and thermally curved glass. Standardisation is led by CEN/TC 129 (Glass in building), which coordinates closely with Glass for Europe.",
-        "standards_landscape": "~12 standard families cited under old CPR 305/2011 via mandate M/135 (OJ C 092/2018 and Implementing Decision (EU) 2019/451). Key hENs: EN 572 series (basic glass), EN 1096 series (coated glass), EN 1279 series (insulating glass units), EN 12150-2 (toughened safety glass), EN 1863-2 (heat-strengthened), EN 14449 (laminated glass), EN 1051-2 (glass blocks), EN 1748-1-2/1748-2-2 (borosilicate/glass-ceramic), EN 14178-2 (alkaline earth silicate), EN 12337-2 (chemically strengthened), EN 14179-2 (heat-soaked toughened).",
-        "standards_development": "",
+        "standards_landscape": "~12 standard families cited under old CPR 305/2011 via mandate M/135 (OJ C 092/2018 and Implementing Decision (EU) 2019/451). Key hENs: EN 572 series (basic glass), EN 1096 series (coated glass), EN 1279 series (insulating glass units), EN 12150-2 (toughened safety glass), EN 1863-2 (heat-strengthened), EN 14449 (laminated glass), EN 1051-2 (glass blocks), EN 1748-1-2/1748-2-2 (borosilicate/glass-ceramic), EN 14178-2 (alkaline earth silicate), EN 12337-2 (chemically strengthened), EN 14179-2 (heat-soaked toughened). Implementing Decision 2025/871 (30 Apr 2025) cited new EAD(s) for PET foils in insulating glass units. Specific EAD number pending identification — may expand GLA's EAD portfolio.",
+        "standards_development": "SReq targeted Q1 2026 per COM(2025) 772 Table 3. As of 1 Mar 2026, no Art. 12 notification or formal adoption confirmed. Scale: 30+ standards under CEN/TC 129 require revision. Monitor weekly for SReq publication.",
         "sreq_analysis": "Acquis Milestone I (product scope) finished; Milestone III (essential characteristics) ongoing. SReq GLA targeted Q1 2026 per COM(2025) 772 Table 3. Under CPR 2024/3110 (DPP applies directly). No Art. 12 notification found as of Feb 2026 — Q1 2026 target at risk. Glass for Europe confirms 30+ product standards to be written or revised. SReq aligned with windows/doors SReq timeline (CEN/TC 33). Product requirements DA (Article 7 — minimum performance thresholds) identified for 2028. IGU alignment gap: window hEN target Dec 2028 but CEN/TC 129 IGU standards not until Dec 2030 — 2-year component mismatch flagged by industry.",
-        "dpp_outlook": "The estimated DPP range is ~2029–2032, informed by two scenarios. Policy pipeline: With standardisation request targeted Q1 2026 and delivery expected 2028, the regulatory pathway points to DPP by ~2029–2030. Standards-based: Per-standard DPP estimates across 12 hENs and 4 EADs range from ~2029 to ~2032 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). The combined range spans from the standards-based assessment’s earlier estimate (~2029–2032) to the policy pipeline’s later horizon (~2029–2030).",
+        "dpp_outlook": "The estimated DPP range is ~2029–2032, informed by two scenarios. Policy pipeline: With standardisation request targeted Q1 2026 and delivery expected 2028, the regulatory pathway points to DPP by ~2029–2030. Standards-based: Per-standard DPP estimates across 12 hENs and 4 EADs range from ~2029 to ~2032 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). The combined range spans from the standards-based assessment’s earlier estimate (~2029–2032) to the policy pipeline’s later horizon (~2029–2030). AGC EPD Generator covers 30+ environmental indicators (EN 15804+A2, third-party verified). Guardian, Glas Trösch, and Tvitec also publish EPDs. GLA is among the most DPP-ready families.",
         "stakeholder_notes": "AVCP system: Commission Decision 2000/245/EC — System 1 (fire resistance, anti-bullet, anti-explosion glass); System 3 (other safety glass — toughened, laminated without fire/security function); System 4 (regular glass products). Basic glass classified A1 (non-combustible) without testing per Decision 96/603/EC. CEN/TC 129 recommends NPD for reaction to fire of laminated glass and IGUs (SBI test not appropriate for glass products). Environmental & sustainability: EN 17074:2019 is the dedicated EPD PCR for flat glass (cradle to gate/grave). Glass for Europe opposes worst-case approach for environmental declarations — complex multi-site value chain makes this impractical. EPBD guidance (June 2025) pushes U-value + g-value for transparent building elements. Only 5% of construction flat glass is recycled; industry calls for 15% minimum recycled content target. ESPR: glass NOT on 2025-2030 priority list. Also affected by horizontal dangerous substances SReq (CEN/TC 351, all due 31 Dec 2029).",
-        "key_risks": "",
-        "sources_summary": ""
+        "key_risks": "(1) SReq Q1 2026 target approaching — no public notification found yet. (2) Scale of standards revision: 30+ standards need revision by CEN/TC 129. (3) New EAD citation (2025/871) for PET foils in insulating glass — may expand EAD portfolio. (4) Energy efficiency: glass performance directly impacts building energy declarations — tight coupling with EPBD requirements. (5) Only 5% of construction & demolition flat glass is recycled; 80%+ ends in landfill. DPP recycled content data infrastructure is underdeveloped. (6) EPBD guidance (June 2025) now encourages both U-value AND g-value for transparent elements. DPP data must carry both thermal and solar performance aligned with EPBD.",
+        "sources_summary": "COM(2025) 772 CPR Working Plan 2026–2029 [S30]; CPR 2024/3110 [S1]; nlfnorm.cz hEN database [S143]; EOTA EAD database [S144]; Glass for Europe CPR implementation page."
       }
     },
     {
@@ -7711,7 +7721,7 @@
       "family": "22",
       "priority": "",
       "tc": "CEN/TC 128",
-      "updated": "2026-02-22",
+      "updated": "2026-03-02",
       "icon": "roof-coverings.svg",
       "display_name": "Roof Coverings",
       "family_label": "Annex VII #22 · ROC",
@@ -8459,13 +8469,13 @@
       },
       "content": {
         "about": "One of the richest product families, covering roof coverings (clay tiles, concrete tiles, fibre-cement slates, bitumen sheets, natural slate, metal sheets), roof lights, roof windows, rigid underlays, polycarbonate sheets, sandwich panels, and permanent roof safety anchors. With 32 European Assessment Documents it has the second-highest EAD count across all 37 families, including green roof kits and recycled plastic roofing. Standardisation is led by CEN/TC 128 (Roof and wall cladding).",
-        "standards_landscape": "",
+        "standards_landscape": "EN 14509 (self-supporting double skin metal faced sandwich panels) is cross-listed in SMP, ROC, and WCF families. Data consistency verified across all three. Implementing Decision 2025/871 (30 Apr 2025) cites EAD 042461-00-1201 (hydrophilic mineral wool for green roofs) and EAD 210195-00-0404 (ultra-thin natural stone veneer sheets) — not yet in ROC standards[]. To be added after scope verification.",
         "standards_development": "",
         "sreq_analysis": "Not yet adopted. Per COM(2025) 772 Table 3: Milestone I (product scope) targeted 2027, Milestone III (essential characteristics) targeted 2027, standardisation request targeted 2028. No standards delivery or mandatory adoption dates set yet. The future SReq will be issued under CPR 2024/3110.",
         "dpp_outlook": "The estimated DPP range is ~2032–2033, informed by two scenarios. Policy pipeline: With standardisation request targeted 2028, the regulatory pathway points to DPP by ~2032–2033. Standards-based: Per-standard DPP estimates across 21 hENs and 31 EADs range from ~2032 to ~2033 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline.",
-        "stakeholder_notes": "AVCP & fire: Commission Decision 98/436/EC (amended 2001/596/EC) — System 1 for reaction to fire classes A1–C; System 3 for fire classes D–F, durability, water tightness; System 4 for remaining characteristics. Separate Decision 2000/553/EC governs external fire performance of roof coverings (BROOF classification — a characteristic unique to roofing). EN 13501-5 classifies external fire exposure to roofs. Fire is the dominant driver of AVCP complexity: most product standards carry triple systems (1/3/4) depending on the declared fire class. BIPV & green roofs: Building-integrated photovoltaics (BIPV) — solar roof tiles/panels that serve both energy generation and building envelope functions — straddle CPR and ESPR (Ecodesign). No harmonised BIPV standard exists under CPR; CE marking for BIPV as a construction product is not yet possible. Table 3 notes \"PV panels regulated by Ecodesign/ESPR, work aligned.\" Two green roof EADs (220009 and 220078) cover kits with substrate/drainage/vegetation layers — a growing market segment with no hEN route. 32 EADs also include recycled plastic roofing (220010, 220069), sun tunnels (220021), fire-resistant roof windows (220116), and roof windows with integrated balconies (220150).",
-        "key_risks": "",
-        "sources_summary": ""
+        "stakeholder_notes": "AVCP & fire: Commission Decision 98/436/EC (amended 2001/596/EC) — System 1 for reaction to fire classes A1–C; System 3 for fire classes D–F, durability, water tightness; System 4 for remaining characteristics. Separate Decision 2000/553/EC governs external fire performance of roof coverings (BROOF classification — a characteristic unique to roofing). EN 13501-5 classifies external fire exposure to roofs. Fire is the dominant driver of AVCP complexity: most product standards carry triple systems (1/3/4) depending on the declared fire class. BIPV & green roofs: Building-integrated photovoltaics (BIPV) — solar roof tiles/panels that serve both energy generation and building envelope functions — straddle CPR and ESPR (Ecodesign). No harmonised BIPV standard exists under CPR; CE marking for BIPV as a construction product is not yet possible. Table 3 notes \"PV panels regulated by Ecodesign/ESPR, work aligned.\" Two green roof EADs (220009 and 220078) cover kits with substrate/drainage/vegetation layers — a growing market segment with no hEN route. 32 EADs also include recycled plastic roofing (220010, 220069), sun tunnels (220021), fire-resistant roof windows (220116), and roof windows with integrated balconies (220150). Wienerberger leads EPD readiness (clay roof tiles + Sandtoft In-Roof Solar with BROOF[t4]). BMI Group (largest EU roofing manufacturer) has no EPDs.",
+        "key_risks": "(1) Distant SReq timeline (2028) with acquis not yet started. (2) 31 legacy EADs expire 9 Jan 2031 — only 3 years after planned SReq. No transition planning. (3) EN 14509 (sandwich panels) cross-family consistency risk with SMP and WCF. (4) Fire safety focus (post-Grenfell) — reaction to fire testing dominates AVCP. (5) EPBD mandates solar-ready rooftops: non-residential by Dec 2026, residential by Dec 2029. Massively increases BIPV product demand requiring dual CPR/LVD/EMC compliance. (6) BIPV roof products require dual DPP data (CPR construction + IEC 61215/61730 electrical) — no harmonised approach to combining both in a single passport. (7) EPBD recognises green roofs for first time. EAD 042461 (green roof mineral wool) newly cited. Multi-layer green roof systems create component vs system DPP challenges.",
+        "sources_summary": "COM(2025) 772 CPR Working Plan [S30]; CPR 2024/3110 [S1]; nlfnorm.cz hEN database [S143]; EOTA EAD database [S144]; Implementing Decision 2025/871."
       }
     },
     {
