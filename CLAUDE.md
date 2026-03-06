@@ -16,6 +16,8 @@ regenstudio-demos/
 ├── battery-questionnaire/ ← Battery passport compliance tool
 ├── ai-tax-ubi/       ← AI tax policy simulator
 ├── dpp-system/       ← DPP system demo
+├── triangle-playground/ ← Physics sandbox & constellation game (free)
+├── innovation-platform/ ← Government innovation management (restricted)
 ├── supabase/         ← Edge functions + migrations
 ├── privacy.html      ← Privacy policy (root level)
 ├── index.html        ← Demos landing page

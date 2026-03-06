@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#FFFFFF"/>
+
+  <!-- ==========================================
+       INNOVATION PLATFORM — 8-phase wheel with project cards
+       Center: octagonal phase wheel, sides: project cards
+       ========================================== -->
+
+  <!-- === PHASE WHEEL (center, 8 segments) === -->
+  <!-- Octagon outline -->
+  <polygon points="400,120 462,145 485,207 462,270 400,295 338,270 315,207 338,145"
+           fill="none" stroke="#009BBB" stroke-width="2" opacity="0.3"/>
+
+  <!-- Phase segments (triangles from center to edges) -->
+  <!-- Phase 1: top -->
+  <polygon points="400,207 400,120 462,145" fill="#009BBB" opacity="0.7"/>
+  <!-- Phase 2: top-right -->
+  <polygon points="400,207 462,145 485,207" fill="#0EA5E9" opacity="0.65"/>
+  <!-- Phase 3: right -->
+  <polygon points="400,207 485,207 462,270" fill="#6366F1" opacity="0.6"/>
+  <!-- Phase 4: bottom-right -->
+  <polygon points="400,207 462,270 400,295" fill="#818CF8" opacity="0.55"/>
+  <!-- Phase 5: bottom -->
+  <polygon points="400,207 400,295 338,270" fill="#00914B" opacity="0.6"/>
+  <!-- Phase 6: bottom-left -->
+  <polygon points="400,207 338,270 315,207" fill="#059669" opacity="0.55"/>
+  <!-- Phase 7: left -->
+  <polygon points="400,207 315,207 338,145" fill="#FFA92D" opacity="0.6"/>
+  <!-- Phase 8: top-left -->
+  <polygon points="400,207 338,145 400,120" fill="#D97706" opacity="0.55"/>
+
+  <!-- Center hub -->
+  <polygon points="388,200 400,185 412,200" fill="#243644" opacity="0.8"/>
+  <polygon points="388,200 412,200 400,215" fill="#1B2833" opacity="0.75"/>
+
+  <!-- Phase labels (small ticks) -->
+  <circle cx="400" cy="115" r="3" fill="#009BBB" opacity="0.6"/>
+  <circle cx="467" cy="140" r="3" fill="#0EA5E9" opacity="0.6"/>
+  <circle cx="490" cy="207" r="3" fill="#6366F1" opacity="0.6"/>
+  <circle cx="467" cy="275" r="3" fill="#818CF8" opacity="0.6"/>
+  <circle cx="400" cy="300" r="3" fill="#00914B" opacity="0.6"/>
+  <circle cx="333" cy="275" r="3" fill="#059669" opacity="0.6"/>
+  <circle cx="310" cy="207" r="3" fill="#FFA92D" opacity="0.6"/>
+  <circle cx="333" cy="140" r="3" fill="#D97706" opacity="0.6"/>
+
+  <!-- === PROJECT CARD (left) === -->
+  <!-- Card shadow -->
+  <rect x="73" y="143" width="160" height="190" rx="8" fill="#243644" opacity="0.06"/>
+  <!-- Card -->
+  <rect x="70" y="140" width="160" height="190" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5"/>
+  <!-- Card header bar -->
+  <rect x="70" y="140" width="160" height="36" rx="8" fill="#009BBB" opacity="0.12"/>
+  <rect x="70" y="168" width="160" height="8" fill="#FFFFFF"/>
+  <!-- Status dot -->
+  <circle cx="90" cy="158" r="4" fill="#009BBB" opacity="0.8"/>
+  <!-- Title lines -->
+  <rect x="100" y="153" width="80" height="5" rx="2" fill="#243644" opacity="0.5"/>
+  <rect x="100" y="162" width="50" height="3" rx="1" fill="#243644" opacity="0.25"/>
+  <!-- Progress bar -->
+  <rect x="85" y="195" width="130" height="6" rx="3" fill="#E5E7EB"/>
+  <rect x="85" y="195" width="85" height="6" rx="3" fill="#009BBB" opacity="0.7"/>
+  <!-- Content lines -->
+  <rect x="85" y="215" width="130" height="4" rx="2" fill="#243644" opacity="0.15"/>
+  <rect x="85" y="225" width="100" height="4" rx="2" fill="#243644" opacity="0.15"/>
+  <rect x="85" y="235" width="115" height="4" rx="2" fill="#243644" opacity="0.15"/>
+  <!-- Phase badges -->
+  <rect x="85" y="260" width="40" height="14" rx="4" fill="#009BBB" opacity="0.15"/>
+  <rect x="130" y="260" width="35" height="14" rx="4" fill="#6366F1" opacity="0.15"/>
+  <!-- Card connecting line to wheel -->
+  <line x1="230" y1="207" x2="315" y2="207" stroke="#009BBB" stroke-width="1" opacity="0.2" stroke-dasharray="4 3"/>
+
+  <!-- === PROJECT CARD (right) === -->
+  <!-- Card shadow -->
+  <rect x="573" y="143" width="160" height="190" rx="8" fill="#243644" opacity="0.06"/>
+  <!-- Card -->
+  <rect x="570" y="140" width="160" height="190" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5"/>
+  <!-- Card header bar -->
+  <rect x="570" y="140" width="160" height="36" rx="8" fill="#6366F1" opacity="0.12"/>
+  <rect x="570" y="168" width="160" height="8" fill="#FFFFFF"/>
+  <!-- Status dot -->
+  <circle cx="590" cy="158" r="4" fill="#6366F1" opacity="0.8"/>
+  <!-- Title lines -->
+  <rect x="600" y="153" width="90" height="5" rx="2" fill="#243644" opacity="0.5"/>
+  <rect x="600" y="162" width="55" height="3" rx="1" fill="#243644" opacity="0.25"/>
+  <!-- Progress bar -->
+  <rect x="585" y="195" width="130" height="6" rx="3" fill="#E5E7EB"/>
+  <rect x="585" y="195" width="52" height="6" rx="3" fill="#6366F1" opacity="0.7"/>
+  <!-- Content lines -->
+  <rect x="585" y="215" width="130" height="4" rx="2" fill="#243644" opacity="0.15"/>
+  <rect x="585" y="225" width="110" height="4" rx="2" fill="#243644" opacity="0.15"/>
+  <rect x="585" y="235" width="120" height="4" rx="2" fill="#243644" opacity="0.15"/>
+  <!-- Phase badges -->
+  <rect x="585" y="260" width="35" height="14" rx="4" fill="#00914B" opacity="0.15"/>
+  <rect x="625" y="260" width="45" height="14" rx="4" fill="#FFA92D" opacity="0.15"/>
+  <!-- Card connecting line to wheel -->
+  <line x1="485" y1="207" x2="570" y2="207" stroke="#6366F1" stroke-width="1" opacity="0.2" stroke-dasharray="4 3"/>
+
+  <!-- === REPORT/CANVAS ELEMENT (bottom center) === -->
+  <!-- Small canvas card -->
+  <rect x="340" y="340" width="120" height="80" rx="6" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+  <!-- Grid dots (canvas feel) -->
+  <circle cx="360" cy="360" r="1.5" fill="#243644" opacity="0.15"/>
+  <circle cx="380" cy="360" r="1.5" fill="#243644" opacity="0.15"/>
+  <circle cx="400" cy="360" r="1.5" fill="#243644" opacity="0.15"/>
+  <circle cx="420" cy="360" r="1.5" fill="#243644" opacity="0.15"/>
+  <circle cx="440" cy="360" r="1.5" fill="#243644" opacity="0.15"/>
+  <circle cx="360" cy="380" r="1.5" fill="#243644" opacity="0.15"/>
+  <circle cx="380" cy="380" r="1.5" fill="#243644" opacity="0.15"/>
+  <circle cx="400" cy="380" r="1.5" fill="#243644" opacity="0.15"/>
+  <circle cx="420" cy="380" r="1.5" fill="#243644" opacity="0.15"/>
+  <circle cx="440" cy="380" r="1.5" fill="#243644" opacity="0.15"/>
+  <circle cx="360" cy="400" r="1.5" fill="#243644" opacity="0.15"/>
+  <circle cx="380" cy="400" r="1.5" fill="#243644" opacity="0.15"/>
+  <circle cx="400" cy="400" r="1.5" fill="#243644" opacity="0.15"/>
+  <circle cx="420" cy="400" r="1.5" fill="#243644" opacity="0.15"/>
+  <circle cx="440" cy="400" r="1.5" fill="#243644" opacity="0.15"/>
+  <!-- Sticky notes on canvas -->
+  <rect x="365" y="365" width="22" height="18" rx="2" fill="#FFA92D" opacity="0.5"/>
+  <rect x="395" y="372" width="22" height="18" rx="2" fill="#009BBB" opacity="0.5"/>
+  <rect x="425" y="362" width="22" height="18" rx="2" fill="#00914B" opacity="0.5"/>
+  <rect x="375" y="390" width="22" height="18" rx="2" fill="#6366F1" opacity="0.5"/>
+  <rect x="410" y="395" width="22" height="18" rx="2" fill="#93093F" opacity="0.4"/>
+  <!-- Connect to wheel -->
+  <line x1="400" y1="295" x2="400" y2="340" stroke="#243644" stroke-width="1" opacity="0.15" stroke-dasharray="4 3"/>
+
+  <!-- === DECORATIVE ACCENT TRIANGLES === -->
+  <polygon points="60,60 78,40 95,62" fill="#009BBB" opacity="0.08"/>
+  <polygon points="730,55 748,38 762,58" fill="#6366F1" opacity="0.08"/>
+  <polygon points="55,430 72,415 85,435" fill="#00914B" opacity="0.07"/>
+  <polygon points="740,440 755,425 768,442" fill="#FFA92D" opacity="0.07"/>
+  <polygon points="180,420 195,405 210,422" fill="#009BBB" opacity="0.06"/>
+  <polygon points="620,430 635,418 648,435" fill="#00914B" opacity="0.06"/>
+</svg>
