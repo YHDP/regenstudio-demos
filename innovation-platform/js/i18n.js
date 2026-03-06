@@ -30,10 +30,12 @@ async function loadLangFile(lang) {
 
 /** Initialize i18n — load saved language or default */
 async function initI18n() {
-  const saved = localStorage.getItem(STORAGE_KEY);
-  if (saved && SUPPORTED_LANGS.includes(saved)) {
-    currentLang = saved;
-  }
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved && SUPPORTED_LANGS.includes(saved)) {
+      currentLang = saved;
+    }
+  } catch (e) { /* localStorage blocked — use default language */ }
   strings = await loadLangFile(currentLang);
   return currentLang;
 }
@@ -98,7 +100,7 @@ function getSupportedLangs() {
 async function setLang(lang) {
   if (!SUPPORTED_LANGS.includes(lang)) return;
   currentLang = lang;
-  localStorage.setItem(STORAGE_KEY, lang);
+  try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
   strings = await loadLangFile(lang);
   // Notify all registered callbacks
   for (const cb of onLangChangeCallbacks) {
