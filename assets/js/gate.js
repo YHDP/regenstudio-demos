@@ -130,19 +130,25 @@ async function initPasswordForm(config, sessionKey) {
     const value = input.value;
     if (!value) return;
 
-    const hash = await sha256(value);
+    try {
+      const hash = await sha256(value);
 
-    if (hash === passwordHash) {
-      grantSession(sessionKey, config);
-    } else {
+      if (hash === passwordHash) {
+        grantSession(sessionKey, config);
+      } else {
+        errorEl.classList.add('visible');
+        input.classList.add('error');
+        input.value = '';
+        input.focus();
+        setTimeout(() => {
+          errorEl.classList.remove('visible');
+          input.classList.remove('error');
+        }, 3000);
+      }
+    } catch (err) {
+      errorEl.textContent = 'Something went wrong. Please try again.';
       errorEl.classList.add('visible');
-      input.classList.add('error');
-      input.value = '';
-      input.focus();
-      setTimeout(() => {
-        errorEl.classList.remove('visible');
-        input.classList.remove('error');
-      }, 3000);
+      console.error('Password check failed:', err);
     }
   });
 }
@@ -180,10 +186,14 @@ function initCopyButtons() {
 
 // --- Helpers ---
 function grantSession(sessionKey, config) {
-  localStorage.setItem(sessionKey, JSON.stringify({
-    demo_id: config.demoId,
-    granted_at: Date.now(),
-  }));
+  try {
+    localStorage.setItem(sessionKey, JSON.stringify({
+      demo_id: config.demoId,
+      granted_at: Date.now(),
+    }));
+  } catch (e) {
+    // localStorage unavailable (e.g. private browsing) — still allow access
+  }
   window.location.replace(config.demoPath);
 }
 
