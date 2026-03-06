@@ -191,28 +191,10 @@ function grantSession(sessionKey, config) {
       demo_id: config.demoId,
       granted_at: Date.now(),
     }));
-  } catch (e) {}
-
-  // Navigate via anchor click — bypasses SES/extension lockdowns on window.location
-  var a = document.createElement('a');
-  a.href = config.demoPath;
-  a.style.display = 'none';
-  document.body.appendChild(a);
-  a.click();
-
-  // Fallback: if still on this page after 300ms, show manual link
-  setTimeout(function () {
-    var card = document.querySelector('.gate-card');
-    if (card) {
-      card.innerHTML =
-        '<div style="text-align:center;padding:48px 24px">' +
-        '<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--emerald,#00914B)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>' +
-        '<h2 style="margin:16px 0 8px">Access Granted</h2>' +
-        '<p style="margin:0 0 24px;color:#6B7280">Auto-redirect was blocked by a browser extension.</p>' +
-        '<a href="' + config.demoPath + '" style="display:inline-block;padding:12px 32px;background:var(--emerald,#00914B);color:#fff;border-radius:8px;text-decoration:none;font-weight:600">Open Demo &rarr;</a>' +
-        '</div>';
-    }
-  }, 300);
+  } catch (e) {
+    // localStorage unavailable (SES/extension/private browsing) — continue to redirect
+  }
+  window.location.replace(config.demoPath);
 }
 
 function showMessage(text, isError) {
