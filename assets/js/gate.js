@@ -194,7 +194,15 @@ function grantSession(sessionKey, config) {
   } catch (e) {
     // localStorage unavailable (e.g. private browsing) — still allow access
   }
-  window.location.replace(config.demoPath);
+  // Use link click as fallback — more resilient to browser extensions (SES)
+  try {
+    window.location.replace(config.demoPath);
+  } catch (e) {
+    var a = document.createElement('a');
+    a.href = config.demoPath;
+    document.body.appendChild(a);
+    a.click();
+  }
 }
 
 function showMessage(text, isError) {
