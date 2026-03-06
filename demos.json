@@ -57,6 +57,29 @@
       "preview": "assets/images/previews/cpr-dpp-tracker.svg",
       "accentColor": "#009BBB",
       "path": "/cpr-dpp-tracker/"
+    },
+    {
+      "id": "triangle-playground",
+      "name": "Triangle Playground",
+      "subtitle": "Interactive Physics Sandbox",
+      "description": "Physics sandbox and constellation-building game. Herd triangles, form bonds, and create emergent patterns across three game modes — playfully understanding how innovation systems work.",
+      "category": "Digital Society",
+      "tags": ["Physics Simulation", "Game", "Innovation Systems"],
+      "preview": "assets/images/previews/triangle-playground.svg",
+      "accentColor": "#6366F1",
+      "path": "/triangle-playground/",
+      "public": true
+    },
+    {
+      "id": "innovation-platform",
+      "name": "Innovation Platform",
+      "subtitle": "Government Innovation Management",
+      "description": "Navigate complex innovation projects with an 8-phase toolkit. Portfolio management, project canvases, and structured reporting for government innovation teams.",
+      "category": "Digital Society",
+      "tags": ["Innovation Management", "Government", "Portfolio"],
+      "preview": "assets/images/previews/innovation-platform.svg",
+      "accentColor": "#009BBB",
+      "path": "/innovation-platform/"
     }
   ]
 }

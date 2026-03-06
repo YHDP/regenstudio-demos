@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#FFFFFF"/>
+
+  <!-- ==========================================
+       TRIANGLE PLAYGROUND — Physics sandbox with clusters and bonds
+       Scattered triangles forming clusters, some bonded, some free
+       ========================================== -->
+
+  <!-- === LARGE CENTRAL CLUSTER (bonded triangles) === -->
+  <!-- Core triangle -->
+  <polygon points="400,180 430,130 460,180" fill="#6366F1" opacity="0.9"/>
+  <polygon points="370,210 400,180 430,210" fill="#818CF8" opacity="0.85"/>
+  <polygon points="430,210 460,180 490,210" fill="#4F46E5" opacity="0.85"/>
+  <!-- Outer ring -->
+  <polygon points="360,180 390,140 400,180" fill="#A5B4FC" opacity="0.7"/>
+  <polygon points="460,180 470,140 500,180" fill="#A5B4FC" opacity="0.7"/>
+  <polygon points="350,230 370,210 390,240" fill="#6366F1" opacity="0.65"/>
+  <polygon points="470,240 490,210 510,230" fill="#6366F1" opacity="0.65"/>
+  <polygon points="390,240 430,210 470,240" fill="#C7D2FE" opacity="0.5"/>
+
+  <!-- Bond lines (connecting cluster) -->
+  <line x1="400" y1="180" x2="430" y2="130" stroke="#6366F1" stroke-width="1.5" opacity="0.4"/>
+  <line x1="400" y1="180" x2="460" y2="180" stroke="#6366F1" stroke-width="1.5" opacity="0.4"/>
+  <line x1="430" y1="130" x2="460" y2="180" stroke="#6366F1" stroke-width="1.5" opacity="0.4"/>
+  <line x1="370" y1="210" x2="430" y2="210" stroke="#818CF8" stroke-width="1.5" opacity="0.3"/>
+  <line x1="430" y1="210" x2="490" y2="210" stroke="#818CF8" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- === SMALL CLUSTER (left, emerald) === -->
+  <polygon points="160,260 185,220 210,260" fill="#00914B" opacity="0.85"/>
+  <polygon points="140,290 160,260 185,290" fill="#059669" opacity="0.8"/>
+  <polygon points="185,290 210,260 230,285" fill="#0D6B3E" opacity="0.75"/>
+  <line x1="160" y1="260" x2="210" y2="260" stroke="#00914B" stroke-width="1.5" opacity="0.35"/>
+  <line x1="160" y1="260" x2="185" y2="290" stroke="#059669" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- === SMALL CLUSTER (right, teal) === -->
+  <polygon points="600,200 625,165 650,200" fill="#009BBB" opacity="0.85"/>
+  <polygon points="580,230 600,200 625,235" fill="#0EA5E9" opacity="0.75"/>
+  <polygon points="625,235 650,200 670,228" fill="#009BBB" opacity="0.7"/>
+  <line x1="600" y1="200" x2="650" y2="200" stroke="#009BBB" stroke-width="1.5" opacity="0.35"/>
+  <line x1="600" y1="200" x2="625" y2="235" stroke="#0EA5E9" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- === FREE-FLOATING TRIANGLES (drifting, no bonds) === -->
+  <!-- Top area -->
+  <polygon points="200,100 215,75 230,100" fill="#FFA92D" opacity="0.7"/>
+  <polygon points="550,90 565,65 580,90" fill="#93093F" opacity="0.6"/>
+  <polygon points="310,80 322,58 334,80" fill="#009BBB" opacity="0.55"/>
+  <polygon points="680,120 693,98 706,120" fill="#6366F1" opacity="0.5"/>
+  <polygon points="120,140 133,120 146,140" fill="#00914B" opacity="0.5"/>
+
+  <!-- Bottom area -->
+  <polygon points="250,360 265,338 280,360" fill="#6366F1" opacity="0.6"/>
+  <polygon points="500,340 515,318 530,340" fill="#FFA92D" opacity="0.55"/>
+  <polygon points="350,380 362,360 374,380" fill="#009BBB" opacity="0.5"/>
+  <polygon points="620,350 635,328 650,350" fill="#00914B" opacity="0.55"/>
+  <polygon points="150,380 163,360 176,380" fill="#93093F" opacity="0.45"/>
+  <polygon points="700,300 712,282 724,300" fill="#009BBB" opacity="0.5"/>
+
+  <!-- Mid-drift -->
+  <polygon points="90,220 103,200 116,220" fill="#FFA92D" opacity="0.5"/>
+  <polygon points="710,230 722,212 734,230" fill="#00914B" opacity="0.45"/>
+  <polygon points="280,160 290,142 300,160" fill="#93093F" opacity="0.45"/>
+  <polygon points="540,280 552,262 564,280" fill="#818CF8" opacity="0.5"/>
+
+  <!-- === ATTRACTION CURSOR (circle with radial lines) === -->
+  <circle cx="400" cy="310" r="28" fill="none" stroke="#6366F1" stroke-width="1.5" opacity="0.3" stroke-dasharray="4 3"/>
+  <circle cx="400" cy="310" r="4" fill="#6366F1" opacity="0.5"/>
+  <!-- Radial attraction lines -->
+  <line x1="400" y1="282" x2="400" y2="290" stroke="#6366F1" stroke-width="1" opacity="0.25"/>
+  <line x1="400" y1="330" x2="400" y2="338" stroke="#6366F1" stroke-width="1" opacity="0.25"/>
+  <line x1="372" y1="310" x2="380" y2="310" stroke="#6366F1" stroke-width="1" opacity="0.25"/>
+  <line x1="420" y1="310" x2="428" y2="310" stroke="#6366F1" stroke-width="1" opacity="0.25"/>
+
+  <!-- Triangles being attracted toward cursor -->
+  <polygon points="385,345 395,330 405,345" fill="#6366F1" opacity="0.7"/>
+  <polygon points="420,335 430,320 440,335" fill="#818CF8" opacity="0.6"/>
+  <polygon points="365,325 375,312 385,325" fill="#A5B4FC" opacity="0.6"/>
+
+  <!-- === DECORATIVE ACCENT TRIANGLES (very subtle) === -->
+  <polygon points="60,50 78,30 95,52" fill="#6366F1" opacity="0.08"/>
+  <polygon points="730,60 748,42 760,62" fill="#009BBB" opacity="0.08"/>
+  <polygon points="50,420 68,405 82,425" fill="#00914B" opacity="0.07"/>
+  <polygon points="740,420 755,405 768,422" fill="#FFA92D" opacity="0.07"/>
+  <polygon points="400,440 415,425 430,442" fill="#6366F1" opacity="0.06"/>
+</svg>
