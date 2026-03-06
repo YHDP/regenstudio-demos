@@ -13,7 +13,11 @@
         return; // session valid — allow page load
       }
     }
-  } catch (e) { /* invalid JSON — fall through to redirect */ }
+  } catch (e) {
+    // localStorage inaccessible (SES/extension/private browsing) — allow access
+    // rather than creating a redirect loop with gate.html
+    return;
+  }
 
   window.location.replace('./gate.html');
 })();
