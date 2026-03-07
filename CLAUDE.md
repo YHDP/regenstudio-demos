@@ -24,18 +24,15 @@ regenstudio-demos/
 └── products.html     ← Products page
 ```
 
-## Privacy Rules — MANDATORY
+## Privacy Architecture
 
-This site follows a **zero third-party connections** architecture. The privacy policy at `privacy.html` promises visitors that all assets are self-hosted and no cookies are set.
+Zero third-party connections policy. All assets self-hosted, no cookies.
+Privacy principles enforced by `soul.md`; project-specific details below:
 
-- **NEVER add Google Fonts, CDN-hosted scripts, or any external `<link>`/`<script>` tags**
-  - All fonts are self-hosted in `assets/fonts/` (Inter, Playfair Display, Material Icons)
-  - JS libraries must be placed in `cpr-dpp-tracker/js/vendor/` or equivalent local paths
-  - If a new font or library is needed, download the files and self-host them
-- **NEVER add cookies, tracking pixels, fingerprinting, or advertising scripts**
-- **NEVER store raw IP addresses** — use hashed IPs with daily-rotating salt (see `track-report-event`)
-- **NEVER send personal data to third parties** beyond the listed sub-processors (Supabase, Mollie, Lettermint, Exact Online, Proton Mail, GitHub Pages)
-- If adding a new external service, update `privacy.html` sub-processors section first
+- Fonts self-hosted in `assets/fonts/` (Inter, Playfair Display, Material Icons). JS libs in `cpr-dpp-tracker/js/vendor/`.
+- IPs hashed with daily-rotating salt (see `track-report-event`), never stored raw
+- Sub-processors: Supabase (EU), Mollie (NL), Lettermint (email), GitHub Pages, Exact Online (NL), Proton Mail (CH)
+- Privacy policy: `privacy.html` — must be updated in the same commit as any data-handling change
 
 ## Self-Hosted Fonts
 - `assets/fonts/inter.css` — Inter (variable, 400-800)

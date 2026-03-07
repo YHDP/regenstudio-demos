@@ -16,10 +16,15 @@
   var SITE = 'demos';
   var pageLoadTime = Date.now();
 
+  // ── Timezone (used server-side for country mapping) ──
+  var tz = '';
+  try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+
   // ── Send helper ──
   function send(payload) {
     try {
       payload.site = SITE;
+      if (tz) payload.timezone = tz;
       fetch(ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain' },
