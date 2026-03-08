@@ -27,13 +27,13 @@
 .sys-dash__title {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--text-primary, #1a2b36);
+  color: var(--color-text, #1a2b36);
   margin: 0 0 4px;
 }
 
 .sys-dash__subtitle {
   font-size: 0.72rem;
-  color: var(--text-secondary, #5a7080);
+  color: var(--color-text-secondary, #5a7080);
   line-height: 1.4;
 }
 
@@ -112,7 +112,7 @@
 .sys-dash__dot--green       { background: var(--cert-green); border-color: var(--cert-green); }
 .sys-dash__dot--yellow-green { background: var(--cert-yellow-green); border-color: var(--cert-yellow-green); }
 .sys-dash__dot--amber       { background: var(--cert-amber); border-color: var(--cert-amber); }
-.sys-dash__dot--orange      { background: var(--cert-orange); border-color: var(--cert-orange); }
+.sys-dash__dot--color-orange      { background: var(--cert-orange); border-color: var(--cert-orange); }
 .sys-dash__dot--red-orange  { background: var(--cert-red-orange); border-color: var(--cert-red-orange); }
 .sys-dash__dot--red         { background: var(--cert-red-orange); border-color: var(--cert-red-orange); }
 .sys-dash__dot--gray        { background: #fff; border-color: #e2e8ed; color: #c5cdd5; }
@@ -126,14 +126,14 @@
   display: block;
   font-size: 0.62rem;
   font-weight: 600;
-  color: var(--text-primary, #1a2b36);
+  color: var(--color-text, #1a2b36);
   line-height: 1.25;
 }
 
 .sys-dash__date {
   display: block;
   font-size: 0.56rem;
-  color: var(--text-secondary, #5a7080);
+  color: var(--color-text-secondary, #5a7080);
   margin-top: 2px;
   font-weight: 500;
 }
@@ -158,7 +158,7 @@
 
 .sys-dash__callout--green       { border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.04); }
 .sys-dash__callout--amber       { border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.04); }
-.sys-dash__callout--orange      { border-color: rgba(249, 115, 22, 0.3); background: rgba(249, 115, 22, 0.04); }
+.sys-dash__callout--color-orange      { border-color: rgba(249, 115, 22, 0.3); background: rgba(249, 115, 22, 0.04); }
 .sys-dash__callout--red-orange  { border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.04); }
 .sys-dash__callout--red         { border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.04); }
 .sys-dash__callout--gray        { border-color: rgba(148, 163, 184, 0.3); background: rgba(148, 163, 184, 0.04); }
@@ -166,13 +166,13 @@
 .sys-dash__callout-label {
   font-size: 0.68rem;
   font-weight: 600;
-  color: var(--text-secondary, #5a7080);
+  color: var(--color-text-secondary, #5a7080);
 }
 
 .sys-dash__callout-date {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--text-primary, #1a2b36);
+  color: var(--color-text, #1a2b36);
 }
 
 .sys-dash__callout-cert {
@@ -181,7 +181,7 @@
   gap: 4px;
   font-size: 0.62rem;
   font-weight: 600;
-  color: var(--text-secondary, #5a7080);
+  color: var(--color-text-secondary, #5a7080);
 }
 
 .sys-dash__cert-dot {
@@ -194,7 +194,7 @@
 .sys-dash__cert-dot--green       { background: var(--cert-green); }
 .sys-dash__cert-dot--yellow-green { background: var(--cert-yellow-green); }
 .sys-dash__cert-dot--amber       { background: var(--cert-amber); }
-.sys-dash__cert-dot--orange      { background: var(--cert-orange); }
+.sys-dash__cert-dot--color-orange      { background: var(--cert-orange); }
 .sys-dash__cert-dot--red-orange  { background: var(--cert-red-orange); }
 .sys-dash__cert-dot--red         { background: var(--cert-red-orange); }
 .sys-dash__cert-dot--gray        { background: var(--cert-gray); }
@@ -231,7 +231,7 @@
 .sys-dash__cross-name {
   font-size: 0.66rem;
   font-weight: 500;
-  color: var(--text-primary, #1a2b36);
+  color: var(--color-text, #1a2b36);
 }
 
 /* ---------- Detail expansion panel ---------- */
@@ -261,7 +261,7 @@
 .sys-dash__detail-title {
   font-size: 0.82rem;
   font-weight: 700;
-  color: var(--text-primary, #1a2b36);
+  color: var(--color-text, #1a2b36);
 }
 
 .sys-dash__detail-status {
@@ -276,7 +276,7 @@
 .sys-dash__detail-status--green       { background: rgba(16,185,129,0.1); color: #059669; }
 .sys-dash__detail-status--yellow-green { background: rgba(132,204,22,0.1); color: #65a30d; }
 .sys-dash__detail-status--amber       { background: rgba(245,158,11,0.1); color: #d97706; }
-.sys-dash__detail-status--orange      { background: rgba(249,115,22,0.1); color: #ea580c; }
+.sys-dash__detail-status--color-orange      { background: rgba(249,115,22,0.1); color: #ea580c; }
 .sys-dash__detail-status--red-orange  { background: rgba(239,68,68,0.1); color: #dc2626; }
 .sys-dash__detail-status--red         { background: rgba(239,68,68,0.1); color: #dc2626; }
 .sys-dash__detail-status--gray        { background: rgba(148,163,184,0.1); color: #64748b; }
@@ -284,7 +284,7 @@
 .sys-dash__detail-date {
   font-size: 0.68rem;
   font-weight: 600;
-  color: var(--teal, #009bbb);
+  color: var(--color-teal, #009bbb);
 }
 
 .sys-dash__detail-text {
@@ -330,7 +330,7 @@
 .sys-dash__sub-id {
   font-size: 0.62rem;
   font-weight: 600;
-  color: var(--teal, #009bbb);
+  color: var(--color-teal, #009bbb);
   white-space: nowrap;
 }
 
@@ -407,7 +407,7 @@
 .cpr-filters__pipe-count {
   font-size: 0.66rem;
   font-weight: 600;
-  color: var(--text-primary, #1a2b36);
+  color: var(--color-text, #1a2b36);
 }
 
 /* Filter row */
@@ -471,7 +471,7 @@
 .cpr-filters__cert-dot--green       { background: var(--cert-green); }
 .cpr-filters__cert-dot--yellow-green { background: var(--cert-yellow-green); }
 .cpr-filters__cert-dot--amber       { background: var(--cert-amber); }
-.cpr-filters__cert-dot--orange      { background: var(--cert-orange); }
+.cpr-filters__cert-dot--color-orange      { background: var(--cert-orange); }
 .cpr-filters__cert-dot--red-orange  { background: var(--cert-red-orange); }
 .cpr-filters__cert-dot--gray        { background: var(--cert-gray); }
 
@@ -482,13 +482,13 @@
   border: 1.5px solid #e2e8ed;
   border-radius: 6px;
   background: #fff;
-  color: var(--text-primary, #1a2b36);
+  color: var(--color-text, #1a2b36);
   cursor: pointer;
   font-family: inherit;
 }
 
 .cpr-filters__sort:focus {
-  outline: 2px solid var(--teal, #009bbb);
+  outline: 2px solid var(--color-teal, #009bbb);
   outline-offset: 1px;
 }
 
@@ -496,7 +496,7 @@
 .cpr-filters__reset {
   font-size: 0.62rem;
   font-weight: 600;
-  color: var(--text-secondary, #5a7080);
+  color: var(--color-text-secondary, #5a7080);
   background: none;
   border: 1px solid #e2e8ed;
   border-radius: 6px;

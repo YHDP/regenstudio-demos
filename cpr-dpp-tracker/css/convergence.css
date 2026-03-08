@@ -52,12 +52,12 @@
   font-size: 1.1rem;
   font-weight: 700;
   margin: 0;
-  color: var(--text-primary);
+  color: var(--color-text);
   line-height: 1.3;
 }
 .conv-view__subtitle {
   font-size: 0.72rem;
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   margin: 2px 0 0;
 }
 .conv-view__header-right {
@@ -72,7 +72,7 @@
   font-size: 0.78rem;
   font-weight: 600;
   cursor: pointer;
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   padding: 8px 16px;
   border-radius: 8px;
   white-space: nowrap;
@@ -111,7 +111,7 @@
   font-size: 0.6rem;
   font-weight: 700;
   color: #A0B0BE;
-  background: var(--bg, #fff);
+  background: var(--color-bg, #fff);
   padding-right: 6px;
   font-variant-numeric: tabular-nums;
 }
@@ -133,7 +133,7 @@
   font-size: 0.54rem;
   font-weight: 700;
   color: var(--cert-amber);
-  background: var(--bg, #fff);
+  background: var(--color-bg, #fff);
   padding-right: 4px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -171,7 +171,7 @@
   align-items: center;
   gap: 6px;
   padding: 8px 6px;
-  background: var(--bg, #fff);
+  background: var(--color-bg, #fff);
   flex-wrap: wrap;
 }
 .conv-chart__col-badge {
@@ -267,7 +267,7 @@
 .conv-chart__node--green .conv-chart__node-dot       { background: var(--cert-green); border-color: var(--cert-green); }
 .conv-chart__node--yellow-green .conv-chart__node-dot { background: var(--cert-yellow-green); border-color: var(--cert-yellow-green); }
 .conv-chart__node--amber .conv-chart__node-dot        { background: var(--cert-amber); border-color: var(--cert-amber); }
-.conv-chart__node--orange .conv-chart__node-dot       { background: var(--cert-orange); border-color: var(--cert-orange); }
+.conv-chart__node--color-orange .conv-chart__node-dot       { background: var(--cert-orange); border-color: var(--cert-orange); }
 .conv-chart__node--red-orange .conv-chart__node-dot   { background: var(--cert-red-orange); border-color: var(--cert-red-orange); }
 .conv-chart__node--red .conv-chart__node-dot          { background: var(--cert-red); border-color: var(--cert-red); }
 .conv-chart__node--gray .conv-chart__node-dot         { background: #fff; border-color: #C5CDD5; color: #C5CDD5; }
@@ -281,7 +281,7 @@
 .conv-chart__node-name {
   font-size: 0.66rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text);
   line-height: 1.25;
   word-break: break-word;
 }
@@ -355,7 +355,7 @@
 .conv-chart__gantt--green       { background: var(--cert-green); }
 .conv-chart__gantt--yellow-green { background: var(--cert-yellow-green); }
 .conv-chart__gantt--amber       { background: var(--cert-amber); }
-.conv-chart__gantt--orange      { background: var(--cert-orange); }
+.conv-chart__gantt--color-orange      { background: var(--cert-orange); }
 .conv-chart__gantt--red-orange  { background: var(--cert-red-orange); }
 .conv-chart__gantt--red         { background: var(--cert-red); }
 .conv-chart__gantt--gray        { background: #C5CDD5; }
@@ -383,13 +383,13 @@
 .dpp-outlook__title {
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--color-text);
 }
 .dpp-outlook__date {
   font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 800;
-  color: var(--text-primary);
+  color: var(--color-text);
 }
 .dpp-outlook__cert {
   display: inline-flex;
@@ -410,7 +410,7 @@
 .dpp-outlook__cert-dot--green       { background: var(--cert-green); }
 .dpp-outlook__cert-dot--yellow-green { background: var(--cert-yellow-green); }
 .dpp-outlook__cert-dot--amber       { background: var(--cert-amber); }
-.dpp-outlook__cert-dot--orange      { background: var(--cert-orange); }
+.dpp-outlook__cert-dot--color-orange      { background: var(--cert-orange); }
 .dpp-outlook__cert-dot--red-orange  { background: var(--cert-red-orange); }
 .dpp-outlook__cert-dot--red         { background: var(--cert-red); }
 .dpp-outlook__cert-dot--gray        { background: var(--cert-gray); }
@@ -453,7 +453,7 @@
 }
 .dpp-outlook__row-value {
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text);
 }
 .dpp-outlook__binding {
   display: inline-block;
@@ -480,7 +480,7 @@
 
 .conv-chart__empty {
   font-size: 0.82rem;
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   text-align: center;
   padding: 40px 20px;
 }
@@ -515,7 +515,7 @@
 .node-detail__title {
   font-size: 0.74rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--color-text);
 }
 .node-detail__close {
   background: none;
@@ -526,7 +526,7 @@
   padding: 2px 6px;
   line-height: 1;
 }
-.node-detail__close:hover { color: var(--text-primary); }
+.node-detail__close:hover { color: var(--color-text); }
 
 .node-detail__body { }
 
@@ -546,7 +546,7 @@
 }
 .node-detail__value {
   font-size: 0.68rem;
-  color: var(--text-primary);
+  color: var(--color-text);
 }
 
 .node-detail__cert-dot {
@@ -560,7 +560,7 @@
 .node-detail__cert-dot--green       { background: var(--cert-green); }
 .node-detail__cert-dot--yellow-green { background: var(--cert-yellow-green); }
 .node-detail__cert-dot--amber       { background: var(--cert-amber); }
-.node-detail__cert-dot--orange      { background: var(--cert-orange); }
+.node-detail__cert-dot--color-orange      { background: var(--cert-orange); }
 .node-detail__cert-dot--red-orange  { background: var(--cert-red-orange); }
 .node-detail__cert-dot--red         { background: var(--cert-red); }
 .node-detail__cert-dot--gray        { background: var(--cert-gray); }
@@ -602,7 +602,7 @@
   font-family: var(--font-mono);
   font-size: 0.76rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--color-text);
   letter-spacing: 0.01em;
   font-variant-numeric: tabular-nums;
 }
@@ -697,7 +697,7 @@
 .node-detail--green       { border-left: 3px solid var(--cert-green); }
 .node-detail--yellow-green { border-left: 3px solid var(--cert-yellow-green); }
 .node-detail--amber       { border-left: 3px solid var(--cert-amber); }
-.node-detail--orange      { border-left: 3px solid var(--cert-orange); }
+.node-detail--color-orange      { border-left: 3px solid var(--cert-orange); }
 .node-detail--red-orange  { border-left: 3px solid var(--cert-red-orange); }
 .node-detail--red         { border-left: 3px solid var(--cert-red); }
 .node-detail--gray        { border-left: 3px solid var(--cert-gray); }
@@ -724,7 +724,7 @@
 .conv-expansion__title {
   font-size: 0.76rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--color-text);
 }
 .conv-expansion__close {
   background: none;
@@ -739,7 +739,7 @@
 }
 .conv-expansion__close:hover {
   background: rgba(0,0,0,0.06);
-  color: var(--text-primary);
+  color: var(--color-text);
 }
 .conv-expansion__title-sub {
   font-size: 0.64rem;
@@ -764,7 +764,7 @@
 }
 .conv-expansion__empty {
   font-size: 0.72rem;
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   padding: 10px 0;
 }
 
@@ -791,7 +791,7 @@
 }
 .conv-expansion__card-id {
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--color-text);
   font-size: 0.72rem;
 }
 .conv-expansion__card-dots {
@@ -840,7 +840,7 @@
   font-size: 0.56rem;
 }
 .conv-expansion__card-value {
-  color: var(--text-primary);
+  color: var(--color-text);
 }
 .conv-expansion__card-narrative {
   font-size: 0.6rem;
@@ -902,12 +902,12 @@
 }
 .conv-expansion__list-id {
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--color-text);
   white-space: nowrap;
   min-width: 100px;
 }
 .conv-expansion__std-link {
-  color: var(--teal, #009BBB);
+  color: var(--color-teal, #009BBB);
   text-decoration: none;
   font-weight: inherit;
 }
@@ -1066,43 +1066,43 @@
 /* ---------- Breadcrumb trail ---------- */
 .conv-view__breadcrumb {
   font-size: 0.75rem;
-  color: var(--text-muted, #8ca9bf);
+  color: var(--color-text-muted, #8ca9bf);
   margin-bottom: 8px;
 }
 .conv-view__breadcrumb a {
-  color: var(--teal, #009BBB);
+  color: var(--color-teal, #009BBB);
   text-decoration: none;
 }
 .conv-view__breadcrumb a:hover {
   text-decoration: underline;
 }
 .conv-view__breadcrumb span {
-  color: var(--text-secondary, #5a7080);
+  color: var(--color-text-secondary, #5a7080);
 }
 
 /* ---------- Print button ---------- */
 .conv-view__print {
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--text-secondary, #5a7080);
+  color: var(--color-text-secondary, #5a7080);
   background: transparent;
-  border: 1.5px solid var(--border, #E2E8ED);
+  border: 1.5px solid var(--color-border, #E2E8ED);
   padding: 6px 14px;
   border-radius: 9999px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 .conv-view__print:hover {
-  color: var(--text-primary, #243644);
-  border-color: var(--text-muted, #8ca9bf);
+  color: var(--color-text, #243644);
+  border-color: var(--color-text-muted, #8ca9bf);
 }
 
 /* ---------- Visual separation: left border accent + alternating backgrounds ---------- */
 .conv-expansion:nth-child(odd) {
-  border-left: 3px solid var(--teal, #009BBB);
+  border-left: 3px solid var(--color-teal, #009BBB);
 }
 .conv-expansion:nth-child(even) {
-  border-left: 3px solid var(--border, #E2E8ED);
+  border-left: 3px solid var(--color-border, #E2E8ED);
   background: #FCFDFE;
 }
 
@@ -1117,7 +1117,7 @@
   left: 20px;
   width: 2px;
   height: 8px;
-  background: var(--border, #E2E8ED);
+  background: var(--color-border, #E2E8ED);
 }
 
 /* ---------- Dark mode ---------- */
@@ -1145,10 +1145,10 @@
   }
   .conv-chart__year-label {
     color: #5a7080;
-    background: var(--bg, #0f1419);
+    background: var(--color-bg, #0f1419);
   }
   .conv-chart__now span {
-    background: var(--bg, #0f1419);
+    background: var(--color-bg, #0f1419);
   }
 
   .conv-chart__track {
@@ -1158,7 +1158,7 @@
     border-left-color: #2a3a4a;
   }
   .conv-chart__col-header {
-    background: var(--bg, #0f1419);
+    background: var(--color-bg, #0f1419);
   }
   .conv-chart__col-title {
     color: #8ca9bf;

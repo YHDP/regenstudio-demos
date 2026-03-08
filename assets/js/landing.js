@@ -55,7 +55,7 @@ const EDGE_FUNCTION_URL = 'https://uemspezaqxmkhenimwuf.supabase.co/functions/v1
   } catch (e) {
     const section = document.querySelector('.demos-section');
     if (section) {
-      section.innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 48px 0;">Unable to load demos.</p>';
+      section.innerHTML = '<p style="color: var(--color-text-muted); text-align: center; padding: 48px 0;">Unable to load demos.</p>';
     }
   }
 

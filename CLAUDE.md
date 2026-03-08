@@ -41,7 +41,8 @@ Privacy principles enforced by `soul.md`; project-specific details below:
 
 ## Conventions
 - No build step — all files served as-is via GitHub Pages
-- CSS uses design tokens from `assets/css/styles.css` (:root variables)
-- 5-color accent palette: emerald (#00914B), teal (#009BBB), indigo (#6366F1), amber (#FFA92D), crimson (#93093F)
+- CSS uses design tokens from `assets/css/styles.css` (:root variables), aligned with regenstudio-website naming (`--color-*` prefix)
+- Semantic colors: `--color-primary` (#00914B emerald), `--color-accent` (#009BBB teal), `--color-primary-hover` (#006937)
+- 5-color accent palette: `--color-emerald` (#00914B), `--color-teal` (#009BBB), indigo (#6366F1), `--color-orange` (#FFA92D), `--color-magenta` (#93093F)
 - Supabase edge functions in `supabase/functions/<name>/index.ts`
 - Migrations in `supabase/migrations/`

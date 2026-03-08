@@ -13,20 +13,20 @@
   font-family: var(--font-sans);
   font-size: var(--text-sm);
   padding: 6px 12px 6px 30px;
-  border: 1.5px solid var(--border);
+  border: 1.5px solid var(--color-border);
   border-radius: var(--radius-pill);
-  background: var(--surface);
-  color: var(--text-primary);
+  background: var(--color-bg-card);
+  color: var(--color-text);
   outline: none;
   width: 200px;
   transition: border-color 0.15s var(--ease), width 0.2s var(--ease);
 }
 .std-search__input:focus {
-  border-color: var(--teal);
+  border-color: var(--color-teal);
   width: 280px;
 }
 .std-search__input::placeholder {
-  color: var(--text-muted);
+  color: var(--color-text-muted);
   font-size: 0.78rem;
 }
 .std-search__icon {
@@ -34,7 +34,7 @@
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--text-muted);
+  color: var(--color-text-muted);
   width: 14px;
   height: 14px;
   pointer-events: none;
@@ -47,8 +47,8 @@
   min-width: 320px;
   max-height: 360px;
   overflow-y: auto;
-  background: var(--surface);
-  border: 1.5px solid var(--border);
+  background: var(--color-bg-card);
+  border: 1.5px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
   z-index: 200;
@@ -67,7 +67,7 @@
 }
 .std-search__item:hover,
 .std-search__item--active {
-  background: var(--teal-light);
+  background: var(--color-teal-light);
 }
 .std-search__item-head {
   display: flex;
@@ -78,7 +78,7 @@
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 700;
-  color: var(--teal);
+  color: var(--color-teal);
 }
 .std-search__item-type {
   font-family: var(--font-mono);
@@ -89,7 +89,7 @@
   border-radius: 3px;
 }
 .std-search__item-type--hen {
-  background: var(--teal-light);
+  background: var(--color-teal-light);
   color: #0e7490;
 }
 .std-search__item-type--ead {
@@ -100,19 +100,19 @@
   font-family: var(--font-mono);
   font-size: 0.55rem;
   font-weight: 500;
-  color: var(--text-muted);
+  color: var(--color-text-muted);
   margin-left: auto;
 }
 .std-search__item-name {
   font-size: 0.7rem;
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   line-height: 1.3;
   margin-top: 2px;
 }
 .std-search__empty {
   padding: 12px;
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: var(--color-text-muted);
   text-align: center;
 }
 

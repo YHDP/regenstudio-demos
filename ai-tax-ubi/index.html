@@ -29,14 +29,14 @@
             --success: #00914B;
             --warning: #FFA92D;
             --danger: #93093F;
-            --navy: #243644;
-            --navy-light: #5781A1;
-            --bg: #FAFBFC;
+            --color-navy: #243644;
+            --color-navy-light: #5781A1;
+            --color-bg: #FAFBFC;
             --bg-card: #FFFFFF;
             --bg-subtle: #F0F0F0;
             --text: #243644;
-            --text-muted: #5781A1;
-            --border: rgba(36, 54, 68, 0.1);
+            --color-text-muted: #5781A1;
+            --color-border: rgba(36, 54, 68, 0.1);
             --border-hover: rgba(36, 54, 68, 0.2);
             --shadow-sm: 0 1px 3px rgba(36, 54, 68, 0.06), 0 1px 2px rgba(36, 54, 68, 0.04);
             --shadow-md: 0 4px 16px rgba(36, 54, 68, 0.08), 0 2px 4px rgba(36, 54, 68, 0.04);
@@ -54,7 +54,7 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--bg);
+            background: var(--color-bg);
             color: var(--text);
             min-height: 100vh;
             line-height: 1.6;
@@ -75,12 +75,12 @@
         h1 {
             font-family: 'Playfair Display', Georgia, serif;
             font-size: 2.5rem;
-            color: var(--navy);
+            color: var(--color-navy);
             margin-bottom: 0.5rem;
         }
 
         .subtitle {
-            color: var(--text-muted);
+            color: var(--color-text-muted);
             font-size: 1.1rem;
         }
 
@@ -95,7 +95,7 @@
             background: var(--bg-card);
             border-radius: var(--radius);
             padding: 1.5rem;
-            border: 1px solid var(--border);
+            border: 1px solid var(--color-border);
             box-shadow: var(--shadow-sm);
             transition: box-shadow var(--transition);
         }
@@ -105,7 +105,7 @@
         }
 
         .stat-card h3 {
-            color: var(--text-muted);
+            color: var(--color-text-muted);
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.08em;
@@ -116,7 +116,7 @@
         .stat-card .value {
             font-size: 2rem;
             font-weight: 700;
-            color: var(--navy);
+            color: var(--color-navy);
         }
 
         .stat-card .change {
@@ -136,7 +136,7 @@
         .panel {
             background: var(--bg-card);
             border-radius: var(--radius);
-            border: 1px solid var(--border);
+            border: 1px solid var(--color-border);
             box-shadow: var(--shadow-sm);
             overflow: hidden;
             transition: box-shadow var(--transition);
@@ -148,7 +148,7 @@
 
         .panel-header {
             padding: 1.25rem 1.5rem;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--color-border);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -157,7 +157,7 @@
         .panel-header h2 {
             font-size: 1.125rem;
             font-weight: 600;
-            color: var(--navy);
+            color: var(--color-navy);
         }
 
         .panel-body {
@@ -180,12 +180,12 @@
         .control-group label {
             display: flex;
             justify-content: space-between;
-            color: var(--text-muted);
+            color: var(--color-text-muted);
             font-size: 0.875rem;
         }
 
         .control-group label span {
-            color: var(--navy);
+            color: var(--color-navy);
             font-weight: 600;
         }
 
@@ -223,14 +223,14 @@
         }
 
         .company-card {
-            background: var(--bg);
+            background: var(--color-bg);
             border-radius: var(--radius-sm);
             padding: 1rem;
             display: grid;
             grid-template-columns: auto 1fr auto;
             gap: 1rem;
             align-items: center;
-            border: 1px solid var(--border);
+            border: 1px solid var(--color-border);
             transition: border-color var(--transition);
         }
 
@@ -252,11 +252,11 @@
         .company-info h4 {
             font-size: 1rem;
             margin-bottom: 0.25rem;
-            color: var(--navy);
+            color: var(--color-navy);
         }
 
         .company-info p {
-            color: var(--text-muted);
+            color: var(--color-text-muted);
             font-size: 0.75rem;
         }
 
@@ -297,7 +297,7 @@
 
         .ai-percentage {
             font-size: 0.75rem;
-            color: var(--text-muted);
+            color: var(--color-text-muted);
             min-width: 40px;
         }
 
@@ -316,19 +316,19 @@
         }
 
         .flow-node {
-            background: var(--bg);
+            background: var(--color-bg);
             border-radius: var(--radius);
             padding: 1.5rem 2rem;
             text-align: center;
             min-width: 200px;
             position: relative;
             z-index: 2;
-            border: 1px solid var(--border);
+            border: 1px solid var(--color-border);
         }
 
         .flow-node h4 {
             margin-bottom: 0.5rem;
-            color: var(--navy);
+            color: var(--color-navy);
         }
 
         .flow-node .amount {
@@ -409,9 +409,9 @@
         }
 
         .btn-secondary {
-            background: var(--bg);
+            background: var(--color-bg);
             color: var(--text);
-            border: 1px solid var(--border);
+            border: 1px solid var(--color-border);
         }
 
         .btn-secondary:hover {
@@ -428,11 +428,11 @@
             font-family: 'Playfair Display', Georgia, serif;
             font-size: 3rem;
             font-weight: 700;
-            color: var(--navy);
+            color: var(--color-navy);
         }
 
         .year-label {
-            color: var(--text-muted);
+            color: var(--color-text-muted);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             font-size: 0.8rem;
@@ -493,7 +493,7 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: var(--bg);
+            background: var(--color-bg);
         }
 
         ::-webkit-scrollbar-thumb {
@@ -502,7 +502,7 @@
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--text-muted);
+            background: var(--color-text-muted);
         }
 
         .info-tooltip {
@@ -516,18 +516,18 @@
             font-size: 10px;
             cursor: help;
             margin-left: 0.5rem;
-            color: var(--text-muted);
+            color: var(--color-text-muted);
         }
 
         .description {
-            background: var(--bg);
+            background: var(--color-bg);
             border-radius: var(--radius-sm);
             padding: 1rem;
             margin-bottom: 1.5rem;
             font-size: 0.875rem;
-            color: var(--text-muted);
+            color: var(--color-text-muted);
             line-height: 1.6;
-            border: 1px solid var(--border);
+            border: 1px solid var(--color-border);
         }
 
         .context-section {
@@ -537,7 +537,7 @@
         .context-section h2 {
             font-size: 1.125rem;
             font-weight: 600;
-            color: var(--navy);
+            color: var(--color-navy);
             margin-bottom: 1rem;
         }
 
@@ -551,7 +551,7 @@
             background: var(--bg-card);
             border-radius: var(--radius);
             padding: 1.5rem;
-            border: 1px solid var(--border);
+            border: 1px solid var(--color-border);
             box-shadow: var(--shadow-sm);
             transition: box-shadow var(--transition);
         }
@@ -562,19 +562,19 @@
 
         .context-card h3 {
             font-size: 0.95rem;
-            color: var(--navy);
+            color: var(--color-navy);
             margin-bottom: 0.5rem;
         }
 
         .context-card p {
             font-size: 0.85rem;
-            color: var(--text-muted);
+            color: var(--color-text-muted);
             line-height: 1.6;
         }
 
         .context-card .source {
             font-size: 0.75rem;
-            color: var(--navy-light);
+            color: var(--color-navy-light);
             margin-top: 0.5rem;
         }
 
@@ -592,14 +592,14 @@
             padding: 1.25rem 1.5rem;
             background: var(--bg-card);
             border-radius: var(--radius);
-            border: 1px solid var(--border);
+            border: 1px solid var(--color-border);
         }
 
         .further-reading h3 {
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            color: var(--text-muted);
+            color: var(--color-text-muted);
             margin-bottom: 0.75rem;
         }
 
@@ -612,7 +612,7 @@
 
         .further-reading li {
             font-size: 0.8rem;
-            color: var(--text-muted);
+            color: var(--color-text-muted);
             line-height: 1.5;
         }
 
@@ -717,7 +717,7 @@
             <div class="panel">
                 <div class="panel-header">
                     <h2>AI-Powered Companies</h2>
-                    <span style="color: var(--text-muted); font-size: 0.875rem;">Taxable Entities</span>
+                    <span style="color: var(--color-text-muted); font-size: 0.875rem;">Taxable Entities</span>
                 </div>
                 <div class="panel-body">
                     <div class="companies-list" id="companiesList">
@@ -735,7 +735,7 @@
                         <div class="flow-node">
                             <h4>AI Companies</h4>
                             <div class="amount" id="flowCompanyRevenue">$0B</div>
-                            <p style="color: var(--text-muted); font-size: 0.75rem;">Annual AI Revenue</p>
+                            <p style="color: var(--color-text-muted); font-size: 0.75rem;">Annual AI Revenue</p>
                         </div>
                         <div class="flow-arrow">
                             <div class="flow-particles">
@@ -749,7 +749,7 @@
                         <div class="flow-node">
                             <h4>AI Tax Fund</h4>
                             <div class="amount" id="flowTaxFund">$0B</div>
-                            <p style="color: var(--text-muted); font-size: 0.75rem;">Collected Revenue</p>
+                            <p style="color: var(--color-text-muted); font-size: 0.75rem;">Collected Revenue</p>
                         </div>
                         <div class="flow-arrow">
                             <div class="flow-particles">
@@ -763,7 +763,7 @@
                         <div class="flow-node">
                             <h4>Citizens</h4>
                             <div class="amount" id="flowUBI">$0/mo</div>
-                            <p style="color: var(--text-muted); font-size: 0.75rem;">Per Person UBI</p>
+                            <p style="color: var(--color-text-muted); font-size: 0.75rem;">Per Person UBI</p>
                         </div>
                     </div>
                 </div>

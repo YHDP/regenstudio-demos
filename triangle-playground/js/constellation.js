@@ -421,7 +421,7 @@
     }
 
     if (this.scoreBreakdown) {
-      var statusText = '<p style="color:var(--emerald);font-weight:600;">All ' + level.nodes.length + ' touchpoints covered in one cluster!</p>';
+      var statusText = '<p style="color:var(--color-emerald);font-weight:600;">All ' + level.nodes.length + ' touchpoints covered in one cluster!</p>';
       if (timeBonus > 0) {
         statusText += '<p style="font-size:13px;color:#555;">Time bonus: +' + timeBonus + '</p>';
       }

@@ -12,21 +12,21 @@
   font-size: var(--text-xs);
   font-weight: 500;
   letter-spacing: 0.04em;
-  color: var(--text-muted);
+  color: var(--color-text-muted);
   margin-bottom: var(--space-lg);
 }
 .std-breadcrumb a {
-  color: var(--teal);
+  color: var(--color-teal);
   text-decoration: none;
 }
 .std-breadcrumb a:hover {
   text-decoration: underline;
 }
 .std-breadcrumb__sep {
-  color: var(--border);
+  color: var(--color-border);
 }
 .std-breadcrumb__current {
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
 }
 
 /* --- Page header --- */
@@ -53,13 +53,13 @@
   font-family: var(--font-display);
   font-size: var(--text-2xl);
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--color-text);
   margin: 0 0 var(--space-xs);
   line-height: 1.2;
 }
 .std-header__name {
   font-size: var(--text-md);
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   margin: 0 0 var(--space-sm);
   line-height: 1.4;
 }
@@ -84,7 +84,7 @@
   white-space: nowrap;
 }
 .std-badge--hen {
-  background: var(--teal-light);
+  background: var(--color-teal-light);
   color: #0e7490;
 }
 .std-badge--ead {
@@ -93,12 +93,12 @@
 }
 .std-badge--family {
   background: var(--bg-alt);
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   cursor: pointer;
   text-decoration: none;
 }
 .std-badge--family:hover {
-  background: var(--border);
+  background: var(--color-border);
 }
 .std-badge--avcp {
   background: #fef3c7;
@@ -127,7 +127,7 @@
 
 /* --- DPP Status Card --- */
 .std-dpp-card {
-  background: var(--surface);
+  background: var(--color-bg-card);
   border: 1.5px solid var(--border-light);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
@@ -146,7 +146,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--text-muted);
+  color: var(--color-text-muted);
 }
 .std-dpp-card__certainty {
   display: inline-flex;
@@ -167,12 +167,12 @@
   font-family: var(--font-display);
   font-size: var(--text-xl);
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--color-text);
   margin-bottom: var(--space-sm);
 }
 .std-dpp-card__route {
   font-size: var(--text-sm);
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   margin-bottom: var(--space-md);
 }
 .std-dpp-card__grid {
@@ -191,12 +191,12 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--text-muted);
+  color: var(--color-text-muted);
 }
 .std-dpp-card__item-value {
   font-size: var(--text-sm);
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text);
 }
 
 /* --- Metadata Grid --- */
@@ -207,7 +207,7 @@
   margin-bottom: var(--space-xl);
 }
 .std-meta-item {
-  background: var(--surface);
+  background: var(--color-bg-card);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   padding: var(--space-md);
@@ -218,16 +218,16 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--text-muted);
+  color: var(--color-text-muted);
   margin-bottom: 4px;
 }
 .std-meta-item__value {
   font-size: var(--text-sm);
-  color: var(--text-primary);
+  color: var(--color-text);
   line-height: 1.4;
 }
 .std-meta-item__value a {
-  color: var(--teal);
+  color: var(--color-teal);
   text-decoration: none;
 }
 .std-meta-item__value a:hover {
@@ -241,7 +241,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--text-muted);
+  color: var(--color-text-muted);
   margin-bottom: var(--space-md);
   padding-bottom: var(--space-xs);
   border-bottom: 1px solid var(--border-light);
@@ -266,17 +266,17 @@
   font-family: var(--font-sans);
   font-size: var(--text-base);
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text);
   text-align: left;
   transition: color 0.15s var(--ease);
 }
 .std-content-section__toggle:hover {
-  color: var(--teal);
+  color: var(--color-teal);
 }
 .std-content-section__icon {
   display: inline-flex;
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: var(--color-text-muted);
   transition: transform 0.2s var(--ease);
   flex-shrink: 0;
 }
@@ -286,7 +286,7 @@
 .std-content-section__body {
   padding: 0 0 var(--space-md) var(--space-lg);
   font-size: var(--text-sm);
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   line-height: 1.65;
 }
 .std-content-section__body p {
@@ -297,12 +297,12 @@
 .cpr-content-std-section {
   margin-bottom: var(--space-md);
   font-size: var(--text-sm);
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   line-height: 1.65;
 }
 .cpr-content-std-section__label {
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text);
 }
 
 /* --- Source citations --- */
@@ -310,8 +310,8 @@
   font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 600;
-  color: var(--teal);
-  background: var(--teal-light);
+  color: var(--color-teal);
+  background: var(--color-teal-light);
   padding: 1px 5px;
   border-radius: 3px;
   white-space: nowrap;
@@ -325,7 +325,7 @@
   padding: var(--space-md);
   margin-bottom: var(--space-xl);
   font-size: var(--text-sm);
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   line-height: 1.6;
 }
 .std-notes__label {
@@ -334,7 +334,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--text-muted);
+  color: var(--color-text-muted);
   margin-bottom: var(--space-xs);
 }
 
@@ -342,7 +342,7 @@
 .std-empty {
   text-align: center;
   padding: var(--space-2xl) var(--space-lg);
-  color: var(--text-muted);
+  color: var(--color-text-muted);
   font-size: var(--text-sm);
 }
 .std-empty__icon {
@@ -359,16 +359,16 @@
 .std-not-found__title {
   font-family: var(--font-display);
   font-size: var(--text-xl);
-  color: var(--text-primary);
+  color: var(--color-text);
   margin-bottom: var(--space-sm);
 }
 .std-not-found__text {
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   font-size: var(--text-sm);
   margin-bottom: var(--space-lg);
 }
 .std-not-found__link {
-  color: var(--teal);
+  color: var(--color-teal);
   text-decoration: none;
   font-weight: 600;
 }

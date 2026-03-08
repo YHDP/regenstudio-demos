@@ -4,24 +4,24 @@
    ============================================ */
 
 :root {
-  --navy: #243644;
-  --navy-dark: #1B2833;
-  --navy-light: #5781A1;
-  --emerald: #00914B;
-  --emerald-hover: #006937;
-  --emerald-light: #AFF9D7;
-  --teal: #009BBB;
-  --teal-light: #BBF0F8;
-  --magenta: #93093F;
-  --orange: #FFA92D;
+  --color-navy: #243644;
+  --color-navy-dark: #1B2833;
+  --color-navy-light: #5781A1;
+  --color-emerald: #00914B;
+  --color-primary-hover: #006937;
+  --color-emerald-light: #AFF9D7;
+  --color-teal: #009BBB;
+  --color-teal-light: #BBF0F8;
+  --color-magenta: #93093F;
+  --color-orange: #FFA92D;
   --indigo: #6366F1;
 
-  --text-primary: #243644;
-  --text-secondary: #5781A1;
-  --text-muted: #9B9B9B;
-  --bg: #F4F6F8;
-  --surface: #FFFFFF;
-  --border: #E4E2E2;
+  --color-text: #243644;
+  --color-text-secondary: #5781A1;
+  --color-text-muted: #9B9B9B;
+  --color-bg: #F4F6F8;
+  --color-bg-card: #FFFFFF;
+  --color-border: #E4E2E2;
 
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
@@ -58,8 +58,8 @@
 
 body {
   font-family: var(--font-sans);
-  color: var(--text-primary);
-  background: var(--bg);
+  color: var(--color-text);
+  background: var(--color-bg);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -74,13 +74,13 @@ body {
   background:
     linear-gradient(135deg, rgba(36, 54, 68, 0.03) 25%, transparent 25%),
     linear-gradient(225deg, rgba(0, 145, 75, 0.03) 25%, transparent 25%),
-    var(--bg);
+    var(--color-bg);
 }
 
 .admin-gate__card {
-  background: var(--surface);
+  background: var(--color-bg-card);
   border-radius: var(--radius);
-  border: 1px solid var(--border);
+  border: 1px solid var(--color-border);
   box-shadow: var(--shadow-md);
   padding: var(--space-2xl);
   width: 100%;
@@ -91,13 +91,13 @@ body {
 .admin-gate__icon {
   width: 56px;
   height: 56px;
-  background: var(--emerald-light);
+  background: var(--color-emerald-light);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto var(--space-md);
-  color: var(--emerald);
+  color: var(--color-emerald);
 }
 
 .admin-gate__title {
@@ -108,7 +108,7 @@ body {
 
 .admin-gate__subtitle {
   font-size: 0.9rem;
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   margin-bottom: var(--space-lg);
 }
 
@@ -120,23 +120,23 @@ body {
 
 .admin-gate__input {
   padding: 12px 16px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   font-size: 0.95rem;
   font-family: var(--font-sans);
-  color: var(--text-primary);
+  color: var(--color-text);
   outline: none;
   transition: border-color var(--duration) var(--ease);
 }
 
 .admin-gate__input:focus {
-  border-color: var(--emerald);
+  border-color: var(--color-emerald);
   box-shadow: 0 0 0 3px rgba(0, 145, 75, 0.1);
 }
 
 .admin-gate__btn {
   padding: 12px;
-  background: var(--emerald);
+  background: var(--color-emerald);
   color: white;
   border: none;
   border-radius: var(--radius-sm);
@@ -148,7 +148,7 @@ body {
 }
 
 .admin-gate__btn:hover {
-  background: var(--emerald-hover);
+  background: var(--color-primary-hover);
 }
 
 .admin-gate__error {
@@ -167,7 +167,7 @@ body {
 
 /* ── Sidebar ── */
 .admin-sidebar {
-  background: var(--navy-dark);
+  background: var(--color-navy-dark);
   color: white;
   padding: var(--space-lg) 0;
   display: flex;
@@ -192,7 +192,7 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--emerald-light);
+  color: var(--color-emerald-light);
   background: rgba(0, 145, 75, 0.2);
   padding: 2px 8px;
   border-radius: var(--radius-full);
@@ -230,7 +230,7 @@ body {
 
 .admin-nav-btn.active {
   background: rgba(0, 145, 75, 0.2);
-  color: var(--emerald-light);
+  color: var(--color-emerald-light);
 }
 
 /* ── Main Area ── */
@@ -264,18 +264,18 @@ body {
 .admin-select,
 .admin-date-input {
   padding: 8px 12px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   font-size: 0.85rem;
   font-family: var(--font-sans);
-  color: var(--text-primary);
-  background: var(--surface);
+  color: var(--color-text);
+  background: var(--color-bg-card);
   outline: none;
 }
 
 .admin-select:focus,
 .admin-date-input:focus {
-  border-color: var(--emerald);
+  border-color: var(--color-emerald);
 }
 
 .admin-custom-range {
@@ -283,12 +283,12 @@ body {
   align-items: center;
   gap: var(--space-xs);
   font-size: 0.85rem;
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
 }
 
 .admin-btn-sm {
   padding: 8px 14px;
-  background: var(--emerald);
+  background: var(--color-emerald);
   color: white;
   border: none;
   border-radius: var(--radius-sm);
@@ -299,7 +299,7 @@ body {
 }
 
 .admin-btn-sm:hover {
-  background: var(--emerald-hover);
+  background: var(--color-primary-hover);
 }
 
 /* ── Views ── */
@@ -320,8 +320,8 @@ body {
 }
 
 .admin-kpi {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: var(--space-lg) var(--space-md);
   text-align: center;
@@ -331,13 +331,13 @@ body {
   display: block;
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--color-text);
   margin-bottom: var(--space-xs);
 }
 
 .admin-kpi__label {
   font-size: 0.78rem;
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 600;
@@ -345,8 +345,8 @@ body {
 
 /* ── Chart Panel ── */
 .admin-chart-panel {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: var(--space-lg);
   margin-bottom: var(--space-md);
@@ -356,7 +356,7 @@ body {
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: var(--space-md);
-  color: var(--text-primary);
+  color: var(--color-text);
 }
 
 .admin-chart-panel canvas {
@@ -366,8 +366,8 @@ body {
 
 /* ── Table Panel ── */
 .admin-table-panel {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: var(--space-lg);
   margin-bottom: var(--space-md);
@@ -378,7 +378,7 @@ body {
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: var(--space-md);
-  color: var(--text-primary);
+  color: var(--color-text);
 }
 
 .admin-table {
@@ -390,9 +390,9 @@ body {
 .admin-table th {
   text-align: left;
   padding: 10px 12px;
-  border-bottom: 2px solid var(--border);
+  border-bottom: 2px solid var(--color-border);
   font-weight: 600;
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -400,8 +400,8 @@ body {
 
 .admin-table td {
   padding: 10px 12px;
-  border-bottom: 1px solid var(--border);
-  color: var(--text-primary);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
 }
 
 .admin-table tbody tr:hover {
@@ -420,7 +420,7 @@ body {
 .admin-loading {
   text-align: center;
   padding: var(--space-2xl);
-  color: var(--text-muted);
+  color: var(--color-text-muted);
   font-size: 0.9rem;
 }
 

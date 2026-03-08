@@ -1103,7 +1103,7 @@
     // Issue actions
     html += '<div class="rq-issue__actions">';
     if (issue.status === 'pending') {
-      html += '<button class="btn btn--xs btn--teal" data-issue-action="acknowledge" data-issue-idx="' + originalIndex + '">Acknowledge</button>';
+      html += '<button class="btn btn--xs btn--color-teal" data-issue-action="acknowledge" data-issue-idx="' + originalIndex + '">Acknowledge</button>';
       html += '<button class="btn btn--xs btn--outline" data-issue-action="resolve" data-issue-idx="' + originalIndex + '">Resolve</button>';
     } else {
       var label = issue.status === 'acknowledged' ? 'Acknowledged' : 'Resolved';
