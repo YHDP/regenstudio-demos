@@ -13,6 +13,8 @@ const EDGE_FUNCTION_URL = 'https://uemspezaqxmkhenimwuf.supabase.co/functions/v1
     const gridRestricted = document.getElementById('demos-grid-restricted');
     const gridFree = document.getElementById('demos-grid-free');
 
+    var isFirstCard = true;
+
     function renderCards(container, demos) {
       if (!container || !demos.length) return;
       demos.forEach(demo => {
@@ -20,9 +22,12 @@ const EDGE_FUNCTION_URL = 'https://uemspezaqxmkhenimwuf.supabase.co/functions/v1
         card.href = demo.public ? demo.path + 'index.html' : demo.path + 'gate.html';
         card.className = 'demo-card';
 
+        var priorityAttr = isFirstCard ? ' fetchpriority="high"' : '';
+        isFirstCard = false;
+
         card.innerHTML = `
           <div class="demo-card-preview" style="background: linear-gradient(135deg, ${demo.accentColor} 0%, ${demo.accentColor}CC 100%)">
-            <img src="${demo.preview}" alt="${demo.name} preview"
+            <img src="${demo.preview}" alt="${demo.name} preview" width="800" height="500"${priorityAttr}
                  onerror="this.style.display='none'; this.parentElement.innerHTML += '<div class=\\'placeholder-icon\\'>&#9670;</div>'">
             <span class="demo-card-category">${demo.category}</span>
             ${demo.public ? '<span class="demo-card-badge">Free Access</span>' : ''}
