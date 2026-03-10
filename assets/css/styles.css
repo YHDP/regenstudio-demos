@@ -1077,14 +1077,15 @@ img {
 }
 
 .privacy-banner__link {
-  color: var(--color-emerald);
-  text-decoration: none;
+  color: #FFFFFF;
+  text-decoration: underline;
+  text-underline-offset: 2px;
   white-space: nowrap;
   transition: color 0.2s;
 }
 
 .privacy-banner__link:hover {
-  color: var(--color-primary-hover);
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: underline;
 }
 
