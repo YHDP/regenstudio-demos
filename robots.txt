@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /cpr-dpp-tracker/index.html
+Disallow: /cpr-dpp-tracker/admin.html
+Disallow: /cpr-dpp-tracker/dashboard.html
+Disallow: /cpr-dpp-tracker/invoice.html
+Disallow: /cpr-dpp-tracker/report-success.html
+Disallow: /cpr-dpp-tracker/standard.html
+Disallow: /cpr-dpp-tracker/gate.html
+Disallow: /EDI-wallet/gate.html
+Disallow: /dpp-system/gate.html
+Disallow: /innovation-platform/gate.html
+
+Sitemap: https://demos.regenstudio.world/sitemap.xml
