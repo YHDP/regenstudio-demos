@@ -16,7 +16,7 @@ export function renderSplash(container) {
         <polygon points="20,32 24,28 28,32" fill="#FFA92D" opacity="0.8"/>
         <polygon points="20,32 24,36 28,32" fill="#E5942A" opacity="0.6"/>
         <!-- Shield accent -->
-        <polygon points="34,20 37,15 40,20" fill="#00914B" opacity="0.7"/>
+        <polygon points="34,20 37,15 40,20" fill="#008545" opacity="0.7"/>
       </svg>
     </div>
     <div class="splash-title">EDI Wallet</div>

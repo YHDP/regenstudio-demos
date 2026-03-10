@@ -122,7 +122,7 @@
 
 .btn:disabled { opacity: 0.55; cursor: not-allowed; }
 
-.btn--primary { background: var(--color-emerald, #00914B); color: #fff; }
+.btn--primary { background: var(--color-emerald, #008545); color: #fff; }
 .btn--primary:hover:not(:disabled) { background: var(--color-primary-hover, #006937); }
 .btn--primary:disabled { background: #8CBFA8; color: #fff; opacity: 1; }
 
@@ -386,7 +386,7 @@
 }
 
 .fed-pipeline__badge--active {
-  background: rgba(0, 145, 75, 0.1);
+  background: rgba(0, 133, 69, 0.1);
   color: #00714A;
 }
 
@@ -1006,7 +1006,7 @@
   height: 100%;
   transition: width 0.3s ease;
 }
-.rq-progress__fill--accepted { background: var(--color-emerald, #00914B); }
+.rq-progress__fill--accepted { background: var(--color-emerald, #008545); }
 .rq-progress__fill--rejected { background: var(--rq-danger); }
 .rq-progress__stats {
   display: flex;
@@ -1017,7 +1017,7 @@
   font-size: 0.68rem;
   font-weight: 600;
 }
-.rq-progress__stat--accepted { color: var(--color-emerald, #00914B); }
+.rq-progress__stat--accepted { color: var(--color-emerald, #008545); }
 .rq-progress__stat--rejected { color: var(--rq-danger); }
 .rq-progress__stat--pending { color: var(--color-text-secondary); }
 
@@ -1032,7 +1032,7 @@
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .rq-card:hover { box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06); }
-.rq-card--accepted { border-color: rgba(0, 145, 75, 0.35); background: rgba(0, 145, 75, 0.02); }
+.rq-card--accepted { border-color: rgba(0, 133, 69, 0.35); background: rgba(0, 133, 69, 0.02); }
 .rq-card--rejected { border-color: rgba(211, 47, 47, 0.25); background: rgba(211, 47, 47, 0.02); opacity: 0.65; }
 .rq-card--noop { border-style: dashed; opacity: 0.85; }
 
@@ -1060,7 +1060,7 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
-.rq-card__badge--high { background: rgba(0, 145, 75, 0.1); color: var(--rq-success-dark); }
+.rq-card__badge--high { background: rgba(0, 133, 69, 0.1); color: var(--rq-success-dark); }
 .rq-card__badge--medium { background: rgba(0, 155, 187, 0.1); color: var(--rq-teal-dark); }
 .rq-card__badge--low { background: rgba(107, 114, 128, 0.08); color: var(--color-text-secondary); }
 .rq-card__badge--critical { background: rgba(211, 47, 47, 0.1); color: var(--rq-danger); }
@@ -1133,8 +1133,8 @@
   color: var(--rq-danger-dark);
 }
 .rq-card__value--new {
-  background: rgba(0, 145, 75, 0.05);
-  border: 1px solid rgba(0, 145, 75, 0.15);
+  background: rgba(0, 133, 69, 0.05);
+  border: 1px solid rgba(0, 133, 69, 0.15);
   color: var(--rq-success-dark);
 }
 .rq-card__value--verified {
@@ -1225,8 +1225,8 @@
   color: var(--color-teal);
 }
 .rq-card__verify-btn--verified {
-  background: rgba(0, 145, 75, 0.08);
-  border-color: rgba(0, 145, 75, 0.3);
+  background: rgba(0, 133, 69, 0.08);
+  border-color: rgba(0, 133, 69, 0.3);
   color: var(--rq-success-dark);
   cursor: default;
 }
@@ -1260,7 +1260,7 @@
   padding: 4px 12px;
   border-radius: 6px;
 }
-.rq-card__status--accepted { color: var(--rq-success-dark); background: rgba(0, 145, 75, 0.08); }
+.rq-card__status--accepted { color: var(--rq-success-dark); background: rgba(0, 133, 69, 0.08); }
 .rq-card__status--rejected { color: var(--rq-danger); background: rgba(211, 47, 47, 0.06); }
 
 /* Navigation */
@@ -1336,7 +1336,7 @@
 .rq-issue--low { border-left-color: var(--rq-info); }
 .rq-issue--info { border-left-color: var(--rq-info); }
 .rq-issue--acknowledged { opacity: 0.7; border-left-color: var(--rq-muted); }
-.rq-issue--resolved { opacity: 0.5; border-left-color: var(--color-emerald); background: rgba(0, 145, 75, 0.02); }
+.rq-issue--resolved { opacity: 0.5; border-left-color: var(--color-emerald); background: rgba(0, 133, 69, 0.02); }
 
 .rq-issue__header {
   display: flex;
@@ -1446,7 +1446,7 @@
   border-radius: 4px;
 }
 .rq-issue__status-label--acknowledged { color: var(--rq-muted); background: rgba(140, 169, 191, 0.1); }
-.rq-issue__status-label--resolved { color: var(--color-emerald); background: rgba(0, 145, 75, 0.08); }
+.rq-issue__status-label--resolved { color: var(--color-emerald); background: rgba(0, 133, 69, 0.08); }
 
 /* ── Toast Notifications ── */
 .rq-toast-container {

@@ -3,7 +3,7 @@
 :root {
   --color-navy: #243644;
   --color-navy-dark: #1B2833;
-  --color-emerald: #00914B;
+  --color-emerald: #008545;
   --color-teal: #009BBB;
   --color-magenta: #93093F;
   --color-orange: #FFA92D;
@@ -732,7 +732,7 @@ input[type="range"]::-moz-range-thumb {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-.share-btn--native:hover { background: rgba(0, 145, 75, 0.06); border-color: rgba(0, 145, 75, 0.18); color: var(--color-emerald); }
+.share-btn--native:hover { background: rgba(0, 133, 69, 0.06); border-color: rgba(0, 133, 69, 0.18); color: var(--color-emerald); }
 .share-btn--bluesky:hover { background: rgba(0, 133, 255, 0.08); border-color: rgba(0, 133, 255, 0.2); color: #0085FF; }
 .share-btn--linkedin:hover { background: rgba(0, 119, 181, 0.08); border-color: rgba(0, 119, 181, 0.2); color: #0077B5; }
 .share-btn--mastodon:hover { background: rgba(99, 100, 255, 0.08); border-color: rgba(99, 100, 255, 0.2); color: #6364FF; }

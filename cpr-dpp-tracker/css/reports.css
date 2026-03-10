@@ -74,7 +74,7 @@ body {
 }
 .sales-hero__accent {
   height: 5px;
-  background: linear-gradient(90deg, #00914B 30%, #009BBB 50%, #6366F1 70%, #FFA92D 85%, #93093F 100%);
+  background: linear-gradient(90deg, #008545 30%, #009BBB 50%, #6366F1 70%, #FFA92D 85%, #93093F 100%);
 }
 .sales-hero__inner {
   max-width: 800px;
@@ -137,7 +137,7 @@ body {
 
 /* ---------- Old Header (kept for success page etc) ---------- */
 .reports-header {
-  background: linear-gradient(135deg, #00914B 0%, #006937 100%);
+  background: linear-gradient(135deg, #008545 0%, #006937 100%);
   color: #fff; padding: 32px 24px 24px; text-align: center;
 }
 .reports-header__title {
@@ -428,7 +428,7 @@ body {
 }
 .preview-cover__bar {
   height: 5px;
-  background: linear-gradient(90deg, #00914B 30%, #009BBB 50%, #6366F1 70%, #FFA92D 85%, #93093F 100%);
+  background: linear-gradient(90deg, #008545 30%, #009BBB 50%, #6366F1 70%, #FFA92D 85%, #93093F 100%);
 }
 .preview-cover__body {
   flex: 1;
@@ -457,7 +457,7 @@ body {
 .preview-cover__divider {
   width: 48px;
   height: 3px;
-  background: #00914B;
+  background: #008545;
   border-radius: 2px;
   margin-bottom: 16px;
 }
@@ -935,7 +935,7 @@ body {
   display: none;
   font-size: 0.78rem;
   font-weight: 600;
-  color: #00914B;
+  color: #008545;
 }
 .reports-disclaimer__code.copied .reports-disclaimer__code-icon { display: none; }
 .reports-disclaimer__code.copied .reports-disclaimer__code-copied { display: flex; }
@@ -1044,7 +1044,7 @@ body {
   width: 48px;
   height: 48px;
   border-radius: 10px;
-  background: rgba(0, 145, 75, 0.08);
+  background: rgba(0, 133, 69, 0.08);
   margin-bottom: 14px;
 }
 .audience-card__icon svg {
@@ -1119,7 +1119,7 @@ body {
 
 /* ---------- Secondary CTA ---------- */
 .secondary-cta {
-  background: linear-gradient(160deg, #243644 0%, #1B2833 60%, #00914B 150%);
+  background: linear-gradient(160deg, #243644 0%, #1B2833 60%, #008545 150%);
   padding: 64px 24px;
   text-align: center;
 }
@@ -1342,7 +1342,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: rgba(0, 145, 75, 0.1);
+  background: rgba(0, 133, 69, 0.1);
   flex-shrink: 0;
   margin-top: 2px;
 }

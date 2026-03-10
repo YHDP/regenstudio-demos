@@ -545,14 +545,14 @@
 
       // Zone fill
       ctx.globalAlpha = isCovered ? 0.08 : 0.05 * pulse;
-      ctx.fillStyle = isCovered ? '#00914B' : '#009BBB';
+      ctx.fillStyle = isCovered ? '#008545' : '#009BBB';
       ctx.beginPath();
       ctx.arc(nx, ny, tolerance, 0, Math.PI * 2);
       ctx.fill();
 
       // Zone ring
       ctx.globalAlpha = isCovered ? 0.3 : 0.15 * pulse;
-      ctx.strokeStyle = isCovered ? '#00914B' : '#009BBB';
+      ctx.strokeStyle = isCovered ? '#008545' : '#009BBB';
       ctx.lineWidth = isCovered ? 2 : 1;
       ctx.beginPath();
       ctx.arc(nx, ny, tolerance, 0, Math.PI * 2);
@@ -560,7 +560,7 @@
 
       // Center dot
       ctx.globalAlpha = isCovered ? 0.6 : 0.3;
-      ctx.fillStyle = isCovered ? '#00914B' : '#009BBB';
+      ctx.fillStyle = isCovered ? '#008545' : '#009BBB';
       ctx.beginPath();
       ctx.arc(nx, ny, isCovered ? 4 : 5, 0, Math.PI * 2);
       ctx.fill();

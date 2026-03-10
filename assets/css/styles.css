@@ -14,7 +14,7 @@
   --color-navy-light: #5781A1;
 
   /* Colors — Emerald */
-  --color-emerald: #00914B;
+  --color-emerald: #008545;
   --color-primary-hover: #006937;
   --color-emerald-light: #AFF9D7;
 
@@ -27,8 +27,8 @@
   --color-orange: #FFA92D;
 
   /* Semantic Colors (aliases — match regenstudio-website) */
-  --color-primary: #00914B;
-  --color-primary-glow: rgba(0, 145, 75, 0.15);
+  --color-primary: #008545;
+  --color-primary-glow: rgba(0, 133, 69, 0.15);
   --color-accent: #009BBB;
 
   /* Colors — Neutral */
@@ -531,7 +531,7 @@ img {
 
 .contact-input:focus {
   border-color: var(--color-emerald);
-  box-shadow: 0 0 0 3px rgba(0, 145, 75, 0.1);
+  box-shadow: 0 0 0 3px rgba(0, 133, 69, 0.1);
 }
 
 .contact-textarea {
@@ -651,7 +651,7 @@ img {
 
 .gate-input:focus {
   border-color: var(--color-emerald);
-  box-shadow: 0 0 0 3px rgba(0, 145, 75, 0.1);
+  box-shadow: 0 0 0 3px rgba(0, 133, 69, 0.1);
 }
 
 /* --- Prose Page (Privacy Policy etc.) --- */
@@ -749,7 +749,7 @@ img {
   flex-direction: column;
   background:
     linear-gradient(135deg, rgba(36, 54, 68, 0.03) 25%, transparent 25%),
-    linear-gradient(225deg, rgba(0, 145, 75, 0.03) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(0, 133, 69, 0.03) 25%, transparent 25%),
     var(--color-bg);
 }
 
@@ -851,7 +851,7 @@ img {
 
 .gate-input-group input:focus {
   border-color: var(--color-emerald);
-  box-shadow: 0 0 0 3px rgba(0, 145, 75, 0.1);
+  box-shadow: 0 0 0 3px rgba(0, 133, 69, 0.1);
 }
 
 .gate-input-group input.error {

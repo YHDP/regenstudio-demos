@@ -156,9 +156,9 @@
       mouse.x, mouse.y, 0,
       mouse.x, mouse.y, cfg.attractRadius
     );
-    grad.addColorStop(0, 'rgba(0, 145, 75, 0.03)');
+    grad.addColorStop(0, 'rgba(0, 133, 69, 0.03)');
     grad.addColorStop(0.5, 'rgba(0, 155, 187, 0.015)');
-    grad.addColorStop(1, 'rgba(0, 145, 75, 0)');
+    grad.addColorStop(1, 'rgba(0, 133, 69, 0)');
     ctx.fillStyle = grad;
     ctx.beginPath();
     ctx.arc(mouse.x, mouse.y, cfg.attractRadius, 0, Math.PI * 2);

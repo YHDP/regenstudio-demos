@@ -27,7 +27,7 @@
   --navy-mid: #243644;
   --color-teal: #009BBB;
   --color-teal-light: #e0f5f9;
-  --color-emerald: #00914B;
+  --color-emerald: #008545;
   --color-primary-hover: #006937;
   --color-text: #1a2a36;
   --color-text-secondary: #5a7080;
@@ -357,7 +357,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: #AFF9D7;
-  background: rgba(0, 145, 75, 0.25);
+  background: rgba(0, 133, 69, 0.25);
   padding: var(--space-xs) 14px;
   border-radius: var(--radius-pill);
   margin-bottom: var(--space-md);
@@ -1010,7 +1010,7 @@ body {
   flex-shrink: 0;
   transition: all 0.2s ease;
 }
-.cpr-milestone__dot--done   { border-color: #00914B; background: #00914B; color: #fff; }
+.cpr-milestone__dot--done   { border-color: #008545; background: #008545; color: #fff; }
 .cpr-milestone__dot--active { border-color: var(--color-teal); background: var(--color-teal); color: #fff; box-shadow: 0 0 0 3px rgba(0,155,187,0.12); }
 .cpr-milestone__dot--future { border-color: #E2E8ED; background: #fff; color: #C5CDD5; }
 .cpr-milestone__label {
@@ -1027,7 +1027,7 @@ body {
   font-weight: 600;
   font-variant-numeric: tabular-nums;
 }
-.cpr-milestone__date--done  { color: #00914B; }
+.cpr-milestone__date--done  { color: #008545; }
 .cpr-milestone__date--draft { color: var(--color-teal); }
 .cpr-milestone__link { color: inherit; text-decoration: none; border-bottom: 1px dotted currentColor; }
 .cpr-milestone__link:hover { border-bottom-style: solid; opacity: 0.85; }
@@ -1163,7 +1163,7 @@ body {
   margin-right: var(--space-xs);
   vertical-align: middle;
 }
-.cpr-std-dot--green  { background: #00914B; }
+.cpr-std-dot--green  { background: #008545; }
 .cpr-std-dot--color-teal   { background: var(--color-teal); }
 .cpr-std-dot--color-orange { background: #E78A00; }
 .cpr-std-dot--grey   { background: #C5CDD5; }
