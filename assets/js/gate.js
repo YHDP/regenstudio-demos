@@ -8,35 +8,60 @@ const SUPABASE_URL = 'https://uemspezaqxmkhenimwuf.supabase.co/functions/v1';
 
   const sessionKey = `demo_session_${config.demoId}`;
 
-  // --- 1. Check for ?token= in URL → validate magic link ---
+  // --- 1. Check for ?token= in URL → show confirmation button ---
+  // Token is NOT validated on page load to prevent email security scanners
+  // (Microsoft Safe Links, Proofpoint, etc.) from consuming the link.
   const params = new URLSearchParams(window.location.search);
   const token = params.get('token');
 
   if (token) {
-    showMessage('Validating your access link...', false);
+    showMessage('Click below to access the demo.', false);
     hideForm();
     hidePasswordForm();
 
-    try {
-      const tokenHash = await sha256(token);
-      const res = await fetch(`${SUPABASE_URL}/validate-magic-link`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token_hash: tokenHash, demo_id: config.demoId }),
-      });
-
-      const data = await res.json();
-
-      if (data.valid) {
-        grantSession(sessionKey, config);
-        return;
-      } else {
-        showMessage(data.error || 'Link expired or already used. Please request a new one.', true);
-      }
-    } catch {
-      showMessage('Something went wrong. Please try again.', true);
+    // Replace lock icon with open-lock icon
+    var lockIcon = document.querySelector('.gate-lock-icon');
+    if (lockIcon) {
+      lockIcon.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 019.9-1"/></svg>';
     }
-    window.history.replaceState({}, '', window.location.pathname);
+
+    // Show confirmation button — only validates on user click
+    var wrapper = document.querySelector('.gate-header');
+    if (wrapper) {
+      var btn = document.createElement('button');
+      btn.className = 'gate-submit';
+      btn.textContent = 'Access Demo';
+      btn.style.cssText = 'margin-top:16px;padding:14px 40px;font-size:1rem';
+      btn.addEventListener('click', async function () {
+        btn.disabled = true;
+        btn.textContent = 'Validating...';
+
+        try {
+          var tokenHash = await sha256(token);
+          var res = await fetch(SUPABASE_URL + '/validate-magic-link', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ token_hash: tokenHash, demo_id: config.demoId }),
+          });
+
+          var data = await res.json();
+
+          if (data.valid) {
+            grantSession(sessionKey, config);
+            return;
+          } else {
+            showMessage(data.error || 'Link expired or already used. Please request a new one.', true);
+            btn.remove();
+          }
+        } catch (e) {
+          showMessage('Something went wrong. Please try again.', true);
+          btn.disabled = false;
+          btn.textContent = 'Access Demo';
+        }
+        window.history.replaceState({}, '', window.location.pathname);
+      });
+      wrapper.appendChild(btn);
+    }
     return;
   }
 
