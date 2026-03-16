@@ -245,11 +245,24 @@
           "content": {
             "regulatory_history": "OJ-cited under M/100 (CPR 305/2011). GWP declarations mandatory from 8 Jan 2026 for EN 12602 products — early compliance burden before DPP system is operational."
           }
+        },
+        {
+          "id": "prEN 18190",
+          "type": "hEN",
+          "name": "Precast concrete products — Performance assessment and declaration",
+          "tc_wg": "CEN/TC 229",
+          "avcp": "2+",
+          "dpp_est": "~2030–2031",
+          "dpp_route": "hEN",
+          "mandate": "M/609",
+          "revision": "CPR 2011",
+          "cited": false,
+          "notes": "Active CEN/TC 229 work item under M/609 (separate from M/100-replacing draft SReq). Supports CPR 305/2011 — DPP does not apply. Confirmed by CEN-CENELEC contact, Mar 2026."
         }
       ],
       "standards_summary": {
         "completeness": "full",
-        "source": "Draft SReq (Feb 2026) — 4 standards, all listed individually"
+        "source": "Draft SReq (Feb 2026) — 4 standards + 1 additional work item (prEN 18190 under M/609)"
       },
       "convergence": {
         "product_timeline_complete": "~2030–2031",
@@ -261,11 +274,11 @@
       },
       "content": {
         "about": "Covers factory-made precast concrete elements such as hollow core slabs, beams, wall and facade panels, stairs, masts, bridge elements, and box culverts — in normal-weight, lightweight aggregate and autoclaved aerated concrete. Products range from simple unreinforced items to prestressed structural members. Standardisation is led by CEN/TC 229 (precast concrete products), with CEN/TC 177 contributing standards for lightweight aggregate and autoclaved aerated concrete products.",
-        "standards_landscape": "EN 1520:2011 (lightweight aggregate, AVCP System 2+), EN 12602:2016 (autoclaved aerated concrete, AVCP System 2+). Both cited in OJ under old CPR 305/2011 via mandate M/100 (1994). EN 13369:2023 (common rules; national adoptions 2024) replacing EN 13369:2018 — this is a non-harmonised reference standard (no Annex ZA), but underpins all precast product standards. AVCP per Commission Decision 1999/94/EC (System 2+ for structural, System 4 for non-structural).",
-        "standards_development": "prEN 12602 — draft standard dated 24 July 2025 (BSI reference 25/30510163 DC), confirming revision already underway under CEN/TC 177. EN 1170:2024 (test methods for fibre-reinforced precast) published Dec 2024 — supporting standard development is active.",
+        "standards_landscape": "EN 1520:2011 (lightweight aggregate, AVCP System 2+), EN 12602:2016 (autoclaved aerated concrete, AVCP System 2+). Both cited in OJ under old CPR 305/2011 via mandate M/100 (1994). EN 13369:2023 (common rules; national adoptions 2024) replacing EN 13369:2018 — this is a non-harmonised reference standard (no Annex ZA), but underpins all precast product standards. Additionally, prEN 18190 'Precast concrete products — Performance assessment and declaration' is an active CEN/TC 229 work item under mandate M/609, supporting CPR 305/2011. AVCP per Commission Decision 1999/94/EC (System 2+ for structural, System 4 for non-structural).",
+        "standards_development": "prEN 12602 — draft standard dated 24 July 2025 (BSI reference 25/30510163 DC), confirming revision already underway under CEN/TC 177. EN 1170:2024 (test methods for fibre-reinforced precast) published Dec 2024 — supporting standard development is active. prEN 18190 (CEN/TC 229, M/609) — performance assessment and declaration standard for precast concrete, confirmed active Mar 2026.",
         "sreq_analysis": "Acquis Milestone I (product scope) and Milestone III (essential characteristics) both completed. Draft implementing decision published 4 Feb 2026 via Art. 12 notification (earlier draft from April 2024). Feedback until 3 Mar 2026. Under CPR 305/2011 (old regulation). Replaces mandate M/100 (1994). 4 deliverables, all due 30 Oct 2026: (1) new hEN for precast concrete performance assessment (Table 1), (2) EPD product category rules for lightweight and AAC products (Table 1), (3) revision of EN 1520:2011 (Table 2), (4) revision of EN 12602:2016 (Table 2). Decision expires 30 Jun 2027. CEN reports due 31 Jan 2027. Table 3 target of SReq Q2 2025 was missed by ~8 months. NOT yet adopted — CEN WP 2025 still lists as \"M/XXX\" (no mandate number assigned).",
         "dpp_outlook": "The estimated DPP range is ~2030–2031, informed by two scenarios. Policy pipeline: With standardisation request draft published (Feb 2026) and delivery expected Q4 2026, the regulatory pathway points to DPP by ~2030–2031. Note: this standardisation request is under CPR 305/2011 – a subsequent request under CPR 2024/3110 is needed before DPP applies. Standards-based: Per-standard DPP estimates across 4 hENs range from ~2030 to ~2031 (all hENs currently cited under CPR 305/2011, requiring revision under CPR 2024/3110 before DPP applies). Both scenarios converge on the same timeline. GCCA Low Carbon Ratings (7-band AA–G, launched Apr 2025) explicitly includes precast concrete. Provides voluntary carbon class overlay alongside mandatory CPR GWP.",
-        "stakeholder_notes": "CEN/TC 229 (EN 13369, EN 1520) and CEN/TC 177 (EN 12602) are active. BIBM Decarbonisation Pledge. GCCA Low Carbon Ratings (7-band AA–G, Apr 2025) explicitly includes precast. ReCreate (H2020) demonstrates 93–98% energy/carbon savings from reusing intact precast components, with EPDs for reused products.",
+        "stakeholder_notes": "CEN/TC 229 (EN 13369, EN 1520, prEN 18190) and CEN/TC 177 (EN 12602) are active — confirmed by CEN-CENELEC contact (Mar 2026). BIBM Decarbonisation Pledge. GCCA Low Carbon Ratings (7-band AA–G, Apr 2025) explicitly includes precast. ReCreate (H2020) demonstrates 93–98% energy/carbon savings from reusing intact precast components, with EPDs for reused products.",
         "key_risks": "(1) SReq feedback deadline 3 Mar 2026 — monitor for adoption. (2) EN 13369 is a non-harmonised reference standard underpinning multiple precast hENs. (3) GWP declarations mandatory from 8 Jan 2026 for EN 1520 and EN 12602 products (OJ-cited under M/100) — early compliance burden before DPP system is operational. (4) Future new-CPR SReq may cover all 24 hENs (not just 4 currently tracked).",
         "sources_summary": "COM(2025) 772 CPR Working Plan [S30]; CPR 2024/3110 [S1]; nlfnorm.cz hEN database [S143]; EOTA EAD database [S144]; SReq notification system Art. 12; BIBM; GCCA LCR."
       }
