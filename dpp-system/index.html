@@ -22,6 +22,24 @@
     <meta name="twitter:description" content="Digital Product Passport System - Track furniture from Brazilian forests to Dutch manufacturing">
     <meta name="twitter:image" content="https://demos.regenstudio.world/Images/og-demos-dpp-system.png">
     <title>DPP System - Digital Product Passport</title>
+    <script>
+      // localStorage polyfill — provides in-memory fallback when browser
+      // blocks storage access (Safari ITP, privacy extensions, restricted iframe)
+      (function(){
+        try { var t = localStorage; t.setItem('__test__','1'); t.removeItem('__test__'); }
+        catch(e){
+          var store = {};
+          Object.defineProperty(window, 'localStorage', { value: {
+            getItem: function(k){ return store.hasOwnProperty(k) ? store[k] : null; },
+            setItem: function(k,v){ store[k] = String(v); },
+            removeItem: function(k){ delete store[k]; },
+            clear: function(){ store = {}; },
+            get length(){ return Object.keys(store).length; },
+            key: function(i){ return Object.keys(store)[i] || null; }
+          }, configurable: true });
+        }
+      })();
+    </script>
     <script type="module" src="/dpp-system/assets/index-BHByL0mz.js"></script>
     <link rel="stylesheet" href="/dpp-system/assets/index-B944mxO_.css">
   </head>
