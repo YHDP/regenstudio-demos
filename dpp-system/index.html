@@ -22,9 +22,17 @@
     <meta name="twitter:description" content="Digital Product Passport System - Track furniture from Brazilian forests to Dutch manufacturing">
     <meta name="twitter:image" content="https://demos.regenstudio.world/Images/og-demos-dpp-system.png">
     <title>DPP System - Digital Product Passport</title>
+    <script type="module" src="/dpp-system/assets/index-BHByL0mz.js"></script>
+    <link rel="stylesheet" href="/dpp-system/assets/index-B944mxO_.css">
+  </head>
+  <body>
+    <script>window.DEMO_GUARD = { demoId: 'dpp-system' };</script>
+    <script src="../assets/js/guard.js"></script>
     <script>
       // localStorage polyfill — provides in-memory fallback when browser
       // blocks storage access (Safari ITP, privacy extensions, restricted iframe)
+      // Must load AFTER guard.js so the guard's try-catch sees the real
+      // SecurityError and allows access, but BEFORE the React module executes.
       (function(){
         try { var t = localStorage; t.setItem('__test__','1'); t.removeItem('__test__'); }
         catch(e){
@@ -40,12 +48,6 @@
         }
       })();
     </script>
-    <script type="module" src="/dpp-system/assets/index-BHByL0mz.js"></script>
-    <link rel="stylesheet" href="/dpp-system/assets/index-B944mxO_.css">
-  </head>
-  <body>
-    <script>window.DEMO_GUARD = { demoId: 'dpp-system' };</script>
-    <script src="../assets/js/guard.js"></script>
     <div id="root"></div>
     <!-- GitHub Pages SPA redirect handler -->
     <script>
