@@ -32,6 +32,7 @@ Push to `main` — GitHub Pages auto-deploys.
 
 ## License
 
-Licensed under the [EUPL v1.2](LICENSE).
+- **Code:** [PolyForm Noncommercial 1.0.0](LICENSE) — use, study, modify, and share for any noncommercial purpose.
+- **Brand assets** (name, logo, visual identity): All rights reserved.
 
 Copyright 2024-2026 Regen Studio B.V.

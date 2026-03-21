@@ -1,3 +1,5 @@
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 // source-layer.js — Source transparency overlay
 // When active, shows source citation badges on data elements.
 // Hover/click badges to see source details.

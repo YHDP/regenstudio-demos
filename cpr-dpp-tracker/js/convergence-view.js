@@ -1,3 +1,5 @@
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 // convergence-view.js — Time-aligned dual-column convergence chart
 // Nodes positioned by their actual dates. Gantt bars for date-range nodes.
 // DPP obligation lines computed from individual standards' dpp_est values + system timeline.

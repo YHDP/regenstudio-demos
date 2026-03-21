@@ -1,3 +1,5 @@
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 // data-health.js — Data Health Dashboard for admin panel
 // Computes quality scores across 5 dimensions: completeness, consistency,
 // source coverage, timeliness, validity. Renders into #healthDashboard.

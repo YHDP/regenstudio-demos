@@ -1,3 +1,5 @@
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 // CPR DPP Tracker — main app logic (v2: convergence view)
 // Fetches families-v2.json + system-timeline.json, renders card grid,
 // card click opens full-page convergence timeline view.

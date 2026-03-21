@@ -1,3 +1,5 @@
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 // Gate — magic link + password access with 24h localStorage sessions
 
 const SUPABASE_URL = 'https://uemspezaqxmkhenimwuf.supabase.co/functions/v1';

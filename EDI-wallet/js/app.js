@@ -1,3 +1,5 @@
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 import { getState, setState, subscribe } from './data/state.js';
 import { renderSplash } from './screens/splash.js';
 import { renderLanguage } from './screens/language.js';

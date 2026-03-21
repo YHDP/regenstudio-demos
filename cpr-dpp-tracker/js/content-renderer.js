@@ -1,3 +1,5 @@
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 /**
  * content-renderer.js — Renders content{} sections as formatted HTML.
  * Shared utility used by convergence view, reports, comparison, and admin panel.

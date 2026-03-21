@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 // migrate-v1-to-v2.js — One-time migration from families.json to families-v2.json
 // Maps milestones → pipeline nodes, parses info HTML → content{}, builds convergence objects.
 'use strict';

@@ -1,3 +1,5 @@
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 // comparison.js — Side-by-side family comparison view
 // Select 2-3 families from the card grid, compare their convergence data.
 // Shareable via URL hash: #compare=PCR,SMP,CEM

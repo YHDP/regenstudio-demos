@@ -1,3 +1,5 @@
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 // system-dashboard.js — System Timeline dashboard component
 // Renders a horizontal progress-bar-style timeline from system-timeline.json.
 // Nodes are clickable to expand detail + sub-items.

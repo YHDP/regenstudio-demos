@@ -1,3 +1,5 @@
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 /**
  * Question definitions and branching logic for the Battery Passport Questionnaire.
  * Two-phase structure: GATE (up to 4 questions) + DEEP_DIVE (~12 questions).

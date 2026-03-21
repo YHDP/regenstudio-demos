@@ -1,3 +1,5 @@
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 // ============================================================
 // i18n — Translations for EN, NL, PT
 // Using official eIDAS 2.0 (Regulation (EU) 2024/1183) terminology

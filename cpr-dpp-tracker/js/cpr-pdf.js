@@ -1,3 +1,5 @@
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 /**
  * CPR DPP Report — PDF generation using jsPDF.
  * Generates Full Overview (all 37 families) or single-family Deep-Dive reports.

@@ -1,3 +1,5 @@
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 // Standard Search — js/standard-search.js
 // Autocomplete for searching standards by ID or full name.
 // Initialises on all .std-search containers after families-v2.json loads.

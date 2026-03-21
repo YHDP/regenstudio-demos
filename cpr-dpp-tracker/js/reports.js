@@ -1,3 +1,5 @@
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 /**
  * Reports page controller — handles preview, report selection, discount codes, purchase flow,
  * FAQ accordion, nav CTA visibility, and smooth scroll.

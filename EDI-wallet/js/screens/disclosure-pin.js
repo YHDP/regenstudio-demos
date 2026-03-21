@@ -1,3 +1,5 @@
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 import { navigate } from '../app.js';
 import { getState } from '../data/state.js';
 import { getVerifierById } from '../data/verifiers.js';

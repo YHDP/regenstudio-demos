@@ -1,3 +1,5 @@
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 /**
  * cluster-rush.js — Cluster Rush game mode.
  * 60 seconds to form as many bonds as possible.

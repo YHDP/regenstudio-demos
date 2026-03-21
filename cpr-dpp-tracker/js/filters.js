@@ -1,3 +1,5 @@
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 // filters.js — Filter/sort controls for CPR DPP Tracker card grid
 // Manages pipeline filter, certainty filter, sort order.
 // State persisted in URL hash params.

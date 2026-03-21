@@ -1,3 +1,5 @@
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 /**
  * app.js — Main orchestrator for Triangle Playground.
  * Wires physics, renderer, input, HUD, and game modes together.

@@ -1,3 +1,5 @@
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 export function createPinKeyboard(onDigit, onDelete) {
   const pad = document.createElement('div');
   pad.className = 'number-pad';

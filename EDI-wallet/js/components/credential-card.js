@@ -1,3 +1,5 @@
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 import { td } from '../data/data-i18n.js';
 
 export function createCredentialCard(credential, onClick) {

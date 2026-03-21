@@ -1,3 +1,5 @@
+// Copyright 2024-2026 Regen Studio B.V.
+// Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE
 /**
  * Symptom Tree Canvas — 7M categorized problem symptoms
  * Based on the Ishikawa (fishbone) diagram categories adapted for government context
