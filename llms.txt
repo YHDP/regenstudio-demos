@@ -1,0 +1,28 @@
+# Regen Studio — Interactive Demos
+
+> Interactive demo tools by Regen Studio exploring digital product passports,
+> regulatory compliance, digital identity, and policy simulation. All demos are
+> free to use. Some require access credentials.
+
+Regen Studio is a regenerative innovation design studio based in The Netherlands
+and Brazil. For full company information, see [regenstudio.world/llms.txt](https://www.regenstudio.world/llms.txt).
+
+## Demos
+
+- [CPR DPP Tracker](https://demos.regenstudio.world/cpr-dpp-tracker/landing.html): Track Digital Product Passport requirements for all 37 product families under the Construction Products Regulation 2024/3110. Includes harmonised standards progress, estimated DPP timelines, and regulatory milestones.
+- [CPR DPP Reports](https://demos.regenstudio.world/cpr-dpp-tracker/reports.html): Downloadable compliance reports for individual CPR product families.
+- [Battery Passport Checker](https://demos.regenstudio.world/battery-questionnaire/): Free 1-minute questionnaire to assess Digital Product Passport obligations under the EU Battery Regulation 2023/1542. Generates a personalised compliance summary.
+- [EDI Wallet](https://demos.regenstudio.world/EDI-wallet/): European Digital Identity wallet prototype demonstrating selective disclosure, verifiable credentials, and eIDAS 2.0 concepts. Restricted access — request credentials.
+- [DPP System](https://demos.regenstudio.world/dpp-system/): Full digital product passport platform prototype showing data entry, verification, and passport generation. Restricted access — request credentials.
+- [AI Tax to UBI Simulator](https://demos.regenstudio.world/ai-tax-ubi/): Policy simulation exploring AI taxation models and universal basic income distribution. Adjust parameters to see economic impact projections.
+- [Innovation Platform](https://demos.regenstudio.world/innovation-platform/): Government innovation management platform for tracking innovation programmes, experiments, and living labs. Restricted access — request credentials.
+- [Triangle Playground](https://demos.regenstudio.world/triangle-playground/): Physics sandbox and constellation game exploring emergent behaviour in particle systems.
+
+## Optional
+
+- [Products](https://demos.regenstudio.world/products.html): Product listings and pricing for premium compliance reports.
+
+## Contact
+
+- Website: [regenstudio.world](https://www.regenstudio.world)
+- Email: info@regenstudio.world

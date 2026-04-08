@@ -2,42 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://demos.regenstudio.world/</loc>
+    <lastmod>2026-04-08</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://demos.regenstudio.world/products.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://demos.regenstudio.world/cpr-dpp-tracker/landing.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://demos.regenstudio.world/cpr-dpp-tracker/reports.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demos.regenstudio.world/EDI-wallet/</loc>
+    <lastmod>2026-03-10</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demos.regenstudio.world/battery-questionnaire/</loc>
+    <lastmod>2026-03-10</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demos.regenstudio.world/ai-tax-ubi/</loc>
+    <lastmod>2026-03-10</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demos.regenstudio.world/dpp-system/</loc>
+    <lastmod>2026-03-10</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://demos.regenstudio.world/triangle-playground/</loc>
+    <lastmod>2026-02-10</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://demos.regenstudio.world/innovation-platform/</loc>
+    <lastmod>2026-03-10</lastmod>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://demos.regenstudio.world/llms.txt</loc>
+    <lastmod>2026-04-08</lastmod>
+    <priority>0.3</priority>
   </url>
 </urlset>

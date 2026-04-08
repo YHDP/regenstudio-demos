@@ -1,3 +1,5 @@
+# robots.txt for demos.regenstudio.world
+
 User-agent: *
 Allow: /
 
@@ -13,4 +15,52 @@ Disallow: /EDI-wallet/gate.html
 Disallow: /dpp-system/gate.html
 Disallow: /innovation-platform/gate.html
 
+# AI search & citation bots — explicitly allowed
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# AI training-only crawlers — blocked (high crawl, no citation benefit)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: claude-web
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# AI-readable content: see /llms.txt
 Sitemap: https://demos.regenstudio.world/sitemap.xml
