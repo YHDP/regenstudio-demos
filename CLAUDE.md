@@ -46,3 +46,8 @@ Privacy principles enforced by `soul.md`; project-specific details below:
 - 5-color accent palette: `--color-emerald` (#00914B), `--color-teal` (#009BBB), indigo (#6366F1), `--color-orange` (#FFA92D), `--color-magenta` (#93093F)
 - Supabase edge functions in `supabase/functions/<name>/index.ts`
 - Migrations in `supabase/migrations/`
+
+## Backlog
+Proton Drive: `CLAUDE CODE SYNC FOLDER/6-projects/regenstudio-website/backlog.md` (shared with website)
+CPR DPP Tracker: `CLAUDE CODE SYNC FOLDER/6-projects/cpr-dpp-tracker/backlog.md`
+Priorities: `CLAUDE CODE SYNC FOLDER/AI-Operations/priorities.md`

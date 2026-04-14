@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<title>Regen CO₂ Footprint Manager — Methodology</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font: 15px/1.55 -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+    max-width: 1100px; margin: 24px auto; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 1.6rem; margin-bottom: 4px; }
+  h2 { font-size: 1.1rem; margin-top: 1.8em; color: #006d38;
+       border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; }
+  .meta { color: #64748b; font-size: 0.88rem; margin-bottom: 20px; }
+  form.card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px;
+              padding: 18px 20px; margin: 16px 0; }
+  .row { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
+         gap: 10px 14px; margin-bottom: 10px; }
+  .row.wide { grid-template-columns: 1fr 1fr; }
+  .row.full { grid-template-columns: 1fr; }
+  label { display: block; font-size: 0.78rem; color: #64748b;
+          text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px; }
+  input, select, textarea {
+    width: 100%; padding: 7px 9px; font: inherit; color: inherit;
+    border: 1px solid #cbd5e1; border-radius: 6px; background: white;
+  }
+  textarea { min-height: 46px; resize: vertical; }
+  button {
+    background: #006d38; color: white; border: 0; padding: 9px 18px;
+    border-radius: 7px; font-weight: 600; font-size: 0.95rem; cursor: pointer;
+  }
+  button.secondary { background: #fff; color: #475569; border: 1px solid #cbd5e1; }
+  button.danger { background: #fff; color: #b91c1c; border: 1px solid #fecaca;
+                  padding: 3px 9px; font-size: 0.78rem; font-weight: 500; }
+  details summary {
+    cursor: pointer; padding: 8px 10px; background: #fef3c7;
+    border: 1px solid #fde68a; border-radius: 6px; font-size: 0.88rem;
+    color: #78350f; margin-top: 8px;
+  }
+  details[open] summary { margin-bottom: 10px; }
+  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+  .stat { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
+          padding: 12px 14px; }
+  .stat .label { font-size: 0.72rem; color: #64748b; text-transform: uppercase;
+                 letter-spacing: 0.05em; }
+  .stat .big { font-size: 1.4rem; font-weight: 700; color: #1a1a1a; }
+  .stat .range { font-size: 0.78rem; color: #64748b; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px;
+          font-size: 0.9rem; }
+  th, td { text-align: left; padding: 7px 9px;
+           border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  th { background: #f1f5f9; font-weight: 600; color: #334155;
+       font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.scope-total td { background: #f0fdf4; font-weight: 600; }
+  tr.grand td { background: #006d38; color: white; font-weight: 700; }
+  .flash { background: #dcfce7; color: #14532d; border: 1px solid #86efac;
+           padding: 10px 14px; border-radius: 7px; margin: 10px 0; }
+  .flash.err { background: #fee2e2; color: #7f1d1d; border-color: #fecaca; }
+  .pill { display: inline-block; padding: 1px 7px; font-size: 0.72rem;
+          border-radius: 999px; background: #e2e8f0; color: #475569; }
+  .pill.q-A { background: #bbf7d0; color: #14532d; }
+  .pill.q-B { background: #e9d5ff; color: #581c87; }
+  .pill.q-C { background: #fde68a; color: #78350f; }
+  .pill.q-D { background: #fecaca; color: #7f1d1d; }
+  nav.view-select { display: flex; gap: 8px; align-items: center; margin: 10px 0 20px; }
+  nav.view-select form { display: inline; }
+  nav.view-select select, nav.view-select button {
+    padding: 6px 10px; font-size: 0.9rem;
+  }
+  /* Top navigation header */
+  header.app {
+    background: white; border: 1px solid #e2e8f0; border-radius: 10px;
+    padding: 14px 20px; margin: 0 0 18px;
+    box-shadow: 0 1px 3px rgba(36,54,68,0.04);
+  }
+  header.app .title-row {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; flex-wrap: wrap; margin-bottom: 10px;
+  }
+  header.app h1 {
+    font-size: 1.05rem; margin: 0; color: #006d38;
+    letter-spacing: 0.01em; font-weight: 700;
+  }
+  header.app .entity-bar { display: flex; gap: 8px; align-items: center; }
+  header.app .entity-bar select { padding: 4px 8px; font-size: 0.85rem; }
+  header.app .status {
+    font-size: 0.78rem; color: #64748b;
+    display: flex; gap: 10px; align-items: center;
+  }
+  header.app .status .badge {
+    padding: 2px 8px; border-radius: 999px; font-weight: 600;
+    font-size: 0.72rem; background: #e2e8f0; color: #475569;
+  }
+  header.app .status .badge.open { background: #fef3c7; color: #78350f; }
+  header.app .status .badge.finalized { background: #dcfce7; color: #14532d; }
+  nav.app {
+    display: flex; gap: 0; border-bottom: 1px solid #e2e8f0;
+    margin-top: 10px;
+  }
+  nav.app a {
+    padding: 8px 14px; text-decoration: none; color: #475569;
+    font-size: 0.92rem; border-bottom: 2px solid transparent;
+    margin-bottom: -1px; transition: color 0.12s;
+  }
+  nav.app a:hover { color: #006d38; }
+  nav.app a.active {
+    color: #006d38; font-weight: 600; border-bottom-color: #006d38;
+  }
+  /* Next-actions list */
+  ul.actions { list-style: none; padding: 0; margin: 8px 0; }
+  ul.actions li {
+    padding: 8px 12px; margin-bottom: 6px; border-radius: 7px;
+    background: #fef3c7; border: 1px solid #fde68a;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 10px;
+  }
+  ul.actions li.low { background: #f1f5f9; border-color: #e2e8f0; }
+  ul.actions li a {
+    color: #006d38; font-weight: 600; text-decoration: none;
+    font-size: 0.88rem; white-space: nowrap;
+  }
+  /* Filter bar */
+  .filter-bar {
+    display: flex; gap: 10px; flex-wrap: wrap; align-items: end;
+    margin: 10px 0 14px; padding: 10px 12px;
+    background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 7px;
+  }
+  .filter-bar label { min-width: 0; }
+  .filter-bar select, .filter-bar input { padding: 4px 8px; font-size: 0.88rem; }
+  /* Section TOC */
+  .toc {
+    display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 20px;
+    font-size: 0.82rem;
+  }
+  .toc a {
+    padding: 3px 8px; background: #f1f5f9; color: #475569;
+    border-radius: 5px; text-decoration: none;
+  }
+  .toc a:hover { background: #006d38; color: white; }
+  /* Rendered markdown */
+  .md h1 { font-size: 1.3rem; color: #006d38; margin-top: 1em; }
+  .md h2 { font-size: 1.1rem; color: #006d38; margin-top: 1.4em; }
+  .md h3 { font-size: 0.98rem; color: #334155; margin-top: 1em; }
+  .md hr { border: none; border-top: 1px solid #e2e8f0; margin: 1.5em 0; }
+  .md ul { padding-left: 22px; }
+  .md code { background: #f1f5f9; padding: 1px 5px; border-radius: 3px;
+             font-size: 0.88em; font-family: ui-monospace, monospace; }
+  .md p { line-height: 1.55; }
+  /* Info tooltip (ⓘ popover) — zero-JS, stdlib-only, <details>-based */
+  details.help { display: inline-block; position: relative; vertical-align: baseline;
+                 margin-left: 4px; }
+  details.help > summary {
+    cursor: help; list-style: none;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 15px; height: 15px; border-radius: 50%;
+    background: #006d38; color: white;
+    font-size: 0.68rem; font-weight: 700; font-style: normal;
+    font-family: -apple-system, sans-serif;
+    transition: background 0.12s, transform 0.12s;
+    user-select: none;
+  }
+  details.help > summary::-webkit-details-marker { display: none; }
+  details.help > summary::before { content: "i"; }
+  details.help > summary:hover { background: #15803d; transform: scale(1.1); }
+  details.help[open] > summary { background: #14532d; }
+  details.help .help-card {
+    position: absolute; top: 22px; left: 0;
+    min-width: 300px; max-width: 380px;
+    background: white; border: 1px solid #e2e8f0; border-radius: 8px;
+    padding: 12px 14px; box-shadow: 0 6px 18px rgba(36,54,68,0.14);
+    font-size: 0.86rem; line-height: 1.5; z-index: 100;
+    text-transform: none; letter-spacing: normal; color: #1a1a1a;
+    font-weight: normal;
+  }
+  details.help .help-card strong.title { color: #006d38; font-size: 0.95rem;
+                                           display: block; margin-bottom: 6px; }
+  details.help .help-card p { margin: 0 0 6px; }
+  details.help .help-card p:last-child { margin-bottom: 0; }
+  details.help .help-card .tech { color: #64748b; font-size: 0.8rem;
+                                    border-left: 2px solid #e2e8f0;
+                                    padding-left: 8px; }
+  details.help .help-card .where { font-size: 0.82rem; color: #334155; }
+  details.help .help-card .example {
+    font-size: 0.82rem; background: #f0fdf4; padding: 7px 9px;
+    border-radius: 5px; color: #14532d;
+    border-left: 3px solid #006d38;
+  }
+  details.help .help-card .more a {
+    font-size: 0.8rem; color: #006d38; font-weight: 600; text-decoration: none;
+  }
+  /* Wizard stepper */
+  .stepper { display: flex; gap: 0; margin: 18px 0 24px;
+             border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+  .stepper .step { flex: 1; padding: 10px 14px; text-align: center;
+                   font-size: 0.82rem; color: #64748b; position: relative;
+                   text-decoration: none; background: #f8fafc;
+                   border-right: 1px solid #e2e8f0; }
+  .stepper .step:last-child { border-right: none; }
+  .stepper .step.active { background: #006d38; color: white; font-weight: 600; }
+  .stepper .step.done { background: #dcfce7; color: #14532d; }
+  .stepper .step .num {
+    display: inline-block; width: 20px; height: 20px; border-radius: 50%;
+    background: rgba(0,0,0,0.08); line-height: 20px; margin-right: 6px;
+    font-weight: 700; font-size: 0.78rem;
+  }
+  .stepper .step.active .num { background: rgba(255,255,255,0.2); }
+  /* Glossary */
+  .glossary-term {
+    padding: 12px 14px; margin-bottom: 8px;
+    border-left: 3px solid #006d38; background: #f8fafc;
+    border-radius: 0 7px 7px 0;
+  }
+  .glossary-term h3 { margin: 0 0 6px; font-size: 0.98rem; color: #006d38; }
+  .glossary-term p { margin: 0 0 4px; font-size: 0.92rem; line-height: 1.5; }
+</style>
+</head><body>
+
+<header class="app">
+  <div class="title-row">
+    <h1>Regen CO₂ Footprint Manager</h1>
+    <form class="entity-bar" method="GET" action="/methodology">
+      <label style="display:inline;text-transform:none;font-size:0.82rem;color:#334155;">Entity</label>
+      <select name="org"><option value="circulartech-advisory">CircularTech Advisory</option><option value="dft-brazil-consulting">Dutch Flow Technology — Brazil sales representation</option><option value="regen-studio-bv" selected>Regen Studio BV</option><option value="yvo-personal">Yvo (personal, non-business)</option><option value="proj-circulartech">  └ CircularTech Advisory (project)</option><option value="proj-dft-brazil">  └ Dutch Flow Technology Brazil (project)</option><option value="proj-ai-operations">  └ AI-Operations (cross-project coordination)</option><option value="proj-avisonar">  └ AviSonar</option><option value="proj-bird-detective">  └ BirdDetective</option><option value="proj-claude-partner-network">  └ Claude Partner Network</option><option value="proj-cpr-dpp-tracker">  └ CPR DPP Tracker</option><option value="proj-cultural-connections">  └ Cultural Connections 2026</option><option value="proj-design-lab">  └ Design Lab</option><option value="proj-funding-pipeline">  └ Funding Pipeline</option><option value="proj-kingsday-design">  └ Kingsday Design (Design Lab print pipeline)</option><option value="proj-open-integrity-demo">  └ Open Integrity Demo</option><option value="proj-openremote-pentest">  └ OpenRemote Pentest</option><option value="proj-regen-footprint">  └ Regen CO₂ Footprint Manager</option><option value="proj-regen-studio-website">  └ Regen Studio Website</option><option value="proj-regenstudio-demos">  └ Regen Studio Demos</option><option value="proj-trupass">  └ TruPASS</option><option value="proj-unattributed">  └ Unattributed (cwd did not match any rule)</option><option value="proj-yogai">  └ YogAI</option><option value="proj-book-of-love">  └ Book of Love</option><option value="proj-emigration">  └ Emigration NL→BR</option><option value="proj-money-manager">  └ Money Manager</option><option value="proj-rokor">  └ ROKOR</option><option value="proj-work-manager">  └ Work Manager</option></select>
+      <label style="display:inline;text-transform:none;font-size:0.82rem;color:#334155;">Year</label>
+      <select name="year"><option value="2027">2027</option><option value="2026">2026</option><option value="2025" selected>2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option></select>
+      <button class="secondary">apply</button>
+      <a href="../index.html" onclick="try{localStorage.removeItem('rcfm.remember');}catch(_){}"
+         style="margin-left:10px;font-size:0.82rem;color:#64748b;text-decoration:none;"
+         title="Back to company picker">↺ Switch entity</a>
+    </form>
+  </div>
+  <div class="status">
+    <span>Period:</span>
+    <span class="badge open">open</span>
+    <span>·</span>
+    <span>VSME coverage 9/9 Basic categories</span>
+  </div>
+  <nav class="app"><a href="index.html">🏠 Home</a><a href="register.html">📥 Register</a><a href="disclosures.html">📊 Disclosures</a><a href="factors.html">📚 Factors</a><a href="report.html">📄 Report</a><a href="methodology.html" class="active">📘 Methodology</a><a href="guide.html">🧭 Guide</a><a href="glossary.html">📖 Glossary</a></nav>
+</header>
+
+
+
+<h2>Methodology</h2><div class="md"><h1>VSME alignment methodology — v1</h1>
+<p><strong>Reporting entity:</strong> Regen Studio BV <strong>Status:</strong> voluntary disclosure; RS BV is not obligated under CSRD <strong>Standard reference:</strong> EFRAG Voluntary Standard for non-listed SMEs (VSME), EU Commission Recommendation of 30 July 2025 <strong>Last update:</strong> 2026-04-13</p>
+<h2>Why this document exists</h2>
+<p>The Regen CO₂ Footprint Manager publishes an annual organisational carbon-footprint report. This document explains how that report maps to the VSME standard — which Basic and Comprehensive data points it covers, how each number is computed, which assumptions are in play, and where the language is deliberately conservative to avoid claim-risk.</p>
+<h2>Claim language hygiene</h2>
+<ul>
+<li>The report footer says <strong>&quot;structured in alignment with&quot;</strong> VSME, never</li>
+</ul>
+<p>  &quot;prepared in accordance with&quot; — the latter carries assurance weight that   RS does not yet support by third-party verification.</p>
+<ul>
+<li>The report never says &quot;CSRD-compliant.&quot; RS is below the post-Omnibus CSRD</li>
+</ul>
+<p>  thresholds (1,000 employees AND €450M turnover, in force from 18 March   2026, first application FY 2027) and is not subject to CSRD.</p>
+<ul>
+<li>The report never says &quot;ISSA 5000-assured.&quot; It says &quot;assurance-ready&quot; at</li>
+</ul>
+<p>  most. ISSA 5000 limited assurance becomes effective for periods beginning   15 December 2026; any engagement happens separately.</p>
+<ul>
+<li>The inline XBRL tags are described as &quot;inline-tagged per EFRAG VSME</li>
+</ul>
+<p>  taxonomy&quot; — not &quot;validated&quot; (structural validation only; dimensional   validation is an out-of-band Arelle run) and not &quot;filed&quot; (nothing is filed).</p>
+<h2>Boundary and scope</h2>
+<ul>
+<li><strong>Organisational boundary:</strong> operational control.</li>
+<li><strong>Reporting period:</strong> full calendar year (YYYY-01-01 → YYYY-12-31).</li>
+<li><strong>Inclusions:</strong> all transactions paid from the business account;</li>
+</ul>
+<p>  business travel (flights, ground transport, personal vehicle with   business-paid fuel); meals paid from the business account; office   electricity for the São Paulo home office (3 m², lightweight use);   capital goods purchased in the reporting year (full embodied emissions   per GHG Protocol Scope 3.2); SaaS subscriptions; printed goods.</p>
+<ul>
+<li><strong>Exclusions:</strong> personal (non-business) travel and expenses; commuting</li>
+</ul>
+<p>  (N/A for sole-operator home office); any third-party processing emissions   attributable to product sold (N/A).</p>
+<ul>
+<li><strong>Multi-entity note:</strong> CircularTech Advisory and DFT Brazil Consulting are</li>
+</ul>
+<p>  separate reporting entities in the tool&#x27;s organisations table. This   methodology covers RS BV only. Other entities get their own periods and   reports.</p>
+<h2>GHG emissions — GHG Protocol Corporate Standard</h2>
+<ul>
+<li><strong>Scopes used:</strong> 1, 2 (location-based + market-based), 3.1, 3.2, 3.6.</li>
+<li><strong>Dual Scope 2:</strong> every Scope 2 activity is recorded twice in the</li>
+</ul>
+<p>  register — once with scope code <code>2-location</code> using the grid-average   factor for the location, once with scope code <code>2-market</code> using a   market-based factor. The grand total uses the market-based figure per   GHG Protocol convention; the location-based figure is shown alongside.</p>
+<ul>
+<li><strong>Brazil market-based basis:</strong> Brazil has no formal AIB-style residual</li>
+</ul>
+<p>  mix as of 2026. Per GHG Protocol Scope 2 Guidance, when no supplier-   specific contractual instrument applies and no residual mix exists, the   location-based grid average is used as the market-based figure. The two   BR rows carry identical kWh and kg but different basis markers and   different factor slugs so the dual-reporting audit trail is explicit.</p>
+<ul>
+<li><strong>GWPs:</strong> IPCC AR6 100-year Global Warming Potentials throughout. DEFRA</li>
+</ul>
+<p>  2024 factors already use AR6; other factors are CO₂-dominant so the GWP   version is immaterial.</p>
+<ul>
+<li><strong>Uncertainty:</strong> each row carries a 5th–95th percentile range derived</li>
+</ul>
+<p>  from the factor&#x27;s <code>value_low</code> / <code>value_high</code> (or lognormal σ_g where   specified). Totals are propagated by summation of per-row ranges — this   is conservative versus the GHG Protocol Quantitative Uncertainty   Guidance&#x27;s simplified Tier-1 approach which uses RSS; the simpler   summation is used here because the tool ships with per-factor ranges   rather than per-factor σ.</p>
+<ul>
+<li><strong>Pietro-trap guard:</strong> the dashboard refuses to record a single row</li>
+</ul>
+<p>  where <code>upper/lower &gt; 100</code>. Named after the 200× ChatGPT figure that   triggered the tool&#x27;s creation.</p>
+<ul>
+<li><strong>Dates:</strong> where a specific receipt date was not retrieved, the row is</li>
+</ul>
+<p>  placed at a within-period reconstruction date (mid-month or end-of-year   as appropriate). Quantities are unaffected; only the intra-year placement   is approximate.</p>
+<ul>
+<li><strong>Aggregated travel rows:</strong> NL train (500 pkm) and BR Uber (200 km) are</li>
+</ul>
+<p>  reported as a single annual row each, summed from real business   transactions, rather than per-trip detail. Yvo has explicitly chosen not   to publish per-trip travel data.</p>
+<ul>
+<li><strong>Base-year designation:</strong> 2025 is not designated as the base year until</li>
+</ul>
+<p>  the period is finalized and the methodology is stable. Designating a base   year locks the reduction target denominator; restatements are expensive.</p>
+<h2>Non-GHG disclosures</h2>
+<ul>
+<li><strong>Water, biodiversity, waste:</strong> fully modeled and populated even at</li>
+</ul>
+<p>  near-zero values, because the row structure gives year-on-year   comparability for free and matches the DPP consultancy&#x27;s measure-   everything ethos. Small numbers are more credible than a &quot;not material&quot;   statement when the values are real.</p>
+<ul>
+<li><strong>Workforce:</strong> 1-FTE entity. VSME Basic requires headcount, contract</li>
+</ul>
+<p>  type, gender ratio, wages vs minimum, training hours, workplace   incidents. For N &lt; 3 cohorts, the GDPR rule kicks in: aggregate or   redact. With N = 1 the gender/contract fields are technically re-   identifying; the report includes them only because Yvo is publicly   identified as the sole operator elsewhere and no new information is   disclosed.</p>
+<ul>
+<li><strong>Governance:</strong> anti-corruption convictions and fines are reported even</li>
+</ul>
+<p>  when zero. VSME requires it; the empty row is itself a disclosure.</p>
+<ul>
+<li><strong>Materiality assessments:</strong> every VSME topic has an explicit <code>material</code></li>
+</ul>
+<p>  verdict with a written basis. Amended ESRS (Nov 2025) requires this;   VSME permits it. Water, biodiversity, and waste are marked not material   with specific bases; climate is material.</p>
+<h2>Factor provenance</h2>
+<p>Every emission factor is stored with:</p>
+<ul>
+<li><code>slug</code> — stable identifier used in all audit trails.</li>
+<li><code>factor_source_id</code> — FK into <code>factor_sources</code>, which carries URL,</li>
+</ul>
+<p>  publisher, quality rating (A–D per IPCC data quality), and retrieval date.</p>
+<ul>
+<li><code>value_mean</code>, <code>value_low</code>, <code>value_high</code> (or <code>geometric_sd</code> for lognormal).</li>
+<li><code>geographic_scope</code>, <code>valid_from_year</code>, <code>valid_until_year</code> — immutable</li>
+</ul>
+<p>  versioning so past reports remain reproducible.</p>
+<ul>
+<li><code>calculation_method</code> — one line noting the methodology family.</li>
+</ul>
+<p>Factors are versioned INSERT-only. When DEFRA 2025 is released, a new row is added with <code>valid_from_year = 2025</code>; DEFRA 2024 stays unchanged so 2024 and earlier reports remain exactly reproducible.</p>
+<p>Every report run writes a <code>calculation_runs</code> row with a SHA-256 over the factor set used. That hash is the assurance-grade receipt: two runs with the same hash demonstrably used the same factors.</p>
+<h2>Accrual policy</h2>
+<p>Transactions are placed in the reporting period of occurrence (flight boarding date, invoice date for purchased goods, service delivery date for contracts). A Dec 31 2025 invoice for services delivered in Q1 2026 sits in 2026 by this rule. ISSA 5000 asks for explicit accrual policy; this is it.</p>
+<h2>iXBRL hybrid approach</h2>
+<p>The HTML report is inline-tagged per the VSME taxonomy using iXBRL 1.1. Concept IDs come from <code>vendor/vsme-taxonomy/concepts.json</code>, a compact Regen Studio representation of the EFRAG VSME Digital Template taxonomy. The official EFRAG XML taxonomy can be placed under <code>vendor/vsme-taxonomy/official/</code> as XSD files — the loader prefers XML when present.</p>
+<p>A companion Markdown file <code>&lt;org&gt;-&lt;year&gt;-vsme-tagged-points.md</code> lists every tagged data point with concept ID and value so a human can audit what was tagged. This is the &quot;manually monitored&quot; half of the hybrid — diff against the prior year&#x27;s audit to catch tag-set drift.</p>
+<p>Dimensional validation of the emitted iXBRL (full link-base + type checking) is an out-of-band manual step via Arelle. The in-pipeline <code>xbrl.validate_report()</code> does structural validation only — does every <code>ix:*</code> tag reference a concept the catalogue knows about.</p>
+<h2>Reduction target</h2>
+<ul>
+<li><strong>Base year:</strong> 2025 (provisional until final).</li>
+<li><strong>Target year:</strong> 2027.</li>
+<li><strong>Reduction:</strong> −40% versus base year, applied to Scope 1+2+3 total.</li>
+<li><strong>Mechanism:</strong> flight reduction through trip bundling and the planned</li>
+</ul>
+<p>  2026 emigration from NL to BR (which inverts and reduces intercontinental   frequency). Flights dominate the 2025 footprint at ~90%; the lever is   identified and concrete.</p>
+<ul>
+<li><strong>Paris alignment:</strong> linear pathway statement. This does not claim</li>
+</ul>
+<p>  Science Based Targets initiative (SBTi) validation — no engagement, not   a claim we make.</p>
+<h2>Carbon credits treatment</h2>
+<p>RS retired zero carbon credits in 2025. Any future credits go into the <code>carbon_credits</code> table and are reported separately in the Comprehensive section. They are <strong>not netted</strong> from Scope 1/2/3 totals per GHG Protocol convention; they are disclosed as a separate line. SAF allocation on flight tickets (5% in both 2025 RTs) is treated the same way — as &quot;uncounted offsetting,&quot; mentioned in the methodology but not netted.</p>
+<h2>Internal carbon price</h2>
+<p>When present, the internal carbon price is reported per period in the Comprehensive section. It is informational — it does not adjust reported Scope totals.</p>
+<h2>Versioning of this document</h2>
+<p>This is methodology v1. Any change that could affect the reported numbers requires: 1. A dated entry in <code>methodology/decisions-log.md</code>. 2. A new methodology version increment (v2, v3, …) in this file. 3. A statement in the next report&#x27;s &quot;Method&quot; block explaining what changed    and whether prior periods are restated.</p></div><h2>Factor sources <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Factor sources</strong><p>Every source (publisher, URL, quality) referenced by at least one factor in use.</p><p class="tech"><strong>Why we ask:</strong> Readers + auditors can verify every number via these sources.</p><p class="where"><strong>Where to find it:</strong> Deduped list built from factor_sources table.</p><p class="example"><strong>Example:</strong> DEFRA 2024, CBS 2024, SEEG Brasil, Apple Environmental Reports…</p></div></details></h2><table><thead><tr><th>Slug</th><th>Name</th><th>Publisher</th><th>Quality <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Quality A — peer-reviewed or government</strong><p>The highest data-quality tier. Official government or peer-reviewed science.</p><p class="tech"><strong>Why we ask:</strong> A-rated factors are audit-ready. Prefer them wherever possible.</p><p class="where"><strong>Where to find it:</strong> DEFRA, IEA, CBS, IPCC, peer-reviewed literature.</p><p class="example"><strong>Example:</strong> DEFRA 2024 flight factors, CBS NL grid factors.</p></div></details></th><th>Retrieved</th><th>URL</th></tr></thead><tbody><tr><td><code>aib-european-residual-mix-2024</code></td><td>AIB European Residual Mix 2024</td><td>Association of Issuing Bodies (AIB)</td><td><span class='pill q-A'>A</span></td><td>2026-04-13</td><td><a href="https://www.aib-net.org/facts/european-residual-mix" target="_blank" rel="noopener">link</a></td></tr><tr><td><code>cbs-nl-grid-2024</code></td><td>CBS Netherlands grid carbon intensity 2024</td><td>Centraal Bureau voor de Statistiek</td><td><span class='pill q-A'>A</span></td><td>2026-04-13</td><td><a href="https://www.cbs.nl/en-gb/news/2024/39/electricity-production-from-renewables-continues-to-grow" target="_blank" rel="noopener">link</a></td></tr><tr><td><code>defra-ghg-2024</code></td><td>UK Government GHG Conversion Factors 2024</td><td>UK DESNZ / DEFRA</td><td><span class='pill q-A'>A</span></td><td>2026-04-13</td><td><a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2024" target="_blank" rel="noopener">link</a></td></tr><tr><td><code>defra-waste-2024</code></td><td>UK DEFRA GHG Conversion Factors 2024 — waste treatment section</td><td>UK DESNZ / DEFRA</td><td><span class='pill q-A'>A</span></td><td>2026-04-13</td><td><a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2024" target="_blank" rel="noopener">link</a></td></tr><tr><td><code>gemini-paper-2025-08</code></td><td>Google Gemini efficiency paper (August 2025)</td><td>Google Research</td><td><span class='pill q-A'>A</span></td><td>2026-04-11</td><td><a href="https://arxiv.org/abs/2508.15734" target="_blank" rel="noopener">link</a></td></tr><tr><td><code>poore-nemecek-2018</code></td><td>Poore &amp; Nemecek (2018) Science meta-analysis of food emissions</td><td>Science (journal)</td><td><span class='pill q-A'>A</span></td><td>2026-04-13</td><td><a href="https://www.science.org/doi/10.1126/science.aaq0216" target="_blank" rel="noopener">link</a></td></tr><tr><td><code>seeg-brasil-2025</code></td><td>SEEG Brasil electricity grid intensity 2024</td><td>SEEG Observatório do Clima</td><td><span class='pill q-A'>A</span></td><td>2026-04-13</td><td><a href="https://seeg.eco.br/" target="_blank" rel="noopener">link</a></td></tr><tr><td><code>anthropic-pricing-2026-04</code></td><td>Anthropic public pricing page (cache-read ratio)</td><td>Anthropic</td><td><span class='pill q-B'>B</span></td><td>2026-04-11</td><td><a href="https://www.anthropic.com/pricing" target="_blank" rel="noopener">link</a></td></tr><tr><td><code>apple-ipad-env-2023</code></td><td>Apple iPad Product Environmental Report (2023 generation)</td><td>Apple Inc.</td><td><span class='pill q-B'>B</span></td><td>2026-04-13</td><td><a href="https://www.apple.com/environment/" target="_blank" rel="noopener">link</a></td></tr><tr><td><code>seeg-brasil-residual-note</code></td><td>SEEG Brasil — note on absence of BR residual-mix mechanism</td><td>SEEG Observatório do Clima</td><td><span class='pill q-B'>B</span></td><td>2026-04-13</td><td><a href="https://seeg.eco.br/" target="_blank" rel="noopener">link</a></td></tr><tr><td><code>vewin-nl-water-supply-2024</code></td><td>Vewin — Dutch drinking-water supply carbon intensity</td><td>Vewin (Dutch water utilities association)</td><td><span class='pill q-B'>B</span></td><td>2026-04-13</td><td><a href="https://www.vewin.nl/" target="_blank" rel="noopener">link</a></td></tr><tr><td><code>aws-region-grid-2026</code></td><td>AWS region grid carbon intensity (blended estimate)</td><td>Electricity Maps (aggregated; free tier data)</td><td><span class='pill q-C'>C</span></td><td>2026-04-11</td><td><a href="https://www.electricitymaps.com/" target="_blank" rel="noopener">link</a></td></tr><tr><td><code>samsung-monitor-lca-2023</code></td><td>Samsung Electronics monitor sustainability datasheet</td><td>Samsung Electronics</td><td><span class='pill q-C'>C</span></td><td>2026-04-13</td><td><a href="https://www.samsung.com/global/sustainability/" target="_blank" rel="noopener">link</a></td></tr><tr><td><code>br-water-utility-judgment</code></td><td>Regen Studio judgment — São Paulo municipal water supply</td><td>Regen Studio BV</td><td><span class='pill q-D'>D</span></td><td>2026-04-13</td><td></td></tr><tr><td><code>claude-opus-judgment</code></td><td>Regen Studio internal judgment — Claude Opus vs Gemini median</td><td>Regen Studio BV</td><td><span class='pill q-D'>D</span></td><td>2026-04-11</td><td></td></tr><tr><td><code>custom-book-printed-paperback</code></td><td>Regen Studio judgment from publishing-industry LCAs</td><td>Regen Studio BV</td><td><span class='pill q-D'>D</span></td><td>2026-04-13</td><td></td></tr><tr><td><code>custom-chatgpt-personal-annual</code></td><td>Regen Studio judgment from public per-prompt energy bounds</td><td>Regen Studio BV</td><td><span class='pill q-D'>D</span></td><td>2026-04-13</td><td><a href="https://arxiv.org/abs/2508.15734" target="_blank" rel="noopener">link</a></td></tr><tr><td><code>custom-photobook-printed</code></td><td>Regen Studio judgment for photobook printing</td><td>Regen Studio BV</td><td><span class='pill q-D'>D</span></td><td>2026-04-13</td><td></td></tr><tr><td><code>rs-saas-default-judgment</code></td><td>Regen Studio generic SaaS subscription default</td><td>Regen Studio BV</td><td><span class='pill q-D'>D</span></td><td>2026-04-13</td><td></td></tr></tbody></table><h2>Calculation runs (last 20) <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Calculation runs</strong><p>Every time the tool computed a range and wrote a row — with its factor-set hash.</p><p class="tech"><strong>Why we ask:</strong> Reproducibility: cite the hash, hand over the factor set, re-run, get the same number.</p><p class="where"><strong>Where to find it:</strong> calculation_runs table.</p><p class="example"><strong>Example:</strong> 2026-04-13 17:23 UTC · hash 8049…·dashboard-0.1.0</p></div></details></h2><table><thead><tr><th>Started</th><th>Factors hash</th><th>Tool</th><th>Params</th><th>Notes</th></tr></thead><tbody><tr><td>2026-04-13T23:13:42Z</td><td><code>f75e58caa21d…</code></td><td><code>dashboard-0.1.0</code></td><td>{&quot;source&quot;:&quot;dashboard&quot;,&quot;org_slug&quot;:&quot;regen-studio-bv&quot;,&quot;scope&quot;:&quot;3.1-saas-subs&quot;,&quot;fact</td><td>dashboard submit: Wix website hosting (annual)</td></tr><tr><td>2026-04-13T23:13:42Z</td><td><code>53f59fa05d56…</code></td><td><code>dashboard-0.1.0</code></td><td>{&quot;source&quot;:&quot;dashboard&quot;,&quot;org_slug&quot;:&quot;regen-studio-bv&quot;,&quot;scope&quot;:&quot;3.2&quot;,&quot;factor&quot;:&quot;monit</td><td>dashboard submit: Samsung 32&quot; monitor — purchased 2025, full</td></tr><tr><td>2026-04-13T23:13:42Z</td><td><code>2ced7a305487…</code></td><td><code>dashboard-0.1.0</code></td><td>{&quot;source&quot;:&quot;dashboard&quot;,&quot;org_slug&quot;:&quot;regen-studio-bv&quot;,&quot;scope&quot;:&quot;2-market&quot;,&quot;factor&quot;:&quot;</td><td>dashboard submit: São Paulo home office 3 m² — annual electr</td></tr><tr><td>2026-04-13T23:13:42Z</td><td><code>d523336df017…</code></td><td><code>dashboard-0.1.0</code></td><td>{&quot;source&quot;:&quot;dashboard&quot;,&quot;org_slug&quot;:&quot;regen-studio-bv&quot;,&quot;scope&quot;:&quot;2-location&quot;,&quot;factor&quot;</td><td>dashboard submit: São Paulo home office 3 m² — annual electr</td></tr><tr><td>2026-04-13T23:13:42Z</td><td><code>9d9112bdc065…</code></td><td><code>dashboard-0.1.0</code></td><td>{&quot;source&quot;:&quot;dashboard&quot;,&quot;org_slug&quot;:&quot;regen-studio-bv&quot;,&quot;scope&quot;:&quot;3.6&quot;,&quot;factor&quot;:&quot;uber-</td><td>dashboard submit: Uber rides in São Paulo (~200 km, ethanol-</td></tr><tr><td>2026-04-13T23:13:42Z</td><td><code>d3ae790e42c5…</code></td><td><code>dashboard-0.1.0</code></td><td>{&quot;source&quot;:&quot;dashboard&quot;,&quot;org_slug&quot;:&quot;regen-studio-bv&quot;,&quot;scope&quot;:&quot;3.6&quot;,&quot;factor&quot;:&quot;train</td><td>dashboard submit: NL intercity train travel, ~500 pkm (annua</td></tr><tr><td>2026-04-13T23:13:42Z</td><td><code>f7635d82723e…</code></td><td><code>dashboard-0.1.0</code></td><td>{&quot;source&quot;:&quot;dashboard&quot;,&quot;org_slug&quot;:&quot;regen-studio-bv&quot;,&quot;scope&quot;:&quot;3.6&quot;,&quot;factor&quot;:&quot;car-p</td><td>dashboard submit: Personal car Nijmegen ↔ Köln round trip, b</td></tr><tr><td>2026-04-13T23:13:42Z</td><td><code>4defada53f42…</code></td><td><code>dashboard-0.1.0</code></td><td>{&quot;source&quot;:&quot;dashboard&quot;,&quot;org_slug&quot;:&quot;regen-studio-bv&quot;,&quot;scope&quot;:&quot;3.2&quot;,&quot;factor&quot;:&quot;ipad-</td><td>dashboard submit: iPad — purchased 2025, full embodied emiss</td></tr><tr><td>2026-04-13T23:13:42Z</td><td><code>d94c83c104c8…</code></td><td><code>dashboard-0.1.0</code></td><td>{&quot;source&quot;:&quot;dashboard&quot;,&quot;org_slug&quot;:&quot;regen-studio-bv&quot;,&quot;scope&quot;:&quot;3.1-ai-inference&quot;,&quot;f</td><td>dashboard submit: ChatGPT subscription (~10 prompts/day, ful</td></tr><tr><td>2026-04-13T23:13:42Z</td><td><code>77be1d0315a4…</code></td><td><code>dashboard-0.1.0</code></td><td>{&quot;source&quot;:&quot;dashboard&quot;,&quot;org_slug&quot;:&quot;regen-studio-bv&quot;,&quot;scope&quot;:&quot;3.1-saas-subs&quot;,&quot;fact</td><td>dashboard submit: Microsoft 365 subscription (annual)</td></tr><tr><td>2026-04-13T23:13:42Z</td><td><code>77be1d0315a4…</code></td><td><code>dashboard-0.1.0</code></td><td>{&quot;source&quot;:&quot;dashboard&quot;,&quot;org_slug&quot;:&quot;regen-studio-bv&quot;,&quot;scope&quot;:&quot;3.1-saas-subs&quot;,&quot;fact</td><td>dashboard submit: Monday.com subscription (annual)</td></tr><tr><td>2026-04-13T23:13:42Z</td><td><code>77be1d0315a4…</code></td><td><code>dashboard-0.1.0</code></td><td>{&quot;source&quot;:&quot;dashboard&quot;,&quot;org_slug&quot;:&quot;regen-studio-bv&quot;,&quot;scope&quot;:&quot;3.1-saas-subs&quot;,&quot;fact</td><td>dashboard submit: Whereby video subscription (annual)</td></tr><tr><td>2026-04-13T23:13:42Z</td><td><code>f75e58caa21d…</code></td><td><code>dashboard-0.1.0</code></td><td>{&quot;source&quot;:&quot;dashboard&quot;,&quot;org_slug&quot;:&quot;regen-studio-bv&quot;,&quot;scope&quot;:&quot;3.1-saas-subs&quot;,&quot;fact</td><td>dashboard submit: Proton Mail + Drive subscription (annual)</td></tr><tr><td>2026-04-13T23:13:42Z</td><td><code>6a138d7d05c7…</code></td><td><code>dashboard-0.1.0</code></td><td>{&quot;source&quot;:&quot;dashboard&quot;,&quot;org_slug&quot;:&quot;regen-studio-bv&quot;,&quot;scope&quot;:&quot;3.1-saas-subs&quot;,&quot;fact</td><td>dashboard submit: Adobe Creative Cloud subscription (annual)</td></tr><tr><td>2026-04-13T23:13:42Z</td><td><code>ecacc4ae9854…</code></td><td><code>dashboard-0.1.0</code></td><td>{&quot;source&quot;:&quot;dashboard&quot;,&quot;org_slug&quot;:&quot;regen-studio-bv&quot;,&quot;scope&quot;:&quot;3.6&quot;,&quot;factor&quot;:&quot;fligh</td><td>dashboard submit: Flight GRU–AMS round trip #2 (KLM, economy</td></tr><tr><td>2026-04-13T23:13:42Z</td><td><code>5fb36ce7395c…</code></td><td><code>dashboard-0.1.0</code></td><td>{&quot;source&quot;:&quot;dashboard&quot;,&quot;org_slug&quot;:&quot;regen-studio-bv&quot;,&quot;scope&quot;:&quot;3.1-print&quot;,&quot;factor&quot;:</td><td>dashboard submit: Printed photobook, 60 pages (Pumbo via CM.</td></tr><tr><td>2026-04-13T23:13:42Z</td><td><code>20f89ef98b5f…</code></td><td><code>dashboard-0.1.0</code></td><td>{&quot;source&quot;:&quot;dashboard&quot;,&quot;org_slug&quot;:&quot;regen-studio-bv&quot;,&quot;scope&quot;:&quot;3.1-meals&quot;,&quot;factor&quot;:</td><td>dashboard submit: Apple pie slice (De Bruine Boon)</td></tr><tr><td>2026-04-13T23:13:42Z</td><td><code>3b4be7b41a28…</code></td><td><code>dashboard-0.1.0</code></td><td>{&quot;source&quot;:&quot;dashboard&quot;,&quot;org_slug&quot;:&quot;regen-studio-bv&quot;,&quot;scope&quot;:&quot;3.1-meals&quot;,&quot;factor&quot;:</td><td>dashboard submit: Coffee (De Bruine Boon)</td></tr><tr><td>2026-04-13T23:13:42Z</td><td><code>882a7241242b…</code></td><td><code>dashboard-0.1.0</code></td><td>{&quot;source&quot;:&quot;dashboard&quot;,&quot;org_slug&quot;:&quot;regen-studio-bv&quot;,&quot;scope&quot;:&quot;3.1-meals&quot;,&quot;factor&quot;:</td><td>dashboard submit: 2 hamburgers (Le Smash, Leiden)</td></tr><tr><td>2026-04-13T23:13:42Z</td><td><code>3b4be7b41a28…</code></td><td><code>dashboard-0.1.0</code></td><td>{&quot;source&quot;:&quot;dashboard&quot;,&quot;org_slug&quot;:&quot;regen-studio-bv&quot;,&quot;scope&quot;:&quot;3.1-meals&quot;,&quot;factor&quot;:</td><td>dashboard submit: Coffee (Deli Pies)</td></tr></tbody></table><h2>Emissions audit log (last 20) <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Emissions audit log</strong><p>Every create / restate / withdraw on an emission row.</p><p class="tech"><strong>Why we ask:</strong> ISSA 5000 assurance requires a full change history. This is it.</p><p class="where"><strong>Where to find it:</strong> emissions_audit_log table.</p><p class="example"><strong>Example:</strong> 2026-04-13 · withdrawn · &#x27;Dashboard delete&#x27; · old 44.2 kg · by dashboard.</p></div></details></h2><table><thead><tr><th>When</th><th>Change</th><th>Reason</th><th class="num">Old kg</th><th class="num">New kg</th><th>By</th></tr></thead><tbody><tr><td>2026-04-13 23:13:42</td><td>withdrawn</td><td>Dashboard delete</td><td class='num'>3.50</td><td class='num'>—</td><td>dashboard</td></tr><tr><td>2026-04-13 23:13:42</td><td>withdrawn</td><td>Dashboard delete</td><td class='num'>0.05</td><td class='num'>—</td><td>dashboard</td></tr><tr><td>2026-04-13 23:13:42</td><td>withdrawn</td><td>Dashboard delete</td><td class='num'>3.50</td><td class='num'>—</td><td>dashboard</td></tr><tr><td>2026-04-13 23:13:42</td><td>withdrawn</td><td>Dashboard delete</td><td class='num'>0.05</td><td class='num'>—</td><td>dashboard</td></tr><tr><td>2026-04-13 23:13:42</td><td>withdrawn</td><td>Dashboard delete</td><td class='num'>7.50</td><td class='num'>—</td><td>dashboard</td></tr><tr><td>2026-04-13 23:13:42</td><td>withdrawn</td><td>Dashboard delete</td><td class='num'>2.50</td><td class='num'>—</td><td>dashboard</td></tr><tr><td>2026-04-13 23:13:42</td><td>withdrawn</td><td>Dashboard delete</td><td class='num'>2.50</td><td class='num'>—</td><td>dashboard</td></tr><tr><td>2026-04-13 23:13:42</td><td>withdrawn</td><td>Dashboard delete</td><td class='num'>4.50</td><td class='num'>—</td><td>dashboard</td></tr><tr><td>2026-04-13 23:13:42</td><td>withdrawn</td><td>Dashboard delete</td><td class='num'>3831.80</td><td class='num'>—</td><td>dashboard</td></tr><tr><td>2026-04-13 23:13:42</td><td>withdrawn</td><td>Dashboard delete</td><td class='num'>30.00</td><td class='num'>—</td><td>dashboard</td></tr><tr><td>2026-04-13 23:13:42</td><td>withdrawn</td><td>Dashboard delete</td><td class='num'>1.20</td><td class='num'>—</td><td>dashboard</td></tr><tr><td>2026-04-13 23:13:42</td><td>withdrawn</td><td>Dashboard delete</td><td class='num'>0.05</td><td class='num'>—</td><td>dashboard</td></tr><tr><td>2026-04-13 23:13:42</td><td>withdrawn</td><td>Dashboard delete</td><td class='num'>3.50</td><td class='num'>—</td><td>dashboard</td></tr><tr><td>2026-04-13 23:13:42</td><td>withdrawn</td><td>Dashboard delete</td><td class='num'>2.50</td><td class='num'>—</td><td>dashboard</td></tr><tr><td>2026-04-13 23:13:42</td><td>withdrawn</td><td>Dashboard delete</td><td class='num'>0.05</td><td class='num'>—</td><td>dashboard</td></tr><tr><td>2026-04-13 23:13:42</td><td>withdrawn</td><td>Dashboard delete</td><td class='num'>10.00</td><td class='num'>—</td><td>dashboard</td></tr><tr><td>2026-04-13 23:13:42</td><td>withdrawn</td><td>Dashboard delete</td><td class='num'>0.05</td><td class='num'>—</td><td>dashboard</td></tr><tr><td>2026-04-13 23:13:42</td><td>withdrawn</td><td>Dashboard delete</td><td class='num'>0.40</td><td class='num'>—</td><td>dashboard</td></tr><tr><td>2026-04-13 23:13:42</td><td>withdrawn</td><td>Dashboard delete</td><td class='num'>5.00</td><td class='num'>—</td><td>dashboard</td></tr><tr><td>2026-04-13 23:13:42</td><td>withdrawn</td><td>Dashboard delete</td><td class='num'>3831.80</td><td class='num'>—</td><td>dashboard</td></tr></tbody></table>
+
+
+<div id="rcfm-demo-banner" style="
+    position:sticky;top:0;z-index:5000;
+    background:linear-gradient(90deg,#00914B 0%,#009BBB 100%);
+    color:white;padding:8px 18px;
+    font:13px/1.4 -apple-system,BlinkMacSystemFont,'Inter',sans-serif;
+    box-shadow:0 2px 6px rgba(0,0,0,0.12);
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+  <strong style="font-weight:700;letter-spacing:0.05em">DEMO · read-only</strong>
+  <span style="opacity:0.92">Browsing real Regen Studio BV 2025 data — entry forms are deactivated.</span>
+  <a href="#" onclick="return rcfmShowEngagement(event)"
+     style="margin-left:auto;color:white;text-decoration:underline;font-weight:600">
+     Want this for your business? →
+  </a>
+</div>
+
+<div id="rcfm-engagement-modal" style="
+    display:none;position:fixed;inset:0;z-index:6000;
+    background:rgba(8,30,18,0.62);backdrop-filter:blur(4px);
+    align-items:center;justify-content:center;padding:20px"
+    onclick="if(event.target===this) rcfmCloseEngagement()">
+  <div style="
+      max-width:480px;width:100%;background:white;border-radius:14px;
+      padding:28px 32px;box-shadow:0 25px 60px rgba(0,0,0,0.35);
+      font:15px/1.55 -apple-system,BlinkMacSystemFont,'Inter',sans-serif;
+      color:#0d3b20">
+    <h2 style="margin:0 0 10px;font-size:1.4rem;color:#00914B;font-weight:800">
+      This is a read-only demo
+    </h2>
+    <p style="margin:0 0 14px;color:#334155">
+      Want to track <strong>your own organisation's</strong> carbon footprint
+      with this tool — VSME-aligned, factor-audited, your data, your report?
+      We'd love to set you up.
+    </p>
+    <p style="margin:0 0 18px;color:#334155;font-size:0.92rem">
+      Reply with a short note about your business, your reporting year, and
+      whether you've started any inventory yet. We'll come back within a few
+      working days.
+    </p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a href="mailto:yvo@regenstudio.world?subject=Footprint%20Manager%20%E2%80%94%20deployment%20interest&body=Hi%20Yvo%2C%0A%0AI%20saw%20the%20Footprint%20Manager%20demo%20and%20I%27d%20like%20to%20explore%20deploying%20it%20for%3A%0A%0AOrganisation%3A%20%0AReporting%20year%3A%20%0AInventory%20status%3A%20"
+         onclick="rcfmTrackContact()"
+         style="flex:1;min-width:160px;text-align:center;
+                background:linear-gradient(135deg,#00914B 0%,#009BBB 100%);
+                color:white;padding:13px 22px;border-radius:50px;
+                text-decoration:none;font-weight:700;font-size:0.95rem;
+                box-shadow:0 8px 24px rgba(0,145,75,0.3)">
+        Email Yvo →
+      </a>
+      <button type="button" onclick="rcfmCloseEngagement()"
+              style="flex:1;min-width:160px;background:white;color:#475569;
+                     border:1px solid #cbd5e1;padding:13px 22px;
+                     border-radius:50px;font:inherit;font-weight:600;
+                     cursor:pointer">
+        Continue browsing demo
+      </button>
+    </div>
+    <p style="margin:16px 0 0;font-size:0.78rem;color:#94a3b8;
+              padding-top:12px;border-top:1px solid #e2e8f0">
+      Or write directly to <strong>yvo@regenstudio.world</strong> ·
+      Regen Studio BV · Netherlands
+    </p>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Selectors that should trigger the engagement modal instead of their
+  // default behaviour. Covers: every form submission, every visible
+  // submit-style button, every "add / create / register / save / delete /
+  // finalize" CTA. The intent is "anything that would write data → ask
+  // the user to reach out instead".
+  function rcfmIsWriteAction(el) {
+    if (!el) return false;
+    if (el.matches('form button[type=submit]')) return true;
+    if (el.matches('button[type=submit]')) return true;
+    if (el.matches('button.danger')) return true;            // withdraw etc.
+    var txt = (el.innerText || el.textContent || '').toLowerCase();
+    return /\b(add|create|save|delete|withdraw|finalize|register an activity|export|regenerate)\b/.test(txt);
+  }
+  document.addEventListener('submit', function(e){
+    e.preventDefault(); e.stopPropagation();
+    rcfmShowEngagement();
+  }, true);
+  document.addEventListener('click', function(e){
+    var t = e.target.closest('button, a');
+    if (!t) return;
+    // Don't intercept the modal's own close / mailto buttons
+    if (t.closest('#rcfm-engagement-modal')) return;
+    if (t.closest('#rcfm-demo-banner')) return;
+    if (t.tagName === 'A' && t.getAttribute('href') &&
+        !t.getAttribute('href').startsWith('#') &&
+        t.getAttribute('href').endsWith('.html')) return;   // nav links OK
+    if (rcfmIsWriteAction(t)) {
+      e.preventDefault(); e.stopPropagation();
+      rcfmShowEngagement();
+    }
+  }, true);
+
+  window.rcfmShowEngagement = function(e){
+    if (e) e.preventDefault();
+    document.getElementById('rcfm-engagement-modal').style.display = 'flex';
+    return false;
+  };
+  window.rcfmCloseEngagement = function(){
+    document.getElementById('rcfm-engagement-modal').style.display = 'none';
+  };
+  window.rcfmTrackContact = function(){
+    // Hook for analytics later; no-op for now
+  };
+  // ESC closes the modal
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') rcfmCloseEngagement();
+  });
+})();
+</script>
+
+</body></html>

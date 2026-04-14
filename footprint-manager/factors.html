@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<title>Regen CO₂ Footprint Manager — Factors</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font: 15px/1.55 -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+    max-width: 1100px; margin: 24px auto; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 1.6rem; margin-bottom: 4px; }
+  h2 { font-size: 1.1rem; margin-top: 1.8em; color: #006d38;
+       border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; }
+  .meta { color: #64748b; font-size: 0.88rem; margin-bottom: 20px; }
+  form.card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px;
+              padding: 18px 20px; margin: 16px 0; }
+  .row { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
+         gap: 10px 14px; margin-bottom: 10px; }
+  .row.wide { grid-template-columns: 1fr 1fr; }
+  .row.full { grid-template-columns: 1fr; }
+  label { display: block; font-size: 0.78rem; color: #64748b;
+          text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px; }
+  input, select, textarea {
+    width: 100%; padding: 7px 9px; font: inherit; color: inherit;
+    border: 1px solid #cbd5e1; border-radius: 6px; background: white;
+  }
+  textarea { min-height: 46px; resize: vertical; }
+  button {
+    background: #006d38; color: white; border: 0; padding: 9px 18px;
+    border-radius: 7px; font-weight: 600; font-size: 0.95rem; cursor: pointer;
+  }
+  button.secondary { background: #fff; color: #475569; border: 1px solid #cbd5e1; }
+  button.danger { background: #fff; color: #b91c1c; border: 1px solid #fecaca;
+                  padding: 3px 9px; font-size: 0.78rem; font-weight: 500; }
+  details summary {
+    cursor: pointer; padding: 8px 10px; background: #fef3c7;
+    border: 1px solid #fde68a; border-radius: 6px; font-size: 0.88rem;
+    color: #78350f; margin-top: 8px;
+  }
+  details[open] summary { margin-bottom: 10px; }
+  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+  .stat { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
+          padding: 12px 14px; }
+  .stat .label { font-size: 0.72rem; color: #64748b; text-transform: uppercase;
+                 letter-spacing: 0.05em; }
+  .stat .big { font-size: 1.4rem; font-weight: 700; color: #1a1a1a; }
+  .stat .range { font-size: 0.78rem; color: #64748b; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px;
+          font-size: 0.9rem; }
+  th, td { text-align: left; padding: 7px 9px;
+           border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  th { background: #f1f5f9; font-weight: 600; color: #334155;
+       font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.scope-total td { background: #f0fdf4; font-weight: 600; }
+  tr.grand td { background: #006d38; color: white; font-weight: 700; }
+  .flash { background: #dcfce7; color: #14532d; border: 1px solid #86efac;
+           padding: 10px 14px; border-radius: 7px; margin: 10px 0; }
+  .flash.err { background: #fee2e2; color: #7f1d1d; border-color: #fecaca; }
+  .pill { display: inline-block; padding: 1px 7px; font-size: 0.72rem;
+          border-radius: 999px; background: #e2e8f0; color: #475569; }
+  .pill.q-A { background: #bbf7d0; color: #14532d; }
+  .pill.q-B { background: #e9d5ff; color: #581c87; }
+  .pill.q-C { background: #fde68a; color: #78350f; }
+  .pill.q-D { background: #fecaca; color: #7f1d1d; }
+  nav.view-select { display: flex; gap: 8px; align-items: center; margin: 10px 0 20px; }
+  nav.view-select form { display: inline; }
+  nav.view-select select, nav.view-select button {
+    padding: 6px 10px; font-size: 0.9rem;
+  }
+  /* Top navigation header */
+  header.app {
+    background: white; border: 1px solid #e2e8f0; border-radius: 10px;
+    padding: 14px 20px; margin: 0 0 18px;
+    box-shadow: 0 1px 3px rgba(36,54,68,0.04);
+  }
+  header.app .title-row {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; flex-wrap: wrap; margin-bottom: 10px;
+  }
+  header.app h1 {
+    font-size: 1.05rem; margin: 0; color: #006d38;
+    letter-spacing: 0.01em; font-weight: 700;
+  }
+  header.app .entity-bar { display: flex; gap: 8px; align-items: center; }
+  header.app .entity-bar select { padding: 4px 8px; font-size: 0.85rem; }
+  header.app .status {
+    font-size: 0.78rem; color: #64748b;
+    display: flex; gap: 10px; align-items: center;
+  }
+  header.app .status .badge {
+    padding: 2px 8px; border-radius: 999px; font-weight: 600;
+    font-size: 0.72rem; background: #e2e8f0; color: #475569;
+  }
+  header.app .status .badge.open { background: #fef3c7; color: #78350f; }
+  header.app .status .badge.finalized { background: #dcfce7; color: #14532d; }
+  nav.app {
+    display: flex; gap: 0; border-bottom: 1px solid #e2e8f0;
+    margin-top: 10px;
+  }
+  nav.app a {
+    padding: 8px 14px; text-decoration: none; color: #475569;
+    font-size: 0.92rem; border-bottom: 2px solid transparent;
+    margin-bottom: -1px; transition: color 0.12s;
+  }
+  nav.app a:hover { color: #006d38; }
+  nav.app a.active {
+    color: #006d38; font-weight: 600; border-bottom-color: #006d38;
+  }
+  /* Next-actions list */
+  ul.actions { list-style: none; padding: 0; margin: 8px 0; }
+  ul.actions li {
+    padding: 8px 12px; margin-bottom: 6px; border-radius: 7px;
+    background: #fef3c7; border: 1px solid #fde68a;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 10px;
+  }
+  ul.actions li.low { background: #f1f5f9; border-color: #e2e8f0; }
+  ul.actions li a {
+    color: #006d38; font-weight: 600; text-decoration: none;
+    font-size: 0.88rem; white-space: nowrap;
+  }
+  /* Filter bar */
+  .filter-bar {
+    display: flex; gap: 10px; flex-wrap: wrap; align-items: end;
+    margin: 10px 0 14px; padding: 10px 12px;
+    background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 7px;
+  }
+  .filter-bar label { min-width: 0; }
+  .filter-bar select, .filter-bar input { padding: 4px 8px; font-size: 0.88rem; }
+  /* Section TOC */
+  .toc {
+    display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 20px;
+    font-size: 0.82rem;
+  }
+  .toc a {
+    padding: 3px 8px; background: #f1f5f9; color: #475569;
+    border-radius: 5px; text-decoration: none;
+  }
+  .toc a:hover { background: #006d38; color: white; }
+  /* Rendered markdown */
+  .md h1 { font-size: 1.3rem; color: #006d38; margin-top: 1em; }
+  .md h2 { font-size: 1.1rem; color: #006d38; margin-top: 1.4em; }
+  .md h3 { font-size: 0.98rem; color: #334155; margin-top: 1em; }
+  .md hr { border: none; border-top: 1px solid #e2e8f0; margin: 1.5em 0; }
+  .md ul { padding-left: 22px; }
+  .md code { background: #f1f5f9; padding: 1px 5px; border-radius: 3px;
+             font-size: 0.88em; font-family: ui-monospace, monospace; }
+  .md p { line-height: 1.55; }
+  /* Info tooltip (ⓘ popover) — zero-JS, stdlib-only, <details>-based */
+  details.help { display: inline-block; position: relative; vertical-align: baseline;
+                 margin-left: 4px; }
+  details.help > summary {
+    cursor: help; list-style: none;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 15px; height: 15px; border-radius: 50%;
+    background: #006d38; color: white;
+    font-size: 0.68rem; font-weight: 700; font-style: normal;
+    font-family: -apple-system, sans-serif;
+    transition: background 0.12s, transform 0.12s;
+    user-select: none;
+  }
+  details.help > summary::-webkit-details-marker { display: none; }
+  details.help > summary::before { content: "i"; }
+  details.help > summary:hover { background: #15803d; transform: scale(1.1); }
+  details.help[open] > summary { background: #14532d; }
+  details.help .help-card {
+    position: absolute; top: 22px; left: 0;
+    min-width: 300px; max-width: 380px;
+    background: white; border: 1px solid #e2e8f0; border-radius: 8px;
+    padding: 12px 14px; box-shadow: 0 6px 18px rgba(36,54,68,0.14);
+    font-size: 0.86rem; line-height: 1.5; z-index: 100;
+    text-transform: none; letter-spacing: normal; color: #1a1a1a;
+    font-weight: normal;
+  }
+  details.help .help-card strong.title { color: #006d38; font-size: 0.95rem;
+                                           display: block; margin-bottom: 6px; }
+  details.help .help-card p { margin: 0 0 6px; }
+  details.help .help-card p:last-child { margin-bottom: 0; }
+  details.help .help-card .tech { color: #64748b; font-size: 0.8rem;
+                                    border-left: 2px solid #e2e8f0;
+                                    padding-left: 8px; }
+  details.help .help-card .where { font-size: 0.82rem; color: #334155; }
+  details.help .help-card .example {
+    font-size: 0.82rem; background: #f0fdf4; padding: 7px 9px;
+    border-radius: 5px; color: #14532d;
+    border-left: 3px solid #006d38;
+  }
+  details.help .help-card .more a {
+    font-size: 0.8rem; color: #006d38; font-weight: 600; text-decoration: none;
+  }
+  /* Wizard stepper */
+  .stepper { display: flex; gap: 0; margin: 18px 0 24px;
+             border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+  .stepper .step { flex: 1; padding: 10px 14px; text-align: center;
+                   font-size: 0.82rem; color: #64748b; position: relative;
+                   text-decoration: none; background: #f8fafc;
+                   border-right: 1px solid #e2e8f0; }
+  .stepper .step:last-child { border-right: none; }
+  .stepper .step.active { background: #006d38; color: white; font-weight: 600; }
+  .stepper .step.done { background: #dcfce7; color: #14532d; }
+  .stepper .step .num {
+    display: inline-block; width: 20px; height: 20px; border-radius: 50%;
+    background: rgba(0,0,0,0.08); line-height: 20px; margin-right: 6px;
+    font-weight: 700; font-size: 0.78rem;
+  }
+  .stepper .step.active .num { background: rgba(255,255,255,0.2); }
+  /* Glossary */
+  .glossary-term {
+    padding: 12px 14px; margin-bottom: 8px;
+    border-left: 3px solid #006d38; background: #f8fafc;
+    border-radius: 0 7px 7px 0;
+  }
+  .glossary-term h3 { margin: 0 0 6px; font-size: 0.98rem; color: #006d38; }
+  .glossary-term p { margin: 0 0 4px; font-size: 0.92rem; line-height: 1.5; }
+</style>
+</head><body>
+
+<header class="app">
+  <div class="title-row">
+    <h1>Regen CO₂ Footprint Manager</h1>
+    <form class="entity-bar" method="GET" action="/factors">
+      <label style="display:inline;text-transform:none;font-size:0.82rem;color:#334155;">Entity</label>
+      <select name="org"><option value="circulartech-advisory">CircularTech Advisory</option><option value="dft-brazil-consulting">Dutch Flow Technology — Brazil sales representation</option><option value="regen-studio-bv" selected>Regen Studio BV</option><option value="yvo-personal">Yvo (personal, non-business)</option><option value="proj-circulartech">  └ CircularTech Advisory (project)</option><option value="proj-dft-brazil">  └ Dutch Flow Technology Brazil (project)</option><option value="proj-ai-operations">  └ AI-Operations (cross-project coordination)</option><option value="proj-avisonar">  └ AviSonar</option><option value="proj-bird-detective">  └ BirdDetective</option><option value="proj-claude-partner-network">  └ Claude Partner Network</option><option value="proj-cpr-dpp-tracker">  └ CPR DPP Tracker</option><option value="proj-cultural-connections">  └ Cultural Connections 2026</option><option value="proj-design-lab">  └ Design Lab</option><option value="proj-funding-pipeline">  └ Funding Pipeline</option><option value="proj-kingsday-design">  └ Kingsday Design (Design Lab print pipeline)</option><option value="proj-open-integrity-demo">  └ Open Integrity Demo</option><option value="proj-openremote-pentest">  └ OpenRemote Pentest</option><option value="proj-regen-footprint">  └ Regen CO₂ Footprint Manager</option><option value="proj-regen-studio-website">  └ Regen Studio Website</option><option value="proj-regenstudio-demos">  └ Regen Studio Demos</option><option value="proj-trupass">  └ TruPASS</option><option value="proj-unattributed">  └ Unattributed (cwd did not match any rule)</option><option value="proj-yogai">  └ YogAI</option><option value="proj-book-of-love">  └ Book of Love</option><option value="proj-emigration">  └ Emigration NL→BR</option><option value="proj-money-manager">  └ Money Manager</option><option value="proj-rokor">  └ ROKOR</option><option value="proj-work-manager">  └ Work Manager</option></select>
+      <label style="display:inline;text-transform:none;font-size:0.82rem;color:#334155;">Year</label>
+      <select name="year"><option value="2027">2027</option><option value="2026">2026</option><option value="2025" selected>2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option></select>
+      <button class="secondary">apply</button>
+      <a href="../index.html" onclick="try{localStorage.removeItem('rcfm.remember');}catch(_){}"
+         style="margin-left:10px;font-size:0.82rem;color:#64748b;text-decoration:none;"
+         title="Back to company picker">↺ Switch entity</a>
+    </form>
+  </div>
+  <div class="status">
+    <span>Period:</span>
+    <span class="badge open">open</span>
+    <span>·</span>
+    <span>VSME coverage 9/9 Basic categories</span>
+  </div>
+  <nav class="app"><a href="index.html">🏠 Home</a><a href="register.html">📥 Register</a><a href="disclosures.html">📊 Disclosures</a><a href="factors.html" class="active">📚 Factors</a><a href="report.html">📄 Report</a><a href="methodology.html">📘 Methodology</a><a href="guide.html">🧭 Guide</a><a href="glossary.html">📖 Glossary</a></nav>
+</header>
+
+
+
+
+<h2>Factor library <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Emission factor</strong><p>The number that converts your activity data into kg CO₂e. Each factor has a value, a range, a unit, and a source.</p><p class="tech"><strong>Why we ask:</strong> Factor quality is the single biggest driver of your number&#x27;s credibility. A-rated factors (peer-reviewed / government) are preferred; D-rated (judgment) are flagged for upgrade.</p><p class="where"><strong>Where to find it:</strong> The library under Factors — filter by unit, quality, or geography.</p><p class="example"><strong>Example:</strong> `flight-longhaul-economy-rfi` — DEFRA 2024, 0.196 kg CO₂e/pkm [A].</p><p class="more"><a href="glossary.html">Learn more →</a></p></div></details></h2>
+<p class="meta" style="margin-top:0">31 factors · 19 sources · every factor has a quality rating (A = peer-reviewed → D = judgment). Hover any column header for what it means.</p>
+<form class="filter-bar" method="GET" action="/factors">
+  <input type="hidden" name="org" value="regen-studio-bv">
+  <input type="hidden" name="year" value="2025">
+  <div><label>Unit</label><select name="unit"><option value="">all units</option><option value="cup">cup</option><option value="km">km</option><option value="kwh">kwh</option><option value="m3">m3</option><option value="meal">meal</option><option value="pkm">pkm</option><option value="subscription-year">subscription-year</option><option value="tonne">tonne</option><option value="unit">unit</option><option value="unit-year">unit-year</option></select></div>
+  <div><label>Quality</label><select name="quality"><option value="">all qualities</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select></div>
+  <div><label>Geo scope</label><select name="geo"><option value="">all geos</option><option value="" selected>(none)</option><option value="BR">BR</option><option value="EU">EU</option><option value="NL">NL</option><option value="global">global</option></select></div>
+  <div><label>Search</label>
+    <input type="text" name="q" value="" placeholder="slug / source / publisher">
+  </div>
+  <button class="secondary">filter</button>
+</form>
+<table><thead><tr><th>Slug <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Factor slug</strong><p>Stable identifier for the emission factor across versions.</p><p class="tech"><strong>Why we ask:</strong> Reports cite the slug, so slugs are treated as permanent.</p><p class="where"><strong>Where to find it:</strong> Visible in every row that uses the factor.</p><p class="example"><strong>Example:</strong> `flight-longhaul-economy-rfi`</p></div></details></th><th class="num">Value <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Mean value</strong><p>The central estimate — the number we multiply by your quantity.</p><p class="tech"><strong>Why we ask:</strong> This is what populates the &#x27;central&#x27; column in every report row.</p><p class="where"><strong>Where to find it:</strong> The factor source (DEFRA, SEEG, Apple LCA, etc.).</p><p class="example"><strong>Example:</strong> 0.196 kgCO₂e per passenger-km.</p></div></details></th><th class="num">Range <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Low–high range</strong><p>The 5th and 95th percentile bounds around the mean.</p><p class="tech"><strong>Why we ask:</strong> Every emission number carries uncertainty. Showing a range is honesty.</p><p class="where"><strong>Where to find it:</strong> The factor&#x27;s source usually publishes bounds.</p><p class="example"><strong>Example:</strong> DEFRA long-haul economy with RFI: mean 0.196, range 0.18–0.215 kg/pkm.</p></div></details></th><th>Unit <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Applies-to unit</strong><p>The unit your quantity must be in when you use this factor.</p><p class="tech"><strong>Why we ask:</strong> The tool blocks you if you try to multiply passenger-km by a per-kWh factor. This is the safety check.</p><p class="where"><strong>Where to find it:</strong> Always visible in the factor row.</p><p class="example"><strong>Example:</strong> flight-longhaul-economy-rfi applies to `pkm` (passenger-kilometres).</p></div></details></th><th>Geo <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Geographic scope</strong><p>Where the factor is valid (country, region, global).</p><p class="tech"><strong>Why we ask:</strong> Grid factors are wildly regional — NL vs BR differ by 5×.</p><p class="where"><strong>Where to find it:</strong> The factor source.</p><p class="example"><strong>Example:</strong> br-grid-location applies to Brazil only.</p></div></details></th><th class="num">Year <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Valid-from year</strong><p>The earliest reporting year this factor version is meant for. Annual factors (grid, DEFRA) get a new row each year.</p><p class="tech"><strong>Why we ask:</strong> Past reports stay reproducible — their factors are frozen at the version valid in that year.</p><p class="where"><strong>Where to find it:</strong> The factor source&#x27;s release year.</p><p class="example"><strong>Example:</strong> DEFRA 2024 factors are valid_from_year=2024; they apply to 2024 and 2025 reports.</p></div></details></th><th>Quality <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Quality A — peer-reviewed or government</strong><p>The highest data-quality tier. Official government or peer-reviewed science.</p><p class="tech"><strong>Why we ask:</strong> A-rated factors are audit-ready. Prefer them wherever possible.</p><p class="where"><strong>Where to find it:</strong> DEFRA, IEA, CBS, IPCC, peer-reviewed literature.</p><p class="example"><strong>Example:</strong> DEFRA 2024 flight factors, CBS NL grid factors.</p></div></details></th><th class="num">Used <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Used count</strong><p>How many emission rows in this year reference this factor.</p><p class="tech"><strong>Why we ask:</strong> Tells you which factors drive most of your number — where the audit scrutiny will land.</p><p class="where"><strong>Where to find it:</strong> Auto-computed.</p><p class="example"><strong>Example:</strong> 2 uses = both GRU-AMS flights.</p></div></details></th><th>Source <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Factor source</strong><p>The publisher of the factor. Always cited with URL when available.</p><p class="tech"><strong>Why we ask:</strong> Your report&#x27;s footnote trail. Readers need to verify.</p><p class="where"><strong>Where to find it:</strong> The Factors / sources subtable.</p><p class="example"><strong>Example:</strong> DEFRA 2024 Conversion Factors (UK DESNZ).</p></div></details></th></tr></thead><tbody><tr><td><code>book-printed-paperback</code></td><td class='num'>1.5 kgCO2e/book</td><td class='num'>0.5 – 2.5</td><td>unit</td><td>—</td><td class='num'>2024</td><td><span class='pill q-D'>D</span></td><td class='num'>1</td><td>Regen Studio judgment from publishing-industry LCAs</td></tr><tr><td><code>br-grid-location</code></td><td class='num'>0.08 kgCO2e/kWh</td><td class='num'>0.05 – 0.12</td><td>kwh</td><td>BR</td><td class='num'>2024</td><td><span class='pill q-A'>A</span></td><td class='num'>1</td><td><a href="https://seeg.eco.br/" target="_blank" rel="noopener">SEEG Brasil electricity grid intensity 2024</a></td></tr><tr><td><code>br-grid-market-residual</code></td><td class='num'>0.08 kgCO2e/kWh</td><td class='num'>0.05 – 0.12</td><td>kwh</td><td>BR</td><td class='num'>2024</td><td><span class='pill q-B'>B</span></td><td class='num'>1</td><td><a href="https://seeg.eco.br/" target="_blank" rel="noopener">SEEG Brasil — note on absence of BR residual-mix mechanism</a></td></tr><tr><td><code>car-petrol-passenger-km</code></td><td class='num'>0.17 kgCO2e/km</td><td class='num'>0.15 – 0.2</td><td>km</td><td>EU</td><td class='num'>2024</td><td><span class='pill q-A'>A</span></td><td class='num'>1</td><td><a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2024" target="_blank" rel="noopener">UK Government GHG Conversion Factors 2024</a></td></tr><tr><td><code>chatgpt-personal-annual</code></td><td class='num'>5.0 kgCO2e/subscription-year</td><td class='num'>2.0 – 15.0</td><td>subscription-year</td><td>—</td><td class='num'>2024</td><td><span class='pill q-D'>D</span></td><td class='num'>1</td><td><a href="https://arxiv.org/abs/2508.15734" target="_blank" rel="noopener">Regen Studio judgment from public per-prompt energy bounds</a></td></tr><tr><td><code>coffee-or-tea</code></td><td class='num'>0.05 kgCO2e/cup</td><td class='num'>0.03 – 0.1</td><td>cup</td><td>—</td><td class='num'>2024</td><td><span class='pill q-A'>A</span></td><td class='num'>5</td><td><a href="https://www.science.org/doi/10.1126/science.aaq0216" target="_blank" rel="noopener">Poore &amp; Nemecek (2018) Science meta-analysis of food emissions</a></td></tr><tr><td><code>dessert-small</code></td><td class='num'>0.4 kgCO2e/portion</td><td class='num'>0.2 – 0.8</td><td>meal</td><td>—</td><td class='num'>2024</td><td><span class='pill q-A'>A</span></td><td class='num'>1</td><td><a href="https://www.science.org/doi/10.1126/science.aaq0216" target="_blank" rel="noopener">Poore &amp; Nemecek (2018) Science meta-analysis of food emissions</a></td></tr><tr><td><code>flight-longhaul-economy-norfi</code></td><td class='num'>0.15 kgCO2e/pkm</td><td class='num'>0.14 – 0.165</td><td>pkm</td><td>global</td><td class='num'>2024</td><td><span class='pill q-A'>A</span></td><td class='num'>0</td><td><a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2024" target="_blank" rel="noopener">UK Government GHG Conversion Factors 2024</a></td></tr><tr><td><code>flight-longhaul-economy-rfi</code></td><td class='num'>0.196 kgCO2e/pkm</td><td class='num'>0.18 – 0.215</td><td>pkm</td><td>global</td><td class='num'>2024</td><td><span class='pill q-A'>A</span></td><td class='num'>2</td><td><a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2024" target="_blank" rel="noopener">UK Government GHG Conversion Factors 2024</a></td></tr><tr><td><code>ipad-amortized-annual</code></td><td class='num'>30.0 kgCO2e/unit-year</td><td class='num'>25.0 – 40.0</td><td>unit-year</td><td>—</td><td class='num'>2024</td><td><span class='pill q-B'>B</span></td><td class='num'>0</td><td><a href="https://www.apple.com/environment/" target="_blank" rel="noopener">Apple iPad Product Environmental Report (2023 generation)</a></td></tr><tr><td><code>ipad-full-embodied</code></td><td class='num'>150.0 kgCO2e/unit</td><td class='num'>120.0 – 180.0</td><td>unit</td><td>—</td><td class='num'>2024</td><td><span class='pill q-B'>B</span></td><td class='num'>1</td><td><a href="https://www.apple.com/environment/" target="_blank" rel="noopener">Apple iPad Product Environmental Report (2023 generation)</a></td></tr><tr><td><code>isp-residential-annual</code></td><td class='num'>30.0 kgCO2e/subscription-year</td><td class='num'>15.0 – 60.0</td><td>subscription-year</td><td>—</td><td class='num'>2024</td><td><span class='pill q-D'>D</span></td><td class='num'>1</td><td>Regen Studio generic SaaS subscription default</td></tr><tr><td><code>meal-beef</code></td><td class='num'>5.0 kgCO2e/meal</td><td class='num'>3.0 – 7.0</td><td>meal</td><td>—</td><td class='num'>2024</td><td><span class='pill q-A'>A</span></td><td class='num'>1</td><td><a href="https://www.science.org/doi/10.1126/science.aaq0216" target="_blank" rel="noopener">Poore &amp; Nemecek (2018) Science meta-analysis of food emissions</a></td></tr><tr><td><code>meal-chicken</code></td><td class='num'>2.5 kgCO2e/meal</td><td class='num'>1.5 – 4.0</td><td>meal</td><td>—</td><td class='num'>2024</td><td><span class='pill q-A'>A</span></td><td class='num'>4</td><td><a href="https://www.science.org/doi/10.1126/science.aaq0216" target="_blank" rel="noopener">Poore &amp; Nemecek (2018) Science meta-analysis of food emissions</a></td></tr><tr><td><code>meal-pork</code></td><td class='num'>3.5 kgCO2e/meal</td><td class='num'>2.0 – 5.0</td><td>meal</td><td>—</td><td class='num'>2024</td><td><span class='pill q-A'>A</span></td><td class='num'>3</td><td><a href="https://www.science.org/doi/10.1126/science.aaq0216" target="_blank" rel="noopener">Poore &amp; Nemecek (2018) Science meta-analysis of food emissions</a></td></tr><tr><td><code>meal-vegetarian</code></td><td class='num'>1.2 kgCO2e/meal</td><td class='num'>0.8 – 2.0</td><td>meal</td><td>—</td><td class='num'>2024</td><td><span class='pill q-A'>A</span></td><td class='num'>1</td><td><a href="https://www.science.org/doi/10.1126/science.aaq0216" target="_blank" rel="noopener">Poore &amp; Nemecek (2018) Science meta-analysis of food emissions</a></td></tr><tr><td><code>monitor-32in-amortized-annual</code></td><td class='num'>70.0 kgCO2e/unit-year</td><td class='num'>55.0 – 90.0</td><td>unit-year</td><td>—</td><td class='num'>2024</td><td><span class='pill q-C'>C</span></td><td class='num'>0</td><td><a href="https://www.samsung.com/global/sustainability/" target="_blank" rel="noopener">Samsung Electronics monitor sustainability datasheet</a></td></tr><tr><td><code>monitor-32in-full-embodied</code></td><td class='num'>500.0 kgCO2e/unit</td><td class='num'>400.0 – 600.0</td><td>unit</td><td>—</td><td class='num'>2024</td><td><span class='pill q-C'>C</span></td><td class='num'>1</td><td><a href="https://www.samsung.com/global/sustainability/" target="_blank" rel="noopener">Samsung Electronics monitor sustainability datasheet</a></td></tr><tr><td><code>municipal-water-supply-br</code></td><td class='num'>0.25 kgCO2e/m3</td><td class='num'>0.15 – 0.45</td><td>m3</td><td>BR</td><td class='num'>2024</td><td><span class='pill q-D'>D</span></td><td class='num'>0</td><td>Regen Studio judgment — São Paulo municipal water supply</td></tr><tr><td><code>municipal-water-supply-nl</code></td><td class='num'>0.3 kgCO2e/m3</td><td class='num'>0.2 – 0.45</td><td>m3</td><td>NL</td><td class='num'>2024</td><td><span class='pill q-B'>B</span></td><td class='num'>0</td><td><a href="https://www.vewin.nl/" target="_blank" rel="noopener">Vewin — Dutch drinking-water supply carbon intensity</a></td></tr><tr><td><code>nl-grid-location</code></td><td class='num'>0.4 kgCO2e/kWh</td><td class='num'>0.35 – 0.45</td><td>kwh</td><td>NL</td><td class='num'>2024</td><td><span class='pill q-A'>A</span></td><td class='num'>0</td><td><a href="https://www.cbs.nl/en-gb/news/2024/39/electricity-production-from-renewables-continues-to-grow" target="_blank" rel="noopener">CBS Netherlands grid carbon intensity 2024</a></td></tr><tr><td><code>nl-grid-market-residual</code></td><td class='num'>0.45 kgCO2e/kWh</td><td class='num'>0.4 – 0.5</td><td>kwh</td><td>NL</td><td class='num'>2024</td><td><span class='pill q-A'>A</span></td><td class='num'>0</td><td><a href="https://www.aib-net.org/facts/european-residual-mix" target="_blank" rel="noopener">AIB European Residual Mix 2024</a></td></tr><tr><td><code>photobook-printed</code></td><td class='num'>5.0 kgCO2e/photobook</td><td class='num'>3.0 – 10.0</td><td>unit</td><td>—</td><td class='num'>2024</td><td><span class='pill q-D'>D</span></td><td class='num'>1</td><td>Regen Studio judgment for photobook printing</td></tr><tr><td><code>saas-heavy-annual</code></td><td class='num'>60.0 kgCO2e/subscription-year</td><td class='num'>30.0 – 120.0</td><td>subscription-year</td><td>—</td><td class='num'>2024</td><td><span class='pill q-D'>D</span></td><td class='num'>1</td><td>Regen Studio generic SaaS subscription default</td></tr><tr><td><code>saas-light-annual</code></td><td class='num'>5.0 kgCO2e/subscription-year</td><td class='num'>2.0 – 15.0</td><td>subscription-year</td><td>—</td><td class='num'>2024</td><td><span class='pill q-D'>D</span></td><td class='num'>2</td><td>Regen Studio generic SaaS subscription default</td></tr><tr><td><code>saas-medium-annual</code></td><td class='num'>20.0 kgCO2e/subscription-year</td><td class='num'>10.0 – 40.0</td><td>subscription-year</td><td>—</td><td class='num'>2024</td><td><span class='pill q-D'>D</span></td><td class='num'>3</td><td>Regen Studio generic SaaS subscription default</td></tr><tr><td><code>saas-subscription-default-annual</code></td><td class='num'>25.0 kgCO2e/subscription-year</td><td class='num'>10.0 – 50.0</td><td>subscription-year</td><td>—</td><td class='num'>2024</td><td><span class='pill q-D'>D</span></td><td class='num'>0</td><td>Regen Studio generic SaaS subscription default</td></tr><tr><td><code>train-nl-pkm</code></td><td class='num'>0.006 kgCO2e/pkm</td><td class='num'>0.004 – 0.01</td><td>pkm</td><td>NL</td><td class='num'>2024</td><td><span class='pill q-A'>A</span></td><td class='num'>1</td><td><a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2024" target="_blank" rel="noopener">UK Government GHG Conversion Factors 2024</a></td></tr><tr><td><code>uber-br-ethanol-mix-km</code></td><td class='num'>0.13 kgCO2e/km</td><td class='num'>0.1 – 0.18</td><td>km</td><td>BR</td><td class='num'>2024</td><td><span class='pill q-A'>A</span></td><td class='num'>1</td><td><a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2024" target="_blank" rel="noopener">UK Government GHG Conversion Factors 2024</a></td></tr><tr><td><code>waste-mixed-landfill</code></td><td class='num'>458.0 kgCO2e/tonne</td><td class='num'>400.0 – 520.0</td><td>tonne</td><td>global</td><td class='num'>2024</td><td><span class='pill q-A'>A</span></td><td class='num'>0</td><td><a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2024" target="_blank" rel="noopener">UK DEFRA GHG Conversion Factors 2024 — waste treatment section</a></td></tr><tr><td><code>waste-recycling-mixed</code></td><td class='num'>21.0 kgCO2e/tonne</td><td class='num'>10.0 – 45.0</td><td>tonne</td><td>global</td><td class='num'>2024</td><td><span class='pill q-A'>A</span></td><td class='num'>0</td><td><a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2024" target="_blank" rel="noopener">UK DEFRA GHG Conversion Factors 2024 — waste treatment section</a></td></tr></tbody></table>
+<h2>Add a custom factor</h2>
+<form class="card" method="POST" action="/add-factor">
+  <input type="hidden" name="return_org" value="regen-studio-bv">
+  <input type="hidden" name="return_year" value="2025">
+  <input type="hidden" name="return_view" value="factors">
+  <div class="row">
+    <div><label>Factor slug</label><input name="factor_slug" required placeholder="e.g. ns-green-nl-pkm"></div>
+    <div><label>Applies-to unit</label>
+      <select name="applies_to_unit" required>
+        <option value="pkm">pkm</option><option value="km">km</option>
+        <option value="kwh">kwh</option><option value="m3">m3</option>
+        <option value="tonne">tonne</option><option value="meal">meal</option>
+        <option value="cup">cup</option><option value="unit-year">unit-year</option>
+        <option value="subscription-year">subscription-year</option>
+        <option value="unit">unit</option>
+      </select>
+    </div>
+    <div><label>Mean value</label><input type="number" step="any" name="value_mean" required></div>
+    <div><label>Value unit</label><input name="value_unit" required placeholder="kgCO2e/pkm"></div>
+  </div>
+  <div class="row">
+    <div><label>Low (5th %)</label><input type="number" step="any" name="value_low"></div>
+    <div><label>High (95th %)</label><input type="number" step="any" name="value_high"></div>
+    <div><label>Geo scope</label><input name="geographic_scope" placeholder="NL / BR / global"></div>
+    <div><label>Valid from year</label><input type="number" name="valid_from_year" value="2025" required></div>
+  </div>
+  <div class="row wide">
+    <div><label>Source name</label><input name="source_name" required placeholder="e.g. DEFRA 2024"></div>
+    <div><label>Source URL</label><input name="source_url" placeholder="https://…"></div>
+  </div>
+  <div class="row">
+    <div><label>Publisher</label><input name="publisher" placeholder="e.g. UK DESNZ"></div>
+    <div><label>Quality rating</label>
+      <select name="quality_rating">
+        <option value="A">A — peer-reviewed / govt</option>
+        <option value="B" selected>B — industry-published</option>
+        <option value="C">C — inferred</option>
+        <option value="D">D — judgment</option>
+      </select>
+    </div>
+    <div style="grid-column:span 2"><label>Notes</label><input name="notes"></div>
+  </div>
+  <button class="secondary">Save factor</button>
+</form>
+<h2>Factor sources <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Factor sources</strong><p>Every source (publisher, URL, quality) referenced by at least one factor in use.</p><p class="tech"><strong>Why we ask:</strong> Readers + auditors can verify every number via these sources.</p><p class="where"><strong>Where to find it:</strong> Deduped list built from factor_sources table.</p><p class="example"><strong>Example:</strong> DEFRA 2024, CBS 2024, SEEG Brasil, Apple Environmental Reports…</p></div></details></h2><table><thead><tr><th>Slug</th><th>Name</th><th>Publisher</th><th>Quality <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Quality A — peer-reviewed or government</strong><p>The highest data-quality tier. Official government or peer-reviewed science.</p><p class="tech"><strong>Why we ask:</strong> A-rated factors are audit-ready. Prefer them wherever possible.</p><p class="where"><strong>Where to find it:</strong> DEFRA, IEA, CBS, IPCC, peer-reviewed literature.</p><p class="example"><strong>Example:</strong> DEFRA 2024 flight factors, CBS NL grid factors.</p></div></details></th><th>Retrieved</th><th>URL</th></tr></thead><tbody><tr><td><code>aib-european-residual-mix-2024</code></td><td>AIB European Residual Mix 2024</td><td>Association of Issuing Bodies (AIB)</td><td><span class='pill q-A'>A</span></td><td>2026-04-13</td><td><a href="https://www.aib-net.org/facts/european-residual-mix" target="_blank" rel="noopener">https://www.aib-net.org/facts/european-residual-mix</a></td></tr><tr><td><code>cbs-nl-grid-2024</code></td><td>CBS Netherlands grid carbon intensity 2024</td><td>Centraal Bureau voor de Statistiek</td><td><span class='pill q-A'>A</span></td><td>2026-04-13</td><td><a href="https://www.cbs.nl/en-gb/news/2024/39/electricity-production-from-renewables-continues-to-grow" target="_blank" rel="noopener">https://www.cbs.nl/en-gb/news/2024/39/electricity-production-from-renewables-continues-to-grow</a></td></tr><tr><td><code>defra-ghg-2024</code></td><td>UK Government GHG Conversion Factors 2024</td><td>UK DESNZ / DEFRA</td><td><span class='pill q-A'>A</span></td><td>2026-04-13</td><td><a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2024" target="_blank" rel="noopener">https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2024</a></td></tr><tr><td><code>defra-waste-2024</code></td><td>UK DEFRA GHG Conversion Factors 2024 — waste treatment section</td><td>UK DESNZ / DEFRA</td><td><span class='pill q-A'>A</span></td><td>2026-04-13</td><td><a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2024" target="_blank" rel="noopener">https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2024</a></td></tr><tr><td><code>gemini-paper-2025-08</code></td><td>Google Gemini efficiency paper (August 2025)</td><td>Google Research</td><td><span class='pill q-A'>A</span></td><td>2026-04-11</td><td><a href="https://arxiv.org/abs/2508.15734" target="_blank" rel="noopener">https://arxiv.org/abs/2508.15734</a></td></tr><tr><td><code>poore-nemecek-2018</code></td><td>Poore &amp; Nemecek (2018) Science meta-analysis of food emissions</td><td>Science (journal)</td><td><span class='pill q-A'>A</span></td><td>2026-04-13</td><td><a href="https://www.science.org/doi/10.1126/science.aaq0216" target="_blank" rel="noopener">https://www.science.org/doi/10.1126/science.aaq0216</a></td></tr><tr><td><code>seeg-brasil-2025</code></td><td>SEEG Brasil electricity grid intensity 2024</td><td>SEEG Observatório do Clima</td><td><span class='pill q-A'>A</span></td><td>2026-04-13</td><td><a href="https://seeg.eco.br/" target="_blank" rel="noopener">https://seeg.eco.br/</a></td></tr><tr><td><code>anthropic-pricing-2026-04</code></td><td>Anthropic public pricing page (cache-read ratio)</td><td>Anthropic</td><td><span class='pill q-B'>B</span></td><td>2026-04-11</td><td><a href="https://www.anthropic.com/pricing" target="_blank" rel="noopener">https://www.anthropic.com/pricing</a></td></tr><tr><td><code>apple-ipad-env-2023</code></td><td>Apple iPad Product Environmental Report (2023 generation)</td><td>Apple Inc.</td><td><span class='pill q-B'>B</span></td><td>2026-04-13</td><td><a href="https://www.apple.com/environment/" target="_blank" rel="noopener">https://www.apple.com/environment/</a></td></tr><tr><td><code>seeg-brasil-residual-note</code></td><td>SEEG Brasil — note on absence of BR residual-mix mechanism</td><td>SEEG Observatório do Clima</td><td><span class='pill q-B'>B</span></td><td>2026-04-13</td><td><a href="https://seeg.eco.br/" target="_blank" rel="noopener">https://seeg.eco.br/</a></td></tr><tr><td><code>vewin-nl-water-supply-2024</code></td><td>Vewin — Dutch drinking-water supply carbon intensity</td><td>Vewin (Dutch water utilities association)</td><td><span class='pill q-B'>B</span></td><td>2026-04-13</td><td><a href="https://www.vewin.nl/" target="_blank" rel="noopener">https://www.vewin.nl/</a></td></tr><tr><td><code>aws-region-grid-2026</code></td><td>AWS region grid carbon intensity (blended estimate)</td><td>Electricity Maps (aggregated; free tier data)</td><td><span class='pill q-C'>C</span></td><td>2026-04-11</td><td><a href="https://www.electricitymaps.com/" target="_blank" rel="noopener">https://www.electricitymaps.com/</a></td></tr><tr><td><code>samsung-monitor-lca-2023</code></td><td>Samsung Electronics monitor sustainability datasheet</td><td>Samsung Electronics</td><td><span class='pill q-C'>C</span></td><td>2026-04-13</td><td><a href="https://www.samsung.com/global/sustainability/" target="_blank" rel="noopener">https://www.samsung.com/global/sustainability/</a></td></tr><tr><td><code>br-water-utility-judgment</code></td><td>Regen Studio judgment — São Paulo municipal water supply</td><td>Regen Studio BV</td><td><span class='pill q-D'>D</span></td><td>2026-04-13</td><td></td></tr><tr><td><code>claude-opus-judgment</code></td><td>Regen Studio internal judgment — Claude Opus vs Gemini median</td><td>Regen Studio BV</td><td><span class='pill q-D'>D</span></td><td>2026-04-11</td><td></td></tr><tr><td><code>custom-book-printed-paperback</code></td><td>Regen Studio judgment from publishing-industry LCAs</td><td>Regen Studio BV</td><td><span class='pill q-D'>D</span></td><td>2026-04-13</td><td></td></tr><tr><td><code>custom-chatgpt-personal-annual</code></td><td>Regen Studio judgment from public per-prompt energy bounds</td><td>Regen Studio BV</td><td><span class='pill q-D'>D</span></td><td>2026-04-13</td><td><a href="https://arxiv.org/abs/2508.15734" target="_blank" rel="noopener">https://arxiv.org/abs/2508.15734</a></td></tr><tr><td><code>custom-photobook-printed</code></td><td>Regen Studio judgment for photobook printing</td><td>Regen Studio BV</td><td><span class='pill q-D'>D</span></td><td>2026-04-13</td><td></td></tr><tr><td><code>rs-saas-default-judgment</code></td><td>Regen Studio generic SaaS subscription default</td><td>Regen Studio BV</td><td><span class='pill q-D'>D</span></td><td>2026-04-13</td><td></td></tr></tbody></table>
+
+
+<div id="rcfm-demo-banner" style="
+    position:sticky;top:0;z-index:5000;
+    background:linear-gradient(90deg,#00914B 0%,#009BBB 100%);
+    color:white;padding:8px 18px;
+    font:13px/1.4 -apple-system,BlinkMacSystemFont,'Inter',sans-serif;
+    box-shadow:0 2px 6px rgba(0,0,0,0.12);
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+  <strong style="font-weight:700;letter-spacing:0.05em">DEMO · read-only</strong>
+  <span style="opacity:0.92">Browsing real Regen Studio BV 2025 data — entry forms are deactivated.</span>
+  <a href="#" onclick="return rcfmShowEngagement(event)"
+     style="margin-left:auto;color:white;text-decoration:underline;font-weight:600">
+     Want this for your business? →
+  </a>
+</div>
+
+<div id="rcfm-engagement-modal" style="
+    display:none;position:fixed;inset:0;z-index:6000;
+    background:rgba(8,30,18,0.62);backdrop-filter:blur(4px);
+    align-items:center;justify-content:center;padding:20px"
+    onclick="if(event.target===this) rcfmCloseEngagement()">
+  <div style="
+      max-width:480px;width:100%;background:white;border-radius:14px;
+      padding:28px 32px;box-shadow:0 25px 60px rgba(0,0,0,0.35);
+      font:15px/1.55 -apple-system,BlinkMacSystemFont,'Inter',sans-serif;
+      color:#0d3b20">
+    <h2 style="margin:0 0 10px;font-size:1.4rem;color:#00914B;font-weight:800">
+      This is a read-only demo
+    </h2>
+    <p style="margin:0 0 14px;color:#334155">
+      Want to track <strong>your own organisation's</strong> carbon footprint
+      with this tool — VSME-aligned, factor-audited, your data, your report?
+      We'd love to set you up.
+    </p>
+    <p style="margin:0 0 18px;color:#334155;font-size:0.92rem">
+      Reply with a short note about your business, your reporting year, and
+      whether you've started any inventory yet. We'll come back within a few
+      working days.
+    </p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a href="mailto:yvo@regenstudio.world?subject=Footprint%20Manager%20%E2%80%94%20deployment%20interest&body=Hi%20Yvo%2C%0A%0AI%20saw%20the%20Footprint%20Manager%20demo%20and%20I%27d%20like%20to%20explore%20deploying%20it%20for%3A%0A%0AOrganisation%3A%20%0AReporting%20year%3A%20%0AInventory%20status%3A%20"
+         onclick="rcfmTrackContact()"
+         style="flex:1;min-width:160px;text-align:center;
+                background:linear-gradient(135deg,#00914B 0%,#009BBB 100%);
+                color:white;padding:13px 22px;border-radius:50px;
+                text-decoration:none;font-weight:700;font-size:0.95rem;
+                box-shadow:0 8px 24px rgba(0,145,75,0.3)">
+        Email Yvo →
+      </a>
+      <button type="button" onclick="rcfmCloseEngagement()"
+              style="flex:1;min-width:160px;background:white;color:#475569;
+                     border:1px solid #cbd5e1;padding:13px 22px;
+                     border-radius:50px;font:inherit;font-weight:600;
+                     cursor:pointer">
+        Continue browsing demo
+      </button>
+    </div>
+    <p style="margin:16px 0 0;font-size:0.78rem;color:#94a3b8;
+              padding-top:12px;border-top:1px solid #e2e8f0">
+      Or write directly to <strong>yvo@regenstudio.world</strong> ·
+      Regen Studio BV · Netherlands
+    </p>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Selectors that should trigger the engagement modal instead of their
+  // default behaviour. Covers: every form submission, every visible
+  // submit-style button, every "add / create / register / save / delete /
+  // finalize" CTA. The intent is "anything that would write data → ask
+  // the user to reach out instead".
+  function rcfmIsWriteAction(el) {
+    if (!el) return false;
+    if (el.matches('form button[type=submit]')) return true;
+    if (el.matches('button[type=submit]')) return true;
+    if (el.matches('button.danger')) return true;            // withdraw etc.
+    var txt = (el.innerText || el.textContent || '').toLowerCase();
+    return /\b(add|create|save|delete|withdraw|finalize|register an activity|export|regenerate)\b/.test(txt);
+  }
+  document.addEventListener('submit', function(e){
+    e.preventDefault(); e.stopPropagation();
+    rcfmShowEngagement();
+  }, true);
+  document.addEventListener('click', function(e){
+    var t = e.target.closest('button, a');
+    if (!t) return;
+    // Don't intercept the modal's own close / mailto buttons
+    if (t.closest('#rcfm-engagement-modal')) return;
+    if (t.closest('#rcfm-demo-banner')) return;
+    if (t.tagName === 'A' && t.getAttribute('href') &&
+        !t.getAttribute('href').startsWith('#') &&
+        t.getAttribute('href').endsWith('.html')) return;   // nav links OK
+    if (rcfmIsWriteAction(t)) {
+      e.preventDefault(); e.stopPropagation();
+      rcfmShowEngagement();
+    }
+  }, true);
+
+  window.rcfmShowEngagement = function(e){
+    if (e) e.preventDefault();
+    document.getElementById('rcfm-engagement-modal').style.display = 'flex';
+    return false;
+  };
+  window.rcfmCloseEngagement = function(){
+    document.getElementById('rcfm-engagement-modal').style.display = 'none';
+  };
+  window.rcfmTrackContact = function(){
+    // Hook for analytics later; no-op for now
+  };
+  // ESC closes the modal
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') rcfmCloseEngagement();
+  });
+})();
+</script>
+
+</body></html>

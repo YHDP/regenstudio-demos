@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<title>Regen CO₂ Footprint Manager — Disclosures</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font: 15px/1.55 -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+    max-width: 1100px; margin: 24px auto; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 1.6rem; margin-bottom: 4px; }
+  h2 { font-size: 1.1rem; margin-top: 1.8em; color: #006d38;
+       border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; }
+  .meta { color: #64748b; font-size: 0.88rem; margin-bottom: 20px; }
+  form.card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px;
+              padding: 18px 20px; margin: 16px 0; }
+  .row { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
+         gap: 10px 14px; margin-bottom: 10px; }
+  .row.wide { grid-template-columns: 1fr 1fr; }
+  .row.full { grid-template-columns: 1fr; }
+  label { display: block; font-size: 0.78rem; color: #64748b;
+          text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px; }
+  input, select, textarea {
+    width: 100%; padding: 7px 9px; font: inherit; color: inherit;
+    border: 1px solid #cbd5e1; border-radius: 6px; background: white;
+  }
+  textarea { min-height: 46px; resize: vertical; }
+  button {
+    background: #006d38; color: white; border: 0; padding: 9px 18px;
+    border-radius: 7px; font-weight: 600; font-size: 0.95rem; cursor: pointer;
+  }
+  button.secondary { background: #fff; color: #475569; border: 1px solid #cbd5e1; }
+  button.danger { background: #fff; color: #b91c1c; border: 1px solid #fecaca;
+                  padding: 3px 9px; font-size: 0.78rem; font-weight: 500; }
+  details summary {
+    cursor: pointer; padding: 8px 10px; background: #fef3c7;
+    border: 1px solid #fde68a; border-radius: 6px; font-size: 0.88rem;
+    color: #78350f; margin-top: 8px;
+  }
+  details[open] summary { margin-bottom: 10px; }
+  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+  .stat { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
+          padding: 12px 14px; }
+  .stat .label { font-size: 0.72rem; color: #64748b; text-transform: uppercase;
+                 letter-spacing: 0.05em; }
+  .stat .big { font-size: 1.4rem; font-weight: 700; color: #1a1a1a; }
+  .stat .range { font-size: 0.78rem; color: #64748b; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px;
+          font-size: 0.9rem; }
+  th, td { text-align: left; padding: 7px 9px;
+           border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  th { background: #f1f5f9; font-weight: 600; color: #334155;
+       font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.scope-total td { background: #f0fdf4; font-weight: 600; }
+  tr.grand td { background: #006d38; color: white; font-weight: 700; }
+  .flash { background: #dcfce7; color: #14532d; border: 1px solid #86efac;
+           padding: 10px 14px; border-radius: 7px; margin: 10px 0; }
+  .flash.err { background: #fee2e2; color: #7f1d1d; border-color: #fecaca; }
+  .pill { display: inline-block; padding: 1px 7px; font-size: 0.72rem;
+          border-radius: 999px; background: #e2e8f0; color: #475569; }
+  .pill.q-A { background: #bbf7d0; color: #14532d; }
+  .pill.q-B { background: #e9d5ff; color: #581c87; }
+  .pill.q-C { background: #fde68a; color: #78350f; }
+  .pill.q-D { background: #fecaca; color: #7f1d1d; }
+  nav.view-select { display: flex; gap: 8px; align-items: center; margin: 10px 0 20px; }
+  nav.view-select form { display: inline; }
+  nav.view-select select, nav.view-select button {
+    padding: 6px 10px; font-size: 0.9rem;
+  }
+  /* Top navigation header */
+  header.app {
+    background: white; border: 1px solid #e2e8f0; border-radius: 10px;
+    padding: 14px 20px; margin: 0 0 18px;
+    box-shadow: 0 1px 3px rgba(36,54,68,0.04);
+  }
+  header.app .title-row {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; flex-wrap: wrap; margin-bottom: 10px;
+  }
+  header.app h1 {
+    font-size: 1.05rem; margin: 0; color: #006d38;
+    letter-spacing: 0.01em; font-weight: 700;
+  }
+  header.app .entity-bar { display: flex; gap: 8px; align-items: center; }
+  header.app .entity-bar select { padding: 4px 8px; font-size: 0.85rem; }
+  header.app .status {
+    font-size: 0.78rem; color: #64748b;
+    display: flex; gap: 10px; align-items: center;
+  }
+  header.app .status .badge {
+    padding: 2px 8px; border-radius: 999px; font-weight: 600;
+    font-size: 0.72rem; background: #e2e8f0; color: #475569;
+  }
+  header.app .status .badge.open { background: #fef3c7; color: #78350f; }
+  header.app .status .badge.finalized { background: #dcfce7; color: #14532d; }
+  nav.app {
+    display: flex; gap: 0; border-bottom: 1px solid #e2e8f0;
+    margin-top: 10px;
+  }
+  nav.app a {
+    padding: 8px 14px; text-decoration: none; color: #475569;
+    font-size: 0.92rem; border-bottom: 2px solid transparent;
+    margin-bottom: -1px; transition: color 0.12s;
+  }
+  nav.app a:hover { color: #006d38; }
+  nav.app a.active {
+    color: #006d38; font-weight: 600; border-bottom-color: #006d38;
+  }
+  /* Next-actions list */
+  ul.actions { list-style: none; padding: 0; margin: 8px 0; }
+  ul.actions li {
+    padding: 8px 12px; margin-bottom: 6px; border-radius: 7px;
+    background: #fef3c7; border: 1px solid #fde68a;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 10px;
+  }
+  ul.actions li.low { background: #f1f5f9; border-color: #e2e8f0; }
+  ul.actions li a {
+    color: #006d38; font-weight: 600; text-decoration: none;
+    font-size: 0.88rem; white-space: nowrap;
+  }
+  /* Filter bar */
+  .filter-bar {
+    display: flex; gap: 10px; flex-wrap: wrap; align-items: end;
+    margin: 10px 0 14px; padding: 10px 12px;
+    background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 7px;
+  }
+  .filter-bar label { min-width: 0; }
+  .filter-bar select, .filter-bar input { padding: 4px 8px; font-size: 0.88rem; }
+  /* Section TOC */
+  .toc {
+    display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 20px;
+    font-size: 0.82rem;
+  }
+  .toc a {
+    padding: 3px 8px; background: #f1f5f9; color: #475569;
+    border-radius: 5px; text-decoration: none;
+  }
+  .toc a:hover { background: #006d38; color: white; }
+  /* Rendered markdown */
+  .md h1 { font-size: 1.3rem; color: #006d38; margin-top: 1em; }
+  .md h2 { font-size: 1.1rem; color: #006d38; margin-top: 1.4em; }
+  .md h3 { font-size: 0.98rem; color: #334155; margin-top: 1em; }
+  .md hr { border: none; border-top: 1px solid #e2e8f0; margin: 1.5em 0; }
+  .md ul { padding-left: 22px; }
+  .md code { background: #f1f5f9; padding: 1px 5px; border-radius: 3px;
+             font-size: 0.88em; font-family: ui-monospace, monospace; }
+  .md p { line-height: 1.55; }
+  /* Info tooltip (ⓘ popover) — zero-JS, stdlib-only, <details>-based */
+  details.help { display: inline-block; position: relative; vertical-align: baseline;
+                 margin-left: 4px; }
+  details.help > summary {
+    cursor: help; list-style: none;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 15px; height: 15px; border-radius: 50%;
+    background: #006d38; color: white;
+    font-size: 0.68rem; font-weight: 700; font-style: normal;
+    font-family: -apple-system, sans-serif;
+    transition: background 0.12s, transform 0.12s;
+    user-select: none;
+  }
+  details.help > summary::-webkit-details-marker { display: none; }
+  details.help > summary::before { content: "i"; }
+  details.help > summary:hover { background: #15803d; transform: scale(1.1); }
+  details.help[open] > summary { background: #14532d; }
+  details.help .help-card {
+    position: absolute; top: 22px; left: 0;
+    min-width: 300px; max-width: 380px;
+    background: white; border: 1px solid #e2e8f0; border-radius: 8px;
+    padding: 12px 14px; box-shadow: 0 6px 18px rgba(36,54,68,0.14);
+    font-size: 0.86rem; line-height: 1.5; z-index: 100;
+    text-transform: none; letter-spacing: normal; color: #1a1a1a;
+    font-weight: normal;
+  }
+  details.help .help-card strong.title { color: #006d38; font-size: 0.95rem;
+                                           display: block; margin-bottom: 6px; }
+  details.help .help-card p { margin: 0 0 6px; }
+  details.help .help-card p:last-child { margin-bottom: 0; }
+  details.help .help-card .tech { color: #64748b; font-size: 0.8rem;
+                                    border-left: 2px solid #e2e8f0;
+                                    padding-left: 8px; }
+  details.help .help-card .where { font-size: 0.82rem; color: #334155; }
+  details.help .help-card .example {
+    font-size: 0.82rem; background: #f0fdf4; padding: 7px 9px;
+    border-radius: 5px; color: #14532d;
+    border-left: 3px solid #006d38;
+  }
+  details.help .help-card .more a {
+    font-size: 0.8rem; color: #006d38; font-weight: 600; text-decoration: none;
+  }
+  /* Wizard stepper */
+  .stepper { display: flex; gap: 0; margin: 18px 0 24px;
+             border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+  .stepper .step { flex: 1; padding: 10px 14px; text-align: center;
+                   font-size: 0.82rem; color: #64748b; position: relative;
+                   text-decoration: none; background: #f8fafc;
+                   border-right: 1px solid #e2e8f0; }
+  .stepper .step:last-child { border-right: none; }
+  .stepper .step.active { background: #006d38; color: white; font-weight: 600; }
+  .stepper .step.done { background: #dcfce7; color: #14532d; }
+  .stepper .step .num {
+    display: inline-block; width: 20px; height: 20px; border-radius: 50%;
+    background: rgba(0,0,0,0.08); line-height: 20px; margin-right: 6px;
+    font-weight: 700; font-size: 0.78rem;
+  }
+  .stepper .step.active .num { background: rgba(255,255,255,0.2); }
+  /* Glossary */
+  .glossary-term {
+    padding: 12px 14px; margin-bottom: 8px;
+    border-left: 3px solid #006d38; background: #f8fafc;
+    border-radius: 0 7px 7px 0;
+  }
+  .glossary-term h3 { margin: 0 0 6px; font-size: 0.98rem; color: #006d38; }
+  .glossary-term p { margin: 0 0 4px; font-size: 0.92rem; line-height: 1.5; }
+</style>
+</head><body>
+
+<header class="app">
+  <div class="title-row">
+    <h1>Regen CO₂ Footprint Manager</h1>
+    <form class="entity-bar" method="GET" action="/disclosures">
+      <label style="display:inline;text-transform:none;font-size:0.82rem;color:#334155;">Entity</label>
+      <select name="org"><option value="circulartech-advisory">CircularTech Advisory</option><option value="dft-brazil-consulting">Dutch Flow Technology — Brazil sales representation</option><option value="regen-studio-bv" selected>Regen Studio BV</option><option value="yvo-personal">Yvo (personal, non-business)</option><option value="proj-circulartech">  └ CircularTech Advisory (project)</option><option value="proj-dft-brazil">  └ Dutch Flow Technology Brazil (project)</option><option value="proj-ai-operations">  └ AI-Operations (cross-project coordination)</option><option value="proj-avisonar">  └ AviSonar</option><option value="proj-bird-detective">  └ BirdDetective</option><option value="proj-claude-partner-network">  └ Claude Partner Network</option><option value="proj-cpr-dpp-tracker">  └ CPR DPP Tracker</option><option value="proj-cultural-connections">  └ Cultural Connections 2026</option><option value="proj-design-lab">  └ Design Lab</option><option value="proj-funding-pipeline">  └ Funding Pipeline</option><option value="proj-kingsday-design">  └ Kingsday Design (Design Lab print pipeline)</option><option value="proj-open-integrity-demo">  └ Open Integrity Demo</option><option value="proj-openremote-pentest">  └ OpenRemote Pentest</option><option value="proj-regen-footprint">  └ Regen CO₂ Footprint Manager</option><option value="proj-regen-studio-website">  └ Regen Studio Website</option><option value="proj-regenstudio-demos">  └ Regen Studio Demos</option><option value="proj-trupass">  └ TruPASS</option><option value="proj-unattributed">  └ Unattributed (cwd did not match any rule)</option><option value="proj-yogai">  └ YogAI</option><option value="proj-book-of-love">  └ Book of Love</option><option value="proj-emigration">  └ Emigration NL→BR</option><option value="proj-money-manager">  └ Money Manager</option><option value="proj-rokor">  └ ROKOR</option><option value="proj-work-manager">  └ Work Manager</option></select>
+      <label style="display:inline;text-transform:none;font-size:0.82rem;color:#334155;">Year</label>
+      <select name="year"><option value="2027">2027</option><option value="2026">2026</option><option value="2025" selected>2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option></select>
+      <button class="secondary">apply</button>
+      <a href="../index.html" onclick="try{localStorage.removeItem('rcfm.remember');}catch(_){}"
+         style="margin-left:10px;font-size:0.82rem;color:#64748b;text-decoration:none;"
+         title="Back to company picker">↺ Switch entity</a>
+    </form>
+  </div>
+  <div class="status">
+    <span>Period:</span>
+    <span class="badge open">open</span>
+    <span>·</span>
+    <span>VSME coverage 9/9 Basic categories</span>
+  </div>
+  <nav class="app"><a href="index.html">🏠 Home</a><a href="register.html">📥 Register</a><a href="disclosures.html" class="active">📊 Disclosures</a><a href="factors.html">📚 Factors</a><a href="report.html">📄 Report</a><a href="methodology.html">📘 Methodology</a><a href="guide.html">🧭 Guide</a><a href="glossary.html">📖 Glossary</a></nav>
+</header>
+
+
+
+<p class="toc"><a href="#intensity">Intensity</a><a href="#energy">Energy</a><a href="#governance">Governance</a><a href="#materiality">Materiality</a><a href="#workforce">Workforce</a><a href="#environmental">Non-GHG env.</a><a href="#comprehensive">Comprehensive</a></p><h2>VSME disclosure panel</h2><p class="meta" style="margin-top:0">Basic-module sections cover the non-emissions VSME Basic disclosures. The Comprehensive section at the bottom adds targets, transition plan, credits, internal price, risk, and social items. All entries are scoped to the selected reporting entity and year above.</p>
+    <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-left:4px solid #006d38;
+                border-radius:8px;padding:14px 18px;margin:14px 0">
+      <h3 style="margin-top:0;color:#006d38">Management summary <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Management summary</strong><p>The 3–5 paragraph executive opener at the top of your report. What a bank loan officer, procurement analyst, or journalist reads first — and often the only thing they read.</p><p class="tech"><strong>Why we ask:</strong> Sustainability data is easy to skim past. A management summary in plain language converts your inventory into a story: total, driver, target, methodology, materiality. VSME Comprehensive and CSRD E1 both expect it.</p><p class="where"><strong>Where to find it:</strong> You write it yourself. Markdown (headings/paragraphs/lists/bold/links) is supported.</p><p class="example"><strong>Example:</strong> Typical shape: ¶1 headline total + range; ¶2 where it comes from (dominant scope); ¶3 target + mechanism; ¶4 standard + material topics; ¶5 methodology / audit trail.</p></div></details></h3>
+      <p class="meta" style="margin-top:0">
+        Status: <span style="color:#15803d">✓ saved 2026-04-14 11:48:25</span>. This is the executive opener at the top of your report —
+        the 3–5 paragraph narrative a bank, investor, or client reads first.
+        Markdown is supported (headings, paragraphs, lists, bold, links).
+      </p>
+      <form class="card" method="POST" action="/disclosure/management_summary"
+            style="background:white"><input type="hidden" name="return_org" value="regen-studio-bv"><input type="hidden" name="return_year" value="2025">
+        <textarea name="markdown" required rows="10"
+          placeholder="Write 3–5 short paragraphs covering: total emissions + headline, where they come from, your reduction commitment, standard used, material topics, key methodology choices. Plain language beats polished marketing."
+          style="width:100%;font:inherit;padding:10px;border:1px solid #cbd5e1;
+                 border-radius:6px;min-height:180px">In 2025, Regen Studio BV emitted approximately **8.6 tonnes CO₂e** (range 7.7–9.7 t). The headline number is structurally small for a one-person consulting business, but the distribution tells the more important story: **~95% of our footprint comes from two long-haul flights** between São Paulo and Amsterdam. Office electricity, capital goods, meals, SaaS subscriptions, and printed materials combined account for the remaining 5%.
+
+This concentration makes the reduction lever unambiguous. We have committed to a **−40% reduction by 2027** against the 2025 baseline, delivered primarily through trip consolidation and the planned 2026 emigration from the Netherlands to Brazil, which flips the direction of travel and reduces annual frequency. No carbon credits were retired in 2025; any future offsetting will be disclosed separately from Scope 1/2/3 totals, consistent with GHG Protocol convention.
+
+The report is structured in alignment with **EFRAG Voluntary Standard for non-listed SMEs (VSME)** — Basic and Comprehensive modules — and uses the GHG Protocol Corporate Standard with dual Scope 2 disclosure (location-based and market-based). Regen Studio BV is below the post-Omnibus CSRD thresholds and is therefore not obligated under that directive; this disclosure is voluntary, produced to answer counterparty ESG questionnaires and to lead by example for the Digital Product Passport consultancy work we deliver with clients.
+
+Material topics for 2025: **climate change** (driven by flights). Water, biodiversity, waste, and workforce topics are marked **not material** with written bases appropriate to a one-FTE home-office operation. An internal carbon price of **€ 80 per tonne CO₂e** is applied to investment decisions from 2026 onward.
+
+Full methodology, factor provenance with quality ratings, and the underlying 34-row activity register are included below. Every emission value has a calculation-run hash for reproducibility, and the HTML version of this report is inline-XBRL tagged per the EFRAG VSME taxonomy for machine readability.</textarea>
+        <button type="submit" style="margin-top:10px">Save management summary</button>
+      </form>
+    </div>
+    
+    <details>
+      <summary>1 · Intensity denominators (3 entered) <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Intensity denominators</strong><p>Divide your total emissions by a denominator (revenue, FTE, m²) to get an intensity ratio. These make companies comparable at different scales.</p><p class="tech"><strong>Why we ask:</strong> VSME Basic requires kg CO₂e per € turnover. Banks love this metric.</p><p class="where"><strong>Where to find it:</strong> Audited accounts for revenue; payroll for FTE; lease for m².</p><p class="example"><strong>Example:</strong> 8.61 t ÷ €45k = 0.191 kg CO₂e / € turnover.</p><p class="more"><a href="glossary.html">Learn more →</a></p></div></details></summary>
+      <form class="card" method="POST" action="/disclosure/intensity"><input type="hidden" name="return_org" value="regen-studio-bv"><input type="hidden" name="return_year" value="2025">
+        <div class="row">
+          <div><label>Metric</label>
+            <select name="metric_type" required>
+              <option value="revenue-eur">revenue-eur</option>
+              <option value="fte">fte</option>
+              <option value="floor-area-m2">floor-area-m2</option>
+            </select></div>
+          <div><label>Value</label><input type="number" step="any" name="value" required></div>
+          <div><label>Unit</label><input name="unit" required placeholder="EUR / persons / m2"></div>
+          <div><label>Source</label><input name="source" placeholder="audited accounts / payroll"></div>
+        </div>
+        <div class="row full"><div><label>Methodology text</label>
+          <input name="methodology_text" placeholder="gross vs net revenue / FY alignment / exclusions"></div></div>
+        <button class="secondary">Save denominator</button>
+      </form>
+      <table><thead><tr><th>Metric</th><th class="num">Value</th><th>Unit</th><th>Source</th></tr></thead><tbody><tr><td>floor-area-m2</td><td class='num'>3</td><td>m2</td><td>BR home office</td></tr><tr><td>fte</td><td class='num'>1</td><td>persons</td><td>payroll</td></tr><tr><td>revenue-eur</td><td class='num'>4.5e+04</td><td>EUR</td><td>draft 2025 accounts</td></tr></tbody></table>
+    </details>
+    <details>
+      <summary>2 · Energy consumption &amp; mix (1 entered) <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Energy consumption &amp; mix</strong><p>Total energy you used (in MWh) + how much of it was renewable. Covers electricity, heating, fuel — any energy source.</p><p class="tech"><strong>Why we ask:</strong> ESG questionnaires always ask. Also ties back to your Scope 2 rows as a sanity check.</p><p class="where"><strong>Where to find it:</strong> Utility bills (summed for the year), fuel invoices.</p><p class="example"><strong>Example:</strong> 150 kWh = 0.15 MWh of electricity, marked renewable because Brazil&#x27;s grid is hydro-dominant.</p></div></details></summary>
+      <form class="card" method="POST" action="/disclosure/energy"><input type="hidden" name="return_org" value="regen-studio-bv"><input type="hidden" name="return_year" value="2025">
+        <div class="row">
+          <div><label>Source type</label><input name="source_type" required placeholder="grid-electricity / heating-gas"></div>
+          <div><label>MWh</label><input type="number" step="any" name="mwh" required></div>
+          <div><label>Renewable?</label><select name="is_renewable"><option value="0">no</option><option value="1">yes</option></select></div>
+          <div><label>Geo scope</label><input name="geographic_scope" placeholder="NL / BR"></div>
+        </div>
+        <div class="row wide">
+          <div><label>Provenance</label><input name="provenance" placeholder="utility bill ref"></div>
+          <div><label>Notes</label><input name="notes"></div>
+        </div>
+        <button class="secondary">Add energy row</button>
+      </form>
+      <table><thead><tr><th>Source</th><th class="num">MWh</th><th>Kind</th><th>Geo</th></tr></thead><tbody><tr><td>grid-electricity</td><td class='num'>0.15</td><td>renewable</td><td>BR</td></tr></tbody></table>
+    </details>
+    <details>
+      <summary>3 · Governance — anti-corruption / whistleblower (1 entered) <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Governance</strong><p>Anti-corruption, whistleblower, board-diversity disclosures.</p><p class="tech"><strong>Why we ask:</strong> VSME Basic requires anti-corruption reporting even when zero. An empty row is itself a disclosure.</p><p class="where"><strong>Where to find it:</strong> Your legal records, internal policies, audit files.</p><p class="example"><strong>Example:</strong> Anti-corruption convictions count = 0 — and yes, report the zero.</p></div></details></summary>
+      <form class="card" method="POST" action="/disclosure/governance"><input type="hidden" name="return_org" value="regen-studio-bv"><input type="hidden" name="return_year" value="2025">
+        <div class="row">
+          <div><label>Topic</label>
+            <select name="topic">
+              <option value="anti-corruption">anti-corruption</option>
+              <option value="whistleblower">whistleblower</option>
+              <option value="board-diversity">board-diversity</option>
+            </select></div>
+          <div><label>Item key</label><input name="item_key" required placeholder="convictions-count / fines-eur-total"></div>
+          <div><label>Numeric value</label><input type="number" step="any" name="value_numeric"></div>
+          <div><label>Text value</label><input name="value_text"></div>
+        </div>
+        <div class="row wide">
+          <div><label>Evidence</label><input name="evidence" placeholder="registry URL / internal ref"></div>
+          <div><label>Notes</label><input name="notes"></div>
+        </div>
+        <button class="secondary">Save governance item</button>
+      </form>
+      <table><thead><tr><th>Topic</th><th>Item</th><th class="num">Numeric</th><th>Text</th></tr></thead><tbody><tr><td>anti-corruption</td><td>convictions-count</td><td class='num'>0.0</td><td>none</td></tr></tbody></table>
+    </details>
+    <details>
+      <summary>4 · Materiality assessment (4/8 topics) <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Materiality assessment</strong><p>For each VSME topic, decide &#x27;material&#x27; (yes, this matters to us) or &#x27;not material&#x27; (no, not for our business) — with a written reason.</p><p class="tech"><strong>Why we ask:</strong> The amended ESRS requires **active** written justification for non-material claims. VSME permits it. &#x27;Not material&#x27; without a basis fails review.</p><p class="where"><strong>Where to find it:</strong> Your operational reality — water stress? office near a Natura 2000 site? any of this relevant?</p><p class="example"><strong>Example:</strong> Water, for a 3 m² home office: not material. Basis: &#x27;Zero process water use; standard drinking-tap only; operator cohort N&lt;3.&#x27;</p><p class="more"><a href="glossary.html">Learn more →</a></p></div></details></summary>
+      <form class="card" method="POST" action="/disclosure/materiality"><input type="hidden" name="return_org" value="regen-studio-bv"><input type="hidden" name="return_year" value="2025">
+        <div class="row">
+          <div><label>Topic</label><select name="topic"><option value="climate-change">climate-change</option><option value="energy-consumption">energy-consumption</option><option value="pollution-air-water-soil">pollution-air-water-soil</option><option value="water">water</option><option value="biodiversity">biodiversity</option><option value="waste-circular-economy">waste-circular-economy</option><option value="workforce">workforce</option><option value="governance-anti-corruption">governance-anti-corruption</option></select></div>
+          <div><label>Material?</label><select name="material"><option value="1">material</option><option value="0" selected>not material</option></select></div>
+          <div style="grid-column:span 2"><label>Basis (required)</label><input name="basis" required placeholder="Reason this topic is / is not material for RS"></div>
+        </div>
+        <div class="row full"><div><label>Notes</label><input name="notes"></div></div>
+        <button class="secondary">Save materiality verdict</button>
+      </form>
+      <table><thead><tr><th>Topic</th><th>Verdict</th><th>Basis</th></tr></thead><tbody><tr><td>biodiversity</td><td>not material</td><td>No owned sites within 5 km of biodiversity-sensitive areas</td></tr><tr><td>climate-change</td><td>material</td><td>Primary material topic - flights dominate footprint</td></tr><tr><td>waste-circular-economy</td><td>not material</td><td>Household-tier waste only; no process or product waste</td></tr><tr><td>water</td><td>not material</td><td>Zero process water; 3 m2 office uses drinking tap only</td></tr></tbody></table>
+    </details>
+    <details>
+      <summary>5 · Workforce (VSME Basic — 1 metrics) <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Workforce</strong><p>Headcount, gender ratio, contract types, wages vs minimum, training hours, workplace incidents.</p><p class="tech"><strong>Why we ask:</strong> VSME Basic requires workforce metrics even at N=1. GDPR rule: redact anything where a single person is re-identifiable (any cohort &lt;3).</p><p class="where"><strong>Where to find it:</strong> Payroll, HR records.</p><p class="example"><strong>Example:</strong> Headcount 1, permanent contract, above-minimum wage — all reported as-is.</p></div></details></summary>
+      <form class="card" method="POST" action="/disclosure/workforce"><input type="hidden" name="return_org" value="regen-studio-bv"><input type="hidden" name="return_year" value="2025">
+        <div class="row">
+          <div><label>Metric</label><input name="metric" required placeholder="headcount-total / gender-ratio-female / training-hours"></div>
+          <div><label>Numeric value</label><input type="number" step="any" name="value_numeric"></div>
+          <div style="grid-column:span 2"><label>Text value</label><input name="value_text" placeholder="if qualitative"></div>
+        </div>
+        <div class="row full"><div><label>Notes (GDPR: redact where N &lt; 3)</label><input name="notes"></div></div>
+        <button class="secondary">Save workforce metric</button>
+      </form>
+      <table><thead><tr><th>Metric</th><th class="num">Numeric</th><th>Text</th></tr></thead><tbody><tr><td>headcount-total</td><td class='num'>1.0</td><td>1 FTE (sole operator)</td></tr></tbody></table>
+    </details>
+    <details>
+      <summary>6 · Non-GHG environmental — water / biodiversity / waste (3 rows) <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Water withdrawal / discharge</strong><p>Volumes of water taken from and returned to the municipal system.</p><p class="tech"><strong>Why we ask:</strong> Small for an office-only business, but VSME expects honest zeros, not blanks.</p><p class="where"><strong>Where to find it:</strong> Water utility bill if you pay directly; building lease if bundled.</p><p class="example"><strong>Example:</strong> ~3 m³/yr for a 3 m² home office with drinking-tap use only.</p></div></details></summary>
+      <form class="card" method="POST" action="/disclosure/water"><input type="hidden" name="return_org" value="regen-studio-bv"><input type="hidden" name="return_year" value="2025">
+        <h3 style="margin-top:0">Water</h3>
+        <div class="row">
+          <div><label>Location</label><input name="location" required></div>
+          <div><label>Withdrawal (m³)</label><input type="number" step="any" name="withdrawal_m3"></div>
+          <div><label>Discharge (m³)</label><input type="number" step="any" name="discharge_m3"></div>
+          <div><label>Stress area?</label><select name="stress_area"><option value="0">no</option><option value="1">yes</option></select></div>
+        </div>
+        <div class="row wide">
+          <div><label>Source</label><input name="source" placeholder="utility / borehole / recycled"></div>
+          <div><label>Notes</label><input name="notes"></div>
+        </div>
+        <button class="secondary">Add water row</button>
+      </form>
+      <table><thead><tr><th>Location</th><th class="num">Withdrawal (m³)</th><th class="num">Discharge (m³)</th><th>Area</th></tr></thead><tbody><tr><td>BR home office 3 m2</td><td class='num'>3</td><td class='num'>3</td><td>not stressed</td></tr></tbody></table>
+
+      <form class="card" method="POST" action="/disclosure/biodiversity"><input type="hidden" name="return_org" value="regen-studio-bv"><input type="hidden" name="return_year" value="2025">
+        <h3>Biodiversity proximity</h3>
+        <div class="row">
+          <div><label>Site slug</label><input name="site_slug" required></div>
+          <div><label>Site name</label><input name="name" required></div>
+          <div><label>Hectares</label><input type="number" step="any" name="hectares"></div>
+          <div><label>Near sensitive?</label><select name="near_sensitive_area"><option value="0">no</option><option value="1">yes</option></select></div>
+        </div>
+        <div class="row wide">
+          <div><label>Distance (km) to sensitive area</label><input type="number" step="any" name="distance_km"></div>
+          <div><label>Notes</label><input name="notes"></div>
+        </div>
+        <button class="secondary">Add biodiversity row</button>
+      </form>
+      <table><thead><tr><th>Slug</th><th>Site</th><th class="num">Ha</th><th>Sensitive</th></tr></thead><tbody><tr><td>br-home-office</td><td>Home office Sao Paulo</td><td class='num'>0.0003</td><td>far (15.0 km)</td></tr></tbody></table>
+
+      <form class="card" method="POST" action="/disclosure/waste"><input type="hidden" name="return_org" value="regen-studio-bv"><input type="hidden" name="return_year" value="2025">
+        <h3>Waste streams</h3>
+        <div class="row">
+          <div><label>Stream type</label><input name="stream_type" required placeholder="paper / organic / e-waste / mixed"></div>
+          <div><label>Tonnes</label><input type="number" step="any" name="tonnes"></div>
+          <div><label>Hazardous?</label><select name="hazardous"><option value="0">no</option><option value="1">yes</option></select></div>
+          <div><label>Treatment</label><select name="treatment"><option value="">—</option><option value="recycling">recycling</option><option value="landfill">landfill</option><option value="incineration">incineration</option><option value="reuse">reuse</option></select></div>
+        </div>
+        <div class="row wide">
+          <div><label>Recycled %</label><input type="number" step="any" name="recycled_pct"></div>
+          <div><label>Notes</label><input name="notes"></div>
+        </div>
+        <button class="secondary">Add waste row</button>
+      </form>
+      <table><thead><tr><th>Stream</th><th class="num">Tonnes</th><th>Haz</th><th>Treatment</th><th class="num">Recycled %</th></tr></thead><tbody><tr><td>paper</td><td class='num'>0.005</td><td>non-haz</td><td>recycling</td><td class='num'>100.0</td></tr></tbody></table>
+    </details>
+    <details>
+      <summary>🟢 Comprehensive Module — targets / transition / credits / price / risk / social (4 rows) <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Reduction targets</strong><p>A percentage reduction commitment from a base year to a target year.</p><p class="tech"><strong>Why we ask:</strong> VSME Comprehensive + ESRS E1-4 expect a structured target. Paris alignment means 1.5°C pathway.</p><p class="where"><strong>Where to find it:</strong> Your strategic plan / leadership&#x27;s decarbonisation commitment.</p><p class="example"><strong>Example:</strong> −40% by 2027, base 2025, scope-1+2+3. Mechanism: halve flights (trip bundling + emigration).</p><p class="more"><a href="glossary.html">Learn more →</a></p></div></details></summary>
+
+      <form class="card" method="POST" action="/disclosure/target"><input type="hidden" name="return_org" value="regen-studio-bv"><input type="hidden" name="return_year" value="2025">
+        <h3 style="margin-top:0">Reduction target <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Reduction targets</strong><p>A percentage reduction commitment from a base year to a target year.</p><p class="tech"><strong>Why we ask:</strong> VSME Comprehensive + ESRS E1-4 expect a structured target. Paris alignment means 1.5°C pathway.</p><p class="where"><strong>Where to find it:</strong> Your strategic plan / leadership&#x27;s decarbonisation commitment.</p><p class="example"><strong>Example:</strong> −40% by 2027, base 2025, scope-1+2+3. Mechanism: halve flights (trip bundling + emigration).</p><p class="more"><a href="glossary.html">Learn more →</a></p></div></details></h3>
+        <div class="row">
+          <div><label>Scope set</label>
+            <select name="scope_set">
+              <option value="scope-1+2+3">scope-1+2+3</option>
+              <option value="scope-1+2">scope-1+2</option>
+              <option value="scope-3.6">scope-3.6 (business travel)</option>
+            </select></div>
+          <div><label>Base year</label><input type="number" name="base_year" value="2025" required></div>
+          <div><label>Target year</label><input type="number" name="target_year" required></div>
+          <div><label>% reduction</label><input type="number" step="any" name="target_reduction_pct" required></div>
+        </div>
+        <div class="row wide">
+          <div><label>Mechanism (how)</label><input name="mechanism_text" placeholder="flight reduction via trip bundling + emigration"></div>
+          <div><label>1.5°C alignment</label><input name="paris_alignment_text" placeholder="linear pathway from 2025 baseline to 2030 net zero"></div>
+        </div>
+        <button class="secondary">Save target</button>
+      </form>
+      <table><thead><tr><th>Scope set</th><th class="num">Base</th><th class="num">Target</th><th class="num">%</th><th>Mechanism</th><th>Status</th></tr></thead><tbody><tr><td>scope-1 2 3</td><td class='num'>2025</td><td class='num'>2027</td><td class='num'>40.0%</td><td>Flight reduction via trip bundling and emigration</td><td>current</td></tr></tbody></table>
+
+      <form class="card" method="POST" action="/disclosure/transition_plan"><input type="hidden" name="return_org" value="regen-studio-bv"><input type="hidden" name="return_year" value="2025">
+        <h3>Transition plan section <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Transition plan</strong><p>A narrative explaining how you&#x27;ll hit your reduction target.</p><p class="tech"><strong>Why we ask:</strong> ESRS E1-1 asks for it; sceptical stakeholders want to see the mechanism.</p><p class="where"><strong>Where to find it:</strong> Write it in your own words — not a template response.</p><p class="example"><strong>Example:</strong> &#x27;Flights dominate the footprint (7.7 t, ~90%). Lever 1: trip bundling. Lever 2: 2026 emigration which reverses intercontinental frequency.&#x27;</p></div></details></h3>
+        <div class="row wide">
+          <div><label>Section key</label>
+            <select name="section_key">
+              <option value="strategy">strategy</option>
+              <option value="levers">levers</option>
+              <option value="governance">governance</option>
+              <option value="metrics-targets">metrics-targets</option>
+              <option value="risks">risks</option>
+            </select></div>
+          <div><label>Markdown body</label><input name="markdown" required placeholder="What this section says…"></div>
+        </div>
+        <button class="secondary">Save section</button>
+      </form>
+      <table><thead><tr><th>Section</th><th>Preview</th></tr></thead><tbody><tr><td>strategy</td><td>Flights dominate the footprint (7.7 t). The levered response is trip bundling and the planned 2026 emigration to Brazil …</td></tr></tbody></table>
+
+      <form class="card" method="POST" action="/disclosure/carbon_credit"><input type="hidden" name="return_org" value="regen-studio-bv"><input type="hidden" name="return_year" value="2025">
+        <h3>Carbon credit (registered, not netted) <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Carbon credits</strong><p>Tonnes of credits you&#x27;ve bought and whether you&#x27;ve retired them.</p><p class="tech"><strong>Why we ask:</strong> ESRS E1-7 wants these **disclosed separately, not netted from Scope totals** — that&#x27;s the important rule. Credits ≠ reductions.</p><p class="where"><strong>Where to find it:</strong> Your registry account (Verra, Gold Standard, UNFCCC CDM).</p><p class="example"><strong>Example:</strong> Zero credits retired in 2025 — the empty row is the disclosure.</p><p class="more"><a href="glossary.html">Learn more →</a></p></div></details></h3>
+        <div class="row">
+          <div><label>Project slug</label><input name="project_slug" required></div>
+          <div><label>Tonnes purchased</label><input type="number" step="any" name="tonnes_purchased" required></div>
+          <div><label>Price (€)</label><input type="number" step="any" name="price_eur"></div>
+          <div><label>Standard</label><input name="standard" placeholder="Gold Standard / VCS / UNFCCC"></div>
+        </div>
+        <div class="row">
+          <div><label>Vintage (year)</label><input type="number" name="vintage"></div>
+          <div><label>Retired?</label><select name="retired"><option value="0">no</option><option value="1">yes</option></select></div>
+          <div style="grid-column:span 2"><label>Evidence</label><input name="evidence" placeholder="registry URL"></div>
+        </div>
+        <button class="secondary">Add carbon credit</button>
+      </form>
+      <table><thead><tr><th>Project</th><th class="num">Tonnes</th><th>Standard</th><th class="num">Vintage</th><th>Status</th></tr></thead><tbody><tr><td colspan='5' style='color:#94a3b8'>No carbon credits yet.</td></tr></tbody></table>
+
+      <form class="card" method="POST" action="/disclosure/internal_price"><input type="hidden" name="return_org" value="regen-studio-bv"><input type="hidden" name="return_year" value="2025">
+        <h3>Internal carbon price <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Internal carbon price</strong><p>A € / tonne figure applied internally to climate-relevant decisions.</p><p class="tech"><strong>Why we ask:</strong> ESRS E1-8 discloses it. Informational — doesn&#x27;t adjust reported Scope totals.</p><p class="where"><strong>Where to find it:</strong> Your investment committee / finance policy.</p><p class="example"><strong>Example:</strong> € 80 / tCO₂e applied to investment decisions.</p></div></details></h3>
+        <div class="row">
+          <div><label>€ / tCO₂e</label><input type="number" step="any" name="price_eur_per_tco2e" required></div>
+          <div><label>Scope applied</label><input name="scope_applied" placeholder="scope-1+2 / all-scopes / travel-only"></div>
+          <div style="grid-column:span 2"><label>Usage</label><input name="usage" placeholder="investment decisions / budget allocation"></div>
+        </div>
+        <div class="row full"><div><label>Notes</label><input name="notes"></div></div>
+        <button class="secondary">Save internal price</button>
+      </form>
+      <table><thead><tr><th class="num">€/tCO₂e</th><th>Scope applied</th><th>Usage</th></tr></thead><tbody><tr><td class='num'>80.00</td><td>scope-1 2 3</td><td>investment decisions</td></tr></tbody></table>
+
+      <form class="card" method="POST" action="/disclosure/climate_risk"><input type="hidden" name="return_org" value="regen-studio-bv"><input type="hidden" name="return_year" value="2025">
+        <h3>Climate risk <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Climate risk register</strong><p>Physical and transition climate risks: what could hit your P&amp;L over short, medium, and long horizons.</p><p class="tech"><strong>Why we ask:</strong> ESRS E1-9 disclosure. Forces you to think about how climate affects your business, not just how your business affects climate.</p><p class="where"><strong>Where to find it:</strong> Your risk-register / strategy-review docs.</p><p class="example"><strong>Example:</strong> Transition-policy risk (medium horizon): SAF mandate pushes ticket prices up from 2027. Response: bundle trips.</p></div></details></h3>
+        <div class="row">
+          <div><label>Risk type</label>
+            <select name="risk_type">
+              <option value="physical-acute">physical-acute</option>
+              <option value="physical-chronic">physical-chronic</option>
+              <option value="transition-policy">transition-policy</option>
+              <option value="transition-market">transition-market</option>
+              <option value="transition-tech">transition-tech</option>
+              <option value="transition-reputation">transition-reputation</option>
+            </select></div>
+          <div><label>Horizon</label>
+            <select name="horizon"><option value="short">short</option><option value="medium">medium</option><option value="long">long</option></select></div>
+          <div><label>Financial impact (€)</label><input type="number" step="any" name="financial_impact_eur"></div>
+          <div><label>Response</label><input name="response" placeholder="mitigation / adaptation action"></div>
+        </div>
+        <div class="row full"><div><label>Description</label><input name="description" required placeholder="describe the risk"></div></div>
+        <button class="secondary">Save risk</button>
+      </form>
+      <table><thead><tr><th>Type</th><th>Horizon</th><th>Description</th><th class="num">Impact (€)</th></tr></thead><tbody><tr><td>transition-policy</td><td>medium</td><td>SAF mandate could lift ticket prices 2027 onwards</td><td class='num'>500.0</td></tr></tbody></table>
+
+      <form class="card" method="POST" action="/disclosure/social"><input type="hidden" name="return_org" value="regen-studio-bv"><input type="hidden" name="return_year" value="2025">
+        <h3>Social disclosure (diversity / human rights / community) <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Social disclosure</strong><p>Diversity, human-rights, community metrics beyond the Basic workforce items.</p><p class="tech"><strong>Why we ask:</strong> VSME Comprehensive. Material for larger SMEs; thin for 1-FTEs.</p><p class="where"><strong>Where to find it:</strong> HR, DEI policy, community-involvement records.</p><p class="example"><strong>Example:</strong> &#x27;gender-ratio-mgmt-female&#x27; — blank for 1-FTE (N&lt;3 redaction rule).</p></div></details></h3>
+        <div class="row">
+          <div><label>Topic</label><input name="topic" required placeholder="diversity-mgmt-female / human-rights-complaints / community-hours"></div>
+          <div><label>Numeric value</label><input type="number" step="any" name="value_numeric"></div>
+          <div style="grid-column:span 2"><label>Text value</label><input name="value_text"></div>
+        </div>
+        <div class="row full"><div><label>Notes</label><input name="notes" placeholder="GDPR: redact where N &lt; 3"></div></div>
+        <button class="secondary">Save social disclosure</button>
+      </form>
+      <table><thead><tr><th>Topic</th><th class="num">Numeric</th><th>Text</th></tr></thead><tbody><tr><td colspan='3' style='color:#94a3b8'>No social disclosures yet.</td></tr></tbody></table>
+    </details><script>document.querySelectorAll("details:not(.help)").forEach(d => d.open = true);</script>
+
+
+<div id="rcfm-demo-banner" style="
+    position:sticky;top:0;z-index:5000;
+    background:linear-gradient(90deg,#00914B 0%,#009BBB 100%);
+    color:white;padding:8px 18px;
+    font:13px/1.4 -apple-system,BlinkMacSystemFont,'Inter',sans-serif;
+    box-shadow:0 2px 6px rgba(0,0,0,0.12);
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+  <strong style="font-weight:700;letter-spacing:0.05em">DEMO · read-only</strong>
+  <span style="opacity:0.92">Browsing real Regen Studio BV 2025 data — entry forms are deactivated.</span>
+  <a href="#" onclick="return rcfmShowEngagement(event)"
+     style="margin-left:auto;color:white;text-decoration:underline;font-weight:600">
+     Want this for your business? →
+  </a>
+</div>
+
+<div id="rcfm-engagement-modal" style="
+    display:none;position:fixed;inset:0;z-index:6000;
+    background:rgba(8,30,18,0.62);backdrop-filter:blur(4px);
+    align-items:center;justify-content:center;padding:20px"
+    onclick="if(event.target===this) rcfmCloseEngagement()">
+  <div style="
+      max-width:480px;width:100%;background:white;border-radius:14px;
+      padding:28px 32px;box-shadow:0 25px 60px rgba(0,0,0,0.35);
+      font:15px/1.55 -apple-system,BlinkMacSystemFont,'Inter',sans-serif;
+      color:#0d3b20">
+    <h2 style="margin:0 0 10px;font-size:1.4rem;color:#00914B;font-weight:800">
+      This is a read-only demo
+    </h2>
+    <p style="margin:0 0 14px;color:#334155">
+      Want to track <strong>your own organisation's</strong> carbon footprint
+      with this tool — VSME-aligned, factor-audited, your data, your report?
+      We'd love to set you up.
+    </p>
+    <p style="margin:0 0 18px;color:#334155;font-size:0.92rem">
+      Reply with a short note about your business, your reporting year, and
+      whether you've started any inventory yet. We'll come back within a few
+      working days.
+    </p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a href="mailto:yvo@regenstudio.world?subject=Footprint%20Manager%20%E2%80%94%20deployment%20interest&body=Hi%20Yvo%2C%0A%0AI%20saw%20the%20Footprint%20Manager%20demo%20and%20I%27d%20like%20to%20explore%20deploying%20it%20for%3A%0A%0AOrganisation%3A%20%0AReporting%20year%3A%20%0AInventory%20status%3A%20"
+         onclick="rcfmTrackContact()"
+         style="flex:1;min-width:160px;text-align:center;
+                background:linear-gradient(135deg,#00914B 0%,#009BBB 100%);
+                color:white;padding:13px 22px;border-radius:50px;
+                text-decoration:none;font-weight:700;font-size:0.95rem;
+                box-shadow:0 8px 24px rgba(0,145,75,0.3)">
+        Email Yvo →
+      </a>
+      <button type="button" onclick="rcfmCloseEngagement()"
+              style="flex:1;min-width:160px;background:white;color:#475569;
+                     border:1px solid #cbd5e1;padding:13px 22px;
+                     border-radius:50px;font:inherit;font-weight:600;
+                     cursor:pointer">
+        Continue browsing demo
+      </button>
+    </div>
+    <p style="margin:16px 0 0;font-size:0.78rem;color:#94a3b8;
+              padding-top:12px;border-top:1px solid #e2e8f0">
+      Or write directly to <strong>yvo@regenstudio.world</strong> ·
+      Regen Studio BV · Netherlands
+    </p>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Selectors that should trigger the engagement modal instead of their
+  // default behaviour. Covers: every form submission, every visible
+  // submit-style button, every "add / create / register / save / delete /
+  // finalize" CTA. The intent is "anything that would write data → ask
+  // the user to reach out instead".
+  function rcfmIsWriteAction(el) {
+    if (!el) return false;
+    if (el.matches('form button[type=submit]')) return true;
+    if (el.matches('button[type=submit]')) return true;
+    if (el.matches('button.danger')) return true;            // withdraw etc.
+    var txt = (el.innerText || el.textContent || '').toLowerCase();
+    return /\b(add|create|save|delete|withdraw|finalize|register an activity|export|regenerate)\b/.test(txt);
+  }
+  document.addEventListener('submit', function(e){
+    e.preventDefault(); e.stopPropagation();
+    rcfmShowEngagement();
+  }, true);
+  document.addEventListener('click', function(e){
+    var t = e.target.closest('button, a');
+    if (!t) return;
+    // Don't intercept the modal's own close / mailto buttons
+    if (t.closest('#rcfm-engagement-modal')) return;
+    if (t.closest('#rcfm-demo-banner')) return;
+    if (t.tagName === 'A' && t.getAttribute('href') &&
+        !t.getAttribute('href').startsWith('#') &&
+        t.getAttribute('href').endsWith('.html')) return;   // nav links OK
+    if (rcfmIsWriteAction(t)) {
+      e.preventDefault(); e.stopPropagation();
+      rcfmShowEngagement();
+    }
+  }, true);
+
+  window.rcfmShowEngagement = function(e){
+    if (e) e.preventDefault();
+    document.getElementById('rcfm-engagement-modal').style.display = 'flex';
+    return false;
+  };
+  window.rcfmCloseEngagement = function(){
+    document.getElementById('rcfm-engagement-modal').style.display = 'none';
+  };
+  window.rcfmTrackContact = function(){
+    // Hook for analytics later; no-op for now
+  };
+  // ESC closes the modal
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') rcfmCloseEngagement();
+  });
+})();
+</script>
+
+</body></html>

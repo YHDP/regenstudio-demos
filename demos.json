@@ -80,6 +80,17 @@
       "preview": "assets/images/previews/innovation-platform.svg",
       "accentColor": "#009BBB",
       "path": "/innovation-platform/"
+    },
+    {
+      "id": "footprint-manager",
+      "name": "Footprint Manager",
+      "subtitle": "VSME-Aligned Carbon Accounting for SMEs",
+      "description": "Voluntary corporate carbon footprint manager built on the GHG Protocol with EFRAG VSME (Basic + Comprehensive) disclosures, factor-provenance audit trails, dual Scope 2 reporting, IPCC AR6 GWPs, and inline-XBRL exports. Browse Regen Studio BV's real 2025 inventory in this read-only demo.",
+      "category": "Circular Economy",
+      "tags": ["Carbon Accounting", "VSME", "GHG Protocol", "ESG Reporting"],
+      "preview": "assets/images/previews/footprint-manager.svg",
+      "accentColor": "#008545",
+      "path": "/footprint-manager/"
     }
   ]
 }

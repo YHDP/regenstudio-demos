@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<title>Regen CO₂ Footprint Manager — Register</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font: 15px/1.55 -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+    max-width: 1100px; margin: 24px auto; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 1.6rem; margin-bottom: 4px; }
+  h2 { font-size: 1.1rem; margin-top: 1.8em; color: #006d38;
+       border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; }
+  .meta { color: #64748b; font-size: 0.88rem; margin-bottom: 20px; }
+  form.card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px;
+              padding: 18px 20px; margin: 16px 0; }
+  .row { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
+         gap: 10px 14px; margin-bottom: 10px; }
+  .row.wide { grid-template-columns: 1fr 1fr; }
+  .row.full { grid-template-columns: 1fr; }
+  label { display: block; font-size: 0.78rem; color: #64748b;
+          text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px; }
+  input, select, textarea {
+    width: 100%; padding: 7px 9px; font: inherit; color: inherit;
+    border: 1px solid #cbd5e1; border-radius: 6px; background: white;
+  }
+  textarea { min-height: 46px; resize: vertical; }
+  button {
+    background: #006d38; color: white; border: 0; padding: 9px 18px;
+    border-radius: 7px; font-weight: 600; font-size: 0.95rem; cursor: pointer;
+  }
+  button.secondary { background: #fff; color: #475569; border: 1px solid #cbd5e1; }
+  button.danger { background: #fff; color: #b91c1c; border: 1px solid #fecaca;
+                  padding: 3px 9px; font-size: 0.78rem; font-weight: 500; }
+  details summary {
+    cursor: pointer; padding: 8px 10px; background: #fef3c7;
+    border: 1px solid #fde68a; border-radius: 6px; font-size: 0.88rem;
+    color: #78350f; margin-top: 8px;
+  }
+  details[open] summary { margin-bottom: 10px; }
+  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+  .stat { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
+          padding: 12px 14px; }
+  .stat .label { font-size: 0.72rem; color: #64748b; text-transform: uppercase;
+                 letter-spacing: 0.05em; }
+  .stat .big { font-size: 1.4rem; font-weight: 700; color: #1a1a1a; }
+  .stat .range { font-size: 0.78rem; color: #64748b; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px;
+          font-size: 0.9rem; }
+  th, td { text-align: left; padding: 7px 9px;
+           border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  th { background: #f1f5f9; font-weight: 600; color: #334155;
+       font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.scope-total td { background: #f0fdf4; font-weight: 600; }
+  tr.grand td { background: #006d38; color: white; font-weight: 700; }
+  .flash { background: #dcfce7; color: #14532d; border: 1px solid #86efac;
+           padding: 10px 14px; border-radius: 7px; margin: 10px 0; }
+  .flash.err { background: #fee2e2; color: #7f1d1d; border-color: #fecaca; }
+  .pill { display: inline-block; padding: 1px 7px; font-size: 0.72rem;
+          border-radius: 999px; background: #e2e8f0; color: #475569; }
+  .pill.q-A { background: #bbf7d0; color: #14532d; }
+  .pill.q-B { background: #e9d5ff; color: #581c87; }
+  .pill.q-C { background: #fde68a; color: #78350f; }
+  .pill.q-D { background: #fecaca; color: #7f1d1d; }
+  nav.view-select { display: flex; gap: 8px; align-items: center; margin: 10px 0 20px; }
+  nav.view-select form { display: inline; }
+  nav.view-select select, nav.view-select button {
+    padding: 6px 10px; font-size: 0.9rem;
+  }
+  /* Top navigation header */
+  header.app {
+    background: white; border: 1px solid #e2e8f0; border-radius: 10px;
+    padding: 14px 20px; margin: 0 0 18px;
+    box-shadow: 0 1px 3px rgba(36,54,68,0.04);
+  }
+  header.app .title-row {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; flex-wrap: wrap; margin-bottom: 10px;
+  }
+  header.app h1 {
+    font-size: 1.05rem; margin: 0; color: #006d38;
+    letter-spacing: 0.01em; font-weight: 700;
+  }
+  header.app .entity-bar { display: flex; gap: 8px; align-items: center; }
+  header.app .entity-bar select { padding: 4px 8px; font-size: 0.85rem; }
+  header.app .status {
+    font-size: 0.78rem; color: #64748b;
+    display: flex; gap: 10px; align-items: center;
+  }
+  header.app .status .badge {
+    padding: 2px 8px; border-radius: 999px; font-weight: 600;
+    font-size: 0.72rem; background: #e2e8f0; color: #475569;
+  }
+  header.app .status .badge.open { background: #fef3c7; color: #78350f; }
+  header.app .status .badge.finalized { background: #dcfce7; color: #14532d; }
+  nav.app {
+    display: flex; gap: 0; border-bottom: 1px solid #e2e8f0;
+    margin-top: 10px;
+  }
+  nav.app a {
+    padding: 8px 14px; text-decoration: none; color: #475569;
+    font-size: 0.92rem; border-bottom: 2px solid transparent;
+    margin-bottom: -1px; transition: color 0.12s;
+  }
+  nav.app a:hover { color: #006d38; }
+  nav.app a.active {
+    color: #006d38; font-weight: 600; border-bottom-color: #006d38;
+  }
+  /* Next-actions list */
+  ul.actions { list-style: none; padding: 0; margin: 8px 0; }
+  ul.actions li {
+    padding: 8px 12px; margin-bottom: 6px; border-radius: 7px;
+    background: #fef3c7; border: 1px solid #fde68a;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 10px;
+  }
+  ul.actions li.low { background: #f1f5f9; border-color: #e2e8f0; }
+  ul.actions li a {
+    color: #006d38; font-weight: 600; text-decoration: none;
+    font-size: 0.88rem; white-space: nowrap;
+  }
+  /* Filter bar */
+  .filter-bar {
+    display: flex; gap: 10px; flex-wrap: wrap; align-items: end;
+    margin: 10px 0 14px; padding: 10px 12px;
+    background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 7px;
+  }
+  .filter-bar label { min-width: 0; }
+  .filter-bar select, .filter-bar input { padding: 4px 8px; font-size: 0.88rem; }
+  /* Section TOC */
+  .toc {
+    display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 20px;
+    font-size: 0.82rem;
+  }
+  .toc a {
+    padding: 3px 8px; background: #f1f5f9; color: #475569;
+    border-radius: 5px; text-decoration: none;
+  }
+  .toc a:hover { background: #006d38; color: white; }
+  /* Rendered markdown */
+  .md h1 { font-size: 1.3rem; color: #006d38; margin-top: 1em; }
+  .md h2 { font-size: 1.1rem; color: #006d38; margin-top: 1.4em; }
+  .md h3 { font-size: 0.98rem; color: #334155; margin-top: 1em; }
+  .md hr { border: none; border-top: 1px solid #e2e8f0; margin: 1.5em 0; }
+  .md ul { padding-left: 22px; }
+  .md code { background: #f1f5f9; padding: 1px 5px; border-radius: 3px;
+             font-size: 0.88em; font-family: ui-monospace, monospace; }
+  .md p { line-height: 1.55; }
+  /* Info tooltip (ⓘ popover) — zero-JS, stdlib-only, <details>-based */
+  details.help { display: inline-block; position: relative; vertical-align: baseline;
+                 margin-left: 4px; }
+  details.help > summary {
+    cursor: help; list-style: none;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 15px; height: 15px; border-radius: 50%;
+    background: #006d38; color: white;
+    font-size: 0.68rem; font-weight: 700; font-style: normal;
+    font-family: -apple-system, sans-serif;
+    transition: background 0.12s, transform 0.12s;
+    user-select: none;
+  }
+  details.help > summary::-webkit-details-marker { display: none; }
+  details.help > summary::before { content: "i"; }
+  details.help > summary:hover { background: #15803d; transform: scale(1.1); }
+  details.help[open] > summary { background: #14532d; }
+  details.help .help-card {
+    position: absolute; top: 22px; left: 0;
+    min-width: 300px; max-width: 380px;
+    background: white; border: 1px solid #e2e8f0; border-radius: 8px;
+    padding: 12px 14px; box-shadow: 0 6px 18px rgba(36,54,68,0.14);
+    font-size: 0.86rem; line-height: 1.5; z-index: 100;
+    text-transform: none; letter-spacing: normal; color: #1a1a1a;
+    font-weight: normal;
+  }
+  details.help .help-card strong.title { color: #006d38; font-size: 0.95rem;
+                                           display: block; margin-bottom: 6px; }
+  details.help .help-card p { margin: 0 0 6px; }
+  details.help .help-card p:last-child { margin-bottom: 0; }
+  details.help .help-card .tech { color: #64748b; font-size: 0.8rem;
+                                    border-left: 2px solid #e2e8f0;
+                                    padding-left: 8px; }
+  details.help .help-card .where { font-size: 0.82rem; color: #334155; }
+  details.help .help-card .example {
+    font-size: 0.82rem; background: #f0fdf4; padding: 7px 9px;
+    border-radius: 5px; color: #14532d;
+    border-left: 3px solid #006d38;
+  }
+  details.help .help-card .more a {
+    font-size: 0.8rem; color: #006d38; font-weight: 600; text-decoration: none;
+  }
+  /* Wizard stepper */
+  .stepper { display: flex; gap: 0; margin: 18px 0 24px;
+             border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+  .stepper .step { flex: 1; padding: 10px 14px; text-align: center;
+                   font-size: 0.82rem; color: #64748b; position: relative;
+                   text-decoration: none; background: #f8fafc;
+                   border-right: 1px solid #e2e8f0; }
+  .stepper .step:last-child { border-right: none; }
+  .stepper .step.active { background: #006d38; color: white; font-weight: 600; }
+  .stepper .step.done { background: #dcfce7; color: #14532d; }
+  .stepper .step .num {
+    display: inline-block; width: 20px; height: 20px; border-radius: 50%;
+    background: rgba(0,0,0,0.08); line-height: 20px; margin-right: 6px;
+    font-weight: 700; font-size: 0.78rem;
+  }
+  .stepper .step.active .num { background: rgba(255,255,255,0.2); }
+  /* Glossary */
+  .glossary-term {
+    padding: 12px 14px; margin-bottom: 8px;
+    border-left: 3px solid #006d38; background: #f8fafc;
+    border-radius: 0 7px 7px 0;
+  }
+  .glossary-term h3 { margin: 0 0 6px; font-size: 0.98rem; color: #006d38; }
+  .glossary-term p { margin: 0 0 4px; font-size: 0.92rem; line-height: 1.5; }
+</style>
+</head><body>
+
+<header class="app">
+  <div class="title-row">
+    <h1>Regen CO₂ Footprint Manager</h1>
+    <form class="entity-bar" method="GET" action="/register">
+      <label style="display:inline;text-transform:none;font-size:0.82rem;color:#334155;">Entity</label>
+      <select name="org"><option value="circulartech-advisory">CircularTech Advisory</option><option value="dft-brazil-consulting">Dutch Flow Technology — Brazil sales representation</option><option value="regen-studio-bv" selected>Regen Studio BV</option><option value="yvo-personal">Yvo (personal, non-business)</option><option value="proj-circulartech">  └ CircularTech Advisory (project)</option><option value="proj-dft-brazil">  └ Dutch Flow Technology Brazil (project)</option><option value="proj-ai-operations">  └ AI-Operations (cross-project coordination)</option><option value="proj-avisonar">  └ AviSonar</option><option value="proj-bird-detective">  └ BirdDetective</option><option value="proj-claude-partner-network">  └ Claude Partner Network</option><option value="proj-cpr-dpp-tracker">  └ CPR DPP Tracker</option><option value="proj-cultural-connections">  └ Cultural Connections 2026</option><option value="proj-design-lab">  └ Design Lab</option><option value="proj-funding-pipeline">  └ Funding Pipeline</option><option value="proj-kingsday-design">  └ Kingsday Design (Design Lab print pipeline)</option><option value="proj-open-integrity-demo">  └ Open Integrity Demo</option><option value="proj-openremote-pentest">  └ OpenRemote Pentest</option><option value="proj-regen-footprint">  └ Regen CO₂ Footprint Manager</option><option value="proj-regen-studio-website">  └ Regen Studio Website</option><option value="proj-regenstudio-demos">  └ Regen Studio Demos</option><option value="proj-trupass">  └ TruPASS</option><option value="proj-unattributed">  └ Unattributed (cwd did not match any rule)</option><option value="proj-yogai">  └ YogAI</option><option value="proj-book-of-love">  └ Book of Love</option><option value="proj-emigration">  └ Emigration NL→BR</option><option value="proj-money-manager">  └ Money Manager</option><option value="proj-rokor">  └ ROKOR</option><option value="proj-work-manager">  └ Work Manager</option></select>
+      <label style="display:inline;text-transform:none;font-size:0.82rem;color:#334155;">Year</label>
+      <select name="year"><option value="2027">2027</option><option value="2026">2026</option><option value="2025" selected>2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option></select>
+      <button class="secondary">apply</button>
+      <a href="../index.html" onclick="try{localStorage.removeItem('rcfm.remember');}catch(_){}"
+         style="margin-left:10px;font-size:0.82rem;color:#64748b;text-decoration:none;"
+         title="Back to company picker">↺ Switch entity</a>
+    </form>
+  </div>
+  <div class="status">
+    <span>Period:</span>
+    <span class="badge open">open</span>
+    <span>·</span>
+    <span>VSME coverage 9/9 Basic categories</span>
+  </div>
+  <nav class="app"><a href="index.html">🏠 Home</a><a href="register.html" class="active">📥 Register</a><a href="disclosures.html">📊 Disclosures</a><a href="factors.html">📚 Factors</a><a href="report.html">📄 Report</a><a href="methodology.html">📘 Methodology</a><a href="guide.html">🧭 Guide</a><a href="glossary.html">📖 Glossary</a></nav>
+</header>
+
+
+
+
+<h2>Register an activity</h2>
+<p class="meta" style="margin-top:0">
+  One row per activity. Click the <strong>ⓘ</strong> next to any field for
+  a plain-language guide on what to enter and where to find the data.
+</p>
+<form class="card" method="POST" action="/add">
+  <input type="hidden" name="return_org" value="regen-studio-bv">
+  <input type="hidden" name="return_year" value="2025">
+  <input type="hidden" name="return_view" value="register">
+  <div class="row">
+    <div>
+      <label>Date <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Date of occurrence</strong><p>When the activity happened — boarding date, invoice date, meter-read date.</p><p class="tech"><strong>Why we ask:</strong> Each row must fall inside the reporting period (the year you&#x27;re reporting).</p><p class="where"><strong>Where to find it:</strong> The timestamp on your receipt / invoice.</p><p class="example"><strong>Example:</strong> A flight on 2025-03-15; pick that date, not today&#x27;s.</p></div></details></label>
+      <input type="date" name="occurred_at" value="2025-01-01" required>
+    </div>
+    <div>
+      <label>Entity / project <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Entity or project</strong><p>Which reporting entity (RS BV, CircularTech, DFT Brazil…) or internal project this row belongs to.</p><p class="tech"><strong>Why we ask:</strong> Lets multi-entity work stay distinguishable. Sub-projects roll up into their parent entity for reporting.</p><p class="where"><strong>Where to find it:</strong> Your mental model of which &#x27;pot&#x27; the expense came from.</p><p class="example"><strong>Example:</strong> A CPR-tracker-related SaaS subscription → proj-cpr-dpp-tracker → rolls up into Regen Studio BV.</p></div></details></label>
+      <select name="org_slug" required><option value="circulartech-advisory">CircularTech Advisory</option><option value="dft-brazil-consulting">Dutch Flow Technology — Brazil sales representation</option><option value="regen-studio-bv" selected>Regen Studio BV</option><option value="yvo-personal">Yvo (personal, non-business)</option><option value="proj-circulartech">  └ CircularTech Advisory (project)</option><option value="proj-dft-brazil">  └ Dutch Flow Technology Brazil (project)</option><option value="proj-ai-operations">  └ AI-Operations (cross-project coordination)</option><option value="proj-avisonar">  └ AviSonar</option><option value="proj-bird-detective">  └ BirdDetective</option><option value="proj-claude-partner-network">  └ Claude Partner Network</option><option value="proj-cpr-dpp-tracker">  └ CPR DPP Tracker</option><option value="proj-cultural-connections">  └ Cultural Connections 2026</option><option value="proj-design-lab">  └ Design Lab</option><option value="proj-funding-pipeline">  └ Funding Pipeline</option><option value="proj-kingsday-design">  └ Kingsday Design (Design Lab print pipeline)</option><option value="proj-open-integrity-demo">  └ Open Integrity Demo</option><option value="proj-openremote-pentest">  └ OpenRemote Pentest</option><option value="proj-regen-footprint">  └ Regen CO₂ Footprint Manager</option><option value="proj-regen-studio-website">  └ Regen Studio Website</option><option value="proj-regenstudio-demos">  └ Regen Studio Demos</option><option value="proj-trupass">  └ TruPASS</option><option value="proj-unattributed">  └ Unattributed (cwd did not match any rule)</option><option value="proj-yogai">  └ YogAI</option><option value="proj-book-of-love">  └ Book of Love</option><option value="proj-emigration">  └ Emigration NL→BR</option><option value="proj-money-manager">  └ Money Manager</option><option value="proj-rokor">  └ ROKOR</option><option value="proj-work-manager">  └ Work Manager</option></select>
+    </div>
+    <div>
+      <label>Scope / category <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Scope / category</strong><p>Pick the GHG Protocol category that matches the activity. Use the most specific sub-code available (e.g., 3.1-meals rather than 3.1).</p><p class="tech"><strong>Why we ask:</strong> Scope codes determine how the row rolls up in your report. Wrong scope = wrong breakdown chart.</p><p class="where"><strong>Where to find it:</strong> The dropdown is pre-populated with the full GHG Protocol taxonomy.</p><p class="example"><strong>Example:</strong> A flight → 3.6. Office electricity → 2-location (then also add 2-market for dual reporting). A SaaS sub → 3.1-saas-subs.</p><p class="more"><a href="glossary.html">Learn more →</a></p></div></details></label>
+      <select name="scope_code" required><option value="1">1 — Direct emissions (Scope 1)</option><option value="2-location">2-location — Scope 2 — location-based electricity</option><option value="2-market">2-market — Scope 2 — market-based electricity</option><option value="3.1">3.1 — Scope 3.1 — Purchased Goods and Services</option><option value="3.1-ai-inference">3.1-ai-inference — Scope 3.1 — AI inference (Cloud LLM services)</option><option value="3.1-meals">3.1-meals — Scope 3.1 — Business meals</option><option value="3.1-print">3.1-print — Scope 3.1 — Printed goods</option><option value="3.1-saas-subs">3.1-saas-subs — Scope 3.1 — SaaS subscriptions</option><option value="3.10">3.10 — Scope 3.10 — Processing of sold products</option><option value="3.11">3.11 — Scope 3.11 — Use of sold products</option><option value="3.12">3.12 — Scope 3.12 — End-of-life treatment of sold products</option><option value="3.13">3.13 — Scope 3.13 — Downstream leased assets</option><option value="3.14">3.14 — Scope 3.14 — Franchises</option><option value="3.15">3.15 — Scope 3.15 — Investments</option><option value="3.2">3.2 — Scope 3.2 — Capital Goods</option><option value="3.3">3.3 — Scope 3.3 — Fuel- and energy-related activities</option><option value="3.4">3.4 — Scope 3.4 — Upstream transportation and distribution</option><option value="3.5">3.5 — Scope 3.5 — Waste generated in operations</option><option value="3.6">3.6 — Scope 3.6 — Business Travel</option><option value="3.7">3.7 — Scope 3.7 — Employee Commuting</option><option value="3.8">3.8 — Scope 3.8 — Upstream leased assets</option><option value="3.9">3.9 — Scope 3.9 — Downstream transportation and distribution</option></select>
+    </div>
+    <div>
+      <label>Quantity <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Quantity</strong><p>The number your emission factor multiplies. Always a positive number.</p><p class="tech"><strong>Why we ask:</strong> Kg CO₂e = quantity × factor. Wrong quantity = wrong footprint.</p><p class="where"><strong>Where to find it:</strong> Your receipt (km flown, kWh used, tonnes of waste) or a sensible estimate.</p><p class="example"><strong>Example:</strong> GRU–AMS round trip = 2 × 9,775 km = 19,550 passenger-km. São Paulo home office ≈ 150 kWh/yr for lightweight use.</p></div></details></label>
+      <input type="number" name="quantity" step="any" min="0" required>
+    </div>
+  </div>
+  <div class="row">
+    <div>
+      <label>Unit <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Unit</strong><p>What the quantity is measured in. Must match the factor&#x27;s applies-to unit.</p><p class="tech"><strong>Why we ask:</strong> The dropdown filters factors to only those valid for the unit you pick, so units stay consistent.</p><p class="where"><strong>Where to find it:</strong> Usually obvious from the activity type.</p><p class="example"><strong>Example:</strong> Flights in pkm (passenger-km). Electricity in kWh. Meals counted as meal. Subscriptions as subscription-year.</p></div></details></label>
+      <select name="quantity_unit" required>
+        <option value="pkm">pkm (passenger-km)</option>
+        <option value="km">km</option>
+        <option value="kwh">kWh</option>
+        <option value="meal">meal</option>
+        <option value="cup">cup</option>
+        <option value="unit-year">unit-year</option>
+        <option value="subscription-year">subscription-year</option>
+        <option value="unit">unit</option>
+      </select>
+    </div>
+    <div style="grid-column:span 3">
+      <label>Emission factor <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Emission factor</strong><p>The number that converts your activity data into kg CO₂e. Each factor has a value, a range, a unit, and a source.</p><p class="tech"><strong>Why we ask:</strong> Factor quality is the single biggest driver of your number&#x27;s credibility. A-rated factors (peer-reviewed / government) are preferred; D-rated (judgment) are flagged for upgrade.</p><p class="where"><strong>Where to find it:</strong> The library under Factors — filter by unit, quality, or geography.</p><p class="example"><strong>Example:</strong> `flight-longhaul-economy-rfi` — DEFRA 2024, 0.196 kg CO₂e/pkm [A].</p><p class="more"><a href="glossary.html">Learn more →</a></p></div></details>
+        <a href="factors.html"
+           style="font-size:0.75rem;text-transform:none;letter-spacing:0;margin-left:8px">browse library →</a></label>
+      <select name="factor_slug" required><option value="">— select a factor —</option><option value="book-printed-paperback" data-unit="unit">book-printed-paperback — 1.5 kgCO2e/book (range 0.5–2.5) [D]</option><option value="br-grid-location" data-unit="kwh">br-grid-location — 0.08 kgCO2e/kWh (range 0.05–0.12) [A]</option><option value="br-grid-market-residual" data-unit="kwh">br-grid-market-residual — 0.08 kgCO2e/kWh (range 0.05–0.12) [B]</option><option value="car-petrol-passenger-km" data-unit="km">car-petrol-passenger-km — 0.17 kgCO2e/km (range 0.15–0.2) [A]</option><option value="chatgpt-personal-annual" data-unit="subscription-year">chatgpt-personal-annual — 5.0 kgCO2e/subscription-year (range 2.0–15.0) [D]</option><option value="coffee-or-tea" data-unit="cup">coffee-or-tea — 0.05 kgCO2e/cup (range 0.03–0.1) [A]</option><option value="dessert-small" data-unit="meal">dessert-small — 0.4 kgCO2e/portion (range 0.2–0.8) [A]</option><option value="flight-longhaul-economy-norfi" data-unit="pkm">flight-longhaul-economy-norfi — 0.15 kgCO2e/pkm (range 0.14–0.165) [A]</option><option value="flight-longhaul-economy-rfi" data-unit="pkm">flight-longhaul-economy-rfi — 0.196 kgCO2e/pkm (range 0.18–0.215) [A]</option><option value="ipad-amortized-annual" data-unit="unit-year">ipad-amortized-annual — 30.0 kgCO2e/unit-year (range 25.0–40.0) [B]</option><option value="ipad-full-embodied" data-unit="unit">ipad-full-embodied — 150.0 kgCO2e/unit (range 120.0–180.0) [B]</option><option value="isp-residential-annual" data-unit="subscription-year">isp-residential-annual — 30.0 kgCO2e/subscription-year (range 15.0–60.0) [D]</option><option value="meal-beef" data-unit="meal">meal-beef — 5.0 kgCO2e/meal (range 3.0–7.0) [A]</option><option value="meal-chicken" data-unit="meal">meal-chicken — 2.5 kgCO2e/meal (range 1.5–4.0) [A]</option><option value="meal-pork" data-unit="meal">meal-pork — 3.5 kgCO2e/meal (range 2.0–5.0) [A]</option><option value="meal-vegetarian" data-unit="meal">meal-vegetarian — 1.2 kgCO2e/meal (range 0.8–2.0) [A]</option><option value="monitor-32in-amortized-annual" data-unit="unit-year">monitor-32in-amortized-annual — 70.0 kgCO2e/unit-year (range 55.0–90.0) [C]</option><option value="monitor-32in-full-embodied" data-unit="unit">monitor-32in-full-embodied — 500.0 kgCO2e/unit (range 400.0–600.0) [C]</option><option value="municipal-water-supply-br" data-unit="m3">municipal-water-supply-br — 0.25 kgCO2e/m3 (range 0.15–0.45) [D]</option><option value="municipal-water-supply-nl" data-unit="m3">municipal-water-supply-nl — 0.3 kgCO2e/m3 (range 0.2–0.45) [B]</option><option value="nl-grid-location" data-unit="kwh">nl-grid-location — 0.4 kgCO2e/kWh (range 0.35–0.45) [A]</option><option value="nl-grid-market-residual" data-unit="kwh">nl-grid-market-residual — 0.45 kgCO2e/kWh (range 0.4–0.5) [A]</option><option value="photobook-printed" data-unit="unit">photobook-printed — 5.0 kgCO2e/photobook (range 3.0–10.0) [D]</option><option value="saas-heavy-annual" data-unit="subscription-year">saas-heavy-annual — 60.0 kgCO2e/subscription-year (range 30.0–120.0) [D]</option><option value="saas-light-annual" data-unit="subscription-year">saas-light-annual — 5.0 kgCO2e/subscription-year (range 2.0–15.0) [D]</option><option value="saas-medium-annual" data-unit="subscription-year">saas-medium-annual — 20.0 kgCO2e/subscription-year (range 10.0–40.0) [D]</option><option value="saas-subscription-default-annual" data-unit="subscription-year">saas-subscription-default-annual — 25.0 kgCO2e/subscription-year (range 10.0–50.0) [D]</option><option value="train-nl-pkm" data-unit="pkm">train-nl-pkm — 0.006 kgCO2e/pkm (range 0.004–0.01) [A]</option><option value="uber-br-ethanol-mix-km" data-unit="km">uber-br-ethanol-mix-km — 0.13 kgCO2e/km (range 0.1–0.18) [A]</option><option value="waste-mixed-landfill" data-unit="tonne">waste-mixed-landfill — 458.0 kgCO2e/tonne (range 400.0–520.0) [A]</option><option value="waste-recycling-mixed" data-unit="tonne">waste-recycling-mixed — 21.0 kgCO2e/tonne (range 10.0–45.0) [A]</option></select>
+    </div>
+  </div>
+  <div class="row wide">
+    <div>
+      <label>Description <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Description</strong><p>A human-readable summary of this row — what, when, where.</p><p class="tech"><strong>Why we ask:</strong> You&#x27;ll be auditing these rows a year from now. The description is what jogs your memory when the receipt is gone.</p><p class="where"><strong>Where to find it:</strong> Write it in your own words — the more specific, the better.</p><p class="example"><strong>Example:</strong> &#x27;Flight GRU–AMS round trip #1 March 2025 (KLM, economy, with RFI)&#x27; beats &#x27;Flight&#x27;.</p></div></details></label>
+      <input type="text" name="description" required placeholder="e.g. Flight GRU–AMS round trip, March 2025">
+    </div>
+    <div>
+      <label>Evidence link <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Evidence link</strong><p>A URL or path to the source document — receipt, invoice, boarding pass, utility bill. Optional but strongly recommended.</p><p class="tech"><strong>Why we ask:</strong> Assurance-ready reporting (ISSA 5000) requires every row to trace back to a primary document. Adding this now saves the scramble at audit time.</p><p class="where"><strong>Where to find it:</strong> A cloud-drive link, an attached PDF path in data/evidence/, or an email link.</p><p class="example"><strong>Example:</strong> file:///evidence/2025/gru-ams-mar-boarding.pdf</p></div></details></label>
+      <input type="text" name="evidence_url" placeholder="optional — receipt URL / path">
+    </div>
+  </div>
+  <div class="row full">
+    <div>
+      <label>Note / methodological remarks <details class="help"><summary aria-label="More information"></summary><div class="help-card"><strong class="title">Note / methodological remarks</strong><p>Explain any assumption or non-standard choice: which proxy factor you used, whether the date is reconstructed, why you excluded something.</p><p class="tech"><strong>Why we ask:</strong> Transparent methodology is how a &#x27;voluntary VSME-aligned&#x27; disclosure earns credibility. The note is the audit trail in plain English.</p><p class="where"><strong>Where to find it:</strong> Your judgment calls while entering the row.</p><p class="example"><strong>Example:</strong> &#x27;5% SAF on this ticket is treated as uncounted offsetting — not netted from the Scope 3.6 total.&#x27;</p></div></details></label>
+      <textarea name="note" placeholder="Assumptions, exclusions, edge cases."></textarea>
+    </div>
+  </div>
+  <button type="submit">Add to register</button>
+  <span style="margin-left:14px;font-size:0.85rem;color:#64748b">
+    Need a factor that's not in the list?
+    <a href="factors.html">Add a custom factor →</a>
+  </span>
+</form>
+
+<h2>Full register · 2025</h2>
+<form class="filter-bar" method="GET" action="/register">
+  <input type="hidden" name="org" value="regen-studio-bv">
+  <input type="hidden" name="year" value="2025">
+  <div><label>Scope</label><select name="scope"><option value="">all scopes</option><option value="2-location">2-location</option><option value="2-market">2-market</option><option value="3.1-ai-inference">3.1-ai-inference</option><option value="3.1-meals">3.1-meals</option><option value="3.1-print">3.1-print</option><option value="3.1-saas-subs">3.1-saas-subs</option><option value="3.2">3.2</option><option value="3.6">3.6</option></select></div>
+  <div><label>Search</label>
+    <input type="text" name="q" value="" placeholder="description substring">
+  </div>
+  <div><label>Sort</label>
+    <select name="sort">
+      <option value="date-desc" selected>date ↓</option>
+      <option value="date-asc">date ↑</option>
+      <option value="kg-desc">kg ↓</option>
+      <option value="kg-asc">kg ↑</option>
+      <option value="scope">scope</option>
+    </select>
+  </div>
+  <button class="secondary">filter</button>
+</form>
+<p style="color:#64748b;font-size:0.88rem">Showing 34 of 34 entries.</p><table><thead><tr><th>Date</th><th>Description</th><th>Scope</th><th class="num">Quantity</th><th>Factor</th><th class="num">Central</th><th></th></tr></thead><tbody><tr><td>2025-12-31</td><td>Wix website hosting (annual)</td><td>3.1-saas-subs</td><td class='num'>1 subscription-year</td><td><span class='pill'>saas-light-annual</span></td><td class='num'>5.0 kg</td><td><form method='POST' action='/delete/107' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-12-31</td><td>Samsung 32&quot; monitor — purchased 2025, full embodied emissions booked this year</td><td>3.2</td><td class='num'>1 unit</td><td><span class='pill'>monitor-32in-full-embodied</span></td><td class='num'>500.0 kg</td><td><form method='POST' action='/delete/106' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-12-31</td><td>São Paulo home office 3 m² — annual electricity (market-based)</td><td>2-market <small style='color:#64748b'>(market)</small></td><td class='num'>150 kwh</td><td><span class='pill'>br-grid-market-residual</span></td><td class='num'>12.0 kg</td><td><form method='POST' action='/delete/105' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-12-31</td><td>São Paulo home office 3 m² — annual electricity (location-based)</td><td>2-location <small style='color:#64748b'>(location)</small></td><td class='num'>150 kwh</td><td><span class='pill'>br-grid-location</span></td><td class='num'>12.0 kg</td><td><form method='POST' action='/delete/104' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-12-31</td><td>iPad — purchased 2025, full embodied emissions booked this year</td><td>3.2</td><td class='num'>1 unit</td><td><span class='pill'>ipad-full-embodied</span></td><td class='num'>150.0 kg</td><td><form method='POST' action='/delete/100' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-12-31</td><td>ChatGPT subscription (~10 prompts/day, full year)</td><td>3.1-ai-inference</td><td class='num'>1 subscription-year</td><td><span class='pill'>chatgpt-personal-annual</span></td><td class='num'>5.0 kg</td><td><form method='POST' action='/delete/99' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-12-31</td><td>Microsoft 365 subscription (annual)</td><td>3.1-saas-subs</td><td class='num'>1 subscription-year</td><td><span class='pill'>saas-medium-annual</span></td><td class='num'>20.0 kg</td><td><form method='POST' action='/delete/98' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-12-31</td><td>Monday.com subscription (annual)</td><td>3.1-saas-subs</td><td class='num'>1 subscription-year</td><td><span class='pill'>saas-medium-annual</span></td><td class='num'>20.0 kg</td><td><form method='POST' action='/delete/97' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-12-31</td><td>Whereby video subscription (annual)</td><td>3.1-saas-subs</td><td class='num'>1 subscription-year</td><td><span class='pill'>saas-medium-annual</span></td><td class='num'>20.0 kg</td><td><form method='POST' action='/delete/96' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-12-31</td><td>Proton Mail + Drive subscription (annual)</td><td>3.1-saas-subs</td><td class='num'>1 subscription-year</td><td><span class='pill'>saas-light-annual</span></td><td class='num'>5.0 kg</td><td><form method='POST' action='/delete/95' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-12-31</td><td>Adobe Creative Cloud subscription (annual)</td><td>3.1-saas-subs</td><td class='num'>1 subscription-year</td><td><span class='pill'>saas-heavy-annual</span></td><td class='num'>60.0 kg</td><td><form method='POST' action='/delete/94' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-12-31</td><td>Odido Internet + TV (annual subscription)</td><td>3.1-saas-subs</td><td class='num'>1 subscription-year</td><td><span class='pill'>isp-residential-annual</span></td><td class='num'>30.0 kg</td><td><form method='POST' action='/delete/83' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-09-20</td><td>Uber rides in São Paulo (~200 km, ethanol-petrol flex-fuel)</td><td>3.6</td><td class='num'>200 km</td><td><span class='pill'>uber-br-ethanol-mix-km</span></td><td class='num'>26.0 kg</td><td><form method='POST' action='/delete/103' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-09-15</td><td>Flight GRU–AMS round trip #2 (KLM, economy, with RFI)</td><td>3.6</td><td class='num'>1.955e+04 pkm</td><td><span class='pill'>flight-longhaul-economy-rfi</span></td><td class='num'>3.83 t</td><td><form method='POST' action='/delete/93' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-09-01</td><td>Printed photobook, 60 pages (Pumbo via CM.com)</td><td>3.1-print</td><td class='num'>1 unit</td><td><span class='pill'>photobook-printed</span></td><td class='num'>5.0 kg</td><td><form method='POST' action='/delete/92' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-08-22</td><td>Apple pie slice (De Bruine Boon)</td><td>3.1-meals</td><td class='num'>1 meal</td><td><span class='pill'>dessert-small</span></td><td class='num'>0.4 kg</td><td><form method='POST' action='/delete/91' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-08-22</td><td>Coffee (De Bruine Boon)</td><td>3.1-meals</td><td class='num'>1 cup</td><td><span class='pill'>coffee-or-tea</span></td><td class='num'>0.1 kg</td><td><form method='POST' action='/delete/90' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-08-05</td><td>2 hamburgers (Le Smash, Leiden)</td><td>3.1-meals</td><td class='num'>2 meal</td><td><span class='pill'>meal-beef</span></td><td class='num'>10.0 kg</td><td><form method='POST' action='/delete/89' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-07-18</td><td>Coffee (Deli Pies)</td><td>3.1-meals</td><td class='num'>1 cup</td><td><span class='pill'>coffee-or-tea</span></td><td class='num'>0.1 kg</td><td><form method='POST' action='/delete/88' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-07-18</td><td>2 empanadas (Deli Pies)</td><td>3.1-meals</td><td class='num'>1 meal</td><td><span class='pill'>meal-chicken</span></td><td class='num'>2.5 kg</td><td><form method='POST' action='/delete/87' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-07-02</td><td>Ham sandwich + orange juice (Sucre Sale)</td><td>3.1-meals</td><td class='num'>1 meal</td><td><span class='pill'>meal-pork</span></td><td class='num'>3.5 kg</td><td><form method='POST' action='/delete/86' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-06-15</td><td>Coffee (Florence)</td><td>3.1-meals</td><td class='num'>1 cup</td><td><span class='pill'>coffee-or-tea</span></td><td class='num'>0.1 kg</td><td><form method='POST' action='/delete/85' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-06-08</td><td>Pasta pesto (La Dolce Vita)</td><td>3.1-meals</td><td class='num'>1 meal</td><td><span class='pill'>meal-vegetarian</span></td><td class='num'>1.2 kg</td><td><form method='POST' action='/delete/84' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-06-01</td><td>NL intercity train travel, ~500 pkm (annualized)</td><td>3.6</td><td class='num'>500 pkm</td><td><span class='pill'>train-nl-pkm</span></td><td class='num'>3.0 kg</td><td><form method='POST' action='/delete/102' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-05-20</td><td>3 paperback books (bol.com, ~800 pages total)</td><td>3.1-print</td><td class='num'>3 unit</td><td><span class='pill'>book-printed-paperback</span></td><td class='num'>4.5 kg</td><td><form method='POST' action='/delete/81' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-05-12</td><td>Butter chicken + paneer masala (Little India, takeaway)</td><td>3.1-meals</td><td class='num'>1 meal</td><td><span class='pill'>meal-chicken</span></td><td class='num'>2.5 kg</td><td><form method='POST' action='/delete/80' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-04-22</td><td>Personal car Nijmegen ↔ Köln round trip, business-paid fuel</td><td>3.6</td><td class='num'>260 km</td><td><span class='pill'>car-petrol-passenger-km</span></td><td class='num'>44.2 kg</td><td><form method='POST' action='/delete/101' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-04-22</td><td>Chicken sandwich + Vitamin Water (AH to go)</td><td>3.1-meals</td><td class='num'>1 meal</td><td><span class='pill'>meal-chicken</span></td><td class='num'>2.5 kg</td><td><form method='POST' action='/delete/79' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-04-05</td><td>Asian hot pot for 3 (Little Lamb)</td><td>3.1-meals</td><td class='num'>3 meal</td><td><span class='pill'>meal-chicken</span></td><td class='num'>7.5 kg</td><td><form method='POST' action='/delete/78' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-03-15</td><td>Flight GRU–AMS round trip #1 (KLM, economy, with RFI)</td><td>3.6</td><td class='num'>1.955e+04 pkm</td><td><span class='pill'>flight-longhaul-economy-rfi</span></td><td class='num'>3.83 t</td><td><form method='POST' action='/delete/82' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-03-10</td><td>Pumpkin chai latte (Bagels &amp; Beans)</td><td>3.1-meals</td><td class='num'>1 cup</td><td><span class='pill'>coffee-or-tea</span></td><td class='num'>0.1 kg</td><td><form method='POST' action='/delete/77' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-03-10</td><td>BLT bagel (Bagels &amp; Beans)</td><td>3.1-meals</td><td class='num'>1 meal</td><td><span class='pill'>meal-pork</span></td><td class='num'>3.5 kg</td><td><form method='POST' action='/delete/76' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-02-15</td><td>Ginger tea (Kafka)</td><td>3.1-meals</td><td class='num'>1 cup</td><td><span class='pill'>coffee-or-tea</span></td><td class='num'>0.1 kg</td><td><form method='POST' action='/delete/75' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr><tr><td>2025-02-15</td><td>Broodje rookworst (HEMA, Den Haag)</td><td>3.1-meals</td><td class='num'>1 meal</td><td><span class='pill'>meal-pork</span></td><td class='num'>3.5 kg</td><td><form method='POST' action='/delete/74' onsubmit='return confirm("Withdraw this record?")' style='margin:0'><input type='hidden' name='org' value='regen-studio-bv'><input type='hidden' name='year' value='2025'><input type='hidden' name='return_view' value='register'><button class='danger'>withdraw</button></form></td></tr></tbody></table>
+
+
+<div id="rcfm-demo-banner" style="
+    position:sticky;top:0;z-index:5000;
+    background:linear-gradient(90deg,#00914B 0%,#009BBB 100%);
+    color:white;padding:8px 18px;
+    font:13px/1.4 -apple-system,BlinkMacSystemFont,'Inter',sans-serif;
+    box-shadow:0 2px 6px rgba(0,0,0,0.12);
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+  <strong style="font-weight:700;letter-spacing:0.05em">DEMO · read-only</strong>
+  <span style="opacity:0.92">Browsing real Regen Studio BV 2025 data — entry forms are deactivated.</span>
+  <a href="#" onclick="return rcfmShowEngagement(event)"
+     style="margin-left:auto;color:white;text-decoration:underline;font-weight:600">
+     Want this for your business? →
+  </a>
+</div>
+
+<div id="rcfm-engagement-modal" style="
+    display:none;position:fixed;inset:0;z-index:6000;
+    background:rgba(8,30,18,0.62);backdrop-filter:blur(4px);
+    align-items:center;justify-content:center;padding:20px"
+    onclick="if(event.target===this) rcfmCloseEngagement()">
+  <div style="
+      max-width:480px;width:100%;background:white;border-radius:14px;
+      padding:28px 32px;box-shadow:0 25px 60px rgba(0,0,0,0.35);
+      font:15px/1.55 -apple-system,BlinkMacSystemFont,'Inter',sans-serif;
+      color:#0d3b20">
+    <h2 style="margin:0 0 10px;font-size:1.4rem;color:#00914B;font-weight:800">
+      This is a read-only demo
+    </h2>
+    <p style="margin:0 0 14px;color:#334155">
+      Want to track <strong>your own organisation's</strong> carbon footprint
+      with this tool — VSME-aligned, factor-audited, your data, your report?
+      We'd love to set you up.
+    </p>
+    <p style="margin:0 0 18px;color:#334155;font-size:0.92rem">
+      Reply with a short note about your business, your reporting year, and
+      whether you've started any inventory yet. We'll come back within a few
+      working days.
+    </p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a href="mailto:yvo@regenstudio.world?subject=Footprint%20Manager%20%E2%80%94%20deployment%20interest&body=Hi%20Yvo%2C%0A%0AI%20saw%20the%20Footprint%20Manager%20demo%20and%20I%27d%20like%20to%20explore%20deploying%20it%20for%3A%0A%0AOrganisation%3A%20%0AReporting%20year%3A%20%0AInventory%20status%3A%20"
+         onclick="rcfmTrackContact()"
+         style="flex:1;min-width:160px;text-align:center;
+                background:linear-gradient(135deg,#00914B 0%,#009BBB 100%);
+                color:white;padding:13px 22px;border-radius:50px;
+                text-decoration:none;font-weight:700;font-size:0.95rem;
+                box-shadow:0 8px 24px rgba(0,145,75,0.3)">
+        Email Yvo →
+      </a>
+      <button type="button" onclick="rcfmCloseEngagement()"
+              style="flex:1;min-width:160px;background:white;color:#475569;
+                     border:1px solid #cbd5e1;padding:13px 22px;
+                     border-radius:50px;font:inherit;font-weight:600;
+                     cursor:pointer">
+        Continue browsing demo
+      </button>
+    </div>
+    <p style="margin:16px 0 0;font-size:0.78rem;color:#94a3b8;
+              padding-top:12px;border-top:1px solid #e2e8f0">
+      Or write directly to <strong>yvo@regenstudio.world</strong> ·
+      Regen Studio BV · Netherlands
+    </p>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Selectors that should trigger the engagement modal instead of their
+  // default behaviour. Covers: every form submission, every visible
+  // submit-style button, every "add / create / register / save / delete /
+  // finalize" CTA. The intent is "anything that would write data → ask
+  // the user to reach out instead".
+  function rcfmIsWriteAction(el) {
+    if (!el) return false;
+    if (el.matches('form button[type=submit]')) return true;
+    if (el.matches('button[type=submit]')) return true;
+    if (el.matches('button.danger')) return true;            // withdraw etc.
+    var txt = (el.innerText || el.textContent || '').toLowerCase();
+    return /\b(add|create|save|delete|withdraw|finalize|register an activity|export|regenerate)\b/.test(txt);
+  }
+  document.addEventListener('submit', function(e){
+    e.preventDefault(); e.stopPropagation();
+    rcfmShowEngagement();
+  }, true);
+  document.addEventListener('click', function(e){
+    var t = e.target.closest('button, a');
+    if (!t) return;
+    // Don't intercept the modal's own close / mailto buttons
+    if (t.closest('#rcfm-engagement-modal')) return;
+    if (t.closest('#rcfm-demo-banner')) return;
+    if (t.tagName === 'A' && t.getAttribute('href') &&
+        !t.getAttribute('href').startsWith('#') &&
+        t.getAttribute('href').endsWith('.html')) return;   // nav links OK
+    if (rcfmIsWriteAction(t)) {
+      e.preventDefault(); e.stopPropagation();
+      rcfmShowEngagement();
+    }
+  }, true);
+
+  window.rcfmShowEngagement = function(e){
+    if (e) e.preventDefault();
+    document.getElementById('rcfm-engagement-modal').style.display = 'flex';
+    return false;
+  };
+  window.rcfmCloseEngagement = function(){
+    document.getElementById('rcfm-engagement-modal').style.display = 'none';
+  };
+  window.rcfmTrackContact = function(){
+    // Hook for analytics later; no-op for now
+  };
+  // ESC closes the modal
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') rcfmCloseEngagement();
+  });
+})();
+</script>
+
+</body></html>
