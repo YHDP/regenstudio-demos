@@ -1359,3 +1359,84 @@
     font-size: 0.52rem;
   }
 }
+
+
+/* ============================================================
+   PRINT — clean single-family report
+   ============================================================ */
+@media print {
+  @page { margin: 18mm 14mm; }
+
+  .tracker-nav,
+  .tracker-hero,
+  .tracker-disclaimer,
+  .tracker-landing,
+  .tracker-footer,
+  #filterBar,
+  #sourceToggle,
+  .src-tooltip,
+  .compare-bar,
+  .conv-view__close,
+  .conv-view__print,
+  .conv-view__breadcrumb,
+  .tracker-container > #trackerGrid {
+    display: none !important;
+  }
+
+  body { background: #fff !important; color: #000 !important; }
+
+  .conv-view {
+    position: static !important;
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+  }
+  .conv-view[hidden] { display: block !important; }
+
+  .conv-view__header {
+    border-bottom: 1px solid #333;
+    padding-bottom: 8mm;
+    margin-bottom: 8mm;
+  }
+  .conv-view__title { color: #000 !important; }
+
+  .conv-view__section-title,
+  .cpr-content-section,
+  .conv-chart,
+  #convDppOutlook,
+  #convContentSections,
+  #convStandards {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    color: #000 !important;
+  }
+
+  .cpr-content-section__body[hidden] { display: block !important; }
+
+  a[href]::after { content: ""; }
+}
+
+
+/* Toast (print failure + generic) */
+.tracker-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  padding: 10px 18px;
+  background: #1a2b36;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: var(--radius-md, 8px);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+.tracker-toast--fade { opacity: 0; }

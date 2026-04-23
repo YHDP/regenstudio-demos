@@ -211,7 +211,13 @@
         var statusIcon = src.status || '?';
         var statusLabel = STATUS_ICONS[statusIcon] || 'Unknown';
         html += '<span class="src-tooltip__status">' + statusIcon + ' ' + esc(statusLabel) + '</span>';
-        html += '<span class="src-tooltip__title">' + esc(src.title || '') + '</span>';
+        var title = esc(src.title || '');
+        if (src.url) {
+          html += '<a class="src-tooltip__title src-tooltip__title--link" href="' + esc(src.url) + '" target="_blank" rel="noopener noreferrer">' + title + '</a>';
+        } else {
+          html += '<span class="src-tooltip__title">' + title + '</span>';
+          html += '<span class="src-tooltip__no-url">No public URL available</span>';
+        }
         if (src.date) {
           html += '<span class="src-tooltip__date">' + esc(src.date) + '</span>';
         }

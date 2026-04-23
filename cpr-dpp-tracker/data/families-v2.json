@@ -270,7 +270,8 @@
         "dpp_date": "~2030–2031",
         "dpp_certainty": "orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2030–2031, System ~Q1-Q2 2029) = ~2030–2031"
+        "formula_note": "max(Product ~2030–2031, System Q1-Q2 2029) = ~2030–2031",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers factory-made precast concrete elements such as hollow core slabs, beams, wall and facade panels, stairs, masts, bridge elements, and box culverts — in normal-weight, lightweight aggregate and autoclaved aerated concrete. Products range from simple unreinforced items to prestressed structural members. Standardisation is led by CEN/TC 229 (precast concrete products), with CEN/TC 177 contributing standards for lightweight aggregate and autoclaved aerated concrete products.",
@@ -321,7 +322,7 @@
           "url": "https://www.itb.pl/wp-content/uploads/2026/01/C20256586_0.pdf"
         },
         "mandatory": "~2030",
-        "dpp": "~2031–2032"
+        "dpp": "~2030–2032"
       },
       "active_pipelines": [
         "B",
@@ -992,7 +993,8 @@
         "dpp_date": "~2030–2032",
         "dpp_certainty": "amber",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2030–2032, System ~Q1-Q2 2029) = ~2030–2032"
+        "formula_note": "max(Product ~2030–2032, System Q1-Q2 2029) = ~2030–2032",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers structural steel and aluminium products used in load-bearing construction, including hot-rolled and cold-formed sections, stainless steel structural members, high-strength and non-preloaded bolting assemblies, welding consumables, and insulating sandwich panels. Conformity assessment centres on the execution of steel and aluminium structures and their components. Standardisation is led by CEN/TC 135.",
@@ -1038,7 +1040,7 @@
         },
         "delivery": "Jun 2027–Jun 2028",
         "mandatory": "Q4 2028–2029",
-        "dpp": "~2029–2030"
+        "dpp": "~2029–2032"
       },
       "active_pipelines": [
         "A",
@@ -1338,7 +1340,8 @@
         "dpp_date": "~2029–2032",
         "dpp_certainty": "amber",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2029–2032, System ~Q1-Q2 2029) = ~2029–2032"
+        "formula_note": "max(Product ~2029–2032, System Q1-Q2 2029) = ~2029–2032",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers the full range of cements, building limes, and hydraulic binders used in construction, from common Portland cements and masonry cements to specialist types such as calcium aluminate, supersulphated, and very low heat cements, as well as hydraulic road binders. Cement is explicitly carved out of the ESPR, meaning sustainability requirements are set under the CPR instead. Standardisation is led by CEN/TC 51.",
@@ -1849,7 +1852,8 @@
         "dpp_date": "~2031–2032",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2031–2032, System ~Q1-Q2 2029) = ~2031–2032"
+        "formula_note": "max(Product ~2031–2032, System Q1-Q2 2029) = ~2031–2032",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers system chimneys and their components, including metal, clay/ceramic and concrete chimney liners, flue pipes, flue blocks, outer wall elements, flue terminals, chimney fans, draught regulators, air/flue terminal systems for room-sealed appliances, and chimney kits (via EADs). Materials span metal, clay/ceramic, concrete and plastic. Free-standing industrial chimneys are excluded and follow a separate standardisation track. Standardisation is led by CEN/TC 166 (hENs) and EOTA (EADs).",
@@ -2302,7 +2306,8 @@
         "dpp_date": "~2032–2033",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2032–2033, System ~Q1-Q2 2029) = ~2032–2033"
+        "formula_note": "max(Product ~2032–2033, System Q1-Q2 2029) = ~2032–2033",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers products used in road, airfield, and trafficked-area construction, including asphalt and bituminous mixtures, paving-grade and polymer-modified bitumen, slurry surfacing, surface dressing, cold-applied joint sealants, road marking materials, concrete pavements, and hydraulically bound and unbound mixtures. The product scope is large, with around 25 harmonised standards. Standardisation is led by CEN/TC 227, with CEN/TC 336 (bituminous binders) and CEN/TC 226 (road equipment) contributing related standards.",
@@ -2660,7 +2665,8 @@
         "dpp_date": "~2031–2032",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2031–2032, System ~Q1-Q2 2029) = ~2031–2032"
+        "formula_note": "max(Product ~2031–2032, System Q1-Q2 2029) = ~2031–2032",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "One of the broadest product families, covering all types of floor coverings and paving used in buildings and external works. This includes resilient products (vinyl, linoleum, rubber, cork), textile and laminate floor coverings, wood flooring, ceramic tiles, natural stone tiles and slabs, concrete paving blocks, clay pavers, terrazzo, floor screeds, raised access floors, and indoor sports surfaces. Standardisation is led by CEN/TC 134, with contributions from several related committees including TC 67 (ceramic tiles), TC 178 (paving units), TC 246 (natural stone), and TC 303 (floor screeds).",
@@ -3182,7 +3188,8 @@
         "dpp_date": "~2032",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2032, System ~Q1-Q2 2029) = ~2032"
+        "formula_note": "max(Product ~2032, System Q1-Q2 2029) = ~2032",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers an exceptionally diverse range of construction kits and prefabricated elements, from timber building kits and prefabricated building units to structural sandwich panels, earthquake-resistant steel-concrete kits, falling rock protection systems, and fibre-reinforced polymer strengthening kits. This family also includes family 36 (attached ladders) under the CPR Working Plan. Uniquely, products are assessed exclusively through European Assessment Documents and European Technical Assessments, with no harmonised EN standards. Standardisation is managed by EOTA, with around 32 active EADs in this product area.",
@@ -3360,7 +3367,8 @@
         "dpp_date": "~2031–2032",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2031–2032, System ~Q1-Q2 2029) = ~2031–2032"
+        "formula_note": "max(Product ~2031–2032, System Q1-Q2 2029) = ~2031–2032",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "This is a new product family introduced in CPR 2024/3110, covering permanently attached ladders fixed to buildings and other construction works. This includes fixed roof ladders, vertical access ladders on facades and building exteriors, caged and uncaged maintenance access ladders, and fixed ladders in utility shafts. Related roof access products such as walkways, treads and safety hooks are also in scope. Portable ladders, loft ladders, and machinery access ladders are excluded. No dedicated technical committee has been assigned; existing standards are under CEN/TC 128 (roof covering products).",
@@ -3401,7 +3409,7 @@
         "sreq": "Q2 2026",
         "delivery": "2029",
         "mandatory": "2029",
-        "dpp": "~2030–2031"
+        "dpp": "~2030–2032"
       },
       "active_pipelines": [
         "A",
@@ -3604,7 +3612,8 @@
         "dpp_date": "~2030–2032",
         "dpp_certainty": "orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2030–2032, System ~Q1-Q2 2029) = ~2030–2032"
+        "formula_note": "max(Product ~2030–2032, System Q1-Q2 2029) = ~2030–2032",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers three distinct product groups: reinforcing steel (weldable bars, coils, and welded fabric for concrete reinforcement), prestressing steel (wire, strand, and bars), and post-tensioning kits (complete systems with tensile elements, anchorages, ducts, and filling material). Also includes stainless steel reinforcement. This is the only product family where the main harmonised standard was withdrawn, meaning reinforcing steel currently cannot be CE marked in the EU. Standardisation is led by CEN/TC 459/SC 4.",
@@ -3645,7 +3654,7 @@
         "sreq": "Q1 2026",
         "delivery": "Jun 2029",
         "mandatory": "2030",
-        "dpp": "~2030–2031"
+        "dpp": "~2030–2032"
       },
       "active_pipelines": [
         "A",
@@ -4073,7 +4082,8 @@
         "dpp_date": "~2030–2032",
         "dpp_certainty": "orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2030–2032, System ~Q1-Q2 2029) = ~2030–2032"
+        "formula_note": "max(Product ~2030–2032, System Q1-Q2 2029) = ~2030–2032",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "One of the broadest and most commercially significant product families, covering windows, external and internal pedestrian doorsets, industrial and garage doors, fire and smoke control doorsets, powered pedestrian doors, external blinds, awnings, shutters, roof windows, and hatches. It also includes building hardware such as door closers, hold-open devices, emergency and panic exit devices, hinges, and locks. With around 50,000 manufacturers and an estimated 76 million DPPs per year for windows alone, this family represents a major implementation challenge. Standardisation is led by CEN/TC 33.",
@@ -4097,13 +4107,13 @@
       "display_name": "Thermal Insulation",
       "family_label": "Annex VII #4 · TIP",
       "full-name": "Thermal insulation products - Composite insulating kits/systems",
-      "dpp-est": "~2029–2032",
+      "dpp-est": "~2031–2032",
       "dpp-range": {
         "hen_earliest": "~2031",
         "hen_latest": "~2032",
         "ead_earliest": "~2032",
         "ead_latest": "~2032",
-        "envelope": "~2029–2032"
+        "envelope": "~2031–2032"
       },
       "acquis": "Yes",
       "sreq": "",
@@ -4114,7 +4124,7 @@
         "sreq": "Q3 2026",
         "delivery": "2029",
         "mandatory": "2029",
-        "dpp": "~2029–2030"
+        "dpp": "~2031–2032"
       },
       "active_pipelines": [
         "A",
@@ -4587,12 +4597,13 @@
         "source": "COM(2025) 772 + CEN/TC 88 + DIBt hEN list + EOTA PA 4. 12 hENs + 18 EADs."
       },
       "convergence": {
-        "product_timeline_complete": "~2029–2032",
+        "product_timeline_complete": "~2031–2032",
         "system_timeline_ref": "sys-dpp-mandatory",
-        "dpp_date": "~2029–2032",
+        "dpp_date": "~2031–2032",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2029–2032, System ~Q1-Q2 2029) = ~2029–2032"
+        "formula_note": "max(Product ~2031–2032, System Q1-Q2 2029) = ~2031–2032",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "The largest insulation product family under the CPR, covering factory-made thermal insulation products across 13 material types including mineral wool, expanded and extruded polystyrene, rigid polyurethane, phenolic foam, cellular glass, wood wool, wood fibre, expanded cork, expanded perlite, polyethylene, and calcium silicate. Also includes external thermal insulation composite systems (ETICS) assessed via the EAD route, vacuum insulation panels, and reflective insulation. This is a substantial market, valued at approximately USD 21 billion globally. Standardisation is led by CEN/TC 88.",
@@ -4633,7 +4644,7 @@
         "sreq": "Q1 2026",
         "delivery": "2028",
         "mandatory": "2029",
-        "dpp": "~2029–2030"
+        "dpp": "~2029–2032"
       },
       "active_pipelines": [
         "A",
@@ -4957,7 +4968,8 @@
         "dpp_date": "~2029–2032",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2029–2032, System ~Q1-Q2 2029) = ~2029–2032"
+        "formula_note": "max(Product ~2029–2032, System Q1-Q2 2029) = ~2029–2032",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers all types of flat glass, profiled glass, and glass blocks used in buildings — from basic float glass and toughened safety glass to laminated glass, insulating glass units, coated glass, and specialty products like borosilicate and chemically strengthened glass. Six European Assessment Documents also cover niche innovations such as vacuum-insulated glass units and thermally curved glass. Standardisation is led by CEN/TC 129 (Glass in building), which coordinates closely with Glass for Europe.",
@@ -4981,13 +4993,13 @@
       "display_name": "Structural Timber",
       "family_label": "Annex VII #13 · STP",
       "full-name": "Structural timber products/elements and ancillaries",
-      "dpp-est": "~2029–2033",
+      "dpp-est": "~2032–2033",
       "dpp-range": {
         "hen_earliest": "~2032",
         "hen_latest": "~2033",
         "ead_earliest": "~2032",
         "ead_latest": "~2032",
-        "envelope": "~2029–2033"
+        "envelope": "~2032–2033"
       },
       "acquis": "Yes",
       "sreq": "",
@@ -4998,7 +5010,7 @@
         "sreq": "Q3 2026",
         "delivery": "2029",
         "mandatory": "2029",
-        "dpp": "~2029–2030"
+        "dpp": "~2032–2033"
       },
       "active_pipelines": [
         "A",
@@ -5706,12 +5718,13 @@
         "source": "COM(2025) 772 + CEN/TC 124 + CEN/TC 112 + EOTA PA 13."
       },
       "convergence": {
-        "product_timeline_complete": "~2029–2033",
+        "product_timeline_complete": "~2032–2033",
         "system_timeline_ref": "sys-dpp-mandatory",
-        "dpp_date": "~2029–2033",
+        "dpp_date": "~2032–2033",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2029–2033, System ~Q1-Q2 2029) = ~2029–2033"
+        "formula_note": "max(Product ~2032–2033, System Q1-Q2 2029) = ~2032–2033",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers structural timber products including strength-graded solid timber, glued laminated timber (glulam), cross-laminated timber (CLT), laminated veneer lumber (LVL), finger-jointed timber, prefabricated trusses, wood poles, and timber fasteners and connectors. Around 41 European Assessment Documents also cover innovative products such as hardwood glulam, wood-concrete composites, and laminated strand lumber. Standardisation is led by CEN/TC 124 (Timber structures), with key industry bodies including CEI-Bois and EOS.",
@@ -5735,13 +5748,13 @@
       "display_name": "Fixed Fire-Fighting",
       "family_label": "Annex VII #10 · FFF",
       "full-name": "Fixed fire fighting equipment (fire alarm/detection, fixed firefighting, fire and smoke control and explosion suppression products)",
-      "dpp-est": "~2030–2033",
+      "dpp-est": "~2030–2032",
       "dpp-range": {
         "hen_earliest": "~2030",
         "hen_latest": "~2031",
         "ead_earliest": "~2032",
         "ead_latest": "~2032",
-        "envelope": "~2030–2033"
+        "envelope": "~2030–2032"
       },
       "acquis": "No",
       "sreq": "",
@@ -5752,7 +5765,7 @@
         "sreq": "Q3 2027",
         "delivery": "",
         "mandatory": "",
-        "dpp": "~2032–2033"
+        "dpp": "~2030–2032"
       },
       "active_pipelines": [
         "A",
@@ -6310,12 +6323,13 @@
         "source": "COM(2025) 772 + CEN/TC 72 + CEN/TC 191 + EOTA PA 10."
       },
       "convergence": {
-        "product_timeline_complete": "~2030–2033",
+        "product_timeline_complete": "~2030–2032",
         "system_timeline_ref": "sys-dpp-mandatory",
-        "dpp_date": "~2030–2033",
+        "dpp_date": "~2030–2032",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2030–2033, System ~Q1-Q2 2029) = ~2030–2033"
+        "formula_note": "max(Product ~2030–2032, System Q1-Q2 2029) = ~2030–2032",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "One of the broadest product families, spanning electronic fire detection and alarm systems, fixed sprinkler and gas extinguishing components, smoke and heat control systems, fire dampers, fire hydrants, hose reels, residential sprinklers, and explosion suppression equipment. Four European Assessment Documents cover specialty products. Standardisation is shared across multiple technical committees: CEN/TC 191 (fixed firefighting), CEN/TC 72 (fire detection and alarm), CEN/TC 295 (residential sprinklers), and CEN/TC 305 (explosion suppression), with Euralarm as the key industry body.",
@@ -6696,7 +6710,8 @@
         "dpp_date": "~2032–2033",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2032–2033, System ~Q1-Q2 2029) = ~2032–2033"
+        "formula_note": "max(Product ~2032–2033, System Q1-Q2 2029) = ~2032–2033",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "One of the most fragmented product families, covering internal and external wall cladding, ceiling finishes, and internal partition kits. Products range from fibre-cement sheets, metal cladding, and sandwich panels to suspended ceilings, decorative wallcoverings, natural stone cladding, wood panelling, and high-pressure laminates. Standardisation is spread across seven or more technical committees, primarily CEN/TC 128 (roof and wall cladding), with secondary roles for CEN/TC 277 (suspended ceilings), CEN/TC 241 (gypsum), CEN/TC 99 (wallcoverings), CEN/TC 246 (natural stone), CEN/TC 175 (wood panelling), and CEN/TC 134 (high-pressure laminates).",
@@ -7074,7 +7089,8 @@
         "dpp_date": "~2032–2033",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2032–2033, System ~Q1-Q2 2029) = ~2032–2033"
+        "formula_note": "max(Product ~2032–2033, System Q1-Q2 2029) = ~2032–2033",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers all gypsum-based construction products including plasterboards, fibreboards, gypsum blocks, plasters, fibrous casts, composite panels, reprocessed gypsum products, metal framing for drylining systems, and ceiling elements. Two European Assessment Documents address structural/load-bearing plasterboard. A complete drylining or partition system involves boards, framing, fasteners, jointing, and adhesives, each with separate standards. Standardisation is led by CEN/TC 241 (Gypsum products).",
@@ -7419,7 +7435,8 @@
         "dpp_date": "~2032–2033",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2032–2033, System ~Q1-Q2 2029) = ~2032–2033"
+        "formula_note": "max(Product ~2032–2033, System Q1-Q2 2029) = ~2032–2033",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "One of the most compact CPR families, covering structural bearings used in bridges and buildings — including sliding, elastomeric, roller, pot, rocker, spherical PTFE, and guide/restraint bearings — plus pins for structural joints. Six European Assessment Documents address innovative bearing materials, reflecting material innovation outpacing the standard revision cycle. Standardisation is led by CEN/TC 167 (Structural bearings). Anti-seismic devices are a separate product family.",
@@ -7741,7 +7758,8 @@
         "dpp_date": "~2032–2033",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2032–2033, System ~Q1-Q2 2029) = ~2032–2033"
+        "formula_note": "max(Product ~2032–2033, System Q1-Q2 2029) = ~2032–2033",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers space heating appliances and other heating and cooling appliances, including solid fuel burning residential stoves, roomheaters, cookers, slow heat release appliances, sauna stoves, solid fuel boilers, heat pumps, radiators, convectors, and underfloor heating systems. The scope is broader than the name suggests. Standardisation is led by CEN/TC 130 (Space heating appliances).",
@@ -8504,7 +8522,8 @@
         "dpp_date": "~2032–2033",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2032–2033, System ~Q1-Q2 2029) = ~2032–2033"
+        "formula_note": "max(Product ~2032–2033, System Q1-Q2 2029) = ~2032–2033",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "One of the richest product families, covering roof coverings (clay tiles, concrete tiles, fibre-cement slates, bitumen sheets, natural slate, metal sheets), roof lights, roof windows, rigid underlays, polycarbonate sheets, sandwich panels, and permanent roof safety anchors. With 32 European Assessment Documents it has the second-highest EAD count across all 37 families, including green roof kits and recycled plastic roofing. Standardisation is led by CEN/TC 128 (Roof and wall cladding).",
@@ -8984,7 +9003,8 @@
         "dpp_date": "~2032–2033",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2032–2033, System ~Q1-Q2 2029) = ~2032–2033"
+        "formula_note": "max(Product ~2032–2033, System Q1-Q2 2029) = ~2032–2033",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers safety-critical road infrastructure including vehicle restraint barriers, fixed and variable road signs, traffic signal heads, warning lights, lighting columns, road marking materials, noise barriers, and anti-glare screens. Eleven European Assessment Documents extend the scope into bridge expansion joints and specialty products. Standardisation is led by CEN/TC 226 (Road equipment), which also has a newer working group on road infrastructure interactions with autonomous vehicles.",
@@ -9008,13 +9028,13 @@
       "display_name": "Concrete & Mortar",
       "family_label": "Annex VII #26 · CMG",
       "full-name": "Products related to concrete, mortar and grout",
-      "dpp-est": "~2030–2033",
+      "dpp-est": "~2032–2033",
       "dpp-range": {
         "hen_earliest": "~2032",
         "hen_latest": "~2033",
         "ead_earliest": "~2032",
         "ead_latest": "~2032",
-        "envelope": "~2030–2033"
+        "envelope": "~2032–2033"
       },
       "acquis": "Yes",
       "sreq": "",
@@ -9025,7 +9045,7 @@
         "sreq": "Q4 2026",
         "delivery": "2029",
         "mandatory": "",
-        "dpp": "~2030–2031"
+        "dpp": "~2032–2033"
       },
       "active_pipelines": [
         "A",
@@ -9557,12 +9577,13 @@
         "source": "COM(2025) 772 + CEN/TC 104 + CEN/TC 125 + CEN/TC 303 + CEN/TC 67 + EOTA PA 26."
       },
       "convergence": {
-        "product_timeline_complete": "~2030–2033",
+        "product_timeline_complete": "~2032–2033",
         "system_timeline_ref": "sys-dpp-mandatory",
-        "dpp_date": "~2030–2033",
+        "dpp_date": "~2032–2033",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2030–2033, System ~Q1-Q2 2029) = ~2030–2033"
+        "formula_note": "max(Product ~2032–2033, System Q1-Q2 2029) = ~2032–2033",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers concrete admixtures, mineral additions (fly ash, blast furnace slag, silica fume), fibres (steel and polymer), pigments, and the full range of concrete repair products — but notably excludes ready-mixed concrete itself, since the core concrete specification is not harmonised under CPR. Nineteen European Assessment Documents represent the frontier of low-carbon concrete innovation, including steel fibres from end-of-life tyres, FRP reinforcement bars, and calcined clay for low-carbon cements. Standardisation is led by CEN/TC 104 (Concrete and related products), with a close relationship to CEN/TC 51 (Cement).",
@@ -9603,7 +9624,7 @@
         "sreq": "Q1 2027",
         "delivery": "2029",
         "mandatory": "",
-        "dpp": "~2030–2031"
+        "dpp": "~2030–2032"
       },
       "active_pipelines": [
         "A",
@@ -9853,7 +9874,8 @@
         "dpp_date": "~2030–2032",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2030–2032, System ~Q1-Q2 2029) = ~2030–2032"
+        "formula_note": "max(Product ~2030–2032, System Q1-Q2 2029) = ~2030–2032",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers natural, manufactured, and recycled aggregates used in concrete, mortar, asphalt, road construction, and railway ballast. Key standards include EN 12620 (aggregates for concrete), EN 13043 (bituminous mixtures), EN 13139 (mortar), EN 13242 (civil engineering), and EN 13450 (railway ballast). Standardisation is led by CEN/TC 154 (Aggregates).",
@@ -9894,7 +9916,7 @@
         "sreq": "Q4 2026",
         "delivery": "2029",
         "mandatory": "",
-        "dpp": "~2030–2031"
+        "dpp": "~2030–2032"
       },
       "active_pipelines": [
         "A",
@@ -10331,7 +10353,8 @@
         "dpp_date": "~2030–2032",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2030–2032, System ~Q1-Q2 2029) = ~2030–2032"
+        "formula_note": "max(Product ~2030–2032, System Q1-Q2 2029) = ~2030–2032",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers curtain walling systems, rainscreen cladding, and structural sealant glazing assemblies along with their framing and fixing components. The key standard is EN 13830 (curtain walling). Standardisation falls under CEN/TC 33, Working Group 6 (Curtain walling) — the same committee responsible for the DWS family.",
@@ -10495,7 +10518,8 @@
         "dpp_date": "~2030–2031",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2030–2031, System ~Q1-Q2 2029) = ~2030–2031"
+        "formula_note": "max(Product ~2030–2031, System Q1-Q2 2029) = ~2030–2031",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers adhesives used in construction, including tile adhesives (EN 12004), gypsum-based adhesives for insulation (EN 12860), structural bonding adhesives, and floor covering adhesives. Standardisation is led by CEN/TC 193 (Adhesives), with contributions from CEN/TC 67 (ceramic tiles) and CEN/TC 241 (gypsum).",
@@ -10692,7 +10716,8 @@
         "dpp_date": "~2030–2031",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2030–2031, System ~Q1-Q2 2029) = ~2030–2031"
+        "formula_note": "max(Product ~2030–2031, System Q1-Q2 2029) = ~2030–2031",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers sealants used in building joints, including silicone, polyurethane, polysulphide, and acrylic formulations for glazing, facade, sanitary, and general construction applications. The key standard series is EN 15651 (Parts 1–5). Standardisation is led by CEN/TC 349 (Sealants for joints in building construction).",
@@ -10716,13 +10741,13 @@
       "display_name": "Fire Protection",
       "family_label": "Annex VII #35 · FPP",
       "full-name": "Fire stopping, fire sealing and fire protective products, fire retardant products",
-      "dpp-est": "~2030–2032",
+      "dpp-est": "~2032",
       "dpp-range": {
         "hen_earliest": null,
         "hen_latest": null,
         "ead_earliest": "~2032",
         "ead_latest": "~2032",
-        "envelope": "~2030–2032"
+        "envelope": "~2032"
       },
       "acquis": "No",
       "sreq": "",
@@ -10733,7 +10758,7 @@
         "sreq": "2029",
         "delivery": "",
         "mandatory": "",
-        "dpp": "~2030–2031"
+        "dpp": "~2032"
       },
       "active_pipelines": [
         "C"
@@ -10923,12 +10948,13 @@
         "source": "COM(2025) 772 + EOTA PA 35. 0 hENs (product standards — CEN/TC 127 develops test methods only). 6 EADs covering fire stopping, sealing, protective coatings, and retardant products."
       },
       "convergence": {
-        "product_timeline_complete": "~2030–2032",
+        "product_timeline_complete": "~2032",
         "system_timeline_ref": "sys-dpp-mandatory",
-        "dpp_date": "~2030–2032",
+        "dpp_date": "~2032",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2030–2032, System ~Q1-Q2 2029) = ~2030–2032"
+        "formula_note": "max(Product ~2032, System Q1-Q2 2029) = ~2032",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers fire stopping and sealing products such as penetration seals and joint seals, reactive coatings, fire protective boards and mats, and fire retardant treatments. Key standard series include EN 13381 (fire protection to structural elements), EN 1366 (fire resistance of service installations), and EN 1634 (fire resistance of door/shutter assemblies), all under AVCP System 1. Standardisation is led by CEN/TC 127 (Fire safety in buildings).",
@@ -11359,7 +11385,8 @@
         "dpp_date": "~2031–2032",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2031–2032, System ~Q1-Q2 2029) = ~2031–2032"
+        "formula_note": "max(Product ~2031–2032, System Q1-Q2 2029) = ~2031–2032",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers masonry units in clay, calcium silicate, aggregate concrete, and autoclaved aerated concrete, along with masonry mortars (EN 998-1/2), lintels, bed joint reinforcement, and ancillary components (EN 845 series). Key unit standards: EN 771 Parts 1–6. Standardisation is led by CEN/TC 125 (Masonry).",
@@ -11586,7 +11613,8 @@
         "dpp_date": "~2032–2033",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2032–2033, System ~Q1-Q2 2029) = ~2032–2033"
+        "formula_note": "max(Product ~2032–2033, System Q1-Q2 2029) = ~2032–2033",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers pipes, fittings, traps, manholes, inspection chambers, small wastewater treatment systems, and separators used for waste water disposal and drainage in buildings and civil engineering. Standardisation is led by CEN/TC 165 (Wastewater engineering).",
@@ -11612,8 +11640,8 @@
       "full-name": "Fixings",
       "dpp-est": "~2032–2033",
       "dpp-range": {
-        "hen_earliest": null,
-        "hen_latest": null,
+        "hen_earliest": "~2032",
+        "hen_latest": "~2033",
         "ead_earliest": "~2032",
         "ead_latest": "~2032",
         "envelope": "~2032–2033",
@@ -12147,7 +12175,8 @@
         "dpp_date": "~2032–2033",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2032–2033, System ~Q1-Q2 2029) = ~2032–2033"
+        "formula_note": "max(Product ~2032–2033, System Q1-Q2 2029) = ~2032–2033",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers mechanical fasteners such as anchors, bolts, and screws, as well as chemical anchors, post-installed rebar connections, and channel bolt systems for fixing to concrete, masonry, and other substrates. This family is primarily covered through European Technical Assessments (ETAs) issued by EOTA.",
@@ -12374,7 +12403,8 @@
         "dpp_date": "~2032–2033",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2032–2033, System ~Q1-Q2 2029) = ~2032–2033"
+        "formula_note": "max(Product ~2032–2033, System Q1-Q2 2029) = ~2032–2033",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers roof waterproofing membranes (bituminous and synthetic), damp-proof membranes, vapour control layers, liquid-applied waterproofing, and complete waterproofing kits for roofs, walls, and below-ground use. Standardisation is led by CEN/TC 254 (Flexible sheets for waterproofing).",
@@ -12623,7 +12653,8 @@
         "dpp_date": "~2032–2033",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2032–2033, System ~Q1-Q2 2029) = ~2032–2033"
+        "formula_note": "max(Product ~2032–2033, System Q1-Q2 2029) = ~2032–2033",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers geotextiles, geomembranes, geogrids, geonets, geocomposites, and geosynthetic clay liners used for filtration, separation, drainage, reinforcement, and containment in civil engineering. Standardisation is led by CEN/TC 189 (Geosynthetics).",
@@ -12850,7 +12881,8 @@
         "dpp_date": "~2033–2034",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2033–2034, System ~Q1-Q2 2029) = ~2033–2034"
+        "formula_note": "max(Product ~2033–2034, System Q1-Q2 2029) = ~2033–2034",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers sanitary appliances such as WC pans, washbasins, bidets, baths, shower trays, urinals, and flushing cisterns made from ceramic, acrylic, steel, or cast iron. Standardisation is led by CEN/TC 163 (Sanitary appliances).",
@@ -13048,7 +13080,8 @@
         "dpp_date": "~2033–2034",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2033–2034, System ~Q1-Q2 2029) = ~2033–2034"
+        "formula_note": "max(Product ~2033–2034, System Q1-Q2 2029) = ~2033–2034",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers pipes, fittings, tanks, and ancillaries for non-potable water applications including rainwater, drainage, sewerage, gas supply, and industrial pipework. Standardisation is led by CEN/TC 155 (Plastics piping systems and ducting systems).",
@@ -13199,7 +13232,8 @@
         "dpp_date": "~2033–2034",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2033–2034, System ~Q1-Q2 2029) = ~2033–2034"
+        "formula_note": "max(Product ~2033–2034, System Q1-Q2 2029) = ~2033–2034",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers power, control, communication, and fibre-optic cables permanently installed in buildings and civil engineering works, including fire-rated cables and cable accessories. Standardisation is led by CLC/TC 20 (Electric cables) under CENELEC.",
@@ -13225,8 +13259,8 @@
       "full-name": "Wood based panels and elements",
       "dpp-est": "~2032",
       "dpp-range": {
-        "hen_earliest": "TBD",
-        "hen_latest": "TBD",
+        "hen_earliest": null,
+        "hen_latest": null,
         "ead_earliest": "~2032",
         "ead_latest": "~2032",
         "envelope": "~2032"
@@ -13240,7 +13274,7 @@
         "sreq": "",
         "delivery": "",
         "mandatory": "",
-        "dpp": "TBD"
+        "dpp": "~2032"
       },
       "active_pipelines": [
         "A",
@@ -13433,7 +13467,8 @@
         "dpp_date": "~2032",
         "dpp_certainty": "red-orange",
         "binding_constraint": "product",
-        "formula_note": "max(Product ~2032, System ~Q1-Q2 2029) = ~2032"
+        "formula_note": "max(Product ~2032, System Q1-Q2 2029) = ~2032",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers plywood, oriented strand board (OSB), particleboard, fibreboard (MDF, HDF, softboard), cement-bonded particleboard, and other wood-based panels for structural and non-structural use. Standardisation is led by CEN/TC 112 (Wood-based panels).",
@@ -13565,10 +13600,11 @@
       "convergence": {
         "product_timeline_complete": "TBD",
         "system_timeline_ref": "sys-dpp-mandatory",
-        "dpp_date": "TBD",
+        "dpp_date": "TBD (≥ Q1-Q2 2029)",
         "dpp_certainty": "gray",
-        "binding_constraint": "unknown",
-        "formula_note": "max(Product TBD, System ~Q1-Q2 2029) = TBD"
+        "binding_constraint": "product-unknown",
+        "formula_note": "max(Product TBD, System Q1-Q2 2029) = TBD (≥ Q1-Q2 2029)",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers pipes, fittings, tanks, valves, and coatings that come into contact with drinking water in supply and distribution systems, subject to strict hygiene and migration requirements. No technical committee has been formally assigned yet.",
@@ -13704,7 +13740,8 @@
         "dpp_date": "2035+",
         "dpp_certainty": "gray",
         "binding_constraint": "product",
-        "formula_note": "max(Product 2035+, System ~Q1-Q2 2029) = 2035+"
+        "formula_note": "max(Product 2035+, System Q1-Q2 2029) = 2035+",
+        "provenance": "recomputed 2026-04-23 via tools/recompute-convergence.py; formula: max(Art.5(8)+12mo, Art.75(1)DA+18mo); product envelope derived from standards[*].dpp_est, system envelope from system-timeline.json::sys-dpp-mandatory"
       },
       "content": {
         "about": "Covers interior and exterior decorative paints, varnishes, coatings, and wallcoverings for buildings. This is a new product family introduced under the revised CPR. Standardisation is led by CEN/TC 139 (Paints and varnishes).",

@@ -129,17 +129,19 @@ cpr-dpp-tracker/
 - Card click opens convergence timeline (vertical + horizontal toggle)
 - Replaces Sprint 1 transitional modal
 
-### Sprint 3: Dashboard + Filtering + Landing
+### Sprint 3: Dashboard + Filtering + Landing — **PARKED 2026-04-23**
 - system-dashboard.js, filters.js, dashboard.css
 - System Timeline dashboard on main page
 - Filter/sort controls, pipeline overview
+- `js/system-dashboard.js` is drafted but not wired into `index.html`; `css/dashboard.css` was deleted as orphan on 2026-04-23 (pre-NVTB cleanup). Re-create stub when this sprint resumes.
 
-### Sprint 4: Comparison + Source Layer + Admin v2 + Polish
-- comparison.js, source-layer.js
-- Admin panel redesign, mobile polish
+### Sprint 4: Comparison + Source Layer + Admin v2 + Polish — partial
+- comparison.js, source-layer.js — shipped
+- Admin panel redesign, mobile polish — deferred
 
-### Sprint 5: Content Enrichment + Multi-Level Reports
-- report-generator.js, content-renderer.js
+### Sprint 5: Content Enrichment + Multi-Level Reports — **PARKED 2026-04-23**
+- `js/report-generator.js` drafted but never wired — `reports.js` ships its own simpler path. Resume this sprint before attempting multi-level report generation.
+- `js/content-renderer.js` — shipped
 - All 37 families' content reviewed and enriched
 - Reports page redesigned
 

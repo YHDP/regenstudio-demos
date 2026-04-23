@@ -305,8 +305,12 @@
     html += buildRow('Binding Constraint', fams, function (f) {
       var conv = f.convergence;
       var binding = (conv && conv.binding_constraint) || 'unknown';
-      var label = binding === 'product' ? 'Product' : binding === 'system' ? 'System' : 'Unknown';
-      var cls = binding === 'product' ? 'product' : binding === 'system' ? 'system' : 'unknown';
+      var label, cls;
+      if (binding === 'product')               { label = 'Product';           cls = 'product'; }
+      else if (binding === 'system')           { label = 'System';            cls = 'system'; }
+      else if (binding === 'tie')              { label = 'Tie (product ≈ system)'; cls = 'tie'; }
+      else if (binding === 'product-unknown')  { label = 'Product unknown';    cls = 'unknown'; }
+      else                                     { label = 'Unknown';            cls = 'unknown'; }
       return '<span class="compare__binding compare__binding--' + cls + '">' + esc(label) + '</span>';
     }, true);
 

@@ -76,54 +76,75 @@
     grid.innerHTML = html;
   }
 
-  // Show skeleton cards while loading
-  renderSkeletons();
-
   // ---------- INIT ----------
-  Promise.all([
-    fetch('data/families-v2.json').then(function (r) { return r.json(); }),
-    fetch('data/system-timeline.json').then(function (r) { return r.json(); }),
-    fetch('data/sources.json').then(function (r) { return r.json(); }).catch(function () { return {}; })
-  ]).then(function (results) {
-    var v2Data = results[0];
-    systemTimeline = results[1];
-    window._cprSources = results[2] || {};
-
-    families = v2Data.families.slice().sort(function (a, b) {
-      return dppSortKey(a) - dppSortKey(b);
+  function fetchJson(url) {
+    return fetch(url).then(function (r) {
+      if (!r.ok) throw new Error(url + ' ' + r.status);
+      return r.json();
     });
+  }
 
-    // Render filters + initial grid (filters callback renders the grid)
-    if (window.renderFilters && filterBar) {
-      renderFilters(filterBar, families, function (filtered) {
-        renderGrid(filtered);
+  function loadAll() {
+    renderSkeletons();
+    if (metaEl) metaEl.textContent = 'Loading\u2026';
+    Promise.all([
+      fetchJson('data/families-v2.json'),
+      fetchJson('data/system-timeline.json'),
+      fetchJson('data/sources.json').catch(function () { return {}; })
+    ]).then(function (results) {
+      var v2Data = results[0];
+      systemTimeline = results[1];
+      window._cprSources = results[2] || {};
+
+      families = v2Data.families.slice().sort(function (a, b) {
+        return dppSortKey(a) - dppSortKey(b);
       });
-    } else {
-      renderGrid(families);
-    }
 
-    // Initialize comparison mode
-    if (window.initComparison && compareView) {
-      initComparison(grid, compareView, families, systemTimeline, openConvergenceView);
-    }
+      // Render filters + initial grid (filters callback renders the grid)
+      if (window.renderFilters && filterBar) {
+        renderFilters(filterBar, families, function (filtered) {
+          renderGrid(filtered);
+        });
+      } else {
+        renderGrid(families);
+      }
 
-    // Initialize source layer
-    if (window.initSourceLayer && sourceToggle) {
-      initSourceLayer(sourceToggle);
-    }
+      // Initialize comparison mode
+      if (window.initComparison && compareView) {
+        initComparison(grid, compareView, families, systemTimeline, openConvergenceView);
+      }
 
-    populateHeroIcons();
-    if (metaEl) metaEl.textContent = families.length + ' product families \u00b7 Regulation (EU) 2024/3110';
+      // Initialize source layer
+      if (window.initSourceLayer && sourceToggle) {
+        initSourceLayer(sourceToggle);
+      }
 
-    // Handle deep-link: #family=PCR or #compare=PCR,SMP
-    var hash = window.location.hash;
-    var familyMatch = hash.match(/family=([A-Z]+)/i);
-    if (familyMatch) {
-      var target = familyMatch[1].toUpperCase();
-      var fam = families.find(function (f) { return f.letter === target; });
-      if (fam) openConvergenceView(fam);
-    }
-  });
+      populateHeroIcons();
+      if (metaEl) metaEl.textContent = families.length + ' product families \u00b7 Regulation (EU) 2024/3110';
+
+      // Handle deep-link: #family=PCR or #compare=PCR,SMP
+      var hash = window.location.hash;
+      var familyMatch = hash.match(/family=([A-Z]+)/i);
+      if (familyMatch) {
+        var target = familyMatch[1].toUpperCase();
+        var fam = families.find(function (f) { return f.letter === target; });
+        if (fam) openConvergenceView(fam);
+      }
+    }).catch(function (err) {
+      if (window.console && console.error) console.error('Tracker data load failed:', err);
+      if (grid) {
+        grid.innerHTML = '<div class="tracker-error" role="alert">'
+          + '<p>Could not load tracker data.</p>'
+          + '<button type="button" class="tracker-error__retry">Retry</button>'
+          + '</div>';
+        var retry = grid.querySelector('.tracker-error__retry');
+        if (retry) retry.addEventListener('click', loadAll);
+      }
+      if (metaEl) metaEl.textContent = 'Data unavailable \u2014 retry above';
+    });
+  }
+
+  loadAll();
 
   // ---------- HERO ICONS ----------
   function populateHeroIcons() {
@@ -692,8 +713,22 @@
   // Print convergence view
   if (convPrint) {
     convPrint.addEventListener('click', function () {
-      window.print();
+      try {
+        window.print();
+      } catch (err) {
+        if (window.console && console.warn) console.warn('Print failed:', err);
+        showToast('Print could not be opened — check your browser settings.');
+      }
     });
+  }
+
+  function showToast(msg) {
+    var t = document.createElement('div');
+    t.className = 'tracker-toast';
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(function () { t.classList.add('tracker-toast--fade'); }, 2600);
+    setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 3200);
   }
 
   // Nav scroll effect (add shadow on scroll)

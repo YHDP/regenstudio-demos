@@ -7,6 +7,11 @@
   popup.className = 'cpr-dpp-info-popup';
   document.body.appendChild(popup);
 
+  function esc(v) {
+    if (v === null || v === undefined) return '';
+    return String(v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
   function hide() { popup.style.display = 'none'; popup._openBtn = null; }
 
   document.addEventListener('click', function (e) {
@@ -33,7 +38,7 @@
 
   window.buildHenDppInfo = function (s, stageLabels) {
     var steps = [];
-    steps.push('<div class="cpr-dpp-info-popup__title">DPP pathway \u2014 ' + (s.id || 'hEN') + '</div>');
+    steps.push('<div class="cpr-dpp-info-popup__title">DPP pathway \u2014 ' + esc(s.id || 'hEN') + '</div>');
 
     var stepNum = 1;
     if (s.current_cpr) {
@@ -49,50 +54,50 @@
       steps.push('<div class="cpr-dpp-info-popup__step"><b>' + stepNum + '. Next SReq:</b> Under CPR 2024/3110 \u2014 resulting HTS will trigger DPP directly.</div>');
       stepNum++;
     } else if (s.sreq_table) {
-      steps.push('<div class="cpr-dpp-info-popup__step"><b>' + stepNum + '. Standardisation request:</b> ' + s.sreq_table + '</div>');
+      steps.push('<div class="cpr-dpp-info-popup__step"><b>' + stepNum + '. Standardisation request:</b> ' + esc(s.sreq_table) + '</div>');
       stepNum++;
     }
 
     if (s.delivery) {
-      steps.push('<div class="cpr-dpp-info-popup__step"><b>' + stepNum + '. Delivery deadline:</b> <span class="cpr-dpp-date">' + s.delivery + '</span></div>');
+      steps.push('<div class="cpr-dpp-info-popup__step"><b>' + stepNum + '. Delivery deadline:</b> <span class="cpr-dpp-date">' + esc(s.delivery) + '</span></div>');
       stepNum++;
     }
     if (s.pub_est) {
-      steps.push('<div class="cpr-dpp-info-popup__step"><b>' + stepNum + '. Publication est:</b> <span class="cpr-dpp-date">' + s.pub_est + '</span></div>');
+      steps.push('<div class="cpr-dpp-info-popup__step"><b>' + stepNum + '. Publication est:</b> <span class="cpr-dpp-date">' + esc(s.pub_est) + '</span></div>');
       stepNum++;
     }
     if (s.mand_est) {
-      steps.push('<div class="cpr-dpp-info-popup__step"><b>' + stepNum + '. Mandatory est:</b> <span class="cpr-dpp-date">' + s.mand_est + '</span></div>');
+      steps.push('<div class="cpr-dpp-info-popup__step"><b>' + stepNum + '. Mandatory est:</b> <span class="cpr-dpp-date">' + esc(s.mand_est) + '</span></div>');
       stepNum++;
     }
     if (s.dpp_est) {
-      steps.push('<div class="cpr-dpp-info-popup__step"><b>' + stepNum + '. DPP obligation est:</b> <span class="cpr-dpp-date">' + s.dpp_est + '</span></div>');
+      steps.push('<div class="cpr-dpp-info-popup__step"><b>' + stepNum + '. DPP obligation est:</b> <span class="cpr-dpp-date">' + esc(s.dpp_est) + '</span></div>');
       stepNum++;
     }
     if (s.notes) {
-      steps.push('<div class="cpr-dpp-info-popup__step" style="margin-top:6px;font-style:italic;color:#8CA9BF;font-size:0.62rem;">' + s.notes + '</div>');
+      steps.push('<div class="cpr-dpp-info-popup__step" style="margin-top:6px;font-style:italic;color:#8CA9BF;font-size:0.62rem;">' + esc(s.notes) + '</div>');
     }
     return steps.join('');
   };
 
   window.buildEadDppInfo = function (s) {
     var steps = [];
-    steps.push('<div class="cpr-dpp-info-popup__title">DPP pathway \u2014 ' + (s.id || 'EAD') + '</div>');
+    steps.push('<div class="cpr-dpp-info-popup__title">DPP pathway \u2014 ' + esc(s.id || 'EAD') + '</div>');
     var isOld = s.regime !== 'new';
     if (isOld) {
       steps.push('<div class="cpr-dpp-info-popup__step"><b>1. Legacy EAD</b> under CPR 2011' + (s.cited ? ', cited in OJEU' : '') + '</div>');
-      steps.push('<div class="cpr-dpp-info-popup__step"><b>2. Validity expires:</b> <span class="cpr-dpp-date cpr-dpp-date--ead">' + (s.expires || '9 Jan 2031') + '</span></div>');
+      steps.push('<div class="cpr-dpp-info-popup__step"><b>2. Validity expires:</b> <span class="cpr-dpp-date cpr-dpp-date--ead">' + esc(s.expires || '9 Jan 2031') + '</span></div>');
       if (s.new_ead) {
-        steps.push('<div class="cpr-dpp-info-popup__step"><b>3. New EAD replacement est:</b> <span class="cpr-dpp-date cpr-dpp-date--ead">' + s.new_ead + '</span></div>');
+        steps.push('<div class="cpr-dpp-info-popup__step"><b>3. New EAD replacement est:</b> <span class="cpr-dpp-date cpr-dpp-date--ead">' + esc(s.new_ead) + '</span></div>');
       }
     } else {
       steps.push('<div class="cpr-dpp-info-popup__step"><b>1. New EAD</b> adopted under CPR 2024/3110</div>');
     }
     if (s.dpp_est) {
-      steps.push('<div class="cpr-dpp-info-popup__step"><b>' + (isOld ? '4' : '2') + '. DPP obligation est:</b> <span class="cpr-dpp-date cpr-dpp-date--ead">' + s.dpp_est + '</span></div>');
+      steps.push('<div class="cpr-dpp-info-popup__step"><b>' + (isOld ? '4' : '2') + '. DPP obligation est:</b> <span class="cpr-dpp-date cpr-dpp-date--ead">' + esc(s.dpp_est) + '</span></div>');
     }
     if (s.notes) {
-      steps.push('<div class="cpr-dpp-info-popup__step" style="margin-top:6px;font-style:italic;color:#8CA9BF;font-size:0.62rem;">' + s.notes + '</div>');
+      steps.push('<div class="cpr-dpp-info-popup__step" style="margin-top:6px;font-style:italic;color:#8CA9BF;font-size:0.62rem;">' + esc(s.notes) + '</div>');
     }
     return steps.join('');
   };

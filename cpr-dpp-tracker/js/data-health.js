@@ -365,10 +365,11 @@
         }
       });
 
-      // Check convergence dpp_outcome consistency
+      // Check convergence binding_constraint (valid enum: product | system | tie | product-unknown | unknown)
       if (fam.convergence && fam.convergence.binding_constraint) {
         checks++;
-        if (fam.convergence.binding_constraint === 'product' || fam.convergence.binding_constraint === 'system') {
+        var validBinding = { 'product': 1, 'system': 1, 'tie': 1, 'product-unknown': 1, 'unknown': 1 };
+        if (validBinding[fam.convergence.binding_constraint]) {
           passes++;
         } else {
           issues.push({ family: letter, check: 'convergence.binding_constraint', detail: 'Invalid: "' + fam.convergence.binding_constraint + '"' });

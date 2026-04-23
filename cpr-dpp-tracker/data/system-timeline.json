@@ -16,9 +16,9 @@
       "type": "NT-11",
       "label": "JTC24 DPP Standards (x8)",
       "status": "in_progress",
-      "certainty": "amber",
+      "certainty": "red-orange",
       "target_date": "2026-03-31",
-      "detail": "5 of 8 prENs known. Target 31 Mar 2026. Slipped from Dec 2025.",
+      "detail": "5 of 8 prENs known. Target 31 Mar 2026 — missed; status pending agent-refresh (planned 2026-04-28). Slipped from Dec 2025.",
       "sources": ["S124", "S51", "S53", "S54", "S55", "S56", "S57"],
       "sub_items": [
         { "id": "prEN 18219", "label": "Unique identifiers (WG2)", "status": "in_progress" },
