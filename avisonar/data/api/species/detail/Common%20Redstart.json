@@ -1,0 +1,166 @@
+{
+  "summary": {
+    "common_name": "Common Redstart",
+    "scientific_name": "Phoenicurus phoenicurus",
+    "encounter_count": 4,
+    "total_calls": 4,
+    "total_verified": 0,
+    "max_confidence": 0.8665,
+    "first_seen": "2026-04-29 05:03:35",
+    "last_seen": "2026-05-05 09:19:12",
+    "avg_confidence": 0.657,
+    "avg_calls_per_encounter": 1.0,
+    "peak_hour": 15,
+    "unverified_count": 4
+  },
+  "encounters": [
+    {
+      "id": 136,
+      "common_name": "Common Redstart",
+      "scientific_name": "Phoenicurus phoenicurus",
+      "started_at": "2026-05-05 09:19:12",
+      "ended_at": "2026-05-05 09:19:12",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.4844,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 162,
+          "timestamp": "2026-05-05 09:19:12",
+          "confidence": 0.4844,
+          "audio_file": "chunk_20260505_091912_0.0_3.0.wav",
+          "status": "unverified",
+          "start_s": 0.0,
+          "end_s": 3.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.7383
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.043
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 126,
+      "common_name": "Common Redstart",
+      "scientific_name": "Phoenicurus phoenicurus",
+      "started_at": "2026-05-05 08:21:29",
+      "ended_at": "2026-05-05 08:21:29",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.4464,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 151,
+          "timestamp": "2026-05-05 08:21:29",
+          "confidence": 0.4464,
+          "audio_file": "chunk_20260505_082129_3.0_6.0.wav",
+          "status": "unverified",
+          "start_s": 3.0,
+          "end_s": 6.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird vocalization, bird call, bird song",
+              "score": 0.5
+            },
+            "top_noise": {
+              "class_name": "Walk, footsteps",
+              "score": 0.082
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 74,
+      "common_name": "Common Redstart",
+      "scientific_name": "Phoenicurus phoenicurus",
+      "started_at": "2026-05-03 15:33:03",
+      "ended_at": "2026-05-03 15:33:03",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.8314,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 90,
+          "timestamp": "2026-05-03 15:33:03",
+          "confidence": 0.8314,
+          "audio_file": "chunk_20260503_153303_6.0_12.0.wav",
+          "status": "unverified",
+          "start_s": 6.0,
+          "end_s": 12.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.8906
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.2617
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 2,
+      "common_name": "Common Redstart",
+      "scientific_name": "Phoenicurus phoenicurus",
+      "started_at": "2026-04-29 05:03:35",
+      "ended_at": "2026-04-29 05:03:35",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.8665,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 3,
+          "timestamp": "2026-04-29 05:03:35",
+          "confidence": 0.8665,
+          "audio_file": "chunk_20260429_050335_6.0_9.0.wav",
+          "status": "unverified",
+          "start_s": 6.0,
+          "end_s": 9.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.5859
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.332
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

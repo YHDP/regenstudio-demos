@@ -1,0 +1,55 @@
+{
+  "summary": {
+    "common_name": "Barn Swallow",
+    "scientific_name": "Hirundo rustica",
+    "encounter_count": 1,
+    "total_calls": 1,
+    "total_verified": 0,
+    "max_confidence": 0.438,
+    "first_seen": "2026-05-01 08:44:23",
+    "last_seen": "2026-05-01 08:44:23",
+    "avg_confidence": 0.438,
+    "avg_calls_per_encounter": 1.0,
+    "peak_hour": 8,
+    "unverified_count": 1
+  },
+  "encounters": [
+    {
+      "id": 43,
+      "common_name": "Barn Swallow",
+      "scientific_name": "Hirundo rustica",
+      "started_at": "2026-05-01 08:44:23",
+      "ended_at": "2026-05-01 08:44:23",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.438,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 49,
+          "timestamp": "2026-05-01 08:44:23",
+          "confidence": 0.438,
+          "audio_file": "chunk_20260501_084423_12.0_15.0.wav",
+          "status": "unverified",
+          "start_s": 12.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.7383
+            },
+            "top_noise": {
+              "class_name": "Rodents, rats, mice",
+              "score": 0.082
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

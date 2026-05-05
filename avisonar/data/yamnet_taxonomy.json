@@ -1,0 +1,2607 @@
+[
+  {
+    "index": 0,
+    "class_name": "Speech",
+    "class_kind": "noise"
+  },
+  {
+    "index": 1,
+    "class_name": "Child speech, kid speaking",
+    "class_kind": "noise"
+  },
+  {
+    "index": 2,
+    "class_name": "Conversation",
+    "class_kind": "noise"
+  },
+  {
+    "index": 3,
+    "class_name": "Narration, monologue",
+    "class_kind": "noise"
+  },
+  {
+    "index": 4,
+    "class_name": "Babbling",
+    "class_kind": "other"
+  },
+  {
+    "index": 5,
+    "class_name": "Speech synthesizer",
+    "class_kind": "noise"
+  },
+  {
+    "index": 6,
+    "class_name": "Shout",
+    "class_kind": "noise"
+  },
+  {
+    "index": 7,
+    "class_name": "Bellow",
+    "class_kind": "other"
+  },
+  {
+    "index": 8,
+    "class_name": "Whoop",
+    "class_kind": "noise"
+  },
+  {
+    "index": 9,
+    "class_name": "Yell",
+    "class_kind": "noise"
+  },
+  {
+    "index": 10,
+    "class_name": "Children shouting",
+    "class_kind": "noise"
+  },
+  {
+    "index": 11,
+    "class_name": "Screaming",
+    "class_kind": "other"
+  },
+  {
+    "index": 12,
+    "class_name": "Whispering",
+    "class_kind": "other"
+  },
+  {
+    "index": 13,
+    "class_name": "Laughter",
+    "class_kind": "noise"
+  },
+  {
+    "index": 14,
+    "class_name": "Baby laughter",
+    "class_kind": "noise"
+  },
+  {
+    "index": 15,
+    "class_name": "Giggle",
+    "class_kind": "noise"
+  },
+  {
+    "index": 16,
+    "class_name": "Snicker",
+    "class_kind": "other"
+  },
+  {
+    "index": 17,
+    "class_name": "Belly laugh",
+    "class_kind": "other"
+  },
+  {
+    "index": 18,
+    "class_name": "Chuckle, chortle",
+    "class_kind": "other"
+  },
+  {
+    "index": 19,
+    "class_name": "Crying, sobbing",
+    "class_kind": "other"
+  },
+  {
+    "index": 20,
+    "class_name": "Baby cry, infant cry",
+    "class_kind": "noise"
+  },
+  {
+    "index": 21,
+    "class_name": "Whimper",
+    "class_kind": "other"
+  },
+  {
+    "index": 22,
+    "class_name": "Wail, moan",
+    "class_kind": "other"
+  },
+  {
+    "index": 23,
+    "class_name": "Sigh",
+    "class_kind": "other"
+  },
+  {
+    "index": 24,
+    "class_name": "Singing",
+    "class_kind": "noise"
+  },
+  {
+    "index": 25,
+    "class_name": "Choir",
+    "class_kind": "noise"
+  },
+  {
+    "index": 26,
+    "class_name": "Yodeling",
+    "class_kind": "noise"
+  },
+  {
+    "index": 27,
+    "class_name": "Chant",
+    "class_kind": "noise"
+  },
+  {
+    "index": 28,
+    "class_name": "Mantra",
+    "class_kind": "other"
+  },
+  {
+    "index": 29,
+    "class_name": "Child singing",
+    "class_kind": "noise"
+  },
+  {
+    "index": 30,
+    "class_name": "Synthetic singing",
+    "class_kind": "noise"
+  },
+  {
+    "index": 31,
+    "class_name": "Rapping",
+    "class_kind": "noise"
+  },
+  {
+    "index": 32,
+    "class_name": "Humming",
+    "class_kind": "noise"
+  },
+  {
+    "index": 33,
+    "class_name": "Groan",
+    "class_kind": "other"
+  },
+  {
+    "index": 34,
+    "class_name": "Grunt",
+    "class_kind": "other"
+  },
+  {
+    "index": 35,
+    "class_name": "Whistling",
+    "class_kind": "noise"
+  },
+  {
+    "index": 36,
+    "class_name": "Breathing",
+    "class_kind": "other"
+  },
+  {
+    "index": 37,
+    "class_name": "Wheeze",
+    "class_kind": "other"
+  },
+  {
+    "index": 38,
+    "class_name": "Snoring",
+    "class_kind": "other"
+  },
+  {
+    "index": 39,
+    "class_name": "Gasp",
+    "class_kind": "other"
+  },
+  {
+    "index": 40,
+    "class_name": "Pant",
+    "class_kind": "other"
+  },
+  {
+    "index": 41,
+    "class_name": "Snort",
+    "class_kind": "noise"
+  },
+  {
+    "index": 42,
+    "class_name": "Cough",
+    "class_kind": "noise"
+  },
+  {
+    "index": 43,
+    "class_name": "Throat clearing",
+    "class_kind": "other"
+  },
+  {
+    "index": 44,
+    "class_name": "Sneeze",
+    "class_kind": "other"
+  },
+  {
+    "index": 45,
+    "class_name": "Sniff",
+    "class_kind": "other"
+  },
+  {
+    "index": 46,
+    "class_name": "Run",
+    "class_kind": "other"
+  },
+  {
+    "index": 47,
+    "class_name": "Shuffle",
+    "class_kind": "other"
+  },
+  {
+    "index": 48,
+    "class_name": "Walk, footsteps",
+    "class_kind": "noise"
+  },
+  {
+    "index": 49,
+    "class_name": "Chewing, mastication",
+    "class_kind": "noise"
+  },
+  {
+    "index": 50,
+    "class_name": "Biting",
+    "class_kind": "noise"
+  },
+  {
+    "index": 51,
+    "class_name": "Gargling",
+    "class_kind": "other"
+  },
+  {
+    "index": 52,
+    "class_name": "Stomach rumble",
+    "class_kind": "other"
+  },
+  {
+    "index": 53,
+    "class_name": "Burping, eructation",
+    "class_kind": "other"
+  },
+  {
+    "index": 54,
+    "class_name": "Hiccup",
+    "class_kind": "other"
+  },
+  {
+    "index": 55,
+    "class_name": "Fart",
+    "class_kind": "other"
+  },
+  {
+    "index": 56,
+    "class_name": "Hands",
+    "class_kind": "other"
+  },
+  {
+    "index": 57,
+    "class_name": "Finger snapping",
+    "class_kind": "noise"
+  },
+  {
+    "index": 58,
+    "class_name": "Clapping",
+    "class_kind": "noise"
+  },
+  {
+    "index": 59,
+    "class_name": "Heart sounds, heartbeat",
+    "class_kind": "other"
+  },
+  {
+    "index": 60,
+    "class_name": "Heart murmur",
+    "class_kind": "other"
+  },
+  {
+    "index": 61,
+    "class_name": "Cheering",
+    "class_kind": "noise"
+  },
+  {
+    "index": 62,
+    "class_name": "Applause",
+    "class_kind": "noise"
+  },
+  {
+    "index": 63,
+    "class_name": "Chatter",
+    "class_kind": "noise"
+  },
+  {
+    "index": 64,
+    "class_name": "Crowd",
+    "class_kind": "noise"
+  },
+  {
+    "index": 65,
+    "class_name": "Hubbub, speech noise, speech babble",
+    "class_kind": "noise"
+  },
+  {
+    "index": 66,
+    "class_name": "Children playing",
+    "class_kind": "noise"
+  },
+  {
+    "index": 67,
+    "class_name": "Animal",
+    "class_kind": "other"
+  },
+  {
+    "index": 68,
+    "class_name": "Domestic animals, pets",
+    "class_kind": "other"
+  },
+  {
+    "index": 69,
+    "class_name": "Dog",
+    "class_kind": "noise"
+  },
+  {
+    "index": 70,
+    "class_name": "Bark",
+    "class_kind": "noise"
+  },
+  {
+    "index": 71,
+    "class_name": "Yip",
+    "class_kind": "other"
+  },
+  {
+    "index": 72,
+    "class_name": "Howl",
+    "class_kind": "noise"
+  },
+  {
+    "index": 73,
+    "class_name": "Bow-wow",
+    "class_kind": "other"
+  },
+  {
+    "index": 74,
+    "class_name": "Growling",
+    "class_kind": "noise"
+  },
+  {
+    "index": 75,
+    "class_name": "Whimper (dog)",
+    "class_kind": "noise"
+  },
+  {
+    "index": 76,
+    "class_name": "Cat",
+    "class_kind": "noise"
+  },
+  {
+    "index": 77,
+    "class_name": "Purr",
+    "class_kind": "noise"
+  },
+  {
+    "index": 78,
+    "class_name": "Meow",
+    "class_kind": "noise"
+  },
+  {
+    "index": 79,
+    "class_name": "Hiss",
+    "class_kind": "noise"
+  },
+  {
+    "index": 80,
+    "class_name": "Caterwaul",
+    "class_kind": "other"
+  },
+  {
+    "index": 81,
+    "class_name": "Livestock, farm animals, working animals",
+    "class_kind": "other"
+  },
+  {
+    "index": 82,
+    "class_name": "Horse",
+    "class_kind": "noise"
+  },
+  {
+    "index": 83,
+    "class_name": "Clip-clop",
+    "class_kind": "other"
+  },
+  {
+    "index": 84,
+    "class_name": "Neigh, whinny",
+    "class_kind": "noise"
+  },
+  {
+    "index": 85,
+    "class_name": "Cattle, bovinae",
+    "class_kind": "noise"
+  },
+  {
+    "index": 86,
+    "class_name": "Moo",
+    "class_kind": "other"
+  },
+  {
+    "index": 87,
+    "class_name": "Cowbell",
+    "class_kind": "noise"
+  },
+  {
+    "index": 88,
+    "class_name": "Pig",
+    "class_kind": "noise"
+  },
+  {
+    "index": 89,
+    "class_name": "Oink",
+    "class_kind": "noise"
+  },
+  {
+    "index": 90,
+    "class_name": "Goat",
+    "class_kind": "noise"
+  },
+  {
+    "index": 91,
+    "class_name": "Bleat",
+    "class_kind": "noise"
+  },
+  {
+    "index": 92,
+    "class_name": "Sheep",
+    "class_kind": "noise"
+  },
+  {
+    "index": 93,
+    "class_name": "Fowl",
+    "class_kind": "bird"
+  },
+  {
+    "index": 94,
+    "class_name": "Chicken, rooster",
+    "class_kind": "bird"
+  },
+  {
+    "index": 95,
+    "class_name": "Cluck",
+    "class_kind": "bird"
+  },
+  {
+    "index": 96,
+    "class_name": "Crowing, cock-a-doodle-doo",
+    "class_kind": "bird"
+  },
+  {
+    "index": 97,
+    "class_name": "Turkey",
+    "class_kind": "bird"
+  },
+  {
+    "index": 98,
+    "class_name": "Gobble",
+    "class_kind": "bird"
+  },
+  {
+    "index": 99,
+    "class_name": "Duck",
+    "class_kind": "bird"
+  },
+  {
+    "index": 100,
+    "class_name": "Quack",
+    "class_kind": "bird"
+  },
+  {
+    "index": 101,
+    "class_name": "Goose",
+    "class_kind": "bird"
+  },
+  {
+    "index": 102,
+    "class_name": "Honk",
+    "class_kind": "bird"
+  },
+  {
+    "index": 103,
+    "class_name": "Wild animals",
+    "class_kind": "other"
+  },
+  {
+    "index": 104,
+    "class_name": "Roaring cats (lions, tigers)",
+    "class_kind": "noise"
+  },
+  {
+    "index": 105,
+    "class_name": "Roar",
+    "class_kind": "other"
+  },
+  {
+    "index": 106,
+    "class_name": "Bird",
+    "class_kind": "bird"
+  },
+  {
+    "index": 107,
+    "class_name": "Bird vocalization, bird call, bird song",
+    "class_kind": "bird"
+  },
+  {
+    "index": 108,
+    "class_name": "Chirp, tweet",
+    "class_kind": "bird"
+  },
+  {
+    "index": 109,
+    "class_name": "Squawk",
+    "class_kind": "other"
+  },
+  {
+    "index": 110,
+    "class_name": "Pigeon, dove",
+    "class_kind": "bird"
+  },
+  {
+    "index": 111,
+    "class_name": "Coo",
+    "class_kind": "bird"
+  },
+  {
+    "index": 112,
+    "class_name": "Crow",
+    "class_kind": "bird"
+  },
+  {
+    "index": 113,
+    "class_name": "Caw",
+    "class_kind": "bird"
+  },
+  {
+    "index": 114,
+    "class_name": "Owl",
+    "class_kind": "bird"
+  },
+  {
+    "index": 115,
+    "class_name": "Hoot",
+    "class_kind": "bird"
+  },
+  {
+    "index": 116,
+    "class_name": "Bird flight, flapping wings",
+    "class_kind": "bird"
+  },
+  {
+    "index": 117,
+    "class_name": "Canidae, dogs, wolves",
+    "class_kind": "noise"
+  },
+  {
+    "index": 118,
+    "class_name": "Rodents, rats, mice",
+    "class_kind": "noise"
+  },
+  {
+    "index": 119,
+    "class_name": "Mouse",
+    "class_kind": "noise"
+  },
+  {
+    "index": 120,
+    "class_name": "Patter",
+    "class_kind": "other"
+  },
+  {
+    "index": 121,
+    "class_name": "Insect",
+    "class_kind": "other"
+  },
+  {
+    "index": 122,
+    "class_name": "Cricket",
+    "class_kind": "other"
+  },
+  {
+    "index": 123,
+    "class_name": "Mosquito",
+    "class_kind": "other"
+  },
+  {
+    "index": 124,
+    "class_name": "Fly, housefly",
+    "class_kind": "other"
+  },
+  {
+    "index": 125,
+    "class_name": "Buzz",
+    "class_kind": "other"
+  },
+  {
+    "index": 126,
+    "class_name": "Bee, wasp, etc.",
+    "class_kind": "other"
+  },
+  {
+    "index": 127,
+    "class_name": "Frog",
+    "class_kind": "other"
+  },
+  {
+    "index": 128,
+    "class_name": "Croak",
+    "class_kind": "other"
+  },
+  {
+    "index": 129,
+    "class_name": "Snake",
+    "class_kind": "other"
+  },
+  {
+    "index": 130,
+    "class_name": "Rattle",
+    "class_kind": "other"
+  },
+  {
+    "index": 131,
+    "class_name": "Whale vocalization",
+    "class_kind": "other"
+  },
+  {
+    "index": 132,
+    "class_name": "Music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 133,
+    "class_name": "Musical instrument",
+    "class_kind": "other"
+  },
+  {
+    "index": 134,
+    "class_name": "Plucked string instrument",
+    "class_kind": "other"
+  },
+  {
+    "index": 135,
+    "class_name": "Guitar",
+    "class_kind": "noise"
+  },
+  {
+    "index": 136,
+    "class_name": "Electric guitar",
+    "class_kind": "noise"
+  },
+  {
+    "index": 137,
+    "class_name": "Bass guitar",
+    "class_kind": "noise"
+  },
+  {
+    "index": 138,
+    "class_name": "Acoustic guitar",
+    "class_kind": "noise"
+  },
+  {
+    "index": 139,
+    "class_name": "Steel guitar, slide guitar",
+    "class_kind": "noise"
+  },
+  {
+    "index": 140,
+    "class_name": "Tapping (guitar technique)",
+    "class_kind": "noise"
+  },
+  {
+    "index": 141,
+    "class_name": "Strum",
+    "class_kind": "other"
+  },
+  {
+    "index": 142,
+    "class_name": "Banjo",
+    "class_kind": "noise"
+  },
+  {
+    "index": 143,
+    "class_name": "Sitar",
+    "class_kind": "noise"
+  },
+  {
+    "index": 144,
+    "class_name": "Mandolin",
+    "class_kind": "noise"
+  },
+  {
+    "index": 145,
+    "class_name": "Zither",
+    "class_kind": "noise"
+  },
+  {
+    "index": 146,
+    "class_name": "Ukulele",
+    "class_kind": "noise"
+  },
+  {
+    "index": 147,
+    "class_name": "Keyboard (musical)",
+    "class_kind": "noise"
+  },
+  {
+    "index": 148,
+    "class_name": "Piano",
+    "class_kind": "noise"
+  },
+  {
+    "index": 149,
+    "class_name": "Electric piano",
+    "class_kind": "noise"
+  },
+  {
+    "index": 150,
+    "class_name": "Organ",
+    "class_kind": "noise"
+  },
+  {
+    "index": 151,
+    "class_name": "Electronic organ",
+    "class_kind": "noise"
+  },
+  {
+    "index": 152,
+    "class_name": "Hammond organ",
+    "class_kind": "noise"
+  },
+  {
+    "index": 153,
+    "class_name": "Synthesizer",
+    "class_kind": "noise"
+  },
+  {
+    "index": 154,
+    "class_name": "Sampler",
+    "class_kind": "noise"
+  },
+  {
+    "index": 155,
+    "class_name": "Harpsichord",
+    "class_kind": "noise"
+  },
+  {
+    "index": 156,
+    "class_name": "Percussion",
+    "class_kind": "noise"
+  },
+  {
+    "index": 157,
+    "class_name": "Drum kit",
+    "class_kind": "noise"
+  },
+  {
+    "index": 158,
+    "class_name": "Drum machine",
+    "class_kind": "noise"
+  },
+  {
+    "index": 159,
+    "class_name": "Drum",
+    "class_kind": "noise"
+  },
+  {
+    "index": 160,
+    "class_name": "Snare drum",
+    "class_kind": "noise"
+  },
+  {
+    "index": 161,
+    "class_name": "Rimshot",
+    "class_kind": "other"
+  },
+  {
+    "index": 162,
+    "class_name": "Drum roll",
+    "class_kind": "noise"
+  },
+  {
+    "index": 163,
+    "class_name": "Bass drum",
+    "class_kind": "noise"
+  },
+  {
+    "index": 164,
+    "class_name": "Timpani",
+    "class_kind": "noise"
+  },
+  {
+    "index": 165,
+    "class_name": "Tabla",
+    "class_kind": "noise"
+  },
+  {
+    "index": 166,
+    "class_name": "Cymbal",
+    "class_kind": "other"
+  },
+  {
+    "index": 167,
+    "class_name": "Hi-hat",
+    "class_kind": "other"
+  },
+  {
+    "index": 168,
+    "class_name": "Wood block",
+    "class_kind": "other"
+  },
+  {
+    "index": 169,
+    "class_name": "Tambourine",
+    "class_kind": "noise"
+  },
+  {
+    "index": 170,
+    "class_name": "Rattle (instrument)",
+    "class_kind": "other"
+  },
+  {
+    "index": 171,
+    "class_name": "Maraca",
+    "class_kind": "noise"
+  },
+  {
+    "index": 172,
+    "class_name": "Gong",
+    "class_kind": "noise"
+  },
+  {
+    "index": 173,
+    "class_name": "Tubular bells",
+    "class_kind": "noise"
+  },
+  {
+    "index": 174,
+    "class_name": "Mallet percussion",
+    "class_kind": "noise"
+  },
+  {
+    "index": 175,
+    "class_name": "Marimba, xylophone",
+    "class_kind": "noise"
+  },
+  {
+    "index": 176,
+    "class_name": "Glockenspiel",
+    "class_kind": "other"
+  },
+  {
+    "index": 177,
+    "class_name": "Vibraphone",
+    "class_kind": "noise"
+  },
+  {
+    "index": 178,
+    "class_name": "Steelpan",
+    "class_kind": "noise"
+  },
+  {
+    "index": 179,
+    "class_name": "Orchestra",
+    "class_kind": "noise"
+  },
+  {
+    "index": 180,
+    "class_name": "Brass instrument",
+    "class_kind": "noise"
+  },
+  {
+    "index": 181,
+    "class_name": "French horn",
+    "class_kind": "noise"
+  },
+  {
+    "index": 182,
+    "class_name": "Trumpet",
+    "class_kind": "noise"
+  },
+  {
+    "index": 183,
+    "class_name": "Trombone",
+    "class_kind": "noise"
+  },
+  {
+    "index": 184,
+    "class_name": "Bowed string instrument",
+    "class_kind": "other"
+  },
+  {
+    "index": 185,
+    "class_name": "String section",
+    "class_kind": "other"
+  },
+  {
+    "index": 186,
+    "class_name": "Violin, fiddle",
+    "class_kind": "noise"
+  },
+  {
+    "index": 187,
+    "class_name": "Pizzicato",
+    "class_kind": "other"
+  },
+  {
+    "index": 188,
+    "class_name": "Cello",
+    "class_kind": "noise"
+  },
+  {
+    "index": 189,
+    "class_name": "Double bass",
+    "class_kind": "noise"
+  },
+  {
+    "index": 190,
+    "class_name": "Wind instrument, woodwind instrument",
+    "class_kind": "other"
+  },
+  {
+    "index": 191,
+    "class_name": "Flute",
+    "class_kind": "noise"
+  },
+  {
+    "index": 192,
+    "class_name": "Saxophone",
+    "class_kind": "noise"
+  },
+  {
+    "index": 193,
+    "class_name": "Clarinet",
+    "class_kind": "other"
+  },
+  {
+    "index": 194,
+    "class_name": "Harp",
+    "class_kind": "other"
+  },
+  {
+    "index": 195,
+    "class_name": "Bell",
+    "class_kind": "noise"
+  },
+  {
+    "index": 196,
+    "class_name": "Church bell",
+    "class_kind": "noise"
+  },
+  {
+    "index": 197,
+    "class_name": "Jingle bell",
+    "class_kind": "noise"
+  },
+  {
+    "index": 198,
+    "class_name": "Bicycle bell",
+    "class_kind": "noise"
+  },
+  {
+    "index": 199,
+    "class_name": "Tuning fork",
+    "class_kind": "other"
+  },
+  {
+    "index": 200,
+    "class_name": "Chime",
+    "class_kind": "other"
+  },
+  {
+    "index": 201,
+    "class_name": "Wind chime",
+    "class_kind": "other"
+  },
+  {
+    "index": 202,
+    "class_name": "Change ringing (campanology)",
+    "class_kind": "other"
+  },
+  {
+    "index": 203,
+    "class_name": "Harmonica",
+    "class_kind": "noise"
+  },
+  {
+    "index": 204,
+    "class_name": "Accordion",
+    "class_kind": "noise"
+  },
+  {
+    "index": 205,
+    "class_name": "Bagpipes",
+    "class_kind": "other"
+  },
+  {
+    "index": 206,
+    "class_name": "Didgeridoo",
+    "class_kind": "other"
+  },
+  {
+    "index": 207,
+    "class_name": "Shofar",
+    "class_kind": "other"
+  },
+  {
+    "index": 208,
+    "class_name": "Theremin",
+    "class_kind": "noise"
+  },
+  {
+    "index": 209,
+    "class_name": "Singing bowl",
+    "class_kind": "noise"
+  },
+  {
+    "index": 210,
+    "class_name": "Scratching (performance technique)",
+    "class_kind": "other"
+  },
+  {
+    "index": 211,
+    "class_name": "Pop music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 212,
+    "class_name": "Hip hop music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 213,
+    "class_name": "Beatboxing",
+    "class_kind": "other"
+  },
+  {
+    "index": 214,
+    "class_name": "Rock music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 215,
+    "class_name": "Heavy metal",
+    "class_kind": "other"
+  },
+  {
+    "index": 216,
+    "class_name": "Punk rock",
+    "class_kind": "other"
+  },
+  {
+    "index": 217,
+    "class_name": "Grunge",
+    "class_kind": "other"
+  },
+  {
+    "index": 218,
+    "class_name": "Progressive rock",
+    "class_kind": "other"
+  },
+  {
+    "index": 219,
+    "class_name": "Rock and roll",
+    "class_kind": "other"
+  },
+  {
+    "index": 220,
+    "class_name": "Psychedelic rock",
+    "class_kind": "other"
+  },
+  {
+    "index": 221,
+    "class_name": "Rhythm and blues",
+    "class_kind": "other"
+  },
+  {
+    "index": 222,
+    "class_name": "Soul music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 223,
+    "class_name": "Reggae",
+    "class_kind": "other"
+  },
+  {
+    "index": 224,
+    "class_name": "Country",
+    "class_kind": "other"
+  },
+  {
+    "index": 225,
+    "class_name": "Swing music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 226,
+    "class_name": "Bluegrass",
+    "class_kind": "other"
+  },
+  {
+    "index": 227,
+    "class_name": "Funk",
+    "class_kind": "other"
+  },
+  {
+    "index": 228,
+    "class_name": "Folk music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 229,
+    "class_name": "Middle Eastern music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 230,
+    "class_name": "Jazz",
+    "class_kind": "other"
+  },
+  {
+    "index": 231,
+    "class_name": "Disco",
+    "class_kind": "other"
+  },
+  {
+    "index": 232,
+    "class_name": "Classical music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 233,
+    "class_name": "Opera",
+    "class_kind": "other"
+  },
+  {
+    "index": 234,
+    "class_name": "Electronic music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 235,
+    "class_name": "House music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 236,
+    "class_name": "Techno",
+    "class_kind": "other"
+  },
+  {
+    "index": 237,
+    "class_name": "Dubstep",
+    "class_kind": "other"
+  },
+  {
+    "index": 238,
+    "class_name": "Drum and bass",
+    "class_kind": "noise"
+  },
+  {
+    "index": 239,
+    "class_name": "Electronica",
+    "class_kind": "other"
+  },
+  {
+    "index": 240,
+    "class_name": "Electronic dance music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 241,
+    "class_name": "Ambient music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 242,
+    "class_name": "Trance music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 243,
+    "class_name": "Music of Latin America",
+    "class_kind": "noise"
+  },
+  {
+    "index": 244,
+    "class_name": "Salsa music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 245,
+    "class_name": "Flamenco",
+    "class_kind": "other"
+  },
+  {
+    "index": 246,
+    "class_name": "Blues",
+    "class_kind": "other"
+  },
+  {
+    "index": 247,
+    "class_name": "Music for children",
+    "class_kind": "noise"
+  },
+  {
+    "index": 248,
+    "class_name": "New-age music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 249,
+    "class_name": "Vocal music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 250,
+    "class_name": "A capella",
+    "class_kind": "other"
+  },
+  {
+    "index": 251,
+    "class_name": "Music of Africa",
+    "class_kind": "noise"
+  },
+  {
+    "index": 252,
+    "class_name": "Afrobeat",
+    "class_kind": "other"
+  },
+  {
+    "index": 253,
+    "class_name": "Christian music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 254,
+    "class_name": "Gospel music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 255,
+    "class_name": "Music of Asia",
+    "class_kind": "noise"
+  },
+  {
+    "index": 256,
+    "class_name": "Carnatic music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 257,
+    "class_name": "Music of Bollywood",
+    "class_kind": "noise"
+  },
+  {
+    "index": 258,
+    "class_name": "Ska",
+    "class_kind": "other"
+  },
+  {
+    "index": 259,
+    "class_name": "Traditional music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 260,
+    "class_name": "Independent music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 261,
+    "class_name": "Song",
+    "class_kind": "other"
+  },
+  {
+    "index": 262,
+    "class_name": "Background music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 263,
+    "class_name": "Theme music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 264,
+    "class_name": "Jingle (music)",
+    "class_kind": "noise"
+  },
+  {
+    "index": 265,
+    "class_name": "Soundtrack music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 266,
+    "class_name": "Lullaby",
+    "class_kind": "other"
+  },
+  {
+    "index": 267,
+    "class_name": "Video game music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 268,
+    "class_name": "Christmas music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 269,
+    "class_name": "Dance music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 270,
+    "class_name": "Wedding music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 271,
+    "class_name": "Happy music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 272,
+    "class_name": "Sad music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 273,
+    "class_name": "Tender music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 274,
+    "class_name": "Exciting music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 275,
+    "class_name": "Angry music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 276,
+    "class_name": "Scary music",
+    "class_kind": "noise"
+  },
+  {
+    "index": 277,
+    "class_name": "Wind",
+    "class_kind": "other"
+  },
+  {
+    "index": 278,
+    "class_name": "Rustling leaves",
+    "class_kind": "other"
+  },
+  {
+    "index": 279,
+    "class_name": "Wind noise (microphone)",
+    "class_kind": "noise"
+  },
+  {
+    "index": 280,
+    "class_name": "Thunderstorm",
+    "class_kind": "other"
+  },
+  {
+    "index": 281,
+    "class_name": "Thunder",
+    "class_kind": "other"
+  },
+  {
+    "index": 282,
+    "class_name": "Water",
+    "class_kind": "other"
+  },
+  {
+    "index": 283,
+    "class_name": "Rain",
+    "class_kind": "other"
+  },
+  {
+    "index": 284,
+    "class_name": "Raindrop",
+    "class_kind": "other"
+  },
+  {
+    "index": 285,
+    "class_name": "Rain on surface",
+    "class_kind": "other"
+  },
+  {
+    "index": 286,
+    "class_name": "Stream",
+    "class_kind": "other"
+  },
+  {
+    "index": 287,
+    "class_name": "Waterfall",
+    "class_kind": "other"
+  },
+  {
+    "index": 288,
+    "class_name": "Ocean",
+    "class_kind": "other"
+  },
+  {
+    "index": 289,
+    "class_name": "Waves, surf",
+    "class_kind": "other"
+  },
+  {
+    "index": 290,
+    "class_name": "Steam",
+    "class_kind": "other"
+  },
+  {
+    "index": 291,
+    "class_name": "Gurgling",
+    "class_kind": "other"
+  },
+  {
+    "index": 292,
+    "class_name": "Fire",
+    "class_kind": "other"
+  },
+  {
+    "index": 293,
+    "class_name": "Crackle",
+    "class_kind": "other"
+  },
+  {
+    "index": 294,
+    "class_name": "Vehicle",
+    "class_kind": "noise"
+  },
+  {
+    "index": 295,
+    "class_name": "Boat, Water vehicle",
+    "class_kind": "noise"
+  },
+  {
+    "index": 296,
+    "class_name": "Sailboat, sailing ship",
+    "class_kind": "noise"
+  },
+  {
+    "index": 297,
+    "class_name": "Rowboat, canoe, kayak",
+    "class_kind": "other"
+  },
+  {
+    "index": 298,
+    "class_name": "Motorboat, speedboat",
+    "class_kind": "noise"
+  },
+  {
+    "index": 299,
+    "class_name": "Ship",
+    "class_kind": "noise"
+  },
+  {
+    "index": 300,
+    "class_name": "Motor vehicle (road)",
+    "class_kind": "noise"
+  },
+  {
+    "index": 301,
+    "class_name": "Car",
+    "class_kind": "noise"
+  },
+  {
+    "index": 302,
+    "class_name": "Vehicle horn, car horn, honking",
+    "class_kind": "noise"
+  },
+  {
+    "index": 303,
+    "class_name": "Toot",
+    "class_kind": "noise"
+  },
+  {
+    "index": 304,
+    "class_name": "Car alarm",
+    "class_kind": "noise"
+  },
+  {
+    "index": 305,
+    "class_name": "Power windows, electric windows",
+    "class_kind": "other"
+  },
+  {
+    "index": 306,
+    "class_name": "Skidding",
+    "class_kind": "other"
+  },
+  {
+    "index": 307,
+    "class_name": "Tire squeal",
+    "class_kind": "other"
+  },
+  {
+    "index": 308,
+    "class_name": "Car passing by",
+    "class_kind": "noise"
+  },
+  {
+    "index": 309,
+    "class_name": "Race car, auto racing",
+    "class_kind": "noise"
+  },
+  {
+    "index": 310,
+    "class_name": "Truck",
+    "class_kind": "noise"
+  },
+  {
+    "index": 311,
+    "class_name": "Air brake",
+    "class_kind": "other"
+  },
+  {
+    "index": 312,
+    "class_name": "Air horn, truck horn",
+    "class_kind": "noise"
+  },
+  {
+    "index": 313,
+    "class_name": "Reversing beeps",
+    "class_kind": "other"
+  },
+  {
+    "index": 314,
+    "class_name": "Ice cream truck, ice cream van",
+    "class_kind": "noise"
+  },
+  {
+    "index": 315,
+    "class_name": "Bus",
+    "class_kind": "noise"
+  },
+  {
+    "index": 316,
+    "class_name": "Emergency vehicle",
+    "class_kind": "noise"
+  },
+  {
+    "index": 317,
+    "class_name": "Police car (siren)",
+    "class_kind": "noise"
+  },
+  {
+    "index": 318,
+    "class_name": "Ambulance (siren)",
+    "class_kind": "noise"
+  },
+  {
+    "index": 319,
+    "class_name": "Fire engine, fire truck (siren)",
+    "class_kind": "noise"
+  },
+  {
+    "index": 320,
+    "class_name": "Motorcycle",
+    "class_kind": "noise"
+  },
+  {
+    "index": 321,
+    "class_name": "Traffic noise, roadway noise",
+    "class_kind": "noise"
+  },
+  {
+    "index": 322,
+    "class_name": "Rail transport",
+    "class_kind": "other"
+  },
+  {
+    "index": 323,
+    "class_name": "Train",
+    "class_kind": "noise"
+  },
+  {
+    "index": 324,
+    "class_name": "Train whistle",
+    "class_kind": "noise"
+  },
+  {
+    "index": 325,
+    "class_name": "Train horn",
+    "class_kind": "noise"
+  },
+  {
+    "index": 326,
+    "class_name": "Railroad car, train wagon",
+    "class_kind": "noise"
+  },
+  {
+    "index": 327,
+    "class_name": "Train wheels squealing",
+    "class_kind": "noise"
+  },
+  {
+    "index": 328,
+    "class_name": "Subway, metro, underground",
+    "class_kind": "noise"
+  },
+  {
+    "index": 329,
+    "class_name": "Aircraft",
+    "class_kind": "noise"
+  },
+  {
+    "index": 330,
+    "class_name": "Aircraft engine",
+    "class_kind": "noise"
+  },
+  {
+    "index": 331,
+    "class_name": "Jet engine",
+    "class_kind": "noise"
+  },
+  {
+    "index": 332,
+    "class_name": "Propeller, airscrew",
+    "class_kind": "other"
+  },
+  {
+    "index": 333,
+    "class_name": "Helicopter",
+    "class_kind": "noise"
+  },
+  {
+    "index": 334,
+    "class_name": "Fixed-wing aircraft, airplane",
+    "class_kind": "noise"
+  },
+  {
+    "index": 335,
+    "class_name": "Bicycle",
+    "class_kind": "noise"
+  },
+  {
+    "index": 336,
+    "class_name": "Skateboard",
+    "class_kind": "noise"
+  },
+  {
+    "index": 337,
+    "class_name": "Engine",
+    "class_kind": "noise"
+  },
+  {
+    "index": 338,
+    "class_name": "Light engine (high frequency)",
+    "class_kind": "noise"
+  },
+  {
+    "index": 339,
+    "class_name": "Dental drill, dentist's drill",
+    "class_kind": "noise"
+  },
+  {
+    "index": 340,
+    "class_name": "Lawn mower",
+    "class_kind": "noise"
+  },
+  {
+    "index": 341,
+    "class_name": "Chainsaw",
+    "class_kind": "noise"
+  },
+  {
+    "index": 342,
+    "class_name": "Medium engine (mid frequency)",
+    "class_kind": "noise"
+  },
+  {
+    "index": 343,
+    "class_name": "Heavy engine (low frequency)",
+    "class_kind": "noise"
+  },
+  {
+    "index": 344,
+    "class_name": "Engine knocking",
+    "class_kind": "noise"
+  },
+  {
+    "index": 345,
+    "class_name": "Engine starting",
+    "class_kind": "noise"
+  },
+  {
+    "index": 346,
+    "class_name": "Idling",
+    "class_kind": "noise"
+  },
+  {
+    "index": 347,
+    "class_name": "Accelerating, revving, vroom",
+    "class_kind": "noise"
+  },
+  {
+    "index": 348,
+    "class_name": "Door",
+    "class_kind": "noise"
+  },
+  {
+    "index": 349,
+    "class_name": "Doorbell",
+    "class_kind": "other"
+  },
+  {
+    "index": 350,
+    "class_name": "Ding-dong",
+    "class_kind": "other"
+  },
+  {
+    "index": 351,
+    "class_name": "Sliding door",
+    "class_kind": "noise"
+  },
+  {
+    "index": 352,
+    "class_name": "Slam",
+    "class_kind": "noise"
+  },
+  {
+    "index": 353,
+    "class_name": "Knock",
+    "class_kind": "noise"
+  },
+  {
+    "index": 354,
+    "class_name": "Tap",
+    "class_kind": "noise"
+  },
+  {
+    "index": 355,
+    "class_name": "Squeak",
+    "class_kind": "other"
+  },
+  {
+    "index": 356,
+    "class_name": "Cupboard open or close",
+    "class_kind": "other"
+  },
+  {
+    "index": 357,
+    "class_name": "Drawer open or close",
+    "class_kind": "other"
+  },
+  {
+    "index": 358,
+    "class_name": "Dishes, pots, and pans",
+    "class_kind": "other"
+  },
+  {
+    "index": 359,
+    "class_name": "Cutlery, silverware",
+    "class_kind": "other"
+  },
+  {
+    "index": 360,
+    "class_name": "Chopping (food)",
+    "class_kind": "noise"
+  },
+  {
+    "index": 361,
+    "class_name": "Frying (food)",
+    "class_kind": "other"
+  },
+  {
+    "index": 362,
+    "class_name": "Microwave oven",
+    "class_kind": "noise"
+  },
+  {
+    "index": 363,
+    "class_name": "Blender",
+    "class_kind": "noise"
+  },
+  {
+    "index": 364,
+    "class_name": "Water tap, faucet",
+    "class_kind": "noise"
+  },
+  {
+    "index": 365,
+    "class_name": "Sink (filling or washing)",
+    "class_kind": "other"
+  },
+  {
+    "index": 366,
+    "class_name": "Bathtub (filling or washing)",
+    "class_kind": "other"
+  },
+  {
+    "index": 367,
+    "class_name": "Hair dryer",
+    "class_kind": "noise"
+  },
+  {
+    "index": 368,
+    "class_name": "Toilet flush",
+    "class_kind": "other"
+  },
+  {
+    "index": 369,
+    "class_name": "Toothbrush",
+    "class_kind": "noise"
+  },
+  {
+    "index": 370,
+    "class_name": "Electric toothbrush",
+    "class_kind": "noise"
+  },
+  {
+    "index": 371,
+    "class_name": "Vacuum cleaner",
+    "class_kind": "noise"
+  },
+  {
+    "index": 372,
+    "class_name": "Zipper (clothing)",
+    "class_kind": "noise"
+  },
+  {
+    "index": 373,
+    "class_name": "Keys jangling",
+    "class_kind": "other"
+  },
+  {
+    "index": 374,
+    "class_name": "Coin (dropping)",
+    "class_kind": "other"
+  },
+  {
+    "index": 375,
+    "class_name": "Scissors",
+    "class_kind": "noise"
+  },
+  {
+    "index": 376,
+    "class_name": "Electric shaver, electric razor",
+    "class_kind": "other"
+  },
+  {
+    "index": 377,
+    "class_name": "Shuffling cards",
+    "class_kind": "other"
+  },
+  {
+    "index": 378,
+    "class_name": "Typing",
+    "class_kind": "noise"
+  },
+  {
+    "index": 379,
+    "class_name": "Typewriter",
+    "class_kind": "noise"
+  },
+  {
+    "index": 380,
+    "class_name": "Computer keyboard",
+    "class_kind": "noise"
+  },
+  {
+    "index": 381,
+    "class_name": "Writing",
+    "class_kind": "other"
+  },
+  {
+    "index": 382,
+    "class_name": "Alarm",
+    "class_kind": "noise"
+  },
+  {
+    "index": 383,
+    "class_name": "Telephone",
+    "class_kind": "noise"
+  },
+  {
+    "index": 384,
+    "class_name": "Telephone bell ringing",
+    "class_kind": "noise"
+  },
+  {
+    "index": 385,
+    "class_name": "Ringtone",
+    "class_kind": "noise"
+  },
+  {
+    "index": 386,
+    "class_name": "Telephone dialing, DTMF",
+    "class_kind": "noise"
+  },
+  {
+    "index": 387,
+    "class_name": "Dial tone",
+    "class_kind": "other"
+  },
+  {
+    "index": 388,
+    "class_name": "Busy signal",
+    "class_kind": "other"
+  },
+  {
+    "index": 389,
+    "class_name": "Alarm clock",
+    "class_kind": "noise"
+  },
+  {
+    "index": 390,
+    "class_name": "Siren",
+    "class_kind": "noise"
+  },
+  {
+    "index": 391,
+    "class_name": "Civil defense siren",
+    "class_kind": "noise"
+  },
+  {
+    "index": 392,
+    "class_name": "Buzzer",
+    "class_kind": "noise"
+  },
+  {
+    "index": 393,
+    "class_name": "Smoke detector, smoke alarm",
+    "class_kind": "noise"
+  },
+  {
+    "index": 394,
+    "class_name": "Fire alarm",
+    "class_kind": "noise"
+  },
+  {
+    "index": 395,
+    "class_name": "Foghorn",
+    "class_kind": "other"
+  },
+  {
+    "index": 396,
+    "class_name": "Whistle",
+    "class_kind": "noise"
+  },
+  {
+    "index": 397,
+    "class_name": "Steam whistle",
+    "class_kind": "noise"
+  },
+  {
+    "index": 398,
+    "class_name": "Mechanisms",
+    "class_kind": "noise"
+  },
+  {
+    "index": 399,
+    "class_name": "Ratchet, pawl",
+    "class_kind": "noise"
+  },
+  {
+    "index": 400,
+    "class_name": "Clock",
+    "class_kind": "noise"
+  },
+  {
+    "index": 401,
+    "class_name": "Tick",
+    "class_kind": "other"
+  },
+  {
+    "index": 402,
+    "class_name": "Tick-tock",
+    "class_kind": "other"
+  },
+  {
+    "index": 403,
+    "class_name": "Gears",
+    "class_kind": "noise"
+  },
+  {
+    "index": 404,
+    "class_name": "Pulleys",
+    "class_kind": "noise"
+  },
+  {
+    "index": 405,
+    "class_name": "Sewing machine",
+    "class_kind": "noise"
+  },
+  {
+    "index": 406,
+    "class_name": "Mechanical fan",
+    "class_kind": "other"
+  },
+  {
+    "index": 407,
+    "class_name": "Air conditioning",
+    "class_kind": "other"
+  },
+  {
+    "index": 408,
+    "class_name": "Cash register",
+    "class_kind": "other"
+  },
+  {
+    "index": 409,
+    "class_name": "Printer",
+    "class_kind": "noise"
+  },
+  {
+    "index": 410,
+    "class_name": "Camera",
+    "class_kind": "noise"
+  },
+  {
+    "index": 411,
+    "class_name": "Single-lens reflex camera",
+    "class_kind": "noise"
+  },
+  {
+    "index": 412,
+    "class_name": "Tools",
+    "class_kind": "other"
+  },
+  {
+    "index": 413,
+    "class_name": "Hammer",
+    "class_kind": "noise"
+  },
+  {
+    "index": 414,
+    "class_name": "Jackhammer",
+    "class_kind": "other"
+  },
+  {
+    "index": 415,
+    "class_name": "Sawing",
+    "class_kind": "other"
+  },
+  {
+    "index": 416,
+    "class_name": "Filing (rasp)",
+    "class_kind": "other"
+  },
+  {
+    "index": 417,
+    "class_name": "Sanding",
+    "class_kind": "noise"
+  },
+  {
+    "index": 418,
+    "class_name": "Power tool",
+    "class_kind": "other"
+  },
+  {
+    "index": 419,
+    "class_name": "Drill",
+    "class_kind": "noise"
+  },
+  {
+    "index": 420,
+    "class_name": "Explosion",
+    "class_kind": "noise"
+  },
+  {
+    "index": 421,
+    "class_name": "Gunshot, gunfire",
+    "class_kind": "noise"
+  },
+  {
+    "index": 422,
+    "class_name": "Machine gun",
+    "class_kind": "noise"
+  },
+  {
+    "index": 423,
+    "class_name": "Fusillade",
+    "class_kind": "other"
+  },
+  {
+    "index": 424,
+    "class_name": "Artillery fire",
+    "class_kind": "other"
+  },
+  {
+    "index": 425,
+    "class_name": "Cap gun",
+    "class_kind": "noise"
+  },
+  {
+    "index": 426,
+    "class_name": "Fireworks",
+    "class_kind": "other"
+  },
+  {
+    "index": 427,
+    "class_name": "Firecracker",
+    "class_kind": "other"
+  },
+  {
+    "index": 428,
+    "class_name": "Burst, pop",
+    "class_kind": "noise"
+  },
+  {
+    "index": 429,
+    "class_name": "Eruption",
+    "class_kind": "other"
+  },
+  {
+    "index": 430,
+    "class_name": "Boom",
+    "class_kind": "noise"
+  },
+  {
+    "index": 431,
+    "class_name": "Wood",
+    "class_kind": "other"
+  },
+  {
+    "index": 432,
+    "class_name": "Chop",
+    "class_kind": "other"
+  },
+  {
+    "index": 433,
+    "class_name": "Splinter",
+    "class_kind": "other"
+  },
+  {
+    "index": 434,
+    "class_name": "Crack",
+    "class_kind": "other"
+  },
+  {
+    "index": 435,
+    "class_name": "Glass",
+    "class_kind": "other"
+  },
+  {
+    "index": 436,
+    "class_name": "Chink, clink",
+    "class_kind": "other"
+  },
+  {
+    "index": 437,
+    "class_name": "Shatter",
+    "class_kind": "noise"
+  },
+  {
+    "index": 438,
+    "class_name": "Liquid",
+    "class_kind": "other"
+  },
+  {
+    "index": 439,
+    "class_name": "Splash, splatter",
+    "class_kind": "other"
+  },
+  {
+    "index": 440,
+    "class_name": "Slosh",
+    "class_kind": "other"
+  },
+  {
+    "index": 441,
+    "class_name": "Squish",
+    "class_kind": "other"
+  },
+  {
+    "index": 442,
+    "class_name": "Drip",
+    "class_kind": "other"
+  },
+  {
+    "index": 443,
+    "class_name": "Pour",
+    "class_kind": "other"
+  },
+  {
+    "index": 444,
+    "class_name": "Trickle, dribble",
+    "class_kind": "other"
+  },
+  {
+    "index": 445,
+    "class_name": "Gush",
+    "class_kind": "other"
+  },
+  {
+    "index": 446,
+    "class_name": "Fill (with liquid)",
+    "class_kind": "other"
+  },
+  {
+    "index": 447,
+    "class_name": "Spray",
+    "class_kind": "other"
+  },
+  {
+    "index": 448,
+    "class_name": "Pump (liquid)",
+    "class_kind": "other"
+  },
+  {
+    "index": 449,
+    "class_name": "Stir",
+    "class_kind": "other"
+  },
+  {
+    "index": 450,
+    "class_name": "Boiling",
+    "class_kind": "other"
+  },
+  {
+    "index": 451,
+    "class_name": "Sonar",
+    "class_kind": "noise"
+  },
+  {
+    "index": 452,
+    "class_name": "Arrow",
+    "class_kind": "other"
+  },
+  {
+    "index": 453,
+    "class_name": "Whoosh, swoosh, swish",
+    "class_kind": "other"
+  },
+  {
+    "index": 454,
+    "class_name": "Thump, thud",
+    "class_kind": "noise"
+  },
+  {
+    "index": 455,
+    "class_name": "Thunk",
+    "class_kind": "other"
+  },
+  {
+    "index": 456,
+    "class_name": "Electronic tuner",
+    "class_kind": "other"
+  },
+  {
+    "index": 457,
+    "class_name": "Effects unit",
+    "class_kind": "other"
+  },
+  {
+    "index": 458,
+    "class_name": "Chorus effect",
+    "class_kind": "other"
+  },
+  {
+    "index": 459,
+    "class_name": "Basketball bounce",
+    "class_kind": "other"
+  },
+  {
+    "index": 460,
+    "class_name": "Bang",
+    "class_kind": "other"
+  },
+  {
+    "index": 461,
+    "class_name": "Slap, smack",
+    "class_kind": "noise"
+  },
+  {
+    "index": 462,
+    "class_name": "Whack, thwack",
+    "class_kind": "other"
+  },
+  {
+    "index": 463,
+    "class_name": "Smash, crash",
+    "class_kind": "noise"
+  },
+  {
+    "index": 464,
+    "class_name": "Breaking",
+    "class_kind": "noise"
+  },
+  {
+    "index": 465,
+    "class_name": "Bouncing",
+    "class_kind": "other"
+  },
+  {
+    "index": 466,
+    "class_name": "Whip",
+    "class_kind": "other"
+  },
+  {
+    "index": 467,
+    "class_name": "Flap",
+    "class_kind": "other"
+  },
+  {
+    "index": 468,
+    "class_name": "Scratch",
+    "class_kind": "other"
+  },
+  {
+    "index": 469,
+    "class_name": "Scrape",
+    "class_kind": "other"
+  },
+  {
+    "index": 470,
+    "class_name": "Rub",
+    "class_kind": "other"
+  },
+  {
+    "index": 471,
+    "class_name": "Roll",
+    "class_kind": "other"
+  },
+  {
+    "index": 472,
+    "class_name": "Crushing",
+    "class_kind": "noise"
+  },
+  {
+    "index": 473,
+    "class_name": "Crumpling, crinkling",
+    "class_kind": "other"
+  },
+  {
+    "index": 474,
+    "class_name": "Tearing",
+    "class_kind": "other"
+  },
+  {
+    "index": 475,
+    "class_name": "Beep, bleep",
+    "class_kind": "noise"
+  },
+  {
+    "index": 476,
+    "class_name": "Ping",
+    "class_kind": "noise"
+  },
+  {
+    "index": 477,
+    "class_name": "Ding",
+    "class_kind": "other"
+  },
+  {
+    "index": 478,
+    "class_name": "Clang",
+    "class_kind": "noise"
+  },
+  {
+    "index": 479,
+    "class_name": "Squeal",
+    "class_kind": "other"
+  },
+  {
+    "index": 480,
+    "class_name": "Creak",
+    "class_kind": "other"
+  },
+  {
+    "index": 481,
+    "class_name": "Rustle",
+    "class_kind": "other"
+  },
+  {
+    "index": 482,
+    "class_name": "Whir",
+    "class_kind": "other"
+  },
+  {
+    "index": 483,
+    "class_name": "Clatter",
+    "class_kind": "other"
+  },
+  {
+    "index": 484,
+    "class_name": "Sizzle",
+    "class_kind": "other"
+  },
+  {
+    "index": 485,
+    "class_name": "Clicking",
+    "class_kind": "other"
+  },
+  {
+    "index": 486,
+    "class_name": "Clickety-clack",
+    "class_kind": "other"
+  },
+  {
+    "index": 487,
+    "class_name": "Rumble",
+    "class_kind": "other"
+  },
+  {
+    "index": 488,
+    "class_name": "Plop",
+    "class_kind": "other"
+  },
+  {
+    "index": 489,
+    "class_name": "Jingle, tinkle",
+    "class_kind": "noise"
+  },
+  {
+    "index": 490,
+    "class_name": "Hum",
+    "class_kind": "other"
+  },
+  {
+    "index": 491,
+    "class_name": "Zing",
+    "class_kind": "other"
+  },
+  {
+    "index": 492,
+    "class_name": "Boing",
+    "class_kind": "other"
+  },
+  {
+    "index": 493,
+    "class_name": "Crunch",
+    "class_kind": "other"
+  },
+  {
+    "index": 494,
+    "class_name": "Silence",
+    "class_kind": "other"
+  },
+  {
+    "index": 495,
+    "class_name": "Sine wave",
+    "class_kind": "other"
+  },
+  {
+    "index": 496,
+    "class_name": "Harmonic",
+    "class_kind": "other"
+  },
+  {
+    "index": 497,
+    "class_name": "Chirp tone",
+    "class_kind": "other"
+  },
+  {
+    "index": 498,
+    "class_name": "Sound effect",
+    "class_kind": "other"
+  },
+  {
+    "index": 499,
+    "class_name": "Pulse",
+    "class_kind": "other"
+  },
+  {
+    "index": 500,
+    "class_name": "Inside, small room",
+    "class_kind": "other"
+  },
+  {
+    "index": 501,
+    "class_name": "Inside, large room or hall",
+    "class_kind": "other"
+  },
+  {
+    "index": 502,
+    "class_name": "Inside, public space",
+    "class_kind": "other"
+  },
+  {
+    "index": 503,
+    "class_name": "Outside, urban or manmade",
+    "class_kind": "other"
+  },
+  {
+    "index": 504,
+    "class_name": "Outside, rural or natural",
+    "class_kind": "other"
+  },
+  {
+    "index": 505,
+    "class_name": "Reverberation",
+    "class_kind": "other"
+  },
+  {
+    "index": 506,
+    "class_name": "Echo",
+    "class_kind": "other"
+  },
+  {
+    "index": 507,
+    "class_name": "Noise",
+    "class_kind": "other"
+  },
+  {
+    "index": 508,
+    "class_name": "Environmental noise",
+    "class_kind": "other"
+  },
+  {
+    "index": 509,
+    "class_name": "Static",
+    "class_kind": "noise"
+  },
+  {
+    "index": 510,
+    "class_name": "Mains hum",
+    "class_kind": "other"
+  },
+  {
+    "index": 511,
+    "class_name": "Distortion",
+    "class_kind": "other"
+  },
+  {
+    "index": 512,
+    "class_name": "Sidetone",
+    "class_kind": "other"
+  },
+  {
+    "index": 513,
+    "class_name": "Cacophony",
+    "class_kind": "other"
+  },
+  {
+    "index": 514,
+    "class_name": "White noise",
+    "class_kind": "other"
+  },
+  {
+    "index": 515,
+    "class_name": "Pink noise",
+    "class_kind": "other"
+  },
+  {
+    "index": 516,
+    "class_name": "Throbbing",
+    "class_kind": "other"
+  },
+  {
+    "index": 517,
+    "class_name": "Vibration",
+    "class_kind": "other"
+  },
+  {
+    "index": 518,
+    "class_name": "Television",
+    "class_kind": "noise"
+  },
+  {
+    "index": 519,
+    "class_name": "Radio",
+    "class_kind": "noise"
+  },
+  {
+    "index": 520,
+    "class_name": "Field recording",
+    "class_kind": "other"
+  }
+]

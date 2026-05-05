@@ -1,0 +1,55 @@
+{
+  "summary": {
+    "common_name": "Gadwall",
+    "scientific_name": "Mareca strepera",
+    "encounter_count": 1,
+    "total_calls": 1,
+    "total_verified": 0,
+    "max_confidence": 0.8261,
+    "first_seen": "2026-05-04 10:28:40",
+    "last_seen": "2026-05-04 10:28:40",
+    "avg_confidence": 0.826,
+    "avg_calls_per_encounter": 1.0,
+    "peak_hour": 10,
+    "unverified_count": 1
+  },
+  "encounters": [
+    {
+      "id": 97,
+      "common_name": "Gadwall",
+      "scientific_name": "Mareca strepera",
+      "started_at": "2026-05-04 10:28:40",
+      "ended_at": "2026-05-04 10:28:40",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.8261,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 118,
+          "timestamp": "2026-05-04 10:28:40",
+          "confidence": 0.8261,
+          "audio_file": "chunk_20260504_102840_6.0_9.0.wav",
+          "status": "unverified",
+          "start_s": 6.0,
+          "end_s": 9.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.5
+            },
+            "top_noise": {
+              "class_name": "Goat",
+              "score": 0.0156
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

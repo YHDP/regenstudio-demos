@@ -1,0 +1,55 @@
+{
+  "summary": {
+    "common_name": "Garden Warbler",
+    "scientific_name": "Sylvia borin",
+    "encounter_count": 1,
+    "total_calls": 1,
+    "total_verified": 0,
+    "max_confidence": 0.8018,
+    "first_seen": "2026-05-05 08:21:29",
+    "last_seen": "2026-05-05 08:21:29",
+    "avg_confidence": 0.802,
+    "avg_calls_per_encounter": 1.0,
+    "peak_hour": 8,
+    "unverified_count": 1
+  },
+  "encounters": [
+    {
+      "id": 128,
+      "common_name": "Garden Warbler",
+      "scientific_name": "Sylvia borin",
+      "started_at": "2026-05-05 08:21:29",
+      "ended_at": "2026-05-05 08:21:29",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.8018,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 153,
+          "timestamp": "2026-05-05 08:21:29",
+          "confidence": 0.8018,
+          "audio_file": "chunk_20260505_082129_6.0_9.0.wav",
+          "status": "unverified",
+          "start_s": 6.0,
+          "end_s": 9.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.8008
+            },
+            "top_noise": {
+              "class_name": "Walk, footsteps",
+              "score": 0.0156
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "birdnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Common Redstart",
+        "scientific_name": "Phoenicurus phoenicurus",
+        "score": 0.8314
+      },
+      {
+        "rank": 2,
+        "class_name": "Song Thrush",
+        "scientific_name": "Turdus philomelos",
+        "score": 0.2118
+      },
+      {
+        "rank": 3,
+        "class_name": "European Stonechat",
+        "scientific_name": "Saxicola rubicola",
+        "score": 0.1874
+      },
+      {
+        "rank": 4,
+        "class_name": "Black Redstart",
+        "scientific_name": "Phoenicurus ochruros",
+        "score": 0.1804
+      },
+      {
+        "rank": 5,
+        "class_name": "Eurasian Blackcap",
+        "scientific_name": "Sylvia atricapilla",
+        "score": 0.1657
+      }
+    ]
+  },
+  "yamnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Bird",
+        "scientific_name": null,
+        "score": 0.8516
+      },
+      {
+        "rank": 4,
+        "class_name": "Bird vocalization, bird call, bird song",
+        "scientific_name": null,
+        "score": 0.5859
+      },
+      {
+        "rank": 5,
+        "class_name": "Chirp, tweet",
+        "scientific_name": null,
+        "score": 0.5
+      },
+      {
+        "rank": 13,
+        "class_name": "Fowl",
+        "scientific_name": null,
+        "score": 0.082
+      },
+      {
+        "rank": 15,
+        "class_name": "Duck",
+        "scientific_name": null,
+        "score": 0.0586
+      }
+    ],
+    "noise": [
+      {
+        "rank": 9,
+        "class_name": "Motor vehicle (road)",
+        "scientific_name": null,
+        "score": 0.1992
+      },
+      {
+        "rank": 10,
+        "class_name": "Vehicle",
+        "scientific_name": null,
+        "score": 0.1992
+      },
+      {
+        "rank": 11,
+        "class_name": "Car",
+        "scientific_name": null,
+        "score": 0.1484
+      },
+      {
+        "rank": 12,
+        "class_name": "Traffic noise, roadway noise",
+        "scientific_name": null,
+        "score": 0.1094
+      },
+      {
+        "rank": 14,
+        "class_name": "Wind noise (microphone)",
+        "scientific_name": null,
+        "score": 0.082
+      }
+    ],
+    "other": [
+      {
+        "rank": 2,
+        "class_name": "Animal",
+        "scientific_name": null,
+        "score": 0.8516
+      },
+      {
+        "rank": 3,
+        "class_name": "Wild animals",
+        "scientific_name": null,
+        "score": 0.8008
+      },
+      {
+        "rank": 6,
+        "class_name": "White noise",
+        "scientific_name": null,
+        "score": 0.2617
+      },
+      {
+        "rank": 7,
+        "class_name": "Outside, rural or natural",
+        "scientific_name": null,
+        "score": 0.2617
+      },
+      {
+        "rank": 8,
+        "class_name": "Wind",
+        "scientific_name": null,
+        "score": 0.2617
+      }
+    ]
+  }
+}

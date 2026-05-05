@@ -1,0 +1,134 @@
+{
+  "birdnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Eurasian Blackbird",
+        "scientific_name": "Turdus merula",
+        "score": 0.5213
+      },
+      {
+        "rank": 2,
+        "class_name": "Water Rail",
+        "scientific_name": "Rallus aquaticus",
+        "score": 0.288
+      },
+      {
+        "rank": 3,
+        "class_name": "Song Thrush",
+        "scientific_name": "Turdus philomelos",
+        "score": 0.1994
+      },
+      {
+        "rank": 4,
+        "class_name": "Eurasian Oystercatcher",
+        "scientific_name": "Haematopus ostralegus",
+        "score": 0.1576
+      },
+      {
+        "rank": 5,
+        "class_name": "Eurasian Green Woodpecker",
+        "scientific_name": "Picus viridis",
+        "score": 0.1132
+      }
+    ]
+  },
+  "yamnet": {
+    "bird": [
+      {
+        "rank": 2,
+        "class_name": "Bird",
+        "scientific_name": null,
+        "score": 0.1094
+      },
+      {
+        "rank": 6,
+        "class_name": "Fowl",
+        "scientific_name": null,
+        "score": 0.0586
+      },
+      {
+        "rank": 7,
+        "class_name": "Bird vocalization, bird call, bird song",
+        "scientific_name": null,
+        "score": 0.043
+      },
+      {
+        "rank": 10,
+        "class_name": "Chicken, rooster",
+        "scientific_name": null,
+        "score": 0.0312
+      },
+      {
+        "rank": 11,
+        "class_name": "Chirp, tweet",
+        "scientific_name": null,
+        "score": 0.0312
+      }
+    ],
+    "noise": [
+      {
+        "rank": 8,
+        "class_name": "Speech",
+        "scientific_name": null,
+        "score": 0.043
+      },
+      {
+        "rank": 12,
+        "class_name": "Explosion",
+        "scientific_name": null,
+        "score": 0.0078
+      },
+      {
+        "rank": 13,
+        "class_name": "Alarm",
+        "scientific_name": null,
+        "score": 0.0078
+      },
+      {
+        "rank": 14,
+        "class_name": "Vehicle horn, car horn, honking",
+        "scientific_name": null,
+        "score": 0.0078
+      },
+      {
+        "rank": 15,
+        "class_name": "Vehicle",
+        "scientific_name": null,
+        "score": 0.0078
+      }
+    ],
+    "other": [
+      {
+        "rank": 1,
+        "class_name": "Silence",
+        "scientific_name": null,
+        "score": 0.5859
+      },
+      {
+        "rank": 3,
+        "class_name": "Animal",
+        "scientific_name": null,
+        "score": 0.1094
+      },
+      {
+        "rank": 4,
+        "class_name": "Outside, rural or natural",
+        "scientific_name": null,
+        "score": 0.1094
+      },
+      {
+        "rank": 5,
+        "class_name": "Wild animals",
+        "scientific_name": null,
+        "score": 0.082
+      },
+      {
+        "rank": 9,
+        "class_name": "Environmental noise",
+        "scientific_name": null,
+        "score": 0.043
+      }
+    ]
+  }
+}

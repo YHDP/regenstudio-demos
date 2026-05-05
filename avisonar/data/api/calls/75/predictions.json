@@ -1,0 +1,134 @@
+{
+  "birdnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "European Robin",
+        "scientific_name": "Erithacus rubecula",
+        "score": 0.7935
+      },
+      {
+        "rank": 2,
+        "class_name": "Common Grasshopper-Warbler",
+        "scientific_name": "Locustella naevia",
+        "score": 0.3518
+      },
+      {
+        "rank": 3,
+        "class_name": "Eurasian Blackbird",
+        "scientific_name": "Turdus merula",
+        "score": 0.3113
+      },
+      {
+        "rank": 4,
+        "class_name": "Black Redstart",
+        "scientific_name": "Phoenicurus ochruros",
+        "score": 0.1797
+      },
+      {
+        "rank": 5,
+        "class_name": "Eurasian Wren",
+        "scientific_name": "Troglodytes troglodytes",
+        "score": 0.1529
+      }
+    ]
+  },
+  "yamnet": {
+    "bird": [
+      {
+        "rank": 6,
+        "class_name": "Bird",
+        "scientific_name": null,
+        "score": 0.332
+      },
+      {
+        "rank": 7,
+        "class_name": "Bird vocalization, bird call, bird song",
+        "scientific_name": null,
+        "score": 0.1992
+      },
+      {
+        "rank": 8,
+        "class_name": "Chirp, tweet",
+        "scientific_name": null,
+        "score": 0.1992
+      },
+      {
+        "rank": 10,
+        "class_name": "Bird flight, flapping wings",
+        "scientific_name": null,
+        "score": 0.082
+      },
+      {
+        "rank": 14,
+        "class_name": "Duck",
+        "scientific_name": null,
+        "score": 0.043
+      }
+    ],
+    "noise": [
+      {
+        "rank": 9,
+        "class_name": "Rodents, rats, mice",
+        "scientific_name": null,
+        "score": 0.1094
+      },
+      {
+        "rank": 11,
+        "class_name": "Horse",
+        "scientific_name": null,
+        "score": 0.082
+      },
+      {
+        "rank": 12,
+        "class_name": "Speech",
+        "scientific_name": null,
+        "score": 0.0586
+      },
+      {
+        "rank": 13,
+        "class_name": "Dog",
+        "scientific_name": null,
+        "score": 0.0586
+      },
+      {
+        "rank": 15,
+        "class_name": "Vehicle",
+        "scientific_name": null,
+        "score": 0.043
+      }
+    ],
+    "other": [
+      {
+        "rank": 1,
+        "class_name": "Rain",
+        "scientific_name": null,
+        "score": 0.8906
+      },
+      {
+        "rank": 2,
+        "class_name": "Water",
+        "scientific_name": null,
+        "score": 0.7383
+      },
+      {
+        "rank": 3,
+        "class_name": "Rain on surface",
+        "scientific_name": null,
+        "score": 0.7383
+      },
+      {
+        "rank": 4,
+        "class_name": "Raindrop",
+        "scientific_name": null,
+        "score": 0.668
+      },
+      {
+        "rank": 5,
+        "class_name": "Animal",
+        "scientific_name": null,
+        "score": 0.4141
+      }
+    ]
+  }
+}

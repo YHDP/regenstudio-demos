@@ -1,0 +1,1247 @@
+{
+  "Pitangus sulphuratus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Turdus rufiventris": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Furnarius rufus": {
+    "iucn_status": "LC",
+    "population_trend": "increasing",
+    "is_introduced": false
+  },
+  "Troglodytes musculus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Zonotrichia capensis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Tyrannus melancholicus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Columbina talpacoti": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Patagioenas picazuro": {
+    "iucn_status": "LC",
+    "population_trend": "increasing",
+    "is_introduced": false
+  },
+  "Zenaida auriculata": {
+    "iucn_status": "LC",
+    "population_trend": "increasing",
+    "is_introduced": false
+  },
+  "Columba livia": {
+    "iucn_status": "LC",
+    "population_trend": "increasing",
+    "is_introduced": true
+  },
+  "Coereba flaveola": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Thraupis sayaca": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Thraupis palmarum": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Tangara cayana": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Tangara sayaca": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Sicalis flaveola": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Coragyps atratus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Cathartes aura": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Rupornis magnirostris": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Caracara plancus": {
+    "iucn_status": "LC",
+    "population_trend": "increasing",
+    "is_introduced": false
+  },
+  "Milvago chimachima": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Falco sparverius": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Falco femoralis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Vanellus chilensis": {
+    "iucn_status": "LC",
+    "population_trend": "increasing",
+    "is_introduced": false
+  },
+  "Guira guira": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Crotophaga ani": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Piaya cayana": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Megaceryle torquata": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Chloroceryle amazona": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Chloroceryle americana": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Ramphastos toco": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Ramphastos dicolorus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Pteroglossus bailloni": {
+    "iucn_status": "NT",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Pteroglossus aracari": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Colaptes melanochloros": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Colaptes campestris": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Dryocopus lineatus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Melanerpes candidus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Veniliornis spilogaster": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Picumnus temminckii": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Amazona aestiva": {
+    "iucn_status": "NT",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Amazona vinacea": {
+    "iucn_status": "EN",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Pyrrhura frontalis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Forpus xanthopterygius": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Brotogeris tirica": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Brotogeris chiriri": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Aratinga leucophthalma": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Psittacara leucophthalmus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Myiopsitta monachus": {
+    "iucn_status": "LC",
+    "population_trend": "increasing",
+    "is_introduced": true
+  },
+  "Primolius maracana": {
+    "iucn_status": "NT",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Ara ararauna": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Synallaxis spixi": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Synallaxis ruficapilla": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Automolus leucophthalmus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Xiphocolaptes albicollis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Lepidocolaptes angustirostris": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Sittasomus griseicapillus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Thamnophilus caerulescens": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Thamnophilus ruficapillus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Dysithamnus mentalis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Pyriglena leucoptera": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Conopophaga lineata": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Myrmeciza squamosa": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Stymphalornis acutirostris": {
+    "iucn_status": "NT",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Formicivora acutirostris": {
+    "iucn_status": "NT",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Platyrinchus mystaceus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Tolmomyias sulphurescens": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Todirostrum cinereum": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Elaenia flavogaster": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Elaenia obscura": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Camptostoma obsoletum": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Myiozetetes similis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Megarynchus pitangua": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Empidonomus varius": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Tyrannus savana": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Myiarchus swainsoni": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Myiarchus ferox": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Fluvicola nengeta": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Arundinicola leucocephala": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Satrapa icterophrys": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Machetornis rixosa": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Phylloscartes paulista": {
+    "iucn_status": "NT",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Hemitriccus orbitatus": {
+    "iucn_status": "LC",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Procnias nudicollis": {
+    "iucn_status": "NT",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Lipaugus lanioides": {
+    "iucn_status": "LC",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Piprites pileata": {
+    "iucn_status": "NT",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Chiroxiphia caudata": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Manacus manacus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Ilicura militaris": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Turdus leucomelas": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Turdus amaurochalinus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Turdus albicollis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Turdus flavipes": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Mimus saturninus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Cyclarhis gujanensis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Vireo chivi": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Hylophilus poicilotis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Basileuterus culicivorus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Myiothlypis leucoblephara": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Geothlypis aequinoctialis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Setophaga pitiayumi": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Cacicus haemorrhous": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Icterus pyrrhopterus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Gnorimopsar chopi": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Molothrus bonariensis": {
+    "iucn_status": "LC",
+    "population_trend": "increasing",
+    "is_introduced": false
+  },
+  "Chrysomus ruficapillus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Saltator similis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Saltator maxillosus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Cyanoloxia brissonii": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Sporophila caerulescens": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Sporophila frontalis": {
+    "iucn_status": "VU",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Sporophila falcirostris": {
+    "iucn_status": "VU",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Volatinia jacarina": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Tachyphonus coronatus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Ramphocelus bresilius": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Dacnis cayana": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Hemithraupis ruficapilla": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Pipraeidea melanonota": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Euphonia violacea": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Euphonia pectoralis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Chlorophonia cyanea": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Passer domesticus": {
+    "iucn_status": "LC",
+    "population_trend": "decreasing",
+    "is_introduced": true
+  },
+  "Spinus magellanicus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Estrilda astrild": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": true
+  },
+  "Thalurania glaucopis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Eupetomena macroura": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Amazilia lactea": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Chlorostilbon lucidus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Florisuga fusca": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Phaethornis pretrei": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Phaethornis eurynome": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Leucochloris albicollis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Clytolaema rubricauda": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Colibri serrirostris": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Anthracothorax nigricollis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Nyctibius griseus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Hydropsalis torquata": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Hydropsalis parvula": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Lurocalis semitorquatus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Nyctidromus albicollis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Streptoprocne zonaris": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Chaetura meridionalis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Tyto alba": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Megascops choliba": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Athene cunicularia": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Strix hylophila": {
+    "iucn_status": "LC",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Pulsatrix koeniswaldiana": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Glaucidium brasilianum": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Asio clamator": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Trogon surrucura": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Trogon viridis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Baryphthengus ruficapillus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Nystalus chacuru": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Aramides saracura": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Aramides cajaneus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Gallinula galeata": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Pardirallus nigricans": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Jacana jacana": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Dendrocygna viduata": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Dendrocygna autumnalis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Cairina moschata": {
+    "iucn_status": "LC",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Amazonetta brasiliensis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Ardea alba": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Egretta thula": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Butorides striata": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Nycticorax nycticorax": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Tigrisoma lineatum": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Phalacrocorax brasilianus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Fregata magnificens": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Mycteria americana": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Penelope obscura": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Pipile jacutinga": {
+    "iucn_status": "EN",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Crypturellus obsoletus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Crypturellus tataupa": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Tinamus solitarius": {
+    "iucn_status": "NT",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Cariama cristata": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Sarcoramphus papa": {
+    "iucn_status": "LC",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Spizaetus tyrannus": {
+    "iucn_status": "LC",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Spizaetus melanoleucus": {
+    "iucn_status": "LC",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Leucopternis lacernulatus": {
+    "iucn_status": "VU",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Accipiter striatus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Elanus leucurus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Ictinia plumbea": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Rostrhamus sociabilis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Tachybaptus dominicus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Podilymbus podiceps": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Ramphocelus carbo": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Tangara desmaresti": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Tangara seledon": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Tangara cyanocephala": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Tersina viridis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Conirostrum speciosum": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Schistochlamys ruficapillus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Nemosia pileata": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Habia rubica": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Myrmotherula gularis": {
+    "iucn_status": "NT",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Biatas nigropectus": {
+    "iucn_status": "VU",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Merulaxis ater": {
+    "iucn_status": "NT",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Phibalura flavirostris": {
+    "iucn_status": "NT",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Carpornis cucullata": {
+    "iucn_status": "LC",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Tijuca atra": {
+    "iucn_status": "NT",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Xipholena atropurpurea": {
+    "iucn_status": "EN",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Cotinga maculata": {
+    "iucn_status": "EN",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Neopelma chrysolophum": {
+    "iucn_status": "NT",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Phylloscartes difficilis": {
+    "iucn_status": "NT",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Hemitriccus furcatus": {
+    "iucn_status": "VU",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Onychorhynchus swainsoni": {
+    "iucn_status": "VU",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Calyptura cristata": {
+    "iucn_status": "CR",
+    "population_trend": "unknown",
+    "is_introduced": false
+  },
+  "Anodorhynchus hyacinthinus": {
+    "iucn_status": "VU",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Claravis geoffroyi": {
+    "iucn_status": "CR",
+    "population_trend": "unknown",
+    "is_introduced": false
+  },
+  "Nyctiprogne leucopyga": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Herpsilochmus rufimarginatus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Batara cinerea": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Mackenziaena leachii": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Scytalopus speluncae": {
+    "iucn_status": "NT",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Eleoscytalopus indigoticus": {
+    "iucn_status": "NT",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Mionectes rufiventris": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Myiopagis viridicata": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Leptopogon amaurocephalus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Schiffornis virescens": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Oxyruncus cristatus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Tityra cayana": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Pachyramphus validus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Pachyramphus polychopterus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Cyanocorax chrysops": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Pygochelidon cyanoleuca": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Stelgidopteryx ruficollis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Progne tapera": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Progne chalybea": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Hirundo rustica": {
+    "iucn_status": "LC",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Cantorchilus longirostris": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Turdus subalaris": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Tangara peruviana": {
+    "iucn_status": "NT",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Sporophila angolensis": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Arremon semitorquatus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Penelope superciliaris": {
+    "iucn_status": "LC",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Crax fasciolata": {
+    "iucn_status": "VU",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Amazona amazonica": {
+    "iucn_status": "LC",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Turdus fumigatus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Tangara palmarum": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Myiophobus fasciatus": {
+    "iucn_status": "LC",
+    "population_trend": "increasing",
+    "is_introduced": false
+  },
+  "Pachyramphus castaneus": {
+    "iucn_status": "LC",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Leptotila verreauxi": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Leptotila rufaxilla": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Paroaria dominicana": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Coryphospingus cucullatus": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Euphonia chlorotica": {
+    "iucn_status": "LC",
+    "population_trend": "stable",
+    "is_introduced": false
+  },
+  "Buteogallus lacernulatus": {
+    "iucn_status": "VU",
+    "population_trend": "decreasing",
+    "is_introduced": false
+  },
+  "Paraclaravis geoffroyi": {
+    "iucn_status": "CR",
+    "population_trend": "unknown",
+    "is_introduced": false
+  }
+}

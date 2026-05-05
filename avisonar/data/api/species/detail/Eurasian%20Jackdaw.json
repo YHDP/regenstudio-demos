@@ -1,0 +1,129 @@
+{
+  "summary": {
+    "common_name": "Eurasian Jackdaw",
+    "scientific_name": "Corvus monedula",
+    "encounter_count": 3,
+    "total_calls": 3,
+    "total_verified": 0,
+    "max_confidence": 0.9988,
+    "first_seen": "2026-05-04 18:27:53",
+    "last_seen": "2026-05-05 08:56:19",
+    "avg_confidence": 0.816,
+    "avg_calls_per_encounter": 1.0,
+    "peak_hour": 18,
+    "unverified_count": 1
+  },
+  "encounters": [
+    {
+      "id": 134,
+      "common_name": "Eurasian Jackdaw",
+      "scientific_name": "Corvus monedula",
+      "started_at": "2026-05-05 08:56:19",
+      "ended_at": "2026-05-05 08:56:19",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.4508,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 159,
+          "timestamp": "2026-05-05 08:56:19",
+          "confidence": 0.4508,
+          "audio_file": "chunk_20260505_085619_12.0_15.0.wav",
+          "status": "unverified",
+          "start_s": 12.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.668
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.0586
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 108,
+      "common_name": "Eurasian Jackdaw",
+      "scientific_name": "Corvus monedula",
+      "started_at": "2026-05-04 18:41:36",
+      "ended_at": "2026-05-04 18:41:36",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.9981,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 131,
+          "timestamp": "2026-05-04 18:41:36",
+          "confidence": 0.9981,
+          "audio_file": "chunk_20260504_184136_3.0_12.0.wav",
+          "status": "verified",
+          "start_s": 3.0,
+          "end_s": 12.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.5859
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.0156
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 101,
+      "common_name": "Eurasian Jackdaw",
+      "scientific_name": "Corvus monedula",
+      "started_at": "2026-05-04 18:27:53",
+      "ended_at": "2026-05-04 18:27:53",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.9988,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 122,
+          "timestamp": "2026-05-04 18:27:53",
+          "confidence": 0.9988,
+          "audio_file": "chunk_20260504_182753_0.0_3.0.wav",
+          "status": "verified",
+          "start_s": 0.0,
+          "end_s": 3.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.1484
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.0156
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

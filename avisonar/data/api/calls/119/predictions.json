@@ -1,0 +1,134 @@
+{
+  "birdnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Reed Bunting",
+        "scientific_name": "Emberiza schoeniclus",
+        "score": 0.3183
+      },
+      {
+        "rank": 2,
+        "class_name": "European Greenfinch",
+        "scientific_name": "Chloris chloris",
+        "score": 0.1784
+      },
+      {
+        "rank": 3,
+        "class_name": "House Sparrow",
+        "scientific_name": "Passer domesticus",
+        "score": 0.1214
+      },
+      {
+        "rank": 4,
+        "class_name": "Eurasian Blackbird",
+        "scientific_name": "Turdus merula",
+        "score": 0.0799
+      },
+      {
+        "rank": 5,
+        "class_name": "European Goldfinch",
+        "scientific_name": "Carduelis carduelis",
+        "score": 0.0716
+      }
+    ]
+  },
+  "yamnet": {
+    "bird": [
+      {
+        "rank": 6,
+        "class_name": "Bird",
+        "scientific_name": null,
+        "score": 0.1992
+      },
+      {
+        "rank": 7,
+        "class_name": "Bird vocalization, bird call, bird song",
+        "scientific_name": null,
+        "score": 0.1094
+      },
+      {
+        "rank": 8,
+        "class_name": "Chirp, tweet",
+        "scientific_name": null,
+        "score": 0.0586
+      },
+      {
+        "rank": 10,
+        "class_name": "Fowl",
+        "scientific_name": null,
+        "score": 0.043
+      },
+      {
+        "rank": 12,
+        "class_name": "Duck",
+        "scientific_name": null,
+        "score": 0.0312
+      }
+    ],
+    "noise": [
+      {
+        "rank": 9,
+        "class_name": "Speech",
+        "scientific_name": null,
+        "score": 0.0586
+      },
+      {
+        "rank": 11,
+        "class_name": "Vehicle",
+        "scientific_name": null,
+        "score": 0.043
+      },
+      {
+        "rank": 13,
+        "class_name": "Civil defense siren",
+        "scientific_name": null,
+        "score": 0.0195
+      },
+      {
+        "rank": 14,
+        "class_name": "Bell",
+        "scientific_name": null,
+        "score": 0.0156
+      },
+      {
+        "rank": 15,
+        "class_name": "Motor vehicle (road)",
+        "scientific_name": null,
+        "score": 0.0156
+      }
+    ],
+    "other": [
+      {
+        "rank": 1,
+        "class_name": "Animal",
+        "scientific_name": null,
+        "score": 0.332
+      },
+      {
+        "rank": 2,
+        "class_name": "Wild animals",
+        "scientific_name": null,
+        "score": 0.332
+      },
+      {
+        "rank": 3,
+        "class_name": "Insect",
+        "scientific_name": null,
+        "score": 0.332
+      },
+      {
+        "rank": 4,
+        "class_name": "Bee, wasp, etc.",
+        "scientific_name": null,
+        "score": 0.332
+      },
+      {
+        "rank": 5,
+        "class_name": "Fly, housefly",
+        "scientific_name": null,
+        "score": 0.2617
+      }
+    ]
+  }
+}

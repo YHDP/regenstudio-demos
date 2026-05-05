@@ -1,0 +1,128 @@
+{
+  "birdnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Song Thrush",
+        "scientific_name": "Turdus philomelos",
+        "score": 0.8542
+      },
+      {
+        "rank": 2,
+        "class_name": "Goldcrest",
+        "scientific_name": "Regulus regulus",
+        "score": 0.2942
+      },
+      {
+        "rank": 3,
+        "class_name": "Eurasian Blackcap",
+        "scientific_name": "Sylvia atricapilla",
+        "score": 0.1502
+      },
+      {
+        "rank": 4,
+        "class_name": "Dunnock",
+        "scientific_name": "Prunella modularis",
+        "score": 0.0819
+      }
+    ]
+  },
+  "yamnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Bird",
+        "scientific_name": null,
+        "score": 0.9805
+      },
+      {
+        "rank": 4,
+        "class_name": "Bird vocalization, bird call, bird song",
+        "scientific_name": null,
+        "score": 0.8516
+      },
+      {
+        "rank": 5,
+        "class_name": "Chirp, tweet",
+        "scientific_name": null,
+        "score": 0.7383
+      },
+      {
+        "rank": 10,
+        "class_name": "Fowl",
+        "scientific_name": null,
+        "score": 0.0078
+      },
+      {
+        "rank": 11,
+        "class_name": "Chicken, rooster",
+        "scientific_name": null,
+        "score": 0.0039
+      }
+    ],
+    "noise": [
+      {
+        "rank": 9,
+        "class_name": "Rodents, rats, mice",
+        "scientific_name": null,
+        "score": 0.0117
+      },
+      {
+        "rank": 12,
+        "class_name": "Mouse",
+        "scientific_name": null,
+        "score": 0.0039
+      },
+      {
+        "rank": 13,
+        "class_name": "Speech",
+        "scientific_name": null,
+        "score": 0.0039
+      },
+      {
+        "rank": 14,
+        "class_name": "Music",
+        "scientific_name": null,
+        "score": 0.0039
+      },
+      {
+        "rank": 15,
+        "class_name": "Chopping (food)",
+        "scientific_name": null,
+        "score": 0.0
+      }
+    ],
+    "other": [
+      {
+        "rank": 2,
+        "class_name": "Animal",
+        "scientific_name": null,
+        "score": 0.9805
+      },
+      {
+        "rank": 3,
+        "class_name": "Wild animals",
+        "scientific_name": null,
+        "score": 0.9688
+      },
+      {
+        "rank": 6,
+        "class_name": "Environmental noise",
+        "scientific_name": null,
+        "score": 0.0586
+      },
+      {
+        "rank": 7,
+        "class_name": "Outside, rural or natural",
+        "scientific_name": null,
+        "score": 0.043
+      },
+      {
+        "rank": 8,
+        "class_name": "Insect",
+        "scientific_name": null,
+        "score": 0.0312
+      }
+    ]
+  }
+}

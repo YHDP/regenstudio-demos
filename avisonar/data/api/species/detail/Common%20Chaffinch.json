@@ -1,0 +1,299 @@
+{
+  "summary": {
+    "common_name": "Common Chaffinch",
+    "scientific_name": "Fringilla coelebs",
+    "encounter_count": 7,
+    "total_calls": 8,
+    "total_verified": 0,
+    "max_confidence": 0.9974,
+    "first_seen": "2026-04-30 10:16:15",
+    "last_seen": "2026-05-05 07:31:19",
+    "avg_confidence": 0.853,
+    "avg_calls_per_encounter": 1.1,
+    "peak_hour": 15,
+    "unverified_count": 3
+  },
+  "encounters": [
+    {
+      "id": 120,
+      "common_name": "Common Chaffinch",
+      "scientific_name": "Fringilla coelebs",
+      "started_at": "2026-05-05 07:31:19",
+      "ended_at": "2026-05-05 07:31:19",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.9965,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 144,
+          "timestamp": "2026-05-05 07:31:19",
+          "confidence": 0.9965,
+          "audio_file": "chunk_20260505_073119_0.0_15.0.wav",
+          "status": "verified",
+          "start_s": 0.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.8008
+            },
+            "top_noise": {
+              "class_name": "Camera",
+              "score": 0.2617
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 88,
+      "common_name": "Common Chaffinch",
+      "scientific_name": "Fringilla coelebs",
+      "started_at": "2026-05-04 07:05:27",
+      "ended_at": "2026-05-04 07:05:27",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.6417,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 108,
+          "timestamp": "2026-05-04 07:05:27",
+          "confidence": 0.6417,
+          "audio_file": "chunk_20260504_070527_6.0_9.0.wav",
+          "status": "unverified",
+          "start_s": 6.0,
+          "end_s": 9.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.2617
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.043
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 57,
+      "common_name": "Common Chaffinch",
+      "scientific_name": "Fringilla coelebs",
+      "started_at": "2026-05-02 15:33:53",
+      "ended_at": "2026-05-02 15:33:53",
+      "call_count": 2,
+      "verified_count": 0,
+      "max_confidence": 0.9409,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 67,
+          "timestamp": "2026-05-02 15:33:53",
+          "confidence": 0.9409,
+          "audio_file": "chunk_20260502_153353_0.0_6.0.wav",
+          "status": "verified",
+          "start_s": 0.0,
+          "end_s": 6.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.4141
+            },
+            "top_noise": {
+              "class_name": "Walk, footsteps",
+              "score": 0.082
+            }
+          }
+        },
+        {
+          "id": 68,
+          "timestamp": "2026-05-02 15:33:53",
+          "confidence": 0.566,
+          "audio_file": "chunk_20260502_153353_9.0_12.0.wav",
+          "status": "unverified",
+          "start_s": 9.0,
+          "end_s": 12.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird vocalization, bird call, bird song",
+              "score": 0.5
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.0156
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 51,
+      "common_name": "Common Chaffinch",
+      "scientific_name": "Fringilla coelebs",
+      "started_at": "2026-05-02 05:37:19",
+      "ended_at": "2026-05-02 05:37:19",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.9884,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 58,
+          "timestamp": "2026-05-02 05:37:19",
+          "confidence": 0.9884,
+          "audio_file": "chunk_20260502_053719_0.0_15.0.wav",
+          "status": "verified",
+          "start_s": 0.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.5
+            },
+            "top_noise": {
+              "class_name": "Wind noise (microphone)",
+              "score": 0.082
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 48,
+      "common_name": "Common Chaffinch",
+      "scientific_name": "Fringilla coelebs",
+      "started_at": "2026-05-01 15:58:52",
+      "ended_at": "2026-05-01 15:58:52",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.4202,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 55,
+          "timestamp": "2026-05-01 15:58:52",
+          "confidence": 0.4202,
+          "audio_file": "chunk_20260501_155852_3.0_6.0.wav",
+          "status": "unverified",
+          "start_s": 3.0,
+          "end_s": 6.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.4141
+            },
+            "top_noise": {
+              "class_name": "Rodents, rats, mice",
+              "score": 0.1094
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 38,
+      "common_name": "Common Chaffinch",
+      "scientific_name": "Fringilla coelebs",
+      "started_at": "2026-05-01 08:37:24",
+      "ended_at": "2026-05-01 08:37:24",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.9974,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 44,
+          "timestamp": "2026-05-01 08:37:24",
+          "confidence": 0.9974,
+          "audio_file": "chunk_20260501_083724_0.0_12.0.wav",
+          "status": "verified",
+          "start_s": 0.0,
+          "end_s": 12.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.5859
+            },
+            "top_noise": {
+              "class_name": "Wind noise (microphone)",
+              "score": 0.1094
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 33,
+      "common_name": "Common Chaffinch",
+      "scientific_name": "Fringilla coelebs",
+      "started_at": "2026-04-30 10:16:15",
+      "ended_at": "2026-04-30 10:16:15",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.9846,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 39,
+          "timestamp": "2026-04-30 10:16:15",
+          "confidence": 0.9846,
+          "audio_file": "chunk_20260430_101615_0.0_15.0.wav",
+          "status": "verified",
+          "start_s": 0.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.668
+            },
+            "top_noise": {
+              "class_name": "Bell",
+              "score": 0.332
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

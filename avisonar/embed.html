@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>window.DEMO_GUARD = { demoId: 'avisonar' };</script>
+  <script src="../assets/js/guard.js"></script>
+
+  <meta charset="UTF-8">
+  <script>const _t=localStorage.getItem("bd-theme");if(_t)document.documentElement.setAttribute("data-theme",_t);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AviSonar — Live Stats</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #0d1117; color: #e6edf3; font-family: system-ui, sans-serif; padding: 1rem; }
+    .widget { max-width: 320px; }
+    .title { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
+    .title-icon { font-size: 1.2rem; }
+    .title-text { font-size: 0.9rem; font-weight: 600; color: #3fb950; }
+    .stats { display: flex; gap: 1.5rem; margin-bottom: 0.75rem; }
+    .stat-value { font-size: 1.4rem; font-weight: 700; color: #3fb950; }
+    .stat-label { font-size: 0.6rem; color: #7d8590; text-transform: uppercase; letter-spacing: 0.08em; }
+    .top-list { list-style: none; }
+    .top-item { display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.78rem; border-bottom: 1px solid #21262d; }
+    .top-name { color: #e6edf3; }
+    .top-calls { color: #7d8590; font-size: 0.7rem; }
+    .footer { margin-top: 0.5rem; font-size: 0.55rem; color: #7d8590; }
+    .footer a { color: #3fb950; text-decoration: none; }
+  </style>
+  <link rel="stylesheet" href="./demo-overrides.css">
+  <script src="./data-router.js"></script>
+</head>
+<body>
+  <div class="widget">
+    <div class="title">
+      <span class="title-icon">🦉</span>
+      <span class="title-text">AviSonar</span>
+    </div>
+    <div class="stats">
+      <div><div class="stat-value" id="today">—</div><div class="stat-label">species today</div></div>
+      <div><div class="stat-value" id="total">—</div><div class="stat-label">all time</div></div>
+    </div>
+    <ul class="top-list" id="top"></ul>
+    <div class="footer">Powered by <a href="/">AviSonar</a></div>
+  </div>
+  <script>
+    fetch('/api/embed/stats').then(r => r.json()).then(d => {
+      document.getElementById('today').textContent = d.species_today;
+      document.getElementById('total').textContent = d.species_all_time;
+      document.getElementById('top').innerHTML = d.top_species.map(s =>
+        `<li class="top-item"><span class="top-name">${s.name}</span><span class="top-calls">${s.calls} calls</span></li>`
+      ).join('');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+{
+  "birdnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Song Thrush",
+        "scientific_name": "Turdus philomelos",
+        "score": 0.3297
+      },
+      {
+        "rank": 2,
+        "class_name": "Mistle Thrush",
+        "scientific_name": "Turdus viscivorus",
+        "score": 0.3105
+      },
+      {
+        "rank": 3,
+        "class_name": "Fieldfare",
+        "scientific_name": "Turdus pilaris",
+        "score": 0.1811
+      },
+      {
+        "rank": 4,
+        "class_name": "Eurasian Jay",
+        "scientific_name": "Garrulus glandarius",
+        "score": 0.146
+      },
+      {
+        "rank": 5,
+        "class_name": "Eurasian Magpie",
+        "scientific_name": "Pica pica",
+        "score": 0.1269
+      }
+    ]
+  },
+  "yamnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Bird",
+        "scientific_name": null,
+        "score": 0.918
+      },
+      {
+        "rank": 2,
+        "class_name": "Bird vocalization, bird call, bird song",
+        "scientific_name": null,
+        "score": 0.8906
+      },
+      {
+        "rank": 5,
+        "class_name": "Chirp, tweet",
+        "scientific_name": null,
+        "score": 0.5859
+      },
+      {
+        "rank": 14,
+        "class_name": "Owl",
+        "scientific_name": null,
+        "score": 0.0195
+      },
+      {
+        "rank": 15,
+        "class_name": "Bird flight, flapping wings",
+        "scientific_name": null,
+        "score": 0.0195
+      }
+    ],
+    "noise": [
+      {
+        "rank": 9,
+        "class_name": "Walk, footsteps",
+        "scientific_name": null,
+        "score": 0.1484
+      },
+      {
+        "rank": 10,
+        "class_name": "Snort",
+        "scientific_name": null,
+        "score": 0.082
+      },
+      {
+        "rank": 11,
+        "class_name": "Speech",
+        "scientific_name": null,
+        "score": 0.043
+      },
+      {
+        "rank": 12,
+        "class_name": "Hiss",
+        "scientific_name": null,
+        "score": 0.043
+      },
+      {
+        "rank": 13,
+        "class_name": "Gunshot, gunfire",
+        "scientific_name": null,
+        "score": 0.0312
+      }
+    ],
+    "other": [
+      {
+        "rank": 3,
+        "class_name": "Animal",
+        "scientific_name": null,
+        "score": 0.8906
+      },
+      {
+        "rank": 4,
+        "class_name": "Wild animals",
+        "scientific_name": null,
+        "score": 0.8906
+      },
+      {
+        "rank": 6,
+        "class_name": "Environmental noise",
+        "scientific_name": null,
+        "score": 0.5859
+      },
+      {
+        "rank": 7,
+        "class_name": "Noise",
+        "scientific_name": null,
+        "score": 0.332
+      },
+      {
+        "rank": 8,
+        "class_name": "Outside, rural or natural",
+        "scientific_name": null,
+        "score": 0.332
+      }
+    ]
+  }
+}

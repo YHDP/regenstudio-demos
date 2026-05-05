@@ -1,0 +1,134 @@
+{
+  "birdnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Eurasian Tree Sparrow",
+        "scientific_name": "Passer montanus",
+        "score": 0.8431
+      },
+      {
+        "rank": 2,
+        "class_name": "European Serin",
+        "scientific_name": "Serinus serinus",
+        "score": 0.583
+      },
+      {
+        "rank": 3,
+        "class_name": "European Goldfinch",
+        "scientific_name": "Carduelis carduelis",
+        "score": 0.0881
+      },
+      {
+        "rank": 4,
+        "class_name": "European Greenfinch",
+        "scientific_name": "Chloris chloris",
+        "score": 0.0817
+      },
+      {
+        "rank": 5,
+        "class_name": "Common Grasshopper-Warbler",
+        "scientific_name": "Locustella naevia",
+        "score": 0.0813
+      }
+    ]
+  },
+  "yamnet": {
+    "bird": [
+      {
+        "rank": 2,
+        "class_name": "Bird vocalization, bird call, bird song",
+        "scientific_name": null,
+        "score": 0.8906
+      },
+      {
+        "rank": 3,
+        "class_name": "Bird",
+        "scientific_name": null,
+        "score": 0.8906
+      },
+      {
+        "rank": 5,
+        "class_name": "Chirp, tweet",
+        "scientific_name": null,
+        "score": 0.7383
+      },
+      {
+        "rank": 7,
+        "class_name": "Fowl",
+        "scientific_name": null,
+        "score": 0.2617
+      },
+      {
+        "rank": 8,
+        "class_name": "Chicken, rooster",
+        "scientific_name": null,
+        "score": 0.2617
+      }
+    ],
+    "noise": [
+      {
+        "rank": 11,
+        "class_name": "Music",
+        "scientific_name": null,
+        "score": 0.0117
+      },
+      {
+        "rank": 12,
+        "class_name": "Rodents, rats, mice",
+        "scientific_name": null,
+        "score": 0.0078
+      },
+      {
+        "rank": 13,
+        "class_name": "Pig",
+        "scientific_name": null,
+        "score": 0.0039
+      },
+      {
+        "rank": 14,
+        "class_name": "Goat",
+        "scientific_name": null,
+        "score": 0.0039
+      },
+      {
+        "rank": 15,
+        "class_name": "Mouse",
+        "scientific_name": null,
+        "score": 0.0039
+      }
+    ],
+    "other": [
+      {
+        "rank": 1,
+        "class_name": "Animal",
+        "scientific_name": null,
+        "score": 0.957
+      },
+      {
+        "rank": 4,
+        "class_name": "Wild animals",
+        "scientific_name": null,
+        "score": 0.8516
+      },
+      {
+        "rank": 6,
+        "class_name": "Environmental noise",
+        "scientific_name": null,
+        "score": 0.5
+      },
+      {
+        "rank": 9,
+        "class_name": "Noise",
+        "scientific_name": null,
+        "score": 0.1992
+      },
+      {
+        "rank": 10,
+        "class_name": "Livestock, farm animals, working animals",
+        "scientific_name": null,
+        "score": 0.1992
+      }
+    ]
+  }
+}

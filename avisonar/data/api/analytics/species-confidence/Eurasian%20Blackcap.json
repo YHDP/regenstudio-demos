@@ -1,0 +1,42 @@
+[
+  {
+    "timestamp": "2026-04-29 18:20:30",
+    "confidence": 0.9261,
+    "status": "verified"
+  },
+  {
+    "timestamp": "2026-05-02 10:13:18",
+    "confidence": 0.8073,
+    "status": "unverified"
+  },
+  {
+    "timestamp": "2026-05-02 10:13:18",
+    "confidence": 0.9294,
+    "status": "verified"
+  },
+  {
+    "timestamp": "2026-05-02 17:40:52",
+    "confidence": 0.9099,
+    "status": "verified"
+  },
+  {
+    "timestamp": "2026-05-04 18:23:55",
+    "confidence": 0.9451,
+    "status": "verified"
+  },
+  {
+    "timestamp": "2026-05-05 08:21:29",
+    "confidence": 0.8613,
+    "status": "unverified"
+  },
+  {
+    "timestamp": "2026-05-05 08:56:19",
+    "confidence": 0.4719,
+    "status": "unverified"
+  },
+  {
+    "timestamp": "2026-05-05 09:19:12",
+    "confidence": 0.9568,
+    "status": "verified"
+  }
+]

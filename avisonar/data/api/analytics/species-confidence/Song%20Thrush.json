@@ -1,0 +1,67 @@
+[
+  {
+    "timestamp": "2026-04-29 17:38:54",
+    "confidence": 0.6452,
+    "status": "unverified"
+  },
+  {
+    "timestamp": "2026-05-01 08:37:24",
+    "confidence": 0.4676,
+    "status": "unverified"
+  },
+  {
+    "timestamp": "2026-05-01 09:34:14",
+    "confidence": 0.8248,
+    "status": "unverified"
+  },
+  {
+    "timestamp": "2026-05-02 16:10:03",
+    "confidence": 0.4553,
+    "status": "unverified"
+  },
+  {
+    "timestamp": "2026-05-02 16:10:03",
+    "confidence": 0.938,
+    "status": "verified"
+  },
+  {
+    "timestamp": "2026-05-04 05:08:50",
+    "confidence": 0.9637,
+    "status": "verified"
+  },
+  {
+    "timestamp": "2026-05-04 05:08:50",
+    "confidence": 0.8542,
+    "status": "rejected"
+  },
+  {
+    "timestamp": "2026-05-04 18:27:53",
+    "confidence": 0.4352,
+    "status": "unverified"
+  },
+  {
+    "timestamp": "2026-05-04 18:41:36",
+    "confidence": 0.6347,
+    "status": "unverified"
+  },
+  {
+    "timestamp": "2026-05-05 06:53:42",
+    "confidence": 0.7738,
+    "status": "unverified"
+  },
+  {
+    "timestamp": "2026-05-05 08:56:19",
+    "confidence": 0.4572,
+    "status": "rejected"
+  },
+  {
+    "timestamp": "2026-05-05 15:16:59",
+    "confidence": 0.6229,
+    "status": "unverified"
+  },
+  {
+    "timestamp": "2026-05-05 16:45:47",
+    "confidence": 0.6598,
+    "status": "unverified"
+  }
+]

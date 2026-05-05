@@ -1,0 +1,92 @@
+{
+  "summary": {
+    "common_name": "Eurasian Treecreeper",
+    "scientific_name": "Certhia familiaris",
+    "encounter_count": 2,
+    "total_calls": 2,
+    "total_verified": 0,
+    "max_confidence": 0.478,
+    "first_seen": "2026-04-29 17:38:54",
+    "last_seen": "2026-05-04 09:35:59",
+    "avg_confidence": 0.44,
+    "avg_calls_per_encounter": 1.0,
+    "peak_hour": 17,
+    "unverified_count": 2
+  },
+  "encounters": [
+    {
+      "id": 95,
+      "common_name": "Eurasian Treecreeper",
+      "scientific_name": "Certhia familiaris",
+      "started_at": "2026-05-04 09:35:59",
+      "ended_at": "2026-05-04 09:35:59",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.4025,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 116,
+          "timestamp": "2026-05-04 09:35:59",
+          "confidence": 0.4025,
+          "audio_file": "chunk_20260504_093559_12.0_15.0.wav",
+          "status": "unverified",
+          "start_s": 12.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Chicken, rooster",
+              "score": 0.2617
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.0195
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 21,
+      "common_name": "Eurasian Treecreeper",
+      "scientific_name": "Certhia familiaris",
+      "started_at": "2026-04-29 17:38:54",
+      "ended_at": "2026-04-29 17:38:54",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.478,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 26,
+          "timestamp": "2026-04-29 17:38:54",
+          "confidence": 0.478,
+          "audio_file": "chunk_20260429_173854_12.0_15.0.wav",
+          "status": "unverified",
+          "start_s": 12.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.4141
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.082
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

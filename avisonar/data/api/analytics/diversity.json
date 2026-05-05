@@ -1,0 +1,16 @@
+[
+  {
+    "period": "2026-17",
+    "shannon_h": 2.983,
+    "evenness": 0.846,
+    "species_count": 34,
+    "total_detections": 93
+  },
+  {
+    "period": "2026-18",
+    "shannon_h": 2.997,
+    "evenness": 0.899,
+    "species_count": 28,
+    "total_detections": 78
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "summary": {
+    "common_name": "Short-toed Treecreeper",
+    "scientific_name": "Certhia brachydactyla",
+    "encounter_count": 1,
+    "total_calls": 1,
+    "total_verified": 0,
+    "max_confidence": 0.4272,
+    "first_seen": "2026-05-04 09:35:59",
+    "last_seen": "2026-05-04 09:35:59",
+    "avg_confidence": 0.427,
+    "avg_calls_per_encounter": 1.0,
+    "peak_hour": 9,
+    "unverified_count": 1
+  },
+  "encounters": [
+    {
+      "id": 94,
+      "common_name": "Short-toed Treecreeper",
+      "scientific_name": "Certhia brachydactyla",
+      "started_at": "2026-05-04 09:35:59",
+      "ended_at": "2026-05-04 09:35:59",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.4272,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 115,
+          "timestamp": "2026-05-04 09:35:59",
+          "confidence": 0.4272,
+          "audio_file": "chunk_20260504_093559_12.0_15.0.wav",
+          "status": "unverified",
+          "start_s": 12.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Chicken, rooster",
+              "score": 0.2617
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.0195
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

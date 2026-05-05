@@ -1,0 +1,134 @@
+{
+  "birdnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Song Thrush",
+        "scientific_name": "Turdus philomelos",
+        "score": 0.7738
+      },
+      {
+        "rank": 2,
+        "class_name": "Goldcrest",
+        "scientific_name": "Regulus regulus",
+        "score": 0.653
+      },
+      {
+        "rank": 3,
+        "class_name": "European Serin",
+        "scientific_name": "Serinus serinus",
+        "score": 0.6505
+      },
+      {
+        "rank": 4,
+        "class_name": "Common Firecrest",
+        "scientific_name": "Regulus ignicapilla",
+        "score": 0.5059
+      },
+      {
+        "rank": 5,
+        "class_name": "Coal Tit",
+        "scientific_name": "Periparus ater",
+        "score": 0.3372
+      }
+    ]
+  },
+  "yamnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Bird",
+        "scientific_name": null,
+        "score": 0.8906
+      },
+      {
+        "rank": 3,
+        "class_name": "Bird vocalization, bird call, bird song",
+        "scientific_name": null,
+        "score": 0.8516
+      },
+      {
+        "rank": 5,
+        "class_name": "Chirp, tweet",
+        "scientific_name": null,
+        "score": 0.668
+      },
+      {
+        "rank": 6,
+        "class_name": "Turkey",
+        "scientific_name": null,
+        "score": 0.4141
+      },
+      {
+        "rank": 8,
+        "class_name": "Gobble",
+        "scientific_name": null,
+        "score": 0.2617
+      }
+    ],
+    "noise": [
+      {
+        "rank": 11,
+        "class_name": "Walk, footsteps",
+        "scientific_name": null,
+        "score": 0.082
+      },
+      {
+        "rank": 12,
+        "class_name": "Speech",
+        "scientific_name": null,
+        "score": 0.082
+      },
+      {
+        "rank": 13,
+        "class_name": "Mouse",
+        "scientific_name": null,
+        "score": 0.043
+      },
+      {
+        "rank": 14,
+        "class_name": "Horse",
+        "scientific_name": null,
+        "score": 0.0312
+      },
+      {
+        "rank": 15,
+        "class_name": "Rodents, rats, mice",
+        "scientific_name": null,
+        "score": 0.0312
+      }
+    ],
+    "other": [
+      {
+        "rank": 2,
+        "class_name": "Animal",
+        "scientific_name": null,
+        "score": 0.8906
+      },
+      {
+        "rank": 4,
+        "class_name": "Wild animals",
+        "scientific_name": null,
+        "score": 0.8516
+      },
+      {
+        "rank": 7,
+        "class_name": "Environmental noise",
+        "scientific_name": null,
+        "score": 0.332
+      },
+      {
+        "rank": 9,
+        "class_name": "White noise",
+        "scientific_name": null,
+        "score": 0.2617
+      },
+      {
+        "rank": 10,
+        "class_name": "Outside, rural or natural",
+        "scientific_name": null,
+        "score": 0.2617
+      }
+    ]
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "summary": {
+    "common_name": "Black Redstart",
+    "scientific_name": "Phoenicurus ochruros",
+    "encounter_count": 4,
+    "total_calls": 4,
+    "total_verified": 0,
+    "max_confidence": 0.9343,
+    "first_seen": "2026-04-29 08:00:36",
+    "last_seen": "2026-05-05 07:53:42",
+    "avg_confidence": 0.694,
+    "avg_calls_per_encounter": 1.0,
+    "peak_hour": 16,
+    "unverified_count": 3
+  },
+  "encounters": [
+    {
+      "id": 122,
+      "common_name": "Black Redstart",
+      "scientific_name": "Phoenicurus ochruros",
+      "started_at": "2026-05-05 07:53:42",
+      "ended_at": "2026-05-05 07:53:42",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.5965,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 147,
+          "timestamp": "2026-05-05 07:53:42",
+          "confidence": 0.5965,
+          "audio_file": "chunk_20260505_075342_9.0_12.0.wav",
+          "status": "unverified",
+          "start_s": 9.0,
+          "end_s": 12.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.1094
+            },
+            "top_noise": {
+              "class_name": "Bicycle",
+              "score": 0.1484
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 98,
+      "common_name": "Black Redstart",
+      "scientific_name": "Phoenicurus ochruros",
+      "started_at": "2026-05-04 10:28:40",
+      "ended_at": "2026-05-04 10:28:40",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.9343,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 119,
+          "timestamp": "2026-05-04 10:28:40",
+          "confidence": 0.9343,
+          "audio_file": "chunk_20260504_102840_9.0_12.0.wav",
+          "status": "verified",
+          "start_s": 9.0,
+          "end_s": 12.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.1992
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.0586
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 14,
+      "common_name": "Black Redstart",
+      "scientific_name": "Phoenicurus ochruros",
+      "started_at": "2026-04-29 16:45:38",
+      "ended_at": "2026-04-29 16:45:38",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.5409,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 18,
+          "timestamp": "2026-04-29 16:45:38",
+          "confidence": 0.5409,
+          "audio_file": "chunk_20260429_164538_3.0_6.0.wav",
+          "status": "unverified",
+          "start_s": 3.0,
+          "end_s": 6.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.4141
+            },
+            "top_noise": {
+              "class_name": "Motor vehicle (road)",
+              "score": 0.1484
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 6,
+      "common_name": "Black Redstart",
+      "scientific_name": "Phoenicurus ochruros",
+      "started_at": "2026-04-29 08:00:36",
+      "ended_at": "2026-04-29 08:00:36",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.7051,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 7,
+          "timestamp": "2026-04-29 08:00:36",
+          "confidence": 0.7051,
+          "audio_file": "chunk_20260429_080036_6.0_9.0.wav",
+          "status": "unverified",
+          "start_s": 6.0,
+          "end_s": 9.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.9805
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.0586
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

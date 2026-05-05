@@ -1,0 +1,114 @@
+{
+  "summary": {
+    "common_name": "Eurasian Tree Sparrow",
+    "scientific_name": "Passer montanus",
+    "encounter_count": 2,
+    "total_calls": 3,
+    "total_verified": 0,
+    "max_confidence": 0.8431,
+    "first_seen": "2026-05-04 18:37:30",
+    "last_seen": "2026-05-05 05:25:30",
+    "avg_confidence": 0.749,
+    "avg_calls_per_encounter": 1.5,
+    "peak_hour": 18,
+    "unverified_count": 3
+  },
+  "encounters": [
+    {
+      "id": 114,
+      "common_name": "Eurasian Tree Sparrow",
+      "scientific_name": "Passer montanus",
+      "started_at": "2026-05-05 05:25:30",
+      "ended_at": "2026-05-05 05:25:30",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.654,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 137,
+          "timestamp": "2026-05-05 05:25:30",
+          "confidence": 0.654,
+          "audio_file": "chunk_20260505_052530_0.0_15.0.wav",
+          "status": "unverified",
+          "start_s": 0.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird vocalization, bird call, bird song",
+              "score": 0.8516
+            },
+            "top_noise": {
+              "class_name": "Music",
+              "score": 0.0195
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 106,
+      "common_name": "Eurasian Tree Sparrow",
+      "scientific_name": "Passer montanus",
+      "started_at": "2026-05-04 18:37:30",
+      "ended_at": "2026-05-04 18:37:30",
+      "call_count": 2,
+      "verified_count": 0,
+      "max_confidence": 0.8431,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 128,
+          "timestamp": "2026-05-04 18:37:30",
+          "confidence": 0.8431,
+          "audio_file": "chunk_20260504_183730_0.0_6.0.wav",
+          "status": "unverified",
+          "start_s": 0.0,
+          "end_s": 6.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird vocalization, bird call, bird song",
+              "score": 0.8008
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.0039
+            }
+          }
+        },
+        {
+          "id": 129,
+          "timestamp": "2026-05-04 18:37:30",
+          "confidence": 0.7588,
+          "audio_file": "chunk_20260504_183730_9.0_15.0.wav",
+          "status": "unverified",
+          "start_s": 9.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.8906
+            },
+            "top_noise": {
+              "class_name": "Music",
+              "score": 0.0078
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

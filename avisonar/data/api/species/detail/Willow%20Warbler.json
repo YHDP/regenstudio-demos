@@ -1,0 +1,55 @@
+{
+  "summary": {
+    "common_name": "Willow Warbler",
+    "scientific_name": "Phylloscopus trochilus",
+    "encounter_count": 1,
+    "total_calls": 1,
+    "total_verified": 0,
+    "max_confidence": 0.8716,
+    "first_seen": "2026-05-01 09:34:14",
+    "last_seen": "2026-05-01 09:34:14",
+    "avg_confidence": 0.872,
+    "avg_calls_per_encounter": 1.0,
+    "peak_hour": 9,
+    "unverified_count": 0
+  },
+  "encounters": [
+    {
+      "id": 45,
+      "common_name": "Willow Warbler",
+      "scientific_name": "Phylloscopus trochilus",
+      "started_at": "2026-05-01 09:34:14",
+      "ended_at": "2026-05-01 09:34:14",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.8716,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 52,
+          "timestamp": "2026-05-01 09:34:14",
+          "confidence": 0.8716,
+          "audio_file": "chunk_20260501_093414_3.0_6.0.wav",
+          "status": "verified",
+          "start_s": 3.0,
+          "end_s": 6.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.8008
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.1094
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

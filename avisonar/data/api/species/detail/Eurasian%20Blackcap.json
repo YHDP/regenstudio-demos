@@ -1,0 +1,299 @@
+{
+  "summary": {
+    "common_name": "Eurasian Blackcap",
+    "scientific_name": "Sylvia atricapilla",
+    "encounter_count": 7,
+    "total_calls": 8,
+    "total_verified": 0,
+    "max_confidence": 0.9568,
+    "first_seen": "2026-04-29 18:20:30",
+    "last_seen": "2026-05-05 09:19:12",
+    "avg_confidence": 0.857,
+    "avg_calls_per_encounter": 1.1,
+    "peak_hour": 18,
+    "unverified_count": 3
+  },
+  "encounters": [
+    {
+      "id": 139,
+      "common_name": "Eurasian Blackcap",
+      "scientific_name": "Sylvia atricapilla",
+      "started_at": "2026-05-05 09:19:12",
+      "ended_at": "2026-05-05 09:19:12",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.9568,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 165,
+          "timestamp": "2026-05-05 09:19:12",
+          "confidence": 0.9568,
+          "audio_file": "chunk_20260505_091912_12.0_15.0.wav",
+          "status": "verified",
+          "start_s": 12.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.7383
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.1484
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 132,
+      "common_name": "Eurasian Blackcap",
+      "scientific_name": "Sylvia atricapilla",
+      "started_at": "2026-05-05 08:56:19",
+      "ended_at": "2026-05-05 08:56:19",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.4719,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 157,
+          "timestamp": "2026-05-05 08:56:19",
+          "confidence": 0.4719,
+          "audio_file": "chunk_20260505_085619_0.0_3.0.wav",
+          "status": "unverified",
+          "start_s": 0.0,
+          "end_s": 3.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.5
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.1484
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 127,
+      "common_name": "Eurasian Blackcap",
+      "scientific_name": "Sylvia atricapilla",
+      "started_at": "2026-05-05 08:21:29",
+      "ended_at": "2026-05-05 08:21:29",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.8613,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 152,
+          "timestamp": "2026-05-05 08:21:29",
+          "confidence": 0.8613,
+          "audio_file": "chunk_20260505_082129_6.0_12.0.wav",
+          "status": "unverified",
+          "start_s": 6.0,
+          "end_s": 12.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.8008
+            },
+            "top_noise": {
+              "class_name": "Horse",
+              "score": 0.043
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 100,
+      "common_name": "Eurasian Blackcap",
+      "scientific_name": "Sylvia atricapilla",
+      "started_at": "2026-05-04 18:23:55",
+      "ended_at": "2026-05-04 18:23:55",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.9451,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 121,
+          "timestamp": "2026-05-04 18:23:55",
+          "confidence": 0.9451,
+          "audio_file": "chunk_20260504_182355_0.0_3.0.wav",
+          "status": "verified",
+          "start_s": 0.0,
+          "end_s": 3.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.9844
+            },
+            "top_noise": {
+              "class_name": "Whistling",
+              "score": 0.0586
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 62,
+      "common_name": "Eurasian Blackcap",
+      "scientific_name": "Sylvia atricapilla",
+      "started_at": "2026-05-02 17:40:52",
+      "ended_at": "2026-05-02 17:40:52",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.9099,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 75,
+          "timestamp": "2026-05-02 17:40:52",
+          "confidence": 0.9099,
+          "audio_file": "chunk_20260502_174052_0.0_15.0.wav",
+          "status": "verified",
+          "start_s": 0.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.332
+            },
+            "top_noise": {
+              "class_name": "Rodents, rats, mice",
+              "score": 0.1094
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 56,
+      "common_name": "Eurasian Blackcap",
+      "scientific_name": "Sylvia atricapilla",
+      "started_at": "2026-05-02 10:13:18",
+      "ended_at": "2026-05-02 10:13:18",
+      "call_count": 2,
+      "verified_count": 0,
+      "max_confidence": 0.9294,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 65,
+          "timestamp": "2026-05-02 10:13:18",
+          "confidence": 0.8073,
+          "audio_file": "chunk_20260502_101318_0.0_6.0.wav",
+          "status": "unverified",
+          "start_s": 0.0,
+          "end_s": 6.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.5
+            },
+            "top_noise": {
+              "class_name": "Water tap, faucet",
+              "score": 0.043
+            }
+          }
+        },
+        {
+          "id": 66,
+          "timestamp": "2026-05-02 10:13:18",
+          "confidence": 0.9294,
+          "audio_file": "chunk_20260502_101318_12.0_15.0.wav",
+          "status": "verified",
+          "start_s": 12.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.5859
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.0586
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 23,
+      "common_name": "Eurasian Blackcap",
+      "scientific_name": "Sylvia atricapilla",
+      "started_at": "2026-04-29 18:20:30",
+      "ended_at": "2026-04-29 18:20:30",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.9261,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 28,
+          "timestamp": "2026-04-29 18:20:30",
+          "confidence": 0.9261,
+          "audio_file": "chunk_20260429_182030_0.0_12.0.wav",
+          "status": "verified",
+          "start_s": 0.0,
+          "end_s": 12.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.5859
+            },
+            "top_noise": {
+              "class_name": "Music",
+              "score": 0.332
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

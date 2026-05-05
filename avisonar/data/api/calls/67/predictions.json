@@ -1,0 +1,134 @@
+{
+  "birdnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Eurasian Siskin",
+        "scientific_name": "Spinus spinus",
+        "score": 0.3158
+      },
+      {
+        "rank": 2,
+        "class_name": "Northern Goshawk",
+        "scientific_name": "Accipiter gentilis",
+        "score": 0.1548
+      },
+      {
+        "rank": 3,
+        "class_name": "Wood Warbler",
+        "scientific_name": "Phylloscopus sibilatrix",
+        "score": 0.1366
+      },
+      {
+        "rank": 4,
+        "class_name": "Common Redstart",
+        "scientific_name": "Phoenicurus phoenicurus",
+        "score": 0.1343
+      },
+      {
+        "rank": 5,
+        "class_name": "Black Woodpecker",
+        "scientific_name": "Dryocopus martius",
+        "score": 0.0878
+      }
+    ]
+  },
+  "yamnet": {
+    "bird": [
+      {
+        "rank": 2,
+        "class_name": "Bird",
+        "scientific_name": null,
+        "score": 0.4141
+      },
+      {
+        "rank": 5,
+        "class_name": "Bird vocalization, bird call, bird song",
+        "scientific_name": null,
+        "score": 0.2617
+      },
+      {
+        "rank": 8,
+        "class_name": "Chirp, tweet",
+        "scientific_name": null,
+        "score": 0.1484
+      },
+      {
+        "rank": 10,
+        "class_name": "Owl",
+        "scientific_name": null,
+        "score": 0.0586
+      },
+      {
+        "rank": 11,
+        "class_name": "Crow",
+        "scientific_name": null,
+        "score": 0.0195
+      }
+    ],
+    "noise": [
+      {
+        "rank": 9,
+        "class_name": "Walk, footsteps",
+        "scientific_name": null,
+        "score": 0.082
+      },
+      {
+        "rank": 12,
+        "class_name": "Roaring cats (lions, tigers)",
+        "scientific_name": null,
+        "score": 0.0195
+      },
+      {
+        "rank": 13,
+        "class_name": "Speech",
+        "scientific_name": null,
+        "score": 0.0195
+      },
+      {
+        "rank": 14,
+        "class_name": "Explosion",
+        "scientific_name": null,
+        "score": 0.0195
+      },
+      {
+        "rank": 15,
+        "class_name": "Horse",
+        "scientific_name": null,
+        "score": 0.0195
+      }
+    ],
+    "other": [
+      {
+        "rank": 1,
+        "class_name": "Environmental noise",
+        "scientific_name": null,
+        "score": 0.5
+      },
+      {
+        "rank": 3,
+        "class_name": "Animal",
+        "scientific_name": null,
+        "score": 0.332
+      },
+      {
+        "rank": 4,
+        "class_name": "Wild animals",
+        "scientific_name": null,
+        "score": 0.332
+      },
+      {
+        "rank": 6,
+        "class_name": "Outside, rural or natural",
+        "scientific_name": null,
+        "score": 0.2617
+      },
+      {
+        "rank": 7,
+        "class_name": "Insect",
+        "scientific_name": null,
+        "score": 0.1992
+      }
+    ]
+  }
+}

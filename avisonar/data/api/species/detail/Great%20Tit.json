@@ -1,0 +1,454 @@
+{
+  "summary": {
+    "common_name": "Great Tit",
+    "scientific_name": "Parus major",
+    "encounter_count": 10,
+    "total_calls": 13,
+    "total_verified": 0,
+    "max_confidence": 1.0,
+    "first_seen": "2026-04-30 08:17:32",
+    "last_seen": "2026-05-05 15:52:28",
+    "avg_confidence": 0.747,
+    "avg_calls_per_encounter": 1.3,
+    "peak_hour": 8,
+    "unverified_count": 6
+  },
+  "encounters": [
+    {
+      "id": 143,
+      "common_name": "Great Tit",
+      "scientific_name": "Parus major",
+      "started_at": "2026-05-05 15:52:28",
+      "ended_at": "2026-05-05 15:52:28",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.7029,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 170,
+          "timestamp": "2026-05-05 15:52:28",
+          "confidence": 0.7029,
+          "audio_file": "chunk_20260505_155228_3.0_9.0.wav",
+          "status": "unverified",
+          "start_s": 3.0,
+          "end_s": 9.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.7383
+            },
+            "top_noise": {
+              "class_name": "Dog",
+              "score": 0.1484
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 121,
+      "common_name": "Great Tit",
+      "scientific_name": "Parus major",
+      "started_at": "2026-05-05 07:31:19",
+      "ended_at": "2026-05-05 07:31:19",
+      "call_count": 2,
+      "verified_count": 0,
+      "max_confidence": 0.7337,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 145,
+          "timestamp": "2026-05-05 07:31:19",
+          "confidence": 0.7337,
+          "audio_file": "chunk_20260505_073119_3.0_6.0.wav",
+          "status": "unverified",
+          "start_s": 3.0,
+          "end_s": 6.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.332
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.043
+            }
+          }
+        },
+        {
+          "id": 146,
+          "timestamp": "2026-05-05 07:31:19",
+          "confidence": 0.6297,
+          "audio_file": "chunk_20260505_073119_12.0_15.0.wav",
+          "status": "unverified",
+          "start_s": 12.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.332
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.0312
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 111,
+      "common_name": "Great Tit",
+      "scientific_name": "Parus major",
+      "started_at": "2026-05-05 05:07:33",
+      "ended_at": "2026-05-05 05:07:33",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.4066,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 134,
+          "timestamp": "2026-05-05 05:07:33",
+          "confidence": 0.4066,
+          "audio_file": "chunk_20260505_050733_0.0_3.0.wav",
+          "status": "unverified",
+          "start_s": 0.0,
+          "end_s": 3.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.8008
+            },
+            "top_noise": {
+              "class_name": "Walk, footsteps",
+              "score": 0.082
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 86,
+      "common_name": "Great Tit",
+      "scientific_name": "Parus major",
+      "started_at": "2026-05-04 07:05:27",
+      "ended_at": "2026-05-04 07:05:27",
+      "call_count": 2,
+      "verified_count": 0,
+      "max_confidence": 0.9481,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 105,
+          "timestamp": "2026-05-04 07:05:27",
+          "confidence": 0.9481,
+          "audio_file": "chunk_20260504_070527_3.0_6.0.wav",
+          "status": "verified",
+          "start_s": 3.0,
+          "end_s": 6.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.4141
+            },
+            "top_noise": {
+              "class_name": "Rodents, rats, mice",
+              "score": 0.082
+            }
+          }
+        },
+        {
+          "id": 106,
+          "timestamp": "2026-05-04 07:05:27",
+          "confidence": 0.8938,
+          "audio_file": "chunk_20260504_070527_9.0_15.0.wav",
+          "status": "verified",
+          "start_s": 9.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.668
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.1094
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 75,
+      "common_name": "Great Tit",
+      "scientific_name": "Parus major",
+      "started_at": "2026-05-03 15:33:03",
+      "ended_at": "2026-05-03 15:33:03",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.5104,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 91,
+          "timestamp": "2026-05-03 15:33:03",
+          "confidence": 0.5104,
+          "audio_file": "chunk_20260503_153303_9.0_12.0.wav",
+          "status": "rejected",
+          "start_s": 9.0,
+          "end_s": 12.0,
+          "rejection_reason": "not the species",
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.8008
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.1094
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 72,
+      "common_name": "Great Tit",
+      "scientific_name": "Parus major",
+      "started_at": "2026-05-03 08:07:52",
+      "ended_at": "2026-05-03 08:07:52",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.6497,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 87,
+          "timestamp": "2026-05-03 08:07:52",
+          "confidence": 0.6497,
+          "audio_file": "chunk_20260503_080752_9.0_12.0.wav",
+          "status": "unverified",
+          "start_s": 9.0,
+          "end_s": 12.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird vocalization, bird call, bird song",
+              "score": 0.5859
+            },
+            "top_noise": {
+              "class_name": "Alarm",
+              "score": 0.0195
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 49,
+      "common_name": "Great Tit",
+      "scientific_name": "Parus major",
+      "started_at": "2026-05-02 05:22:56",
+      "ended_at": "2026-05-02 05:22:56",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 1.0,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 56,
+          "timestamp": "2026-05-02 05:22:56",
+          "confidence": 1.0,
+          "audio_file": "chunk_20260502_052256_0.0_12.0.wav",
+          "status": "verified",
+          "start_s": 0.0,
+          "end_s": 12.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.8906
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.082
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 47,
+      "common_name": "Great Tit",
+      "scientific_name": "Parus major",
+      "started_at": "2026-05-01 15:58:52",
+      "ended_at": "2026-05-01 15:58:52",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.9907,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 54,
+          "timestamp": "2026-05-01 15:58:52",
+          "confidence": 0.9907,
+          "audio_file": "chunk_20260501_155852_3.0_9.0.wav",
+          "status": "verified",
+          "start_s": 3.0,
+          "end_s": 9.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.5859
+            },
+            "top_noise": {
+              "class_name": "Camera",
+              "score": 0.4141
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 39,
+      "common_name": "Great Tit",
+      "scientific_name": "Parus major",
+      "started_at": "2026-05-01 08:37:24",
+      "ended_at": "2026-05-01 08:37:24",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.5407,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 45,
+          "timestamp": "2026-05-01 08:37:24",
+          "confidence": 0.5407,
+          "audio_file": "chunk_20260501_083724_0.0_3.0.wav",
+          "status": "unverified",
+          "start_s": 0.0,
+          "end_s": 3.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.4141
+            },
+            "top_noise": {
+              "class_name": "Wind noise (microphone)",
+              "score": 0.043
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 27,
+      "common_name": "Great Tit",
+      "scientific_name": "Parus major",
+      "started_at": "2026-04-30 08:17:32",
+      "ended_at": "2026-04-30 08:17:32",
+      "call_count": 2,
+      "verified_count": 0,
+      "max_confidence": 0.9874,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 32,
+          "timestamp": "2026-04-30 08:17:32",
+          "confidence": 0.9874,
+          "audio_file": "chunk_20260430_081732_0.0_3.0.wav",
+          "status": "verified",
+          "start_s": 0.0,
+          "end_s": 3.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.7383
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.0586
+            }
+          }
+        },
+        {
+          "id": 33,
+          "timestamp": "2026-04-30 08:17:32",
+          "confidence": 0.963,
+          "audio_file": "chunk_20260430_081732_6.0_15.0.wav",
+          "status": "verified",
+          "start_s": 6.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.668
+            },
+            "top_noise": {
+              "class_name": "Beep, bleep",
+              "score": 0.332
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

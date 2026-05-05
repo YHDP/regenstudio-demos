@@ -1,0 +1,166 @@
+{
+  "summary": {
+    "common_name": "Goldcrest",
+    "scientific_name": "Regulus regulus",
+    "encounter_count": 4,
+    "total_calls": 4,
+    "total_verified": 0,
+    "max_confidence": 0.653,
+    "first_seen": "2026-04-29 16:45:38",
+    "last_seen": "2026-05-05 15:52:28",
+    "avg_confidence": 0.563,
+    "avg_calls_per_encounter": 1.0,
+    "peak_hour": 17,
+    "unverified_count": 4
+  },
+  "encounters": [
+    {
+      "id": 145,
+      "common_name": "Goldcrest",
+      "scientific_name": "Regulus regulus",
+      "started_at": "2026-05-05 15:52:28",
+      "ended_at": "2026-05-05 15:52:28",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.5363,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 173,
+          "timestamp": "2026-05-05 15:52:28",
+          "confidence": 0.5363,
+          "audio_file": "chunk_20260505_155228_6.0_9.0.wav",
+          "status": "unverified",
+          "start_s": 6.0,
+          "end_s": 9.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.7383
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.1484
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 116,
+      "common_name": "Goldcrest",
+      "scientific_name": "Regulus regulus",
+      "started_at": "2026-05-05 06:53:42",
+      "ended_at": "2026-05-05 06:53:42",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.653,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 140,
+          "timestamp": "2026-05-05 06:53:42",
+          "confidence": 0.653,
+          "audio_file": "chunk_20260505_065342_0.0_3.0.wav",
+          "status": "unverified",
+          "start_s": 0.0,
+          "end_s": 3.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Turkey",
+              "score": 0.4141
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.043
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 22,
+      "common_name": "Goldcrest",
+      "scientific_name": "Regulus regulus",
+      "started_at": "2026-04-29 17:38:54",
+      "ended_at": "2026-04-29 17:38:54",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.4403,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 27,
+          "timestamp": "2026-04-29 17:38:54",
+          "confidence": 0.4403,
+          "audio_file": "chunk_20260429_173854_12.0_15.0.wav",
+          "status": "unverified",
+          "start_s": 12.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.4141
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.082
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 15,
+      "common_name": "Goldcrest",
+      "scientific_name": "Regulus regulus",
+      "started_at": "2026-04-29 16:45:38",
+      "ended_at": "2026-04-29 16:45:38",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.6213,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 19,
+          "timestamp": "2026-04-29 16:45:38",
+          "confidence": 0.6213,
+          "audio_file": "chunk_20260429_164538_6.0_9.0.wav",
+          "status": "unverified",
+          "start_s": 6.0,
+          "end_s": 9.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.082
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.2617
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

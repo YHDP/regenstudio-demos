@@ -1,0 +1,547 @@
+[
+  {
+    "common_name": "Barn Swallow",
+    "hour": "08",
+    "count": 1
+  },
+  {
+    "common_name": "Black Redstart",
+    "hour": "07",
+    "count": 1
+  },
+  {
+    "common_name": "Black Redstart",
+    "hour": "08",
+    "count": 1
+  },
+  {
+    "common_name": "Black Redstart",
+    "hour": "10",
+    "count": 1
+  },
+  {
+    "common_name": "Black Redstart",
+    "hour": "16",
+    "count": 1
+  },
+  {
+    "common_name": "Black Woodpecker",
+    "hour": "07",
+    "count": 1
+  },
+  {
+    "common_name": "Black Woodpecker",
+    "hour": "08",
+    "count": 1
+  },
+  {
+    "common_name": "Coal Tit",
+    "hour": "08",
+    "count": 1
+  },
+  {
+    "common_name": "Coal Tit",
+    "hour": "09",
+    "count": 1
+  },
+  {
+    "common_name": "Common Buzzard",
+    "hour": "10",
+    "count": 2
+  },
+  {
+    "common_name": "Common Chaffinch",
+    "hour": "05",
+    "count": 1
+  },
+  {
+    "common_name": "Common Chaffinch",
+    "hour": "07",
+    "count": 2
+  },
+  {
+    "common_name": "Common Chaffinch",
+    "hour": "08",
+    "count": 1
+  },
+  {
+    "common_name": "Common Chaffinch",
+    "hour": "10",
+    "count": 1
+  },
+  {
+    "common_name": "Common Chaffinch",
+    "hour": "15",
+    "count": 3
+  },
+  {
+    "common_name": "Common Firecrest",
+    "hour": "06",
+    "count": 1
+  },
+  {
+    "common_name": "Common Firecrest",
+    "hour": "07",
+    "count": 1
+  },
+  {
+    "common_name": "Common Firecrest",
+    "hour": "16",
+    "count": 1
+  },
+  {
+    "common_name": "Common Redstart",
+    "hour": "05",
+    "count": 1
+  },
+  {
+    "common_name": "Common Redstart",
+    "hour": "08",
+    "count": 1
+  },
+  {
+    "common_name": "Common Redstart",
+    "hour": "09",
+    "count": 1
+  },
+  {
+    "common_name": "Common Redstart",
+    "hour": "15",
+    "count": 1
+  },
+  {
+    "common_name": "Common Wood-Pigeon",
+    "hour": "08",
+    "count": 1
+  },
+  {
+    "common_name": "Crested Tit",
+    "hour": "05",
+    "count": 1
+  },
+  {
+    "common_name": "Dunnock",
+    "hour": "16",
+    "count": 2
+  },
+  {
+    "common_name": "Eurasian Blackbird",
+    "hour": "07",
+    "count": 3
+  },
+  {
+    "common_name": "Eurasian Blackbird",
+    "hour": "08",
+    "count": 3
+  },
+  {
+    "common_name": "Eurasian Blackbird",
+    "hour": "09",
+    "count": 1
+  },
+  {
+    "common_name": "Eurasian Blackbird",
+    "hour": "10",
+    "count": 1
+  },
+  {
+    "common_name": "Eurasian Blackbird",
+    "hour": "15",
+    "count": 2
+  },
+  {
+    "common_name": "Eurasian Blackbird",
+    "hour": "16",
+    "count": 2
+  },
+  {
+    "common_name": "Eurasian Blackbird",
+    "hour": "17",
+    "count": 1
+  },
+  {
+    "common_name": "Eurasian Blackbird",
+    "hour": "18",
+    "count": 2
+  },
+  {
+    "common_name": "Eurasian Blackcap",
+    "hour": "08",
+    "count": 2
+  },
+  {
+    "common_name": "Eurasian Blackcap",
+    "hour": "09",
+    "count": 1
+  },
+  {
+    "common_name": "Eurasian Blackcap",
+    "hour": "10",
+    "count": 2
+  },
+  {
+    "common_name": "Eurasian Blackcap",
+    "hour": "17",
+    "count": 1
+  },
+  {
+    "common_name": "Eurasian Blackcap",
+    "hour": "18",
+    "count": 2
+  },
+  {
+    "common_name": "Eurasian Blue Tit",
+    "hour": "09",
+    "count": 2
+  },
+  {
+    "common_name": "Eurasian Blue Tit",
+    "hour": "16",
+    "count": 2
+  },
+  {
+    "common_name": "Eurasian Collared-Dove",
+    "hour": "08",
+    "count": 1
+  },
+  {
+    "common_name": "Eurasian Curlew",
+    "hour": "08",
+    "count": 2
+  },
+  {
+    "common_name": "Eurasian Curlew",
+    "hour": "10",
+    "count": 1
+  },
+  {
+    "common_name": "Eurasian Jackdaw",
+    "hour": "08",
+    "count": 1
+  },
+  {
+    "common_name": "Eurasian Jackdaw",
+    "hour": "18",
+    "count": 2
+  },
+  {
+    "common_name": "Eurasian Moorhen",
+    "hour": "09",
+    "count": 1
+  },
+  {
+    "common_name": "Eurasian Siskin",
+    "hour": "09",
+    "count": 1
+  },
+  {
+    "common_name": "Eurasian Tree Sparrow",
+    "hour": "05",
+    "count": 1
+  },
+  {
+    "common_name": "Eurasian Tree Sparrow",
+    "hour": "18",
+    "count": 2
+  },
+  {
+    "common_name": "Eurasian Treecreeper",
+    "hour": "09",
+    "count": 1
+  },
+  {
+    "common_name": "Eurasian Treecreeper",
+    "hour": "17",
+    "count": 1
+  },
+  {
+    "common_name": "European Goldfinch",
+    "hour": "08",
+    "count": 2
+  },
+  {
+    "common_name": "European Goldfinch",
+    "hour": "09",
+    "count": 1
+  },
+  {
+    "common_name": "European Goldfinch",
+    "hour": "16",
+    "count": 1
+  },
+  {
+    "common_name": "European Goldfinch",
+    "hour": "18",
+    "count": 1
+  },
+  {
+    "common_name": "European Greenfinch",
+    "hour": "08",
+    "count": 1
+  },
+  {
+    "common_name": "European Greenfinch",
+    "hour": "10",
+    "count": 1
+  },
+  {
+    "common_name": "European Greenfinch",
+    "hour": "17",
+    "count": 1
+  },
+  {
+    "common_name": "European Robin",
+    "hour": "05",
+    "count": 6
+  },
+  {
+    "common_name": "European Robin",
+    "hour": "06",
+    "count": 4
+  },
+  {
+    "common_name": "European Robin",
+    "hour": "07",
+    "count": 2
+  },
+  {
+    "common_name": "European Robin",
+    "hour": "08",
+    "count": 8
+  },
+  {
+    "common_name": "European Robin",
+    "hour": "09",
+    "count": 4
+  },
+  {
+    "common_name": "European Robin",
+    "hour": "15",
+    "count": 4
+  },
+  {
+    "common_name": "European Robin",
+    "hour": "16",
+    "count": 2
+  },
+  {
+    "common_name": "European Robin",
+    "hour": "17",
+    "count": 4
+  },
+  {
+    "common_name": "European Robin",
+    "hour": "18",
+    "count": 3
+  },
+  {
+    "common_name": "European Serin",
+    "hour": "06",
+    "count": 1
+  },
+  {
+    "common_name": "European Serin",
+    "hour": "08",
+    "count": 1
+  },
+  {
+    "common_name": "European Serin",
+    "hour": "18",
+    "count": 1
+  },
+  {
+    "common_name": "Gadwall",
+    "hour": "10",
+    "count": 1
+  },
+  {
+    "common_name": "Garden Warbler",
+    "hour": "08",
+    "count": 1
+  },
+  {
+    "common_name": "Goldcrest",
+    "hour": "06",
+    "count": 1
+  },
+  {
+    "common_name": "Goldcrest",
+    "hour": "15",
+    "count": 1
+  },
+  {
+    "common_name": "Goldcrest",
+    "hour": "16",
+    "count": 1
+  },
+  {
+    "common_name": "Goldcrest",
+    "hour": "17",
+    "count": 1
+  },
+  {
+    "common_name": "Gray Heron",
+    "hour": "00",
+    "count": 1
+  },
+  {
+    "common_name": "Great Tit",
+    "hour": "05",
+    "count": 2
+  },
+  {
+    "common_name": "Great Tit",
+    "hour": "07",
+    "count": 4
+  },
+  {
+    "common_name": "Great Tit",
+    "hour": "08",
+    "count": 4
+  },
+  {
+    "common_name": "Great Tit",
+    "hour": "15",
+    "count": 2
+  },
+  {
+    "common_name": "Greater Whitethroat",
+    "hour": "16",
+    "count": 1
+  },
+  {
+    "common_name": "Green-winged Teal",
+    "hour": "05",
+    "count": 1
+  },
+  {
+    "common_name": "Hawfinch",
+    "hour": "05",
+    "count": 1
+  },
+  {
+    "common_name": "Herring Gull",
+    "hour": "07",
+    "count": 1
+  },
+  {
+    "common_name": "House Sparrow",
+    "hour": "05",
+    "count": 1
+  },
+  {
+    "common_name": "House Sparrow",
+    "hour": "07",
+    "count": 1
+  },
+  {
+    "common_name": "House Sparrow",
+    "hour": "18",
+    "count": 1
+  },
+  {
+    "common_name": "Long-tailed Tit",
+    "hour": "05",
+    "count": 1
+  },
+  {
+    "common_name": "Long-tailed Tit",
+    "hour": "07",
+    "count": 2
+  },
+  {
+    "common_name": "Long-tailed Tit",
+    "hour": "08",
+    "count": 1
+  },
+  {
+    "common_name": "Long-tailed Tit",
+    "hour": "15",
+    "count": 1
+  },
+  {
+    "common_name": "Mistle Thrush",
+    "hour": "17",
+    "count": 1
+  },
+  {
+    "common_name": "Northern Lapwing",
+    "hour": "10",
+    "count": 2
+  },
+  {
+    "common_name": "Short-toed Treecreeper",
+    "hour": "09",
+    "count": 1
+  },
+  {
+    "common_name": "Song Thrush",
+    "hour": "05",
+    "count": 1
+  },
+  {
+    "common_name": "Song Thrush",
+    "hour": "06",
+    "count": 1
+  },
+  {
+    "common_name": "Song Thrush",
+    "hour": "08",
+    "count": 1
+  },
+  {
+    "common_name": "Song Thrush",
+    "hour": "09",
+    "count": 1
+  },
+  {
+    "common_name": "Song Thrush",
+    "hour": "15",
+    "count": 1
+  },
+  {
+    "common_name": "Song Thrush",
+    "hour": "16",
+    "count": 3
+  },
+  {
+    "common_name": "Song Thrush",
+    "hour": "17",
+    "count": 1
+  },
+  {
+    "common_name": "Song Thrush",
+    "hour": "18",
+    "count": 2
+  },
+  {
+    "common_name": "Spotted Flycatcher",
+    "hour": "05",
+    "count": 1
+  },
+  {
+    "common_name": "Spotted Flycatcher",
+    "hour": "10",
+    "count": 1
+  },
+  {
+    "common_name": "Spotted Flycatcher",
+    "hour": "15",
+    "count": 1
+  },
+  {
+    "common_name": "Spotted Flycatcher",
+    "hour": "18",
+    "count": 1
+  },
+  {
+    "common_name": "Willow Warbler",
+    "hour": "09",
+    "count": 1
+  },
+  {
+    "common_name": "Yellowhammer",
+    "hour": "05",
+    "count": 1
+  }
+]

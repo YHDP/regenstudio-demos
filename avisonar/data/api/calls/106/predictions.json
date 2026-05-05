@@ -1,0 +1,134 @@
+{
+  "birdnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Crested Tit",
+        "scientific_name": "Lophophanes cristatus",
+        "score": 0.3321
+      },
+      {
+        "rank": 2,
+        "class_name": "Coal Tit",
+        "scientific_name": "Periparus ater",
+        "score": 0.2544
+      },
+      {
+        "rank": 3,
+        "class_name": "European Robin",
+        "scientific_name": "Erithacus rubecula",
+        "score": 0.2003
+      },
+      {
+        "rank": 4,
+        "class_name": "Marsh Tit",
+        "scientific_name": "Poecile palustris",
+        "score": 0.1962
+      },
+      {
+        "rank": 5,
+        "class_name": "Long-tailed Tit",
+        "scientific_name": "Aegithalos caudatus",
+        "score": 0.1466
+      }
+    ]
+  },
+  "yamnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Bird",
+        "scientific_name": null,
+        "score": 0.668
+      },
+      {
+        "rank": 4,
+        "class_name": "Bird vocalization, bird call, bird song",
+        "scientific_name": null,
+        "score": 0.5
+      },
+      {
+        "rank": 5,
+        "class_name": "Chirp, tweet",
+        "scientific_name": null,
+        "score": 0.332
+      },
+      {
+        "rank": 8,
+        "class_name": "Pigeon, dove",
+        "scientific_name": null,
+        "score": 0.082
+      },
+      {
+        "rank": 9,
+        "class_name": "Coo",
+        "scientific_name": null,
+        "score": 0.082
+      }
+    ],
+    "noise": [
+      {
+        "rank": 6,
+        "class_name": "Vehicle",
+        "scientific_name": null,
+        "score": 0.1094
+      },
+      {
+        "rank": 12,
+        "class_name": "Rodents, rats, mice",
+        "scientific_name": null,
+        "score": 0.043
+      },
+      {
+        "rank": 13,
+        "class_name": "Speech",
+        "scientific_name": null,
+        "score": 0.043
+      },
+      {
+        "rank": 14,
+        "class_name": "Mouse",
+        "scientific_name": null,
+        "score": 0.0312
+      },
+      {
+        "rank": 15,
+        "class_name": "Motor vehicle (road)",
+        "scientific_name": null,
+        "score": 0.0312
+      }
+    ],
+    "other": [
+      {
+        "rank": 2,
+        "class_name": "Animal",
+        "scientific_name": null,
+        "score": 0.668
+      },
+      {
+        "rank": 3,
+        "class_name": "Wild animals",
+        "scientific_name": null,
+        "score": 0.668
+      },
+      {
+        "rank": 7,
+        "class_name": "Outside, rural or natural",
+        "scientific_name": null,
+        "score": 0.1094
+      },
+      {
+        "rank": 10,
+        "class_name": "Outside, urban or manmade",
+        "scientific_name": null,
+        "score": 0.082
+      },
+      {
+        "rank": 11,
+        "class_name": "Domestic animals, pets",
+        "scientific_name": null,
+        "score": 0.082
+      }
+    ]
+  }
+}

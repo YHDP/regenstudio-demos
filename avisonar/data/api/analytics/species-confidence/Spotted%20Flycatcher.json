@@ -1,0 +1,22 @@
+[
+  {
+    "timestamp": "2026-04-30 10:16:15",
+    "confidence": 0.59,
+    "status": "unverified"
+  },
+  {
+    "timestamp": "2026-05-03 05:01:46",
+    "confidence": 0.5519,
+    "status": "unverified"
+  },
+  {
+    "timestamp": "2026-05-03 18:24:32",
+    "confidence": 0.5942,
+    "status": "unverified"
+  },
+  {
+    "timestamp": "2026-05-05 15:52:28",
+    "confidence": 0.5079,
+    "status": "unverified"
+  }
+]

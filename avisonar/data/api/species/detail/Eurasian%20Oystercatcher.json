@@ -1,0 +1,55 @@
+{
+  "summary": {
+    "common_name": "Eurasian Oystercatcher",
+    "scientific_name": "Haematopus ostralegus",
+    "encounter_count": 1,
+    "total_calls": 1,
+    "total_verified": 0,
+    "max_confidence": 0.8093,
+    "first_seen": "2026-05-04 18:41:36",
+    "last_seen": "2026-05-04 18:41:36",
+    "avg_confidence": 0.809,
+    "avg_calls_per_encounter": 1.0,
+    "peak_hour": null,
+    "unverified_count": 0
+  },
+  "encounters": [
+    {
+      "id": 107,
+      "common_name": "Eurasian Oystercatcher",
+      "scientific_name": "Haematopus ostralegus",
+      "started_at": "2026-05-04 18:41:36",
+      "ended_at": "2026-05-04 18:41:36",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.8093,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 130,
+          "timestamp": "2026-05-04 18:41:36",
+          "confidence": 0.8093,
+          "audio_file": "chunk_20260504_184136_0.0_3.0.wav",
+          "status": "rejected",
+          "start_s": 0.0,
+          "end_s": 3.0,
+          "rejection_reason": "not the species",
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.1992
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.0586
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

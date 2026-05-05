@@ -1,0 +1,17 @@
+{
+  "date": "2026-05-02",
+  "note": null,
+  "species_count": 11,
+  "total_calls": 22,
+  "total_encounters": 16,
+  "recording_hours": 7.0,
+  "first_detection": "2026-05-02 05:22:56",
+  "last_detection": "2026-05-02 18:59:39",
+  "temp_max": null,
+  "temp_min": null,
+  "wind_max": null,
+  "precipitation": null,
+  "weather_code": null,
+  "rating": null,
+  "updated_at": "2026-05-05 19:28:25"
+}

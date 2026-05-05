@@ -1,0 +1,188 @@
+{
+  "summary": {
+    "common_name": "Eurasian Blue Tit",
+    "scientific_name": "Cyanistes caeruleus",
+    "encounter_count": 4,
+    "total_calls": 5,
+    "total_verified": 0,
+    "max_confidence": 0.9993,
+    "first_seen": "2026-04-29 16:45:38",
+    "last_seen": "2026-05-04 09:35:59",
+    "avg_confidence": 0.722,
+    "avg_calls_per_encounter": 1.3,
+    "peak_hour": 16,
+    "unverified_count": 2
+  },
+  "encounters": [
+    {
+      "id": 92,
+      "common_name": "Eurasian Blue Tit",
+      "scientific_name": "Cyanistes caeruleus",
+      "started_at": "2026-05-04 09:35:59",
+      "ended_at": "2026-05-04 09:35:59",
+      "call_count": 2,
+      "verified_count": 0,
+      "max_confidence": 0.9993,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 112,
+          "timestamp": "2026-05-04 09:35:59",
+          "confidence": 0.9993,
+          "audio_file": "chunk_20260504_093559_0.0_6.0.wav",
+          "status": "verified",
+          "start_s": 0.0,
+          "end_s": 6.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.957
+            },
+            "top_noise": {
+              "class_name": "Rodents, rats, mice",
+              "score": 0.0117
+            }
+          }
+        },
+        {
+          "id": 113,
+          "timestamp": "2026-05-04 09:35:59",
+          "confidence": 0.9982,
+          "audio_file": "chunk_20260504_093559_9.0_12.0.wav",
+          "status": "verified",
+          "start_s": 9.0,
+          "end_s": 12.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.957
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.0156
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 59,
+      "common_name": "Eurasian Blue Tit",
+      "scientific_name": "Cyanistes caeruleus",
+      "started_at": "2026-05-02 16:09:56",
+      "ended_at": "2026-05-02 16:09:56",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.418,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 71,
+          "timestamp": "2026-05-02 16:09:56",
+          "confidence": 0.418,
+          "audio_file": "chunk_20260502_160956_12.0_15.0.wav",
+          "status": "unverified",
+          "start_s": 12.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.2617
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.043
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 31,
+      "common_name": "Eurasian Blue Tit",
+      "scientific_name": "Cyanistes caeruleus",
+      "started_at": "2026-04-30 08:17:32",
+      "ended_at": "2026-04-30 08:17:32",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.7543,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 37,
+          "timestamp": "2026-04-30 08:17:32",
+          "confidence": 0.7543,
+          "audio_file": "chunk_20260430_081732_12.0_15.0.wav",
+          "status": "rejected",
+          "start_s": 12.0,
+          "end_s": 15.0,
+          "rejection_reason": "not the species",
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.4141
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.1094
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 17,
+      "common_name": "Eurasian Blue Tit",
+      "scientific_name": "Cyanistes caeruleus",
+      "started_at": "2026-04-29 16:45:38",
+      "ended_at": "2026-04-29 16:45:38",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.7171,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 21,
+          "timestamp": "2026-04-29 16:45:38",
+          "confidence": 0.7171,
+          "audio_file": "chunk_20260429_164538_9.0_12.0.wav",
+          "status": "unverified",
+          "start_s": 9.0,
+          "end_s": 12.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.8906
+            },
+            "top_noise": {
+              "class_name": "Car",
+              "score": 0.1484
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

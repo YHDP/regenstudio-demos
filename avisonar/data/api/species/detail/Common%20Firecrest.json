@@ -1,0 +1,166 @@
+{
+  "summary": {
+    "common_name": "Common Firecrest",
+    "scientific_name": "Regulus ignicapilla",
+    "encounter_count": 4,
+    "total_calls": 4,
+    "total_verified": 0,
+    "max_confidence": 0.7262,
+    "first_seen": "2026-04-29 16:45:38",
+    "last_seen": "2026-05-05 06:53:42",
+    "avg_confidence": 0.573,
+    "avg_calls_per_encounter": 1.0,
+    "peak_hour": 16,
+    "unverified_count": 3
+  },
+  "encounters": [
+    {
+      "id": 117,
+      "common_name": "Common Firecrest",
+      "scientific_name": "Regulus ignicapilla",
+      "started_at": "2026-05-05 06:53:42",
+      "ended_at": "2026-05-05 06:53:42",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.5059,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 141,
+          "timestamp": "2026-05-05 06:53:42",
+          "confidence": 0.5059,
+          "audio_file": "chunk_20260505_065342_0.0_3.0.wav",
+          "status": "unverified",
+          "start_s": 0.0,
+          "end_s": 3.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Turkey",
+              "score": 0.4141
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.043
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 85,
+      "common_name": "Common Firecrest",
+      "scientific_name": "Regulus ignicapilla",
+      "started_at": "2026-05-04 07:05:27",
+      "ended_at": "2026-05-04 07:05:27",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.6138,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 104,
+          "timestamp": "2026-05-04 07:05:27",
+          "confidence": 0.6138,
+          "audio_file": "chunk_20260504_070527_0.0_3.0.wav",
+          "status": "unverified",
+          "start_s": 0.0,
+          "end_s": 3.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.0586
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.1484
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 20,
+      "common_name": "Common Firecrest",
+      "scientific_name": "Regulus ignicapilla",
+      "started_at": "2026-04-29 17:38:54",
+      "ended_at": "2026-04-29 17:38:54",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.7262,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 25,
+          "timestamp": "2026-04-29 17:38:54",
+          "confidence": 0.7262,
+          "audio_file": "chunk_20260429_173854_12.0_15.0.wav",
+          "status": "rejected",
+          "start_s": 12.0,
+          "end_s": 15.0,
+          "rejection_reason": "not the species",
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.4141
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.082
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 16,
+      "common_name": "Common Firecrest",
+      "scientific_name": "Regulus ignicapilla",
+      "started_at": "2026-04-29 16:45:38",
+      "ended_at": "2026-04-29 16:45:38",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.4452,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 20,
+          "timestamp": "2026-04-29 16:45:38",
+          "confidence": 0.4452,
+          "audio_file": "chunk_20260429_164538_6.0_9.0.wav",
+          "status": "unverified",
+          "start_s": 6.0,
+          "end_s": 9.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.082
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.2617
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

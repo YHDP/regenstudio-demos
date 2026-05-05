@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>window.DEMO_GUARD = { demoId: 'avisonar' };</script>
+  <script src="../assets/js/guard.js"></script>
+
+  <meta charset="UTF-8">
+  <script>const _t=localStorage.getItem("bd-theme");if(_t)document.documentElement.setAttribute("data-theme",_t);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AviSonar — Map</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    main { display: block; padding: 0; flex: 1; }
+    #map { width: 100%; height: calc(100vh - 60px); }
+    .map-popup { font-family: var(--font-mono); font-size: 0.78rem; }
+    .map-popup .popup-name { font-weight: 600; font-size: 0.85rem; margin-bottom: 0.3rem; }
+    .map-popup .popup-sci { font-style: italic; color: #666; font-size: 0.7rem; }
+    .map-popup .popup-stats { margin-top: 0.4rem; font-size: 0.7rem; color: #888; }
+    .map-popup a { color: #3fb950; }
+
+    .map-legend {
+      position: absolute; bottom: 30px; right: 10px; z-index: 1000;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+      padding: 0.75rem 1rem; font-family: var(--font-mono); font-size: 0.65rem;
+      color: var(--text-muted);
+    }
+    .legend-item { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.25rem; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  </style>
+  <link rel="stylesheet" href="./demo-overrides.css">
+  <script src="./data-router.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="logo-icon">🦉</span>
+      <span class="logo-text">AviSonar</span>
+      <span class="logo-sub" data-i18n="nav.map">Map</span>
+    </div>
+    <nav class="header-nav">
+      <a href="/" class="nav-link" data-i18n="nav.dashboard">Dashboard</a>
+      <a href="/calls.html" class="nav-link" data-i18n="nav.calls">Calls</a>
+      <a href="/label.html" class="nav-link" data-i18n="nav.label">Label</a>
+      <a href="/analytics.html" class="nav-link" data-i18n="nav.analytics">Analytics</a>
+      <a href="/map.html" class="nav-link active" aria-current="page" data-i18n="nav.map">Map</a>
+      <a href="/settings.html" class="nav-link" data-i18n="nav.settings">Settings</a>
+    </nav>
+  </header>
+
+  <main>
+    <div id="map"></div>
+    <div class="map-legend" id="legend"></div>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="i18n.js"></script>
+  <script>
+    const IUCN_MARKER_COLORS = {
+      CR: '#cc3333', EN: '#cc6633', VU: '#cccc00', NT: '#669900', LC: '#3fb950', NE: '#3fb950', DD: '#999'
+    };
+
+    let _map = null;
+    let _markersLayer = null;
+
+    async function renderMap() {
+      // Get locations and species data
+      const [locations, lifelist, statuses] = await Promise.all([
+        fetch('/api/locations').then(r => r.json()),
+        fetch('/api/analytics/lifelist').then(r => r.json()),
+        fetch('/api/conservation').then(r => r.json()),
+      ]);
+
+      // Center map on first location or Sao Paulo default
+      const center = locations.length > 0 ? [locations[0].lat, locations[0].lon] : [-23.5505, -46.6333];
+
+      if (!_map) {
+        _map = L.map('map').setView(center, 14);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; OpenStreetMap contributors',
+          maxZoom: 19,
+        }).addTo(_map);
+      }
+
+      // Clear existing markers on re-render
+      if (_markersLayer) {
+        _map.removeLayer(_markersLayer);
+      }
+      _markersLayer = L.layerGroup().addTo(_map);
+
+      // Add location markers
+      const iucnCounts = { CR: 0, EN: 0, VU: 0, NT: 0, LC: 0 };
+
+      for (const loc of locations) {
+        // Get species for this location
+        const locSpecies = await fetch(`/api/species/all?location_id=${loc.id}`).then(r => r.json());
+
+        // Location marker
+        const locMarker = L.marker([loc.lat, loc.lon], {
+          icon: L.divIcon({
+            className: '',
+            html: `<div style="background:#3fb950;color:#0d1117;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:12px;border:2px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.3);">${locSpecies.length}</div>`,
+            iconSize: [28, 28],
+            iconAnchor: [14, 14],
+          }),
+        }).addTo(_markersLayer);
+
+        let popupContent = `<div class="map-popup">
+          <div class="popup-name">${loc.name}</div>
+          <div class="popup-stats">${locSpecies.length} ${t('map.species_detected')}</div>
+          <div style="margin-top:0.5rem;max-height:200px;overflow-y:auto;">`;
+
+        for (const sp of locSpecies.slice(0, 20)) {
+          const iucn = statuses[sp.scientific_name]?.iucn_status || 'NE';
+          const color = IUCN_MARKER_COLORS[iucn] || '#3fb950';
+          if (iucn in iucnCounts) iucnCounts[iucn]++;
+          popupContent += `<div style="display:flex;align-items:center;gap:4px;padding:2px 0;font-size:11px;">
+            <span style="width:8px;height:8px;border-radius:50%;background:${color};display:inline-block;flex-shrink:0;"></span>
+            <a href="species.html?name=${encodeURIComponent(sp.common_name)}">${speciesName(sp.common_name, sp.scientific_name)}</a>
+            <span style="color:#999;margin-left:auto;">${sp.total_calls} ${t('map.calls')}</span>
+          </div>`;
+        }
+        if (locSpecies.length > 20) {
+          popupContent += `<div style="color:#999;font-size:10px;margin-top:4px;">+ ${locSpecies.length - 20} ${t('map.more_species')}</div>`;
+        }
+        popupContent += '</div></div>';
+        locMarker.bindPopup(popupContent, { maxWidth: 300 });
+      }
+
+      // Legend
+      renderLegend();
+    }
+
+    function renderLegend() {
+      const legend = document.getElementById('legend');
+      const legendItems = [
+        { key: 'CR', color: IUCN_MARKER_COLORS.CR },
+        { key: 'EN', color: IUCN_MARKER_COLORS.EN },
+        { key: 'VU', color: IUCN_MARKER_COLORS.VU },
+        { key: 'NT', color: IUCN_MARKER_COLORS.NT },
+        { key: 'LC', color: IUCN_MARKER_COLORS.LC },
+      ];
+      legend.innerHTML = `<div style="font-weight:600;margin-bottom:0.4rem;">${t('map.iucn_status')}</div>` +
+        legendItems.map(l => `<div class="legend-item"><span class="legend-dot" style="background:${l.color}"></span>${t('iucn.' + l.key)}</div>`).join('');
+    }
+
+    // Re-render dynamic content on language change
+    window.addEventListener('languageChanged', () => {
+      renderMap();
+    });
+
+    renderMap();
+  </script>
+</body>
+</html>

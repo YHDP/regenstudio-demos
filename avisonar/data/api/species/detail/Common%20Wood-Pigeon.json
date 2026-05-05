@@ -1,0 +1,55 @@
+{
+  "summary": {
+    "common_name": "Common Wood-Pigeon",
+    "scientific_name": "Columba palumbus",
+    "encounter_count": 1,
+    "total_calls": 1,
+    "total_verified": 0,
+    "max_confidence": 0.8405,
+    "first_seen": "2026-04-30 08:17:32",
+    "last_seen": "2026-04-30 08:17:32",
+    "avg_confidence": 0.841,
+    "avg_calls_per_encounter": 1.0,
+    "peak_hour": 8,
+    "unverified_count": 1
+  },
+  "encounters": [
+    {
+      "id": 28,
+      "common_name": "Common Wood-Pigeon",
+      "scientific_name": "Columba palumbus",
+      "started_at": "2026-04-30 08:17:32",
+      "ended_at": "2026-04-30 08:17:32",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.8405,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 34,
+          "timestamp": "2026-04-30 08:17:32",
+          "confidence": 0.8405,
+          "audio_file": "chunk_20260430_081732_3.0_6.0.wav",
+          "status": "unverified",
+          "start_s": 3.0,
+          "end_s": 6.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.2617
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.1484
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

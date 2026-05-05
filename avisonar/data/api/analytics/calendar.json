@@ -1,0 +1,37 @@
+[
+  {
+    "day": "2026-04-29",
+    "species_count": 17,
+    "total_calls": 29
+  },
+  {
+    "day": "2026-04-30",
+    "species_count": 9,
+    "total_calls": 11
+  },
+  {
+    "day": "2026-05-01",
+    "species_count": 8,
+    "total_calls": 15
+  },
+  {
+    "day": "2026-05-02",
+    "species_count": 11,
+    "total_calls": 22
+  },
+  {
+    "day": "2026-05-03",
+    "species_count": 11,
+    "total_calls": 20
+  },
+  {
+    "day": "2026-05-04",
+    "species_count": 21,
+    "total_calls": 35
+  },
+  {
+    "day": "2026-05-05",
+    "species_count": 21,
+    "total_calls": 47
+  }
+]

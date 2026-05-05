@@ -48,6 +48,17 @@
       "public": true
     },
     {
+      "id": "avisonar",
+      "name": "AviSonar",
+      "subtitle": "Audit-grade biodiversity evidence from passive acoustic monitoring",
+      "description": "Listen for birds 24/7, identify species via BirdNET, surface site-level analytics — all on-device, local-first by design. This is a frozen demo dataset built from public-domain bird audio (iNaturalist CC-BY); the real version runs entirely on your computer with your own recordings.",
+      "category": "Circular Economy",
+      "tags": ["Bioacoustics", "Biodiversity", "ESG", "BirdNET"],
+      "preview": "assets/images/previews/avisonar.svg",
+      "accentColor": "#008545",
+      "path": "/avisonar/"
+    },
+    {
       "id": "cpr-dpp-tracker",
       "name": "CPR DPP Tracker",
       "subtitle": "Construction Products Regulation Compliance",

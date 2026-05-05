@@ -1,0 +1,55 @@
+{
+  "summary": {
+    "common_name": "Mistle Thrush",
+    "scientific_name": "Turdus viscivorus",
+    "encounter_count": 1,
+    "total_calls": 1,
+    "total_verified": 0,
+    "max_confidence": 0.4875,
+    "first_seen": "2026-05-03 17:17:19",
+    "last_seen": "2026-05-03 17:17:19",
+    "avg_confidence": 0.487,
+    "avg_calls_per_encounter": 1.0,
+    "peak_hour": 17,
+    "unverified_count": 1
+  },
+  "encounters": [
+    {
+      "id": 78,
+      "common_name": "Mistle Thrush",
+      "scientific_name": "Turdus viscivorus",
+      "started_at": "2026-05-03 17:17:19",
+      "ended_at": "2026-05-03 17:17:19",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.4875,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 94,
+          "timestamp": "2026-05-03 17:17:19",
+          "confidence": 0.4875,
+          "audio_file": "chunk_20260503_171719_9.0_12.0.wav",
+          "status": "unverified",
+          "start_s": 9.0,
+          "end_s": 12.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.8906
+            },
+            "top_noise": {
+              "class_name": "Whistling",
+              "score": 0.1484
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

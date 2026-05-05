@@ -1,0 +1,100 @@
+{
+  "yamnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Bird",
+        "scientific_name": null,
+        "score": 0.5859
+      },
+      {
+        "rank": 4,
+        "class_name": "Bird vocalization, bird call, bird song",
+        "scientific_name": null,
+        "score": 0.4141
+      },
+      {
+        "rank": 5,
+        "class_name": "Chirp, tweet",
+        "scientific_name": null,
+        "score": 0.332
+      },
+      {
+        "rank": 11,
+        "class_name": "Fowl",
+        "scientific_name": null,
+        "score": 0.0117
+      },
+      {
+        "rank": 12,
+        "class_name": "Duck",
+        "scientific_name": null,
+        "score": 0.0117
+      }
+    ],
+    "noise": [
+      {
+        "rank": 9,
+        "class_name": "Speech",
+        "scientific_name": null,
+        "score": 0.0586
+      },
+      {
+        "rank": 10,
+        "class_name": "Rodents, rats, mice",
+        "scientific_name": null,
+        "score": 0.0195
+      },
+      {
+        "rank": 13,
+        "class_name": "Music",
+        "scientific_name": null,
+        "score": 0.0117
+      },
+      {
+        "rank": 14,
+        "class_name": "Vehicle",
+        "scientific_name": null,
+        "score": 0.0117
+      },
+      {
+        "rank": 15,
+        "class_name": "Motor vehicle (road)",
+        "scientific_name": null,
+        "score": 0.0078
+      }
+    ],
+    "other": [
+      {
+        "rank": 2,
+        "class_name": "Animal",
+        "scientific_name": null,
+        "score": 0.5859
+      },
+      {
+        "rank": 3,
+        "class_name": "Wild animals",
+        "scientific_name": null,
+        "score": 0.5
+      },
+      {
+        "rank": 6,
+        "class_name": "Pink noise",
+        "scientific_name": null,
+        "score": 0.1992
+      },
+      {
+        "rank": 7,
+        "class_name": "Noise",
+        "scientific_name": null,
+        "score": 0.1992
+      },
+      {
+        "rank": 8,
+        "class_name": "Environmental noise",
+        "scientific_name": null,
+        "score": 0.1992
+      }
+    ]
+  }
+}

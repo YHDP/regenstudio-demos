@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>window.DEMO_GUARD = { demoId: 'avisonar' };</script>
+  <script src="../assets/js/guard.js"></script>
+
+  <meta charset="UTF-8">
+  <script>const _t=localStorage.getItem("bd-theme");if(_t)document.documentElement.setAttribute("data-theme",_t);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AviSonar — Settings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    main { display: block; max-width: 800px; margin: 0 auto; padding: 1.5rem 2rem; }
+
+    /* Species focus picker */
+    .focus-chips {
+      display: flex; flex-wrap: wrap; gap: 0.3rem;
+      min-height: 1.8rem; padding: 0.25rem; border-radius: 6px;
+      background: var(--surface-2); border: 1px dashed var(--border);
+    }
+    .focus-chip {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.2rem 0.5rem; border-radius: 12px;
+      background: var(--green-dim); border: 1px solid var(--green);
+      font-family: var(--font-body); font-size: 0.72rem; color: var(--text);
+    }
+    .focus-chip-common { font-weight: 500; }
+    .focus-chip-sci { font-style: italic; color: var(--text-muted); font-size: 0.65rem; }
+    .focus-chip-remove {
+      background: none; border: none; color: var(--text-muted); cursor: pointer;
+      font-size: 0.9rem; line-height: 1; padding: 0; margin-left: 0.1rem;
+    }
+    .focus-chip-remove:hover { color: var(--red); }
+    .focus-bulk-bar {
+      display: flex; gap: 0.4rem; margin-top: 0.4rem; flex-wrap: wrap;
+    }
+    .focus-chip-summary {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      font-family: var(--font-body); font-size: 0.78rem; color: var(--text);
+      padding: 0.2rem 0.4rem;
+    }
+    .focus-results {
+      max-height: 240px; overflow-y: auto; margin-top: 0.3rem;
+      border: 1px solid var(--border); border-radius: 6px;
+      background: var(--surface);
+    }
+    .focus-result-row {
+      display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.35rem 0.6rem; cursor: pointer;
+      border-bottom: 1px solid var(--border);
+      font-family: var(--font-body); font-size: 0.78rem;
+    }
+    .focus-result-row:last-child { border-bottom: none; }
+    .focus-result-row:hover { background: var(--surface-2); }
+    .focus-result-common { color: var(--text); font-weight: 500; flex: 0 0 auto; }
+    .focus-result-sci {
+      color: var(--text-muted); font-style: italic; font-size: 0.7rem;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+
+    /* Detection settings */
+    .setting-row {
+      display: flex; align-items: center; gap: 1rem;
+      font-family: var(--font-mono); font-size: 0.78rem;
+    }
+    .setting-label {
+      min-width: 160px; color: var(--text-muted);
+      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .setting-control { flex: 1; display: flex; align-items: center; gap: 0.5rem; }
+    .setting-value {
+      min-width: 50px; text-align: right; color: var(--green);
+      font-family: var(--font-display); font-size: 1rem;
+    }
+    input[type="range"] {
+      flex: 1; accent-color: var(--green); height: 4px;
+      -webkit-appearance: none; background: var(--border); border-radius: 2px;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 16px; height: 16px;
+      background: var(--green); border-radius: 50%; cursor: pointer;
+    }
+    .setting-hint {
+      font-size: 0.6rem; color: var(--text-muted); font-style: italic; margin-left: 160px;
+      margin-top: -0.5rem;
+    }
+
+    .settings-section {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+      padding: 1.5rem; margin-bottom: 1.5rem;
+    }
+    .section-title {
+      font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--text-muted);
+      border-bottom: 1px solid var(--border); padding-bottom: 0.75rem; margin-bottom: 1rem;
+    }
+
+    /* Location list */
+    .loc-item {
+      display: flex; align-items: center; gap: 1rem; padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border); font-family: var(--font-mono); font-size: 0.8rem;
+    }
+    .loc-item:last-child { border-bottom: none; }
+    .loc-name { color: var(--text); font-weight: 500; min-width: 120px; }
+    .loc-coords { color: var(--text-muted); font-size: 0.7rem; flex: 1; }
+    .loc-desc { color: var(--text-muted); font-size: 0.7rem; font-style: italic; flex: 1; }
+    .loc-actions { display: flex; gap: 0.3rem; }
+
+    /* Form */
+    .form-row { display: flex; gap: 0.75rem; margin-bottom: 0.75rem; flex-wrap: wrap; align-items: flex-end; }
+    .form-group { display: flex; flex-direction: column; gap: 0.25rem; }
+    .form-group label {
+      font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--text-muted);
+    }
+    .form-group input, .form-group textarea {
+      font-family: var(--font-mono); font-size: 0.8rem; padding: 0.4rem 0.6rem;
+      background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px;
+      color: var(--text);
+    }
+    .form-group input:focus { border-color: var(--green); outline: none; }
+
+    .btn-sm {
+      font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase;
+      letter-spacing: 0.08em; padding: 0.35rem 0.75rem;
+      border: 1px solid var(--border); border-radius: 4px;
+      background: var(--surface-2); color: var(--text-muted); cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-sm:hover { border-color: var(--green); color: var(--green); }
+    .btn-sm.danger:hover { border-color: var(--red); color: var(--red); }
+    .btn-primary {
+      font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase;
+      padding: 0.45rem 1rem; border: 1px solid var(--green); border-radius: 6px;
+      background: var(--green-dim); color: var(--green); cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--green); color: var(--bg); }
+
+    .geo-btn { font-size: 0.6rem; padding: 0.3rem 0.5rem; margin-top: 0.2rem; }
+
+    /* Watchlist */
+    .watch-item {
+      display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border); font-family: var(--font-mono); font-size: 0.8rem;
+    }
+    .watch-item:last-child { border-bottom: none; }
+    .watch-name { color: var(--text); font-weight: 500; flex: 1; }
+    .watch-sci { color: var(--text-muted); font-size: 0.7rem; font-style: italic; flex: 1; }
+    .watch-topic { color: var(--text-muted); font-size: 0.65rem; }
+
+    .toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--surface); border: 1px solid var(--green); color: var(--green); padding: 0.6rem 1.5rem; border-radius: 8px; font-family: var(--font-mono); font-size: 0.78rem; z-index: 200; opacity: 0; transition: transform 0.3s, opacity 0.3s; pointer-events: none; }
+    .toast.visible { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+    .info-text { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5; }
+  </style>
+  <link rel="stylesheet" href="./demo-overrides.css">
+  <script src="./data-router.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="logo-icon">🦉</span>
+      <span class="logo-text">AviSonar</span>
+      <span class="logo-sub" data-i18n="nav.settings">Settings</span>
+    </div>
+    <nav class="header-nav">
+      <a href="/" class="nav-link" data-i18n="nav.dashboard">Dashboard</a>
+      <a href="/calls.html" class="nav-link" data-i18n="nav.calls">Calls</a>
+      <a href="/label.html" class="nav-link" data-i18n="nav.label">Label</a>
+      <a href="/analytics.html" class="nav-link" data-i18n="nav.analytics">Analytics</a>
+      <a href="/map.html" class="nav-link" data-i18n="nav.map">Map</a>
+      <a href="/settings.html" class="nav-link active" aria-current="page" data-i18n="nav.settings">Settings</a>
+    </nav>
+  </header>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <main>
+    <!-- Locations -->
+    <div class="settings-section">
+      <div class="section-title" data-i18n="settings.monitoring_locations">Monitoring Locations</div>
+      <div id="locations-list"></div>
+      <form id="add-location-form" onsubmit="addLocation(event)" style="margin-top:1rem;">
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="settings.label_name">Name</label>
+            <input type="text" id="loc-name" required data-i18n-placeholder="settings.placeholder_name" placeholder="City Park" style="width:150px">
+          </div>
+          <div class="form-group">
+            <label data-i18n="settings.label_latitude">Latitude</label>
+            <input type="number" step="any" id="loc-lat" required placeholder="-23.5505" style="width:120px">
+          </div>
+          <div class="form-group">
+            <label data-i18n="settings.label_longitude">Longitude</label>
+            <input type="number" step="any" id="loc-lon" required placeholder="-46.6333" style="width:120px">
+          </div>
+          <div class="form-group">
+            <label data-i18n="settings.label_description">Description</label>
+            <input type="text" id="loc-desc" data-i18n-placeholder="settings.placeholder_notes" placeholder="Optional notes" style="width:200px">
+          </div>
+          <button type="submit" class="btn-primary" data-i18n="settings.add_location">Add Location</button>
+        </div>
+        <button type="button" class="btn-sm geo-btn" onclick="useGeolocation()" data-i18n="settings.use_current_location">Use current location</button>
+      </form>
+    </div>
+
+    <!-- Watchlist -->
+    <div class="settings-section">
+      <div class="section-title" data-i18n="settings.watchlist">Species Watchlist</div>
+      <p class="info-text" id="watchlist-info"></p>
+      <div id="watchlist"></div>
+      <form id="add-watch-form" onsubmit="addWatch(event)" style="margin-top:1rem;">
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="settings.label_species_common">Species (common name)</label>
+            <input type="text" id="watch-common" required placeholder="Great Kiskadee" style="width:200px" list="species-datalist">
+            <datalist id="species-datalist"></datalist>
+          </div>
+          <div class="form-group">
+            <label data-i18n="settings.label_scientific_name">Scientific name</label>
+            <input type="text" id="watch-sci" required placeholder="Pitangus sulphuratus" style="width:200px">
+          </div>
+          <div class="form-group">
+            <label data-i18n="settings.label_ntfy_topic">ntfy topic</label>
+            <input type="text" id="watch-topic" placeholder="avisonar-alerts" style="width:180px">
+          </div>
+          <button type="submit" class="btn-primary" data-i18n="settings.add_to_watchlist">Add to Watchlist</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Detection Settings -->
+    <div class="settings-section">
+      <div class="section-title" data-i18n="settings.detection">Detection Settings</div>
+      <div id="detection-settings" style="display:flex;flex-direction:column;gap:1.25rem;"></div>
+      <div style="margin-top:1rem;display:flex;gap:0.5rem;">
+        <button class="btn-primary" onclick="saveDetectionSettings()" data-i18n="obs.save">Save</button>
+        <button class="btn-sm" onclick="loadDetectionSettings()" data-i18n="settings.reset_defaults">Reset</button>
+      </div>
+    </div>
+
+    <!-- Species Focus Mode -->
+    <div class="settings-section">
+      <div class="section-title" data-i18n="settings.focus">Species Focus Mode</div>
+      <div id="focus-hint" style="font-size:0.75rem;color:var(--text-muted);margin-bottom:0.75rem;"
+           data-i18n="settings.focus_hint">
+        Restrict BirdNET to a subset of species — useful when hunting a specific candidate or when
+        you want to eliminate confusion classes. Changes take effect on the next analysed chunk.
+      </div>
+      <div id="focus-settings" style="display:flex;flex-direction:column;gap:1rem;"></div>
+      <div style="margin-top:1rem;display:flex;gap:0.5rem;">
+        <button class="btn-primary" onclick="saveFocusSettings()" data-i18n="obs.save">Save</button>
+      </div>
+    </div>
+
+    <!-- System Info -->
+    <div class="settings-section">
+      <div class="section-title" data-i18n="settings.system_info">System Information</div>
+      <div id="sys-info" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-muted);"></div>
+    </div>
+  </main>
+
+  <script src="i18n.js"></script>
+  <script>
+    function showToast(msg) {
+      const el = document.getElementById('toast'); el.textContent = msg;
+      el.classList.add('visible'); setTimeout(() => el.classList.remove('visible'), 2500);
+    }
+
+    function renderWatchlistInfo() {
+      document.getElementById('watchlist-info').innerHTML = t('settings.watchlist_info');
+    }
+
+    // --- Locations ---
+    async function loadLocations() {
+      const res = await fetch('/api/locations');
+      const data = await res.json();
+      const list = document.getElementById('locations-list');
+      if (!data.length) { list.innerHTML = `<div style="color:var(--text-muted);font-size:0.8rem;font-style:italic;">${t('settings.no_locations')}</div>`; return; }
+      list.innerHTML = data.map(l => `
+        <div class="loc-item" data-id="${l.id}">
+          <span class="loc-name">${l.name}</span>
+          <span class="loc-coords">${l.lat}, ${l.lon}</span>
+          <span class="loc-desc">${l.description || ''}</span>
+          <div class="loc-actions">
+            <button class="btn-sm" onclick="editLocation(${l.id}, '${l.name}', ${l.lat}, ${l.lon}, '${l.description || ''}')">${t('action.edit')}</button>
+            <button class="btn-sm danger" onclick="deleteLocation(${l.id}, '${l.name}')">${t('action.delete')}</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    async function addLocation(e) {
+      e.preventDefault();
+      const body = {
+        name: document.getElementById('loc-name').value,
+        lat: parseFloat(document.getElementById('loc-lat').value),
+        lon: parseFloat(document.getElementById('loc-lon').value),
+        description: document.getElementById('loc-desc').value || null,
+      };
+      const res = await fetch('/api/locations', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(body) });
+      if (res.ok) { showToast(t('toast.location_added')); e.target.reset(); loadLocations(); }
+    }
+
+    function editLocation(id, name, lat, lon, desc) {
+      const newName = prompt(t('prompt.location_name'), name);
+      if (!newName) return;
+      const newLat = prompt(t('prompt.latitude'), lat);
+      const newLon = prompt(t('prompt.longitude'), lon);
+      const newDesc = prompt(t('prompt.description'), desc);
+      fetch(`/api/locations/${id}`, {
+        method: 'PUT', headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ name: newName, lat: parseFloat(newLat), lon: parseFloat(newLon), description: newDesc || null })
+      }).then(r => { if (r.ok) { showToast(t('toast.location_updated')); loadLocations(); } });
+    }
+
+    async function deleteLocation(id, name) {
+      if (!confirm(t('confirm.delete_location').replace('{name}', name))) return;
+      const res = await fetch(`/api/locations/${id}`, { method: 'DELETE' });
+      if (res.ok) { showToast(t('toast.location_deleted')); loadLocations(); }
+    }
+
+    function useGeolocation() {
+      if (!navigator.geolocation) { showToast(t('toast.geolocation_unavailable')); return; }
+      navigator.geolocation.getCurrentPosition(
+        pos => { document.getElementById('loc-lat').value = pos.coords.latitude.toFixed(6); document.getElementById('loc-lon').value = pos.coords.longitude.toFixed(6); showToast(t('toast.coordinates_filled')); },
+        err => showToast(t('toast.geolocation_error') + ': ' + err.message)
+      );
+    }
+
+    // --- Watchlist ---
+    async function loadWatchlist() {
+      const res = await fetch('/api/watchlist');
+      const data = await res.json();
+      const list = document.getElementById('watchlist');
+      if (!data.length) { list.innerHTML = `<div style="color:var(--text-muted);font-size:0.8rem;font-style:italic;">${t('settings.no_watchlist')}</div>`; return; }
+      list.innerHTML = data.map(w => `
+        <div class="watch-item">
+          <span class="watch-name">${speciesName(w.common_name, w.scientific_name)}</span>
+          <span class="watch-sci">${w.scientific_name}</span>
+          <span class="watch-topic">${w.ntfy_topic ? t('settings.ntfy_topic_prefix') + ' ' + w.ntfy_topic : t('settings.no_topic')}</span>
+          <button class="btn-sm danger" onclick="removeWatch(${w.id})">${t('action.remove')}</button>
+        </div>
+      `).join('');
+    }
+
+    async function addWatch(e) {
+      e.preventDefault();
+      const body = {
+        common_name: document.getElementById('watch-common').value,
+        scientific_name: document.getElementById('watch-sci').value,
+        ntfy_topic: document.getElementById('watch-topic').value || null,
+      };
+      const res = await fetch('/api/watchlist', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(body) });
+      const data = await res.json();
+      if (data.error) { showToast(data.error); } else { showToast(t('toast.added_to_watchlist')); e.target.reset(); loadWatchlist(); }
+    }
+
+    async function removeWatch(id) {
+      await fetch(`/api/watchlist/${id}`, { method: 'DELETE' });
+      showToast(t('toast.removed_from_watchlist'));
+      loadWatchlist();
+    }
+
+    // --- Populate species datalist from life list ---
+    async function loadSpeciesDatalist() {
+      const res = await fetch('/api/analytics/lifelist');
+      const data = await res.json();
+      const dl = document.getElementById('species-datalist');
+      dl.innerHTML = data.map(s => `<option value="${s.common_name}" data-sci="${s.scientific_name}">`).join('');
+      // Auto-fill scientific name when common name selected
+      document.getElementById('watch-common').addEventListener('input', (e) => {
+        const match = data.find(s => s.common_name === e.target.value);
+        if (match) document.getElementById('watch-sci').value = match.scientific_name;
+      });
+    }
+
+    // --- System info ---
+    async function loadSysInfo() {
+      const [mic, sun, stats] = await Promise.all([
+        fetch('/api/hardware/microphone').then(r => r.json()),
+        fetch('/api/sun').then(r => r.json()),
+        fetch('/api/stats').then(r => r.json()),
+      ]);
+      document.getElementById('sys-info').innerHTML = `
+        <div>${t('settings.sysinfo_microphone')}: ${mic.active?.name || t('settings.sysinfo_none')} (${mic.available?.length || 0} ${t('settings.sysinfo_devices')})</div>
+        <div>${t('settings.sysinfo_sunrise')}: ${sun.sunrise?.toFixed(1)}h · ${t('settings.sysinfo_sunset')}: ${sun.sunset?.toFixed(1)}h · ${t('settings.sysinfo_day_length')}: ${sun.day_length_hours}h</div>
+        <div>${t('settings.sysinfo_species_all_time')}: ${stats.species_all_time} · ${t('settings.sysinfo_this_week')}: ${stats.species_week}</div>
+        <div>${t('settings.sysinfo_api_docs')}: <a href="/api/docs" style="color:var(--green)">localhost:8080/api/docs</a></div>
+      `;
+    }
+
+    // --- Detection Settings ---
+    let _detectionSettings = {};
+
+    async function loadDetectionSettings() {
+      const res = await fetch('/api/settings');
+      const data = await res.json();
+      _detectionSettings = data;
+      renderDetectionSettings(data);
+    }
+
+    function renderDetectionSettings(s) {
+      const mics = s.available_mics || [];
+      const currentMic = s.mic_device !== null && s.mic_device !== undefined ? s.mic_device : s.default_mic;
+
+      const container = document.getElementById('detection-settings');
+      container.innerHTML = `
+        <div class="setting-row">
+          <span class="setting-label" data-i18n="settings.min_confidence">${t('settings.min_confidence')}</span>
+          <div class="setting-control">
+            <input type="range" id="set-confidence" min="0.30" max="0.95" step="0.05" value="${s.min_confidence}">
+            <span class="setting-value" id="set-confidence-val">${Math.round(s.min_confidence * 100)}%</span>
+          </div>
+        </div>
+        <div class="setting-hint">${t('settings.hint_confidence')}</div>
+
+        <div class="setting-row">
+          <span class="setting-label" data-i18n="settings.sensitivity">${t('settings.sensitivity')}</span>
+          <div class="setting-control">
+            <input type="range" id="set-sensitivity" min="0.50" max="1.50" step="0.05" value="${s.sensitivity}">
+            <span class="setting-value" id="set-sensitivity-val">${s.sensitivity.toFixed(2)}</span>
+          </div>
+        </div>
+        <div class="setting-hint">${t('settings.hint_sensitivity')}</div>
+
+        <div class="setting-row">
+          <span class="setting-label" data-i18n="settings.chunk_duration">${t('settings.chunk_duration')}</span>
+          <div class="setting-control">
+            <select id="set-chunk" class="period-select" style="font-size:0.78rem;padding:0.3rem 0.6rem;">
+              ${[10, 15, 30, 60].map(v => `<option value="${v}" ${v === s.chunk_duration ? 'selected' : ''}>${v}s</option>`).join('')}
+            </select>
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <span class="setting-label" data-i18n="settings.sample_rate">${t('settings.sample_rate')}</span>
+          <div class="setting-control">
+            <select id="set-samplerate" class="period-select" style="font-size:0.78rem;padding:0.3rem 0.6rem;">
+              ${[16000, 22050, 44100, 48000].map(v => `<option value="${v}" ${v === s.sample_rate ? 'selected' : ''}>${(v/1000).toFixed(v % 1000 ? 1 : 0)} kHz</option>`).join('')}
+            </select>
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <span class="setting-label" data-i18n="settings.encounter_gap">${t('settings.encounter_gap')}</span>
+          <div class="setting-control">
+            <input type="range" id="set-gap" min="60" max="900" step="30" value="${s.encounter_gap}">
+            <span class="setting-value" id="set-gap-val">${Math.round(s.encounter_gap / 60)}m</span>
+          </div>
+        </div>
+        <div class="setting-hint">${t('settings.hint_encounter_gap')}</div>
+
+        <div class="setting-row">
+          <span class="setting-label" data-i18n="settings.microphone">${t('settings.microphone')}</span>
+          <div class="setting-control">
+            <select id="set-mic" class="period-select" style="font-size:0.78rem;padding:0.3rem 0.6rem;max-width:350px;">
+              <option value="" ${s.mic_device === null || s.mic_device === undefined ? 'selected' : ''}>${t('settings.system_default')}</option>
+              ${mics.map(m => `<option value="${m.index}" ${m.index === s.mic_device ? 'selected' : ''}>[${m.index}] ${m.name} (${(m.sample_rate/1000).toFixed(0)}kHz)</option>`).join('')}
+            </select>
+          </div>
+        </div>
+
+        <div class="setting-row" style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <span class="setting-label" data-i18n="settings.xc_api_key">${t('settings.xc_api_key')}</span>
+          <div class="setting-control">
+            <input type="password" id="set-xc-key" value="${s.xc_api_key || ''}" placeholder="Paste your key here"
+              style="flex:1;font-family:var(--font-mono);font-size:0.75rem;background:var(--surface-2);border:1px solid var(--border);border-radius:6px;padding:0.3rem 0.6rem;color:var(--text);">
+          </div>
+        </div>
+        <div class="setting-hint">${t('settings.hint_xc_key')}</div>
+      `;
+
+      // Bind slider live updates
+      document.getElementById('set-confidence').addEventListener('input', e => {
+        document.getElementById('set-confidence-val').textContent = Math.round(e.target.value * 100) + '%';
+      });
+      document.getElementById('set-sensitivity').addEventListener('input', e => {
+        document.getElementById('set-sensitivity-val').textContent = parseFloat(e.target.value).toFixed(2);
+      });
+      document.getElementById('set-gap').addEventListener('input', e => {
+        document.getElementById('set-gap-val').textContent = Math.round(e.target.value / 60) + 'm';
+      });
+    }
+
+    async function saveDetectionSettings() {
+      const micVal = document.getElementById('set-mic').value;
+      const body = {
+        min_confidence: parseFloat(document.getElementById('set-confidence').value),
+        sensitivity: parseFloat(document.getElementById('set-sensitivity').value),
+        chunk_duration: parseInt(document.getElementById('set-chunk').value),
+        sample_rate: parseInt(document.getElementById('set-samplerate').value),
+        encounter_gap: parseInt(document.getElementById('set-gap').value),
+        mic_device: micVal === '' ? null : parseInt(micVal),
+        xc_api_key: document.getElementById('set-xc-key').value.trim(),
+      };
+      const res = await fetch('/api/settings', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      if (res.ok) {
+        showToast(t('toast.settings_saved'));
+        loadDetectionSettings();
+      }
+    }
+
+    // --- Species Focus Mode ---
+    // State: selected species as Set of slist strings; full BirdNET catalog cached once.
+    const focusState = {
+      selected: new Set(),      // slist strings: "Sci_Common"
+      catalog: null,            // [{scientific, common, slist}, ...]
+      catalogIndex: null,       // {slist: entry}
+    };
+
+    async function ensureBirdnetCatalog() {
+      if (focusState.catalog) return;
+      const res = await fetch('/api/birdnet/species');
+      if (!res.ok) { focusState.catalog = []; return; }
+      focusState.catalog = await res.json();
+      focusState.catalogIndex = Object.fromEntries(focusState.catalog.map(s => [s.slist, s]));
+    }
+
+    // When many species are selected, rendering thousands of chips would be
+    // unusable — collapse into a summary with an expand toggle.
+    const FOCUS_CHIP_COLLAPSE_THRESHOLD = 40;
+
+    function renderFocusChips() {
+      const box = document.getElementById('focus-chips');
+      if (!box) return;
+      const items = [...focusState.selected];
+      if (!items.length) {
+        box.innerHTML = `<span style="font-size:0.7rem;color:var(--text-muted);font-style:italic;">${t('settings.focus_no_selection') !== 'settings.focus_no_selection' ? t('settings.focus_no_selection') : 'No species selected yet.'}</span>`;
+        return;
+      }
+      const collapsed = items.length > FOCUS_CHIP_COLLAPSE_THRESHOLD && !focusState.expanded;
+      if (collapsed) {
+        box.innerHTML = `
+          <span class="focus-chip-summary">
+            <strong>${items.length.toLocaleString()}</strong>
+            <span data-i18n="settings.focus_selected">species selected</span>
+          </span>
+          <button type="button" class="btn-sm" id="btn-focus-expand"
+                  data-i18n="settings.focus_show_list">Show list</button>`;
+        const btn = document.getElementById('btn-focus-expand');
+        if (btn) btn.addEventListener('click', () => {
+          focusState.expanded = true;
+          renderFocusChips();
+        });
+        return;
+      }
+      const chips = items.map(sl => {
+        const entry = (focusState.catalogIndex && focusState.catalogIndex[sl])
+          || { common: sl.split('_')[1] || sl, scientific: sl.split('_')[0] || '' };
+        return `<span class="focus-chip" data-slist="${sl}">
+          <span class="focus-chip-common">${entry.common}</span>
+          <span class="focus-chip-sci">${entry.scientific}</span>
+          <button type="button" class="focus-chip-remove" aria-label="Remove">&times;</button>
+        </span>`;
+      }).join('');
+      const collapseBtn = items.length > FOCUS_CHIP_COLLAPSE_THRESHOLD
+        ? `<button type="button" class="btn-sm" id="btn-focus-collapse" data-i18n="settings.focus_hide_list">Hide list</button>`
+        : '';
+      box.innerHTML = chips + collapseBtn;
+      box.querySelectorAll('.focus-chip-remove').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const chip = btn.closest('.focus-chip');
+          focusState.selected.delete(chip.dataset.slist);
+          renderFocusChips();
+          renderFocusResults(document.getElementById('focus-search').value);
+        });
+      });
+      const collBtn = document.getElementById('btn-focus-collapse');
+      if (collBtn) collBtn.addEventListener('click', () => {
+        focusState.expanded = false;
+        renderFocusChips();
+      });
+    }
+
+    function renderFocusResults(query) {
+      const results = document.getElementById('focus-results');
+      if (!results) return;
+      const q = (query || '').trim().toLowerCase();
+      if (!focusState.catalog || !focusState.catalog.length) {
+        results.innerHTML = `<div style="font-size:0.7rem;color:var(--text-muted);padding:0.5rem;">${t('settings.focus_loading') !== 'settings.focus_loading' ? t('settings.focus_loading') : 'Loading BirdNET catalog...'}</div>`;
+        return;
+      }
+      if (!q) {
+        results.innerHTML = `<div style="font-size:0.7rem;color:var(--text-muted);padding:0.5rem;">${t('settings.focus_type_to_search') !== 'settings.focus_type_to_search' ? t('settings.focus_type_to_search') : 'Type at least two characters to search the BirdNET catalog.'}</div>`;
+        return;
+      }
+      if (q.length < 2) { results.innerHTML = ''; return; }
+      const matches = focusState.catalog.filter(s =>
+        s.common.toLowerCase().includes(q) || s.scientific.toLowerCase().includes(q)
+      ).slice(0, 50);
+      if (!matches.length) {
+        results.innerHTML = `<div style="font-size:0.7rem;color:var(--text-muted);padding:0.5rem;">${t('settings.focus_no_matches') !== 'settings.focus_no_matches' ? t('settings.focus_no_matches') : 'No matches.'}</div>`;
+        return;
+      }
+      results.innerHTML = matches.map(s => {
+        const checked = focusState.selected.has(s.slist) ? 'checked' : '';
+        return `<label class="focus-result-row">
+          <input type="checkbox" data-slist="${s.slist}" ${checked}>
+          <span class="focus-result-common">${s.common}</span>
+          <span class="focus-result-sci">${s.scientific}</span>
+        </label>`;
+      }).join('');
+      results.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+        cb.addEventListener('change', () => {
+          if (cb.checked) focusState.selected.add(cb.dataset.slist);
+          else focusState.selected.delete(cb.dataset.slist);
+          renderFocusChips();
+        });
+      });
+    }
+
+    async function loadFocusSettings() {
+      const res = await fetch('/api/settings');
+      const s = await res.json();
+      const mode = s.focus_mode || 'all';
+      focusState.selected = new Set(s.focus_species || []);
+      const boost = s.focus_single_target_boost ?? 0.15;
+      const container = document.getElementById('focus-settings');
+      container.innerHTML = `
+        <div class="setting-row">
+          <span class="setting-label" data-i18n="settings.focus_mode">${t('settings.focus_mode') !== 'settings.focus_mode' ? t('settings.focus_mode') : 'Mode'}</span>
+          <div class="setting-control" style="display:flex;flex-direction:column;gap:0.3rem;align-items:flex-start;">
+            <label><input type="radio" name="focus-mode" value="all" ${mode === 'all' ? 'checked' : ''}>
+              <span data-i18n="settings.focus_all">All species (no filter)</span></label>
+            <label><input type="radio" name="focus-mode" value="geo_expected" ${mode === 'geo_expected' ? 'checked' : ''}>
+              <span data-i18n="settings.focus_geo">Geo-expected (BirdNET lat/lon/week)</span></label>
+            <label><input type="radio" name="focus-mode" value="custom" ${mode === 'custom' ? 'checked' : ''}>
+              <span data-i18n="settings.focus_custom">Custom list</span></label>
+            <label><input type="radio" name="focus-mode" value="single_target" ${mode === 'single_target' ? 'checked' : ''}>
+              <span data-i18n="settings.focus_single">Single target (boost one candidate)</span></label>
+          </div>
+        </div>
+        <div class="setting-row" id="focus-species-row" style="${mode === 'all' || mode === 'geo_expected' ? 'display:none;' : ''}">
+          <span class="setting-label" data-i18n="settings.focus_species_label">Species list</span>
+          <div class="setting-control" style="flex-direction:column;align-items:stretch;">
+            <div id="focus-chips" class="focus-chips"></div>
+            <input type="text" id="focus-search" autocomplete="off"
+                   placeholder="${t('settings.focus_search_placeholder') !== 'settings.focus_search_placeholder' ? t('settings.focus_search_placeholder') : 'Search species — common or scientific name'}"
+                   style="font-family:var(--font-body);font-size:0.8rem;background:var(--surface-2);border:1px solid var(--border);border-radius:6px;padding:0.4rem 0.6rem;color:var(--text);margin-top:0.4rem;">
+            <div class="focus-bulk-bar">
+              <button type="button" class="btn-sm" id="btn-focus-select-match"
+                      data-i18n="settings.focus_select_matching">Select matching</button>
+              <button type="button" class="btn-sm" id="btn-focus-select-all"
+                      data-i18n="settings.focus_select_all">Select all</button>
+              <button type="button" class="btn-sm" id="btn-focus-clear"
+                      data-i18n="settings.focus_clear_all">Clear all</button>
+            </div>
+            <div id="focus-results" class="focus-results"></div>
+            <div style="font-size:0.65rem;color:var(--text-muted);margin-top:0.25rem;" data-i18n="settings.focus_species_hint">
+              Search the full BirdNET list and check the ones you want. Selected species appear as chips above.
+            </div>
+          </div>
+        </div>
+        <div class="setting-row" id="focus-boost-row" style="${mode === 'single_target' ? '' : 'display:none;'}">
+          <span class="setting-label" data-i18n="settings.focus_boost">Target threshold boost</span>
+          <div class="setting-control">
+            <input type="range" id="focus-boost" min="0" max="0.5" step="0.01" value="${boost}">
+            <span class="setting-value" id="focus-boost-val">-${(boost*100).toFixed(0)}%</span>
+          </div>
+        </div>
+        <div class="setting-hint" data-i18n="settings.focus_boost_hint">
+          In single-target mode, lower the primary detection threshold by this amount for the target species so weak hits aren't lost.
+        </div>
+      `;
+      document.querySelectorAll('input[name="focus-mode"]').forEach(r => {
+        r.addEventListener('change', () => {
+          const m = document.querySelector('input[name="focus-mode"]:checked').value;
+          document.getElementById('focus-species-row').style.display =
+            (m === 'all' || m === 'geo_expected') ? 'none' : '';
+          document.getElementById('focus-boost-row').style.display =
+            (m === 'single_target') ? '' : 'none';
+        });
+      });
+      document.getElementById('focus-boost').addEventListener('input', e => {
+        document.getElementById('focus-boost-val').textContent =
+          '-' + Math.round(e.target.value * 100) + '%';
+      });
+
+      // Wire up the species search + chips
+      await ensureBirdnetCatalog();
+      renderFocusChips();
+      renderFocusResults('');
+      const searchEl = document.getElementById('focus-search');
+      let debounce;
+      searchEl.addEventListener('input', () => {
+        clearTimeout(debounce);
+        debounce = setTimeout(() => renderFocusResults(searchEl.value), 80);
+      });
+
+      // Bulk buttons
+      document.getElementById('btn-focus-select-match').addEventListener('click', () => {
+        const q = (searchEl.value || '').trim().toLowerCase();
+        if (q.length < 2) return;
+        const matches = focusState.catalog.filter(s =>
+          s.common.toLowerCase().includes(q) || s.scientific.toLowerCase().includes(q)
+        );
+        matches.forEach(m => focusState.selected.add(m.slist));
+        renderFocusChips();
+        renderFocusResults(searchEl.value);
+      });
+      document.getElementById('btn-focus-select-all').addEventListener('click', () => {
+        if (!focusState.catalog) return;
+        focusState.catalog.forEach(s => focusState.selected.add(s.slist));
+        renderFocusChips();
+        renderFocusResults(searchEl.value);
+      });
+      document.getElementById('btn-focus-clear').addEventListener('click', () => {
+        focusState.selected.clear();
+        focusState.expanded = false;
+        renderFocusChips();
+        renderFocusResults(searchEl.value);
+      });
+    }
+
+    async function saveFocusSettings() {
+      const mode = document.querySelector('input[name="focus-mode"]:checked').value;
+      const species = [...focusState.selected];
+      const boost = parseFloat(document.getElementById('focus-boost').value);
+      const body = {
+        focus_mode: mode,
+        focus_species: species,
+        focus_single_target_boost: boost,
+      };
+      const res = await fetch('/api/settings', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      if (res.ok) { showToast(t('toast.settings_saved')); loadFocusSettings(); }
+    }
+
+    // --- Language change handler ---
+    window.addEventListener('languageChanged', () => {
+      renderWatchlistInfo();
+      loadLocations();
+      loadWatchlist();
+      loadSysInfo();
+      loadDetectionSettings();
+    });
+
+    // --- Init ---
+    async function init() {
+      renderWatchlistInfo();
+      await Promise.all([loadLocations(), loadWatchlist(), loadSpeciesDatalist(), loadSysInfo(), loadDetectionSettings(), loadFocusSettings()]);
+    }
+    init();
+  </script>
+</body>
+</html>

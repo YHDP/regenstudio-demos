@@ -1,0 +1,354 @@
+[
+  {
+    "common_name": "Common Redstart",
+    "scientific_name": "Phoenicurus phoenicurus",
+    "first_seen": "2026-04-29 05:03:35",
+    "last_seen": "2026-05-05 09:19:12",
+    "total_encounters": 4,
+    "total_calls": 4
+  },
+  {
+    "common_name": "European Robin",
+    "scientific_name": "Erithacus rubecula",
+    "first_seen": "2026-04-29 05:03:35",
+    "last_seen": "2026-05-05 18:16:08",
+    "total_encounters": 26,
+    "total_calls": 38
+  },
+  {
+    "common_name": "House Sparrow",
+    "scientific_name": "Passer domesticus",
+    "first_seen": "2026-04-29 07:15:30",
+    "last_seen": "2026-05-05 05:25:30",
+    "total_encounters": 3,
+    "total_calls": 3
+  },
+  {
+    "common_name": "Black Redstart",
+    "scientific_name": "Phoenicurus ochruros",
+    "first_seen": "2026-04-29 08:00:36",
+    "last_seen": "2026-05-05 07:53:42",
+    "total_encounters": 4,
+    "total_calls": 4
+  },
+  {
+    "common_name": "European Goldfinch",
+    "scientific_name": "Carduelis carduelis",
+    "first_seen": "2026-04-29 08:00:36",
+    "last_seen": "2026-05-05 16:45:47",
+    "total_encounters": 5,
+    "total_calls": 5
+  },
+  {
+    "common_name": "Long-tailed Tit",
+    "scientific_name": "Aegithalos caudatus",
+    "first_seen": "2026-04-29 08:00:36",
+    "last_seen": "2026-05-05 15:52:28",
+    "total_encounters": 4,
+    "total_calls": 5
+  },
+  {
+    "common_name": "Common Buzzard",
+    "scientific_name": "Buteo buteo",
+    "first_seen": "2026-04-29 10:40:49",
+    "last_seen": "2026-04-29 10:40:49",
+    "total_encounters": 1,
+    "total_calls": 2
+  },
+  {
+    "common_name": "Eurasian Curlew",
+    "scientific_name": "Numenius arquata",
+    "first_seen": "2026-04-29 10:40:49",
+    "last_seen": "2026-05-02 08:06:57",
+    "total_encounters": 2,
+    "total_calls": 3
+  },
+  {
+    "common_name": "Northern Lapwing",
+    "scientific_name": "Vanellus vanellus",
+    "first_seen": "2026-04-29 10:40:49",
+    "last_seen": "2026-04-29 10:40:49",
+    "total_encounters": 1,
+    "total_calls": 2
+  },
+  {
+    "common_name": "Common Firecrest",
+    "scientific_name": "Regulus ignicapilla",
+    "first_seen": "2026-04-29 16:45:38",
+    "last_seen": "2026-05-05 06:53:42",
+    "total_encounters": 4,
+    "total_calls": 4
+  },
+  {
+    "common_name": "Dunnock",
+    "scientific_name": "Prunella modularis",
+    "first_seen": "2026-04-29 16:45:38",
+    "last_seen": "2026-04-29 16:45:38",
+    "total_encounters": 1,
+    "total_calls": 2
+  },
+  {
+    "common_name": "Eurasian Blue Tit",
+    "scientific_name": "Cyanistes caeruleus",
+    "first_seen": "2026-04-29 16:45:38",
+    "last_seen": "2026-05-04 09:35:59",
+    "total_encounters": 4,
+    "total_calls": 5
+  },
+  {
+    "common_name": "Goldcrest",
+    "scientific_name": "Regulus regulus",
+    "first_seen": "2026-04-29 16:45:38",
+    "last_seen": "2026-05-05 15:52:28",
+    "total_encounters": 4,
+    "total_calls": 4
+  },
+  {
+    "common_name": "Greater Whitethroat",
+    "scientific_name": "Curruca communis",
+    "first_seen": "2026-04-29 16:45:38",
+    "last_seen": "2026-04-29 16:45:38",
+    "total_encounters": 1,
+    "total_calls": 1
+  },
+  {
+    "common_name": "Eurasian Treecreeper",
+    "scientific_name": "Certhia familiaris",
+    "first_seen": "2026-04-29 17:38:54",
+    "last_seen": "2026-05-04 09:35:59",
+    "total_encounters": 2,
+    "total_calls": 2
+  },
+  {
+    "common_name": "Song Thrush",
+    "scientific_name": "Turdus philomelos",
+    "first_seen": "2026-04-29 17:38:54",
+    "last_seen": "2026-05-05 16:45:47",
+    "total_encounters": 11,
+    "total_calls": 13
+  },
+  {
+    "common_name": "Eurasian Blackcap",
+    "scientific_name": "Sylvia atricapilla",
+    "first_seen": "2026-04-29 18:20:30",
+    "last_seen": "2026-05-05 09:19:12",
+    "total_encounters": 7,
+    "total_calls": 8
+  },
+  {
+    "common_name": "Herring Gull",
+    "scientific_name": "Larus argentatus",
+    "first_seen": "2026-04-30 07:10:13",
+    "last_seen": "2026-04-30 07:10:13",
+    "total_encounters": 1,
+    "total_calls": 1
+  },
+  {
+    "common_name": "Coal Tit",
+    "scientific_name": "Periparus ater",
+    "first_seen": "2026-04-30 08:17:32",
+    "last_seen": "2026-05-04 09:35:59",
+    "total_encounters": 2,
+    "total_calls": 2
+  },
+  {
+    "common_name": "Common Wood-Pigeon",
+    "scientific_name": "Columba palumbus",
+    "first_seen": "2026-04-30 08:17:32",
+    "last_seen": "2026-04-30 08:17:32",
+    "total_encounters": 1,
+    "total_calls": 1
+  },
+  {
+    "common_name": "Eurasian Collared-Dove",
+    "scientific_name": "Streptopelia decaocto",
+    "first_seen": "2026-04-30 08:17:32",
+    "last_seen": "2026-04-30 08:17:32",
+    "total_encounters": 1,
+    "total_calls": 1
+  },
+  {
+    "common_name": "Great Tit",
+    "scientific_name": "Parus major",
+    "first_seen": "2026-04-30 08:17:32",
+    "last_seen": "2026-05-05 15:52:28",
+    "total_encounters": 10,
+    "total_calls": 13
+  },
+  {
+    "common_name": "Common Chaffinch",
+    "scientific_name": "Fringilla coelebs",
+    "first_seen": "2026-04-30 10:16:15",
+    "last_seen": "2026-05-05 07:31:19",
+    "total_encounters": 7,
+    "total_calls": 8
+  },
+  {
+    "common_name": "Spotted Flycatcher",
+    "scientific_name": "Muscicapa striata",
+    "first_seen": "2026-04-30 10:16:15",
+    "last_seen": "2026-05-05 15:52:28",
+    "total_encounters": 4,
+    "total_calls": 4
+  },
+  {
+    "common_name": "Black Woodpecker",
+    "scientific_name": "Dryocopus martius",
+    "first_seen": "2026-05-01 07:56:09",
+    "last_seen": "2026-05-05 08:48:49",
+    "total_encounters": 2,
+    "total_calls": 2
+  },
+  {
+    "common_name": "Eurasian Blackbird",
+    "scientific_name": "Turdus merula",
+    "first_seen": "2026-05-01 07:56:09",
+    "last_seen": "2026-05-05 16:45:47",
+    "total_encounters": 14,
+    "total_calls": 16
+  },
+  {
+    "common_name": "Barn Swallow",
+    "scientific_name": "Hirundo rustica",
+    "first_seen": "2026-05-01 08:44:23",
+    "last_seen": "2026-05-01 08:44:23",
+    "total_encounters": 1,
+    "total_calls": 1
+  },
+  {
+    "common_name": "Willow Warbler",
+    "scientific_name": "Phylloscopus trochilus",
+    "first_seen": "2026-05-01 09:34:14",
+    "last_seen": "2026-05-01 09:34:14",
+    "total_encounters": 1,
+    "total_calls": 1
+  },
+  {
+    "common_name": "Yellowhammer",
+    "scientific_name": "Emberiza citrinella",
+    "first_seen": "2026-05-02 05:22:56",
+    "last_seen": "2026-05-02 05:22:56",
+    "total_encounters": 1,
+    "total_calls": 1
+  },
+  {
+    "common_name": "European Greenfinch",
+    "scientific_name": "Chloris chloris",
+    "first_seen": "2026-05-02 08:54:37",
+    "last_seen": "2026-05-04 10:28:40",
+    "total_encounters": 3,
+    "total_calls": 3
+  },
+  {
+    "common_name": "Gray Heron",
+    "scientific_name": "Ardea cinerea",
+    "first_seen": "2026-05-03 00:50:03",
+    "last_seen": "2026-05-03 00:50:03",
+    "total_encounters": 1,
+    "total_calls": 1
+  },
+  {
+    "common_name": "Hawfinch",
+    "scientific_name": "Coccothraustes coccothraustes",
+    "first_seen": "2026-05-03 05:01:46",
+    "last_seen": "2026-05-03 05:01:46",
+    "total_encounters": 1,
+    "total_calls": 1
+  },
+  {
+    "common_name": "Green-winged Teal",
+    "scientific_name": "Anas crecca",
+    "first_seen": "2026-05-03 05:48:19",
+    "last_seen": "2026-05-03 05:48:19",
+    "total_encounters": 1,
+    "total_calls": 1
+  },
+  {
+    "common_name": "Mistle Thrush",
+    "scientific_name": "Turdus viscivorus",
+    "first_seen": "2026-05-03 17:17:19",
+    "last_seen": "2026-05-03 17:17:19",
+    "total_encounters": 1,
+    "total_calls": 1
+  },
+  {
+    "common_name": "Eurasian Moorhen",
+    "scientific_name": "Gallinula chloropus",
+    "first_seen": "2026-05-04 09:17:30",
+    "last_seen": "2026-05-04 09:17:30",
+    "total_encounters": 1,
+    "total_calls": 1
+  },
+  {
+    "common_name": "Short-toed Treecreeper",
+    "scientific_name": "Certhia brachydactyla",
+    "first_seen": "2026-05-04 09:35:59",
+    "last_seen": "2026-05-04 09:35:59",
+    "total_encounters": 1,
+    "total_calls": 1
+  },
+  {
+    "common_name": "Gadwall",
+    "scientific_name": "Mareca strepera",
+    "first_seen": "2026-05-04 10:28:40",
+    "last_seen": "2026-05-04 10:28:40",
+    "total_encounters": 1,
+    "total_calls": 1
+  },
+  {
+    "common_name": "Eurasian Jackdaw",
+    "scientific_name": "Corvus monedula",
+    "first_seen": "2026-05-04 18:27:53",
+    "last_seen": "2026-05-05 08:56:19",
+    "total_encounters": 3,
+    "total_calls": 3
+  },
+  {
+    "common_name": "Eurasian Tree Sparrow",
+    "scientific_name": "Passer montanus",
+    "first_seen": "2026-05-04 18:37:30",
+    "last_seen": "2026-05-05 05:25:30",
+    "total_encounters": 2,
+    "total_calls": 3
+  },
+  {
+    "common_name": "European Serin",
+    "scientific_name": "Serinus serinus",
+    "first_seen": "2026-05-04 18:37:30",
+    "last_seen": "2026-05-05 08:21:29",
+    "total_encounters": 3,
+    "total_calls": 3
+  },
+  {
+    "common_name": "Eurasian Oystercatcher",
+    "scientific_name": "Haematopus ostralegus",
+    "first_seen": "2026-05-04 18:41:36",
+    "last_seen": "2026-05-04 18:41:36",
+    "total_encounters": 1,
+    "total_calls": 1
+  },
+  {
+    "common_name": "Crested Tit",
+    "scientific_name": "Lophophanes cristatus",
+    "first_seen": "2026-05-05 05:07:33",
+    "last_seen": "2026-05-05 05:07:33",
+    "total_encounters": 1,
+    "total_calls": 1
+  },
+  {
+    "common_name": "Garden Warbler",
+    "scientific_name": "Sylvia borin",
+    "first_seen": "2026-05-05 08:21:29",
+    "last_seen": "2026-05-05 08:21:29",
+    "total_encounters": 1,
+    "total_calls": 1
+  },
+  {
+    "common_name": "Eurasian Siskin",
+    "scientific_name": "Spinus spinus",
+    "first_seen": "2026-05-05 09:19:12",
+    "last_seen": "2026-05-05 09:19:12",
+    "total_encounters": 1,
+    "total_calls": 1
+  }
+]

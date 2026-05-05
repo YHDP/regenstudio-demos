@@ -1,0 +1,55 @@
+{
+  "summary": {
+    "common_name": "Herring Gull",
+    "scientific_name": "Larus argentatus",
+    "encounter_count": 1,
+    "total_calls": 1,
+    "total_verified": 0,
+    "max_confidence": 0.738,
+    "first_seen": "2026-04-30 07:10:13",
+    "last_seen": "2026-04-30 07:10:13",
+    "avg_confidence": 0.738,
+    "avg_calls_per_encounter": 1.0,
+    "peak_hour": 7,
+    "unverified_count": 1
+  },
+  "encounters": [
+    {
+      "id": 26,
+      "common_name": "Herring Gull",
+      "scientific_name": "Larus argentatus",
+      "started_at": "2026-04-30 07:10:13",
+      "ended_at": "2026-04-30 07:10:13",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.738,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 31,
+          "timestamp": "2026-04-30 07:10:13",
+          "confidence": 0.738,
+          "audio_file": "chunk_20260430_071013_6.0_9.0.wav",
+          "status": "unverified",
+          "start_s": 6.0,
+          "end_s": 9.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.668
+            },
+            "top_noise": {
+              "class_name": "Alarm",
+              "score": 0.0312
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

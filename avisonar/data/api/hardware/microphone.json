@@ -1,0 +1,22 @@
+{
+  "active": {
+    "index": 3,
+    "name": "Microfone Externo",
+    "channels": 1,
+    "sample_rate": 48000.0
+  },
+  "available": [
+    {
+      "index": 2,
+      "name": "HD Pro Webcam C920",
+      "channels": 2,
+      "sample_rate": 16000.0
+    },
+    {
+      "index": 3,
+      "name": "Microfone Externo",
+      "channels": 1,
+      "sample_rate": 48000.0
+    }
+  ]
+}

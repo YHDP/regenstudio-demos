@@ -1,0 +1,129 @@
+{
+  "summary": {
+    "common_name": "House Sparrow",
+    "scientific_name": "Passer domesticus",
+    "encounter_count": 3,
+    "total_calls": 3,
+    "total_verified": 0,
+    "max_confidence": 0.9899,
+    "first_seen": "2026-04-29 07:15:30",
+    "last_seen": "2026-05-05 05:25:30",
+    "avg_confidence": 0.963,
+    "avg_calls_per_encounter": 1.0,
+    "peak_hour": 18,
+    "unverified_count": 0
+  },
+  "encounters": [
+    {
+      "id": 113,
+      "common_name": "House Sparrow",
+      "scientific_name": "Passer domesticus",
+      "started_at": "2026-05-05 05:25:30",
+      "ended_at": "2026-05-05 05:25:30",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.9487,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 136,
+          "timestamp": "2026-05-05 05:25:30",
+          "confidence": 0.9487,
+          "audio_file": "chunk_20260505_052530_0.0_15.0.wav",
+          "status": "verified",
+          "start_s": 0.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird vocalization, bird call, bird song",
+              "score": 0.8516
+            },
+            "top_noise": {
+              "class_name": "Music",
+              "score": 0.0195
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 104,
+      "common_name": "House Sparrow",
+      "scientific_name": "Passer domesticus",
+      "started_at": "2026-05-04 18:37:30",
+      "ended_at": "2026-05-04 18:37:30",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.949,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 126,
+          "timestamp": "2026-05-04 18:37:30",
+          "confidence": 0.949,
+          "audio_file": "chunk_20260504_183730_0.0_15.0.wav",
+          "status": "verified",
+          "start_s": 0.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird vocalization, bird call, bird song",
+              "score": 0.8906
+            },
+            "top_noise": {
+              "class_name": "Music",
+              "score": 0.0117
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 3,
+      "common_name": "House Sparrow",
+      "scientific_name": "Passer domesticus",
+      "started_at": "2026-04-29 07:15:30",
+      "ended_at": "2026-04-29 07:15:30",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.9899,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 4,
+          "timestamp": "2026-04-29 07:15:30",
+          "confidence": 0.9899,
+          "audio_file": "chunk_20260429_071530_0.0_15.0.wav",
+          "status": "verified",
+          "start_s": 0.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.918
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.0039
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

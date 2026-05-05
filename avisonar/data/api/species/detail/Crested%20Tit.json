@@ -1,0 +1,55 @@
+{
+  "summary": {
+    "common_name": "Crested Tit",
+    "scientific_name": "Lophophanes cristatus",
+    "encounter_count": 1,
+    "total_calls": 1,
+    "total_verified": 0,
+    "max_confidence": 0.8513,
+    "first_seen": "2026-05-05 05:07:33",
+    "last_seen": "2026-05-05 05:07:33",
+    "avg_confidence": 0.851,
+    "avg_calls_per_encounter": 1.0,
+    "peak_hour": 5,
+    "unverified_count": 1
+  },
+  "encounters": [
+    {
+      "id": 112,
+      "common_name": "Crested Tit",
+      "scientific_name": "Lophophanes cristatus",
+      "started_at": "2026-05-05 05:07:33",
+      "ended_at": "2026-05-05 05:07:33",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.8513,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 135,
+          "timestamp": "2026-05-05 05:07:33",
+          "confidence": 0.8513,
+          "audio_file": "chunk_20260505_050733_9.0_12.0.wav",
+          "status": "unverified",
+          "start_s": 9.0,
+          "end_s": 12.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird vocalization, bird call, bird song",
+              "score": 0.668
+            },
+            "top_noise": {
+              "class_name": "Cat",
+              "score": 0.1484
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

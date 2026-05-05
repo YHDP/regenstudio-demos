@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>window.DEMO_GUARD = { demoId: 'avisonar' };</script>
+  <script src="../assets/js/guard.js"></script>
+
+  <meta charset="UTF-8">
+  <script>const _t=localStorage.getItem("bd-theme");if(_t)document.documentElement.setAttribute("data-theme",_t);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AviSonar — Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 1.5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .chart-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .chart-row.full { grid-template-columns: 1fr; }
+
+    .chart-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+    .chart-title {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .chart-subtitle {
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .period-select {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text);
+      padding: 0.2rem 0.5rem;
+      cursor: pointer;
+    }
+
+    /* SVG charts */
+    .chart-svg { width: 100%; overflow: visible; }
+    .chart-svg text {
+      font-family: 'JetBrains Mono', monospace;
+      fill: var(--text-muted);
+    }
+
+    /* Heatmap */
+    .heatmap-container { overflow-x: auto; }
+
+    /* Life list */
+    .life-list { display: flex; flex-direction: column; gap: 0.35rem; max-height: 400px; overflow-y: auto; }
+    .life-item {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.4rem 0.6rem;
+      background: var(--surface-2);
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+    }
+    .life-num { color: var(--text-muted); min-width: 1.5rem; text-align: right; font-size: 0.65rem; }
+    .life-name { color: var(--text); flex: 1; font-weight: 500; }
+    .life-name a { color: inherit; text-decoration: none; }
+    .life-name a:hover { color: var(--green); }
+    .life-sci { color: var(--text-muted); font-style: italic; font-size: 0.7rem; flex: 1; }
+    .life-date { color: var(--text-muted); font-size: 0.65rem; }
+    .life-count { color: var(--green); font-size: 0.65rem; min-width: 3rem; text-align: right; }
+
+    /* Top species bars */
+    .top-bar-row {
+      display: flex; align-items: center; gap: 0.5rem;
+      margin-bottom: 0.35rem; font-family: var(--font-mono); font-size: 0.75rem;
+    }
+    .top-bar-name { min-width: 140px; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .top-bar-name a { color: inherit; text-decoration: none; }
+    .top-bar-name a:hover { color: var(--green); }
+    .top-bar-track { flex: 1; height: 16px; background: var(--surface-2); border-radius: 3px; overflow: hidden; }
+    .top-bar-fill { height: 100%; background: var(--green); border-radius: 3px; transition: width 0.5s; }
+    .top-bar-count { min-width: 2.5rem; text-align: right; color: var(--text-muted); font-size: 0.7rem; }
+
+    /* Confidence bars */
+    .conf-bars { display: flex; align-items: flex-end; gap: 8px; height: 120px; padding-top: 0.5rem; }
+    .conf-bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; height: 100%; justify-content: flex-end; }
+    .conf-bar { width: 100%; background: var(--green); border-radius: 3px 3px 0 0; min-height: 2px; transition: height 0.5s; }
+    .conf-bar-label { font-family: var(--font-mono); font-size: 0.55rem; color: var(--text-muted); white-space: nowrap; }
+    .conf-bar-count { font-family: var(--font-mono); font-size: 0.6rem; color: var(--text-muted); }
+
+    /* Diversity KPI */
+    .diversity-kpis {
+      display: flex; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap;
+    }
+    .div-kpi {
+      display: flex; flex-direction: column; gap: 0.15rem;
+    }
+    .div-kpi-value {
+      font-family: var(--font-display); font-size: 1.3rem; color: var(--green); line-height: 1;
+    }
+    .div-kpi-label {
+      font-family: var(--font-mono); font-size: 0.55rem; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--text-muted);
+    }
+
+    .kpi-grid { grid-template-columns: repeat(4, 1fr); }
+
+    @media (max-width: 900px) {
+      .chart-row { grid-template-columns: 1fr; }
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 500px) {
+      .kpi-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <link rel="stylesheet" href="./demo-overrides.css">
+  <script src="./data-router.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="logo-icon">🦉</span>
+      <span class="logo-text">AviSonar</span>
+      <span class="logo-sub">Analytics</span>
+    </div>
+    <nav class="header-nav">
+      <a href="/" class="nav-link" data-i18n="nav.dashboard">Dashboard</a>
+      <a href="/calls.html" class="nav-link" data-i18n="nav.calls">Calls</a>
+      <a href="/label.html" class="nav-link" data-i18n="nav.label">Label</a>
+      <a href="/analytics.html" class="nav-link active" aria-current="page" data-i18n="nav.analytics">Analytics</a>
+      <a href="/map.html" class="nav-link" data-i18n="nav.map">Map</a>
+      <a href="/settings.html" class="nav-link" data-i18n="nav.settings">Settings</a>
+    </nav>
+    <div class="header-controls">
+      <select id="location-select" class="header-select" aria-label="Select location">
+        <option value="" data-i18n="filter.all_locations">All locations</option>
+      </select>
+      <button class="nav-link" onclick="generateReport()" style="cursor:pointer;border:1px solid var(--border);" data-i18n="analytics.generate_report">Generate Report</button>
+    </div>
+    <div class="header-stats">
+      <div class="status-dot active" id="status-dot" title="System status"></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Row 1: KPI Cards -->
+    <div class="chart-row kpi-grid">
+      <div class="chart-panel">
+        <div class="chart-title" data-i18n="analytics.total_species">Total Species</div>
+        <div class="diversity-kpis"><div class="div-kpi"><span class="div-kpi-value" id="a-kpi-total">—</span><span class="div-kpi-label" data-i18n="time.all_time">all time</span></div></div>
+      </div>
+      <div class="chart-panel">
+        <div class="chart-title" data-i18n="analytics.active_species">Active Species</div>
+        <div class="diversity-kpis"><div class="div-kpi"><span class="div-kpi-value" id="a-kpi-active">—</span><span class="div-kpi-label" data-i18n="time.last_7_days">last 7 days</span></div></div>
+      </div>
+      <div class="chart-panel">
+        <div class="chart-title" data-i18n="analytics.total_encounters">Total Encounters</div>
+        <div class="diversity-kpis"><div class="div-kpi"><span class="div-kpi-value" id="a-kpi-encounters">—</span><span class="div-kpi-label" data-i18n="time.last_30_days">last 30 days</span></div></div>
+      </div>
+      <div class="chart-panel">
+        <div class="chart-title" data-i18n="analytics.verification_rate">Verification Rate</div>
+        <div class="diversity-kpis"><div class="div-kpi"><span class="div-kpi-value" id="a-kpi-vrate">—</span><span class="div-kpi-label" data-i18n="time.of_all_calls">of all calls</span></div></div>
+      </div>
+    </div>
+
+    <!-- Row 2: Weekly Detection Trend (full width) -->
+    <div class="chart-row full">
+      <div class="chart-panel">
+        <div class="chart-title"><span data-i18n="analytics.weekly_trend">Weekly Detection Trend</span> <span class="chart-subtitle">Calls per week over the last 6 months</span></div>
+        <div id="weekly-chart"></div>
+      </div>
+    </div>
+
+    <!-- Row 3: Top Species + Life List -->
+    <div class="chart-row">
+      <div class="chart-panel">
+        <div class="chart-title">
+          <span data-i18n="analytics.top_species">Top Species</span>
+          <select class="period-select" id="top-days" onchange="loadTop()">
+            <option value="7" data-i18n="time.7days">7 days</option>
+            <option value="30" selected data-i18n="time.30days">30 days</option>
+            <option value="90" data-i18n="time.90days">90 days</option>
+            <option value="365" data-i18n="time.1year">1 year</option>
+          </select>
+        </div>
+        <div id="top-chart"></div>
+      </div>
+      <div class="chart-panel">
+        <div class="chart-title" data-i18n="analytics.life_list">Life List — All Species Detected</div>
+        <div id="life-list" class="life-list"></div>
+      </div>
+    </div>
+
+    <!-- Row 4: Heatmap (full width) -->
+    <div class="chart-row full">
+      <div class="chart-panel">
+        <div class="chart-title">
+          <span data-i18n="analytics.heatmap">Species × Hour Heatmap</span>
+          <select class="period-select" id="heatmap-days" onchange="loadHeatmap()">
+            <option value="7" data-i18n="time.7days">7 days</option>
+            <option value="30" selected data-i18n="time.30days">30 days</option>
+            <option value="90" data-i18n="time.90days">90 days</option>
+          </select>
+        </div>
+        <div class="heatmap-container" id="heatmap-chart"></div>
+      </div>
+    </div>
+
+    <!-- Row 5: Species Comparison (full width) -->
+    <div class="chart-row full">
+      <div class="chart-panel">
+        <div class="chart-title">
+          <span data-i18n="analytics.comparison">Species Comparison</span>
+          <select class="period-select" id="compare-days" onchange="loadComparison()">
+            <option value="1" data-i18n="time.today">Today (hourly)</option>
+            <option value="7" selected data-i18n="time.7days">7 days (daily)</option>
+            <option value="30" data-i18n="time.30days">30 days (daily)</option>
+            <option value="90" data-i18n="time.90days">90 days (weekly)</option>
+          </select>
+        </div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.75rem;" id="compare-controls">
+          <span style="font-size:0.7rem;color:var(--muted);font-family:var(--font-mono);" data-i18n="analytics.select_species">Select species to compare:</span>
+        </div>
+        <div id="compare-chart"></div>
+      </div>
+    </div>
+
+    <!-- Row 6: Calendar (full width) -->
+    <div class="chart-row full">
+      <div class="chart-panel">
+        <div class="chart-title"><span data-i18n="analytics.calendar">Species Frequency Calendar</span> <span class="chart-subtitle" data-i18n="calendar.brighter_more">Brighter = more species</span></div>
+        <div id="calendar-chart"></div>
+      </div>
+    </div>
+
+    <!-- Row 6b: Accumulation Curve (full width) -->
+    <div class="chart-row full">
+      <div class="chart-panel">
+        <div class="chart-title" data-i18n="analytics.accumulation">Species Accumulation Curve</div>
+        <div id="accumulation-chart"></div>
+      </div>
+    </div>
+
+    <!-- Row 7: Native/Introduced + Confidence -->
+    <div class="chart-row">
+      <div class="chart-panel">
+        <div class="chart-title" data-i18n="analytics.native_ratio">Native vs. Introduced Species</div>
+        <div id="native-chart" style="display:flex;align-items:center;justify-content:center;gap:2rem;min-height:160px;"></div>
+      </div>
+      <div class="chart-panel">
+        <div class="chart-title" data-i18n="analytics.confidence_dist">Detection Confidence Distribution</div>
+        <div id="confidence-chart" class="conf-bars"></div>
+      </div>
+    </div>
+
+    <!-- Row 8: Diversity -->
+    <div class="chart-row full">
+      <div class="chart-panel" id="diversity-panel">
+        <div class="chart-title">
+          <span data-i18n="analytics.diversity">Ecosystem Diversity (Shannon H')</span>
+          <select class="period-select" id="diversity-period" onchange="loadDiversity()">
+            <option value="week" selected data-i18n="time.weekly">Weekly</option>
+            <option value="month" data-i18n="time.monthly">Monthly</option>
+          </select>
+        </div>
+        <div id="diversity-kpis" class="diversity-kpis"></div>
+        <div id="diversity-chart"></div>
+        <div style="font-size:0.65rem; color:var(--text-muted); margin-top:0.5rem; font-style:italic;">
+          Shannon H' measures how evenly distributed species are. Higher = healthier ecosystem. Evenness shows if one species dominates.
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="i18n.js"></script>
+  <script>
+    let locationId = null;
+    let iucnStatuses = {};
+
+    const IUCN_COLORS = { CR: '#cc3333', EN: '#cc6633', VU: '#cccc00', NT: '#669900', LC: '#006600', DD: '#999', NE: '#666' };
+
+    function iucnBadge(sciName) {
+      const info = iucnStatuses[sciName];
+      const st = info?.iucn_status || 'NE';
+      const dim = (st === 'LC' || st === 'NE') ? 'opacity:0.5;' : '';
+      return `<span style="display:inline-block;font-family:var(--font-mono);font-size:0.5rem;padding:0.1rem 0.3rem;border-radius:3px;color:white;background:${IUCN_COLORS[st]};margin-left:0.3rem;vertical-align:middle;${dim}" title="${t('iucn.' + st)}">${st}</span>`;
+    }
+
+    async function fetchJSON(path) {
+      try {
+        const res = await fetch(path);
+        if (!res.ok) throw new Error(res.status);
+        return await res.json();
+      } catch (e) {
+        console.error('API error:', path, e);
+        return null;
+      }
+    }
+
+    function locParam(extra = {}) {
+      const p = new URLSearchParams(extra);
+      if (locationId) p.set('location_id', locationId);
+      const s = p.toString();
+      return s ? '?' + s : '';
+    }
+
+    // --- SVG helpers ---
+    const SVG_NS = 'http://www.w3.org/2000/svg';
+    function svgEl(tag, attrs = {}) {
+      const el = document.createElementNS(SVG_NS, tag);
+      for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+      return el;
+    }
+
+    // Locale mapping for date formatting
+    const LANG_LOCALE_MAP = { en: 'en-GB', pt: 'pt-BR', nl: 'nl-NL', es: 'es-ES' };
+    function getLocale() { return LANG_LOCALE_MAP[getLang()] || 'en-GB'; }
+
+    // Smart x-axis label formatter — adapts to data format
+    function formatXLabel(value) {
+      if (!value) return '';
+      if (/^\d{2}:\d{2}$/.test(value)) return value;              // "06:00" → "06:00"
+      if (/^\d{4}-\d{2}$/.test(value)) {                           // "2026-04" → "Apr" (localized)
+        const d = new Date(parseInt(value.substring(0, 4)), parseInt(value.substring(5)) - 1, 1);
+        return d.toLocaleDateString(getLocale(), { month: 'short' });
+      }
+      if (/^\d{4}-\d{2}-\d{2}/.test(value)) {                     // "2026-04-07..." → "Apr 7" (localized)
+        const d = new Date(value.substring(0, 10));
+        return d.toLocaleDateString(getLocale(), { day: 'numeric', month: 'short' });
+      }
+      if (/^\d{4}-\d{1,2}$/.test(value)) return 'W' + value.split('-')[1]; // "2026-14" → "W14"
+      return value.length > 8 ? value.substring(5) : value;        // fallback
+    }
+
+    function formatYLabel(value, isFloat) {
+      if (isFloat) return value.toFixed(2);
+      return value >= 1 ? Math.round(value).toString() : value.toFixed(1);
+    }
+
+    function createLineSVG(container, data, { width = 500, height = 160, xKey, yKey, label, color = '#3fb950', isFloat = false } = {}) {
+      if (!data.length) { container.innerHTML = `<div class="empty-state">${t('empty.no_data')}</div>`; return; }
+
+      // Single data point — show as value display instead of chart
+      if (data.length === 1) {
+        const val = isFloat ? data[0][yKey].toFixed(2) : Math.round(data[0][yKey]);
+        container.innerHTML = `<div style="text-align:center;padding:1.5rem;">
+          <div style="font-family:var(--font-display);font-size:2rem;color:${color};">${val}</div>
+          <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);margin-top:0.3rem;">at ${formatXLabel(data[0][xKey])}</div>
+          <div style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-muted);margin-top:0.5rem;font-style:italic;">Trend chart appears after more data points.</div>
+        </div>`;
+        return;
+      }
+
+      const pad = { top: 10, right: 10, bottom: 28, left: 42 };
+      const w = width - pad.left - pad.right;
+      const h = height - pad.top - pad.bottom;
+
+      const yMaxRaw = Math.max(...data.map(d => d[yKey]), isFloat ? 0.1 : 1);
+      const xScale = (i) => pad.left + (i / Math.max(data.length - 1, 1)) * w;
+
+      const svg = svgEl('svg', { viewBox: `0 0 ${width} ${height}`, class: 'chart-svg' });
+
+      // Y-axis grid lines — snap to integers for count data
+      let ySteps, yTop;
+      if (isFloat) {
+        ySteps = 4;
+        yTop = yMaxRaw;
+      } else {
+        yTop = Math.ceil(yMaxRaw);
+        ySteps = yTop <= 5 ? yTop : yTop <= 10 ? 5 : yTop <= 20 ? 4 : 5;
+        if (ySteps === 0) ySteps = 1;
+        yTop = Math.ceil(yTop / ySteps) * ySteps;
+      }
+      const yScale = (v) => pad.top + h - (v / yTop) * h;
+      for (let i = 0; i <= ySteps; i++) {
+        const val = yTop * (ySteps - i) / ySteps;
+        const y = pad.top + (i / ySteps) * h;
+        svg.appendChild(svgEl('line', { x1: pad.left, y1: y, x2: width - pad.right, y2: y, stroke: '#30363d', 'stroke-width': 0.5 }));
+        const txt = svgEl('text', { x: pad.left - 5, y: y + 3, 'text-anchor': 'end', 'font-size': '8' });
+        txt.textContent = formatYLabel(val, isFloat);
+        svg.appendChild(txt);
+      }
+
+      // Line + area
+      const points = data.map((d, i) => `${xScale(i)},${yScale(d[yKey])}`).join(' ');
+      svg.appendChild(svgEl('polyline', { points, fill: 'none', stroke: color, 'stroke-width': 2, 'stroke-linejoin': 'round' }));
+      const areaPoints = `${xScale(0)},${pad.top + h} ${points} ${xScale(data.length - 1)},${pad.top + h}`;
+      svg.appendChild(svgEl('polygon', { points: areaPoints, fill: color, opacity: 0.08 }));
+
+      // Dots + x-axis labels
+      const maxLabels = Math.min(10, data.length);
+      const step = Math.max(1, Math.floor(data.length / maxLabels));
+      data.forEach((d, i) => {
+        svg.appendChild(svgEl('circle', { cx: xScale(i), cy: yScale(d[yKey]), r: 2.5, fill: color }));
+        if (i % step === 0 || i === data.length - 1) {
+          const txt = svgEl('text', { x: xScale(i), y: pad.top + h + 16, 'text-anchor': 'middle', 'font-size': '8' });
+          txt.textContent = formatXLabel(d[xKey]);
+          svg.appendChild(txt);
+        }
+      });
+
+      container.innerHTML = '';
+      container.appendChild(svg);
+    }
+
+    // --- Load functions ---
+
+    async function loadHeatmap() {
+      const days = document.getElementById('heatmap-days').value;
+      const data = await fetchJSON(`/api/analytics/heatmap${locParam({ days })}`);
+      if (!data) return;
+
+      const container = document.getElementById('heatmap-chart');
+      if (!data.length) { container.innerHTML = `<div class="empty-state">${t('empty.no_data')}</div>`; return; }
+
+      // Build matrix
+      const speciesSet = [...new Set(data.map(d => d.common_name))];
+      // Sort by total detections
+      const totals = {};
+      data.forEach(d => { totals[d.common_name] = (totals[d.common_name] || 0) + d.count; });
+      speciesSet.sort((a, b) => totals[b] - totals[a]);
+
+      const maxCount = Math.max(...data.map(d => d.count));
+      const cellW = 28, cellH = 22, labelW = 160, topPad = 20;
+      const svgW = labelW + 24 * cellW + 10;
+      const svgH = topPad + speciesSet.length * cellH + 5;
+
+      const svg = svgEl('svg', { viewBox: `0 0 ${svgW} ${svgH}`, class: 'chart-svg', style: `min-width:${svgW}px` });
+
+      // Hour labels
+      for (let h = 0; h < 24; h++) {
+        const txt = svgEl('text', { x: labelW + h * cellW + cellW / 2, y: 14, 'text-anchor': 'middle', 'font-size': '8' });
+        txt.textContent = String(h).padStart(2, '0');
+        svg.appendChild(txt);
+      }
+
+      // Build lookup
+      const lookup = {};
+      data.forEach(d => { lookup[`${d.common_name}-${d.hour}`] = d.count; });
+
+      speciesSet.forEach((sp, row) => {
+        const y = topPad + row * cellH;
+        // Species label
+        const link = svgEl('a');
+        link.setAttributeNS('http://www.w3.org/1999/xlink', 'href', `species.html?name=${encodeURIComponent(sp)}`);
+        const txt = svgEl('text', { x: labelW - 6, y: y + cellH / 2 + 3, 'text-anchor': 'end', 'font-size': '9', style: 'cursor:pointer' });
+        txt.textContent = sp.length > 22 ? sp.substring(0, 20) + '\u2026' : sp;
+        const titleEl = svgEl('title');
+        titleEl.textContent = sp;
+        txt.appendChild(titleEl);
+        link.appendChild(txt);
+        svg.appendChild(link);
+
+        for (let h = 0; h < 24; h++) {
+          const count = lookup[`${sp}-${String(h).padStart(2, '0')}`] || 0;
+          const intensity = count / maxCount;
+          const r = Math.round(26 + intensity * (63 - 26));
+          const g = Math.round(77 + intensity * (185 - 77));
+          const b = Math.round(45 + intensity * (80 - 45));
+          const color = count === 0 ? '#21262d' : `rgb(${r},${g},${b})`;
+
+          const rect = svgEl('rect', {
+            x: labelW + h * cellW + 1, y: y + 1,
+            width: cellW - 2, height: cellH - 2,
+            rx: 2, fill: color,
+          });
+          // Tooltip via title
+          const title = svgEl('title');
+          title.textContent = `${sp} at ${String(h).padStart(2, '0')}:00 — ${count} detection${count !== 1 ? 's' : ''}`;
+          rect.appendChild(title);
+          svg.appendChild(rect);
+        }
+      });
+
+      container.innerHTML = '';
+      container.appendChild(svg);
+    }
+
+    async function loadAccumulation() {
+      const data = await fetchJSON(`/api/analytics/accumulation${locParam()}`);
+      if (!data || !data.length) { document.getElementById('accumulation-chart').innerHTML = `<div class="empty-state">${t('empty.no_data')}</div>`; return; }
+      if (data.length === 1) {
+        createLineSVG(document.getElementById('accumulation-chart'), data, {
+          xKey: 'label', yKey: 'cumulative', width: 900, height: 180,
+        });
+        return;
+      }
+
+      // Time-proportional x-axis: spacing reflects real elapsed time
+      const container = document.getElementById('accumulation-chart');
+      const w = 900, h = 180, pad = { top: 10, right: 15, bottom: 30, left: 42 };
+      const iw = w - pad.left - pad.right, ih = h - pad.top - pad.bottom;
+
+      // Parse timestamps to get relative positions
+      const times = data.map(d => new Date(d.date).getTime());
+      const tMin = times[0], tMax = times[times.length - 1];
+      const tRange = tMax - tMin || 1;
+      const xS = t => pad.left + ((t - tMin) / tRange) * iw;
+
+      // Y-axis with integer snapping
+      const yMaxRaw = data[data.length - 1].cumulative;
+      let yTop = Math.ceil(yMaxRaw);
+      let ySteps = yTop <= 5 ? yTop : yTop <= 10 ? 5 : 4;
+      if (ySteps === 0) ySteps = 1;
+      yTop = Math.ceil(yTop / ySteps) * ySteps;
+      const yS = v => pad.top + ih - (v / yTop) * ih;
+
+      const svg = svgEl('svg', { viewBox: `0 0 ${w} ${h}`, class: 'chart-svg' });
+
+      // Y grid
+      for (let i = 0; i <= ySteps; i++) {
+        const val = yTop * (ySteps - i) / ySteps;
+        const y = pad.top + (i / ySteps) * ih;
+        svg.appendChild(svgEl('line', { x1: pad.left, y1: y, x2: w - pad.right, y2: y, stroke: '#30363d', 'stroke-width': 0.5 }));
+        const txt = svgEl('text', { x: pad.left - 5, y: y + 3, 'text-anchor': 'end', 'font-size': '8' });
+        txt.textContent = Math.round(val);
+        svg.appendChild(txt);
+      }
+
+      // Build curve points with step function (species count only goes up)
+      let points = '';
+      data.forEach((d, i) => {
+        const x = xS(times[i]);
+        const y = yS(d.cumulative);
+        if (i > 0) {
+          // Horizontal step to this x at previous y level
+          points += ` ${x},${yS(data[i-1].cumulative)}`;
+        }
+        points += ` ${x},${y}`;
+      });
+
+      // Area fill
+      const areaPoints = `${xS(times[0])},${pad.top + ih}${points} ${xS(times[times.length-1])},${pad.top + ih}`;
+      svg.appendChild(svgEl('polygon', { points: areaPoints.trim(), fill: '#3fb950', opacity: 0.08 }));
+
+      // Line
+      svg.appendChild(svgEl('polyline', { points: points.trim(), fill: 'none', stroke: '#3fb950', 'stroke-width': 2, 'stroke-linejoin': 'round' }));
+
+      // Dots + labels
+      data.forEach((d, i) => {
+        const x = xS(times[i]);
+        const y = yS(d.cumulative);
+        svg.appendChild(svgEl('circle', { cx: x, cy: y, r: 3, fill: '#3fb950' }));
+        // Species name annotation
+        const txt = svgEl('text', { x: x + 5, y: y - 5, 'font-size': '7', fill: '#7d8590' });
+        txt.textContent = d.species;
+        svg.appendChild(txt);
+      });
+
+      // X-axis labels
+      const maxLabels = Math.min(8, data.length);
+      const labelStep = Math.max(1, Math.floor(data.length / maxLabels));
+      data.forEach((d, i) => {
+        if (i % labelStep === 0 || i === data.length - 1) {
+          const txt = svgEl('text', { x: xS(times[i]), y: pad.top + ih + 18, 'text-anchor': 'middle', 'font-size': '8' });
+          txt.textContent = d.label;
+          svg.appendChild(txt);
+        }
+      });
+
+      container.innerHTML = '';
+      container.appendChild(svg);
+    }
+
+    async function loadDiversity() {
+      const period = document.getElementById('diversity-period').value;
+      const data = await fetchJSON(`/api/analytics/diversity${locParam({ period, days: 180 })}`);
+      if (!data || !data.length) {
+        document.getElementById('diversity-chart').innerHTML = `<div class="empty-state">${t('empty.no_data')}</div>`;
+        return;
+      }
+
+      // KPI cards for latest values
+      const latest = data[data.length - 1];
+      document.getElementById('diversity-kpis').innerHTML = `
+        <div class="div-kpi"><span class="div-kpi-value">${latest.shannon_h}</span><span class="div-kpi-label">${t('analytics.shannon')}</span></div>
+        <div class="div-kpi"><span class="div-kpi-value">${(latest.evenness * 100).toFixed(0)}%</span><span class="div-kpi-label">${t('analytics.evenness')}</span></div>
+        <div class="div-kpi"><span class="div-kpi-value">${latest.species_count}</span><span class="div-kpi-label">${t('analytics.species_label')}</span></div>
+        <div class="div-kpi"><span class="div-kpi-value">${latest.total_detections}</span><span class="div-kpi-label">${t('analytics.detections')}</span></div>
+      `;
+
+      createLineSVG(document.getElementById('diversity-chart'), data, {
+        xKey: 'period', yKey: 'shannon_h', label: "H'", width: 500, height: 140, color: '#d29922', isFloat: true,
+      });
+    }
+
+    async function loadTop() {
+      const days = document.getElementById('top-days').value;
+      const data = await fetchJSON(`/api/analytics/top${locParam({ days })}`);
+      if (!data) return;
+
+      const container = document.getElementById('top-chart');
+      if (!data.length) { container.innerHTML = `<div class="empty-state">${t('empty.no_data')}</div>`; return; }
+
+      const maxEnc = Math.max(...data.map(d => d.encounter_count));
+      const maxVal = Math.max(...data.map(d => d.total_calls || d.encounter_count));
+      container.innerHTML = data.map(d => {
+        const val = d.total_calls || d.encounter_count;
+        const pct = (val / maxVal * 100).toFixed(1);
+        const badge = iucnBadge(d.scientific_name);
+        return `<div class="top-bar-row">
+          <span class="top-bar-name"><a href="species.html?name=${encodeURIComponent(d.common_name)}">${speciesName(d.common_name, d.scientific_name)}</a>${badge}</span>
+          <div class="top-bar-track"><div class="top-bar-fill" style="width:${pct}%"></div></div>
+          <span class="top-bar-count">${val}</span>
+        </div>`;
+      }).join('');
+    }
+
+    async function loadConfidence() {
+      const data = await fetchJSON(`/api/analytics/confidence${locParam()}`);
+      if (!data) return;
+
+      const container = document.getElementById('confidence-chart');
+      if (!data.length) { container.innerHTML = `<div class="empty-state">${t('empty.no_data')}</div>`; return; }
+
+      const maxCount = Math.max(...data.map(d => d.count));
+      // Ensure all bands exist
+      const bands = ['70-75', '75-80', '80-85', '85-90', '90-95', '95-100'];
+      const lookup = {};
+      data.forEach(d => { lookup[d.band] = d.count; });
+
+      container.innerHTML = bands.map(band => {
+        const count = lookup[band] || 0;
+        const pct = Math.max(2, (count / maxCount) * 100);
+        return `<div class="conf-bar-wrap">
+          <div class="conf-bar-count">${count}</div>
+          <div class="conf-bar" style="height:${pct}%"></div>
+          <div class="conf-bar-label">${band}%</div>
+        </div>`;
+      }).join('');
+    }
+
+    async function loadCalendar() {
+      const data = await fetchJSON(`/api/analytics/calendar${locParam()}`);
+      if (!data) return;
+
+      const container = document.getElementById('calendar-chart');
+      if (!data.length) { container.innerHTML = `<div class="empty-state">${t('empty.no_data')}</div>`; return; }
+
+      // Build day map
+      const dayMap = {};
+      let maxSpecies = 1;
+      data.forEach(d => { dayMap[d.day] = d.species_count; maxSpecies = Math.max(maxSpecies, d.species_count); });
+
+      const year = new Date().getFullYear();
+      const cellSize = 18, gap = 3, leftPad = 36, topPad = 22;
+      const totalW = leftPad + 53 * (cellSize + gap);
+      const totalH = topPad + 7 * (cellSize + gap) + 10;
+
+      const svg = svgEl('svg', { viewBox: `0 0 ${totalW} ${totalH}`, class: 'chart-svg' });
+
+      // Month labels (localized)
+      for (let m = 0; m < 12; m++) {
+        const firstDay = new Date(year, m, 1);
+        const weekNum = getWeekOfYear(firstDay);
+        const txt = svgEl('text', { x: leftPad + weekNum * (cellSize + gap), y: 14, 'font-size': '10' });
+        txt.textContent = firstDay.toLocaleDateString(getLocale(), { month: 'short' });
+        svg.appendChild(txt);
+      }
+
+      // Day labels
+      ['Mon','','Wed','','Fri','','Sun'].forEach((label, i) => {
+        if (label) {
+          const txt = svgEl('text', { x: 0, y: topPad + i * (cellSize + gap) + cellSize - 3, 'font-size': '9' });
+          txt.textContent = label;
+          svg.appendChild(txt);
+        }
+      });
+
+      // Cells
+      const startDate = new Date(year, 0, 1);
+      const endDate = new Date();
+      for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
+        const dateStr = d.toISOString().substring(0, 10);
+        const dayOfWeek = (d.getDay() + 6) % 7; // Mon=0
+        const weekNum = getWeekOfYear(d);
+        const count = dayMap[dateStr] || 0;
+
+        const intensity = count / maxSpecies;
+        let color = '#161b22';
+        if (count > 0) {
+          const r = Math.round(26 + intensity * (63 - 26));
+          const g = Math.round(45 + intensity * (185 - 45));
+          const b = Math.round(30 + intensity * (80 - 30));
+          color = `rgb(${r},${g},${b})`;
+        }
+
+        const rect = svgEl('rect', {
+          x: leftPad + weekNum * (cellSize + gap),
+          y: topPad + dayOfWeek * (cellSize + gap),
+          width: cellSize, height: cellSize,
+          rx: 2, fill: color,
+        });
+        const title = svgEl('title');
+        title.textContent = `${dateStr}: ${count} ${t('analytics.species_count_label')}`;
+        rect.appendChild(title);
+        svg.appendChild(rect);
+      }
+
+      container.innerHTML = '';
+      container.appendChild(svg);
+    }
+
+    function getWeekOfYear(date) {
+      const start = new Date(date.getFullYear(), 0, 1);
+      const diff = (date - start + (start.getTimezoneOffset() - date.getTimezoneOffset()) * 60000);
+      return Math.floor(diff / (7 * 24 * 60 * 60 * 1000));
+    }
+
+    async function loadLifeList() {
+      const data = await fetchJSON(`/api/analytics/lifelist${locParam()}`);
+      if (!data) return;
+
+      const container = document.getElementById('life-list');
+      if (!data.length) { container.innerHTML = `<div class="empty-state">${t('empty.no_encounters')}</div>`; return; }
+
+      container.innerHTML = data.map((d, i) => {
+        const firstDate = new Date(d.first_seen).toLocaleDateString(getLocale(), { day: 'numeric', month: 'short', year: 'numeric' });
+        const badge = iucnBadge(d.scientific_name);
+        return `<div class="life-item">
+          <span class="life-num">#${i + 1}</span>
+          <span class="life-name"><a href="species.html?name=${encodeURIComponent(d.common_name)}">${speciesName(d.common_name, d.scientific_name)}</a>${badge}</span>
+          <span class="life-sci">${d.scientific_name}</span>
+          <span class="life-date">${firstDate}</span>
+          <span class="life-count">${d.total_encounters} ${t('analytics.encounters_short')} · ${d.total_calls} ${t('analytics.calls_short')}</span>
+        </div>`;
+      }).join('');
+    }
+
+    // --- Native vs Introduced donut ---
+    async function loadNativeRatio() {
+      const data = await fetchJSON(`/api/analytics/native-ratio${locParam()}`);
+      if (!data) return;
+
+      const container = document.getElementById('native-chart');
+      const n = data.native;
+      const i = data.introduced;
+      const total = n.species + i.species;
+      if (total === 0) { container.innerHTML = `<div class="empty-state">${t('empty.no_data')}</div>`; return; }
+
+      const nPct = Math.round((n.species / total) * 100);
+      const iPct = 100 - nPct;
+
+      // SVG donut
+      const size = 140, cx = size/2, cy = size/2, r = 52, strokeW = 20;
+      const circumference = 2 * Math.PI * r;
+      const nLen = (nPct / 100) * circumference;
+      const iLen = circumference - nLen;
+
+      let svg = `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">`;
+      // Background circle
+      svg += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#21262d" stroke-width="${strokeW}"/>`;
+      // Native arc (green)
+      svg += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#3fb950" stroke-width="${strokeW}"
+        stroke-dasharray="${nLen} ${iLen}" stroke-dashoffset="${circumference/4}" stroke-linecap="round"/>`;
+      // Introduced arc (amber)
+      if (iPct > 0) {
+        svg += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#d29922" stroke-width="${strokeW}"
+          stroke-dasharray="${iLen} ${nLen}" stroke-dashoffset="${circumference/4 - nLen}" stroke-linecap="round"/>`;
+      }
+      // Center text
+      svg += `<text x="${cx}" y="${cy - 6}" text-anchor="middle" fill="#e6edf3" font-size="20" font-family="DM Serif Display">${nPct}%</text>`;
+      svg += `<text x="${cx}" y="${cy + 10}" text-anchor="middle" fill="#7d8590" font-size="8" font-family="JetBrains Mono">${t('analytics.native')}</text>`;
+      svg += `</svg>`;
+
+      // Legend
+      const legend = `<div style="font-family:var(--font-mono);font-size:0.75rem;">
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.6rem;">
+          <span style="width:10px;height:10px;border-radius:50%;background:#3fb950;display:inline-block;"></span>
+          <span style="color:var(--text);">${n.species} ${t('analytics.native')}</span>
+          <span style="color:#7d8590;font-size:0.65rem;">${n.encounters} ${t('analytics.encounters_short')} · ${n.calls} ${t('analytics.calls_short')}</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.5rem;">
+          <span style="width:10px;height:10px;border-radius:50%;background:#d29922;display:inline-block;"></span>
+          <span style="color:#e6edf3;">${i.species} ${t('analytics.introduced')}</span>
+          <span style="color:#7d8590;font-size:0.65rem;">${i.encounters} ${t('analytics.encounters_short')} · ${i.calls} ${t('analytics.calls_short')}</span>
+        </div>
+      </div>`;
+
+      container.innerHTML = svg + legend;
+    }
+
+    // --- Species Comparison ---
+    const COMPARE_COLORS = ['#3fb950', '#d29922', '#f85149', '#58a6ff', '#bc8cff', '#f0883e', '#39d353', '#db61a2'];
+    let compareSpeciesList = [];
+    let speciesSciNameMap = {}; // common_name → scientific_name lookup
+
+    async function initComparison() {
+      const data = await fetchJSON(`/api/analytics/lifelist${locParam()}`);
+      if (!data || !data.length) return;
+
+      compareSpeciesList = data.map(d => d.common_name);
+      data.forEach(d => { speciesSciNameMap[d.common_name] = d.scientific_name; });
+      const controls = document.getElementById('compare-controls');
+      let labelsHtml = `<span style="font-size:0.7rem;color:#7d8590;font-family:var(--font-mono);">${t('analytics.select_species')}</span>`;
+      for (let idx = 0; idx < Math.min(data.length, 15); idx++) {
+        const checked = idx < 2 ? 'checked' : '';
+        const color = idx < 4 ? COMPARE_COLORS[idx] : '#7d8590';
+        labelsHtml += `<label style="display:inline-flex;align-items:center;gap:0.25rem;font-size:0.7rem;font-family:JetBrains Mono,monospace;color:${color};cursor:pointer;">
+          <input type="checkbox" ${checked} value="${data[idx].common_name}" style="accent-color:${color}">
+          ${speciesName(data[idx].common_name, data[idx].scientific_name)}
+        </label>`;
+      }
+      controls.innerHTML = labelsHtml;
+      // Bind change events
+      controls.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+        cb.addEventListener('change', loadComparison);
+      });
+      await loadComparison();
+    }
+
+    async function loadComparison() {
+      const checked = [...document.querySelectorAll('#compare-controls input:checked')].map(el => el.value);
+      const container = document.getElementById('compare-chart');
+      if (checked.length === 0) { container.innerHTML = `<div class="empty-state">${t('empty.select_species')}</div>`; return; }
+      if (checked.length > 8) { container.innerHTML = `<div class="empty-state">${t('empty.select_species')}</div>`; return; }
+
+      const days = document.getElementById('compare-days').value;
+      const data = await fetchJSON(`/api/analytics/comparison?species=${encodeURIComponent(checked.join(','))}&days=${days}`);
+      if (!data || !data.length) { container.innerHTML = `<div class="empty-state">${t('empty.no_data')}</div>`; return; }
+
+      // Build per-species daily series
+      const speciesMap = {};
+      const allDays = new Set();
+      for (const d of data) {
+        allDays.add(d.day);
+        if (!speciesMap[d.common_name]) speciesMap[d.common_name] = {};
+        speciesMap[d.common_name][d.day] = d.encounters;
+      }
+      const sortedDays = [...allDays].sort();
+
+      // Describe what's shown
+      const isHourly = days === '1';
+      const rangeText = isHourly
+        ? `Today, by hour`
+        : sortedDays.length === 0 ? 'No data in this period'
+        : sortedDays.length === 1 ? `${formatXLabel(sortedDays[0])} (1 day)`
+        : `${formatXLabel(sortedDays[0])} — ${formatXLabel(sortedDays[sortedDays.length - 1])} (${sortedDays.length} days)`;
+
+      // SVG multi-line chart
+      const w = 860, h = 200, pad = { top: 10, right: 10, bottom: 30, left: 35 };
+      const iw = w - pad.left - pad.right, ih = h - pad.top - pad.bottom;
+      let yMax = 1;
+      for (const sp of checked) {
+        for (const day of sortedDays) {
+          yMax = Math.max(yMax, (speciesMap[sp] || {})[day] || 0);
+        }
+      }
+      const xS = i => pad.left + (i / Math.max(sortedDays.length - 1, 1)) * iw;
+
+      // Snap Y-axis to integers
+      let cYTop = Math.ceil(yMax);
+      let cYSteps = cYTop <= 5 ? cYTop : cYTop <= 10 ? 5 : 4;
+      if (cYSteps === 0) cYSteps = 1;
+      cYTop = Math.ceil(cYTop / cYSteps) * cYSteps;
+      const yS = v => pad.top + ih - (v / cYTop) * ih;
+
+      let svg = `<svg viewBox="0 0 ${w} ${h}" class="chart-svg">`;
+      for (let i = 0; i <= cYSteps; i++) { const val = cYTop * (cYSteps - i) / cYSteps; const y = pad.top + (i / cYSteps) * ih; svg += `<line x1="${pad.left}" y1="${y}" x2="${w - pad.right}" y2="${y}" stroke="#30363d" stroke-width="0.5"/><text x="${pad.left - 5}" y="${y + 3}" text-anchor="end" font-size="8">${Math.round(val)}</text>`; }
+      // X labels — using smart formatter
+      const maxLabels = Math.min(12, sortedDays.length);
+      const step = Math.max(1, Math.floor(sortedDays.length / maxLabels));
+      sortedDays.forEach((day, i) => {
+        if (i % step === 0 || i === sortedDays.length - 1) {
+          svg += `<text x="${xS(i)}" y="${pad.top + ih + 18}" text-anchor="middle" font-size="8">${formatXLabel(day)}</text>`;
+        }
+      });
+
+      // Lines per species
+      checked.forEach((sp, si) => {
+        const color = COMPARE_COLORS[si] || '#7d8590';
+        const points = sortedDays.map((day, i) => `${xS(i)},${yS((speciesMap[sp] || {})[day] || 0)}`).join(' ');
+        svg += `<polyline points="${points}" fill="none" stroke="${color}" stroke-width="2" stroke-linejoin="round" opacity="0.85"/>`;
+        sortedDays.forEach((day, i) => {
+          const v = (speciesMap[sp] || {})[day] || 0;
+          if (v > 0) svg += `<circle cx="${xS(i)}" cy="${yS(v)}" r="2.5" fill="${color}"><title>${sp}: ${v} on ${day}</title></circle>`;
+        });
+      });
+
+      svg += '</svg>';
+
+      // Legend as HTML (wraps properly)
+      const legend = checked.map((sp, si) => {
+        const color = COMPARE_COLORS[si] || '#7d8590';
+        return `<span style="display:inline-flex;align-items:center;gap:0.3rem;font-family:var(--font-mono);font-size:0.65rem;color:${color};"><span style="width:12px;height:3px;background:${color};border-radius:2px;display:inline-block;"></span>${speciesName(sp, speciesSciNameMap[sp])}</span>`;
+      }).join('');
+
+      const subtitle = `<div style="font-family:var(--font-mono);font-size:0.65rem;color:#7d8590;margin-bottom:0.5rem;">${rangeText}</div>`;
+      container.innerHTML = subtitle + svg + `<div style="display:flex;flex-wrap:wrap;gap:0.5rem 1rem;margin-top:0.5rem;">${legend}</div>`;
+    }
+
+    // --- Locations ---
+    async function loadLocations() {
+      const locations = await fetchJSON('/api/locations');
+      if (!locations) return;
+      const select = document.getElementById('location-select');
+      select.innerHTML = `<option value="" data-i18n="filter.all_locations">${t('filter.all_locations')}</option>`;
+      for (const loc of locations) {
+        const opt = document.createElement('option');
+        opt.value = loc.id;
+        opt.textContent = loc.name;
+        select.appendChild(opt);
+      }
+      select.style.display = locations.length <= 1 ? 'none' : '';
+    }
+
+    // --- KPIs ---
+    async function loadKPIs() {
+      const [stats, backlog, topAll] = await Promise.all([
+        fetchJSON(`/api/stats${locParam()}`),
+        fetchJSON(`/api/stats/backlog${locParam()}`),
+        fetchJSON(`/api/analytics/top${locParam({days: 30})}`),
+      ]);
+      if (stats) {
+        document.getElementById('a-kpi-total').textContent = stats.species_all_time || 0;
+        document.getElementById('a-kpi-active').textContent = stats.species_week || 0;
+      }
+      if (topAll) {
+        const totalEnc = topAll.reduce((sum, s) => sum + s.encounter_count, 0);
+        document.getElementById('a-kpi-encounters').textContent = totalEnc;
+      }
+      if (backlog) {
+        document.getElementById('a-kpi-vrate').textContent = `${backlog.verification_rate || 0}%`;
+      }
+    }
+
+    // --- Weekly Trend ---
+    async function loadWeekly() {
+      const data = await fetchJSON(`/api/analytics/weekly${locParam()}`);
+      if (!data) return;
+      createLineSVG(document.getElementById('weekly-chart'), data, {
+        xKey: 'week', yKey: 'calls', width: 900, height: 180, color: '#3fb950',
+      });
+    }
+
+    // --- Init ---
+    async function loadAll() {
+      // Load independently so one failure doesn't block others
+      const loaders = [
+        loadKPIs(),
+        loadWeekly(),
+        loadHeatmap(),
+        loadAccumulation(),
+        loadDiversity(),
+        loadTop(),
+        loadConfidence(),
+        loadCalendar(),
+        loadLifeList(),
+        initComparison(),
+        loadNativeRatio(),
+      ];
+      const results = await Promise.allSettled(loaders);
+      results.forEach((r, i) => {
+        if (r.status === 'rejected') console.error('Chart load failed:', r.reason);
+      });
+    }
+
+    async function init() {
+      const locSelect = document.getElementById('location-select');
+      locSelect.addEventListener('change', () => {
+        locationId = locSelect.value || null;
+        loadAll();
+      });
+
+      iucnStatuses = await fetchJSON('/api/conservation') || {};
+      await loadLocations();
+      await loadAll();
+
+      window.addEventListener('languageChanged', () => { loadAll(); });
+    }
+
+    init();
+
+    // --- PDF Report Generator ---
+    async function generateReport() {
+      // Load libraries dynamically
+      if (!window.jspdf) {
+        const s1 = document.createElement('script');
+        s1.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js';
+        document.head.appendChild(s1);
+        const s2 = document.createElement('script');
+        s2.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+        document.head.appendChild(s2);
+        await new Promise(r => { s2.onload = r; });
+        await new Promise(r => setTimeout(r, 500));
+      }
+
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF('p', 'mm', 'a4');
+      const pageW = 210, pageH = 297, margin = 15;
+      const contentW = pageW - 2 * margin;
+      let y = margin;
+
+      // Helper: add text
+      function addText(text, size, color, align = 'left') {
+        doc.setFontSize(size);
+        doc.setTextColor(...(color || [230, 237, 243]));
+        const x = align === 'center' ? pageW / 2 : margin;
+        doc.text(text, x, y, { align });
+        y += size * 0.5;
+      }
+
+      // Helper: capture chart panel as image
+      async function captureChart(elementId) {
+        const el = document.getElementById(elementId)?.closest('.chart-panel') || document.getElementById(elementId);
+        if (!el) return null;
+        const canvas = await html2canvas(el, { backgroundColor: '#161b22', scale: 2 });
+        return canvas.toDataURL('image/png');
+      }
+
+      // Dark background
+      doc.setFillColor(13, 17, 23);
+      doc.rect(0, 0, pageW, pageH, 'F');
+
+      // Title page
+      y = 80;
+      doc.setFontSize(28);
+      doc.setTextColor(63, 185, 80);
+      doc.text('AviSonar', pageW / 2, y, { align: 'center' });
+      y += 12;
+      doc.setFontSize(16);
+      doc.setTextColor(230, 237, 243);
+      doc.text('Monitoring Report', pageW / 2, y, { align: 'center' });
+      y += 20;
+      doc.setFontSize(10);
+      doc.setTextColor(125, 133, 144);
+      doc.text(new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }), pageW / 2, y, { align: 'center' });
+      y += 8;
+
+      // Fetch summary data
+      const [stats, backlog, top] = await Promise.all([
+        fetchJSON('/api/stats'),
+        fetchJSON('/api/stats/backlog'),
+        fetchJSON('/api/analytics/top?days=30'),
+      ]);
+
+      y += 15;
+      doc.setFontSize(9);
+      doc.setTextColor(125, 133, 144);
+      doc.text(`Species detected: ${stats?.species_all_time || 0} all-time, ${stats?.species_week || 0} this week`, pageW / 2, y, { align: 'center' });
+      y += 6;
+      doc.text(`Verification rate: ${backlog?.verification_rate || 0}%`, pageW / 2, y, { align: 'center' });
+      y += 6;
+      doc.text(`Top species: ${top?.[0]?.common_name || 'N/A'} (${top?.[0]?.total_calls || 0} calls)`, pageW / 2, y, { align: 'center' });
+
+      // Chart pages
+      const chartSections = [
+        { id: 'top-chart', title: 'Top Species (30 days)' },
+        { id: 'heatmap-chart', title: 'Species × Hour Heatmap' },
+        { id: 'compare-chart', title: 'Species Comparison' },
+        { id: 'calendar-chart', title: 'Species Frequency Calendar' },
+        { id: 'accumulation-chart', title: 'Species Accumulation Curve' },
+        { id: 'native-chart', title: 'Native vs. Introduced Species' },
+        { id: 'confidence-chart', title: 'Detection Confidence Distribution' },
+        { id: 'diversity-chart', title: 'Ecosystem Diversity (Shannon H\')' },
+      ];
+
+      for (const section of chartSections) {
+        const img = await captureChart(section.id);
+        if (!img) continue;
+
+        doc.addPage();
+        doc.setFillColor(13, 17, 23);
+        doc.rect(0, 0, pageW, pageH, 'F');
+
+        y = margin;
+        doc.setFontSize(12);
+        doc.setTextColor(63, 185, 80);
+        doc.text(section.title, margin, y);
+        y += 10;
+
+        // Calculate image dimensions to fit page
+        const imgProps = doc.getImageProperties(img);
+        const imgW = contentW;
+        const imgH = (imgProps.height / imgProps.width) * imgW;
+        const fitH = Math.min(imgH, pageH - y - margin);
+        doc.addImage(img, 'PNG', margin, y, imgW, fitH);
+      }
+
+      // Life list page
+      if (top && top.length) {
+        doc.addPage();
+        doc.setFillColor(13, 17, 23);
+        doc.rect(0, 0, pageW, pageH, 'F');
+        y = margin;
+        doc.setFontSize(12);
+        doc.setTextColor(63, 185, 80);
+        doc.text('Species List', margin, y);
+        y += 8;
+
+        doc.setFontSize(7);
+        doc.setTextColor(125, 133, 144);
+        doc.text('#', margin, y);
+        doc.text('Species', margin + 8, y);
+        doc.text('Scientific Name', margin + 65, y);
+        doc.text('Encounters', margin + 125, y);
+        doc.text('Calls', margin + 150, y);
+        y += 5;
+
+        const lifelist = await fetchJSON('/api/analytics/lifelist');
+        doc.setTextColor(230, 237, 243);
+        for (let i = 0; i < (lifelist || []).length; i++) {
+          const s = lifelist[i];
+          if (y > pageH - margin) { doc.addPage(); doc.setFillColor(13, 17, 23); doc.rect(0, 0, pageW, pageH, 'F'); y = margin; }
+          doc.setFontSize(7);
+          doc.text(`${i + 1}`, margin, y);
+          doc.text(s.common_name, margin + 8, y);
+          doc.setTextColor(125, 133, 144);
+          doc.text(s.scientific_name, margin + 65, y);
+          doc.setTextColor(230, 237, 243);
+          doc.text(`${s.total_encounters}`, margin + 125, y);
+          doc.text(`${s.total_calls}`, margin + 150, y);
+          y += 4.5;
+        }
+      }
+
+      // Footer on last page
+      doc.setFontSize(7);
+      doc.setTextColor(125, 133, 144);
+      doc.text(`Generated by AviSonar — ${new Date().toISOString()}`, pageW / 2, pageH - 8, { align: 'center' });
+
+      doc.save(`AviSonar_Report_${new Date().toISOString().substring(0, 10)}.pdf`);
+    }
+  </script>
+</body>
+</html>

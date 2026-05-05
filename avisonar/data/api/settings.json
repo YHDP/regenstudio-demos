@@ -1,0 +1,27 @@
+{
+  "min_confidence": 0.4,
+  "sensitivity": 1.25,
+  "chunk_duration": 15,
+  "sample_rate": 48000,
+  "encounter_gap": 300,
+  "mic_device": null,
+  "xc_api_key": "",
+  "focus_mode": "all",
+  "focus_species": [],
+  "focus_single_target_boost": 0.15,
+  "available_mics": [
+    {
+      "index": 2,
+      "name": "HD Pro Webcam C920",
+      "channels": 2,
+      "sample_rate": 16000.0
+    },
+    {
+      "index": 3,
+      "name": "Microfone Externo",
+      "channels": 1,
+      "sample_rate": 48000.0
+    }
+  ],
+  "default_mic": 3
+}

@@ -1,0 +1,134 @@
+{
+  "birdnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Coal Tit",
+        "scientific_name": "Periparus ater",
+        "score": 0.3445
+      },
+      {
+        "rank": 2,
+        "class_name": "European Robin",
+        "scientific_name": "Erithacus rubecula",
+        "score": 0.1837
+      },
+      {
+        "rank": 3,
+        "class_name": "Common Chiffchaff",
+        "scientific_name": "Phylloscopus collybita",
+        "score": 0.1395
+      },
+      {
+        "rank": 4,
+        "class_name": "Marsh Tit",
+        "scientific_name": "Poecile palustris",
+        "score": 0.1044
+      },
+      {
+        "rank": 5,
+        "class_name": "Eurasian Blackcap",
+        "scientific_name": "Sylvia atricapilla",
+        "score": 0.0503
+      }
+    ]
+  },
+  "yamnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Bird",
+        "scientific_name": null,
+        "score": 0.7383
+      },
+      {
+        "rank": 4,
+        "class_name": "Bird vocalization, bird call, bird song",
+        "scientific_name": null,
+        "score": 0.5859
+      },
+      {
+        "rank": 5,
+        "class_name": "Chirp, tweet",
+        "scientific_name": null,
+        "score": 0.4141
+      },
+      {
+        "rank": 6,
+        "class_name": "Crow",
+        "scientific_name": null,
+        "score": 0.1484
+      },
+      {
+        "rank": 7,
+        "class_name": "Caw",
+        "scientific_name": null,
+        "score": 0.1094
+      }
+    ],
+    "noise": [
+      {
+        "rank": 10,
+        "class_name": "Vehicle",
+        "scientific_name": null,
+        "score": 0.0586
+      },
+      {
+        "rank": 12,
+        "class_name": "Speech",
+        "scientific_name": null,
+        "score": 0.043
+      },
+      {
+        "rank": 13,
+        "class_name": "Sliding door",
+        "scientific_name": null,
+        "score": 0.0312
+      },
+      {
+        "rank": 14,
+        "class_name": "Motor vehicle (road)",
+        "scientific_name": null,
+        "score": 0.0312
+      },
+      {
+        "rank": 15,
+        "class_name": "Car",
+        "scientific_name": null,
+        "score": 0.0312
+      }
+    ],
+    "other": [
+      {
+        "rank": 2,
+        "class_name": "Wild animals",
+        "scientific_name": null,
+        "score": 0.7383
+      },
+      {
+        "rank": 3,
+        "class_name": "Animal",
+        "scientific_name": null,
+        "score": 0.7383
+      },
+      {
+        "rank": 8,
+        "class_name": "Environmental noise",
+        "scientific_name": null,
+        "score": 0.1094
+      },
+      {
+        "rank": 9,
+        "class_name": "Outside, rural or natural",
+        "scientific_name": null,
+        "score": 0.1094
+      },
+      {
+        "rank": 11,
+        "class_name": "Outside, urban or manmade",
+        "scientific_name": null,
+        "score": 0.0586
+      }
+    ]
+  }
+}

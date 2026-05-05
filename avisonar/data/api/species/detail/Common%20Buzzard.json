@@ -1,0 +1,77 @@
+{
+  "summary": {
+    "common_name": "Common Buzzard",
+    "scientific_name": "Buteo buteo",
+    "encounter_count": 1,
+    "total_calls": 2,
+    "total_verified": 0,
+    "max_confidence": 0.8166,
+    "first_seen": "2026-04-29 10:40:49",
+    "last_seen": "2026-04-29 10:40:49",
+    "avg_confidence": 0.817,
+    "avg_calls_per_encounter": 2.0,
+    "peak_hour": 10,
+    "unverified_count": 2
+  },
+  "encounters": [
+    {
+      "id": 9,
+      "common_name": "Common Buzzard",
+      "scientific_name": "Buteo buteo",
+      "started_at": "2026-04-29 10:40:49",
+      "ended_at": "2026-04-29 10:40:49",
+      "call_count": 2,
+      "verified_count": 0,
+      "max_confidence": 0.8166,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 11,
+          "timestamp": "2026-04-29 10:40:49",
+          "confidence": 0.8166,
+          "audio_file": "chunk_20260429_104049_0.0_3.0.wav",
+          "status": "unverified",
+          "start_s": 0.0,
+          "end_s": 3.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.4141
+            },
+            "top_noise": {
+              "class_name": "Dog",
+              "score": 0.0586
+            }
+          }
+        },
+        {
+          "id": 12,
+          "timestamp": "2026-04-29 10:40:49",
+          "confidence": 0.6407,
+          "audio_file": "chunk_20260429_104049_12.0_13.9.wav",
+          "status": "unverified",
+          "start_s": 12.0,
+          "end_s": 13.87,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.4141
+            },
+            "top_noise": {
+              "class_name": "Rodents, rats, mice",
+              "score": 0.0117
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

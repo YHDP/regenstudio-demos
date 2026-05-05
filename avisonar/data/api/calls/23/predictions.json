@@ -1,0 +1,134 @@
+{
+  "birdnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Common Firecrest",
+        "scientific_name": "Regulus ignicapilla",
+        "score": 0.7262
+      },
+      {
+        "rank": 2,
+        "class_name": "Eurasian Treecreeper",
+        "scientific_name": "Certhia familiaris",
+        "score": 0.478
+      },
+      {
+        "rank": 3,
+        "class_name": "Goldcrest",
+        "scientific_name": "Regulus regulus",
+        "score": 0.4403
+      },
+      {
+        "rank": 4,
+        "class_name": "Song Thrush",
+        "scientific_name": "Turdus philomelos",
+        "score": 0.348
+      },
+      {
+        "rank": 5,
+        "class_name": "Eurasian Jay",
+        "scientific_name": "Garrulus glandarius",
+        "score": 0.2597
+      }
+    ]
+  },
+  "yamnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Bird",
+        "scientific_name": null,
+        "score": 0.918
+      },
+      {
+        "rank": 4,
+        "class_name": "Bird vocalization, bird call, bird song",
+        "scientific_name": null,
+        "score": 0.8516
+      },
+      {
+        "rank": 5,
+        "class_name": "Chirp, tweet",
+        "scientific_name": null,
+        "score": 0.668
+      },
+      {
+        "rank": 9,
+        "class_name": "Crow",
+        "scientific_name": null,
+        "score": 0.0586
+      },
+      {
+        "rank": 10,
+        "class_name": "Caw",
+        "scientific_name": null,
+        "score": 0.0586
+      }
+    ],
+    "noise": [
+      {
+        "rank": 11,
+        "class_name": "Alarm",
+        "scientific_name": null,
+        "score": 0.0586
+      },
+      {
+        "rank": 12,
+        "class_name": "Speech",
+        "scientific_name": null,
+        "score": 0.0586
+      },
+      {
+        "rank": 13,
+        "class_name": "Car alarm",
+        "scientific_name": null,
+        "score": 0.043
+      },
+      {
+        "rank": 14,
+        "class_name": "Beep, bleep",
+        "scientific_name": null,
+        "score": 0.043
+      },
+      {
+        "rank": 15,
+        "class_name": "Siren",
+        "scientific_name": null,
+        "score": 0.043
+      }
+    ],
+    "other": [
+      {
+        "rank": 2,
+        "class_name": "Animal",
+        "scientific_name": null,
+        "score": 0.8906
+      },
+      {
+        "rank": 3,
+        "class_name": "Wild animals",
+        "scientific_name": null,
+        "score": 0.8906
+      },
+      {
+        "rank": 6,
+        "class_name": "Environmental noise",
+        "scientific_name": null,
+        "score": 0.1992
+      },
+      {
+        "rank": 7,
+        "class_name": "Outside, rural or natural",
+        "scientific_name": null,
+        "score": 0.1992
+      },
+      {
+        "rank": 8,
+        "class_name": "Noise",
+        "scientific_name": null,
+        "score": 0.082
+      }
+    ]
+  }
+}

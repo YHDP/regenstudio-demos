@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>window.DEMO_GUARD = { demoId: 'avisonar' };</script>
+  <script src="../assets/js/guard.js"></script>
+
+  <meta charset="UTF-8">
+  <script>const _t=localStorage.getItem("bd-theme");if(_t)document.documentElement.setAttribute("data-theme",_t);</script>
+  <title>AviSonar — Labelling</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+    .loader {
+      font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);
+      text-align: center;
+    }
+    .loader-title {
+      font-family: var(--font-display); font-size: 1.6rem; color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .loader-hint { margin-top: 1rem; font-size: 0.7rem; }
+    a { color: var(--green); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+  <link rel="stylesheet" href="./demo-overrides.css">
+  <script src="./data-router.js"></script>
+</head>
+<body>
+  <div class="loader" id="loader">
+    <div class="loader-title" data-i18n="label.entering">Entering labelling session...</div>
+    <div data-i18n="label.loading_queue">Fetching the next unverified call.</div>
+    <div class="loader-hint">
+      <a href="/calls.html" data-i18n="label.or_browse">Or browse the full calls registry &rarr;</a>
+    </div>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script>
+    (async () => {
+      // Grab the first unverified call in the whole DB (no filter) and hop into
+      // the compare page in flow mode.
+      try {
+        const res = await fetch('/api/calls/next');
+        const data = await res.json();
+        if (data && data.next) {
+          const n = data.next;
+          const url = new URL('/compare.html', window.location.origin);
+          if (n.audio_file) url.searchParams.set('file', n.audio_file);
+          url.searchParams.set('species', n.scientific_name || '');
+          url.searchParams.set('common_name', n.common_name || '');
+          url.searchParams.set('call_id', n.id);
+          url.searchParams.set('confidence', n.confidence);
+          url.searchParams.set('encounter_id', n.encounter_id);
+          url.searchParams.set('flow', '1');
+          window.location.replace(url.toString());
+          return;
+        }
+      } catch {}
+      // Queue empty or error
+      const el = document.getElementById('loader');
+      el.innerHTML = `
+        <div class="loader-title">${t('label.queue_empty_title') !== 'label.queue_empty_title' ? t('label.queue_empty_title') : 'Nothing to label 🎉'}</div>
+        <div>${t('label.queue_empty') !== 'label.queue_empty' ? t('label.queue_empty') : 'Queue empty — all reviewed.'}</div>
+        <div class="loader-hint"><a href="/calls.html">${t('label.or_browse') !== 'label.or_browse' ? t('label.or_browse') : 'Or browse the full calls registry →'}</a></div>
+      `;
+    })();
+  </script>
+</body>
+</html>

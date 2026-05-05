@@ -1,0 +1,110 @@
+{
+  "birdnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Eurasian Wren",
+        "scientific_name": "Troglodytes troglodytes",
+        "score": 0.255
+      }
+    ]
+  },
+  "yamnet": {
+    "bird": [
+      {
+        "rank": 2,
+        "class_name": "Bird",
+        "scientific_name": null,
+        "score": 0.957
+      },
+      {
+        "rank": 4,
+        "class_name": "Bird vocalization, bird call, bird song",
+        "scientific_name": null,
+        "score": 0.8906
+      },
+      {
+        "rank": 5,
+        "class_name": "Chirp, tweet",
+        "scientific_name": null,
+        "score": 0.8008
+      },
+      {
+        "rank": 9,
+        "class_name": "Fowl",
+        "scientific_name": null,
+        "score": 0.0586
+      },
+      {
+        "rank": 10,
+        "class_name": "Crow",
+        "scientific_name": null,
+        "score": 0.043
+      }
+    ],
+    "noise": [
+      {
+        "rank": 11,
+        "class_name": "Rodents, rats, mice",
+        "scientific_name": null,
+        "score": 0.0117
+      },
+      {
+        "rank": 12,
+        "class_name": "Dog",
+        "scientific_name": null,
+        "score": 0.0039
+      },
+      {
+        "rank": 13,
+        "class_name": "Mouse",
+        "scientific_name": null,
+        "score": 0.0039
+      },
+      {
+        "rank": 14,
+        "class_name": "Cat",
+        "scientific_name": null,
+        "score": 0.0039
+      },
+      {
+        "rank": 15,
+        "class_name": "Speech",
+        "scientific_name": null,
+        "score": 0.0039
+      }
+    ],
+    "other": [
+      {
+        "rank": 1,
+        "class_name": "Animal",
+        "scientific_name": null,
+        "score": 0.9688
+      },
+      {
+        "rank": 3,
+        "class_name": "Wild animals",
+        "scientific_name": null,
+        "score": 0.957
+      },
+      {
+        "rank": 6,
+        "class_name": "Silence",
+        "scientific_name": null,
+        "score": 0.668
+      },
+      {
+        "rank": 7,
+        "class_name": "Environmental noise",
+        "scientific_name": null,
+        "score": 0.1484
+      },
+      {
+        "rank": 8,
+        "class_name": "Outside, rural or natural",
+        "scientific_name": null,
+        "score": 0.082
+      }
+    ]
+  }
+}

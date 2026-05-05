@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>window.DEMO_GUARD = { demoId: 'avisonar' };</script>
+  <script src="../assets/js/guard.js"></script>
+
+  <meta charset="UTF-8">
+  <script>const _t=localStorage.getItem("bd-theme");if(_t)document.documentElement.setAttribute("data-theme",_t);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AviSonar — Calls Registry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    main { display: block; max-width: 1400px; margin: 0 auto; padding: 1.5rem 2rem; }
+    .page-title {
+      font-family: var(--font-display); font-size: 1.8rem; color: var(--text);
+      margin-bottom: 0.2rem;
+    }
+    .page-subtitle {
+      font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.5rem;
+    }
+
+    .filter-panel {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+      padding: 1rem 1.25rem; margin-bottom: 1.25rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.9rem 1rem;
+    }
+    .filter-field { display: flex; flex-direction: column; gap: 0.25rem; }
+    .filter-label {
+      font-family: var(--font-mono); font-size: 0.6rem; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .filter-field input, .filter-field select {
+      font-family: var(--font-mono); font-size: 0.75rem;
+      background: var(--surface-2); border: 1px solid var(--border); border-radius: 4px;
+      padding: 0.35rem 0.5rem; color: var(--text);
+    }
+    .filter-field input:focus, .filter-field select:focus { border-color: var(--green); outline: none; }
+    .filter-slider-row { display: flex; align-items: center; gap: 0.5rem; }
+    .filter-slider-row input[type=range] { flex: 1; min-width: 0; }
+    .filter-slider-val {
+      font-family: var(--font-mono); font-size: 0.7rem; color: var(--text);
+      min-width: 2.5rem; text-align: right;
+    }
+    /* Paired min/max range */
+    .filter-range-header {
+      display: flex; justify-content: space-between; align-items: baseline;
+    }
+    .filter-range-val {
+      font-family: var(--font-mono); font-size: 0.7rem; color: var(--text);
+    }
+    .filter-range-sliders {
+      display: flex; flex-direction: column; gap: 0.1rem; margin-top: 0.25rem;
+    }
+    .filter-range-sliders input[type=range] {
+      width: 100%; margin: 0; height: 1.1rem;
+      accent-color: var(--green);
+    }
+    .filter-range-sliders .range-min { accent-color: var(--green); }
+    .filter-range-sliders .range-max { accent-color: var(--amber); }
+    .filter-range-legend {
+      display: flex; justify-content: space-between; margin-top: 0.15rem;
+      font-family: var(--font-mono); font-size: 0.55rem; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .quick-add {
+      display: inline-block; padding: 0 0.3rem; border-radius: 3px;
+      color: var(--red); text-decoration: none; margin-left: 0.25rem;
+      border: 1px solid transparent;
+    }
+    .quick-add:hover { border-color: var(--red); }
+    .filter-checkbox-row {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-family: var(--font-mono); font-size: 0.75rem; color: var(--text);
+    }
+    .filter-actions {
+      grid-column: 1 / -1;
+      display: flex; gap: 0.5rem; justify-content: flex-end;
+      padding-top: 0.4rem; border-top: 1px solid var(--border);
+    }
+    .filter-btn {
+      font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase;
+      letter-spacing: 0.08em; padding: 0.4rem 0.9rem;
+      border: 1px solid var(--border); border-radius: 4px;
+      background: var(--surface-2); color: var(--text); cursor: pointer;
+    }
+    .filter-btn:hover { border-color: var(--green); color: var(--green); }
+    .filter-btn.primary { background: var(--green); border-color: var(--green); color: var(--bg); }
+    .filter-btn.primary:hover { opacity: 0.9; color: var(--bg); }
+
+    .results-meta {
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    table.calls-table {
+      width: 100%; border-collapse: collapse;
+      font-family: var(--font-body); font-size: 0.82rem;
+    }
+    .calls-table th {
+      text-align: left; font-family: var(--font-mono); font-size: 0.65rem;
+      color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em;
+      padding: 0.5rem 0.4rem; border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    .calls-table th.sortable { cursor: pointer; user-select: none; }
+    .calls-table th.sortable:hover { color: var(--text); }
+    .calls-table th.sorted { color: var(--green); }
+    .calls-table td {
+      padding: 0.45rem 0.4rem; border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .calls-table tr:hover { background: var(--surface-2); }
+    .calls-table tr.rejected { opacity: 0.4; text-decoration: line-through; }
+    .calls-table tr.corrected td { background: rgba(210, 153, 34, 0.06); }
+    .cell-time { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; }
+    .cell-species { font-weight: 500; }
+    .cell-sci { font-family: var(--font-body); font-style: italic; color: var(--text-muted); font-size: 0.72rem; }
+    .cell-conf { font-family: var(--font-mono); font-size: 0.75rem; text-align: right; }
+    .cell-conf.hi { color: var(--green); }
+    .cell-conf.mid { color: var(--amber); }
+    .cell-conf.lo { color: var(--red); }
+    .cell-audio audio { width: 140px; height: 24px; }
+    .cell-status { font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; }
+    .status-verified { color: var(--green); }
+    .status-rejected { color: var(--red); }
+    .status-unverified { color: var(--text-muted); }
+    .cell-actions { white-space: nowrap; }
+    .cell-actions a {
+      display: inline-block; padding: 0.15rem 0.4rem;
+      font-family: var(--font-mono); font-size: 0.65rem;
+      color: var(--text-muted); text-decoration: none;
+      border: 1px solid var(--border); border-radius: 3px;
+    }
+    .cell-actions a:hover { color: var(--green); border-color: var(--green); }
+
+    .pagination {
+      display: flex; justify-content: center; gap: 0.3rem; margin-top: 1rem;
+      font-family: var(--font-mono); font-size: 0.7rem;
+    }
+    .page-btn {
+      padding: 0.3rem 0.6rem; border: 1px solid var(--border); border-radius: 3px;
+      background: var(--surface); color: var(--text); cursor: pointer; min-width: 2rem;
+    }
+    .page-btn:hover { border-color: var(--green); color: var(--green); }
+    .page-btn.active { background: var(--green); border-color: var(--green); color: var(--bg); }
+    .page-btn[disabled] { opacity: 0.4; cursor: not-allowed; }
+
+    .empty-state { text-align: center; padding: 3rem 1rem; color: var(--text-muted); font-family: var(--font-mono); }
+
+    /* Batch action bar */
+    .batch-bar {
+      position: fixed; bottom: 1.25rem; left: 50%; transform: translateX(-50%);
+      background: var(--surface); border: 1px solid var(--green); border-radius: 10px;
+      padding: 0.6rem 1rem;
+      display: none; gap: 0.5rem; align-items: center; flex-wrap: wrap;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.45);
+      z-index: 100;
+      font-family: var(--font-mono); font-size: 0.75rem;
+    }
+    .batch-bar.visible { display: inline-flex; }
+    .batch-count { color: var(--green); font-weight: 600; margin-right: 0.4rem; }
+    .batch-btn {
+      font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase;
+      letter-spacing: 0.06em; padding: 0.4rem 0.75rem;
+      border: 1px solid var(--border); border-radius: 4px;
+      background: var(--surface-2); color: var(--text); cursor: pointer;
+    }
+    .batch-btn:hover { border-color: var(--green); color: var(--green); }
+    .batch-btn.danger:hover { border-color: var(--red); color: var(--red); }
+    .batch-btn.clear { color: var(--text-muted); }
+    .batch-select-col { width: 1.8rem; padding-right: 0 !important; text-align: center; }
+    .calls-table tr.selected { background: rgba(63, 185, 80, 0.1); }
+
+    /* Reject-reason popover */
+    .batch-reject-wrap { position: relative; display: inline-block; }
+    .batch-reject-menu {
+      position: absolute; bottom: calc(100% + 0.4rem); left: 50%; transform: translateX(-50%);
+      background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+      padding: 0.3rem; display: flex; flex-direction: column; gap: 0.2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4); white-space: nowrap;
+    }
+    .batch-reject-menu button {
+      font-family: var(--font-mono); font-size: 0.7rem; text-align: left;
+      padding: 0.3rem 0.5rem; border: none; background: none; color: var(--text);
+      cursor: pointer; border-radius: 3px;
+    }
+    .batch-reject-menu button:hover { background: var(--surface-2); color: var(--red); }
+  </style>
+  <link rel="stylesheet" href="./demo-overrides.css">
+  <script src="./data-router.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="logo-icon">&#128013;</span>
+      <span class="logo-text">AviSonar</span>
+      <span class="logo-sub" data-i18n="calls.title">Calls Registry</span>
+    </div>
+    <nav class="header-nav">
+      <a href="/" class="nav-link" data-i18n="nav.dashboard">Dashboard</a>
+      <a href="/calls.html" class="nav-link active" data-i18n="nav.calls">Calls</a>
+      <a href="/label.html" class="nav-link" data-i18n="nav.label">Label</a>
+      <a href="/analytics.html" class="nav-link" data-i18n="nav.analytics">Analytics</a>
+      <a href="/map.html" class="nav-link" data-i18n="nav.map">Map</a>
+      <a href="/settings.html" class="nav-link" data-i18n="nav.settings">Settings</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="page-title" data-i18n="calls.heading">All Calls</h1>
+    <div class="page-subtitle" data-i18n="calls.subheading">Filter, sort, and sift through every detected call.</div>
+
+    <div class="filter-panel" id="filter-panel">
+      <div class="filter-field">
+        <label class="filter-label" data-i18n="calls.filter_species">Species</label>
+        <input type="text" id="f-species" placeholder="e.g. Parakeet">
+      </div>
+      <div class="filter-field">
+        <label class="filter-label" data-i18n="calls.filter_status">Status</label>
+        <select id="f-status">
+          <option value="unverified"><span data-i18n="calls.status_unverified">Unverified</span></option>
+          <option value="verified">Verified</option>
+          <option value="unverified,verified" selected>Unverified + Verified</option>
+          <option value="unverified,verified,rejected">All (incl. rejected)</option>
+          <option value="rejected">Rejected only</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <div class="filter-range-header">
+          <span class="filter-label" data-i18n="calls.filter_confidence">BirdNET confidence</span>
+          <span class="filter-range-val" id="f-conf-val">0% &ndash; 100%</span>
+        </div>
+        <div class="filter-range-sliders">
+          <input type="range" class="range-min" id="f-min-conf" min="0" max="1" step="0.01" value="0">
+          <input type="range" class="range-max" id="f-max-conf" min="0" max="1" step="0.01" value="1">
+        </div>
+        <div class="filter-range-legend"><span>min</span><span>max</span></div>
+      </div>
+      <div class="filter-field">
+        <div class="filter-range-header">
+          <span class="filter-label" data-i18n="calls.filter_yam_noise">YAMNet noise</span>
+          <span class="filter-range-val" id="f-yam-noise-val">0% &ndash; 100%</span>
+        </div>
+        <div class="filter-range-sliders">
+          <input type="range" class="range-min" id="f-min-yam-noise" min="0" max="1" step="0.01" value="0">
+          <input type="range" class="range-max" id="f-max-yam-noise" min="0" max="1" step="0.01" value="1">
+        </div>
+        <div class="filter-range-legend"><span>min</span><span>max</span></div>
+      </div>
+      <div class="filter-field">
+        <div class="filter-range-header">
+          <span class="filter-label" data-i18n="calls.filter_yam_bird">YAMNet bird</span>
+          <span class="filter-range-val" id="f-yam-bird-val">0% &ndash; 100%</span>
+        </div>
+        <div class="filter-range-sliders">
+          <input type="range" class="range-min" id="f-min-yam-bird" min="0" max="1" step="0.01" value="0">
+          <input type="range" class="range-max" id="f-max-yam-bird" min="0" max="1" step="0.01" value="1">
+        </div>
+        <div class="filter-range-legend"><span>min</span><span>max</span></div>
+      </div>
+      <div class="filter-field" style="grid-column: span 2;">
+        <label class="filter-label" data-i18n="calls.filter_yam_exclude">Exclude YAMNet classes (comma-sep)</label>
+        <input type="text" id="f-yam-exclude" list="yam-class-list" placeholder="Speech, Music, Engine">
+        <div class="filter-range-legend">
+          <span data-i18n="calls.yam_quick_add">Quick add:</span>
+          <span>
+            <a href="#" class="quick-add" data-cls="Speech">Speech</a>
+            <a href="#" class="quick-add" data-cls="Music">Music</a>
+            <a href="#" class="quick-add" data-cls="Vehicle">Vehicle</a>
+            <a href="#" class="quick-add" data-cls="Engine">Engine</a>
+            <a href="#" class="quick-add" data-cls="Dog">Dog</a>
+          </span>
+        </div>
+      </div>
+      <div class="filter-field" style="grid-column: span 2;">
+        <label class="filter-label" data-i18n="calls.filter_yam_include">Include YAMNet classes (comma-sep)</label>
+        <input type="text" id="f-yam-include" list="yam-class-list" placeholder="Pigeon, dove">
+      </div>
+      <datalist id="yam-class-list"></datalist>
+      <div class="filter-field">
+        <label class="filter-label" data-i18n="calls.filter_from">From date</label>
+        <input type="date" id="f-from">
+      </div>
+      <div class="filter-field">
+        <label class="filter-label" data-i18n="calls.filter_to">To date</label>
+        <input type="date" id="f-to">
+      </div>
+      <div class="filter-field">
+        <label class="filter-label" data-i18n="calls.filter_extras">Extras</label>
+        <label class="filter-checkbox-row">
+          <input type="checkbox" id="f-corrected-only">
+          <span data-i18n="calls.corrected_only">Corrected only</span>
+        </label>
+        <label class="filter-checkbox-row">
+          <input type="checkbox" id="f-has-yamnet">
+          <span data-i18n="calls.has_yamnet">Has YAMNet score</span>
+        </label>
+      </div>
+
+      <div class="filter-actions">
+        <button class="filter-btn" id="btn-reset" data-i18n="calls.reset">Reset</button>
+        <button class="filter-btn primary" id="btn-apply" data-i18n="calls.apply">Apply</button>
+      </div>
+    </div>
+
+    <div class="results-meta">
+      <span id="results-count">&mdash;</span>
+      <span>
+        <button class="filter-btn" id="btn-label-session" title="Start keyboard-driven labelling from the top of this filter">
+          <span data-i18n="label.start_session">Start labelling session</span> &rarr;
+        </button>
+        <span id="results-pagination-info">&mdash;</span>
+      </span>
+    </div>
+
+    <table class="calls-table">
+      <thead>
+        <tr>
+          <th class="batch-select-col"><input type="checkbox" id="select-page" title="Select all on this page"></th>
+          <th class="sortable" data-sort="time"><span data-i18n="calls.col_time">Time</span> <span class="sort-arrow"></span></th>
+          <th class="sortable" data-sort="species"><span data-i18n="calls.col_species">Species</span></th>
+          <th class="sortable" data-sort="confidence" style="text-align:right;"><span data-i18n="calls.col_confidence">Conf</span></th>
+          <th><span data-i18n="yamnet.kind_bird">Bird</span> <span style="color:var(--text-muted);font-size:0.55rem;">(YAMNet)</span></th>
+          <th class="sortable" data-sort="yam_noise"><span data-i18n="yamnet.kind_noise">Noise</span> <span style="color:var(--text-muted);font-size:0.55rem;">(YAMNet)</span></th>
+          <th><span data-i18n="calls.col_audio">Audio</span></th>
+          <th><span data-i18n="calls.col_status">Status</span></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="calls-body">
+        <tr><td colspan="9" class="empty-state" data-i18n="calls.loading">Loading...</td></tr>
+      </tbody>
+    </table>
+
+    <div class="pagination" id="pagination"></div>
+
+    <!-- Floating batch-action bar -->
+    <div class="batch-bar" id="batch-bar">
+      <span class="batch-count"><span id="batch-count">0</span> <span data-i18n="batch.selected">selected</span></span>
+      <button class="batch-btn" id="batch-verify" data-i18n="action.verify">Verify</button>
+      <div class="batch-reject-wrap">
+        <button class="batch-btn danger" id="batch-reject" data-i18n="action.reject">Reject</button>
+        <div class="batch-reject-menu" id="batch-reject-menu" style="display:none;"></div>
+      </div>
+      <button class="batch-btn" id="batch-correct" data-i18n="batch.correct_species">Correct species</button>
+      <button class="batch-btn" id="batch-unverify" data-i18n="batch.unverify">Unverify</button>
+      <button class="batch-btn danger" id="batch-delete" data-i18n="batch.delete">Delete</button>
+      <button class="batch-btn clear" id="batch-clear" data-i18n="batch.clear">Clear</button>
+    </div>
+  </main>
+
+  <script src="i18n.js"></script>
+  <script>
+    const state = {
+      page: 0, limit: 50, sort: "time_desc",
+    };
+
+    // --- Selection state (persists across pagination) ---
+    const selection = new Set();  // call_id numbers
+    let lastClickedCallId = null; // for shift-click range selection
+
+    // Rejection reason categories — same four as the call-actions.js pattern.
+    const REJECT_REASONS = [
+      { key: 'wrong_species', label: 'Wrong species', icon: '?' },
+      { key: 'urban_noise', label: 'Urban noise', icon: '\uD83D\uDE97' },
+      { key: 'low_quality', label: 'Low quality', icon: '\uD83D\uDD07' },
+      { key: 'other', label: 'Other', icon: '\u270E' },
+    ];
+
+    function updateBatchBar() {
+      const bar = document.getElementById('batch-bar');
+      const count = selection.size;
+      document.getElementById('batch-count').textContent = count;
+      bar.classList.toggle('visible', count > 0);
+    }
+
+    function updatePageCheckboxState() {
+      // Sync the header checkbox: checked if every row on-page is selected,
+      // indeterminate if some, unchecked if none.
+      const boxes = document.querySelectorAll('.row-check');
+      const all = [...boxes];
+      const head = document.getElementById('select-page');
+      if (!all.length) { head.checked = false; head.indeterminate = false; return; }
+      const checked = all.filter(b => b.checked).length;
+      head.checked = checked === all.length;
+      head.indeterminate = checked > 0 && checked < all.length;
+    }
+
+    function wireRowCheckboxes() {
+      document.querySelectorAll('.row-check').forEach(cb => {
+        cb.addEventListener('click', (e) => {
+          const id = parseInt(cb.dataset.callId, 10);
+          // Shift-click: range-select between last click and this one
+          if (e.shiftKey && lastClickedCallId !== null) {
+            const ids = [...document.querySelectorAll('.row-check')].map(b => parseInt(b.dataset.callId, 10));
+            const a = ids.indexOf(lastClickedCallId);
+            const b = ids.indexOf(id);
+            if (a >= 0 && b >= 0) {
+              const [lo, hi] = a < b ? [a, b] : [b, a];
+              const setChecked = cb.checked;
+              ids.slice(lo, hi + 1).forEach(cid => {
+                if (setChecked) selection.add(cid); else selection.delete(cid);
+              });
+              document.querySelectorAll('.row-check').forEach(b2 => {
+                const cid = parseInt(b2.dataset.callId, 10);
+                b2.checked = selection.has(cid);
+                b2.closest('tr').classList.toggle('selected', b2.checked);
+              });
+            }
+          } else {
+            if (cb.checked) selection.add(id); else selection.delete(id);
+            cb.closest('tr').classList.toggle('selected', cb.checked);
+          }
+          lastClickedCallId = id;
+          updateBatchBar();
+          updatePageCheckboxState();
+        });
+      });
+    }
+
+    // Paired min/max sliders: {minId, maxId, valueId, minParam, maxParam}
+    const RANGES = [
+      { minId: 'f-min-conf', maxId: 'f-max-conf', valueId: 'f-conf-val',
+        minParam: 'min_confidence', maxParam: 'max_confidence' },
+      { minId: 'f-min-yam-noise', maxId: 'f-max-yam-noise', valueId: 'f-yam-noise-val',
+        minParam: 'min_yam_noise', maxParam: 'max_yam_noise' },
+      { minId: 'f-min-yam-bird', maxId: 'f-max-yam-bird', valueId: 'f-yam-bird-val',
+        minParam: 'min_yam_bird', maxParam: 'max_yam_bird' },
+    ];
+
+    function readFilters() {
+      const f = {};
+      const sp = document.getElementById('f-species').value.trim();
+      if (sp) f.species = sp;
+      f.status = document.getElementById('f-status').value || "unverified,verified";
+
+      for (const r of RANGES) {
+        const lo = parseFloat(document.getElementById(r.minId).value);
+        const hi = parseFloat(document.getElementById(r.maxId).value);
+        if (lo > 0) f[r.minParam] = lo;
+        if (hi < 1) f[r.maxParam] = hi;
+      }
+
+      const fd = document.getElementById('f-from').value;
+      if (fd) f.from_date = fd;
+      const td = document.getElementById('f-to').value;
+      if (td) f.to_date = td;
+      if (document.getElementById('f-corrected-only').checked) f.corrected_only = true;
+      if (document.getElementById('f-has-yamnet').checked) f.has_yamnet = true;
+
+      const inc = document.getElementById('f-yam-include').value.trim();
+      if (inc) f.yam_classes_include = inc;
+      const exc = document.getElementById('f-yam-exclude').value.trim();
+      if (exc) f.yam_classes_exclude = exc;
+
+      return f;
+    }
+
+    // Populate the YAMNet class datalist from the static taxonomy, and wire quick-add shortcuts.
+    async function loadYamTaxonomy() {
+      try {
+        const res = await fetch('/data/yamnet_taxonomy.json');
+        if (!res.ok) return;
+        const tax = await res.json();
+        const dl = document.getElementById('yam-class-list');
+        // Sort: noise first (most useful for sifting), then bird, then other
+        const order = { noise: 0, bird: 1, other: 2 };
+        tax.sort((a, b) => (order[a.class_kind] ?? 9) - (order[b.class_kind] ?? 9) ||
+                           a.class_name.localeCompare(b.class_name));
+        dl.innerHTML = tax.map(t =>
+          `<option value="${t.class_name}">(${t.class_kind}) ${t.class_name}</option>`
+        ).join('');
+      } catch {}
+    }
+    loadYamTaxonomy();
+
+    // Quick-add chips: append class to exclude input
+    document.querySelectorAll('.quick-add').forEach(a => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const cls = a.dataset.cls;
+        const inp = document.getElementById('f-yam-exclude');
+        const cur = inp.value.split(',').map(s => s.trim()).filter(Boolean);
+        if (!cur.includes(cls)) cur.push(cls);
+        inp.value = cur.join(', ');
+      });
+    });
+
+    function confClass(c) {
+      const pct = c * 100;
+      if (pct >= 85) return 'hi';
+      if (pct >= 70) return 'mid';
+      return 'lo';
+    }
+
+    function renderRow(c) {
+      const ts = c.timestamp ? c.timestamp.replace('T', ' ').slice(0, 16) : '';
+      const sci = c.corrected_scientific_name || c.scientific_name;
+      const common = c.corrected_common_name || c.common_name;
+      const correctionBadge = c.corrected_common_name
+        ? `<span class="call-correction" title="${t('species.correction_hint') !== 'species.correction_hint' ? t('species.correction_hint') : 'Reviewer label'}">\u270E ${c.corrected_common_name}</span>`
+        : '';
+      const conf = Math.round(c.confidence * 100);
+      const birdChip = c.yamnet && c.yamnet.top_bird
+        ? `<span class="yam-chip yam-chip-bird">${c.yamnet.top_bird.class_name} ${(c.yamnet.top_bird.score*100).toFixed(0)}%</span>` : '<span style="color:var(--text-muted);font-size:0.6rem;">\u2014</span>';
+      const noiseChip = c.yamnet && c.yamnet.top_noise
+        ? `<span class="yam-chip yam-chip-noise">${c.yamnet.top_noise.class_name} ${(c.yamnet.top_noise.score*100).toFixed(0)}%</span>` : '<span style="color:var(--text-muted);font-size:0.6rem;">\u2014</span>';
+      const audio = c.audio_file
+        ? `<audio controls preload="none" src="/audio/${encodeURIComponent(c.audio_file)}"></audio>`
+        : '<span style="color:var(--text-muted);font-size:0.65rem;">\u2014</span>';
+      const statusCls = `status-${c.status}`;
+      const selected = selection.has(c.id);
+      const rowCls = [c.status === 'rejected' ? 'rejected' : '', c.corrected_common_name ? 'corrected' : '', selected ? 'selected' : ''].filter(Boolean).join(' ');
+      const compareUrl = c.audio_file
+        ? `compare.html?file=${encodeURIComponent(c.audio_file)}&species=${encodeURIComponent(sci)}&common_name=${encodeURIComponent(common)}&call_id=${c.id}&confidence=${c.confidence}`
+        : '';
+      return `<tr class="${rowCls}" data-call-id="${c.id}">
+        <td class="batch-select-col"><input type="checkbox" class="row-check" data-call-id="${c.id}" ${selected ? 'checked' : ''}></td>
+        <td class="cell-time">${ts}</td>
+        <td class="cell-species">
+          <div>${common}</div>
+          <div class="cell-sci">${sci}</div>
+          ${correctionBadge}
+        </td>
+        <td class="cell-conf ${confClass(c.confidence)}">${conf}%</td>
+        <td>${birdChip}</td>
+        <td>${noiseChip}</td>
+        <td class="cell-audio">${audio}</td>
+        <td class="cell-status ${statusCls}">${c.status}</td>
+        <td class="cell-actions">
+          ${compareUrl ? `<a href="${compareUrl}" title="${t('compare.title') !== 'compare.title' ? t('compare.title') : 'Analyse'}">&#128269;</a>` : ''}
+        </td>
+      </tr>`;
+    }
+
+    async function loadCalls() {
+      const f = readFilters();
+      const q = new URLSearchParams();
+      for (const [k, v] of Object.entries(f)) q.set(k, v);
+      q.set('limit', state.limit);
+      q.set('offset', state.page * state.limit);
+      q.set('sort', state.sort);
+      document.getElementById('calls-body').innerHTML = `<tr><td colspan="9" class="empty-state">${t('calls.loading') !== 'calls.loading' ? t('calls.loading') : 'Loading...'}</td></tr>`;
+      const res = await fetch('/api/calls?' + q.toString());
+      if (!res.ok) {
+        document.getElementById('calls-body').innerHTML = `<tr><td colspan="9" class="empty-state" style="color:var(--red);">Error ${res.status}</td></tr>`;
+        return;
+      }
+      const data = await res.json();
+      document.getElementById('results-count').textContent =
+        `${data.total.toLocaleString()} ${t('calls.total') !== 'calls.total' ? t('calls.total') : 'matching calls'}`;
+      const from = state.page * state.limit + 1;
+      const to = Math.min((state.page + 1) * state.limit, data.total);
+      document.getElementById('results-pagination-info').textContent = data.total
+        ? `${from}\u2013${to} / ${data.total}` : '\u2014';
+
+      if (!data.calls.length) {
+        document.getElementById('calls-body').innerHTML =
+          `<tr><td colspan="9" class="empty-state">${t('calls.empty') !== 'calls.empty' ? t('calls.empty') : 'No calls match these filters.'}</td></tr>`;
+      } else {
+        document.getElementById('calls-body').innerHTML = data.calls.map(renderRow).join('');
+      }
+      renderPagination(data.total);
+      updateSortIndicators();
+      wireRowCheckboxes();
+      updatePageCheckboxState();
+      updateBatchBar();
+    }
+
+    // --- Select-all-on-page header checkbox ---
+    document.getElementById('select-page').addEventListener('click', (e) => {
+      const check = e.target.checked;
+      document.querySelectorAll('.row-check').forEach(cb => {
+        const id = parseInt(cb.dataset.callId, 10);
+        cb.checked = check;
+        if (check) selection.add(id); else selection.delete(id);
+        cb.closest('tr').classList.toggle('selected', check);
+      });
+      updateBatchBar();
+    });
+
+    // --- Batch actions ---
+    async function postBulk(body) {
+      const res = await fetch('/api/calls/bulk-update', {
+        method: 'POST', headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(body),
+      });
+      if (!res.ok) { alert('Bulk update failed'); return null; }
+      return res.json();
+    }
+
+    function clearSelection() {
+      selection.clear();
+      document.querySelectorAll('.row-check').forEach(cb => { cb.checked = false; cb.closest('tr').classList.remove('selected'); });
+      updateBatchBar();
+      updatePageCheckboxState();
+    }
+
+    async function confirmIfLarge(n) {
+      if (n <= 5) return true;
+      return confirm(`Apply to ${n} calls?`);
+    }
+
+    document.getElementById('batch-clear').addEventListener('click', clearSelection);
+
+    document.getElementById('batch-verify').addEventListener('click', async () => {
+      const ids = [...selection];
+      if (!ids.length || !(await confirmIfLarge(ids.length))) return;
+      await postBulk({ call_ids: ids, status: 'verified' });
+      clearSelection();
+      loadCalls();
+    });
+
+    document.getElementById('batch-unverify').addEventListener('click', async () => {
+      const ids = [...selection];
+      if (!ids.length || !(await confirmIfLarge(ids.length))) return;
+      await postBulk({ call_ids: ids, status: 'unverified' });
+      clearSelection();
+      loadCalls();
+    });
+
+    // Reject menu: show the four reasons, then commit
+    document.getElementById('batch-reject').addEventListener('click', (e) => {
+      e.stopPropagation();
+      const menu = document.getElementById('batch-reject-menu');
+      if (menu.style.display === 'flex') { menu.style.display = 'none'; return; }
+      menu.innerHTML = REJECT_REASONS.map(r =>
+        `<button type="button" data-reason="${r.key}">${r.icon} ${r.label}</button>`
+      ).join('');
+      menu.style.display = 'flex';
+      menu.querySelectorAll('button').forEach(b => {
+        b.addEventListener('click', async (ev) => {
+          ev.stopPropagation();
+          const reason = b.dataset.reason;
+          const ids = [...selection];
+          menu.style.display = 'none';
+          if (!ids.length || !(await confirmIfLarge(ids.length))) return;
+          await postBulk({ call_ids: ids, status: 'rejected', rejection_reason: reason });
+          clearSelection();
+          loadCalls();
+        });
+      });
+    });
+    // Click-away to close
+    document.addEventListener('click', () => {
+      document.getElementById('batch-reject-menu').style.display = 'none';
+    });
+
+    // Hard delete — two-step confirmation since audio files are wiped for good.
+    document.getElementById('batch-delete').addEventListener('click', async () => {
+      const ids = [...selection];
+      if (!ids.length) return;
+      const msg = `Permanently delete ${ids.length} call${ids.length > 1 ? 's' : ''}? ` +
+                  `This removes the DB rows AND the audio files from disk. Cannot be undone.`;
+      if (!confirm(msg)) return;
+      const res = await fetch('/api/calls/bulk-delete', {
+        method: 'POST', headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ call_ids: ids }),
+      });
+      if (!res.ok) { alert('Delete failed'); return; }
+      const data = await res.json();
+      clearSelection();
+      loadCalls();
+    });
+
+    document.getElementById('batch-correct').addEventListener('click', async () => {
+      const ids = [...selection];
+      if (!ids.length) return;
+      const input = prompt('Correct species — paste BirdNET slist entry (Scientific_Common):\n\nExample: Amazona vinacea_Vinaceous Parrot');
+      if (!input) return;
+      const parts = input.split('_');
+      if (parts.length !== 2) { alert('Expected format: Scientific name_Common Name'); return; }
+      const sci = parts[0].trim(), common = parts[1].trim();
+      if (!(await confirmIfLarge(ids.length))) return;
+      await postBulk({
+        call_ids: ids,
+        status: 'verified',
+        corrected_scientific_name: sci,
+        corrected_common_name: common,
+      });
+      clearSelection();
+      loadCalls();
+    });
+
+    function renderPagination(total) {
+      const totalPages = Math.ceil(total / state.limit);
+      const pag = document.getElementById('pagination');
+      if (totalPages <= 1) { pag.innerHTML = ''; return; }
+      const cur = state.page;
+      const pages = [];
+      const push = (p, label = null, disabled = false, active = false) => {
+        pages.push(`<button class="page-btn ${active ? 'active' : ''}" ${disabled ? 'disabled' : ''} data-page="${p}">${label ?? p + 1}</button>`);
+      };
+      push(cur - 1, '\u2190', cur === 0);
+      const show = new Set([0, totalPages - 1, cur - 1, cur, cur + 1]);
+      let last = -2;
+      for (let i = 0; i < totalPages; i++) {
+        if (!show.has(i)) continue;
+        if (i - last > 1) pages.push('<span style="padding:0 0.3rem;color:var(--text-muted);">\u2026</span>');
+        push(i, null, false, i === cur);
+        last = i;
+      }
+      push(cur + 1, '\u2192', cur >= totalPages - 1);
+      pag.innerHTML = pages.join('');
+      pag.querySelectorAll('button.page-btn[data-page]').forEach(b => {
+        b.addEventListener('click', () => {
+          const p = parseInt(b.dataset.page, 10);
+          if (!isNaN(p) && p !== state.page) { state.page = p; loadCalls(); }
+        });
+      });
+    }
+
+    function updateSortIndicators() {
+      document.querySelectorAll('th.sortable').forEach(th => {
+        const base = th.dataset.sort;
+        th.classList.remove('sorted');
+        const arrow = th.querySelector('.sort-arrow') || th;
+        if (arrow !== th) arrow.textContent = '';
+        if (state.sort.startsWith(base)) {
+          th.classList.add('sorted');
+          if (arrow !== th) arrow.textContent = state.sort.endsWith('asc') ? ' \u2191' : ' \u2193';
+        }
+      });
+    }
+
+    document.querySelectorAll('th.sortable').forEach(th => {
+      th.addEventListener('click', () => {
+        const base = th.dataset.sort;
+        // Toggle asc/desc if already sorting by this; default to desc for time/confidence/noise, asc for species
+        const defaultDir = base === 'species' ? 'asc' : 'desc';
+        let next;
+        if (state.sort === `${base}_${defaultDir}`) {
+          next = `${base}_${defaultDir === 'asc' ? 'desc' : 'asc'}`;
+        } else {
+          next = `${base}_${defaultDir}`;
+        }
+        state.sort = next;
+        state.page = 0;
+        loadCalls();
+      });
+    });
+
+    // Wire each paired-range so the min can't pass the max (and vice-versa)
+    // and the combined value label updates live.
+    for (const r of RANGES) {
+      const minEl = document.getElementById(r.minId);
+      const maxEl = document.getElementById(r.maxId);
+      const valEl = document.getElementById(r.valueId);
+      const update = () => {
+        let lo = parseFloat(minEl.value);
+        let hi = parseFloat(maxEl.value);
+        if (lo > hi) {
+          // Push the other handle to match so the range is never inverted
+          if (document.activeElement === minEl) { maxEl.value = lo; hi = lo; }
+          else { minEl.value = hi; lo = hi; }
+        }
+        valEl.textContent = `${Math.round(lo * 100)}% \u2013 ${Math.round(hi * 100)}%`;
+      };
+      minEl.addEventListener('input', update);
+      maxEl.addEventListener('input', update);
+      update();
+    }
+
+    document.getElementById('btn-apply').addEventListener('click', () => { state.page = 0; loadCalls(); });
+
+    // Kick off a keyboard labelling session starting with the first unverified call
+    // in the current view. If the first row isn't unverified, find the first that is.
+    document.getElementById('btn-label-session').addEventListener('click', async () => {
+      const f = readFilters();
+      // Force status=unverified for the session
+      f.status = 'unverified';
+      const q = new URLSearchParams();
+      for (const [k, v] of Object.entries(f)) q.set(k, v);
+      q.set('limit', 1);
+      q.set('offset', 0);
+      q.set('sort', state.sort);
+      const res = await fetch('/api/calls?' + q.toString());
+      if (!res.ok) return;
+      const data = await res.json();
+      if (!data.calls.length) { alert('No unverified calls in this filter.'); return; }
+      const c = data.calls[0];
+      const scope = f.species ? 'species' : '';
+      const url = new URL('/compare.html', window.location.origin);
+      if (c.audio_file) url.searchParams.set('file', c.audio_file);
+      url.searchParams.set('species', c.scientific_name || '');
+      url.searchParams.set('common_name', c.common_name || '');
+      url.searchParams.set('call_id', c.id);
+      url.searchParams.set('confidence', c.confidence);
+      url.searchParams.set('encounter_id', c.encounter_id);
+      url.searchParams.set('flow', '1');
+      if (scope) url.searchParams.set('flow_scope', scope);
+      window.location.href = url.toString();
+    });
+    document.getElementById('btn-reset').addEventListener('click', () => {
+      document.getElementById('f-species').value = '';
+      document.getElementById('f-status').value = 'unverified,verified';
+      for (const r of RANGES) {
+        document.getElementById(r.minId).value = 0;
+        document.getElementById(r.maxId).value = 1;
+        document.getElementById(r.valueId).textContent = '0% \u2013 100%';
+      }
+      document.getElementById('f-from').value = '';
+      document.getElementById('f-to').value = '';
+      document.getElementById('f-corrected-only').checked = false;
+      document.getElementById('f-has-yamnet').checked = false;
+      document.getElementById('f-yam-include').value = '';
+      document.getElementById('f-yam-exclude').value = '';
+      state.page = 0; state.sort = 'time_desc';
+      loadCalls();
+    });
+
+    // Enter key in species field = apply
+    document.getElementById('f-species').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { state.page = 0; loadCalls(); }
+    });
+
+    loadCalls();
+  </script>
+</body>
+</html>

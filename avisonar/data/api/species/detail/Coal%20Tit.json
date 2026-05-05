@@ -1,0 +1,92 @@
+{
+  "summary": {
+    "common_name": "Coal Tit",
+    "scientific_name": "Periparus ater",
+    "encounter_count": 2,
+    "total_calls": 2,
+    "total_verified": 0,
+    "max_confidence": 0.5971,
+    "first_seen": "2026-04-30 08:17:32",
+    "last_seen": "2026-05-04 09:35:59",
+    "avg_confidence": 0.506,
+    "avg_calls_per_encounter": 1.0,
+    "peak_hour": 9,
+    "unverified_count": 2
+  },
+  "encounters": [
+    {
+      "id": 93,
+      "common_name": "Coal Tit",
+      "scientific_name": "Periparus ater",
+      "started_at": "2026-05-04 09:35:59",
+      "ended_at": "2026-05-04 09:35:59",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.4151,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 114,
+          "timestamp": "2026-05-04 09:35:59",
+          "confidence": 0.4151,
+          "audio_file": "chunk_20260504_093559_6.0_9.0.wav",
+          "status": "unverified",
+          "start_s": 6.0,
+          "end_s": 9.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.9414
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.043
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 30,
+      "common_name": "Coal Tit",
+      "scientific_name": "Periparus ater",
+      "started_at": "2026-04-30 08:17:32",
+      "ended_at": "2026-04-30 08:17:32",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.5971,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 36,
+          "timestamp": "2026-04-30 08:17:32",
+          "confidence": 0.5971,
+          "audio_file": "chunk_20260430_081732_6.0_9.0.wav",
+          "status": "unverified",
+          "start_s": 6.0,
+          "end_s": 9.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.668
+            },
+            "top_noise": {
+              "class_name": "Beep, bleep",
+              "score": 0.332
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

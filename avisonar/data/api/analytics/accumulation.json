@@ -1,0 +1,266 @@
+[
+  {
+    "date": "2026-04-29 05:03:35",
+    "species": "Common Redstart",
+    "cumulative": 1,
+    "label": "2026-04-29"
+  },
+  {
+    "date": "2026-04-29 05:03:35",
+    "species": "European Robin",
+    "cumulative": 2,
+    "label": "2026-04-29"
+  },
+  {
+    "date": "2026-04-29 07:15:30",
+    "species": "House Sparrow",
+    "cumulative": 3,
+    "label": "2026-04-29"
+  },
+  {
+    "date": "2026-04-29 08:00:36",
+    "species": "Black Redstart",
+    "cumulative": 4,
+    "label": "2026-04-29"
+  },
+  {
+    "date": "2026-04-29 08:00:36",
+    "species": "European Goldfinch",
+    "cumulative": 5,
+    "label": "2026-04-29"
+  },
+  {
+    "date": "2026-04-29 08:00:36",
+    "species": "Long-tailed Tit",
+    "cumulative": 6,
+    "label": "2026-04-29"
+  },
+  {
+    "date": "2026-04-29 10:40:49",
+    "species": "Common Buzzard",
+    "cumulative": 7,
+    "label": "2026-04-29"
+  },
+  {
+    "date": "2026-04-29 10:40:49",
+    "species": "Eurasian Curlew",
+    "cumulative": 8,
+    "label": "2026-04-29"
+  },
+  {
+    "date": "2026-04-29 10:40:49",
+    "species": "Northern Lapwing",
+    "cumulative": 9,
+    "label": "2026-04-29"
+  },
+  {
+    "date": "2026-04-29 16:45:38",
+    "species": "Common Firecrest",
+    "cumulative": 10,
+    "label": "2026-04-29"
+  },
+  {
+    "date": "2026-04-29 16:45:38",
+    "species": "Dunnock",
+    "cumulative": 11,
+    "label": "2026-04-29"
+  },
+  {
+    "date": "2026-04-29 16:45:38",
+    "species": "Eurasian Blue Tit",
+    "cumulative": 12,
+    "label": "2026-04-29"
+  },
+  {
+    "date": "2026-04-29 16:45:38",
+    "species": "Goldcrest",
+    "cumulative": 13,
+    "label": "2026-04-29"
+  },
+  {
+    "date": "2026-04-29 16:45:38",
+    "species": "Greater Whitethroat",
+    "cumulative": 14,
+    "label": "2026-04-29"
+  },
+  {
+    "date": "2026-04-29 17:38:54",
+    "species": "Eurasian Treecreeper",
+    "cumulative": 15,
+    "label": "2026-04-29"
+  },
+  {
+    "date": "2026-04-29 17:38:54",
+    "species": "Song Thrush",
+    "cumulative": 16,
+    "label": "2026-04-29"
+  },
+  {
+    "date": "2026-04-29 18:20:30",
+    "species": "Eurasian Blackcap",
+    "cumulative": 17,
+    "label": "2026-04-29"
+  },
+  {
+    "date": "2026-04-30 07:10:13",
+    "species": "Herring Gull",
+    "cumulative": 18,
+    "label": "2026-04-30"
+  },
+  {
+    "date": "2026-04-30 08:17:32",
+    "species": "Coal Tit",
+    "cumulative": 19,
+    "label": "2026-04-30"
+  },
+  {
+    "date": "2026-04-30 08:17:32",
+    "species": "Common Wood-Pigeon",
+    "cumulative": 20,
+    "label": "2026-04-30"
+  },
+  {
+    "date": "2026-04-30 08:17:32",
+    "species": "Eurasian Collared-Dove",
+    "cumulative": 21,
+    "label": "2026-04-30"
+  },
+  {
+    "date": "2026-04-30 08:17:32",
+    "species": "Great Tit",
+    "cumulative": 22,
+    "label": "2026-04-30"
+  },
+  {
+    "date": "2026-04-30 10:16:15",
+    "species": "Common Chaffinch",
+    "cumulative": 23,
+    "label": "2026-04-30"
+  },
+  {
+    "date": "2026-04-30 10:16:15",
+    "species": "Spotted Flycatcher",
+    "cumulative": 24,
+    "label": "2026-04-30"
+  },
+  {
+    "date": "2026-05-01 07:56:09",
+    "species": "Black Woodpecker",
+    "cumulative": 25,
+    "label": "2026-05-01"
+  },
+  {
+    "date": "2026-05-01 07:56:09",
+    "species": "Eurasian Blackbird",
+    "cumulative": 26,
+    "label": "2026-05-01"
+  },
+  {
+    "date": "2026-05-01 08:44:23",
+    "species": "Barn Swallow",
+    "cumulative": 27,
+    "label": "2026-05-01"
+  },
+  {
+    "date": "2026-05-01 09:34:14",
+    "species": "Willow Warbler",
+    "cumulative": 28,
+    "label": "2026-05-01"
+  },
+  {
+    "date": "2026-05-02 05:22:56",
+    "species": "Yellowhammer",
+    "cumulative": 29,
+    "label": "2026-05-02"
+  },
+  {
+    "date": "2026-05-02 08:54:37",
+    "species": "European Greenfinch",
+    "cumulative": 30,
+    "label": "2026-05-02"
+  },
+  {
+    "date": "2026-05-03 00:50:03",
+    "species": "Gray Heron",
+    "cumulative": 31,
+    "label": "2026-05-03"
+  },
+  {
+    "date": "2026-05-03 05:01:46",
+    "species": "Hawfinch",
+    "cumulative": 32,
+    "label": "2026-05-03"
+  },
+  {
+    "date": "2026-05-03 05:48:19",
+    "species": "Green-winged Teal",
+    "cumulative": 33,
+    "label": "2026-05-03"
+  },
+  {
+    "date": "2026-05-03 17:17:19",
+    "species": "Mistle Thrush",
+    "cumulative": 34,
+    "label": "2026-05-03"
+  },
+  {
+    "date": "2026-05-04 09:17:30",
+    "species": "Eurasian Moorhen",
+    "cumulative": 35,
+    "label": "2026-05-04"
+  },
+  {
+    "date": "2026-05-04 09:35:59",
+    "species": "Short-toed Treecreeper",
+    "cumulative": 36,
+    "label": "2026-05-04"
+  },
+  {
+    "date": "2026-05-04 10:28:40",
+    "species": "Gadwall",
+    "cumulative": 37,
+    "label": "2026-05-04"
+  },
+  {
+    "date": "2026-05-04 18:27:53",
+    "species": "Eurasian Jackdaw",
+    "cumulative": 38,
+    "label": "2026-05-04"
+  },
+  {
+    "date": "2026-05-04 18:37:30",
+    "species": "Eurasian Tree Sparrow",
+    "cumulative": 39,
+    "label": "2026-05-04"
+  },
+  {
+    "date": "2026-05-04 18:37:30",
+    "species": "European Serin",
+    "cumulative": 40,
+    "label": "2026-05-04"
+  },
+  {
+    "date": "2026-05-04 18:41:36",
+    "species": "Eurasian Oystercatcher",
+    "cumulative": 41,
+    "label": "2026-05-04"
+  },
+  {
+    "date": "2026-05-05 05:07:33",
+    "species": "Crested Tit",
+    "cumulative": 42,
+    "label": "2026-05-05"
+  },
+  {
+    "date": "2026-05-05 08:21:29",
+    "species": "Garden Warbler",
+    "cumulative": 43,
+    "label": "2026-05-05"
+  },
+  {
+    "date": "2026-05-05 09:19:12",
+    "species": "Eurasian Siskin",
+    "cumulative": 44,
+    "label": "2026-05-05"
+  }
+]

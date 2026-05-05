@@ -1,0 +1,129 @@
+{
+  "summary": {
+    "common_name": "European Greenfinch",
+    "scientific_name": "Chloris chloris",
+    "encounter_count": 3,
+    "total_calls": 3,
+    "total_verified": 0,
+    "max_confidence": 0.8266,
+    "first_seen": "2026-05-02 08:54:37",
+    "last_seen": "2026-05-04 10:28:40",
+    "avg_confidence": 0.699,
+    "avg_calls_per_encounter": 1.0,
+    "peak_hour": 17,
+    "unverified_count": 3
+  },
+  "encounters": [
+    {
+      "id": 96,
+      "common_name": "European Greenfinch",
+      "scientific_name": "Chloris chloris",
+      "started_at": "2026-05-04 10:28:40",
+      "ended_at": "2026-05-04 10:28:40",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.4894,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 117,
+          "timestamp": "2026-05-04 10:28:40",
+          "confidence": 0.4894,
+          "audio_file": "chunk_20260504_102840_0.0_3.0.wav",
+          "status": "unverified",
+          "start_s": 0.0,
+          "end_s": 3.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.1484
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.082
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 76,
+      "common_name": "European Greenfinch",
+      "scientific_name": "Chloris chloris",
+      "started_at": "2026-05-03 17:17:19",
+      "ended_at": "2026-05-03 17:17:19",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.8266,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 92,
+          "timestamp": "2026-05-03 17:17:19",
+          "confidence": 0.8266,
+          "audio_file": "chunk_20260503_171719_6.0_9.0.wav",
+          "status": "unverified",
+          "start_s": 6.0,
+          "end_s": 9.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.4141
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.0586
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 55,
+      "common_name": "European Greenfinch",
+      "scientific_name": "Chloris chloris",
+      "started_at": "2026-05-02 08:54:37",
+      "ended_at": "2026-05-02 08:54:37",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.7798,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 64,
+          "timestamp": "2026-05-02 08:54:37",
+          "confidence": 0.7798,
+          "audio_file": "chunk_20260502_085437_6.0_9.0.wav",
+          "status": "unverified",
+          "start_s": 6.0,
+          "end_s": 9.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.918
+            },
+            "top_noise": {
+              "class_name": "Speech",
+              "score": 0.0312
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

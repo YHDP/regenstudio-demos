@@ -1,0 +1,81 @@
+/* AviSonar demo CSS overrides.
+   Hides every write-control on every dashboard page so demo visitors
+   only see read-only functionality. Loaded after the dashboard's main
+   stylesheet so these rules win. Scoped to body.demo-mode (set by
+   data-router.js) so the same files can serve a non-demo build later. */
+
+body.demo-mode #rec-toggle,
+body.demo-mode .rec-toggle-btn,
+body.demo-mode #obs-note,
+body.demo-mode .saveObsNote,
+body.demo-mode .obs-save,
+body.demo-mode .note-form,
+body.demo-mode .note-submit,
+body.demo-mode .note-input,
+body.demo-mode .add-note-btn {
+  display: none !important;
+}
+
+/* Verify / reject / change-species action buttons across pages */
+body.demo-mode .action-btn[data-action="verify"],
+body.demo-mode .action-btn[data-action="reject"],
+body.demo-mode .action-btn[data-action="change-species"],
+body.demo-mode .action-btn[data-action="bulk-verify"],
+body.demo-mode .action-btn[data-action="bulk-reject"],
+body.demo-mode .action-btn[data-action="bulk-delete"],
+body.demo-mode .action-btn[data-action="delete"],
+body.demo-mode .ca-reject-dropdown,
+body.demo-mode .ca-btn.ca-active-green,
+body.demo-mode .ca-change-input,
+body.demo-mode .ca-change-form,
+body.demo-mode .verify-btn,
+body.demo-mode .reject-btn,
+body.demo-mode .bulk-actions {
+  display: none !important;
+}
+
+/* Settings page — disable CRUD sections (locations, watchlist, detection settings) */
+body.demo-mode .settings-section.location-crud,
+body.demo-mode .settings-section.watchlist-crud,
+body.demo-mode .settings-section.detection-settings,
+body.demo-mode .location-form,
+body.demo-mode .watchlist-form,
+body.demo-mode .settings-save-btn,
+body.demo-mode #location-form,
+body.demo-mode #watchlist-form {
+  display: none !important;
+}
+
+/* Multi-select checkboxes on the calls table — read-only */
+body.demo-mode .calls-table input[type="checkbox"],
+body.demo-mode .bulk-action-bar {
+  display: none !important;
+}
+
+/* Demo banner — narrow strip above the page */
+.avisonar-demo-banner {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: linear-gradient(90deg, #008545, #009BBB);
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  padding: 7px 16px;
+  text-align: center;
+  letter-spacing: .15px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.18);
+}
+.avisonar-demo-banner strong {
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  font-size: 11px;
+  margin-right: 6px;
+}
+.avisonar-demo-banner a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.avisonar-demo-banner a:hover { opacity: .9; }

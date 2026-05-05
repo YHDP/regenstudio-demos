@@ -1,0 +1,203 @@
+{
+  "summary": {
+    "common_name": "European Goldfinch",
+    "scientific_name": "Carduelis carduelis",
+    "encounter_count": 5,
+    "total_calls": 5,
+    "total_verified": 0,
+    "max_confidence": 0.8209,
+    "first_seen": "2026-04-29 08:00:36",
+    "last_seen": "2026-05-05 16:45:47",
+    "avg_confidence": 0.625,
+    "avg_calls_per_encounter": 1.0,
+    "peak_hour": 8,
+    "unverified_count": 5
+  },
+  "encounters": [
+    {
+      "id": 148,
+      "common_name": "European Goldfinch",
+      "scientific_name": "Carduelis carduelis",
+      "started_at": "2026-05-05 16:45:47",
+      "ended_at": "2026-05-05 16:45:47",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.6396,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 176,
+          "timestamp": "2026-05-05 16:45:47",
+          "confidence": 0.6396,
+          "audio_file": "chunk_20260505_164547_3.0_6.0.wav",
+          "status": "unverified",
+          "start_s": 3.0,
+          "end_s": 6.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.4141
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.4141
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 138,
+      "common_name": "European Goldfinch",
+      "scientific_name": "Carduelis carduelis",
+      "started_at": "2026-05-05 09:19:12",
+      "ended_at": "2026-05-05 09:19:12",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.5244,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 164,
+          "timestamp": "2026-05-05 09:19:12",
+          "confidence": 0.5244,
+          "audio_file": "chunk_20260505_091912_6.0_9.0.wav",
+          "status": "unverified",
+          "start_s": 6.0,
+          "end_s": 9.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.7383
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.1484
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 125,
+      "common_name": "European Goldfinch",
+      "scientific_name": "Carduelis carduelis",
+      "started_at": "2026-05-05 08:21:29",
+      "ended_at": "2026-05-05 08:21:29",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.6222,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 150,
+          "timestamp": "2026-05-05 08:21:29",
+          "confidence": 0.6222,
+          "audio_file": "chunk_20260505_082129_3.0_6.0.wav",
+          "status": "unverified",
+          "start_s": 3.0,
+          "end_s": 6.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird vocalization, bird call, bird song",
+              "score": 0.5
+            },
+            "top_noise": {
+              "class_name": "Walk, footsteps",
+              "score": 0.082
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 81,
+      "common_name": "European Goldfinch",
+      "scientific_name": "Carduelis carduelis",
+      "started_at": "2026-05-03 18:24:32",
+      "ended_at": "2026-05-03 18:24:32",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.8209,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 97,
+          "timestamp": "2026-05-03 18:24:32",
+          "confidence": 0.8209,
+          "audio_file": "chunk_20260503_182432_6.0_9.0.wav",
+          "status": "unverified",
+          "start_s": 6.0,
+          "end_s": 9.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.5
+            },
+            "top_noise": {
+              "class_name": "Chewing, mastication",
+              "score": 0.082
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 5,
+      "common_name": "European Goldfinch",
+      "scientific_name": "Carduelis carduelis",
+      "started_at": "2026-04-29 08:00:36",
+      "ended_at": "2026-04-29 08:00:36",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.5204,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 6,
+          "timestamp": "2026-04-29 08:00:36",
+          "confidence": 0.5204,
+          "audio_file": "chunk_20260429_080036_3.0_6.0.wav",
+          "status": "unverified",
+          "start_s": 3.0,
+          "end_s": 6.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.9805
+            },
+            "top_noise": {
+              "class_name": "Wind noise (microphone)",
+              "score": 0.0117
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

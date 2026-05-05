@@ -1,0 +1,55 @@
+{
+  "summary": {
+    "common_name": "Eurasian Siskin",
+    "scientific_name": "Spinus spinus",
+    "encounter_count": 1,
+    "total_calls": 1,
+    "total_verified": 0,
+    "max_confidence": 0.5061,
+    "first_seen": "2026-05-05 09:19:12",
+    "last_seen": "2026-05-05 09:19:12",
+    "avg_confidence": 0.506,
+    "avg_calls_per_encounter": 1.0,
+    "peak_hour": 9,
+    "unverified_count": 1
+  },
+  "encounters": [
+    {
+      "id": 137,
+      "common_name": "Eurasian Siskin",
+      "scientific_name": "Spinus spinus",
+      "started_at": "2026-05-05 09:19:12",
+      "ended_at": "2026-05-05 09:19:12",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.5061,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 163,
+          "timestamp": "2026-05-05 09:19:12",
+          "confidence": 0.5061,
+          "audio_file": "chunk_20260505_091912_3.0_6.0.wav",
+          "status": "unverified",
+          "start_s": 3.0,
+          "end_s": 6.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.5
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.2617
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

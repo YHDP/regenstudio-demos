@@ -1,0 +1,188 @@
+{
+  "summary": {
+    "common_name": "Long-tailed Tit",
+    "scientific_name": "Aegithalos caudatus",
+    "encounter_count": 4,
+    "total_calls": 5,
+    "total_verified": 0,
+    "max_confidence": 0.7898,
+    "first_seen": "2026-04-29 08:00:36",
+    "last_seen": "2026-05-05 15:52:28",
+    "avg_confidence": 0.7,
+    "avg_calls_per_encounter": 1.3,
+    "peak_hour": 7,
+    "unverified_count": 5
+  },
+  "encounters": [
+    {
+      "id": 146,
+      "common_name": "Long-tailed Tit",
+      "scientific_name": "Aegithalos caudatus",
+      "started_at": "2026-05-05 15:52:28",
+      "ended_at": "2026-05-05 15:52:28",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.7157,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 174,
+          "timestamp": "2026-05-05 15:52:28",
+          "confidence": 0.7157,
+          "audio_file": "chunk_20260505_155228_12.0_15.0.wav",
+          "status": "unverified",
+          "start_s": 12.0,
+          "end_s": 15.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.1992
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.0586
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 84,
+      "common_name": "Long-tailed Tit",
+      "scientific_name": "Aegithalos caudatus",
+      "started_at": "2026-05-04 07:05:27",
+      "ended_at": "2026-05-04 07:05:27",
+      "call_count": 2,
+      "verified_count": 0,
+      "max_confidence": 0.7441,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 102,
+          "timestamp": "2026-05-04 07:05:27",
+          "confidence": 0.7441,
+          "audio_file": "chunk_20260504_070527_0.0_3.0.wav",
+          "status": "unverified",
+          "start_s": 0.0,
+          "end_s": 3.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.0586
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.1484
+            }
+          }
+        },
+        {
+          "id": 103,
+          "timestamp": "2026-05-04 07:05:27",
+          "confidence": 0.6598,
+          "audio_file": "chunk_20260504_070527_6.0_9.0.wav",
+          "status": "unverified",
+          "start_s": 6.0,
+          "end_s": 9.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.2617
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.043
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 52,
+      "common_name": "Long-tailed Tit",
+      "scientific_name": "Aegithalos caudatus",
+      "started_at": "2026-05-02 05:37:19",
+      "ended_at": "2026-05-02 05:37:19",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.5496,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 59,
+          "timestamp": "2026-05-02 05:37:19",
+          "confidence": 0.5496,
+          "audio_file": "chunk_20260502_053719_0.0_3.0.wav",
+          "status": "unverified",
+          "start_s": 0.0,
+          "end_s": 3.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird",
+              "score": 0.5
+            },
+            "top_noise": {
+              "class_name": "Wind noise (microphone)",
+              "score": 0.082
+            }
+          }
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": 7,
+      "common_name": "Long-tailed Tit",
+      "scientific_name": "Aegithalos caudatus",
+      "started_at": "2026-04-29 08:00:36",
+      "ended_at": "2026-04-29 08:00:36",
+      "call_count": 1,
+      "verified_count": 0,
+      "max_confidence": 0.7898,
+      "location_id": null,
+      "rejected_at": null,
+      "calls": [
+        {
+          "id": 8,
+          "timestamp": "2026-04-29 08:00:36",
+          "confidence": 0.7898,
+          "audio_file": "chunk_20260429_080036_9.0_12.0.wav",
+          "status": "unverified",
+          "start_s": 9.0,
+          "end_s": 12.0,
+          "rejection_reason": null,
+          "corrected_common_name": null,
+          "corrected_scientific_name": null,
+          "yamnet": {
+            "top_bird": {
+              "class_name": "Bird vocalization, bird call, bird song",
+              "score": 0.5
+            },
+            "top_noise": {
+              "class_name": "Vehicle",
+              "score": 0.082
+            }
+          }
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

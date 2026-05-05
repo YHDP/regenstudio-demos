@@ -1,0 +1,134 @@
+{
+  "birdnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Little Ringed Plover",
+        "scientific_name": "Charadrius dubius",
+        "score": 0.2832
+      },
+      {
+        "rank": 2,
+        "class_name": "Eurasian Oystercatcher",
+        "scientific_name": "Haematopus ostralegus",
+        "score": 0.1428
+      },
+      {
+        "rank": 3,
+        "class_name": "Eurasian Blackbird",
+        "scientific_name": "Turdus merula",
+        "score": 0.1307
+      },
+      {
+        "rank": 4,
+        "class_name": "Song Thrush",
+        "scientific_name": "Turdus philomelos",
+        "score": 0.1175
+      },
+      {
+        "rank": 5,
+        "class_name": "Water Rail",
+        "scientific_name": "Rallus aquaticus",
+        "score": 0.085
+      }
+    ]
+  },
+  "yamnet": {
+    "bird": [
+      {
+        "rank": 2,
+        "class_name": "Bird",
+        "scientific_name": null,
+        "score": 0.1484
+      },
+      {
+        "rank": 12,
+        "class_name": "Bird vocalization, bird call, bird song",
+        "scientific_name": null,
+        "score": 0.0586
+      },
+      {
+        "rank": 13,
+        "class_name": "Chirp, tweet",
+        "scientific_name": null,
+        "score": 0.043
+      },
+      {
+        "rank": 14,
+        "class_name": "Fowl",
+        "scientific_name": null,
+        "score": 0.0195
+      },
+      {
+        "rank": 15,
+        "class_name": "Duck",
+        "scientific_name": null,
+        "score": 0.0117
+      }
+    ],
+    "noise": [
+      {
+        "rank": 1,
+        "class_name": "Vehicle",
+        "scientific_name": null,
+        "score": 0.1992
+      },
+      {
+        "rank": 3,
+        "class_name": "Rodents, rats, mice",
+        "scientific_name": null,
+        "score": 0.1484
+      },
+      {
+        "rank": 4,
+        "class_name": "Motor vehicle (road)",
+        "scientific_name": null,
+        "score": 0.1484
+      },
+      {
+        "rank": 5,
+        "class_name": "Car",
+        "scientific_name": null,
+        "score": 0.1484
+      },
+      {
+        "rank": 10,
+        "class_name": "Mouse",
+        "scientific_name": null,
+        "score": 0.1094
+      }
+    ],
+    "other": [
+      {
+        "rank": 6,
+        "class_name": "White noise",
+        "scientific_name": null,
+        "score": 0.1484
+      },
+      {
+        "rank": 7,
+        "class_name": "Wind",
+        "scientific_name": null,
+        "score": 0.1484
+      },
+      {
+        "rank": 8,
+        "class_name": "Animal",
+        "scientific_name": null,
+        "score": 0.1484
+      },
+      {
+        "rank": 9,
+        "class_name": "Wild animals",
+        "scientific_name": null,
+        "score": 0.1484
+      },
+      {
+        "rank": 11,
+        "class_name": "Mechanical fan",
+        "scientific_name": null,
+        "score": 0.1094
+      }
+    ]
+  }
+}

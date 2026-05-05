@@ -1,0 +1,38 @@
+[
+  {
+    "hour": "05",
+    "count": 6
+  },
+  {
+    "hour": "06",
+    "count": 4
+  },
+  {
+    "hour": "07",
+    "count": 2
+  },
+  {
+    "hour": "08",
+    "count": 8
+  },
+  {
+    "hour": "09",
+    "count": 4
+  },
+  {
+    "hour": "15",
+    "count": 4
+  },
+  {
+    "hour": "16",
+    "count": 2
+  },
+  {
+    "hour": "17",
+    "count": 4
+  },
+  {
+    "hour": "18",
+    "count": 3
+  }
+]

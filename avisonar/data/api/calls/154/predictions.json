@@ -1,0 +1,134 @@
+{
+  "birdnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Black Woodpecker",
+        "scientific_name": "Dryocopus martius",
+        "score": 0.8802
+      },
+      {
+        "rank": 2,
+        "class_name": "Northern Goshawk",
+        "scientific_name": "Accipiter gentilis",
+        "score": 0.2307
+      },
+      {
+        "rank": 3,
+        "class_name": "Great Spotted Woodpecker",
+        "scientific_name": "Dendrocopos major",
+        "score": 0.1296
+      },
+      {
+        "rank": 4,
+        "class_name": "Song Thrush",
+        "scientific_name": "Turdus philomelos",
+        "score": 0.1087
+      },
+      {
+        "rank": 5,
+        "class_name": "European Robin",
+        "scientific_name": "Erithacus rubecula",
+        "score": 0.0741
+      }
+    ]
+  },
+  "yamnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Bird",
+        "scientific_name": null,
+        "score": 0.8906
+      },
+      {
+        "rank": 4,
+        "class_name": "Bird vocalization, bird call, bird song",
+        "scientific_name": null,
+        "score": 0.7383
+      },
+      {
+        "rank": 6,
+        "class_name": "Chirp, tweet",
+        "scientific_name": null,
+        "score": 0.668
+      },
+      {
+        "rank": 11,
+        "class_name": "Owl",
+        "scientific_name": null,
+        "score": 0.1484
+      },
+      {
+        "rank": 15,
+        "class_name": "Pigeon, dove",
+        "scientific_name": null,
+        "score": 0.0312
+      }
+    ],
+    "noise": [
+      {
+        "rank": 7,
+        "class_name": "Music",
+        "scientific_name": null,
+        "score": 0.5859
+      },
+      {
+        "rank": 8,
+        "class_name": "Tambourine",
+        "scientific_name": null,
+        "score": 0.2617
+      },
+      {
+        "rank": 12,
+        "class_name": "Ping",
+        "scientific_name": null,
+        "score": 0.1484
+      },
+      {
+        "rank": 13,
+        "class_name": "Scissors",
+        "scientific_name": null,
+        "score": 0.082
+      },
+      {
+        "rank": 14,
+        "class_name": "Mouse",
+        "scientific_name": null,
+        "score": 0.082
+      }
+    ],
+    "other": [
+      {
+        "rank": 2,
+        "class_name": "Wild animals",
+        "scientific_name": null,
+        "score": 0.8906
+      },
+      {
+        "rank": 3,
+        "class_name": "Animal",
+        "scientific_name": null,
+        "score": 0.8906
+      },
+      {
+        "rank": 5,
+        "class_name": "Silence",
+        "scientific_name": null,
+        "score": 0.7383
+      },
+      {
+        "rank": 9,
+        "class_name": "Glass",
+        "scientific_name": null,
+        "score": 0.2617
+      },
+      {
+        "rank": 10,
+        "class_name": "Inside, small room",
+        "scientific_name": null,
+        "score": 0.1992
+      }
+    ]
+  }
+}

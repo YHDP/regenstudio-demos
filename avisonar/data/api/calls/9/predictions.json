@@ -1,0 +1,134 @@
+{
+  "birdnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Eurasian Curlew",
+        "scientific_name": "Numenius arquata",
+        "score": 0.9975
+      },
+      {
+        "rank": 2,
+        "class_name": "Common Buzzard",
+        "scientific_name": "Buteo buteo",
+        "score": 0.8166
+      },
+      {
+        "rank": 3,
+        "class_name": "Whimbrel",
+        "scientific_name": "Numenius phaeopus",
+        "score": 0.3607
+      },
+      {
+        "rank": 4,
+        "class_name": "Common Snipe",
+        "scientific_name": "Gallinago gallinago",
+        "score": 0.111
+      },
+      {
+        "rank": 5,
+        "class_name": "Common Redshank",
+        "scientific_name": "Tringa totanus",
+        "score": 0.1091
+      }
+    ]
+  },
+  "yamnet": {
+    "bird": [
+      {
+        "rank": 2,
+        "class_name": "Goose",
+        "scientific_name": null,
+        "score": 0.668
+      },
+      {
+        "rank": 4,
+        "class_name": "Fowl",
+        "scientific_name": null,
+        "score": 0.5859
+      },
+      {
+        "rank": 5,
+        "class_name": "Honk",
+        "scientific_name": null,
+        "score": 0.5859
+      },
+      {
+        "rank": 6,
+        "class_name": "Duck",
+        "scientific_name": null,
+        "score": 0.5
+      },
+      {
+        "rank": 8,
+        "class_name": "Bird",
+        "scientific_name": null,
+        "score": 0.4141
+      }
+    ],
+    "noise": [
+      {
+        "rank": 9,
+        "class_name": "Whistling",
+        "scientific_name": null,
+        "score": 0.332
+      },
+      {
+        "rank": 12,
+        "class_name": "Cat",
+        "scientific_name": null,
+        "score": 0.1992
+      },
+      {
+        "rank": 13,
+        "class_name": "Dog",
+        "scientific_name": null,
+        "score": 0.1484
+      },
+      {
+        "rank": 14,
+        "class_name": "Meow",
+        "scientific_name": null,
+        "score": 0.082
+      },
+      {
+        "rank": 15,
+        "class_name": "Whistle",
+        "scientific_name": null,
+        "score": 0.0586
+      }
+    ],
+    "other": [
+      {
+        "rank": 1,
+        "class_name": "Animal",
+        "scientific_name": null,
+        "score": 0.7383
+      },
+      {
+        "rank": 3,
+        "class_name": "Livestock, farm animals, working animals",
+        "scientific_name": null,
+        "score": 0.668
+      },
+      {
+        "rank": 7,
+        "class_name": "Environmental noise",
+        "scientific_name": null,
+        "score": 0.5
+      },
+      {
+        "rank": 10,
+        "class_name": "Wild animals",
+        "scientific_name": null,
+        "score": 0.332
+      },
+      {
+        "rank": 11,
+        "class_name": "Domestic animals, pets",
+        "scientific_name": null,
+        "score": 0.2617
+      }
+    ]
+  }
+}

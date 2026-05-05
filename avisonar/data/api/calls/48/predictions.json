@@ -1,0 +1,128 @@
+{
+  "birdnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Barn Swallow",
+        "scientific_name": "Hirundo rustica",
+        "score": 0.438
+      },
+      {
+        "rank": 2,
+        "class_name": "Song Thrush",
+        "scientific_name": "Turdus philomelos",
+        "score": 0.115
+      },
+      {
+        "rank": 3,
+        "class_name": "European Starling",
+        "scientific_name": "Sturnus vulgaris",
+        "score": 0.0835
+      },
+      {
+        "rank": 4,
+        "class_name": "European Goldfinch",
+        "scientific_name": "Carduelis carduelis",
+        "score": 0.0707
+      }
+    ]
+  },
+  "yamnet": {
+    "bird": [
+      {
+        "rank": 2,
+        "class_name": "Bird",
+        "scientific_name": null,
+        "score": 0.8516
+      },
+      {
+        "rank": 4,
+        "class_name": "Bird vocalization, bird call, bird song",
+        "scientific_name": null,
+        "score": 0.668
+      },
+      {
+        "rank": 5,
+        "class_name": "Chirp, tweet",
+        "scientific_name": null,
+        "score": 0.5859
+      },
+      {
+        "rank": 14,
+        "class_name": "Owl",
+        "scientific_name": null,
+        "score": 0.082
+      },
+      {
+        "rank": 15,
+        "class_name": "Coo",
+        "scientific_name": null,
+        "score": 0.0156
+      }
+    ],
+    "noise": [
+      {
+        "rank": 6,
+        "class_name": "Music",
+        "scientific_name": null,
+        "score": 0.332
+      },
+      {
+        "rank": 10,
+        "class_name": "Rodents, rats, mice",
+        "scientific_name": null,
+        "score": 0.1484
+      },
+      {
+        "rank": 11,
+        "class_name": "Mouse",
+        "scientific_name": null,
+        "score": 0.1484
+      },
+      {
+        "rank": 12,
+        "class_name": "Tambourine",
+        "scientific_name": null,
+        "score": 0.1484
+      },
+      {
+        "rank": 13,
+        "class_name": "Maraca",
+        "scientific_name": null,
+        "score": 0.1094
+      }
+    ],
+    "other": [
+      {
+        "rank": 1,
+        "class_name": "Animal",
+        "scientific_name": null,
+        "score": 0.8906
+      },
+      {
+        "rank": 3,
+        "class_name": "Wild animals",
+        "scientific_name": null,
+        "score": 0.8516
+      },
+      {
+        "rank": 7,
+        "class_name": "Snake",
+        "scientific_name": null,
+        "score": 0.2617
+      },
+      {
+        "rank": 8,
+        "class_name": "Cricket",
+        "scientific_name": null,
+        "score": 0.2617
+      },
+      {
+        "rank": 9,
+        "class_name": "Rattle",
+        "scientific_name": null,
+        "score": 0.2617
+      }
+    ]
+  }
+}

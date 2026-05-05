@@ -1,0 +1,134 @@
+{
+  "birdnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Crested Tit",
+        "scientific_name": "Lophophanes cristatus",
+        "score": 0.8513
+      },
+      {
+        "rank": 2,
+        "class_name": "Great Tit",
+        "scientific_name": "Parus major",
+        "score": 0.4066
+      },
+      {
+        "rank": 3,
+        "class_name": "Song Thrush",
+        "scientific_name": "Turdus philomelos",
+        "score": 0.3761
+      },
+      {
+        "rank": 4,
+        "class_name": "Greater Whitethroat",
+        "scientific_name": "Curruca communis",
+        "score": 0.2815
+      },
+      {
+        "rank": 5,
+        "class_name": "Eurasian Blue Tit",
+        "scientific_name": "Cyanistes caeruleus",
+        "score": 0.2339
+      }
+    ]
+  },
+  "yamnet": {
+    "bird": [
+      {
+        "rank": 1,
+        "class_name": "Bird",
+        "scientific_name": null,
+        "score": 0.8516
+      },
+      {
+        "rank": 5,
+        "class_name": "Bird vocalization, bird call, bird song",
+        "scientific_name": null,
+        "score": 0.7383
+      },
+      {
+        "rank": 7,
+        "class_name": "Chirp, tweet",
+        "scientific_name": null,
+        "score": 0.5859
+      },
+      {
+        "rank": 11,
+        "class_name": "Fowl",
+        "scientific_name": null,
+        "score": 0.1094
+      },
+      {
+        "rank": 14,
+        "class_name": "Pigeon, dove",
+        "scientific_name": null,
+        "score": 0.0586
+      }
+    ],
+    "noise": [
+      {
+        "rank": 9,
+        "class_name": "Cat",
+        "scientific_name": null,
+        "score": 0.1992
+      },
+      {
+        "rank": 10,
+        "class_name": "Purr",
+        "scientific_name": null,
+        "score": 0.1484
+      },
+      {
+        "rank": 12,
+        "class_name": "Walk, footsteps",
+        "scientific_name": null,
+        "score": 0.082
+      },
+      {
+        "rank": 13,
+        "class_name": "Vehicle",
+        "scientific_name": null,
+        "score": 0.082
+      },
+      {
+        "rank": 15,
+        "class_name": "Rodents, rats, mice",
+        "scientific_name": null,
+        "score": 0.0586
+      }
+    ],
+    "other": [
+      {
+        "rank": 2,
+        "class_name": "Animal",
+        "scientific_name": null,
+        "score": 0.8516
+      },
+      {
+        "rank": 3,
+        "class_name": "Wild animals",
+        "scientific_name": null,
+        "score": 0.8008
+      },
+      {
+        "rank": 4,
+        "class_name": "Bee, wasp, etc.",
+        "scientific_name": null,
+        "score": 0.8008
+      },
+      {
+        "rank": 6,
+        "class_name": "Insect",
+        "scientific_name": null,
+        "score": 0.668
+      },
+      {
+        "rank": 8,
+        "class_name": "Fly, housefly",
+        "scientific_name": null,
+        "score": 0.5859
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "_meta": {
+    "description": "Commonly confused species pairs for acoustic identification — São Paulo / Atlantic Forest",
+    "updated": "2026-04-08"
+  },
+  "Pitangus sulphuratus": ["Myiozetetes similis", "Megarynchus pitangua", "Philohydor lictor"],
+  "Myiozetetes similis": ["Pitangus sulphuratus", "Myiozetetes cayanensis"],
+  "Brotogeris tirica": ["Brotogeris chiriri", "Forpus xanthopterygius"],
+  "Brotogeris chiriri": ["Brotogeris tirica", "Eupsittula aurea"],
+  "Turdus rufiventris": ["Turdus leucomelas", "Turdus amaurochalinus"],
+  "Turdus leucomelas": ["Turdus rufiventris", "Turdus amaurochalinus", "Turdus flavipes"],
+  "Turdus amaurochalinus": ["Turdus leucomelas", "Turdus rufiventris"],
+  "Columba livia": ["Patagioenas picazuro", "Patagioenas plumbea"],
+  "Patagioenas picazuro": ["Columba livia", "Patagioenas plumbea"],
+  "Zenaida auriculata": ["Columbina talpacoti", "Leptotila verreauxi"],
+  "Columbina talpacoti": ["Zenaida auriculata", "Columbina squammata"],
+  "Furnarius rufus": ["Synallaxis spixi", "Synallaxis ruficapilla"],
+  "Troglodytes musculus": ["Basileuterus culicivorus", "Troglodytes aedon"],
+  "Zonotrichia capensis": ["Volatinia jacarina", "Sporophila caerulescens"],
+  "Tyrannus melancholicus": ["Tyrannus savana", "Empidonomus varius"],
+  "Tyrannus savana": ["Tyrannus melancholicus", "Muscipipra vetula"],
+  "Tangara sayaca": ["Tangara palmarum", "Tangara cayana"],
+  "Tangara palmarum": ["Tangara sayaca", "Tangara cayana"],
+  "Coereba flaveola": ["Conirostrum speciosum", "Dacnis cayana"],
+  "Passer domesticus": ["Sicalis flaveola", "Sporophila caerulescens"],
+  "Sicalis flaveola": ["Passer domesticus", "Sporophila caerulescens"],
+  "Molothrus bonariensis": ["Gnorimopsar chopi", "Chrysomus ruficapillus"],
+  "Crotophaga ani": ["Guira guira"],
+  "Guira guira": ["Crotophaga ani"],
+  "Athene cunicularia": ["Megascops choliba", "Strix hylophila"],
+  "Megascops choliba": ["Athene cunicularia", "Pulsatrix koeniswaldiana"]
+}

@@ -1,0 +1,1305 @@
+{
+  "total": 71,
+  "calls": [
+    {
+      "id": 179,
+      "timestamp": "2026-05-05 18:16:08",
+      "confidence": 0.9971,
+      "audio_file": "chunk_20260505_181608_0.0_15.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 151,
+      "common_name": "European Robin",
+      "scientific_name": "Erithacus rubecula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.918
+        },
+        "top_noise": {
+          "class_name": "Car alarm",
+          "score": 0.1484
+        }
+      }
+    },
+    {
+      "id": 177,
+      "timestamp": "2026-05-05 16:45:47",
+      "confidence": 0.999,
+      "audio_file": "chunk_20260505_164547_6.0_12.0.wav",
+      "status": "verified",
+      "start_s": 6.0,
+      "end_s": 12.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 149,
+      "common_name": "Eurasian Blackbird",
+      "scientific_name": "Turdus merula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.9688
+        },
+        "top_noise": {
+          "class_name": "Vehicle",
+          "score": 0.043
+        }
+      }
+    },
+    {
+      "id": 168,
+      "timestamp": "2026-05-05 15:16:59",
+      "confidence": 0.9998,
+      "audio_file": "chunk_20260505_151659_6.0_12.0.wav",
+      "status": "verified",
+      "start_s": 6.0,
+      "end_s": 12.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 141,
+      "common_name": "Eurasian Blackbird",
+      "scientific_name": "Turdus merula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.9805
+        },
+        "top_noise": {
+          "class_name": "Speech",
+          "score": 0.0195
+        }
+      }
+    },
+    {
+      "id": 167,
+      "timestamp": "2026-05-05 15:16:59",
+      "confidence": 1.0,
+      "audio_file": "chunk_20260505_151659_0.0_3.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 3.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 141,
+      "common_name": "Eurasian Blackbird",
+      "scientific_name": "Turdus merula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.957
+        },
+        "top_noise": {
+          "class_name": "Whistling",
+          "score": 0.1992
+        }
+      }
+    },
+    {
+      "id": 166,
+      "timestamp": "2026-05-05 10:49:17",
+      "confidence": 0.9998,
+      "audio_file": "chunk_20260505_104917_0.0_15.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 140,
+      "common_name": "Eurasian Blackbird",
+      "scientific_name": "Turdus merula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.8516
+        },
+        "top_noise": {
+          "class_name": "Rodents, rats, mice",
+          "score": 0.2617
+        }
+      }
+    },
+    {
+      "id": 165,
+      "timestamp": "2026-05-05 09:19:12",
+      "confidence": 0.9568,
+      "audio_file": "chunk_20260505_091912_12.0_15.0.wav",
+      "status": "verified",
+      "start_s": 12.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 139,
+      "common_name": "Eurasian Blackcap",
+      "scientific_name": "Sylvia atricapilla",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.7383
+        },
+        "top_noise": {
+          "class_name": "Vehicle",
+          "score": 0.1484
+        }
+      }
+    },
+    {
+      "id": 161,
+      "timestamp": "2026-05-05 09:19:12",
+      "confidence": 0.9505,
+      "audio_file": "chunk_20260505_091912_6.0_15.0.wav",
+      "status": "verified",
+      "start_s": 6.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 135,
+      "common_name": "European Robin",
+      "scientific_name": "Erithacus rubecula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.7383
+        },
+        "top_noise": {
+          "class_name": "Vehicle",
+          "score": 0.1484
+        }
+      }
+    },
+    {
+      "id": 160,
+      "timestamp": "2026-05-05 09:19:12",
+      "confidence": 0.9871,
+      "audio_file": "chunk_20260505_091912_0.0_3.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 3.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 135,
+      "common_name": "European Robin",
+      "scientific_name": "Erithacus rubecula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.7383
+        },
+        "top_noise": {
+          "class_name": "Vehicle",
+          "score": 0.043
+        }
+      }
+    },
+    {
+      "id": 156,
+      "timestamp": "2026-05-05 08:56:19",
+      "confidence": 0.9983,
+      "audio_file": "chunk_20260505_085619_0.0_15.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 131,
+      "common_name": "Eurasian Blackbird",
+      "scientific_name": "Turdus merula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.9414
+        },
+        "top_noise": {
+          "class_name": "Speech",
+          "score": 0.1484
+        }
+      }
+    },
+    {
+      "id": 155,
+      "timestamp": "2026-05-05 08:48:49",
+      "confidence": 0.8802,
+      "audio_file": "chunk_20260505_084849_12.0_15.0.wav",
+      "status": "verified",
+      "start_s": 12.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 130,
+      "common_name": "Black Woodpecker",
+      "scientific_name": "Dryocopus martius",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.7383
+        },
+        "top_noise": {
+          "class_name": "Speech",
+          "score": 0.0586
+        }
+      }
+    },
+    {
+      "id": 154,
+      "timestamp": "2026-05-05 08:48:49",
+      "confidence": 0.9993,
+      "audio_file": "chunk_20260505_084849_0.0_15.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 129,
+      "common_name": "Eurasian Blackbird",
+      "scientific_name": "Turdus merula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.8906
+        },
+        "top_noise": {
+          "class_name": "Music",
+          "score": 0.5859
+        }
+      }
+    },
+    {
+      "id": 144,
+      "timestamp": "2026-05-05 07:31:19",
+      "confidence": 0.9965,
+      "audio_file": "chunk_20260505_073119_0.0_15.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 120,
+      "common_name": "Common Chaffinch",
+      "scientific_name": "Fringilla coelebs",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.8008
+        },
+        "top_noise": {
+          "class_name": "Camera",
+          "score": 0.2617
+        }
+      }
+    },
+    {
+      "id": 139,
+      "timestamp": "2026-05-05 06:53:42",
+      "confidence": 0.999,
+      "audio_file": "chunk_20260505_065342_12.0_15.0.wav",
+      "status": "verified",
+      "start_s": 12.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 115,
+      "common_name": "European Robin",
+      "scientific_name": "Erithacus rubecula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.957
+        },
+        "top_noise": {
+          "class_name": "Horse",
+          "score": 0.0117
+        }
+      }
+    },
+    {
+      "id": 138,
+      "timestamp": "2026-05-05 06:53:42",
+      "confidence": 0.9882,
+      "audio_file": "chunk_20260505_065342_0.0_9.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 9.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 115,
+      "common_name": "European Robin",
+      "scientific_name": "Erithacus rubecula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.8906
+        },
+        "top_noise": {
+          "class_name": "Walk, footsteps",
+          "score": 0.082
+        }
+      }
+    },
+    {
+      "id": 136,
+      "timestamp": "2026-05-05 05:25:30",
+      "confidence": 0.9487,
+      "audio_file": "chunk_20260505_052530_0.0_15.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 113,
+      "common_name": "House Sparrow",
+      "scientific_name": "Passer domesticus",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird vocalization, bird call, bird song",
+          "score": 0.8516
+        },
+        "top_noise": {
+          "class_name": "Music",
+          "score": 0.0195
+        }
+      }
+    },
+    {
+      "id": 133,
+      "timestamp": "2026-05-05 05:07:33",
+      "confidence": 0.9995,
+      "audio_file": "chunk_20260505_050733_0.0_15.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 110,
+      "common_name": "European Robin",
+      "scientific_name": "Erithacus rubecula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.8516
+        },
+        "top_noise": {
+          "class_name": "Cat",
+          "score": 0.1992
+        }
+      }
+    },
+    {
+      "id": 131,
+      "timestamp": "2026-05-04 18:41:36",
+      "confidence": 0.9981,
+      "audio_file": "chunk_20260504_184136_3.0_12.0.wav",
+      "status": "verified",
+      "start_s": 3.0,
+      "end_s": 12.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 108,
+      "common_name": "Eurasian Jackdaw",
+      "scientific_name": "Corvus monedula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.5859
+        },
+        "top_noise": {
+          "class_name": "Speech",
+          "score": 0.0156
+        }
+      }
+    },
+    {
+      "id": 126,
+      "timestamp": "2026-05-04 18:37:30",
+      "confidence": 0.949,
+      "audio_file": "chunk_20260504_183730_0.0_15.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 104,
+      "common_name": "House Sparrow",
+      "scientific_name": "Passer domesticus",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird vocalization, bird call, bird song",
+          "score": 0.8906
+        },
+        "top_noise": {
+          "class_name": "Music",
+          "score": 0.0117
+        }
+      }
+    },
+    {
+      "id": 122,
+      "timestamp": "2026-05-04 18:27:53",
+      "confidence": 0.9988,
+      "audio_file": "chunk_20260504_182753_0.0_3.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 3.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 101,
+      "common_name": "Eurasian Jackdaw",
+      "scientific_name": "Corvus monedula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.1484
+        },
+        "top_noise": {
+          "class_name": "Speech",
+          "score": 0.0156
+        }
+      }
+    },
+    {
+      "id": 121,
+      "timestamp": "2026-05-04 18:23:55",
+      "confidence": 0.9451,
+      "audio_file": "chunk_20260504_182355_0.0_3.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 3.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 100,
+      "common_name": "Eurasian Blackcap",
+      "scientific_name": "Sylvia atricapilla",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.9844
+        },
+        "top_noise": {
+          "class_name": "Whistling",
+          "score": 0.0586
+        }
+      }
+    },
+    {
+      "id": 120,
+      "timestamp": "2026-05-04 18:23:55",
+      "confidence": 0.9984,
+      "audio_file": "chunk_20260504_182355_0.0_15.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 99,
+      "common_name": "European Robin",
+      "scientific_name": "Erithacus rubecula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.9844
+        },
+        "top_noise": {
+          "class_name": "Alarm",
+          "score": 0.1992
+        }
+      }
+    },
+    {
+      "id": 119,
+      "timestamp": "2026-05-04 10:28:40",
+      "confidence": 0.9343,
+      "audio_file": "chunk_20260504_102840_9.0_12.0.wav",
+      "status": "verified",
+      "start_s": 9.0,
+      "end_s": 12.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 98,
+      "common_name": "Black Redstart",
+      "scientific_name": "Phoenicurus ochruros",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.1992
+        },
+        "top_noise": {
+          "class_name": "Speech",
+          "score": 0.0586
+        }
+      }
+    },
+    {
+      "id": 113,
+      "timestamp": "2026-05-04 09:35:59",
+      "confidence": 0.9982,
+      "audio_file": "chunk_20260504_093559_9.0_12.0.wav",
+      "status": "verified",
+      "start_s": 9.0,
+      "end_s": 12.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 92,
+      "common_name": "Eurasian Blue Tit",
+      "scientific_name": "Cyanistes caeruleus",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.957
+        },
+        "top_noise": {
+          "class_name": "Speech",
+          "score": 0.0156
+        }
+      }
+    },
+    {
+      "id": 112,
+      "timestamp": "2026-05-04 09:35:59",
+      "confidence": 0.9993,
+      "audio_file": "chunk_20260504_093559_0.0_6.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 6.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 92,
+      "common_name": "Eurasian Blue Tit",
+      "scientific_name": "Cyanistes caeruleus",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.957
+        },
+        "top_noise": {
+          "class_name": "Rodents, rats, mice",
+          "score": 0.0117
+        }
+      }
+    },
+    {
+      "id": 110,
+      "timestamp": "2026-05-04 09:17:30",
+      "confidence": 0.9056,
+      "audio_file": "chunk_20260504_091730_0.0_3.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 3.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 90,
+      "common_name": "Eurasian Moorhen",
+      "scientific_name": "Gallinula chloropus",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.1094
+        },
+        "top_noise": {
+          "class_name": "Speech",
+          "score": 0.043
+        }
+      }
+    },
+    {
+      "id": 107,
+      "timestamp": "2026-05-04 07:05:27",
+      "confidence": 0.9514,
+      "audio_file": "chunk_20260504_070527_6.0_9.0.wav",
+      "status": "verified",
+      "start_s": 6.0,
+      "end_s": 9.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 87,
+      "common_name": "European Robin",
+      "scientific_name": "Erithacus rubecula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.2617
+        },
+        "top_noise": {
+          "class_name": "Vehicle",
+          "score": 0.043
+        }
+      }
+    },
+    {
+      "id": 106,
+      "timestamp": "2026-05-04 07:05:27",
+      "confidence": 0.8938,
+      "audio_file": "chunk_20260504_070527_9.0_15.0.wav",
+      "status": "verified",
+      "start_s": 9.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 86,
+      "common_name": "Great Tit",
+      "scientific_name": "Parus major",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.668
+        },
+        "top_noise": {
+          "class_name": "Vehicle",
+          "score": 0.1094
+        }
+      }
+    },
+    {
+      "id": 105,
+      "timestamp": "2026-05-04 07:05:27",
+      "confidence": 0.9481,
+      "audio_file": "chunk_20260504_070527_3.0_6.0.wav",
+      "status": "verified",
+      "start_s": 3.0,
+      "end_s": 6.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 86,
+      "common_name": "Great Tit",
+      "scientific_name": "Parus major",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.4141
+        },
+        "top_noise": {
+          "class_name": "Rodents, rats, mice",
+          "score": 0.082
+        }
+      }
+    },
+    {
+      "id": 100,
+      "timestamp": "2026-05-04 05:08:50",
+      "confidence": 0.9637,
+      "audio_file": "chunk_20260504_050850_6.0_9.0.wav",
+      "status": "verified",
+      "start_s": 6.0,
+      "end_s": 9.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 83,
+      "common_name": "Song Thrush",
+      "scientific_name": "Turdus philomelos",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird vocalization, bird call, bird song",
+          "score": 0.668
+        },
+        "top_noise": {
+          "class_name": "Vehicle",
+          "score": 0.043
+        }
+      }
+    },
+    {
+      "id": 99,
+      "timestamp": "2026-05-04 05:08:50",
+      "confidence": 0.9914,
+      "audio_file": "chunk_20260504_050850_12.0_15.0.wav",
+      "status": "verified",
+      "start_s": 12.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 82,
+      "common_name": "European Robin",
+      "scientific_name": "Erithacus rubecula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.9805
+        },
+        "top_noise": {
+          "class_name": "Rodents, rats, mice",
+          "score": 0.0117
+        }
+      }
+    },
+    {
+      "id": 98,
+      "timestamp": "2026-05-04 05:08:50",
+      "confidence": 0.9964,
+      "audio_file": "chunk_20260504_050850_0.0_9.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 9.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 82,
+      "common_name": "European Robin",
+      "scientific_name": "Erithacus rubecula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird vocalization, bird call, bird song",
+          "score": 0.8008
+        },
+        "top_noise": {
+          "class_name": "Speech",
+          "score": 0.043
+        }
+      }
+    },
+    {
+      "id": 95,
+      "timestamp": "2026-05-03 17:17:19",
+      "confidence": 0.9584,
+      "audio_file": "chunk_20260503_171719_12.0_15.0.wav",
+      "status": "verified",
+      "start_s": 12.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 79,
+      "common_name": "European Robin",
+      "scientific_name": "Erithacus rubecula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.1484
+        },
+        "top_noise": {
+          "class_name": "Vehicle",
+          "score": 0.1992
+        }
+      }
+    },
+    {
+      "id": 93,
+      "timestamp": "2026-05-03 17:17:19",
+      "confidence": 0.9755,
+      "audio_file": "chunk_20260503_171719_9.0_12.0.wav",
+      "status": "verified",
+      "start_s": 9.0,
+      "end_s": 12.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 77,
+      "common_name": "Eurasian Blackbird",
+      "scientific_name": "Turdus merula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.8906
+        },
+        "top_noise": {
+          "class_name": "Whistling",
+          "score": 0.1484
+        }
+      }
+    },
+    {
+      "id": 89,
+      "timestamp": "2026-05-03 15:33:03",
+      "confidence": 0.9952,
+      "audio_file": "chunk_20260503_153303_12.0_15.0.wav",
+      "status": "verified",
+      "start_s": 12.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 73,
+      "common_name": "European Robin",
+      "scientific_name": "Erithacus rubecula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.5859
+        },
+        "top_noise": {
+          "class_name": "Vehicle",
+          "score": 0.043
+        }
+      }
+    },
+    {
+      "id": 88,
+      "timestamp": "2026-05-03 15:33:03",
+      "confidence": 0.9519,
+      "audio_file": "chunk_20260503_153303_0.0_9.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 9.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 73,
+      "common_name": "European Robin",
+      "scientific_name": "Erithacus rubecula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.8516
+        },
+        "top_noise": {
+          "class_name": "Motor vehicle (road)",
+          "score": 0.1992
+        }
+      }
+    },
+    {
+      "id": 86,
+      "timestamp": "2026-05-03 08:07:52",
+      "confidence": 0.9986,
+      "audio_file": "chunk_20260503_080752_6.0_15.0.wav",
+      "status": "verified",
+      "start_s": 6.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 71,
+      "common_name": "European Robin",
+      "scientific_name": "Erithacus rubecula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.9414
+        },
+        "top_noise": {
+          "class_name": "Speech",
+          "score": 0.043
+        }
+      }
+    },
+    {
+      "id": 85,
+      "timestamp": "2026-05-03 08:07:52",
+      "confidence": 0.9989,
+      "audio_file": "chunk_20260503_080752_0.0_3.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 3.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 71,
+      "common_name": "European Robin",
+      "scientific_name": "Erithacus rubecula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.918
+        },
+        "top_noise": {
+          "class_name": "Speech",
+          "score": 0.043
+        }
+      }
+    },
+    {
+      "id": 83,
+      "timestamp": "2026-05-03 06:03:23",
+      "confidence": 0.9967,
+      "audio_file": "chunk_20260503_060323_6.0_9.0.wav",
+      "status": "verified",
+      "start_s": 6.0,
+      "end_s": 9.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 70,
+      "common_name": "European Robin",
+      "scientific_name": "Erithacus rubecula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.957
+        },
+        "top_noise": {
+          "class_name": "Car alarm",
+          "score": 0.082
+        }
+      }
+    },
+    {
+      "id": 77,
+      "timestamp": "2026-05-02 18:59:39",
+      "confidence": 0.9885,
+      "audio_file": "chunk_20260502_185939_9.0_15.0.wav",
+      "status": "verified",
+      "start_s": 9.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 64,
+      "common_name": "Eurasian Blackbird",
+      "scientific_name": "Turdus merula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.918
+        },
+        "top_noise": {
+          "class_name": "Walk, footsteps",
+          "score": 0.1484
+        }
+      }
+    },
+    {
+      "id": 75,
+      "timestamp": "2026-05-02 17:40:52",
+      "confidence": 0.9099,
+      "audio_file": "chunk_20260502_174052_0.0_15.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 62,
+      "common_name": "Eurasian Blackcap",
+      "scientific_name": "Sylvia atricapilla",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.332
+        },
+        "top_noise": {
+          "class_name": "Rodents, rats, mice",
+          "score": 0.1094
+        }
+      }
+    },
+    {
+      "id": 74,
+      "timestamp": "2026-05-02 16:10:03",
+      "confidence": 0.938,
+      "audio_file": "chunk_20260502_161003_9.0_15.0.wav",
+      "status": "verified",
+      "start_s": 9.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 61,
+      "common_name": "Song Thrush",
+      "scientific_name": "Turdus philomelos",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.957
+        },
+        "top_noise": {
+          "class_name": "Whistling",
+          "score": 0.0312
+        }
+      }
+    },
+    {
+      "id": 72,
+      "timestamp": "2026-05-02 16:10:03",
+      "confidence": 1.0,
+      "audio_file": "chunk_20260502_161003_0.0_15.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 60,
+      "common_name": "Eurasian Blackbird",
+      "scientific_name": "Turdus merula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.9805
+        },
+        "top_noise": {
+          "class_name": "Whistling",
+          "score": 0.2617
+        }
+      }
+    },
+    {
+      "id": 69,
+      "timestamp": "2026-05-02 16:09:56",
+      "confidence": 0.9987,
+      "audio_file": "chunk_20260502_160956_0.0_9.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 9.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 58,
+      "common_name": "European Robin",
+      "scientific_name": "Erithacus rubecula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.9414
+        },
+        "top_noise": {
+          "class_name": "Buzzer",
+          "score": 0.2617
+        }
+      }
+    },
+    {
+      "id": 67,
+      "timestamp": "2026-05-02 15:33:53",
+      "confidence": 0.9409,
+      "audio_file": "chunk_20260502_153353_0.0_6.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 6.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 57,
+      "common_name": "Common Chaffinch",
+      "scientific_name": "Fringilla coelebs",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.4141
+        },
+        "top_noise": {
+          "class_name": "Walk, footsteps",
+          "score": 0.082
+        }
+      }
+    },
+    {
+      "id": 66,
+      "timestamp": "2026-05-02 10:13:18",
+      "confidence": 0.9294,
+      "audio_file": "chunk_20260502_101318_12.0_15.0.wav",
+      "status": "verified",
+      "start_s": 12.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 56,
+      "common_name": "Eurasian Blackcap",
+      "scientific_name": "Sylvia atricapilla",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.5859
+        },
+        "top_noise": {
+          "class_name": "Speech",
+          "score": 0.0586
+        }
+      }
+    },
+    {
+      "id": 63,
+      "timestamp": "2026-05-02 08:54:37",
+      "confidence": 0.9921,
+      "audio_file": "chunk_20260502_085437_12.0_15.0.wav",
+      "status": "verified",
+      "start_s": 12.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 54,
+      "common_name": "European Robin",
+      "scientific_name": "Erithacus rubecula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.668
+        },
+        "top_noise": {
+          "class_name": "Goat",
+          "score": 0.0312
+        }
+      }
+    },
+    {
+      "id": 62,
+      "timestamp": "2026-05-02 08:54:37",
+      "confidence": 0.9973,
+      "audio_file": "chunk_20260502_085437_0.0_9.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 9.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 54,
+      "common_name": "European Robin",
+      "scientific_name": "Erithacus rubecula",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.8906
+        },
+        "top_noise": {
+          "class_name": "Car alarm",
+          "score": 0.5
+        }
+      }
+    },
+    {
+      "id": 58,
+      "timestamp": "2026-05-02 05:37:19",
+      "confidence": 0.9884,
+      "audio_file": "chunk_20260502_053719_0.0_15.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 15.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 51,
+      "common_name": "Common Chaffinch",
+      "scientific_name": "Fringilla coelebs",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.5
+        },
+        "top_noise": {
+          "class_name": "Wind noise (microphone)",
+          "score": 0.082
+        }
+      }
+    },
+    {
+      "id": 56,
+      "timestamp": "2026-05-02 05:22:56",
+      "confidence": 1.0,
+      "audio_file": "chunk_20260502_052256_0.0_12.0.wav",
+      "status": "verified",
+      "start_s": 0.0,
+      "end_s": 12.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 49,
+      "common_name": "Great Tit",
+      "scientific_name": "Parus major",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.8906
+        },
+        "top_noise": {
+          "class_name": "Speech",
+          "score": 0.082
+        }
+      }
+    },
+    {
+      "id": 54,
+      "timestamp": "2026-05-01 15:58:52",
+      "confidence": 0.9907,
+      "audio_file": "chunk_20260501_155852_3.0_9.0.wav",
+      "status": "verified",
+      "start_s": 3.0,
+      "end_s": 9.0,
+      "rejection_reason": null,
+      "corrected_common_name": null,
+      "corrected_scientific_name": null,
+      "encounter_id": 47,
+      "common_name": "Great Tit",
+      "scientific_name": "Parus major",
+      "location_id": null,
+      "yamnet": {
+        "top_bird": {
+          "class_name": "Bird",
+          "score": 0.5859
+        },
+        "top_noise": {
+          "class_name": "Camera",
+          "score": 0.4141
+        }
+      }
+    }
+  ]
+}

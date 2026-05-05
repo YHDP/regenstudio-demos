@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>window.DEMO_GUARD = { demoId: 'avisonar' };</script>
+  <script src="../assets/js/guard.js"></script>
+
+  <meta charset="UTF-8">
+  <script>const _t=localStorage.getItem("bd-theme");if(_t)document.documentElement.setAttribute("data-theme",_t);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AviSonar — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    main { display: flex; flex-direction: column; gap: 1.5rem; padding: 1.5rem 2rem; }
+
+    /* KPI row */
+    .kpi-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+    .kpi-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+      padding: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .kpi-card-title {
+      font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--text-muted);
+    }
+    .kpi-metrics { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .kpi-metric { display: flex; flex-direction: column; gap: 0.1rem; }
+    .kpi-value { font-family: var(--font-display); font-size: 1.8rem; color: var(--green); line-height: 1; }
+    .kpi-value.amber { color: var(--amber); }
+    .kpi-value.red { color: var(--red); }
+    .kpi-label { font-family: var(--font-mono); font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); }
+    .kpi-detail { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); margin-top: 0.25rem; }
+    .kpi-action {
+      font-family: var(--font-mono); font-size: 0.65rem; color: var(--green);
+      text-decoration: none; margin-top: auto;
+    }
+    .kpi-action:hover { text-decoration: underline; }
+
+    /* Content row */
+    .content-row { display: grid; grid-template-columns: 3fr 2fr; gap: 1.5rem; }
+
+    /* Species table */
+    .species-table-wrap { overflow-x: auto; }
+    .species-table {
+      width: 100%; border-collapse: collapse;
+      font-family: var(--font-mono); font-size: 0.78rem;
+    }
+    .species-table th {
+      text-align: left; padding: 0.5rem 0.6rem;
+      font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--text-muted); border-bottom: 1px solid var(--border);
+      cursor: pointer; white-space: nowrap; user-select: none;
+    }
+    .species-table th:hover { color: var(--green); }
+    .species-table th.sorted { color: var(--green); }
+    .species-table td {
+      padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--border);
+      color: var(--text); vertical-align: middle;
+    }
+    .species-table tr:hover td { background: var(--surface-2); }
+    .species-table a { color: var(--text); text-decoration: none; font-weight: 500; }
+    .species-table a:hover { color: var(--green); }
+    .conf-badge {
+      font-size: 0.65rem; padding: 0.1rem 0.4rem; border-radius: 3px;
+    }
+    .conf-high { background: var(--green-dim); color: var(--green); }
+    .conf-mid { background: rgba(210, 153, 34, 0.15); color: var(--amber); }
+    .unverified-link { color: var(--amber); cursor: pointer; }
+    .unverified-link:hover { text-decoration: underline; }
+
+    /* Recorder toggle */
+    .rec-toggle {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase;
+      letter-spacing: 0.08em; padding: 0.35rem 0.75rem;
+      border: 1px solid var(--green); border-radius: 6px;
+      background: var(--green-dim); color: var(--green);
+      cursor: pointer; transition: all 0.15s; margin-top: 0.5rem;
+    }
+    .rec-toggle:hover { background: var(--green); color: var(--bg); }
+    .rec-toggle.paused { border-color: var(--amber); color: var(--amber); background: rgba(210,153,34,0.15); }
+    .rec-toggle.paused:hover { background: var(--amber); color: var(--bg); }
+    .rec-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--green);
+      animation: pulse 2s infinite;
+    }
+    .rec-toggle.paused .rec-dot { background: var(--amber); animation: none; }
+
+    /* Daily log panel */
+    .obs-panel {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+      padding: 1.25rem;
+    }
+    .obs-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+    .obs-stats {
+      display: flex; gap: 1.25rem; margin-bottom: 0.75rem; flex-wrap: wrap;
+    }
+    .obs-stat {
+      font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);
+      display: flex; align-items: baseline; gap: 0.3rem;
+    }
+    .obs-stat-value { color: var(--green); font-size: 1rem; font-family: var(--font-display); }
+    .obs-weather {
+      display: flex; gap: 1.25rem; margin-bottom: 0.75rem;
+      font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);
+    }
+    .obs-weather-item { display: flex; align-items: center; gap: 0.3rem; }
+    .obs-note-row { display: flex; gap: 0.5rem; align-items: flex-start; }
+    .obs-note {
+      flex: 1; font-family: var(--font-mono); font-size: 0.78rem;
+      background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px;
+      padding: 0.5rem 0.7rem; color: var(--text); resize: vertical; min-height: 2.5rem;
+    }
+    .obs-note:focus { border-color: var(--green); outline: none; }
+    .obs-save {
+      font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase;
+      letter-spacing: 0.08em; padding: 0.4rem 0.75rem;
+      border: 1px solid var(--green); border-radius: 6px;
+      background: var(--green-dim); color: var(--green); cursor: pointer;
+    }
+    .obs-save:hover { background: var(--green); color: var(--bg); }
+    .obs-rating { display: flex; gap: 0.3rem; }
+    .obs-rating-btn {
+      font-family: var(--font-mono); font-size: 0.6rem; padding: 0.2rem 0.5rem;
+      border: 1px solid var(--border); border-radius: 4px;
+      background: none; color: var(--text-muted); cursor: pointer;
+    }
+    .obs-rating-btn:hover { border-color: var(--green); color: var(--green); }
+    .obs-rating-btn.active { border-color: var(--green); background: var(--green-dim); color: var(--green); }
+
+    /* Audio preview */
+    .preview-panel {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+      padding: 1.25rem;
+    }
+    .preview-list { display: flex; flex-direction: column; gap: 0.6rem; }
+    .preview-item {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-family: var(--font-mono); font-size: 0.75rem;
+    }
+    .preview-time {
+      color: var(--text-muted); font-size: 0.65rem; min-width: 55px;
+      text-align: right;
+    }
+    .preview-item audio {
+      flex: 1; height: 32px; max-width: 100%;
+    }
+    .preview-item audio::-webkit-media-controls-panel { background: var(--surface-2); }
+    .preview-empty {
+      font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);
+      font-style: italic;
+    }
+    .preview-refresh {
+      font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase;
+      letter-spacing: 0.08em; padding: 0.25rem 0.5rem;
+      border: 1px solid var(--border); border-radius: 4px;
+      background: none; color: var(--text-muted); cursor: pointer;
+    }
+    .preview-refresh:hover { border-color: var(--green); color: var(--green); }
+
+    /* Activity chart (taller) */
+    .activity-panel .activity-chart { height: 180px; }
+    .hour-indicator { background: var(--green) !important; opacity: 0.3; }
+
+    /* Feed section */
+    .feed-section { margin-top: 0.5rem; }
+    .feed-toggle {
+      font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--text-muted); cursor: pointer;
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 0; border: none; background: none; width: 100%;
+      border-top: 1px solid var(--border);
+    }
+    .feed-toggle:hover { color: var(--green); }
+    .feed-toggle .arrow { transition: transform 0.2s; }
+    .feed-toggle.open .arrow { transform: rotate(90deg); }
+    .feed-collapsed { display: none; }
+    .feed-collapsed.open { display: flex; flex-direction: column; gap: 0.5rem; max-height: 50vh; overflow-y: auto; }
+
+    @media (max-width: 900px) {
+      .kpi-row { grid-template-columns: 1fr; }
+      .content-row { grid-template-columns: 1fr; }
+    }
+  </style>
+  <link rel="stylesheet" href="./demo-overrides.css">
+  <script src="./data-router.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="logo-icon">🦉</span>
+      <span class="logo-text">AviSonar</span>
+      <span class="logo-sub">Dashboard</span>
+    </div>
+    <nav class="header-nav">
+      <a href="/" class="nav-link active" aria-current="page" data-i18n="nav.dashboard">Dashboard</a>
+      <a href="/calls.html" class="nav-link" data-i18n="nav.calls">Calls</a>
+      <a href="/label.html" class="nav-link" data-i18n="nav.label">Label</a>
+      <a href="/analytics.html" class="nav-link" data-i18n="nav.analytics">Analytics</a>
+      <a href="/map.html" class="nav-link" data-i18n="nav.map">Map</a>
+      <a href="/settings.html" class="nav-link" data-i18n="nav.settings">Settings</a>
+    </nav>
+    <div class="header-controls">
+      <select id="location-select" class="header-select" aria-label="Select location">
+        <option value="" data-i18n="filter.all_locations">All locations</option>
+      </select>
+      <input type="search" id="species-search" class="header-search" data-i18n-placeholder="filter.search_species" placeholder="Search species..." aria-label="Search species">
+      <input type="date" id="date-from" class="header-date" aria-label="From date" title="From date">
+      <span style="color:var(--muted);font-size:0.7rem;">—</span>
+      <input type="date" id="date-to" class="header-date" aria-label="To date" title="To date">
+    </div>
+    <div class="header-stats">
+      <div class="status-dot active" id="status-dot" title="System status" role="status"></div>
+    </div>
+  </header>
+
+  <div id="error-banner" class="error-banner" role="alert" hidden></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <main>
+    <!-- KPI Cards -->
+    <div class="kpi-row">
+      <div class="kpi-card" id="kpi-today">
+        <div class="kpi-card-title" data-i18n="dashboard.today_summary">Today's Summary</div>
+        <div class="kpi-metrics">
+          <div class="kpi-metric"><span class="kpi-value" id="kpi-species">—</span><span class="kpi-label" data-i18n="kpi.species">species</span></div>
+          <div class="kpi-metric"><span class="kpi-value" id="kpi-calls">—</span><span class="kpi-label" data-i18n="kpi.calls">calls</span></div>
+          <div class="kpi-metric"><span class="kpi-value" id="kpi-confidence">—</span><span class="kpi-label" data-i18n="kpi.avg_confidence">avg confidence</span></div>
+        </div>
+        <div class="kpi-detail" id="kpi-most-active"></div>
+      </div>
+
+      <div class="kpi-card" id="kpi-backlog">
+        <div class="kpi-card-title" data-i18n="dashboard.verification_backlog">Verification Backlog</div>
+        <div class="kpi-metrics">
+          <div class="kpi-metric"><span class="kpi-value" id="kpi-unverified">—</span><span class="kpi-label" data-i18n="kpi.unverified">unverified</span></div>
+          <div class="kpi-metric"><span class="kpi-value" id="kpi-vrate">—</span><span class="kpi-label" data-i18n="kpi.verified_pct">verified %</span></div>
+        </div>
+        <div class="kpi-detail" id="kpi-backlog-detail"></div>
+        <a class="kpi-action" id="kpi-review-link" href="#" data-i18n="kpi.review_now">Review now &rarr;</a>
+      </div>
+
+      <div class="kpi-card" id="kpi-health">
+        <div class="kpi-card-title" data-i18n="dashboard.system_health">System Health</div>
+        <div class="kpi-metrics">
+          <div class="kpi-metric"><span class="kpi-value" id="kpi-hours">—</span><span class="kpi-label" data-i18n="kpi.hours_today">hours today</span></div>
+          <div class="kpi-metric"><span class="kpi-value" id="kpi-alltime">—</span><span class="kpi-label" data-i18n="kpi.all_time">species all time</span></div>
+        </div>
+        <div class="kpi-detail" id="kpi-last-detection"></div>
+        <div class="kpi-detail">🎙 <span id="kpi-mic">Detecting...</span></div>
+        <button class="rec-toggle" id="rec-toggle" onclick="toggleRecording()">
+          <span class="rec-dot" id="rec-dot"></span>
+          <span id="rec-label" data-i18n="dashboard.recording">Recording</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Daily Log -->
+    <div class="obs-panel" id="obs-panel">
+      <div class="obs-header">
+        <h2 class="panel-title" data-i18n="obs.title">Daily Log</h2>
+        <div class="obs-rating" id="obs-rating"></div>
+      </div>
+      <div class="obs-stats" id="obs-stats"></div>
+      <div class="obs-weather" id="obs-weather"></div>
+      <div class="obs-note-row">
+        <textarea class="obs-note" id="obs-note" rows="2" data-i18n-placeholder="obs.note_placeholder" placeholder="Add observation notes..."></textarea>
+        <button class="obs-save" id="obs-save" onclick="saveObsNote()" data-i18n="obs.save">Save</button>
+      </div>
+    </div>
+
+    <!-- Audio Preview -->
+    <div class="preview-panel" id="preview-panel">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+        <h2 class="panel-title" data-i18n="preview.title">Live Audio Preview</h2>
+        <button class="preview-refresh" onclick="loadPreview()" data-i18n="preview.refresh">Refresh</button>
+      </div>
+      <div class="preview-list" id="preview-list"></div>
+    </div>
+
+    <!-- Species Table + Activity Chart -->
+    <div class="content-row">
+      <div class="panel" aria-label="Today's species">
+        <div class="panel-title-row">
+          <h2 class="panel-title" data-i18n="dashboard.species_today">Today's Species</h2>
+          <a href="/api/export/csv" class="export-btn" id="export-btn" data-i18n="action.export_csv">CSV</a>
+        </div>
+        <div class="species-table-wrap">
+          <table class="species-table" id="species-table">
+            <thead>
+              <tr>
+                <th data-sort="common_name" data-i18n="table.species">Species</th>
+                <th data-sort="total_calls" data-i18n="table.calls">Calls</th>
+                <th data-sort="avg_confidence" data-i18n="table.confidence">Confidence</th>
+                <th data-sort="total_verified" data-i18n="table.verified">Verified</th>
+                <th data-sort="unverified_count" data-i18n="table.unverified">Unverified</th>
+                <th data-sort="last_seen" data-i18n="table.last_heard">Last Heard</th>
+              </tr>
+            </thead>
+            <tbody id="species-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel activity-panel" aria-label="Activity by hour">
+        <h2 class="panel-title" data-i18n="dashboard.activity_by_hour">Activity by Hour</h2>
+        <div id="activity-chart" class="activity-chart"></div>
+      </div>
+    </div>
+
+    <!-- Collapsible Feed -->
+    <div class="feed-section">
+      <button class="feed-toggle" id="feed-toggle" onclick="toggleFeed()">
+        <span class="arrow">&#9654;</span> <span data-i18n="dashboard.recent_encounters">Recent Encounters</span>
+      </button>
+      <div class="feed-collapsed" id="feed"></div>
+    </div>
+  </main>
+
+  <script src="i18n.js"></script>
+  <script src="spectrogram.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
