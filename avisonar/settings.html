@@ -494,7 +494,7 @@
         sample_rate: parseInt(document.getElementById('set-samplerate').value),
         encounter_gap: parseInt(document.getElementById('set-gap').value),
         mic_device: micVal === '' ? null : parseInt(micVal),
-        xc_api_key: document.getElementById('set-xc-key').value.trim(),
+        // xc-api-key field omitted in demo build (write paths stubbed)
       };
       const res = await fetch('/api/settings', {
         method: 'PUT',
