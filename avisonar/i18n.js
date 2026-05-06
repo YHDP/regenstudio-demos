@@ -5,7 +5,9 @@
 
 let _translations = {};
 let _speciesNames = {};
-let _currentLang = localStorage.getItem('bd-lang') || navigator.language?.substring(0, 2) || 'en';
+// Demo default: EN regardless of browser locale. Visitors can switch via the
+// language picker (which writes to localStorage); subsequent visits remember.
+let _currentLang = localStorage.getItem('bd-lang') || 'en';
 const SUPPORTED_LANGS = ['en', 'pt', 'nl', 'es'];
 
 // Ensure valid language

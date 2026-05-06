@@ -97,19 +97,31 @@
     const url = typeof input === 'string' ? input : (input && input.url) || '';
     const method = ((init && init.method) || (input && input.method) || 'GET').toUpperCase();
 
-    // Stub mutating verbs
-    if (url.indexOf('/api/') !== -1 && method !== 'GET' && method !== 'HEAD') {
+    // Determine if this is the dashboard's OWN API (relative or same-origin
+    // path beginning with /api/) — not some external URL that just happens to
+    // contain "/api/" in its path (e.g. Wikipedia's REST API at
+    // https://en.wikipedia.org/api/rest_v1/...).
+    let isOwnApi = false;
+    if (typeof url === 'string') {
+      if (url.startsWith('/api/') || url.startsWith('./api/')) {
+        isOwnApi = true;
+      } else if (url.startsWith(location.origin + '/api/')) {
+        isOwnApi = true;
+      }
+    }
+
+    // Stub mutating verbs on the dashboard's own API
+    if (isOwnApi && method !== 'GET' && method !== 'HEAD') {
       return new Response(
         JSON.stringify({ ok: true, demo: true, message: 'Demo mode — write disabled.' }),
         { status: 200, headers: { 'Content-Type': 'application/json' } }
       );
     }
 
-    // Rewrite GETs hitting /api/*
-    if (url.indexOf('/api/') !== -1) {
+    // Rewrite GETs hitting the dashboard's own /api/*
+    if (isOwnApi) {
       const rewritten = rewriteApiUrl(url);
       if (rewritten) return _origFetch(rewritten, init);
-      // Endpoints without a static target: 404 gracefully
       return new Response('{}', { status: 404, headers: { 'Content-Type': 'application/json' } });
     }
 
