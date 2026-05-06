@@ -30,7 +30,7 @@
     <div class="loader-title" data-i18n="label.entering">Entering labelling session...</div>
     <div data-i18n="label.loading_queue">Fetching the next unverified call.</div>
     <div class="loader-hint">
-      <a href="/calls.html" data-i18n="label.or_browse">Or browse the full calls registry &rarr;</a>
+      <a href="./calls.html" data-i18n="label.or_browse">Or browse the full calls registry &rarr;</a>
     </div>
   </div>
 
@@ -61,7 +61,7 @@
       el.innerHTML = `
         <div class="loader-title">${t('label.queue_empty_title') !== 'label.queue_empty_title' ? t('label.queue_empty_title') : 'Nothing to label 🎉'}</div>
         <div>${t('label.queue_empty') !== 'label.queue_empty' ? t('label.queue_empty') : 'Queue empty — all reviewed.'}</div>
-        <div class="loader-hint"><a href="/calls.html">${t('label.or_browse') !== 'label.or_browse' ? t('label.or_browse') : 'Or browse the full calls registry →'}</a></div>
+        <div class="loader-hint"><a href="./calls.html">${t('label.or_browse') !== 'label.or_browse' ? t('label.or_browse') : 'Or browse the full calls registry →'}</a></div>
       `;
     })();
   </script>

@@ -166,12 +166,12 @@
       <span class="logo-sub" data-i18n="nav.settings">Settings</span>
     </div>
     <nav class="header-nav">
-      <a href="/" class="nav-link" data-i18n="nav.dashboard">Dashboard</a>
-      <a href="/calls.html" class="nav-link" data-i18n="nav.calls">Calls</a>
-      <a href="/label.html" class="nav-link" data-i18n="nav.label">Label</a>
-      <a href="/analytics.html" class="nav-link" data-i18n="nav.analytics">Analytics</a>
-      <a href="/map.html" class="nav-link" data-i18n="nav.map">Map</a>
-      <a href="/settings.html" class="nav-link active" aria-current="page" data-i18n="nav.settings">Settings</a>
+      <a href="./" class="nav-link" data-i18n="nav.dashboard">Dashboard</a>
+      <a href="./calls.html" class="nav-link" data-i18n="nav.calls">Calls</a>
+      <a href="./label.html" class="nav-link" data-i18n="nav.label">Label</a>
+      <a href="./analytics.html" class="nav-link" data-i18n="nav.analytics">Analytics</a>
+      <a href="./map.html" class="nav-link" data-i18n="nav.map">Map</a>
+      <a href="./settings.html" class="nav-link active" aria-current="page" data-i18n="nav.settings">Settings</a>
     </nav>
   </header>
 
@@ -388,7 +388,7 @@
         <div>${t('settings.sysinfo_microphone')}: ${mic.active?.name || t('settings.sysinfo_none')} (${mic.available?.length || 0} ${t('settings.sysinfo_devices')})</div>
         <div>${t('settings.sysinfo_sunrise')}: ${sun.sunrise?.toFixed(1)}h · ${t('settings.sysinfo_sunset')}: ${sun.sunset?.toFixed(1)}h · ${t('settings.sysinfo_day_length')}: ${sun.day_length_hours}h</div>
         <div>${t('settings.sysinfo_species_all_time')}: ${stats.species_all_time} · ${t('settings.sysinfo_this_week')}: ${stats.species_week}</div>
-        <div>${t('settings.sysinfo_api_docs')}: <a href="/api/docs" style="color:var(--green)">localhost:8080/api/docs</a></div>
+        <div>${t('settings.sysinfo_api_docs')}: <a href="./api/docs" style="color:var(--green)">localhost:8080/api/docs</a></div>
       `;
     }
 

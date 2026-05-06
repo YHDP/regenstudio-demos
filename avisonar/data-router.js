@@ -19,7 +19,7 @@
   const READ_PASSTHROUGH = ['/data/', './data/', '/audio/', './audio/'];
   const APP_ROOT = location.pathname.replace(/\/[^/]*$/, '/'); // e.g. "/avisonar/"
 
-  function urlEncodePath(s) { return s.split('/').map(encodeURIComponent).join('/'); }
+  function urlEncodePath(s) { return s; }
 
   // Rewrite an API URL to its static-data equivalent.
   function rewriteApiUrl(input) {
@@ -112,6 +112,15 @@
       // Endpoints without a static target: 404 gracefully
       return new Response('{}', { status: 404, headers: { 'Content-Type': 'application/json' } });
     }
+
+    // The dashboard fetches absolute paths like /data/i18n/en.json and
+    // /audio/<file>.wav. In the demo those live under /avisonar/data/ and
+    // /avisonar/audio/ — rewrite onto APP_ROOT so upstream code ships
+    // unchanged.
+    if (typeof url === 'string' && /^\/(data|audio)\//.test(url)) {
+      return _origFetch(APP_ROOT + url.replace(/^\//, ''), init);
+    }
+
     // Pass-through everything else
     return _origFetch(input, init);
   };
