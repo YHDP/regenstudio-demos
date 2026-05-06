@@ -6,12 +6,10 @@
   "nav.calls": "Llamadas",
   "nav.label": "Etiquetar",
   "nav.settings": "Configuración",
-
   "label.entering": "Entrando en la sesión de etiquetado...",
   "label.loading_queue": "Buscando la próxima llamada no verificada.",
   "label.or_browse": "O explora el registro completo →",
   "label.queue_empty_title": "Nada que etiquetar 🎉",
-
   "calls.title": "Registro de llamadas",
   "calls.heading": "Todas las llamadas",
   "calls.subheading": "Filtra, ordena y revisa todas las llamadas detectadas.",
@@ -27,7 +25,6 @@
   "calls.filter_yam_include": "Incluir clases YAMNet (coma)",
   "calls.filter_yam_exclude": "Excluir clases YAMNet (coma)",
   "calls.yam_quick_add": "Excluir rápido:",
-
   "settings.focus": "Modo de enfoque de especies",
   "settings.focus_hint": "Restringe BirdNET a un subconjunto de especies — útil para cazar un candidato específico o eliminar clases que confunden. Los cambios se aplican al siguiente fragmento analizado.",
   "settings.focus_mode": "Modo",
@@ -65,19 +62,15 @@
   "calls.loading": "Cargando...",
   "calls.empty": "Ninguna llamada coincide con los filtros.",
   "calls.total": "llamadas coincidentes",
-
   "batch.selected": "seleccionadas",
   "batch.clear": "Limpiar",
   "batch.unverify": "Revertir verificación",
   "batch.correct_species": "Corregir especie",
   "batch.delete": "Eliminar",
-
   "toast.deleted": "Llamada eliminada",
-
   "label.delete_confirm": "¿Eliminar esta llamada y su audio de forma permanente? No se puede deshacer.",
   "label.delete_hint": "Eliminar esta llamada permanentemente",
   "label.flow_hint_d": "= eliminar (permanente)",
-
   "label.start_session": "Iniciar sesión de etiquetado",
   "label.flow_title": "Sesión de etiquetado",
   "label.flow_hint_topk": "= etiquetar como candidato",
@@ -88,7 +81,6 @@
   "label.reject_reason": "Motivo del rechazo",
   "label.queue_empty": "Cola vacía — todo revisado.",
   "nav.live": "En Vivo",
-
   "dashboard.title": "Panel",
   "dashboard.today_summary": "Resumen de Hoy",
   "dashboard.verification_backlog": "Verificaciones Pendientes",
@@ -99,7 +91,6 @@
   "dashboard.recording": "Grabando",
   "dashboard.paused": "Pausado",
   "dashboard.offline": "Desconectado",
-
   "kpi.species": "especies",
   "kpi.calls": "llamadas",
   "kpi.avg_confidence": "confianza media",
@@ -112,14 +103,12 @@
   "kpi.most_unverified": "Más no verificados",
   "kpi.all_clear": "Todo verificado",
   "kpi.last_detection": "Última detección",
-
   "table.species": "Especie",
   "table.calls": "Llamadas",
   "table.confidence": "Confianza",
   "table.verified": "Verificado",
   "table.unverified": "No Verificado",
   "table.last_heard": "Última Vez",
-
   "analytics.total_species": "Total de Especies",
   "analytics.active_species": "Especies Activas",
   "analytics.total_encounters": "Total de Encuentros",
@@ -145,7 +134,6 @@
   "analytics.detections": "Detecciones",
   "analytics.species_count_label": "especies",
   "analytics.generate_report": "Generar Informe",
-
   "species.profile": "Perfil de la Especie",
   "species.encounters": "Encuentros",
   "species.total_calls": "Total de Llamadas",
@@ -162,27 +150,23 @@
   "species.verify_all": "Verificar todos no verificados",
   "species.export_csv": "Exportar CSV",
   "species.encounter_timeline": "Línea de Tiempo de Encuentros",
-
   "action.verify": "Verificar",
   "action.reject": "Rechazar",
   "action.cancel": "Cancelar",
   "action.add": "Agregar",
   "action.delete": "Eliminar",
   "action.export_csv": "CSV",
-
   "toast.verified": "Llamada verificada",
   "toast.rejected": "Llamada rechazada",
   "toast.status_reset": "Estado restablecido",
   "toast.labelled_as": "Etiquetada como",
-
-  "topk.title": "Lo que BirdNET tambi\u00e9n consider\u00f3",
+  "topk.title": "Lo que BirdNET también consideró",
   "topk.hint": "Haz clic en una fila o usa",
-  "topk.hint2": "para cambiar la comparaci\u00f3n de referencia. Pulsa",
+  "topk.hint2": "para cambiar la comparación de referencia. Pulsa",
   "topk.hint3": "para etiquetar esta llamada como el candidato actual.",
-  "topk.verify_primary": "\u2713 Confirmar principal",
+  "topk.verify_primary": "✓ Confirmar principal",
   "topk.label_as": "Etiquetar como",
-
-  "yamnet.title": "Segunda opini\u00f3n (YAMNet)",
+  "yamnet.title": "Segunda opinión (YAMNet)",
   "yamnet.kind_bird": "Ave",
   "yamnet.kind_noise": "Ruido",
   "yamnet.kind_other": "Otro",
@@ -191,12 +175,10 @@
   "toast.note_deleted": "Nota eliminada",
   "toast.recording_paused": "Grabación pausada",
   "toast.recording_resumed": "Grabación reanudada",
-
   "empty.no_species": "Ninguna especie detectada hoy.",
   "empty.no_data": "Datos insuficientes.",
   "empty.no_encounters": "No se encontraron encuentros.",
   "empty.select_species": "Seleccione especies arriba para comparar.",
-
   "iucn.CR": "En Peligro Crítico",
   "iucn.EN": "En Peligro",
   "iucn.VU": "Vulnerable",
@@ -204,15 +186,12 @@
   "iucn.LC": "Preocupación Menor",
   "iucn.DD": "Datos Insuficientes",
   "iucn.NE": "No Evaluada",
-
   "trend.increasing": "Aumentando",
   "trend.stable": "Estable",
   "trend.decreasing": "Disminuyendo",
   "trend.unknown": "Desconocido",
-
   "confirm.reject": "¿Rechazar esta detección?",
   "confirm.reject_desc": "Se ocultará de los conteos de especies.",
-
   "time.today": "Hoy (por hora)",
   "time.7days": "7 días (diario)",
   "time.30days": "30 días (diario)",
@@ -224,17 +203,13 @@
   "time.last_30_days": "últimos 30 días",
   "time.all_time": "total",
   "time.of_all_calls": "de todas las llamadas",
-
   "calendar.brighter_more": "Más brillante = más especies",
-
   "settings.monitoring_locations": "Ubicaciones de Monitoreo",
   "settings.watchlist": "Lista de Vigilancia",
   "settings.system_info": "Información del Sistema",
-
   "filter.all_locations": "Todas las ubicaciones",
   "filter.search_species": "Buscar especies...",
   "kpi.review_now": "Revisar ahora →",
-
   "obs.title": "Diario de Campo",
   "obs.note_placeholder": "Agregar observaciones...",
   "obs.save": "Guardar",
@@ -253,7 +228,6 @@
   "obs.rating.poor": "Malo",
   "obs.rating.no_data": "Sin datos",
   "obs.view_log": "Diario de campo →",
-
   "settings.add_location": "Agregar Ubicación",
   "settings.add_to_watchlist": "Agregar a la Lista",
   "settings.use_current_location": "Usar ubicación actual",
@@ -280,7 +254,6 @@
   "settings.sysinfo_species_all_time": "Especies (total)",
   "settings.sysinfo_this_week": "Esta semana",
   "settings.sysinfo_api_docs": "Documentación de la API",
-
   "settings.detection": "Configuración de Detección",
   "settings.min_confidence": "Confianza Mínima",
   "settings.sensitivity": "Sensibilidad BirdNET",
@@ -296,15 +269,12 @@
   "settings.xc_api_key": "Clave API Xeno-Canto",
   "settings.hint_xc_key": "Clave gratuita en xeno-canto.org/account — necesaria para espectrogramas de referencia",
   "toast.settings_saved": "Configuración guardada — se aplica en el próximo ciclo de grabación",
-
   "preview.title": "Previsualización de Audio en Vivo",
   "preview.refresh": "Actualizar",
   "preview.no_audio": "Ninguna previsualización disponible — inicie la grabación primero",
-
   "spectrogram.toggle": "Mostrar espectrograma",
   "spectrogram.hide": "Ocultar espectrograma",
   "spectrogram.loading": "Cargando espectrograma...",
-
   "compare.title": "Análisis Avanzado",
   "compare.your_recording": "Tu Grabación",
   "compare.references": "Grabaciones de Referencia",
@@ -312,7 +282,7 @@
   "compare.confirm": "Confirmar identificación",
   "compare.change": "Cambiar identificación",
   "compare.loading_refs": "Cargando grabaciones de referencia...",
-  "compare.no_refs": "No se encontraron grabaciones de referencia en Xeno-Canto",
+  "compare.no_refs": "Grabaciones de referencia no disponibles en esta demo — requiere una clave API Xeno-Canto para comparar con llamadas verificadas.",
   "compare.no_key_title": "Se requiere clave API de Xeno-Canto",
   "compare.no_key_step1": "1. Crea una cuenta gratuita en <a href='https://xeno-canto.org/account/register' target='_blank' style='color:var(--green)'>xeno-canto.org/account/register</a>",
   "compare.no_key_step2": "2. Verifica tu correo e inicia sesión",
@@ -322,7 +292,6 @@
   "compare.source": "Fuente: Xeno-Canto",
   "compare.submit_xc": "Enviar a Xeno-Canto",
   "compare.clipboard_copied": "Información copiada! Pégala en el formulario de carga de Xeno-Canto.",
-
   "action.reject_reason": "Motivo del rechazo",
   "action.reject_wrong_species": "Especie incorrecta",
   "action.reject_urban_noise": "Ruido urbano",
@@ -332,7 +301,6 @@
   "action.submit_xc": "Enviar a Xeno-Canto",
   "action.edit": "Editar",
   "action.remove": "Eliminar",
-
   "toast.location_added": "Ubicación agregada",
   "toast.location_updated": "Ubicación actualizada",
   "toast.location_deleted": "Ubicación eliminada",
@@ -341,18 +309,15 @@
   "toast.coordinates_filled": "Coordenadas completadas desde GPS",
   "toast.geolocation_unavailable": "Geolocalización no disponible",
   "toast.geolocation_error": "No se pudo obtener la ubicación",
-
   "confirm.delete_location": "¿Eliminar ubicación \"{name}\"? Los encuentros mantendrán sus datos pero perderán el vínculo con la ubicación.",
   "prompt.location_name": "Nombre de ubicación:",
   "prompt.latitude": "Latitud:",
   "prompt.longitude": "Longitud:",
   "prompt.description": "Descripción:",
-
   "map.species_detected": "especies detectadas",
   "map.calls": "llamadas",
   "map.more_species": "más especies",
   "map.iucn_status": "Estado UICN",
-
   "species.loading": "Cargando datos de la especie...",
   "species.not_specified": "No se especificó especie.",
   "species.not_found": "Especie no encontrada.",
@@ -363,13 +328,10 @@
   "species.sort_calls": "Más llamadas",
   "species.add_note_placeholder": "Agregar nota...",
   "species.trend_after_more_weeks": "La tendencia aparece después de más semanas.",
-
   "toast.nothing_to_verify": "Nada que verificar",
   "toast.calls_verified": "llamadas verificadas",
-
   "confirm.verify_all": "¿Verificar {0} llamadas no verificadas de {1}?",
   "confirm.verify_all_btn": "Verificar todas",
-
   "month.jan": "Ene",
   "month.feb": "Feb",
   "month.mar": "Mar",

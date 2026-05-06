@@ -16,7 +16,7 @@
 (function () {
   'use strict';
 
-  const READ_PASSTHROUGH = ['/data/', './data/', '/audio/', './audio/'];
+  const READ_PASSTHROUGH = ['/data/', './data/', './audio/', './audio/'];
   const APP_ROOT = location.pathname.replace(/\/[^/]*$/, '/'); // e.g. "/avisonar/"
 
   function urlEncodePath(s) { return s; }
@@ -81,11 +81,12 @@
       const from = params.get('from') || '';
       const to = params.get('to') || '';
       staticPath = '/api/observations/_range_' + from + '_' + to;
-    } else if (pathname === '/api/calls' && [...params.keys()].length > 0) {
-      // Encode filter combinations the dashboard uses
-      const sortedKeys = [...params.keys()].sort();
-      const qs = sortedKeys.map(k => `${k}_${params.get(k)}`).join('_');
-      staticPath = '/api/calls' + (qs ? '_' + qs : '');
+    } else if (pathname === '/api/calls') {
+      // Filter combos are too varied to pre-dump; serve the full unfiltered
+      // calls list and let dashboard render whatever the user picks. The
+      // dashboard's filter UI will appear to work but the underlying dataset
+      // is fixed (frozen demo).
+      staticPath = '/api/calls';
     }
 
     return APP_ROOT + 'data' + urlEncodePath(staticPath) + '.json';

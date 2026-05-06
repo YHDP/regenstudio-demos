@@ -511,7 +511,7 @@
       const noiseChip = c.yamnet && c.yamnet.top_noise
         ? `<span class="yam-chip yam-chip-noise">${c.yamnet.top_noise.class_name} ${(c.yamnet.top_noise.score*100).toFixed(0)}%</span>` : '<span style="color:var(--text-muted);font-size:0.6rem;">\u2014</span>';
       const audio = c.audio_file
-        ? `<audio controls preload="none" src="/audio/${encodeURIComponent(c.audio_file)}"></audio>`
+        ? `<audio controls preload="none" src="./audio/${encodeURIComponent(c.audio_file)}"></audio>`
         : '<span style="color:var(--text-muted);font-size:0.65rem;">\u2014</span>';
       const statusCls = `status-${c.status}`;
       const selected = selection.has(c.id);

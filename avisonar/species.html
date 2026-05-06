@@ -490,7 +490,7 @@
           const ra = call.status === 'rejected' ? 'active-reject' : '';
           let audioHtml = `<span class="call-no-audio">${t('species.no_audio')}</span>`;
           if (call.audio_file) {
-            const audioSrc = '/audio/' + encodeURIComponent(call.audio_file);
+            const audioSrc = './audio/' + encodeURIComponent(call.audio_file);
             const compareUrl = `compare.html?file=${encodeURIComponent(call.audio_file)}&species=${encodeURIComponent(enc.scientific_name || '')}&common_name=${encodeURIComponent(currentSpecies)}&call_id=${call.id}`;
             audioHtml = `<div class="call-audio"><audio controls preload="none" src="${audioSrc}"></audio><button class="spect-toggle" onclick="event.stopPropagation(); toggleSpectrogram(this, '${audioSrc}')" title="${t('spectrogram.toggle')}">&#9776;</button><a class="spect-toggle" href="${compareUrl}" title="${t('compare.title')}" style="text-decoration:none;font-size:0.75rem;">&#128269;</a><div class="spect-container" style="display:none;"></div></div>`;
           }

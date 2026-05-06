@@ -201,7 +201,7 @@ async function caSubmitXC(audioFileEncoded, commonName, scientificName) {
 
   // Download WAV
   const safeName = commonName.replace(/[^a-zA-Z0-9]/g, '_');
-  const downloadUrl = `/audio/${audioFile}`;
+  const downloadUrl = `./audio/${audioFile}`;
   const a = document.createElement('a');
   a.href = downloadUrl; a.download = `${safeName}_${dateFormatted}_AviSonar.wav`; a.click();
 

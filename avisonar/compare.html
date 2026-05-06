@@ -406,7 +406,7 @@
 
     // Set up page
     const isPreview = audioFile && audioFile.includes('preview');
-    const audioSrc = isPreview ? `/preview/${audioFile}` : `/audio/${audioFile}`;
+    const audioSrc = isPreview ? `./preview/${audioFile}` : `./audio/${audioFile}`;
 
     document.getElementById('user-audio').src = audioSrc;
     document.getElementById('back-link').href = `species.html?name=${encodeURIComponent(params.get('common_name') || species)}`;

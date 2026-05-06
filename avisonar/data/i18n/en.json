@@ -6,13 +6,11 @@
   "nav.calls": "Calls",
   "nav.label": "Label",
   "nav.settings": "Settings",
-
   "label.entering": "Entering labelling session...",
   "label.loading_queue": "Fetching the next unverified call.",
-  "label.or_browse": "Or browse the full calls registry \u2192",
-  "label.queue_empty_title": "Nothing to label \ud83c\udf89",
+  "label.or_browse": "Or browse the full calls registry →",
+  "label.queue_empty_title": "Nothing to label 🎉",
   "nav.live": "Live",
-
   "calls.title": "Calls Registry",
   "calls.heading": "All Calls",
   "calls.subheading": "Filter, sort, and sift through every detected call.",
@@ -28,9 +26,8 @@
   "calls.filter_yam_include": "Include YAMNet classes (comma-sep)",
   "calls.filter_yam_exclude": "Exclude YAMNet classes (comma-sep)",
   "calls.yam_quick_add": "Quick exclude:",
-
   "settings.focus": "Species Focus Mode",
-  "settings.focus_hint": "Restrict BirdNET to a subset of species \u2014 useful when hunting a specific candidate or when you want to eliminate confusion classes. Changes take effect on the next analysed chunk.",
+  "settings.focus_hint": "Restrict BirdNET to a subset of species — useful when hunting a specific candidate or when you want to eliminate confusion classes. Changes take effect on the next analysed chunk.",
   "settings.focus_mode": "Mode",
   "settings.focus_all": "All species (no filter)",
   "settings.focus_geo": "Geo-expected (BirdNET lat/lon/week)",
@@ -38,7 +35,7 @@
   "settings.focus_single": "Single target (boost one candidate)",
   "settings.focus_species_label": "Species list",
   "settings.focus_species_hint": "Search the full BirdNET list and check the ones you want. Selected species appear as chips above.",
-  "settings.focus_search_placeholder": "Search species \u2014 common or scientific name",
+  "settings.focus_search_placeholder": "Search species — common or scientific name",
   "settings.focus_no_selection": "No species selected yet.",
   "settings.focus_type_to_search": "Type at least two characters to search the BirdNET catalog.",
   "settings.focus_loading": "Loading BirdNET catalog...",
@@ -66,19 +63,15 @@
   "calls.loading": "Loading...",
   "calls.empty": "No calls match these filters.",
   "calls.total": "matching calls",
-
   "batch.selected": "selected",
   "batch.clear": "Clear",
   "batch.unverify": "Unverify",
   "batch.correct_species": "Correct species",
   "batch.delete": "Delete",
-
   "toast.deleted": "Call deleted",
-
   "label.delete_confirm": "Permanently delete this call and its audio file? Cannot be undone.",
   "label.delete_hint": "Permanently delete this call",
   "label.flow_hint_d": "= delete (permanent)",
-
   "label.start_session": "Start labelling session",
   "label.flow_title": "Labelling session",
   "label.flow_hint_topk": "= label as candidate",
@@ -87,8 +80,7 @@
   "label.flow_hint_n": "= skip / next",
   "label.flow_exit": "Exit session",
   "label.reject_reason": "Reject reason",
-  "label.queue_empty": "Queue empty \u2014 all reviewed.",
-
+  "label.queue_empty": "Queue empty — all reviewed.",
   "dashboard.title": "Dashboard",
   "dashboard.today_summary": "Today's Summary",
   "dashboard.verification_backlog": "Verification Backlog",
@@ -99,7 +91,6 @@
   "dashboard.recording": "Recording",
   "dashboard.paused": "Paused",
   "dashboard.offline": "Offline",
-
   "kpi.species": "species",
   "kpi.calls": "calls",
   "kpi.avg_confidence": "avg confidence",
@@ -112,14 +103,12 @@
   "kpi.most_unverified": "Most unverified",
   "kpi.all_clear": "All clear",
   "kpi.last_detection": "Last detection",
-
   "table.species": "Species",
   "table.calls": "Calls",
   "table.confidence": "Confidence",
   "table.verified": "Verified",
   "table.unverified": "Unverified",
   "table.last_heard": "Last Heard",
-
   "analytics.total_species": "Total Species",
   "analytics.active_species": "Active Species",
   "analytics.total_encounters": "Total Encounters",
@@ -145,7 +134,6 @@
   "analytics.detections": "Detections",
   "analytics.species_count_label": "species",
   "analytics.generate_report": "Generate Report",
-
   "species.profile": "Species Profile",
   "species.encounters": "Encounters",
   "species.total_calls": "Total Calls",
@@ -162,26 +150,22 @@
   "species.verify_all": "Verify all unverified",
   "species.export_csv": "Export CSV",
   "species.encounter_timeline": "Encounter Timeline",
-
   "action.verify": "Verify",
   "action.reject": "Reject",
   "action.cancel": "Cancel",
   "action.add": "Add",
   "action.delete": "Delete",
   "action.export_csv": "CSV",
-
   "toast.verified": "Call verified",
   "toast.rejected": "Call rejected",
   "toast.status_reset": "Status reset",
   "toast.labelled_as": "Labelled as",
-
   "topk.title": "What BirdNET also considered",
   "topk.hint": "Click a row or use",
   "topk.hint2": "to switch the reference comparison. Press",
   "topk.hint3": "to label this call as the current candidate.",
-  "topk.verify_primary": "\u2713 Confirm primary",
+  "topk.verify_primary": "✓ Confirm primary",
   "topk.label_as": "Label as",
-
   "yamnet.title": "Second opinion (YAMNet)",
   "yamnet.kind_bird": "Bird",
   "yamnet.kind_noise": "Noise",
@@ -191,12 +175,10 @@
   "toast.note_deleted": "Note deleted",
   "toast.recording_paused": "Recording paused",
   "toast.recording_resumed": "Recording resumed",
-
   "empty.no_species": "No species detected today yet.",
   "empty.no_data": "Not enough data yet.",
   "empty.no_encounters": "No encounters found.",
   "empty.select_species": "Select species above to compare.",
-
   "iucn.CR": "Critically Endangered",
   "iucn.EN": "Endangered",
   "iucn.VU": "Vulnerable",
@@ -204,15 +186,12 @@
   "iucn.LC": "Least Concern",
   "iucn.DD": "Data Deficient",
   "iucn.NE": "Not Evaluated",
-
   "trend.increasing": "Increasing",
   "trend.stable": "Stable",
   "trend.decreasing": "Decreasing",
   "trend.unknown": "Unknown",
-
   "confirm.reject": "Reject this detection?",
   "confirm.reject_desc": "It will be hidden from species counts.",
-
   "time.today": "Today (hourly)",
   "time.7days": "7 days (daily)",
   "time.30days": "30 days (daily)",
@@ -224,17 +203,13 @@
   "time.last_30_days": "last 30 days",
   "time.all_time": "all time",
   "time.of_all_calls": "of all calls",
-
   "calendar.brighter_more": "Brighter = more species",
-
   "settings.monitoring_locations": "Monitoring Locations",
   "settings.watchlist": "Species Watchlist",
   "settings.system_info": "System Information",
-
   "filter.all_locations": "All locations",
   "filter.search_species": "Search species...",
   "kpi.review_now": "Review now →",
-
   "obs.title": "Daily Log",
   "obs.note_placeholder": "Add observation notes...",
   "obs.save": "Save",
@@ -253,7 +228,6 @@
   "obs.rating.poor": "Poor",
   "obs.rating.no_data": "No data",
   "obs.view_log": "Daily log →",
-
   "settings.add_location": "Add Location",
   "settings.add_to_watchlist": "Add to Watchlist",
   "settings.use_current_location": "Use current location",
@@ -280,7 +254,6 @@
   "settings.sysinfo_species_all_time": "Species all time",
   "settings.sysinfo_this_week": "This week",
   "settings.sysinfo_api_docs": "API docs",
-
   "settings.detection": "Detection Settings",
   "settings.min_confidence": "Min Confidence",
   "settings.sensitivity": "BirdNET Sensitivity",
@@ -296,15 +269,12 @@
   "settings.xc_api_key": "Xeno-Canto API Key",
   "settings.hint_xc_key": "Free key from xeno-canto.org/account — needed for reference spectrograms",
   "toast.settings_saved": "Settings saved — takes effect on next recording cycle",
-
   "preview.title": "Live Audio Preview",
   "preview.refresh": "Refresh",
   "preview.no_audio": "No preview audio available yet — start recording first",
-
   "spectrogram.toggle": "Show spectrogram",
   "spectrogram.hide": "Hide spectrogram",
   "spectrogram.loading": "Loading spectrogram...",
-
   "compare.title": "Advanced Analysis",
   "compare.your_recording": "Your Recording",
   "compare.references": "Reference Recordings",
@@ -312,7 +282,7 @@
   "compare.confirm": "Confirm identification",
   "compare.change": "Change identification",
   "compare.loading_refs": "Loading reference recordings...",
-  "compare.no_refs": "No reference recordings found on Xeno-Canto",
+  "compare.no_refs": "Reference recordings unavailable in this demo — requires a Xeno-Canto API key for comparison to verified calls.",
   "compare.no_key_title": "Xeno-Canto API key required",
   "compare.no_key_step1": "1. Create a free account at <a href='https://xeno-canto.org/account/register' target='_blank' style='color:var(--green)'>xeno-canto.org/account/register</a>",
   "compare.no_key_step2": "2. Verify your email and log in",
@@ -322,7 +292,6 @@
   "compare.source": "Source: Xeno-Canto",
   "compare.submit_xc": "Submit to Xeno-Canto",
   "compare.clipboard_copied": "Recording info copied to clipboard! Paste it in the Xeno-Canto upload form.",
-
   "action.reject_reason": "Reason for rejection",
   "action.reject_wrong_species": "Wrong species",
   "action.reject_urban_noise": "Urban noise",
@@ -332,7 +301,6 @@
   "action.submit_xc": "Submit to Xeno-Canto",
   "action.edit": "Edit",
   "action.remove": "Remove",
-
   "toast.location_added": "Location added",
   "toast.location_updated": "Location updated",
   "toast.location_deleted": "Location deleted",
@@ -341,18 +309,15 @@
   "toast.coordinates_filled": "Coordinates filled from GPS",
   "toast.geolocation_unavailable": "Geolocation not available",
   "toast.geolocation_error": "Could not get location",
-
   "confirm.delete_location": "Delete location \"{name}\"? Encounters will keep their data but lose the location link.",
   "prompt.location_name": "Location name:",
   "prompt.latitude": "Latitude:",
   "prompt.longitude": "Longitude:",
   "prompt.description": "Description:",
-
   "map.species_detected": "species detected",
   "map.calls": "calls",
   "map.more_species": "more species",
   "map.iucn_status": "IUCN Status",
-
   "species.loading": "Loading species data...",
   "species.not_specified": "No species specified.",
   "species.not_found": "Species not found.",
@@ -363,13 +328,10 @@
   "species.sort_calls": "Most calls",
   "species.add_note_placeholder": "Add a note...",
   "species.trend_after_more_weeks": "Trend appears after more weeks.",
-
   "toast.nothing_to_verify": "Nothing to verify",
   "toast.calls_verified": "calls verified",
-
   "confirm.verify_all": "Verify {0} unverified calls for {1}?",
   "confirm.verify_all_btn": "Verify all",
-
   "month.jan": "Jan",
   "month.feb": "Feb",
   "month.mar": "Mar",
