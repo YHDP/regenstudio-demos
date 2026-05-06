@@ -523,7 +523,7 @@
         <td class="batch-select-col"><input type="checkbox" class="row-check" data-call-id="${c.id}" ${selected ? 'checked' : ''}></td>
         <td class="cell-time">${ts}</td>
         <td class="cell-species">
-          <div>${common}</div>
+          <div><a href="./species.html?name=${encodeURIComponent(common)}" class="species-link">${common}</a></div>
           <div class="cell-sci">${sci}</div>
           ${correctionBadge}
         </td>

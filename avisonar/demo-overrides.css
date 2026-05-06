@@ -79,3 +79,14 @@ body.demo-mode .bulk-action-bar {
   text-decoration: underline;
 }
 .avisonar-demo-banner a:hover { opacity: .9; }
+
+/* Make species names in the All Calls table clickable */
+.cell-species .species-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+}
+.cell-species .species-link:hover {
+  color: var(--green, #00914B);
+  border-bottom-color: var(--green, #00914B);
+}
