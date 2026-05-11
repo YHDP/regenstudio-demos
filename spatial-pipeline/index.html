@@ -67,6 +67,7 @@
   <div class="header-row">
     <h1>Spatial Pipeline</h1>
     <button id="btn-show-welcome" class="info-button" type="button" title="Wat doet deze demo?">i</button>
+    <button id="btn-pzh-toggle" class="pzh-toggle" type="button" aria-pressed="false" title="Toon verbatim PZH-Q&A-citaten gekoppeld aan elke demo-feature">Toon PZH-context</button>
   </div>
   <p class="tagline">Engine-eronder voor 3D BAG + IMRO-bestemmingsplannen — geometrie en attributen gescheiden, browser-only, swappable cloud.</p>
   <div class="privacy-banner" role="status">
@@ -88,6 +89,11 @@
       </label>
 
       <h3 class="controls-subhead">② Bestemmingsplannen</h3>
+      <div class="pzh-pin" data-anchor="plans">
+        <span class="pzh-pin-eyebrow">PZH · 2026-05-04</span>
+        <q>Juridische regels en planologische gegevens uit het Digitaal Stelsel Omgevingswet (DSO) — omgevingsplannen, visies, juridische beperkingen.</q>
+        <span class="pzh-pin-src">SiR-platform Q&amp;A</span>
+      </div>
       <div id="plan-stack" aria-live="polite"></div>
 
       <label class="drop-zone drop-zone-add" data-kind="imro">
@@ -111,6 +117,14 @@
       <button id="btn-samples" class="btn-secondary" type="button">
         Voorbeelddata laden (2 plannen)
       </button>
+      <button id="btn-samples-live" class="btn-tertiary" type="button" title="Zelfde data, maar real-time uit ruimtelijkeplannen.nl en data.3dbag.nl — bewijst de live-fetch architectuur">
+        ↻ Live ophalen vanuit bron
+      </button>
+      <div class="pzh-pin" data-anchor="live-fetch">
+        <span class="pzh-pin-eyebrow">PZH · 2026-05-04</span>
+        <q>Al de bovenstaande bronnen zijn openbaar beschikbaar. De uitdaging zit niet in het verkrijgen van de data, maar in het integreren ervan.</q>
+        <span class="pzh-pin-src">SiR-platform Q&amp;A</span>
+      </div>
     </section>
 
     <section class="status-area">
@@ -120,6 +134,11 @@
 
     <section class="export-area">
       <h2>VR/AR-bundel exporteren</h2>
+      <div class="pzh-pin" data-anchor="export">
+        <span class="pzh-pin-eyebrow">PZH · 2026-05-06 (Q&amp;A)</span>
+        <q>Alleen geometrie + ID in de bril, attributen real-time uit een linked-data backend — zodat de bril grotere gebieden kan laden.</q>
+        <span class="pzh-pin-src">Provincie Zuid-Holland, mondelinge Q&amp;A</span>
+      </div>
       <p class="export-explainer">
         <strong>Geometrie</strong> (glTF) gaat naar de bril; <strong>attributen</strong> (JSON-LD) blijven in de backend, on-demand opvraagbaar via BAG-id. Engine eronder — dezelfde bundel werkt naar Unity/Quest, Unreal, web-viewer of mobiele AR.
       </p>
@@ -196,6 +215,18 @@
       </div>
       <div class="lm-meta" id="lm-meta">Luchtmeetnet · station —</div>
       <div class="lm-source">RIVM open API · CC0 · on-demand fetch</div>
+      <div class="pzh-pin pzh-pin-inline" data-anchor="luchtmeetnet">
+        <span class="pzh-pin-eyebrow">PZH · 2026-05-04</span>
+        <q>Milieugegevens en leefomgevingskwaliteit ... essentieel om plannen te toetsen aan de realiteit.</q>
+        <span class="pzh-pin-src">SiR-platform Q&amp;A</span>
+      </div>
+    </div>
+
+    <!-- System-onafhankelijkheid pin — anchored aan viewer (de demo zelf is het bewijs). -->
+    <div class="pzh-pin pzh-pin-floating" data-anchor="system-indep">
+      <span class="pzh-pin-eyebrow">PZH · 2026-05-04</span>
+      <q>Oplossing biedt volledige controle over data en processen, zonder afhankelijkheid van gesloten 'black-box' systemen.</q>
+      <span class="pzh-pin-src">SiR-platform Q&amp;A</span>
     </div>
   </section>
 

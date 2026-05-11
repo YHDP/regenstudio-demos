@@ -18,6 +18,8 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
 import { fetchLatestPM10, fetchStationMeta } from './data-sources/luchtmeetnet.js';
+import { resolveSourceUrl } from './data-sources/live-sources.js';
+import { initPzhContext } from './pzh-context.js';
 
 // =====================================================================
 //  State — multi-source pijpleiding
@@ -1737,20 +1739,22 @@ function updateHVSummary() {
 //  Sample data — bundled open-data files
 // =====================================================================
 
-async function loadSamples() {
-  log('Voorbeelddata laden — 3D BAG tile + 2 bestemmingsplannen…');
+async function loadSamples(useLive = false) {
+  const sourceLabel = useLive ? 'live publieke open-data' : 'gebundelde voorbeelddata';
+  log(`Laden vanuit ${sourceLabel} — 3D BAG tile + 2 bestemmingsplannen…`);
   try {
     const manifestResp = await fetch('sample-data/manifest.json');
     if (!manifestResp.ok) throw new Error('manifest.json ontbreekt');
     const manifest = await manifestResp.json();
 
-    // Load tile.
-    const cjUrl = `sample-data/${manifest['default-tile']}`;
+    // Load tile (live URL of bundled, afhankelijk van useLive).
+    const cjUrl = resolveSourceUrl(manifest['default-tile'], useLive);
+    if (useLive) log(`  → ${cjUrl}`);
     const cjText = await fetchMaybeGzipped(cjUrl);
     const cj = JSON.parse(cjText);
     log(`  CityJSON v${cj.version} — ${Object.keys(cj.CityObjects).length} objecten`);
     state.cityjson = cj;
-    setDropZoneState('cityjson', `${manifest['default-tile']} ✓`, true);
+    setDropZoneState('cityjson', `${manifest['default-tile']} ✓ (${useLive ? 'live' : 'bundled'})`, true);
 
     // Sequenced plan loads — one plan at a time, with a visible pulse on
     // newly-joined buildings so the multi-source aggregation is observable.
@@ -1759,8 +1763,8 @@ async function loadSamples() {
     let prevMatchedIds = new Set();
 
     for (const planEntry of manifest['default-plans']) {
-      const url = `sample-data/${planEntry.file}`;
-      log(`  GML laden: ${planEntry.label}…`);
+      const url = resolveSourceUrl(planEntry.file, useLive);
+      log(`  GML laden: ${planEntry.label}…${useLive ? ` → ${url}` : ''}`);
       const gmlText = await fetchMaybeGzipped(url);
       const parsed = parseIMRO(gmlText);
       log(`    ${parsed.namespaceLabel} — ${parsed.enkelbestemmingen.length} Enkel · ${parsed.dubbelbestemmingen.length} Dubbel`);
@@ -1890,7 +1894,9 @@ function init() {
   setupDropZone('imro', addPlan, true);
   setupDropZone('context', addContextLayer, false);
 
-  document.getElementById('btn-samples').addEventListener('click', loadSamples);
+  document.getElementById('btn-samples').addEventListener('click', () => loadSamples(false));
+  const btnLive = document.getElementById('btn-samples-live');
+  if (btnLive) btnLive.addEventListener('click', () => loadSamples(true));
   document.getElementById('btn-sample-hv-context').addEventListener('click', loadSampleHVContext);
   document.getElementById('btn-export-gltf').addEventListener('click', exportGLTF);
   document.getElementById('btn-export-jsonld').addEventListener('click', exportJSONLD);
@@ -1953,6 +1959,9 @@ function init() {
   });
 
   maybeShowWelcomeOnFirstLoad();
+
+  // PZH-context visibility-laag (default uit; aan tijdens pitch/screencast).
+  initPzhContext();
 
   // Luchtmeetnet live PM10 — engine-eronder bewijs: attribuut komt uit
   // open backend, geometrie blijft in de browser. Refresh elke 5 min.
