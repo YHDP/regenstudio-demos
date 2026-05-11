@@ -42,6 +42,13 @@ This notice acknowledges third-party open-source software bundled in the `lib/` 
 - **URL**: https://github.com/Turfjs/turf
 - **Files**: `lib/turf.min.js`
 
+### @google/model-viewer (4.2.0)
+- **Author**: Google LLC
+- **License**: Apache-2.0 (package); BSD-3-Clause (bundled Lit dependencies, declared in source headers)
+- **URL**: https://github.com/google/model-viewer
+- **Files**: `lib/model-viewer.min.js` (~1 MB; loaded ONLY on `viewer-2.html`, not on the main demo)
+- **Purpose**: provides the `<model-viewer>` web component used by `viewer-2.html` to render the exported `.glb` in a second, fully independent engine — concrete proof of the "no vendor lock-in" claim.
+
 ## Runtime data-fetches (live external APIs)
 
 The demo performs one outbound network call at runtime to a public Dutch government open API. No authentication, no tracking, no cookies. Verifiable via browser DevTools Network panel.

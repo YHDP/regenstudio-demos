@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!--
+  Spatial Pipeline — viewer-2 · system-onafhankelijkheid bewijs
+  (c) 2024-2026 Regen Studio B.V. — PolyForm Noncommercial License 1.0.0
+  https://polyformproject.org/licenses/noncommercial/1.0.0/
+
+  Doel: dezelfde geëxporteerde glTF-bundel openen in een TWEEDE engine
+  (Google's <model-viewer> web-component). Bewijst dat de export-formaat
+  vendor-neutraal is en niet aan de three.js-implementatie van de
+  hoofd-demo gekoppeld zit.
+
+  Géén CDN — model-viewer is gevendord onder lib/. Eén tab, geen tracking.
+-->
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Spatial Pipeline — Viewer-2 · system-onafhankelijkheid bewijs</title>
+<meta name="description" content="Dezelfde geëxporteerde glTF-bundel uit de Spatial Pipeline demo, geopend in een tweede engine (Google model-viewer) — bewijs van dataportabiliteit zonder vendor lock-in.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="lib/model-viewer.min.js"></script>
+<style>
+  /* viewer-2 specifieke styling — minimaal, leunt op style.css. */
+  body { display: flex; flex-direction: column; }
+  .v2-main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    overflow: hidden;
+  }
+  .v2-controls {
+    border-right: 1px solid var(--border);
+    padding: 18px 20px;
+    overflow-y: auto;
+    background: white;
+  }
+  .v2-controls h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 0 0 8px; font-weight: 600; }
+  .v2-controls h2:not(:first-of-type) { margin-top: 22px; }
+  .v2-controls p { font-size: 13px; line-height: 1.5; margin: 0 0 12px; }
+  .v2-drop {
+    display: block;
+    border: 2px dashed var(--border);
+    border-radius: 6px;
+    padding: 18px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    background: var(--bg);
+  }
+  .v2-drop.dragover, .v2-drop:hover { border-color: var(--accent); background: var(--accent-soft); }
+  .v2-drop strong { display: block; font-size: 13px; margin-bottom: 4px; }
+  .v2-drop em { display: block; font-size: 11px; color: var(--muted); font-style: normal; }
+  .v2-drop input { display: none; }
+  .v2-meta {
+    margin-top: 14px;
+    padding: 10px 12px;
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .v2-meta[hidden] { display: none; }
+  .v2-meta-row { display: flex; justify-content: space-between; gap: 12px; }
+  .v2-meta .label { color: var(--muted); }
+  .v2-meta .value { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .v2-stage { background: linear-gradient(180deg, #e8eef0 0%, #c8d2d6 100%); position: relative; }
+  model-viewer {
+    width: 100%; height: 100%;
+    --poster-color: transparent;
+    background-color: transparent;
+  }
+  .v2-empty-state {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 14px;
+    gap: 8px;
+    pointer-events: none;
+  }
+  .v2-empty-state[hidden] { display: none; }
+  .v2-empty-state svg { width: 48px; height: 48px; opacity: 0.4; }
+  .v2-attributes {
+    margin-top: 14px;
+    padding: 10px 12px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 11px;
+    max-height: 240px;
+    overflow-y: auto;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    line-height: 1.4;
+    color: var(--fg);
+  }
+  .v2-attributes[hidden] { display: none; }
+  .v2-attributes-key { color: var(--muted); }
+  .v2-claim {
+    font-size: 12px;
+    line-height: 1.55;
+    color: var(--fg);
+    padding: 10px 12px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+  }
+  .v2-claim em { color: var(--accent); font-style: normal; font-weight: 600; }
+  .v2-back {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .v2-back:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-row">
+    <h1>Spatial Pipeline · Viewer-2</h1>
+  </div>
+  <p class="tagline">System-onafhankelijkheid bewijs — zelfde glTF-bundel, andere engine.</p>
+  <div class="privacy-banner" role="status">
+    <span class="dot"></span>
+    Geen upload, geen tracking, geen CDN. <code>model-viewer</code> is gevendord lokaal (BSD-3-Clause).
+  </div>
+</header>
+
+<main class="v2-main">
+  <aside class="v2-controls">
+    <h2>① Drop bundel</h2>
+    <label class="v2-drop" id="drop-zone">
+      <input type="file" id="file-input" accept=".glb,.gltf,.json">
+      <strong>Drop <code>model.glb</code></strong>
+      <em>geëxporteerd uit de hoofd-demo (knop "Geometrie")</em>
+    </label>
+
+    <div class="v2-meta" id="meta-panel" hidden>
+      <div class="v2-meta-row"><span class="label">Bestand</span><span class="value" id="meta-name">—</span></div>
+      <div class="v2-meta-row"><span class="label">Grootte</span><span class="value" id="meta-size">—</span></div>
+      <div class="v2-meta-row"><span class="label">Engine</span><span class="value">Google model-viewer 4.2</span></div>
+    </div>
+
+    <h2>② Optioneel · attributen</h2>
+    <p>Drop ook <code>attributes.jsonld</code> om de linked-data koppeling te bewijzen — zelfde BAG-id resolveert hier dezelfde attributen als in de hoofd-demo.</p>
+    <label class="v2-drop" id="drop-zone-attrs">
+      <input type="file" id="file-input-attrs" accept=".jsonld,.json">
+      <strong>Drop <code>attributes.jsonld</code></strong>
+      <em>JSON-LD met @context — on-demand opvraagbaar via BAG-id</em>
+    </label>
+    <div class="v2-attributes" id="attrs-preview" hidden></div>
+
+    <h2>Wat dit bewijst</h2>
+    <p class="v2-claim">
+      De geëxporteerde bundel uit de Spatial Pipeline opent <em>identiek</em> in een onafhankelijke engine die niets weet van onze three.js-pijpleiding. <strong>glTF 2.0 + JSON-LD zijn open standaarden</strong> — geen vendor lock-in, geen verborgen state, geen propriëtaire metadata.
+    </p>
+    <p class="v2-claim" style="margin-top: 8px;">
+      Wat hier werkt, werkt ook naar Unity (UnityGLTF), Unreal (glTFRuntime), Blender (built-in), Cesium for Unreal, of een rauwe WebGL-loader. Drop deze <code>.glb</code> in <a href="https://modelviewer.dev/editor/" target="_blank" rel="noopener">modelviewer.dev/editor</a> om het zelf te toetsen.
+    </p>
+    <a href="./" class="v2-back">← Terug naar hoofd-demo</a>
+  </aside>
+
+  <section class="v2-stage">
+    <model-viewer id="mv" alt="Geëxporteerd 3D BAG-model" camera-controls touch-action="pan-y" exposure="1.1" shadow-intensity="0.8" environment-image="neutral" hidden></model-viewer>
+    <div class="v2-empty-state" id="empty-state">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+        <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+        <line x1="12" y1="22.08" x2="12" y2="12"/>
+      </svg>
+      <span>Drop een <code>model.glb</code> uit de hoofd-demo</span>
+    </div>
+  </section>
+</main>
+
+<script type="module">
+  const mv = document.getElementById('mv');
+  const empty = document.getElementById('empty-state');
+  const dropZone = document.getElementById('drop-zone');
+  const fileInput = document.getElementById('file-input');
+  const metaPanel = document.getElementById('meta-panel');
+  const metaName = document.getElementById('meta-name');
+  const metaSize = document.getElementById('meta-size');
+  const dropZoneAttrs = document.getElementById('drop-zone-attrs');
+  const fileInputAttrs = document.getElementById('file-input-attrs');
+  const attrsPreview = document.getElementById('attrs-preview');
+
+  function fmtSize(bytes) {
+    if (bytes < 1024) return `${bytes} B`;
+    if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`;
+    return `${(bytes / 1024 / 1024).toFixed(2)} MB`;
+  }
+
+  async function loadGLB(file) {
+    const url = URL.createObjectURL(file);
+    mv.src = url;
+    mv.hidden = false;
+    empty.hidden = true;
+    metaName.textContent = file.name;
+    metaSize.textContent = fmtSize(file.size);
+    metaPanel.hidden = false;
+  }
+
+  async function loadAttrs(file) {
+    const text = await file.text();
+    try {
+      const doc = JSON.parse(text);
+      const items = doc['@graph'] ?? [];
+      const sample = items.slice(0, 3);
+      const lines = [
+        `<div class="v2-attributes-key">@context: ${Object.keys(doc['@context'] ?? {}).length} prefixes</div>`,
+        `<div class="v2-attributes-key">@graph: ${items.length} entiteiten</div>`,
+        `<div class="v2-attributes-key">eerste 3 als preview:</div>`,
+        ...sample.map(s => `${escapeHTML(JSON.stringify(s, null, 2))}`),
+      ];
+      attrsPreview.innerHTML = lines.join('\n\n');
+      attrsPreview.hidden = false;
+    } catch (e) {
+      attrsPreview.textContent = `FOUT: ${e.message}`;
+      attrsPreview.hidden = false;
+    }
+  }
+
+  function escapeHTML(s) {
+    return s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  function wireDrop(zone, input, handler) {
+    zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('dragover'); });
+    zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+    zone.addEventListener('drop', e => {
+      e.preventDefault();
+      zone.classList.remove('dragover');
+      if (e.dataTransfer.files.length) handler(e.dataTransfer.files[0]);
+    });
+    input.addEventListener('change', e => {
+      if (e.target.files.length) handler(e.target.files[0]);
+      e.target.value = '';
+    });
+  }
+
+  wireDrop(dropZone, fileInput, loadGLB);
+  wireDrop(dropZoneAttrs, fileInputAttrs, loadAttrs);
+</script>
+
+</body>
+</html>

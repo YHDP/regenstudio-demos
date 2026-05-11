@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!--
+  Spatial Pipeline · design-lab · IMRO → Regen palette mapping kandidaten
+  (c) 2024-2026 Regen Studio B.V. — PolyForm Noncommercial 1.0.0
+
+  Doel: 4 kleur-mapping kandidaten naast elkaar voor Yvo's verdict.
+  Per kandidaat: tagline · mapping-tabel · SVG-mock van een typische
+  bestemmingsplan-layout · 3-knop verdict + comment.
+
+  Geen rendering van de echte Valkenhorst — kleuren beoordelen vraagt
+  geen 3D, vraagt naast-elkaar-vergelijking.
+-->
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Palette kandidaten · Spatial Pipeline · Phase 0 design-lab</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #FAFBFC;
+    --fg: #243644;
+    --muted: #737373;
+    --border: #E4E2E2;
+    --emerald: #008545;
+    --emerald-hover: #006937;
+    --teal: #009BBB;
+    --magenta: #93093F;
+    --orange: #FFA92D;
+    --navy: #243644;
+    --love: #008545;
+    --maybe: #FFA92D;
+    --no: #93093F;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", system-ui, sans-serif;
+    background: var(--bg); color: var(--fg);
+    font-size: 14px; line-height: 1.5;
+  }
+  header.lab {
+    padding: 24px 32px 18px;
+    background: white;
+    border-bottom: 1px solid var(--border);
+  }
+  header.lab h1 { margin: 0 0 4px; font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
+  header.lab p { margin: 0; color: var(--muted); font-size: 13px; }
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 24px 32px 100px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  .candidate {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .candidate header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .candidate header .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: var(--emerald);
+    background: rgba(0, 133, 69, 0.1);
+    padding: 2px 8px;
+    border-radius: 3px;
+  }
+  .candidate h2 { margin: 0; font-size: 18px; font-weight: 700; }
+  .candidate .tagline { color: var(--muted); font-size: 13px; margin: 0; }
+  .mock {
+    aspect-ratio: 16 / 10;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: #f3f2ee;
+    overflow: hidden;
+  }
+  .mock svg { display: block; width: 100%; height: 100%; }
+  .mapping {
+    font-size: 11px;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .mapping th { text-align: left; padding: 4px 0; color: var(--muted); font-weight: 600; font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em; border-bottom: 1px solid var(--border); }
+  .mapping td { padding: 4px 0; border-bottom: 1px solid #f0eeea; }
+  .mapping td:last-child { color: var(--muted); font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 10px; }
+  .swatch { display: inline-block; width: 14px; height: 14px; border-radius: 2px; vertical-align: middle; margin-right: 6px; border: 1px solid rgba(0,0,0,0.08); }
+  .verdict {
+    display: flex;
+    gap: 6px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+  }
+  .verdict button {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    background: white;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: inherit;
+    border-radius: 4px;
+    color: var(--fg);
+    transition: all 0.15s ease;
+  }
+  .verdict button:hover { border-color: var(--fg); }
+  .verdict button[data-v="love"].active { background: var(--love); color: white; border-color: var(--love); }
+  .verdict button[data-v="maybe"].active { background: var(--maybe); color: var(--navy); border-color: var(--maybe); }
+  .verdict button[data-v="no"].active { background: var(--no); color: white; border-color: var(--no); }
+  textarea.comment {
+    width: 100%;
+    min-height: 50px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 6px 8px;
+    font-family: inherit;
+    font-size: 12px;
+    resize: vertical;
+    margin-top: 6px;
+  }
+  footer.summary {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: white;
+    border-top: 1px solid var(--border);
+    padding: 12px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+    z-index: 10;
+  }
+  footer.summary .summary-text { font-size: 12px; color: var(--muted); }
+  footer.summary .summary-text strong { color: var(--fg); }
+  footer.summary button {
+    padding: 8px 18px;
+    background: var(--emerald);
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  footer.summary button:hover { background: var(--emerald-hover); }
+  footer.summary button:disabled { background: var(--border); cursor: not-allowed; }
+  .copied-toast {
+    position: fixed;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--navy);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 4px;
+    font-size: 13px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+  }
+  .copied-toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+
+<header class="lab">
+  <h1>IMRO → Regen palette · 4 kandidaten</h1>
+  <p>Welk mapping-systeem zet ik vast voor de Spatial Pipeline visual rebuild? Klik <strong>♥</strong> / <strong>~</strong> / <strong>✕</strong> per kandidaat. Comments optioneel. Daarna onderaan rechts <strong>"Kopieer rapport"</strong> en plak terug in chat.</p>
+</header>
+
+<main id="candidates"></main>
+
+<footer class="summary">
+  <div class="summary-text">Verdicts: <strong id="verdict-count">0/4</strong></div>
+  <button id="btn-copy" disabled>Kopieer rapport</button>
+</footer>
+
+<div class="copied-toast" id="toast">Rapport gekopieerd — plak terug in chat</div>
+
+<script>
+// ============================================================
+//  4 mapping kandidaten · IMRO hoofdgroep → Regen palette
+// ============================================================
+
+const CANDIDATES = [
+  {
+    id: 'A',
+    name: 'Emerald-warm',
+    tagline: 'Wonen-eerst. Emerald als hoofdkleur, warme accenten voor gemengde functies.',
+    mapping: [
+      ['woongebied / wonen', '#008545', 'emerald (Regen primary)'],
+      ['gemengd', '#FFA92D', 'orange (Regen)'],
+      ['groen', '#AFF9D7', 'emerald-light (Regen)'],
+      ['natuur', '#006937', 'emerald-hover (donker)'],
+      ['water / waterstaat', '#009BBB', 'teal (Regen accent)'],
+      ['verkeer', '#5781A1', 'navy-light (koel-grijs)'],
+      ['bedrijf / bedrijventerrein', '#93093F', 'magenta (Regen)'],
+      ['centrum / detailhandel', '#FFA92D', 'orange (gedeeld)'],
+      ['kantoor / dienstverlening', '#243644', 'navy (Regen)'],
+      ['maatschappelijk / cultuur', '#93093F', 'magenta (gedeeld)'],
+      ['recreatie / sport', '#AFF9D7', 'emerald-light (gedeeld groen)'],
+      ['agrarisch', '#FFA92D', 'orange (warm-aarde)'],
+      ['leiding (dubbel)', '#737373', 'muted-grey'],
+      ['waarde (dubbel)', '#BBF0F8', 'teal-light'],
+      ['default / unmatched', '#E4E2E2', 'border-grey'],
+    ],
+  },
+  {
+    id: 'B',
+    name: 'Teal-cool',
+    tagline: 'Water-eerst. Teal als hoofdkleur — past bij Valkenhorst-context (vliegveld + duinen + kust).',
+    mapping: [
+      ['water / waterstaat', '#009BBB', 'teal (primary in deze map)'],
+      ['woongebied / wonen', '#008545', 'emerald'],
+      ['groen', '#BBF0F8', 'teal-light'],
+      ['natuur', '#006937', 'emerald-hover'],
+      ['gemengd', '#5781A1', 'navy-light'],
+      ['verkeer', '#243644', 'navy (donker, formele infra)'],
+      ['bedrijf / bedrijventerrein', '#FFA92D', 'orange'],
+      ['centrum / detailhandel', '#FFA92D', 'orange (gedeeld)'],
+      ['kantoor / dienstverlening', '#5781A1', 'navy-light (gedeeld)'],
+      ['maatschappelijk / cultuur', '#93093F', 'magenta'],
+      ['recreatie / sport', '#AFF9D7', 'emerald-light'],
+      ['agrarisch', '#FFA92D', 'orange (gedeeld)'],
+      ['leiding (dubbel)', '#737373', 'muted-grey'],
+      ['waarde (dubbel)', '#93093F', 'magenta dim'],
+      ['default / unmatched', '#E4E2E2', 'border-grey'],
+    ],
+  },
+  {
+    id: 'C',
+    name: 'Hi-contrast',
+    tagline: 'Maximale onderscheiding tussen functies. Gebruik elke Regen-kleur als unieke identifier — geen sharing.',
+    mapping: [
+      ['woongebied / wonen', '#008545', 'emerald'],
+      ['gemengd', '#5781A1', 'navy-light'],
+      ['groen', '#AFF9D7', 'emerald-light'],
+      ['natuur', '#006937', 'emerald-hover'],
+      ['water', '#009BBB', 'teal'],
+      ['waterstaat', '#BBF0F8', 'teal-light'],
+      ['verkeer', '#FFA92D', 'orange (call-attention)'],
+      ['bedrijf / bedrijventerrein', '#93093F', 'magenta'],
+      ['centrum / detailhandel', '#243644', 'navy'],
+      ['kantoor / dienstverlening', '#737373', 'muted-grey-warm'],
+      ['maatschappelijk', '#93093F', 'magenta (lichter via opacity)'],
+      ['cultuur', '#5781A1', 'navy-light (lichter)'],
+      ['recreatie / sport', '#AFF9D7', 'emerald-light (gedeeld groen)'],
+      ['agrarisch', '#FFA92D', 'orange (gedeeld verkeer-warm)'],
+      ['default / unmatched', '#E4E2E2', 'border-grey'],
+    ],
+  },
+  {
+    id: 'D',
+    name: 'Low-key',
+    tagline: 'Subtiel + professioneel. Alle Regen-kleuren bij ~70% saturation. Geen kleur domineert; gebouwen blijven leesbaar.',
+    mapping: [
+      ['woongebied / wonen', '#5BA383', 'emerald muted'],
+      ['gemengd', '#D9C49A', 'beige-warm muted'],
+      ['groen', '#C8E5D6', 'emerald-light pale'],
+      ['natuur', '#476B5D', 'emerald-deep muted'],
+      ['water / waterstaat', '#7BB6C7', 'teal muted'],
+      ['verkeer', '#A8B5BD', 'navy-light pale'],
+      ['bedrijf / bedrijventerrein', '#C09BA9', 'magenta muted'],
+      ['centrum / detailhandel', '#E5C29A', 'orange muted'],
+      ['kantoor / dienstverlening', '#7C8A95', 'navy mid muted'],
+      ['maatschappelijk / cultuur', '#B79EAB', 'magenta-pale'],
+      ['recreatie / sport', '#A6CFB1', 'emerald-mid muted'],
+      ['agrarisch', '#D5C089', 'agrarisch-warm muted'],
+      ['leiding (dubbel)', '#9C9C9C', 'mid-grey'],
+      ['waarde (dubbel)', '#C8D2D6', 'cool-grey-light'],
+      ['default / unmatched', '#EAE8E2', 'pale-warm-grey'],
+    ],
+  },
+];
+
+// ============================================================
+//  Render
+// ============================================================
+
+function makeMockSVG(mapping) {
+  const colors = mapping.map(m => m[1]);
+  // Stylized "bestemmingsplan" mock — areas of varying size + small building footprints overlaid
+  return `<svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background: light cream -->
+    <rect width="400" height="250" fill="#f7f6f1"/>
+    <!-- Big areas (bestemmingsvlakken) -->
+    <rect x="0" y="0" width="200" height="120" fill="${colors[0]}" opacity="0.55"/>
+    <rect x="200" y="0" width="200" height="60" fill="${colors[2]}" opacity="0.55"/>
+    <rect x="200" y="60" width="120" height="60" fill="${colors[4]}" opacity="0.55"/>
+    <rect x="320" y="60" width="80" height="60" fill="${colors[6]}" opacity="0.55"/>
+    <rect x="0" y="120" width="80" height="130" fill="${colors[3]}" opacity="0.55"/>
+    <rect x="80" y="120" width="160" height="60" fill="${colors[1]}" opacity="0.55"/>
+    <rect x="240" y="120" width="160" height="60" fill="${colors[7]}" opacity="0.55"/>
+    <rect x="80" y="180" width="100" height="70" fill="${colors[8]}" opacity="0.55"/>
+    <rect x="180" y="180" width="80" height="70" fill="${colors[10]}" opacity="0.55"/>
+    <rect x="260" y="180" width="140" height="70" fill="${colors[5]}" opacity="0.55"/>
+    <!-- Plan boundary outline (dashed) -->
+    <rect x="3" y="3" width="394" height="244" fill="none" stroke="#243644" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
+    <!-- Building footprints (small dark rects) -->
+    ${Array.from({length: 60}, (_, i) => {
+      const x = 12 + (i * 17) % 376;
+      const y = 12 + Math.floor((i * 17) / 376) * 22 + (i % 3) * 4;
+      const w = 8 + (i % 4) * 3;
+      const h = 6 + (i % 5) * 2;
+      return `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#3a3a3a" opacity="0.55"/>`;
+    }).join('')}
+    <!-- Unmatched buildings outside (252-style) -->
+    ${Array.from({length: 18}, (_, i) => {
+      const x = 12 + (i * 23) % 376;
+      const y = 220 + (i % 2) * 8;
+      const w = 6 + (i % 3) * 2;
+      const h = 5;
+      return `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#737373" opacity="0.4"/>`;
+    }).join('')}
+  </svg>`;
+}
+
+function renderCandidate(c) {
+  const rows = c.mapping.map(([k, hex, label]) =>
+    `<tr><td><span class="swatch" style="background:${hex}"></span>${k}</td><td>${hex}</td></tr>`
+  ).join('');
+  return `<article class="candidate" data-id="${c.id}">
+    <header>
+      <h2>${c.name}</h2>
+      <span class="label">Kandidaat ${c.id}</span>
+    </header>
+    <p class="tagline">${c.tagline}</p>
+    <div class="mock">${makeMockSVG(c.mapping)}</div>
+    <table class="mapping">
+      <thead><tr><th>IMRO hoofdgroep</th><th>hex</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <div class="verdict">
+      <button data-v="love" type="button">♥ Love</button>
+      <button data-v="maybe" type="button">~ Maybe</button>
+      <button data-v="no" type="button">✕ No</button>
+    </div>
+    <textarea class="comment" placeholder="Comment over kandidaat ${c.id}..."></textarea>
+  </article>`;
+}
+
+document.getElementById('candidates').innerHTML = CANDIDATES.map(renderCandidate).join('');
+
+// ============================================================
+//  Verdict tracking + report
+// ============================================================
+
+const verdicts = {};
+const comments = {};
+
+document.querySelectorAll('.candidate').forEach(card => {
+  const id = card.dataset.id;
+  card.querySelectorAll('.verdict button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      card.querySelectorAll('.verdict button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      verdicts[id] = btn.dataset.v;
+      updateCount();
+    });
+  });
+  card.querySelector('.comment').addEventListener('input', e => {
+    comments[id] = e.target.value;
+  });
+});
+
+function updateCount() {
+  const count = Object.keys(verdicts).length;
+  document.getElementById('verdict-count').textContent = `${count}/4`;
+  document.getElementById('btn-copy').disabled = count === 0;
+}
+
+document.getElementById('btn-copy').addEventListener('click', () => {
+  const lines = [
+    '# Palette-kandidaten · verdicts',
+    '',
+    `Datum: ${new Date().toISOString().slice(0, 10)}`,
+    '',
+  ];
+  for (const c of CANDIDATES) {
+    const v = verdicts[c.id] ?? '(geen verdict)';
+    const cm = comments[c.id]?.trim();
+    const sym = { love: '♥ LOVE', maybe: '~ MAYBE', no: '✕ NO' }[v] ?? v;
+    lines.push(`## Kandidaat ${c.id} · ${c.name}`);
+    lines.push(`Verdict: **${sym}**`);
+    if (cm) lines.push(`Comment: ${cm}`);
+    lines.push('');
+  }
+  navigator.clipboard.writeText(lines.join('\n')).then(() => {
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2000);
+  });
+});
+</script>
+
+</body>
+</html>
