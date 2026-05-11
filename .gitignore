@@ -24,3 +24,8 @@ supabase/.temp/
 
 # Edge function source (private — source of truth on Proton Drive)
 supabase/functions/
+
+# Claude workspace doc + internal collaboration notes (local-only).
+CLAUDE.md
+MEMORY.md
+docs/collaboration/
