@@ -1,0 +1,29 @@
+{
+  "default-tile": "8-296-632.city.json.gz",
+  "default-plans": [
+    {
+      "id": "valkenhorst-2022",
+      "file": "NL.IMRO.0537.bpVLKplv-VA01.gml",
+      "label": "Valkenhorst (Katwijk, 2022)",
+      "year": 2022,
+      "schema": "IMRO2012",
+      "planIMROId": "NL.IMRO.0537.bpVLKplv-VA01"
+    },
+    {
+      "id": "valkenburg-dorp-2012",
+      "file": "NL.IMRO.0537.bpVLKdorp-va02.gml",
+      "label": "Valkenburg Dorp (Katwijk, 2012)",
+      "year": 2012,
+      "schema": "IMRO2008",
+      "planIMROId": "NL.IMRO.0537.bpVLKdorp-va02"
+    }
+  ],
+  "optional-context-layers": [
+    {
+      "id": "hv-stations-katwijk-leiden",
+      "file": "hv-stations-katwijk-leiden.geojson",
+      "kind": "hv-stations",
+      "label": "HV-stations (Katwijk/Leiden, illustratief)"
+    }
+  ]
+}

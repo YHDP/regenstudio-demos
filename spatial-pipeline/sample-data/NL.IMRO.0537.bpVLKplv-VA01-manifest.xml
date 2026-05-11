@@ -1,0 +1,1258 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Manifest xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.geonovum.nl/stri/2012/1.0" xsi:schemaLocation="http://www.geonovum.nl/stri/2012/1.0 http://schemas.geonovum.nl/stri/2012/1.0/STRI2012.xsd" OverheidsCode="0537" NaamOverheid="Katwijk" Datum="2022-09-07">
+  <Dossier Id="NL.IMRO.0537.OmgevingsvisieKRV" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.OmgevingsvisieKRV-va01">
+      <Naam>Omgevingsvisie Katwijk</Naam>
+      <Datum>2018-02-08</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.OmgevingsvisieKRV-va01/g_NL.IMRO.0537.OmgevingsvisieKRV-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATRijn2012" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKATRijn2012-va01">
+      <Naam>Katwijk aan den Rijn 2012</Naam>
+      <Datum>2013-01-31</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATRijn2012-va01/g_NL.IMRO.0537.bpKATRijn2012-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATRnet1" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.bpKATRnet1-va01">
+      <Naam>Inframaatregelen R-net deelproject 1</Naam>
+      <Datum>2019-07-18</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATRnet1-va01/g_NL.IMRO.0537.bpKATRnet1-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATRnet2" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.bpKATRnet2-va01">
+      <Naam>Inframaatregelen R-net deelproject 2</Naam>
+      <Datum>2019-12-19</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATRnet2-va01/g_NL.IMRO.0537.bpKATRnet2-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATRnet3B" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.bpKATRnet3B-va01">
+      <Naam>Inframaatregelen R-net deelproject 3B</Naam>
+      <Datum>2019-12-19</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATRnet3B-va01/g_NL.IMRO.0537.bpKATRnet3B-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATRnet3C" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.bpKATRnet3C-va01">
+      <Naam>Inframaatregelen R-net deelproject 3C</Naam>
+      <Datum>2019-12-19</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATRnet3C-va01/g_NL.IMRO.0537.bpKATRnet3C-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATVerlWestbaan" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKATVerlWestbaan-va01">
+      <Naam>Verlengde Westerbaan</Naam>
+      <Datum>2018-02-01</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATVerlWestbaan-va01/g_NL.IMRO.0537.bpKATVerlWestbaan-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATbedrijventrn" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKATbedrijventrn-va01">
+      <Naam>bestemmingsplan Valkenburgseweg-´t Ambacht en Katwijkerbroek</Naam>
+      <Datum>2012-11-01</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATbedrijventrn-va01/g_NL.IMRO.0537.bpKATbedrijventrn-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATbttheen" Status="deels onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKATbttheen-gu01">
+      <Naam>Bedrijventerrein `t Heen</Naam>
+      <Datum>2013-12-16</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATbttheen-gu01/g_NL.IMRO.0537.bpKATbttheen-gu01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.bpKATbttheen-va01">
+      <Naam>Bedrijventerrein `t Heen</Naam>
+      <Datum>2013-06-27</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATbttheen-va01/g_NL.IMRO.0537.bpKATbttheen-va01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.bpKATbttheen-va02">
+      <Naam>Bedrijventerrein `t Heen</Naam>
+      <Datum>2013-06-27</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATbttheen-va02/g_NL.IMRO.0537.bpKATbttheen-va02.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATbttheenhz1" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKATbttheenhz1-va01">
+      <Naam>1e gedeeltelijke herziening bedrijventerrein 't Heen</Naam>
+      <Datum>2016-07-28</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATbttheenhz1-va01/g_NL.IMRO.0537.bpKATbttheenhz1-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATduinen" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKATduinen-va01">
+      <Naam>Duinen</Naam>
+      <Datum>2013-03-14</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATduinen-va01/g_NL.IMRO.0537.bpKATduinen-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATfpdwesterbaan" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKATfpdwesterbaan-va01">
+      <Naam>Fietspad Westerbaan</Naam>
+      <Datum>2020-04-16</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATfpdwesterbaan-va01/g_NL.IMRO.0537.bpKATfpdwesterbaan-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKAThavenfase2z" Status="deels onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKAThavenfase2z-gu01">
+      <Naam>Haven fase 2 Zuid</Naam>
+      <Datum>2013-10-09</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKAThavenfase2z-gu01/g_NL.IMRO.0537.bpKAThavenfase2z-gu01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.bpKAThavenfase2z-va02">
+      <Naam>Haven fase 2 Zuid</Naam>
+      <Datum>2013-07-11</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKAThavenfase2z-va02/g_NL.IMRO.0537.bpKAThavenfase2z-va02.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.bpKAThavenfase2z-va03">
+      <Naam>Haven fase 2 Zuid</Naam>
+      <Datum>2013-07-11</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKAThavenfase2z-va03/g_NL.IMRO.0537.bpKAThavenfase2z-va03.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKAThavenfase2zoh" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKAThavenfase2zoh-va01">
+      <Naam>Bestemmingsplan Haven, fase 2 (zuidoosthoek)</Naam>
+      <Datum>2014-06-19</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKAThavenfase2zoh-va01/g_NL.IMRO.0537.bpKAThavenfase2zoh-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKAThavenfase3bo" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKAThavenfase3bo-va01">
+      <Naam>Haven, fase 3b (oost)</Naam>
+      <Datum>2012-07-05</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKAThavenfase3bo-va01/g_NL.IMRO.0537.bpKAThavenfase3bo-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKAThavenfase3bw" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKAThavenfase3bw-va01">
+      <Naam>Haven, fase 3b (west)</Naam>
+      <Datum>2012-12-20</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKAThavenfase3bw-va01/g_NL.IMRO.0537.bpKAThavenfase3bw-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKAThoornes" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKAThoornes-va01">
+      <Naam>Hoornes</Naam>
+      <Datum>2011-06-25</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKAThoornes-va01/g_NL.IMRO.0537.bpKAThoornes-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATkatwijkmidden" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKATkatwijkmidden-va01">
+      <Naam>Katwijk Midden</Naam>
+      <Datum>2012-11-29</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATkatwijkmidden-va01/g_NL.IMRO.0537.bpKATkatwijkmidden-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATkustwerk" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKATkustwerk-on01">
+      <Naam>Kustwerk Katwijk</Naam>
+      <Datum>2012-08-14</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATkustwerk-on01/g_NL.IMRO.0537.bpKATkustwerk-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.bpKATkustwerk-va01">
+      <Naam>Kustwerk Katwijk</Naam>
+      <Datum>2013-04-04</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATkustwerk-va01/g_NL.IMRO.0537.bpKATkustwerk-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATnwbwZwembad15" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKATnwbwZwembad15-on01">
+      <Naam>Nieuwbouw Zwembad Katwijk</Naam>
+      <Datum>2015-05-22</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATnwbwZwembad15-on01/g_NL.IMRO.0537.bpKATnwbwZwembad15-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.bpKATnwbwZwembad15-va01">
+      <Naam>Nieuwbouw Zwembad Katwijk</Naam>
+      <Datum>2015-12-17</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATnwbwZwembad15-va01/g_NL.IMRO.0537.bpKATnwbwZwembad15-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATrijnsoever" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKATrijnsoever-va01">
+      <Naam>Rijnsoever</Naam>
+      <Datum>2013-05-30</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATrijnsoever-va01/g_NL.IMRO.0537.bpKATrijnsoever-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATronurbanvilla" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKATronurbanvilla-va01">
+      <Naam>Postzegelplan Rijnsoever Noord Urban Villa</Naam>
+      <Datum>2013-10-10</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATronurbanvilla-va01/g_NL.IMRO.0537.bpKATronurbanvilla-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATtramstraat25" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKATtramstraat25-va01">
+      <Naam>Tramstraat 25</Naam>
+      <Datum>2010-04-26</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATtramstraat25-va01/g_NL.IMRO.0537.bpKATtramstraat25-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATturfmarkt7en8" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKATturfmarkt7en8-va01">
+      <Naam>Turfmarkt 7 en 8</Naam>
+      <Datum>2011-06-30</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATturfmarkt7en8-va01/g_NL.IMRO.0537.bpKATturfmarkt7en8-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATzanderij10" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.bpKATzanderij10-va01">
+      <Naam>Zanderij fase 10</Naam>
+      <Datum>2019-05-09</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATzanderij10-va01/g_NL.IMRO.0537.bpKATzanderij10-va01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.bpKATzanderij10-vo01">
+      <Naam>Zanderij fase 10</Naam>
+      <Datum>2018-03-07</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATzanderij10-vo01/g_NL.IMRO.0537.bpKATzanderij10-vo01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATzanderij9" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.bpKATzanderij9-va01">
+      <Naam>Zanderij fase 9</Naam>
+      <Datum>2019-05-09</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATzanderij9-va01/g_NL.IMRO.0537.bpKATzanderij9-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATzee2015" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKATzee2015-va01">
+      <Naam>Katwijk aan Zee 2015</Naam>
+      <Datum>2016-07-09</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATzee2015-va01/g_NL.IMRO.0537.bpKATzee2015-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATzeehosfase2" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.bpKATzeehosfase2-gu01">
+      <Naam>Zeehospitium fase 2</Naam>
+      <Datum>2019-11-06</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATzeehosfase2-gu01/g_NL.IMRO.0537.bpKATzeehosfase2-gu01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.bpKATzeehosfase2-va01">
+      <Naam>Zeehospitium fase 2</Naam>
+      <Datum>2017-02-09</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATzeehosfase2-va01/g_NL.IMRO.0537.bpKATzeehosfase2-va01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.bpKATzeehosfase2-va02">
+      <Naam>Zeehospitium fase 2</Naam>
+      <Datum>2019-07-18</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATzeehosfase2-va02/g_NL.IMRO.0537.bpKATzeehosfase2-va02.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATzeehospitium" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKATzeehospitium-va01">
+      <Naam>Zeehospitium Fase 1b</Naam>
+      <Datum>2010-07-08</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATzeehospitium-va01/g_NL.IMRO.0537.bpKATzeehospitium-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATzeewg82b" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKATzeewg82b-va01">
+      <Naam>bestemmingsplan Zeeweg 82b</Naam>
+      <Datum>2013-09-12</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATzeewg82b-va01/g_NL.IMRO.0537.bpKATzeewg82b-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATzuideinde" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKATzuideinde-va01">
+      <Naam>Zuideinde</Naam>
+      <Datum>2014-07-10</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATzuideinde-va01/g_NL.IMRO.0537.bpKATzuideinde-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKRVparkeren" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpKRVparkeren-va01">
+      <Naam>Parapluplan Parkeren Katwijk</Naam>
+      <Datum>2018-02-15</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKRVparkeren-va01/g_NL.IMRO.0537.bpKRVparkeren-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKRVstandplaatsen" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.bpKRVstandplaatsen-va01">
+      <Naam>Parapluplan Standplaatsen Katwijk</Naam>
+      <Datum>2020-03-12</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKRVstandplaatsen-va01/g_NL.IMRO.0537.bpKRVstandplaatsen-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpRBG1epartherztk" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpRBG1epartherztk-va01">
+      <Naam>1e Partiële Herziening Trappenberg-Kloosterschuur</Naam>
+      <Datum>2016-10-13</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpRBG1epartherztk-va01/g_NL.IMRO.0537.bpRBG1epartherztk-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpRBGHofvRijnsburg" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.bpRBGHofvRijnsburg-va01">
+      <Naam>Hof van Rijnsburg</Naam>
+      <Datum>2018-04-19</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpRBGHofvRijnsburg-va01/g_NL.IMRO.0537.bpRBGHofvRijnsburg-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpRBGgemeentewerf" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpRBGgemeentewerf-va01">
+      <Naam>Bestemmingsplan Gemeentewerf Rijnsburg</Naam>
+      <Datum>2014-10-30</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpRBGgemeentewerf-va01/g_NL.IMRO.0537.bpRBGgemeentewerf-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpRBGhoekrover" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpRBGhoekrover-va01">
+      <Naam>Hoek de Rover</Naam>
+      <Datum>2013-05-13</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpRBGhoekrover-va01/g_NL.IMRO.0537.bpRBGhoekrover-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpRBGkanaalzoneno" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpRBGkanaalzoneno-va01">
+      <Naam>Kanaalzone noord-oost</Naam>
+      <Datum>2010-09-04</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpRBGkanaalzoneno-va01/g_NL.IMRO.0537.bpRBGkanaalzoneno-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpRBGkleioost" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpRBGkleioost-va01">
+      <Naam>Klei-Oost</Naam>
+      <Datum>2013-02-28</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpRBGkleioost-va01/g_NL.IMRO.0537.bpRBGkleioost-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpRBGkoestraat7" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpRBGkoestraat7-va01">
+      <Naam>Koestraat 7 Rijnsburg</Naam>
+      <Datum>2012-12-20</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpRBGkoestraat7-va01/g_NL.IMRO.0537.bpRBGkoestraat7-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpRBGnoordwweg53" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpRBGnoordwweg53-va01">
+      <Naam>Clubgebouw en sporthal Rijnsburgse Boys</Naam>
+      <Datum>2010-07-20</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpRBGnoordwweg53-va01/g_NL.IMRO.0537.bpRBGnoordwweg53-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpRBGnrdwkrweg2135" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.bpRBGnrdwkrweg2135-va01">
+      <Naam>3 woningen Noordwijkerweg 21-35</Naam>
+      <Datum>2019-06-20</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpRBGnrdwkrweg2135-va01/g_NL.IMRO.0537.bpRBGnrdwkrweg2135-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpRBGsierteelttk" Status="deels onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpRBGsierteelttk-va01">
+      <Naam>Trappenberg Kloosterschuur</Naam>
+      <Datum>2011-09-30</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpRBGsierteelttk-va01/g_NL.IMRO.0537.bpRBGsierteelttk-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpRBGverkeerstr" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpRBGverkeerstr-va01">
+      <Naam>Hoofdverkeersstructuur kern Rijnsburg</Naam>
+      <Datum>2010-08-04</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpRBGverkeerstr-va01/g_NL.IMRO.0537.bpRBGverkeerstr-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpRBGvinkenwegzone" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpRBGvinkenwegzone-va01">
+      <Naam>Vinkenwegzone</Naam>
+      <Datum>2013-09-26</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpRBGvinkenwegzone-va01/g_NL.IMRO.0537.bpRBGvinkenwegzone-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpVLK5en6RLRoute" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpVLK5en6RLRoute-va01">
+      <Naam>Verlegging aardgastransportleidingen Rijnlandroute knooppunt 5 en 6</Naam>
+      <Datum>2019-01-17</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpVLK5en6RLRoute-va01/g_NL.IMRO.0537.bpVLK5en6RLRoute-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpVLKbloemenlaan" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpVLKbloemenlaan-va01">
+      <Naam>Wijzigingsplan locatie Bloemenlaan</Naam>
+      <Datum>2014-02-11</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpVLKbloemenlaan-va01/g_NL.IMRO.0537.bpVLKbloemenlaan-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpVLKdorp" Status="deels onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpVLKdorp-va01">
+      <Naam>Valkenburg Dorp</Naam>
+      <Datum>2012-11-29</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpVLKdorp-va01/g_NL.IMRO.0537.bpVLKdorp-va01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.bpVLKdorp-va02">
+      <Naam>Valkenburg Dorp</Naam>
+      <Datum>2012-11-29</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpVLKdorp-va02/g_NL.IMRO.0537.bpVLKdorp-va02.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpVLKduyfra" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpVLKduyfra-va01">
+      <Naam>Voorschoterweg/ 't Duyfrak</Naam>
+      <Datum>2013-02-28</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpVLKduyfra-va01/g_NL.IMRO.0537.bpVLKduyfra-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpVLKduyfrak2015" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpVLKduyfrak2015-va01">
+      <Naam>'t Duyfrak 2015</Naam>
+      <Datum>2015-07-02</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpVLKduyfrak2015-va01/g_NL.IMRO.0537.bpVLKduyfrak2015-va01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.bpVLKduyfrak2015-va02">
+      <Naam>'t Duyfrak 2015</Naam>
+      <Datum>2016-11-11</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpVLKduyfrak2015-va02/g_NL.IMRO.0537.bpVLKduyfrak2015-va02.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpVLKlandgebied" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpVLKlandgebied-va01">
+      <Naam>Valkenburg Landelijk Gebied</Naam>
+      <Datum>2013-12-03</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpVLKlandgebied-va01/g_NL.IMRO.0537.bpVLKlandgebied-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpVLKtankgracht" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpVLKtankgracht-va01">
+      <Naam>Tankgracht Valkenburg</Naam>
+      <Datum>2011-01-03</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpVLKtankgracht-va01/g_NL.IMRO.0537.bpVLKtankgracht-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpVLKtijdelijkgebr" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpVLKtijdelijkgebr-va01">
+      <Naam>Tijdelijk gebruik Locatie Valkenburg</Naam>
+      <Datum>2012-07-05</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpVLKtijdelijkgebr-va01/g_NL.IMRO.0537.bpVLKtijdelijkgebr-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpVLKtracebeslA44" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpVLKtracebeslA44-va01">
+      <Naam>Bestemmingsplan Tracebesluit A44</Naam>
+      <Datum>2020-03-12</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpVLKtracebeslA44-va01/g_NL.IMRO.0537.bpVLKtracebeslA44-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.epRBG1estrucherztk" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.epRBG1estrucherztk-on01">
+      <Naam>1e Structurele Herziening Exploitatieplan Trappenberg Kloosterschuur</Naam>
+      <Datum>2016-03-11</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.epRBG1estrucherztk-on01/g_NL.IMRO.0537.epRBG1estrucherztk-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.epRBG1estrucherztk-on02">
+      <Naam>1e Structurele Herziening Exploitatieplan Trappenberg Kloosterschuur</Naam>
+      <Datum>2016-06-10</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.epRBG1estrucherztk-on02/g_NL.IMRO.0537.epRBG1estrucherztk-on02.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.epRBG1estrucherztk-va01">
+      <Naam>1e Structurele Herziening Exploitatieplan Trappenberg Kloosterschuur</Naam>
+      <Datum>2016-10-13</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.epRBG1estrucherztk-va01/g_NL.IMRO.0537.epRBG1estrucherztk-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovKAT10595" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.ovKAT10595-on01">
+      <Naam>Omgevingsvergunning Visserijschool Katwijk</Naam>
+      <Datum>2019-07-04</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovKAT10595-on01/g_NL.IMRO.0537.ovKAT10595-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovKAT10595-va01">
+      <Naam>Omgevingsvergunning Visserijschool Katwijk</Naam>
+      <Datum>2020-01-06</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovKAT10595-va01/g_NL.IMRO.0537.ovKAT10595-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovKAT11973" Status="in voorbereiding">
+    <Plan Id="NL.IMRO.0537.ovKAT11973-on01">
+      <Naam>Zeilmakerstraat 1</Naam>
+      <Datum>2019-08-19</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovKAT11973-on01/g_NL.IMRO.0537.ovKAT11973-on01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovKAT12697" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.ovKAT12697-on01">
+      <Naam>Het bouwen van 52 appartementen Oeverpolder te Katwijk</Naam>
+      <Datum>2019-05-03</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovKAT12697-on01/g_NL.IMRO.0537.ovKAT12697-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovKAT12697-va01">
+      <Naam>Het bouwen van 52 appartementen Oeverpolder te Katwijk</Naam>
+      <Datum>2019-06-24</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovKAT12697-va01/g_NL.IMRO.0537.ovKAT12697-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovKAT13148" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.ovKAT13148-on01">
+      <Naam>omgevingsvergunning Taanderstraat 2</Naam>
+      <Datum>2020-03-26</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovKAT13148-on01/g_NL.IMRO.0537.ovKAT13148-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovKAT13148-va01">
+      <Naam>omgevingsvergunning Taanderstraat 2</Naam>
+      <Datum>2020-09-24</Datum>
+      <GeleideFormulier>http://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovKAT13148-va01/g_NL.IMRO.0537.ovKAT13148-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovRBG10912" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.ovRBG10912-on01">
+      <Naam>Omgevingsvergunning Petronella van Saxenstraat/Kanaalstraat</Naam>
+      <Datum>2018-03-30</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG10912-on01/g_NL.IMRO.0537.ovRBG10912-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovRBG10912-va01">
+      <Naam>Omgevingsvergunning Petronella van Saxenstraat/Kanaalstraat</Naam>
+      <Datum>2018-06-12</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG10912-va01/g_NL.IMRO.0537.ovRBG10912-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovRBG11699" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.ovRBG11699-on01">
+      <Naam>Omgevingsvergunning nieuwbouw woning a/d Noordwijkerweg Rijnsburg</Naam>
+      <Datum>2018-12-07</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG11699-on01/g_NL.IMRO.0537.ovRBG11699-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovRBG11699-va01">
+      <Naam>Omgevingsvergunning nieuwbouw woning a/d Noordwijkerweg Rijnsburg</Naam>
+      <Datum>2019-07-24</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG11699-va01/g_NL.IMRO.0537.ovRBG11699-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovRBG12350" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.ovRBG12350-on01">
+      <Naam>Wijziging bestemming perceel Noordwijkerweg en Vinkenweg</Naam>
+      <Datum>2020-07-10</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG12350-on01/g_NL.IMRO.0537.ovRBG12350-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovRBG12350-va01">
+      <Naam>Wijziging bestemming perceel Noordwijkerweg en Vinkenweg</Naam>
+      <Datum>2020-09-02</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG12350-va01/g_NL.IMRO.0537.ovRBG12350-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovRBG12437" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.ovRBG12437-on01">
+      <Naam>Hoek Vinkenweg Voorhouterweg te Rijnsburg</Naam>
+      <Datum>2019-04-05</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG12437-on01/g_NL.IMRO.0537.ovRBG12437-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovRBG12437-va01">
+      <Naam>Hoek Vinkenweg Voorhouterweg te Rijnsburg</Naam>
+      <Datum>2019-05-27</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG12437-va01/g_NL.IMRO.0537.ovRBG12437-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovRBG12635" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.ovRBG12635-on01">
+      <Naam>Omgevingsvergunning wonen Vliet Noordzijde 90 te Rijnsburg</Naam>
+      <Datum>2019-04-25</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG12635-on01/g_NL.IMRO.0537.ovRBG12635-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovRBG12635-va01">
+      <Naam>Omgevingsvergunning wonen Vliet Noordzijde 90 te Rijnsburg</Naam>
+      <Datum>2019-07-08</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG12635-va01/g_NL.IMRO.0537.ovRBG12635-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovRBG14594" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.ovRBG14594-on01">
+      <Naam>Terras Noordeinde Rijnsburg</Naam>
+      <Datum>2020-02-27</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG14594-on01/g_NL.IMRO.0537.ovRBG14594-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovRBG14594-va01">
+      <Naam>Terras Noordeinde Rijnsburg</Naam>
+      <Datum>2020-04-23</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG14594-va01/g_NL.IMRO.0537.ovRBG14594-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovVLK11228" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.ovVLK11228-on01">
+      <Naam>Omgevingsvergunning Hoofdstraat 119 te Valkenburg</Naam>
+      <Datum>2018-10-05</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovVLK11228-on01/g_NL.IMRO.0537.ovVLK11228-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovVLK11228-va01">
+      <Naam>Omgevingsvergunning Hoofdstraat 119 te Valkenburg</Naam>
+      <Datum>2018-11-29</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovVLK11228-va01/g_NL.IMRO.0537.ovVLK11228-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovVLK14165" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.ovVLK14165-va01">
+      <Naam>Verlenging Theaterhangaar en hangaar 2</Naam>
+      <Datum>2020-01-23</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovVLK14165-va01/g_NL.IMRO.0537.ovVLK14165-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovVLK14389" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.ovVLK14389-on01">
+      <Naam>Omgevingsvergunning tijdelijke N206 oost</Naam>
+      <Datum>2020-05-07</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovVLK14389-on01/g_NL.IMRO.0537.ovVLK14389-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovVLK14389-va01">
+      <Naam>Omgevingsvergunning tijdelijke N206 oost</Naam>
+      <Datum>2020-08-05</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovVLK14389-va01/g_NL.IMRO.0537.ovVLK14389-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovVLK14390" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.ovVLK14390-on01">
+      <Naam>Omgevingsvergunning tijdelijke N206 west</Naam>
+      <Datum>2020-05-07</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovVLK14390-on01/g_NL.IMRO.0537.ovVLK14390-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovVLK14390-va01">
+      <Naam>Omgevingsvergunning tijdelijke N206 west</Naam>
+      <Datum>2020-08-05</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovVLK14390-va01/g_NL.IMRO.0537.ovVLK14390-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovVLK8015" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.ovVLK8015-on01">
+      <Naam>Omgevingsvergunning J. Pellenbargweg 2 te Valkenburg</Naam>
+      <Datum>2018-11-14</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovVLK8015-on01/g_NL.IMRO.0537.ovVLK8015-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovVLK8015-va01">
+      <Naam>Omgevingsvergunning J. Pellenbargweg 2 te Valkenburg</Naam>
+      <Datum>2019-01-07</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovVLK8015-va01/g_NL.IMRO.0537.ovVLK8015-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbKAT018463" Status="in voorbereiding">
+    <Plan Id="NL.IMRO.0537.pbKAT018463-on01">
+      <Naam>Omgevingsvergunning Kitesurfvereniging Airtime Katwijk</Naam>
+      <Datum>2012-10-12</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT018463-on01/g_NL.IMRO.0537.pbKAT018463-on01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbKAT10909" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.pbKAT10909-on01">
+      <Naam>Omgevingsvergunning Noordeinde 1A</Naam>
+      <Datum>2018-05-14</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT10909-on01/g_NL.IMRO.0537.pbKAT10909-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.pbKAT10909-va01">
+      <Naam>Omgevingsvergunning Noordeinde 1A</Naam>
+      <Datum>2020-06-02</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT10909-va01/g_NL.IMRO.0537.pbKAT10909-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbKAT1661" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.pbKAT1661-on01">
+      <Naam>Omgevingsvergunning Haven Kwartier</Naam>
+      <Datum>2012-08-10</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT1661-on01/g_NL.IMRO.0537.pbKAT1661-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.pbKAT1661-va01">
+      <Naam>Omgevingsvergunning Haven Kwartier</Naam>
+      <Datum>2012-10-19</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT1661-va01/g_NL.IMRO.0537.pbKAT1661-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbKAT1662" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.pbKAT1662-on01">
+      <Naam>Omgevingsvergunning Havengebied fase 3B</Naam>
+      <Datum>2012-08-03</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT1662-on01/g_NL.IMRO.0537.pbKAT1662-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.pbKAT1662-va01">
+      <Naam>Omgevingsvergunning Havengebied fase 3B</Naam>
+      <Datum>2012-10-19</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT1662-va01/g_NL.IMRO.0537.pbKAT1662-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbKAT201201390" Status="in voorbereiding">
+    <Plan Id="NL.IMRO.0537.pbKAT201201390-vo01">
+      <Naam>Omgevingsvergunning Strandpaviljoen KW106</Naam>
+      <Datum>2012-09-13</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT201201390-vo01/g_NL.IMRO.0537.pbKAT201201390-vo01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbKAT2237" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.pbKAT2237-va01">
+      <Naam>Omgevingsvergunning Kustversterking Katwijk</Naam>
+      <Datum>2013-02-19</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT2237-va01/g_NL.IMRO.0537.pbKAT2237-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbKAT6674" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.pbKAT6674-on01">
+      <Naam>Zeilmakerstraat 1</Naam>
+      <Datum>2016-05-06</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT6674-on01/g_NL.IMRO.0537.pbKAT6674-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.pbKAT6674-va01">
+      <Naam>Zeilmakerstraat 1</Naam>
+      <Datum>2016-07-22</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT6674-va01/g_NL.IMRO.0537.pbKAT6674-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbKAT7602" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.pbKAT7602-on01">
+      <Naam>Woningen achter Brouwerstraat 64 t/m 94 te Rijnsburg</Naam>
+      <Datum>2016-07-08</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT7602-on01/g_NL.IMRO.0537.pbKAT7602-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.pbKAT7602-va01">
+      <Naam>Woningen achter Brouwerstraat 46 t/m 94 te Rijnsburg</Naam>
+      <Datum>2016-10-26</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT7602-va01/g_NL.IMRO.0537.pbKAT7602-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbKAT8211" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.pbKAT8211-on01">
+      <Naam>Boulevard 1 Katwijk</Naam>
+      <Datum>2016-07-29</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT8211-on01/g_NL.IMRO.0537.pbKAT8211-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.pbKAT8211-va01">
+      <Naam>Boulevard 1 Katwijk</Naam>
+      <Datum>2016-11-11</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT8211-va01/g_NL.IMRO.0537.pbKAT8211-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbKAT8454" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.pbKAT8454-on01">
+      <Naam>Wassenaarseweg 87 Katwijk</Naam>
+      <Datum>2016-07-29</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT8454-on01/g_NL.IMRO.0537.pbKAT8454-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.pbKAT8454-va01">
+      <Naam>Wassenaarseweg 87 Katwijk</Naam>
+      <Datum>2016-10-14</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT8454-va01/g_NL.IMRO.0537.pbKAT8454-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbKAT9228" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.pbKAT9228-on01">
+      <Naam>Omgevingsvergunning Secretaris Varkevisserstraat 64</Naam>
+      <Datum>2017-08-11</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT9228-on01/g_NL.IMRO.0537.pbKAT9228-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.pbKAT9228-va01">
+      <Naam>Omgevingsvergunning Secretaris Varkevisserstraat 64</Naam>
+      <Datum>2017-10-27</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT9228-va01/g_NL.IMRO.0537.pbKAT9228-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbKAT9581" Status="in voorbereiding">
+    <Plan Id="NL.IMRO.0537.pbKAT9581-on01">
+      <Naam>Omgevingsvergunning Noordduinseweg 6 te Katwijk</Naam>
+      <Datum>2017-10-20</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT9581-on01/g_NL.IMRO.0537.pbKAT9581-on01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbKAT9734" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.pbKAT9734-on01">
+      <Naam>Omgevingsvergunning Vernieuwing schoonmaakputten Berkheide</Naam>
+      <Datum>2017-09-15</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT9734-on01/g_NL.IMRO.0537.pbKAT9734-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.pbKAT9734-va01">
+      <Naam>Omgevingsvergunning Vernieuwing schoonmaakputten Berkheide</Naam>
+      <Datum>2017-09-15</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT9734-va01/g_NL.IMRO.0537.pbKAT9734-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbKAT9746" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.pbKAT9746-va01">
+      <Naam>Omgevingsvergunnning de Bloem blok B</Naam>
+      <Datum>2017-08-18</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbKAT9746-va01/g_NL.IMRO.0537.pbKAT9746-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbRBG012535" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.pbRBG012535-va01">
+      <Naam>omgevingsvergunning Langevaart 14</Naam>
+      <Datum>2014-02-17</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbRBG012535-va01/g_NL.IMRO.0537.pbRBG012535-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbRBG10024" Status="in voorbereiding">
+    <Plan Id="NL.IMRO.0537.pbRBG10024-on01">
+      <Naam>Omgevingsvergunning Langevaart 8 te Rijnsburg</Naam>
+      <Datum>2018-03-09</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbRBG10024-on01/g_NL.IMRO.0537.pbRBG10024-on01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbRBG6520" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.pbRBG6520-on01">
+      <Naam>Omgevingsvergunning de Bloem Blok C te Rijnsburg</Naam>
+      <Datum>2017-10-27</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbRBG6520-on01/g_NL.IMRO.0537.pbRBG6520-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.pbRBG6520-va01">
+      <Naam>Omgevingsvergunning de Bloem Blok C te Rijnsburg</Naam>
+      <Datum>2017-10-27</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbRBG6520-va01/g_NL.IMRO.0537.pbRBG6520-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbRBG8033" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.pbRBG8033-on01">
+      <Naam>Omgevingsvergunning Waardlaan 3 Rijnsburg</Naam>
+      <Datum>2016-07-15</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbRBG8033-on01/g_NL.IMRO.0537.pbRBG8033-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.pbRBG8033-va01">
+      <Naam>Omgevingsvergunning Waardlaan 3 Rijnsburg</Naam>
+      <Datum>2016-09-16</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbRBG8033-va01/g_NL.IMRO.0537.pbRBG8033-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbRBG8542" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.pbRBG8542-on01">
+      <Naam>Omgevingsvergunning Nieuwbouw Emmschool en 13 appartementen</Naam>
+      <Datum>2017-10-13</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbRBG8542-on01/g_NL.IMRO.0537.pbRBG8542-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.pbRBG8542-va01">
+      <Naam>Omgevingsvergunning Nieuwbouw Emmaschool en 13 appartementen</Naam>
+      <Datum>2017-12-08</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbRBG8542-va01/g_NL.IMRO.0537.pbRBG8542-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbRBG9524" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.pbRBG9524-on01">
+      <Naam>Omgevingsvergunning Vinkenweg te Rijnsburg</Naam>
+      <Datum>2017-10-20</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbRBG9524-on01/g_NL.IMRO.0537.pbRBG9524-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.pbRBG9524-va01">
+      <Naam>Omgevingsvergunning Vinkenweg te Rijnsburg</Naam>
+      <Datum>2017-12-15</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbRBG9524-va01/g_NL.IMRO.0537.pbRBG9524-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbRBG9940" Status="in voorbereiding">
+    <Plan Id="NL.IMRO.0537.pbRBG9940-on01">
+      <Naam>Omgevingsvergunning nieuwbouw woningen Witte de Withstraat Rijnsburg</Naam>
+      <Datum>2018-01-15</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbRBG9940-on01/g_NL.IMRO.0537.pbRBG9940-on01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbRGB1908" Status="in voorbereiding">
+    <Plan Id="NL.IMRO.0537.pbRGB1908-on01">
+      <Naam>Omgevingsvergunning Kleipetten-Zuid</Naam>
+      <Datum>2012-08-03</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbRGB1908-on01/g_NL.IMRO.0537.pbRGB1908-on01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbVLK10228" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.pbVLK10228-on01">
+      <Naam>Omgevingsvergunning Voorschoterweg 52aValkenburg</Naam>
+      <Datum>2017-11-21</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbVLK10228-on01/g_NL.IMRO.0537.pbVLK10228-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.pbVLK10228-va01">
+      <Naam>Omgevingsvergunning Voorschoterweg 52aValkenburg</Naam>
+      <Datum>2017-11-21</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbVLK10228-va01/g_NL.IMRO.0537.pbVLK10228-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbVLK1532" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.pbVLK1532-va01">
+      <Naam>Omgevingsvergunning Nieuwbouw kantoor te Valkenburg (ZH)</Naam>
+      <Datum>2013-03-19</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbVLK1532-va01/g_NL.IMRO.0537.pbVLK1532-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbVLK2013016301" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.pbVLK2013016301-on01">
+      <Naam>Omgevingsvergunning Nieuwbouw kantoor te Valkenburg (ZH) 2e fase</Naam>
+      <Datum>2013-10-25</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbVLK2013016301-on01/g_NL.IMRO.0537.pbVLK2013016301-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.pbVLK2013016301-va01">
+      <Naam>Omgevingsvergunning Nieuwbouw kantoor te Valkenburg (ZH) 2e fase</Naam>
+      <Datum>2013-10-17</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbVLK2013016301-va01/g_NL.IMRO.0537.pbVLK2013016301-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbVLK3253" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.pbVLK3253-on01">
+      <Naam>Omgevingsvergunning Voorschoterweg 25C</Naam>
+      <Datum>2013-07-12</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbVLK3253-on01/g_NL.IMRO.0537.pbVLK3253-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.pbVLK3253-va01">
+      <Naam>Omgevingsvergunning Voorschoterweg 25C</Naam>
+      <Datum>2013-09-04</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbVLK3253-va01/g_NL.IMRO.0537.pbVLK3253-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.pbVLK6635" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.pbVLK6635-on01">
+      <Naam>Omgevingsvergunning Kooltuinweg 15, Valkenburg</Naam>
+      <Datum>2017-12-18</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbVLK6635-on01/g_NL.IMRO.0537.pbVLK6635-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.pbVLK6635-va01">
+      <Naam>Omgevingsvergunning Kooltuinweg 15, Valkenburg</Naam>
+      <Datum>2018-02-09</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.pbVLK6635-va01/g_NL.IMRO.0537.pbVLK6635-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.svISG2016" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.svISG2016-on01">
+      <Naam>Intergemeentelijke Structuurvisie Greenport 2016</Naam>
+      <Datum>2016-03-11</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.svISG2016-on01/g_NL.IMRO.0537.svISG2016-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.svISG2016-va01">
+      <Naam>Intergemeentelijke Structuurvisie Greenport 2016</Naam>
+      <Datum>2016-07-22</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.svISG2016-va01/g_NL.IMRO.0537.svISG2016-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.toKATlageweg44" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.toKATlageweg44-on01">
+      <Naam>tijdelijk bouwbord Lageweg 44</Naam>
+      <Datum>2010-04-27</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.toKATlageweg44-on01/g_NL.IMRO.0537.toKATlageweg44-on01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.vbKATKustwerkkatw" Status="vervallen">
+    <Plan Id="NL.IMRO.0537.vbKATKustwerkkatw-va01">
+      <Naam>Voorbereidingsbesluit Katwijk Kustwerk</Naam>
+      <Datum>2019-03-14</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.vbKATKustwerkkatw-va01/g_NL.IMRO.0537.vbKATKustwerkkatw-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.vbKATkustwerk" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.vbKATkustwerk-va01">
+      <Naam>Voorbereidingsbesluit Kustwerk Katwijk</Naam>
+      <Datum>2020-02-13</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.vbKATkustwerk-va01/g_NL.IMRO.0537.vbKATkustwerk-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.vbKATlageweg" Status="vervallen">
+    <Plan Id="NL.IMRO.0537.vbKATlageweg-va01">
+      <Naam>Lageweg 44</Naam>
+      <Datum>2010-07-13</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.vbKATlageweg-va01/g_NL.IMRO.0537.vbKATlageweg-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.vbKATvalkambacht" Status="vervallen">
+    <Plan Id="NL.IMRO.0537.vbKATvalkambacht-va02">
+      <Naam>Valkenburgseweg-t Ambacht</Naam>
+      <Datum>2010-11-16</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.vbKATvalkambacht-va02/g_NL.IMRO.0537.vbKATvalkambacht-va02.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.vbRBGglastuinbouw" Status="vervallen">
+    <Plan Id="NL.IMRO.0537.vbRBGglastuinbouw-va01">
+      <Naam>Trappenberg Kloosterschuur</Naam>
+      <Datum>2010-10-13</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.vbRBGglastuinbouw-va01/g_NL.IMRO.0537.vbRBGglastuinbouw-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.vbRBGkleioostzuid" Status="vervallen">
+    <Plan Id="NL.IMRO.0537.vbRBGkleioostzuid-va01">
+      <Naam>Voorbereidingsbesluit Klei oost Zuid</Naam>
+      <Datum>2019-03-14</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.vbRBGkleioostzuid-va01/g_NL.IMRO.0537.vbRBGkleioostzuid-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.vbVLKvoorschonst25" Status="vervallen">
+    <Plan Id="NL.IMRO.0537.vbVLKvoorschonst25-va01">
+      <Naam>Voorschoterweg naast nr. 25</Naam>
+      <Datum>2010-07-01</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.vbVLKvoorschonst25-va01/g_NL.IMRO.0537.vbVLKvoorschonst25-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.vbVLKvoorschonst27" Status="vervallen">
+    <Plan Id="NL.IMRO.0537.vbVLKvoorschonst27-va01">
+      <Naam>Voorschoterweg naast nr. 27</Naam>
+      <Datum>2010-07-01</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.vbVLKvoorschonst27-va01/g_NL.IMRO.0537.vbVLKvoorschonst27-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpRBGrijnsburg" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.bpRBGrijnsburg-va01">
+      <Naam>Rijnsburg</Naam>
+      <Datum>2011-04-29</Datum>
+      <GeleideFormulier>http://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpRBGrijnsburg-va01/g_NL.IMRO.0537.bpRBGrijnsburg-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovKAT15403" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.ovKAT15403-on01">
+      <Naam>Fietspad Ambachtsweg 2</Naam>
+      <Datum>2020-10-02</Datum>
+      <GeleideFormulier>http://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovKAT15403-on01/g_NL.IMRO.0537.ovKAT15403-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovKAT15403-va01">
+      <Naam>Fietspad Ambachtsweg 2</Naam>
+      <Datum>2020-12-01</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovKAT15403-va01/g_NL.IMRO.0537.ovKAT15403-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpKATkustwerkherz" Status="in voorbereiding">
+    <Plan Id="NL.IMRO.0537.bpKATkustwerkherz-VO01">
+      <Naam>Herziening Bestemmingsplan Kustwerk</Naam>
+      <Datum>2020-09-30</Datum>
+      <GeleideFormulier>http://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATkustwerkherz-VO01/g_NL.IMRO.0537.bpKATkustwerkherz-VO01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.bpKATkustwerkherz-on01">
+      <Naam>Partiële Herziening Bestemmingsplan Kustwerk</Naam>
+      <Datum>2021-02-11</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATkustwerkherz-on01/g_NL.IMRO.0537.bpKATkustwerkherz-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.bpKATkustwerkherz-va01">
+      <Naam>Partiële Herziening Bestemmingsplan Kustwerk</Naam>
+      <Datum>2021-07-08</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpKATkustwerkherz-va01/g_NL.IMRO.0537.bpKATkustwerkherz-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpPnormKat" Status="in voorbereiding">
+    <Plan Id="NL.IMRO.0537.bpPnormKat-on01">
+      <Naam>Parapluplan Parkeren Katwijk</Naam>
+      <Datum>2020-11-24</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpPnormKat-on01/g_NL.IMRO.0537.bpPnormKat-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.bpPnormKat-va01">
+      <Naam>Parapluplan Parkeren Katwijk</Naam>
+      <Datum>2021-03-11</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpPnormKat-va01/g_NL.IMRO.0537.bpPnormKat-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovKAT15805" Status="in voorbereiding">
+    <Plan Id="NL.IMRO.0537.ovKAT15805-on01">
+      <Naam>Woning Sijp te Katwijk</Naam>
+      <Datum>2020-12-24</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovKAT15805-on01/g_NL.IMRO.0537.ovKAT15805-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovKAT15805-ov01">
+      <Naam>Woning Sijp te Katwijk</Naam>
+      <Datum>2021-10-07</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovKAT15805-ov01/g_NL.IMRO.0537.ovKAT15805-ov01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovRBG15320" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.ovRBG15320-va01">
+      <Naam>Nieuwbouw woning Noordwijkerweg</Naam>
+      <Datum>2021-01-07</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG15320-va01/g_NL.IMRO.0537.ovRBG15320-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpRBG2eherzDeHorn" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpRBG2eherzDeHorn-on01">
+      <Naam>2e Herziening De Horn</Naam>
+      <Datum>2021-01-21</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpRBG2eherzDeHorn-on01/g_NL.IMRO.0537.bpRBG2eherzDeHorn-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.bpRBG2eherzDeHorn-va01">
+      <Naam>2e Herziening De Horn</Naam>
+      <Datum>2021-04-22</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpRBG2eherzDeHorn-va01/g_NL.IMRO.0537.bpRBG2eherzDeHorn-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovKATWIJK2021" Status="in voorbereiding">
+    <Plan Id="NL.IMRO.0537.ovKATWIJK2021-ON01">
+      <Naam>Omgevingsvisie Katwijk 2021</Naam>
+      <Datum>2021-01-27</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovKATWIJK2021-ON01/g_NL.IMRO.0537.ovKATWIJK2021-ON01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovKATWIJK2021-VA01">
+      <Naam>Omgevingsvisie Katwijk 2021</Naam>
+      <Datum>2021-10-07</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovKATWIJK2021-VA01/g_NL.IMRO.0537.ovKATWIJK2021-VA01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovKAT15552" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.ovKAT15552-va01">
+      <Naam>Uitbreiding Begraafplaats Duinrust</Naam>
+      <Datum>2021-05-20</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovKAT15552-va01/g_NL.IMRO.0537.ovKAT15552-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovRBG15804" Status="in voorbereiding">
+    <Plan Id="NL.IMRO.0537.ovRBG15804-on01">
+      <Naam>Nieuwbouwplan Korte Voorhouterweg/Collegiantenstraat</Naam>
+      <Datum>2021-03-11</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG15804-on01/g_NL.IMRO.0537.ovRBG15804-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovRBG15804-ov01">
+      <Naam>Nieuwbouwplan Korte Voorhouterweg/Collegiantenstraat</Naam>
+      <Datum>2021-06-03</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG15804-ov01/g_NL.IMRO.0537.ovRBG15804-ov01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpVLKplv" Status="in voorbereiding">
+    <Plan Id="NL.IMRO.0537.bpVLKplv-ON01">
+      <Naam>CHW Woongebied Valkenhorst</Naam>
+      <Datum>2021-06-04</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpVLKplv-ON01/g_NL.IMRO.0537.bpVLKplv-ON01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.bpVLKplv-VA01">
+      <Naam>Woongebied Valkenhorst</Naam>
+      <Datum>2022-06-30</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpVLKplv-VA01/g_NL.IMRO.0537.bpVLKplv-VA01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.brVLKbeleidsregplv" Status="in voorbereiding">
+    <Plan Id="NL.IMRO.0537.brVLKbeleidsregplv-ON01">
+      <Naam>CHW Woongebied Valkenhorst beleidsregels</Naam>
+      <Datum>2021-05-12</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.brVLKbeleidsregplv-ON01/g_NL.IMRO.0537.brVLKbeleidsregplv-ON01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.brVLKbeleidsregplv-VA01">
+      <Naam>CHW Woongebied Valkenhorst beleidsregels</Naam>
+      <Datum>2022-06-30</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.brVLKbeleidsregplv-VA01/g_NL.IMRO.0537.brVLKbeleidsregplv-VA01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.upRBGnieuwrijnvaer" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.upRBGnieuwrijnvaer-on01">
+      <Naam>Nieuw Rijnvaert</Naam>
+      <Datum>2021-06-09</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.upRBGnieuwrijnvaer-on01/g_NL.IMRO.0537.upRBGnieuwrijnvaer-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.upRBGnieuwrijnvaer-va01">
+      <Naam>Nieuw Rijnvaert</Naam>
+      <Datum>2021-11-30</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.upRBGnieuwrijnvaer-va01/g_NL.IMRO.0537.upRBGnieuwrijnvaer-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovRBG4906" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.ovRBG4906-ov01">
+      <Naam>Voorhouterweg 95A</Naam>
+      <Datum>2021-06-15</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG4906-ov01/g_NL.IMRO.0537.ovRBG4906-ov01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovRBG15838" Status="in voorbereiding">
+    <Plan Id="NL.IMRO.0537.ovRBG15838-on01">
+      <Naam>Oegstgeesterweg 238</Naam>
+      <Datum>2021-07-08</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG15838-on01/g_NL.IMRO.0537.ovRBG15838-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovRBG15838-ov01">
+      <Naam>Oegstgeesterweg 238</Naam>
+      <Datum>2021-09-30</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG15838-ov01/g_NL.IMRO.0537.ovRBG15838-ov01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.bpVLKwaterweide" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.bpVLKwaterweide-on01">
+      <Naam>Fietspad Waterlelie - Dorpsweide</Naam>
+      <Datum>2021-10-07</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpVLKwaterweide-on01/g_NL.IMRO.0537.bpVLKwaterweide-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.bpVLKwaterweide-va01">
+      <Naam>Fietspad Waterlelie - Dorpsweide</Naam>
+      <Datum>2022-02-17</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.bpVLKwaterweide-va01/g_NL.IMRO.0537.bpVLKwaterweide-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovVLK16975" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.ovVLK16975-ov01">
+      <Naam>Fietsbrug Waterlelie - Dorpsweide en kap bomen</Naam>
+      <Datum>2021-10-21</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovVLK16975-ov01/g_NL.IMRO.0537.ovVLK16975-ov01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovVLK16978" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.ovVLK16978-ov01">
+      <Naam>Bouw damwand Botenpad 31</Naam>
+      <Datum>2021-10-21</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovVLK16978-ov01/g_NL.IMRO.0537.ovVLK16978-ov01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovVLK16979" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.ovVLK16979-on01">
+      <Naam>Bouw damwand Botenpad 33</Naam>
+      <Datum>2021-10-21</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovVLK16979-on01/g_NL.IMRO.0537.ovVLK16979-on01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovVLK1697" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.ovVLK1697-on01">
+      <Naam>Ontheffing Vaarwegenverordening Zuid-Holland 2015 (Botenpad 31)</Naam>
+      <Datum>2021-10-21</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovVLK1697-on01/g_NL.IMRO.0537.ovVLK1697-on01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovVLK1698" Status="geheel onherroepelijk in werking">
+    <Plan Id="NL.IMRO.0537.ovVLK1698-on01">
+      <Naam>Ontheffing Vaarwegenverordening Zuid-Holland 2015 (Botenpad 33)</Naam>
+      <Datum>2021-10-21</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovVLK1698-on01/g_NL.IMRO.0537.ovVLK1698-on01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovRBG16500" Status="in voorbereiding">
+    <Plan Id="NL.IMRO.0537.ovRBG16500-on01">
+      <Naam>Petronella van Saxenstraat fase 2</Naam>
+      <Datum>2021-11-04</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG16500-on01/g_NL.IMRO.0537.ovRBG16500-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovRBG16500-ov01">
+      <Naam>Petronella van Saxenstraat fase 2</Naam>
+      <Datum>2022-05-25</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG16500-ov01/g_NL.IMRO.0537.ovRBG16500-ov01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovVLK17046" Status="in voorbereiding">
+    <Plan Id="NL.IMRO.0537.ovVLK17046-on01">
+      <Naam>Surfcenter Valkenburgse Meer</Naam>
+      <Datum>2022-01-06</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovVLK17046-on01/g_NL.IMRO.0537.ovVLK17046-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovVLK17046-ov01">
+      <Naam>Surfcenter Valkenburgse Meer</Naam>
+      <Datum>2022-03-03</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovVLK17046-ov01/g_NL.IMRO.0537.ovVLK17046-ov01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovVLK17035" Status="vastgesteld">
+    <Plan Id="NL.IMRO.0537.ovVLK17035-on01">
+      <Naam>J. Pellenbargweg 2</Naam>
+      <Datum>2022-02-18</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovVLK17035-on01/g_NL.IMRO.0537.ovVLK17035-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovVLK17035-va01">
+      <Naam>J. Pellenbargweg 2</Naam>
+      <Datum>2022-08-04</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovVLK17035-va01/g_NL.IMRO.0537.ovVLK17035-va01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovRBG17264" Status="in voorbereiding">
+    <Plan Id="NL.IMRO.0537.ovRBG17264-on01">
+      <Naam>Waterboslaan 40 te Rijnsburg</Naam>
+      <Datum>2022-04-21</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG17264-on01/g_NL.IMRO.0537.ovRBG17264-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovRBG17264-ov01">
+      <Naam>Waterboslaan 40 te Rijnsburg</Naam>
+      <Datum>2022-06-30</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG17264-ov01/g_NL.IMRO.0537.ovRBG17264-ov01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovVLK18301" Status="in voorbereiding">
+    <Plan Id="NL.IMRO.0537.ovVLK18301-on01">
+      <Naam>Verlenging tijdelijke N206 (oostzijde)</Naam>
+      <Datum>2022-07-07</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovVLK18301-on01/g_NL.IMRO.0537.ovVLK18301-on01.xml</GeleideFormulier>
+    </Plan>
+    <Plan Id="NL.IMRO.0537.ovVLK18301-ov01">
+      <Naam>Verlengen van de instandhoudingstermijn van de tijdelijke verlegging van de N206 (oostzijde) tot 1 juli 2023</Naam>
+      <Datum>2022-09-01</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovVLK18301-ov01/g_NL.IMRO.0537.ovVLK18301-ov01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovRBG15411" Status="in voorbereiding">
+    <Plan Id="NL.IMRO.0537.ovRBG15411-on01">
+      <Naam>6 appartementen-Buurtzicht-Rijnsburg</Naam>
+      <Datum>2022-07-21</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovRBG15411-on01/g_NL.IMRO.0537.ovRBG15411-on01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+  <Dossier Id="NL.IMRO.0537.ovVLK18300" Status="in voorbereiding">
+    <Plan Id="NL.IMRO.0537.ovVLK18300-ov01">
+      <Naam>Verlengen van de instandhoudingstermijn van de tijdelijke verlegging van de N206 (westzijde) tot 1 juli 2023</Naam>
+      <Datum>2022-09-01</Datum>
+      <GeleideFormulier>https://publiek.tercera-ro.nl/officieel/0537/NL.IMRO.0537.ovVLK18300-ov01/g_NL.IMRO.0537.ovVLK18300-ov01.xml</GeleideFormulier>
+    </Plan>
+  </Dossier>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>sAFuwPMxh7r2lcK1kJ1fZqf4Fi0=</DigestValue></Reference></SignedInfo><SignatureValue>nh+M3bOElXG5YH2Bxc0tcqHCES6frBQGZVRjz7R/lbPDkpLnXkvvpZjo0BGo+HboClNRtu4mm+Ol7GLWxX0N/uJQb3iypmcnRWQWo42xfmuDrhh6TDcBykTUXoFmPOuhuRpBtNQyEa5Nhe2ZnBgxx5eg/ecW6Yh9sXDv5q6znwcn22dhKrr63aJyUZgPuCLrtPXPkk41bI6WPuj3n2gm9nGfaSOd8ySZYA/kD5g+IpNktWRVw3XsaI23shhfjYLynVjjxEdynw+OzRgdDOpx1MnojBVcx9JQ0ogi0diH6yibQCc6nhJYUkjJpLc1pXp/G71wD4IgXfPRI9VdHvedGw==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIGezCCBGOgAwIBAgIUQV4ph/m7gc/EawKbBwHJ9uWkqG0wDQYJKoZIhvcNAQELBQAwUzELMAkGA1UEBhMCTkwxETAPBgNVBAoMCEtQTiBCLlYuMTEwLwYDVQQDDChLUE4gUEtJb3ZlcmhlaWQgUHJpdmF0ZSBTZXJ2aWNlcyBDQSAtIEcxMB4XDTIwMTEyNzExNTAxNFoXDTIzMTEyNzExNTAxNFowgYUxCzAJBgNVBAYTAk5MMRAwDgYDVQQHDAdLYXR3aWprMRkwFwYDVQQKDBBHZW1lZW50ZSBLYXR3aWprMQ0wCwYDVQQLDARJZW5BMR0wGwYDVQQFExQwMDAwMDAwMTAwMjUyODQyMzAwMDEbMBkGA1UEAwwSdGVyY2VyYS5rYXR3aWprLm5sMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5wkM8DWSPXosc8USJrYj6SUgpeKheNAK9d61SvwKUHLGaqkn2qupkKtuO0O0o7J5NHWYuTo8wmVAiAi0jNEjt3U+E9c8JlFOl4RmQVxjGsFW9jtS1q33ETTEWtl6hGliJmvyaqSCqMXqKrf7j8q7QQ1U1hMJi+6u2eejFw34EQjivMufC4mRkmUQS0oxPLKTcBHGX0mxxYQ09dLN5DLp6EXoteptKHJTjB1PUvRtpdJzt9Wp3WZGetVQ9XBNI77X9J039bCwtERqGVqKMgXwoUZSzoCtnVjumCqfa06UMBIhqb8GGxKr1x0PcRVFHnYJyWHmqFH1dzzoPbkA1BkIQwIDAQABo4ICEjCCAg4wDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBS41EyfqFtu2iWnaI7vjEYa/h9TZTA4BggrBgEFBQcBAQQsMCowKAYIKwYBBQUHMAGGHGh0dHA6Ly9wcm9jc3AubWFuYWdlZHBraS5jb20wHQYDVR0RBBYwFIISdGVyY2VyYS5rYXR3aWprLm5sMIHXBgNVHSAEgc8wgcwwgckGCmCEEAGHawECCAYwgbowQgYIKwYBBQUHAgEWNmh0dHBzOi8vY2VydGlmaWNhYXQua3BuLmNvbS9lbGVrdHJvbmlzY2hlLW9wc2xhZ3BsYWF0czB0BggrBgEFBQcCAjBoDGZPcCBkaXQgY2VydGlmaWNhYXQgaXMgaGV0IENQUyBQS0lvdmVyaGVpZCBQcml2YXRlIFNlcnZpY2VzIFNlcnZlciBjZXJ0aWZpY2F0ZW4gdmFuIEtQTiB2YW4gdG9lcGFzc2luZy4wHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMFwGA1UdHwRVMFMwUaBPoE2GS2h0dHA6Ly9jcmwubWFuYWdlZHBraS5jb20vS1BOQlZQS0lvdmVyaGVpZFByaXZhdGVTZXJ2aWNlc0NBRzEvTGF0ZXN0Q1JMLmNybDAdBgNVHQ4EFgQUa5qj4ktvlHeF1jonTRXzFV/HvfgwDgYDVR0PAQH/BAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQDORFHrREzBDdAw1l/3QIb9i8I1w3sX0zZe1Rf6fz9C/nEQKDnZXWdRhaOwDRCFZPxEkNFHV4R7tzAj4QzbcmTagvewfzvrohIGpAf6y83igi7ybaGxUecnkq2I0E8WjkAHIh6R4oj36JAuoaWmlkKNwhm2rw2RLiN5QWTzFACSMW9FhEUPHebWTVLaiARseyKs8xNy2DV3VPpvjic2SdF9e2lX3kzLqQyqshbdLaBwoQFxwC7QhmlQR0+8fGDXkHR7qBvotRJGg8jdUCjAN96MYC48NQhF3ukD2+E+fpcn9UwOS+/0+3GgH0zoLnFEVpRnxG7dEsyUb0aYLI39qMrp0QgNnbLB+4Wk7CHmEIauXQuZN0kJg4SHGc9lr/+GaUtSy0x2KwcC8ZANz5lqKjqjcRuB9aZJYFGmHmXmq4TEY04OxeoMgwO3ZOtip4Z5iuL8p8U0KfBXFVxc1HGT8ZjLy78rVklOM6sMDXeLuhmh4VidyFbi7jifKyuSA9w++SB0wyD3Qxrpm6CkoYaJ5d40NjzCBsJoibshROfVDeMPx2/cZejfJ4TLHWcWRpDcqQtQK8DM5nXZ7J4Yfp5J5GjuEi+RvzUqAmqm54C9hysgbrwxwDNsPPE5yO9rbF0k3QUbMSvronM0Jq70NLKPOtVX7B8YE9fBzR7oBG/DdjgNQQ==</X509Certificate></X509Data></KeyInfo></Signature></Manifest>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!--
+  Spatial Pipeline — engine-eronder voor 3D BAG + IMRO
+  (c) 2024-2026 Regen Studio B.V. — PolyForm Noncommercial License 1.0.0
+  https://polyformproject.org/licenses/noncommercial/1.0.0/
+-->
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Spatial Pipeline — engine eronder voor 3D BAG + IMRO</title>
+<meta name="description" content="Browser-only spatial pipeline die geometrie (glTF) scheidt van attributen (JSON-LD linked-data). 3D BAG-gebouwen + IMRO-bestemmingsplannen → één queryable laag met provenance, ready voor Unity-pickup. Soeverein, swappable cloud, geen upload.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "./lib/three.module.js",
+    "three/addons/": "./lib/addons/"
+  }
+}
+</script>
+<script src="lib/turf.min.js" defer></script>
+<script src="lib/earcut.js" defer></script>
+</head>
+<body>
+
+<!-- Welcome / problem-statement modal — first-load + on-demand via "i"-button -->
+<div id="welcome-modal" class="modal-backdrop" role="dialog" aria-labelledby="welcome-title" aria-modal="true">
+  <div class="modal-card">
+    <div class="modal-eyebrow"><span class="bolt" aria-hidden="true"></span>Engine eronder · multi-source · soeverein</div>
+    <h1 id="welcome-title">Geometrie scheiden van attributen — zodat de bril 10× groter gebied kan laden</h1>
+    <p class="lead">
+      Een Nederlands overheids-VR-platform laadt nu OBJ + JSON tegelijk in de bril. Daardoor zit een vergaderzaal vast aan kleine gebieden. Deze pipeline scheidt <strong>geometrie</strong> (glTF, geometry-only met BAG-id per pand) van <strong>attributen</strong> (JSON-LD linked-data, opvraagbaar als iemand op een pand klikt) — meer panden, meer plannen, meer aanduidingen tegelijk in beeld.
+    </p>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h3>Het knelpunt nu</h3>
+        <p>VR-applicaties laden geometrie + attributen samen — dat schaalt niet. Vergaderzalen zitten vast aan kleine gebieden; grotere areas zijn niet beleefbaar zonder de bril te overstelpen.</p>
+      </div>
+      <div class="problem-card">
+        <h3>Wat deze pipeline doet</h3>
+        <p>Drop tile + meerdere IMRO-plannen → join in browser → glTF (alleen geometrie + IDs) + JSON-LD (linked-data attributen, opvraagbaar via ID). Klaar voor Unity-pickup. Geen vendor lock-in, swappable van Azure naar EZ naar on-prem.</p>
+      </div>
+    </div>
+
+    <div class="flow-diagram" aria-label="Pipeline-flow">
+      <div class="flow-step"><span class="num">1</span><strong>Drop</strong><span>3D BAG-tile + IMRO-plannen (heterogene bronnen — IMRO2008 + IMRO2012)</span></div>
+      <div class="flow-step"><span class="num">2</span><strong>Join</strong><span>elk pand → primaire bestemming + alle dubbelbestemming-overlays + provenance per regel</span></div>
+      <div class="flow-step"><span class="num">3</span><strong>Klik</strong><span>bewijst dat attributen on-demand opvraagbaar zijn via gebouw-id</span></div>
+      <div class="flow-step"><span class="num">4</span><strong>Exporteer</strong><span>model.glb (geometrie, ~MB) + attributes.jsonld (linked-data, ~KB) — Unity-pickup-ready</span></div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-primary" data-action="sample" type="button">Voorbeelddata laden — Valkenhorst (2 plannen, 1146 panden)</button>
+      <button data-action="own" type="button">Eigen bestanden droppen</button>
+    </div>
+
+    <p class="privacy-note">
+      <span class="dot" aria-hidden="true"></span>
+      Alle geometrie- en plan-verwerking gebeurt client-side — verifieerbaar via Network-tab. Eén live attribuut-fetch naar publieke Luchtmeetnet open API (RIVM, CC0, geen auth, geen tracking) toont de engine-eronder-architectuur. Open-source vendored deps (three.js MIT, turf MIT, earcut ISC). Application-code PolyForm-NC. Uitwisselbaar tussen Azure / EZ / Nextcloud / on-prem.
+    </p>
+  </div>
+</div>
+
+<header>
+  <div class="header-row">
+    <h1>Spatial Pipeline</h1>
+    <button id="btn-show-welcome" class="info-button" type="button" title="Wat doet deze demo?">i</button>
+  </div>
+  <p class="tagline">Engine-eronder voor 3D BAG + IMRO-bestemmingsplannen — geometrie en attributen gescheiden, browser-only, swappable cloud.</p>
+  <div class="privacy-banner" role="status">
+    <span class="dot"></span>
+    Bestandsverwerking lokaal in deze browsertab — geen upload. Eén live attribuut-fetch naar Luchtmeetnet (RIVM, publieke open API, geen tracking).
+  </div>
+</header>
+
+<main>
+  <aside id="controls">
+    <section class="drop-area">
+      <h2>Invoer</h2>
+
+      <label class="drop-zone" data-kind="cityjson">
+        <input type="file" id="file-cityjson" accept=".json,.gz">
+        <strong>① 3D-model</strong>
+        <em>CityJSON 2.0 (.city.json of .gz)</em>
+        <small id="status-cityjson">geen bestand</small>
+      </label>
+
+      <h3 class="controls-subhead">② Bestemmingsplannen</h3>
+      <div id="plan-stack" aria-live="polite"></div>
+
+      <label class="drop-zone drop-zone-add" data-kind="imro">
+        <input type="file" id="file-imro" accept=".gml,.xml" multiple>
+        <strong>+ Voeg plan toe</strong>
+        <em>IMRO2012 of IMRO2008 GML — meerdere bestanden mogelijk</em>
+      </label>
+
+      <h3 class="controls-subhead">③ Context-laag <span class="optional-tag">(optioneel)</span></h3>
+      <div id="context-layer-info" aria-live="polite"></div>
+
+      <label class="drop-zone drop-zone-add" data-kind="context">
+        <input type="file" id="file-context" accept=".csv,.geojson,.json">
+        <strong>+ Context-laag droppen</strong>
+        <em>CSV of GeoJSON — punten/lijnen, bv. utility-locaties</em>
+      </label>
+      <button class="try-sample-link" id="btn-sample-hv-context" type="button">
+        Probeer voorbeeld: HV-stations-laag
+      </button>
+
+      <button id="btn-samples" class="btn-secondary" type="button">
+        Voorbeelddata laden (2 plannen)
+      </button>
+    </section>
+
+    <section class="status-area">
+      <h2>Status</h2>
+      <pre id="status-log" aria-live="polite"></pre>
+    </section>
+
+    <section class="export-area">
+      <h2>VR/AR-bundel exporteren</h2>
+      <p class="export-explainer">
+        <strong>Geometrie</strong> (glTF) gaat naar de bril; <strong>attributen</strong> (JSON-LD) blijven in de backend, on-demand opvraagbaar via BAG-id. Engine eronder — dezelfde bundel werkt naar Unity/Quest, Unreal, web-viewer of mobiele AR.
+      </p>
+      <button id="btn-export-gltf" type="button" disabled>Geometrie <code>model.glb</code></button>
+      <button id="btn-export-jsonld" type="button" disabled>Attributen <code>attributes.jsonld</code></button>
+      <p class="hint">Verschijnt zodra beide bestanden zijn verwerkt.</p>
+    </section>
+
+    <footer class="legend">
+      <h2>Legenda — bestemmingshoofdgroep</h2>
+      <ul id="legend-list"></ul>
+    </footer>
+  </aside>
+
+  <section id="viewer">
+    <div id="viewer-container"></div>
+
+    <div id="engine-panel" class="engine-panel" hidden>
+      <h3>Engine eronder</h3>
+      <div class="metric-row">
+        <span class="label">geometrie</span>
+        <span class="arrow">→</span>
+        <span class="value" id="metric-geometry">— MB</span>
+      </div>
+      <div class="metric-note" id="metric-geometry-note">glTF-ready, met BAG-id per pand</div>
+      <div class="metric-row">
+        <span class="label">attributen</span>
+        <span class="arrow">→</span>
+        <span class="value" id="metric-attributes">— KB</span>
+      </div>
+      <div class="metric-note">JSON-LD, on-demand opvraagbaar via BAG-id</div>
+      <div class="divider"></div>
+      <div class="coverage-header">Coverage — <span id="coverage-summary">— / —</span></div>
+      <div id="coverage-rows"></div>
+    </div>
+
+    <div id="viewer-toolbar">
+      <div class="toolbar-stack">
+        <div class="cam-presets" role="group" aria-label="Camera-preset">
+          <button class="cam-preset active" data-preset="default" type="button" title="3D-overzicht">3D</button>
+          <button class="cam-preset" data-preset="top" type="button" title="Top-down (planning-view)">Top</button>
+        </div>
+        <label><input type="checkbox" id="toggle-plan" checked> Plangrenzen</label>
+        <label><input type="checkbox" id="toggle-buildings" checked> Gebouwen</label>
+        <div class="view-modes" role="group" aria-label="Visualisatie-mode">
+          <button class="view-mode active" data-mode="bestemming" type="button" title="Kleur op bestemmingshoofdgroep">Bestemming</button>
+          <button class="view-mode" data-mode="bron-plan" type="button" title="Kleur op welk plan welk gebouw dekt">Bron-plan</button>
+          <button class="view-mode" data-mode="use-case-hv" type="button" title="Use-case: HV-station-inpassing (vereist HV-context-laag)" disabled>Use-case: HV</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="hv-summary" class="hv-summary" hidden>
+      <h3>HV-station-inpassing</h3>
+      <div class="row"><span class="swatch suitable"></span><span class="label">Geschikt</span><span class="value" id="hv-count-suitable">—</span></div>
+      <div class="row"><span class="swatch constrained"></span><span class="label">Constrained</span><span class="value" id="hv-count-constrained">—</span></div>
+      <div class="row"><span class="swatch excluded"></span><span class="label">Uitgesloten</span><span class="value" id="hv-count-excluded">—</span></div>
+      <div class="total">Totaal geschikt oppervlak: <b id="hv-total-area">— ha</b></div>
+    </div>
+
+    <div id="hint-banner" class="hint-banner" hidden>
+      <span id="hint-banner-text"></span>
+      <button class="close" type="button" id="hint-banner-close" aria-label="Sluiten">×</button>
+    </div>
+
+    <div id="hover-hint">Klik op een gebouw of bestemmingsvlak →</div>
+
+    <!-- Live attribute uit open backend — bewijst on-demand fetch-architectuur. -->
+    <div id="lm-panel" class="lm-panel" hidden aria-live="polite">
+      <div class="lm-eyebrow"><span class="lm-pulse" aria-hidden="true"></span>Live attribuut · regio Valkenhorst</div>
+      <div class="lm-row">
+        <span class="lm-label">PM10</span>
+        <span class="lm-value" id="lm-value">— µg/m³</span>
+      </div>
+      <div class="lm-meta" id="lm-meta">Luchtmeetnet · station —</div>
+      <div class="lm-source">RIVM open API · CC0 · on-demand fetch</div>
+    </div>
+  </section>
+
+  <aside id="info">
+    <h2>Object</h2>
+    <div id="info-content">
+      <p class="placeholder">Klik op een gebouw of bestemmingsvlak in het 3D-vlak.</p>
+    </div>
+  </aside>
+</main>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

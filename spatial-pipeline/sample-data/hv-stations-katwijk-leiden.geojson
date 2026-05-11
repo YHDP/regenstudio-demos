@@ -1,0 +1,86 @@
+{
+  "type": "FeatureCollection",
+  "name": "hv-stations-katwijk-leiden-illustratief",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:EPSG::28992"
+    }
+  },
+  "metadata": {
+    "purpose": "Voorbeeld-context-laag voor de spatial-pipeline-demo. Stations en lijnen zijn illustratief — niet bedoeld als authoritatieve weergave van het werkelijke Nederlandse hoogspanningsnet. Voor productiedoeleinden: gebruik PDOK / TenneT open data.",
+    "coordinate_system": "Rijksdriehoek (RD / EPSG:28992) metres",
+    "source": "Hand-curated for demo purposes 2026-05-07"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [89200, 466200]
+      },
+      "properties": {
+        "name": "Valkenburg-Oost (illustratief)",
+        "voltage_kv": 150,
+        "operator": "TenneT (illustratief)",
+        "type": "transformatorstation"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88500, 465300]
+      },
+      "properties": {
+        "name": "Katwijk-Noord (illustratief)",
+        "voltage_kv": 50,
+        "operator": "Liander (illustratief)",
+        "type": "transformatorstation"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [90600, 467100]
+      },
+      "properties": {
+        "name": "Sassenheim-zuid (illustratief)",
+        "voltage_kv": 380,
+        "operator": "TenneT (illustratief)",
+        "type": "transformatorstation"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [89200, 466200],
+          [90600, 467100]
+        ]
+      },
+      "properties": {
+        "name": "150kV-koppeling Valkenburg → Sassenheim (illustratief)",
+        "voltage_kv": 150,
+        "type": "transmission-line"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [88500, 465300],
+          [89200, 466200]
+        ]
+      },
+      "properties": {
+        "name": "50kV-koppeling Katwijk → Valkenburg (illustratief)",
+        "voltage_kv": 50,
+        "type": "transmission-line"
+      }
+    }
+  ]
+}

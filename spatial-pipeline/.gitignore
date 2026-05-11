@@ -1,0 +1,6 @@
+# Python venv used for sample-data tile lookup (dev-time only)
+sample-data/.venv/
+
+# OS junk
+.DS_Store
+*.swp
