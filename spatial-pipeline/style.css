@@ -2,22 +2,45 @@
  * Spatial Pipeline — stylesheet
  * (c) 2024-2026 Regen Studio B.V. — PolyForm Noncommercial License 1.0.0
  * https://polyformproject.org/licenses/noncommercial/1.0.0/
+ *
+ * Phase 2 brand-chrome: Inter body + Playfair display, Regen palette,
+ * brand-mark composition (icon + text). Bestemmingsvlakken volgen
+ * NL cartografie-conventie (in app.js COLOR_MAP), niet Regen palette.
  */
 
+@import url('./assets/fonts/inter.css');
+@import url('./assets/fonts/playfair-display.css');
+
 :root {
-  --bg: #f7f6f1;
-  --fg: #1f2421;
-  --muted: #6b6f6c;
-  --border: #d8d6cf;
-  --accent: #2a6d52;
-  --accent-soft: #d6ecdf;
-  --warn: #b85e2c;
-  --warn-soft: #f5e0d3;
+  /* Regen brand palette — canonical from regenstudio-demos/assets/css/styles.css */
+  --color-emerald: #008545;
+  --color-emerald-hover: #006937;
+  --color-emerald-light: #AFF9D7;
+  --color-teal: #009BBB;
+  --color-teal-light: #BBF0F8;
+  --color-magenta: #93093F;
+  --color-orange: #FFA92D;
+  --color-navy: #243644;
+  --color-navy-light: #5781A1;
+
+  /* Semantic mapping voor spatial-pipeline UI-chrome */
+  --bg: #FAFBFC;
+  --fg: #243644;
+  --muted: #737373;
+  --border: #E4E2E2;
+  --accent: var(--color-emerald);
+  --accent-hover: var(--color-emerald-hover);
+  --accent-soft: #d4f0e2;
+  --warn: var(--color-magenta);
+  --warn-soft: #f0d4dd;
+
+  /* HV verdict palette (functional, niet brand) */
   --hv-suitable: #2a8d4e;
   --hv-constrained: #c79a3a;
   --hv-excluded: #b03a2e;
-  --code-bg: #efece4;
-  --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+
+  --code-bg: #f1f4f6;
+  --shadow: 0 1px 3px rgba(36, 54, 68, 0.06), 0 1px 2px rgba(36, 54, 68, 0.04);
 }
 
 * { box-sizing: border-box; }
@@ -26,7 +49,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", system-ui, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   font-size: 14px;
   line-height: 1.5;
   color: var(--fg);
@@ -53,9 +76,45 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 20px;
+  font-family: 'Playfair Display', Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--color-navy);
+}
+
+/* Brand-mark — icon + Regen Studio text. Per brand-bible:
+   icon-only SVG composed with HTML text, never baked lockup.
+   Min icon size 24px, 1× clear-space. */
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--color-navy);
+  padding: 4px 6px;
+  margin: -4px -6px -4px -6px;
+  border-radius: 4px;
+  transition: background 0.15s ease;
+}
+.brand-mark:hover { background: var(--accent-soft); }
+.brand-mark .brand-icon {
+  width: 24px;
+  height: auto;
+  display: block;
+}
+.brand-mark .brand-text {
+  font-family: 'Playfair Display', Georgia, serif;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  font-size: 14px;
+  letter-spacing: -0.005em;
+}
+.brand-divider {
+  color: var(--border);
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0 4px;
+  user-select: none;
 }
 
 .info-button {
@@ -200,7 +259,7 @@ button:hover:not(:disabled) { background: var(--accent-soft); border-color: var(
 button:disabled { opacity: 0.4; cursor: not-allowed; }
 
 .btn-secondary { background: var(--accent); color: white; border-color: var(--accent); }
-.btn-secondary:hover:not(:disabled) { background: #225c45; border-color: #225c45; color: white; }
+.btn-secondary:hover:not(:disabled) { background: var(--accent-hover); border-color: var(--accent-hover); color: white; }
 
 .export-area button { margin-bottom: 6px; }
 .export-area code { font-size: 11px; background: var(--code-bg); padding: 1px 5px; border-radius: 3px; }
@@ -711,7 +770,7 @@ body.pzh-on .pzh-pin-floating {
   color: white;
   border-color: var(--accent);
 }
-.modal-card .modal-actions .btn-primary:hover { background: #225c45; border-color: #225c45; color: white; }
+.modal-card .modal-actions .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: white; }
 
 .modal-card .privacy-note {
   font-size: 12px;
