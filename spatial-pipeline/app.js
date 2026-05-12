@@ -991,7 +991,10 @@ function renderGround(viewer, ext) {
   const span = Math.max(ext.maxX - ext.minX, ext.maxY - ext.minY) * 1.15;
   const geom = new THREE.PlaneGeometry(span, span);
   geom.rotateX(-Math.PI / 2);
-  const mat = new THREE.MeshLambertMaterial({ color: 0xe8e4d8, side: THREE.DoubleSide });
+  // MeshBasicMaterial = geen lighting reactie → exacte warm-cream kleur,
+  // anders wordt 'ie grijs onder ambient+directional. Ground is set-dressing,
+  // niet shaded geometry — dit klopt visueel.
+  const mat = new THREE.MeshBasicMaterial({ color: 0xe8e4d8, side: THREE.DoubleSide });
   const mesh = new THREE.Mesh(geom, mat);
   mesh.position.y = -0.30; // below bestemmingsvlakken (-0.15) + below building bases
   mesh.userData.exportSkip = true;
@@ -1036,10 +1039,14 @@ function renderBestemmingen(viewer, plans, ext, viewMode, hvResults) {
         const tris = globalThis.earcut(flat, [], 2);
         if (tris.length === 0) continue;
 
+        // Y-stagger per mesh om z-fighting te voorkomen tussen overlappende
+        // bestemmingsvlakken (b.v. enkel + dubbel op zelfde footprint).
+        // 0.2mm per count = 0.2m max bij ~1000 vlakken — onder buildings (Y≥0).
+        const meshY = groundY - 0.0002 * count;
         const positions = new Float32Array(ring.length * 3);
         for (let i = 0; i < ring.length; i++) {
           positions[3*i  ] =   ring[i][0] - cx;
-          positions[3*i+1] =   groundY;
+          positions[3*i+1] =   meshY;
           positions[3*i+2] = -(ring[i][1] - cy);
         }
         const geom = new THREE.BufferGeometry();
