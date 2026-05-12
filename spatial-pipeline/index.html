@@ -188,6 +188,7 @@
         </div>
         <label><input type="checkbox" id="toggle-vlakken" checked> Bestemmingsvlakken</label>
         <label><input type="checkbox" id="toggle-perimeter" checked> Plangrenzen</label>
+        <label><input type="checkbox" id="toggle-labels" checked> Plan-labels</label>
         <label><input type="checkbox" id="toggle-ground" checked> Ondergrond</label>
         <label><input type="checkbox" id="toggle-buildings" checked> Gebouwen</label>
         <div class="view-modes" role="group" aria-label="Visualisatie-mode">
@@ -212,6 +213,21 @@
     </div>
 
     <div id="hover-hint">Klik op een gebouw of bestemmingsvlak →</div>
+
+    <!-- Cursor tooltip — verschijnt bij hover op bestemmingsvlak/gebouw. -->
+    <div id="cursor-tooltip" class="cursor-tooltip" hidden></div>
+
+    <!-- Schaal-balk + noord-pijl, linksonder. -->
+    <div id="map-aids" class="map-aids" hidden>
+      <div class="scale-bar">
+        <div class="scale-bar-line"><span class="scale-bar-end"></span><span class="scale-bar-end"></span></div>
+        <div class="scale-bar-label" id="scale-bar-label">— m</div>
+      </div>
+      <div class="north-arrow" id="north-arrow" title="Noord">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2 L18 20 L12 16 L6 20 Z" fill="#243644"/></svg>
+        <span class="north-label">N</span>
+      </div>
+    </div>
 
     <!-- Live attribute uit open backend — bewijst on-demand fetch-architectuur. -->
     <div id="lm-panel" class="lm-panel" hidden aria-live="polite">

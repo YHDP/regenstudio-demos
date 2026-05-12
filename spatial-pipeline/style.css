@@ -362,6 +362,86 @@ button:disabled { opacity: 0.4; cursor: not-allowed; }
   padding-top: 4px;
 }
 
+/* Cursor tooltip — hover-info op gebouw / bestemmingsvlak. */
+.cursor-tooltip {
+  position: absolute;
+  z-index: 20;
+  pointer-events: none;
+  background: var(--color-navy);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 1.4;
+  max-width: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  font-family: 'Inter', sans-serif;
+}
+.cursor-tooltip[hidden] { display: none; }
+.cursor-tooltip strong { color: var(--color-emerald-light); font-weight: 600; }
+.cursor-tooltip em { color: var(--color-warm-gray, #ccc); font-style: italic; }
+
+/* Schaal-balk + noord-pijl — linksonder overlay. */
+.map-aids {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+}
+.map-aids[hidden] { display: none; }
+.scale-bar {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 6px 8px 4px;
+  border-radius: 4px;
+  font-size: 11px;
+  color: var(--color-navy);
+  font-family: 'Inter', sans-serif;
+  box-shadow: var(--shadow);
+}
+.scale-bar-line {
+  display: flex;
+  align-items: center;
+  border-top: 2px solid var(--color-navy);
+  height: 0;
+  position: relative;
+  margin: 6px 0 4px;
+}
+.scale-bar-end {
+  position: absolute;
+  width: 1px;
+  height: 8px;
+  background: var(--color-navy);
+  top: -5px;
+}
+.scale-bar-end:first-child { left: 0; }
+.scale-bar-end:last-child { right: 0; }
+.scale-bar-label {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.north-arrow {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 6px;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease;
+}
+.north-arrow svg { display: block; }
+.north-arrow .north-label {
+  display: none; /* arrow alone is recognizable; label optional */
+}
+
 /* PZH-context visibility-laag — verbatim citaten gekoppeld aan features.
    Default uit (clean demo). Aan via toggle in header; persisteert in localStorage. */
 .pzh-toggle {

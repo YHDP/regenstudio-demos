@@ -36,6 +36,7 @@ const state = {
   meshes: [],            // building meshes (raycastable)
   bestemmingMeshes: [],  // plan-vlak meshes (visual)
   planOutlineMeshes: [], // plan-perimeter outlines (LineLoop per plan)
+  planLabelMeshes: [],   // floating plan-labels (Sprite per plan; exportSkip)
   groundMesh: null,      // single flat ground plane (browser-only; exportSkip)
   selectedMesh: null,
   viewMode: 'bestemming',// 'bestemming' | 'bron-plan' | 'use-case-hv'
@@ -817,6 +818,20 @@ function initViewer(container) {
   let hoveredMesh = null;
   let hoverThrottle = 0;
   const containerEl = document.getElementById('viewer-container');
+  const tooltipEl = document.getElementById('cursor-tooltip');
+
+  function setTooltip(html, ev) {
+    if (!tooltipEl) return;
+    if (!html) { tooltipEl.hidden = true; return; }
+    tooltipEl.hidden = false;
+    tooltipEl.innerHTML = html;
+    const rect = renderer.domElement.getBoundingClientRect();
+    const x = ev.clientX - rect.left + 14;
+    const y = ev.clientY - rect.top + 14;
+    tooltipEl.style.left = `${x}px`;
+    tooltipEl.style.top = `${y}px`;
+  }
+
   renderer.domElement.addEventListener('mousemove', (ev) => {
     const now = performance.now();
     if (now - hoverThrottle < 33) return;
@@ -826,9 +841,13 @@ function initViewer(container) {
     pointer.x = ((ev.clientX - rect.left) / rect.width)  * 2 - 1;
     pointer.y = -((ev.clientY - rect.top) / rect.height) * 2 + 1;
     raycaster.setFromCamera(pointer, camera);
-    const hits = raycaster.intersectObjects(state.meshes, false);
-    const newHover = hits.length > 0 ? hits[0].object : null;
+    // Buildings krijgen prioriteit boven bestemmingsvlakken in hover (gebouwen
+    // zitten boven vlakken in de scene, dus raycast hits op gebouwen eerst).
+    const hits = raycaster.intersectObjects([...state.meshes, ...state.bestemmingMeshes], false);
+    const top = hits.length > 0 ? hits[0].object : null;
+    const newHover = top?.userData?.building ? top : null;
 
+    // Building hover-emissive blijft bestaan voor visual feedback.
     if (newHover !== hoveredMesh) {
       if (hoveredMesh && hoveredMesh !== state.selectedMesh) {
         hoveredMesh.material.emissive?.setHex(0x000000);
@@ -839,6 +858,30 @@ function initViewer(container) {
       hoveredMesh = newHover;
       containerEl.classList.toggle('over-building', !!newHover);
     }
+
+    // Tooltip: prioriteer building info; fallback naar bestemming-info.
+    if (top?.userData?.building) {
+      const b = top.userData.building;
+      const j = top.userData.join;
+      const bp = j?.primary;
+      const bouwjaar = b.attributes?.b3_oorspronkelijk_bouwjaar ?? b.attributes?.oorspronkelijkbouwjaar;
+      const lines = [
+        `<strong>BAG ${escapeHTML(b.bagId)}</strong>`,
+        bouwjaar ? `bouwjaar ${escapeHTML(String(bouwjaar))}` : null,
+        bp ? `${escapeHTML(bp.naam || bp.hoofdgroep || '—')}` : '<em>buiten plan</em>',
+      ].filter(Boolean);
+      setTooltip(lines.join('<br>'), ev);
+    } else if (top?.userData?.bestemmingMeta) {
+      const m = top.userData.bestemmingMeta;
+      const lines = [
+        `<strong>${escapeHTML(m.bp.naam || m.bp.hoofdgroep || 'bestemming')}</strong>`,
+        m.bp.hoofdgroep ? `hoofdgroep: ${escapeHTML(m.bp.hoofdgroep)}` : null,
+        `plan: ${escapeHTML(m.plan.label)}`,
+      ].filter(Boolean);
+      setTooltip(lines.join('<br>'), ev);
+    } else {
+      setTooltip(null);
+    }
   });
   renderer.domElement.addEventListener('mouseleave', () => {
     if (hoveredMesh && hoveredMesh !== state.selectedMesh) {
@@ -846,12 +889,22 @@ function initViewer(container) {
     }
     hoveredMesh = null;
     containerEl.classList.remove('over-building');
+    setTooltip(null);
   });
 
   window.addEventListener('resize', () => {
     camera.aspect = container.clientWidth / container.clientHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(container.clientWidth, container.clientHeight);
+  });
+
+  // Map-aids (schaal-balk + noord-pijl) — update bij camera-change, 4Hz throttle.
+  let aidsThrottle = 0;
+  controls.addEventListener('change', () => {
+    const now = performance.now();
+    if (now - aidsThrottle < 250) return;
+    aidsThrottle = now;
+    updateMapAids({ camera, renderer });
   });
 
   (function loop() {
@@ -945,6 +998,126 @@ function setSelected(mesh) {
   }
   state.selectedMesh = mesh;
   if (mesh) mesh.material.emissive?.setHex(0x886633);
+}
+
+// Schaal-balk + noord-pijl — overlay linksonder. Updates per camera-change.
+// Werkt voor zowel top-down als 3D-perspectief: project twee bekende world-
+// punten naar scherm, meet pixel-afstand → scale.
+const SCALE_NICE = [1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000];
+
+function updateMapAids(viewer) {
+  const aids = document.getElementById('map-aids');
+  const labelEl = document.getElementById('scale-bar-label');
+  const arrowEl = document.getElementById('north-arrow');
+  if (!aids || !labelEl || !arrowEl) return;
+  if (!state.extent) { aids.hidden = true; return; }
+  aids.hidden = false;
+
+  const camera = viewer.camera;
+  const renderer = viewer.renderer;
+  const w = renderer.domElement.clientWidth;
+  const h = renderer.domElement.clientHeight;
+
+  // Project (0,0,0) en (100,0,0) naar scherm (RD-meters in scene-coords).
+  const a = new THREE.Vector3(0, 0, 0).project(camera);
+  const b = new THREE.Vector3(100, 0, 0).project(camera);
+  const ax = (a.x + 1) / 2 * w;
+  const bx = (b.x + 1) / 2 * w;
+  const pxPerMeter = Math.abs(bx - ax) / 100;
+
+  if (!Number.isFinite(pxPerMeter) || pxPerMeter <= 0) { aids.hidden = true; return; }
+
+  // Kies een nice-number dat ~80-160 px breed wordt.
+  const targetPx = 120;
+  const targetMeters = targetPx / pxPerMeter;
+  let nice = SCALE_NICE[0];
+  for (const n of SCALE_NICE) if (Math.abs(n - targetMeters) < Math.abs(nice - targetMeters)) nice = n;
+  const barPx = nice * pxPerMeter;
+  labelEl.style.width = `${barPx.toFixed(0)}px`;
+  labelEl.previousElementSibling.style.width = `${barPx.toFixed(0)}px`;
+  labelEl.textContent = nice >= 1000 ? `${nice / 1000} km` : `${nice} m`;
+
+  // Noord-pijl: rotation = camera azimuth om Y-as.
+  const dir = new THREE.Vector3();
+  camera.getWorldDirection(dir);
+  // Kijk-richting in XZ-plane → azimuth t.o.v. -Z (north in scene = -Z, sinds RD-y → -Z mapping).
+  const azimuth = Math.atan2(dir.x, -dir.z);
+  arrowEl.style.transform = `rotate(${(-azimuth * 180 / Math.PI).toFixed(1)}deg)`;
+}
+
+// Plan-labels — floating Sprite per plan, anchored op centroid van perimeter.
+// Geeft orientatie ("waar zit Valkenhorst?"). Canvas-rendered tekst voor crisp
+// rendering. Mark exportSkip — Quest-app levert eigen labels.
+function makeLabelSprite(text, accentColor) {
+  const ratio = Math.min(2, window.devicePixelRatio || 1);
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  const fontPx = 28;
+  ctx.font = `600 ${fontPx}px Inter, -apple-system, sans-serif`;
+  const textWidth = ctx.measureText(text).width;
+  const padX = 18, padY = 12;
+  const w = Math.ceil(textWidth + padX * 2 + 8); // 8 = accent stripe
+  const h = Math.ceil(fontPx + padY * 2);
+  canvas.width = w * ratio;
+  canvas.height = h * ratio;
+  ctx.scale(ratio, ratio);
+  // Card background — white with subtle shadow via 2-pass
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.96)';
+  ctx.beginPath();
+  if (ctx.roundRect) ctx.roundRect(0, 0, w, h, 5);
+  else ctx.rect(0, 0, w, h);
+  ctx.fill();
+  // Accent stripe
+  ctx.fillStyle = '#' + accentColor.toString(16).padStart(6, '0');
+  ctx.fillRect(0, 0, 4, h);
+  // Text
+  ctx.fillStyle = '#243644';
+  ctx.font = `600 ${fontPx}px Inter, -apple-system, sans-serif`;
+  ctx.textBaseline = 'middle';
+  ctx.fillText(text, 8 + padX, h / 2);
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.minFilter = THREE.LinearFilter;
+  texture.needsUpdate = true;
+  const material = new THREE.SpriteMaterial({ map: texture, depthTest: false, transparent: true });
+  const sprite = new THREE.Sprite(material);
+  sprite.userData._aspectRatio = w / h;
+  return sprite;
+}
+
+function renderPlanLabels(viewer, plans, ext) {
+  for (const m of state.planLabelMeshes) {
+    viewer.scene.remove(m);
+    m.material.map?.dispose();
+    m.material.dispose();
+  }
+  state.planLabelMeshes = [];
+
+  const cx = (ext.minX + ext.maxX) / 2;
+  const cy = (ext.minY + ext.maxY) / 2;
+  // Sprite scale relatief aan scene-extent — passend bij elke zoom-level.
+  const span = Math.max(ext.maxX - ext.minX, ext.maxY - ext.minY);
+  const labelHeight = span * 0.06;
+
+  for (let pIdx = 0; pIdx < plans.length; pIdx++) {
+    const plan = plans[pIdx];
+    const perimeter = plan.meta?.perimeter ?? [];
+    if (perimeter.length === 0) continue;
+
+    // Centroid van eerste ring (genoeg voor positionering).
+    let sx = 0, sy = 0, n = 0;
+    for (const [x, y] of perimeter[0]) { sx += x; sy += y; n++; }
+    if (n === 0) continue;
+    const px = (sx / n) - cx;
+    const pz = -((sy / n) - cy);
+
+    const sprite = makeLabelSprite(plan.label, planPillColor(pIdx));
+    sprite.position.set(px, span * 0.04, pz); // ~80m above ground
+    sprite.scale.set(labelHeight * sprite.userData._aspectRatio, labelHeight, 1);
+    sprite.userData.exportSkip = true;
+    sprite.renderOrder = 100; // op top, depthTest=false
+    viewer.scene.add(sprite);
+    state.planLabelMeshes.push(sprite);
+  }
 }
 
 // Plan-perimeter outlines — één LineLoop per plan in plan-pill kleur.
@@ -1629,7 +1802,9 @@ async function tryProcess() {
   log('  3D-scène opbouwen…');
   renderGround(state.viewer, extent);
   renderPlanOutlines(state.viewer, state.plans, extent);
+  renderPlanLabels(state.viewer, state.plans, extent);
   renderBuildings(state.viewer, buildings, joined, extent, state.viewMode);
+  updateMapAids(state.viewer);
   log(`    ${state.meshes.length} gebouw-meshes`);
 
   // Re-run HV analyse if active mode requires it.
@@ -1729,6 +1904,7 @@ function setViewMode(mode) {
   if (state.cityjson && state.buildings && state.extent) {
     renderGround(state.viewer, state.extent);
     renderPlanOutlines(state.viewer, state.plans, state.extent);
+    renderPlanLabels(state.viewer, state.plans, state.extent);
     renderBuildings(state.viewer, state.buildings, state.joined, state.extent, state.viewMode);
     renderBestemmingen(state.viewer, state.plans, state.extent, state.viewMode, state.hvResults);
   }
@@ -2025,6 +2201,9 @@ function init() {
   });
   document.getElementById('toggle-perimeter').addEventListener('change', (e) => {
     for (const m of state.planOutlineMeshes) m.visible = e.target.checked;
+  });
+  document.getElementById('toggle-labels').addEventListener('change', (e) => {
+    for (const m of state.planLabelMeshes) m.visible = e.target.checked;
   });
   document.getElementById('toggle-ground').addEventListener('change', (e) => {
     if (state.groundMesh) state.groundMesh.visible = e.target.checked;
