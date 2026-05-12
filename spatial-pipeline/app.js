@@ -766,8 +766,12 @@ function initViewer(container) {
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0xeef2f4);
 
+  // Frustum near/far ratio = 1:2000 (was 1:50000). Scene is ~2km × 2km
+  // in RD-coords; 50× over-sized far-plane verkruimelde de depth-buffer
+  // precisie in de actieve range → flicker bij distance. Met 1:2000
+  // krijgt depth-buffer ~25× meer precisie waar het telt.
   const camera = new THREE.PerspectiveCamera(
-    55, container.clientWidth / container.clientHeight, 1, 50000
+    55, container.clientWidth / container.clientHeight, 5, 10000
   );
 
   const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -1067,6 +1071,11 @@ function renderBestemmingen(viewer, plans, ext, viewMode, hvResults) {
           side: THREE.DoubleSide,
           depthWrite: false,
         });
+        // Note: polygonOffset weggehaald — frustum-tightening (camera near/far
+        // 1:50000 → 1:2000) is wat flicker daadwerkelijk oploste. Positieve
+        // polygonOffset duwde fragments deeper → vlakken verdwenen onder
+        // ground-plane. Als flicker terugkomt: re-introduceren met NEGATIVE
+        // factor/units (-1, -4) om naar camera te pullen i.p.v. weg.
 
         const mesh = new THREE.Mesh(geom, mat);
         mesh.userData.bestemmingMeta = { planIdx: pIdx, bIdx, rIdx, bp, plan, hv: hvHit ?? null };
