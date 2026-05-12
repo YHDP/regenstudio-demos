@@ -1039,14 +1039,10 @@ function renderBestemmingen(viewer, plans, ext, viewMode, hvResults) {
         const tris = globalThis.earcut(flat, [], 2);
         if (tris.length === 0) continue;
 
-        // Y-stagger per mesh om z-fighting te voorkomen tussen overlappende
-        // bestemmingsvlakken (b.v. enkel + dubbel op zelfde footprint).
-        // 0.2mm per count = 0.2m max bij ~1000 vlakken — onder buildings (Y≥0).
-        const meshY = groundY - 0.0002 * count;
         const positions = new Float32Array(ring.length * 3);
         for (let i = 0; i < ring.length; i++) {
           positions[3*i  ] =   ring[i][0] - cx;
-          positions[3*i+1] =   meshY;
+          positions[3*i+1] =   groundY;
           positions[3*i+2] = -(ring[i][1] - cy);
         }
         const geom = new THREE.BufferGeometry();
@@ -1074,7 +1070,11 @@ function renderBestemmingen(viewer, plans, ext, viewMode, hvResults) {
 
         const mesh = new THREE.Mesh(geom, mat);
         mesh.userData.bestemmingMeta = { planIdx: pIdx, bIdx, rIdx, bp, plan, hv: hvHit ?? null };
-        mesh.renderOrder = -1;
+        // Unieke renderOrder per mesh = deterministische blending-volgorde,
+        // onafhankelijk van camera-afstand. Lost flicker op bij overlappende
+        // transparante vlakken (Three.js sorteert anders op afstand → wisselt
+        // bij elke camera-beweging → kleurflikker).
+        mesh.renderOrder = -1 - count * 0.0001;
         viewer.scene.add(mesh);
         state.bestemmingMeshes.push(mesh);
         count++;
