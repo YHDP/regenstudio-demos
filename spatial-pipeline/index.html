@@ -67,7 +67,7 @@
   <div class="header-row">
     <a href="https://regenstudio.world" class="brand-mark" target="_blank" rel="noopener" title="Regen Studio">
       <img src="assets/images/regen-icon.svg" alt="" class="brand-icon">
-      <span class="brand-text">Regen Studio</span>
+      <span class="brand-text" aria-label="Regen Studio"><span class="brand-text-regen">REGEN</span> <span class="brand-text-studio">STUDIO</span></span>
     </a>
     <span class="brand-divider" aria-hidden="true">/</span>
     <h1>Spatial Pipeline</h1>
@@ -75,10 +75,11 @@
     <button id="btn-pzh-toggle" class="pzh-toggle" type="button" aria-pressed="false" title="Toon verbatim PZH-Q&A-citaten gekoppeld aan elke demo-feature">Toon PZH-context</button>
   </div>
   <p class="tagline">Engine-eronder voor 3D BAG + IMRO-bestemmingsplannen — geometrie en attributen gescheiden, browser-only, swappable cloud.</p>
-  <div class="privacy-banner" role="status">
-    <span class="dot"></span>
-    Bestandsverwerking lokaal in deze browsertab — geen upload. Eén live attribuut-fetch naar Luchtmeetnet (RIVM, publieke open API, geen tracking).
-  </div>
+  <!-- Privacy-banner verwijderd 2026-05-12: privacy.html op regenstudio.world dekt
+       de disclosure (Spatial Pipeline endpoints expliciet vermeld). NOTICE.md in
+       de demo-root bevat ook de runtime-data-fetches sectie. Welcome-modal heeft
+       nog een korte privacy-zin. -->
+
 </header>
 
 <main>

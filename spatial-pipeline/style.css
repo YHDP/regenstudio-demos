@@ -10,6 +10,7 @@
 
 @import url('./assets/fonts/inter.css');
 @import url('./assets/fonts/playfair-display.css');
+@import url('./assets/fonts/koho.css');
 
 :root {
   /* Regen brand palette — canonical from regenstudio-demos/assets/css/styles.css */
@@ -104,10 +105,18 @@ header h1 {
   display: block;
 }
 .brand-mark .brand-text {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: -0.005em;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+.brand-mark .brand-text-regen {
+  font-family: 'KoHo', sans-serif;
+  font-weight: 700;
+}
+.brand-mark .brand-text-studio {
+  font-family: 'KoHo', sans-serif;
+  font-weight: 200;
 }
 .brand-divider {
   color: var(--border);
