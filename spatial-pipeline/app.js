@@ -35,6 +35,8 @@ const state = {
   viewer: null,
   meshes: [],            // building meshes (raycastable)
   bestemmingMeshes: [],  // plan-vlak meshes (visual)
+  planOutlineMeshes: [], // plan-perimeter outlines (LineLoop per plan)
+  groundMesh: null,      // single flat ground plane (browser-only; exportSkip)
   selectedMesh: null,
   viewMode: 'bestemming',// 'bestemming' | 'bron-plan' | 'use-case-hv'
   hvResults: null,       // [{ verdict, reasons[], areaM2, ... }] — populated when use-case-hv mode active
@@ -43,30 +45,43 @@ const state = {
 };
 
 // Bestemmingshoofdgroep → kleur (IMRO-codering, palet zelfgekozen).
+// IMRO bestemmingshoofdgroep → kleur (NL cartografie-conventie).
+// Locked 2026-05-12 op basis van Yvo's 5 broad strokes + NL convention voor rest.
+//   wonen geel · gemengd oranje · bedrijf rood · groen/natuur groen · agrarisch licht-groen
+// UI-chrome (header/buttons/typografie) volgt Regen brand-bible separately (Fase 2).
 const COLOR_MAP = {
-  woongebied:   0xe9b864,
-  wonen:        0xe9b864,
-  gemengd:      0xd4a574,
-  groen:        0x8bbf6f,
-  natuur:       0x4a8c5e,
-  verkeer:      0x9a9a9a,
-  water:        0x6fa5d8,
-  waterstaat:   0x4d8aa3,
-  leiding:      0xb88dd1,
-  waarde:       0xc4b5a0,
-  bedrijf:      0xc09060,
-  bedrijventerrein: 0xc09060,
-  centrum:      0xd49070,
-  cultuur:      0xd9a8c5,
-  detailhandel: 0xd07e7e,
-  dienstverlening: 0xc99090,
-  horeca:       0xd5a070,
-  kantoor:      0xa9b8c4,
-  maatschappelijk: 0xb8a0c8,
-  recreatie:    0xa8c890,
-  sport:        0x90b870,
-  agrarisch:    0xc9c065,
-  default:      0xb0b0b0,
+  // YELLOW family — wonen
+  woongebied:       0xf5c344,
+  wonen:            0xf5c344,
+  // ORANGE family — gemengd / commerce / horeca
+  gemengd:          0xea7c1d,
+  detailhandel:     0xea7c1d,
+  centrum:          0xd96b3a,
+  horeca:           0xe58a3d,
+  // RED — bedrijf
+  bedrijf:          0xc44949,
+  bedrijventerrein: 0xc44949,
+  // GREEN family — natuur · groen · sport · recreatie · agrarisch
+  natuur:           0x2f6b3f,
+  groen:            0x6db26d,
+  recreatie:        0xa8c890,
+  sport:            0x98b88a,
+  agrarisch:        0xc2dc8e,
+  // BLUE family — water · waterstaat
+  water:            0x5a9bd5,
+  waterstaat:       0x3a6a92,
+  // GREY family — verkeer · kantoor · dienstverlening
+  verkeer:          0x909090,
+  kantoor:          0x7c95a5,
+  dienstverlening:  0x7c95a5,
+  // PURPLE family — maatschappelijk · cultuur · leiding (dubbel)
+  maatschappelijk:  0xb88dd1,
+  cultuur:          0x9569b3,
+  leiding:          0xc8a8d8,
+  // BROWN/TAN — waarde (dubbel, cultureel-historisch)
+  waarde:           0xb8a380,
+  // Neutral fallback
+  default:          0xd8d6cf,
 };
 
 // HV-analyse: kleurpalet + drempels.
@@ -346,14 +361,28 @@ function parseIMRO(xmlText) {
 }
 
 function extractPlanMeta(doc, nsUri) {
-  // Het Bestemmingsplangebied-element houdt de plan-naam + IMRO-id + datum.
+  // Het Bestemmingsplangebied-element houdt de plan-naam + IMRO-id + datum
+  // én de plan-perimeter (één of meerdere posLists die de plangrens vormen).
   const bpgs = doc.getElementsByTagNameNS(nsUri, 'Bestemmingsplangebied');
-  if (bpgs.length === 0) return { naam: null, planId: null, datum: null };
+  if (bpgs.length === 0) return { naam: null, planId: null, datum: null, perimeter: [] };
   const bpg = bpgs[0];
+  const perimeter = [];
+  const posLists = getPosLists(bpg);
+  for (const pl of posLists) {
+    const nums = pl.textContent.trim().split(/\s+/).map(Number);
+    const ring = [];
+    for (let i = 0; i + 1 < nums.length; i += 2) {
+      if (Number.isFinite(nums[i]) && Number.isFinite(nums[i+1])) {
+        ring.push([nums[i], nums[i+1]]);
+      }
+    }
+    if (ring.length >= 3) perimeter.push(ring);
+  }
   return {
     naam:      textOf(bpg, nsUri, 'naam') || textOf(bpg, nsUri, 'datasetTitel'),
     planId:    textOf(bpg, nsUri, 'identificatie') || textOf(bpg, nsUri, 'lokaalID'),
     datum:     textOf(bpg, nsUri, 'datum') || textOf(bpg, nsUri, 'creatiedatum'),
+    perimeter,
   };
 }
 
@@ -855,10 +884,18 @@ function renderBuildings(viewer, buildings, joined, ext, viewMode) {
     geom.computeVertexNormals();
 
     const j = joined.get(b.id);
-    const mat = new THREE.MeshLambertMaterial({
-      color: colorForBuilding(b, j, viewMode),
-      flatShading: false,
-    });
+    const isUnmatched = viewMode !== 'bron-plan' && !j?.primary;
+    const mat = isUnmatched
+      ? new THREE.MeshLambertMaterial({
+          color: 0xd8d6cf,
+          transparent: true,
+          opacity: 0.45,
+          flatShading: false,
+        })
+      : new THREE.MeshLambertMaterial({
+          color: colorForBuilding(b, j, viewMode),
+          flatShading: false,
+        });
 
     const mesh = new THREE.Mesh(geom, mat);
     mesh.userData.building = b;
@@ -904,6 +941,63 @@ function setSelected(mesh) {
   }
   state.selectedMesh = mesh;
   if (mesh) mesh.material.emissive?.setHex(0x886633);
+}
+
+// Plan-perimeter outlines — één LineLoop per plan in plan-pill kleur.
+// Bewijst visueel waar plan A ophoudt en plan B begint, en waar je BUITEN
+// elk plan zit. Lost het oorspronkelijke "wat-is-een-plan-grens" probleem op.
+// Mark exportSkip — Quest-bundel krijgt alleen geometrie + IDs, geen render-hulplijnen.
+function renderPlanOutlines(viewer, plans, ext) {
+  for (const m of state.planOutlineMeshes) {
+    viewer.scene.remove(m);
+    m.geometry.dispose();
+    m.material.dispose();
+  }
+  state.planOutlineMeshes = [];
+
+  const cx = (ext.minX + ext.maxX) / 2;
+  const cy = (ext.minY + ext.maxY) / 2;
+  const lineY = -0.10; // vlak boven bestemmingsvlakken (-0.15) zodat outline zichtbaar is
+
+  for (let pIdx = 0; pIdx < plans.length; pIdx++) {
+    const plan = plans[pIdx];
+    const perimeter = plan.meta?.perimeter ?? [];
+    if (perimeter.length === 0) continue;
+
+    const color = planPillColor(pIdx);
+    for (const ring of perimeter) {
+      const points = ring.map(([x, y]) => new THREE.Vector3(x - cx, lineY, -(y - cy)));
+      const geom = new THREE.BufferGeometry().setFromPoints(points);
+      const mat = new THREE.LineBasicMaterial({ color, linewidth: 2 });
+      const line = new THREE.LineLoop(geom, mat);
+      line.userData.exportSkip = true;
+      viewer.scene.add(line);
+      state.planOutlineMeshes.push(line);
+    }
+  }
+}
+
+// Vlakke ondergrond-plaat — context voor de scene + vestibulair anker voor VR.
+// Niet authoritatief (geen AHN-hoogteverschillen); v0.2 backlog heeft AHN-decimatie.
+// Mark `exportSkip` zodat exportGLTF dit niet in de Quest-bundel meegeeft —
+// de Quest-app heeft zijn eigen ondergrond.
+function renderGround(viewer, ext) {
+  if (state.groundMesh) {
+    viewer.scene.remove(state.groundMesh);
+    state.groundMesh.geometry.dispose();
+    state.groundMesh.material.dispose();
+    state.groundMesh = null;
+  }
+  const span = Math.max(ext.maxX - ext.minX, ext.maxY - ext.minY) * 1.15;
+  const geom = new THREE.PlaneGeometry(span, span);
+  geom.rotateX(-Math.PI / 2);
+  const mat = new THREE.MeshLambertMaterial({ color: 0xe8e4d8, side: THREE.DoubleSide });
+  const mesh = new THREE.Mesh(geom, mat);
+  mesh.position.y = -0.30; // below bestemmingsvlakken (-0.15) + below building bases
+  mesh.userData.exportSkip = true;
+  mesh.renderOrder = -2;
+  viewer.scene.add(mesh);
+  state.groundMesh = mesh;
 }
 
 function renderBestemmingen(viewer, plans, ext, viewMode, hvResults) {
@@ -1327,7 +1421,12 @@ async function exportGLTF() {
   if (state.meshes.length === 0) return;
   const exporter = new GLTFExporter();
   const group = new THREE.Group();
-  for (const m of state.meshes) group.add(m.clone());
+  // Skip browser-only meshes (ground plane, plan-outline lines etc.) —
+  // de Quest-app levert die zelf. Bundle = pure geometrie + IDs.
+  for (const m of state.meshes) {
+    if (m.userData?.exportSkip) continue;
+    group.add(m.clone());
+  }
   return new Promise((resolve, reject) => {
     exporter.parse(group, (result) => {
       const blob = new Blob([result], { type: 'model/gltf-binary' });
@@ -1512,6 +1611,8 @@ async function tryProcess() {
   renderPlanStack();
 
   log('  3D-scène opbouwen…');
+  renderGround(state.viewer, extent);
+  renderPlanOutlines(state.viewer, state.plans, extent);
   renderBuildings(state.viewer, buildings, joined, extent, state.viewMode);
   log(`    ${state.meshes.length} gebouw-meshes`);
 
@@ -1610,6 +1711,8 @@ function setViewMode(mode) {
   }
 
   if (state.cityjson && state.buildings && state.extent) {
+    renderGround(state.viewer, state.extent);
+    renderPlanOutlines(state.viewer, state.plans, state.extent);
     renderBuildings(state.viewer, state.buildings, state.joined, state.extent, state.viewMode);
     renderBestemmingen(state.viewer, state.plans, state.extent, state.viewMode, state.hvResults);
   }
@@ -1901,8 +2004,14 @@ function init() {
   document.getElementById('btn-export-gltf').addEventListener('click', exportGLTF);
   document.getElementById('btn-export-jsonld').addEventListener('click', exportJSONLD);
 
-  document.getElementById('toggle-plan').addEventListener('change', (e) => {
+  document.getElementById('toggle-vlakken').addEventListener('change', (e) => {
     for (const m of state.bestemmingMeshes) m.visible = e.target.checked;
+  });
+  document.getElementById('toggle-perimeter').addEventListener('change', (e) => {
+    for (const m of state.planOutlineMeshes) m.visible = e.target.checked;
+  });
+  document.getElementById('toggle-ground').addEventListener('change', (e) => {
+    if (state.groundMesh) state.groundMesh.visible = e.target.checked;
   });
   document.getElementById('toggle-buildings').addEventListener('change', (e) => {
     for (const m of state.meshes) m.visible = e.target.checked;
