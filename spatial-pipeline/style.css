@@ -303,6 +303,36 @@ button:disabled { opacity: 0.4; cursor: not-allowed; }
   background: var(--accent-soft);
 }
 
+/* Verify-link — opent viewer-2 (onafhankelijke engine) in nieuwe tab. */
+.verify-link {
+  margin-top: 14px !important;
+  text-align: center;
+  text-decoration: none;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  border-style: solid;
+  font-weight: 500;
+}
+.verify-link:hover {
+  background: var(--accent);
+  color: white;
+}
+.verify-explainer {
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--muted);
+  margin: 6px 0 0;
+  padding: 0 2px;
+}
+.verify-explainer code {
+  font-size: 10px;
+  background: var(--code-bg);
+  padding: 1px 4px;
+  border-radius: 3px;
+  color: var(--fg);
+}
+
 /* Live attribute panel — Luchtmeetnet PM10 */
 .lm-panel {
   position: absolute;

@@ -84,6 +84,78 @@
   }
   .v2-empty-state[hidden] { display: none; }
   .v2-empty-state svg { width: 48px; height: 48px; opacity: 0.4; }
+  .v2-stage-overlay {
+    position: absolute; inset: 0;
+    background: rgba(0, 133, 69, 0.15);
+    border: 3px dashed var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    pointer-events: none;
+    z-index: 5;
+  }
+  .v2-stage-overlay[hidden] { display: none; }
+  .v2-stage-overlay-card {
+    background: white;
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  /* BAG-id lookup */
+  .v2-lookup[hidden] { display: none; }
+  .v2-lookup-input-row {
+    display: flex; gap: 6px;
+  }
+  .v2-lookup-input-row input {
+    flex: 1;
+    padding: 7px 10px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 12px;
+  }
+  .v2-lookup-input-row input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+  .v2-lookup-input-row button {
+    padding: 7px 14px;
+    background: var(--accent);
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .v2-lookup-input-row button:hover { background: var(--accent-hover); }
+  .v2-lookup-random {
+    margin-top: 6px;
+    width: 100%;
+    padding: 6px 10px;
+    background: transparent;
+    border: 1px dashed var(--border);
+    color: var(--muted);
+    font-size: 11px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .v2-lookup-random:hover { border-color: var(--accent); color: var(--accent); }
+  .v2-lookup-result {
+    margin-top: 10px;
+    padding: 10px 12px;
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .v2-lookup-result[hidden] { display: none; }
+  .v2-lookup-result h4 { margin: 0 0 6px; font-size: 13px; color: var(--fg); }
+  .v2-lookup-result dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 2px 12px; }
+  .v2-lookup-result dt { color: var(--muted); font-size: 11px; }
+  .v2-lookup-result dd { margin: 0; font-size: 12px; color: var(--fg); }
+  .v2-lookup-result.error { background: #f9e6e6; border-left-color: #b03a2e; color: #b03a2e; }
   .v2-attributes {
     margin-top: 14px;
     padding: 10px 12px;
@@ -136,11 +208,11 @@
 <main class="v2-main">
   <aside class="v2-controls">
     <h2>① Drop bundel</h2>
-    <label class="v2-drop" id="drop-zone">
-      <input type="file" id="file-input" accept=".glb,.gltf,.json">
-      <strong>Drop <code>model.glb</code></strong>
+    <div class="v2-drop" id="drop-zone" role="button" tabindex="0">
+      <strong>Drop <code>model.glb</code> of klik om te bladeren</strong>
       <em>geëxporteerd uit de hoofd-demo (knop "Geometrie")</em>
-    </label>
+      <input type="file" id="file-input" accept=".glb,.gltf" hidden>
+    </div>
 
     <div class="v2-meta" id="meta-panel" hidden>
       <div class="v2-meta-row"><span class="label">Bestand</span><span class="value" id="meta-name">—</span></div>
@@ -150,12 +222,26 @@
 
     <h2>② Optioneel · attributen</h2>
     <p>Drop ook <code>attributes.jsonld</code> om de linked-data koppeling te bewijzen — zelfde BAG-id resolveert hier dezelfde attributen als in de hoofd-demo.</p>
-    <label class="v2-drop" id="drop-zone-attrs">
-      <input type="file" id="file-input-attrs" accept=".jsonld,.json">
-      <strong>Drop <code>attributes.jsonld</code></strong>
+    <div class="v2-drop" id="drop-zone-attrs" role="button" tabindex="0">
+      <strong>Drop <code>attributes.jsonld</code> of klik om te bladeren</strong>
       <em>JSON-LD met @context — on-demand opvraagbaar via BAG-id</em>
-    </label>
+      <input type="file" id="file-input-attrs" accept=".jsonld,.json" hidden>
+    </div>
     <div class="v2-attributes" id="attrs-preview" hidden></div>
+
+    <!-- BAG-id lookup — bewijst de geometrie↔attribuut koppeling via open standaard. -->
+    <div id="lookup-panel" class="v2-lookup" hidden>
+      <h2 style="margin-top:18px">③ BAG-id lookup</h2>
+      <p style="font-size:12px;color:var(--muted);margin:0 0 8px">
+        Klik-op-gebouw is engine-specifiek (in onze hoofd-demo via three.js raycaster). In viewer-2 demonstreren we hetzelfde lookup-pattern via expliciete BAG-id — bewijst dat <strong>de koppeling</strong> tussen geometrie en attribuut <em>ook</em> bestand is tegen engine-wissel.
+      </p>
+      <div class="v2-lookup-input-row">
+        <input type="text" id="lookup-input" placeholder="bv. 0537100000017395" autocomplete="off">
+        <button id="lookup-btn" type="button">Zoek</button>
+      </div>
+      <button id="lookup-random-btn" type="button" class="v2-lookup-random">Probeer een willekeurige BAG-id</button>
+      <div id="lookup-result" class="v2-lookup-result" hidden></div>
+    </div>
 
     <h2>Wat dit bewijst</h2>
     <p class="v2-claim">
@@ -167,7 +253,7 @@
     <a href="./" class="v2-back">← Terug naar hoofd-demo</a>
   </aside>
 
-  <section class="v2-stage">
+  <section class="v2-stage" id="stage">
     <model-viewer id="mv" alt="Geëxporteerd 3D BAG-model" camera-controls touch-action="pan-y" exposure="1.1" shadow-intensity="0.8" environment-image="neutral" hidden></model-viewer>
     <div class="v2-empty-state" id="empty-state">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -175,7 +261,10 @@
         <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
         <line x1="12" y1="22.08" x2="12" y2="12"/>
       </svg>
-      <span>Drop een <code>model.glb</code> uit de hoofd-demo</span>
+      <span>Drop <code>model.glb</code> hier — of in het paneel links</span>
+    </div>
+    <div class="v2-stage-overlay" id="stage-overlay" hidden>
+      <div class="v2-stage-overlay-card">⤓ Drop bundel om te laden</div>
     </div>
   </section>
 </main>
@@ -208,37 +297,164 @@
     metaPanel.hidden = false;
   }
 
+  // Houd de geparseerde JSON-LD in memory voor BAG-id lookup.
+  let attrsDoc = null;
+  let bagIdIndex = null; // Map<bagId, entity>
+
   async function loadAttrs(file) {
     const text = await file.text();
     try {
       const doc = JSON.parse(text);
+      attrsDoc = doc;
       const items = doc['@graph'] ?? [];
+
+      // Index: BAG-id → entity. Werkt voor zowel "bagId" als "@id" patterns.
+      bagIdIndex = new Map();
+      for (const it of items) {
+        if (it.bagId) bagIdIndex.set(String(it.bagId), it);
+        else if (it['@id']?.startsWith?.('urn:bag:')) {
+          bagIdIndex.set(it['@id'].slice(8), it);
+        }
+      }
+
       const sample = items.slice(0, 3);
       const lines = [
         `<div class="v2-attributes-key">@context: ${Object.keys(doc['@context'] ?? {}).length} prefixes</div>`,
-        `<div class="v2-attributes-key">@graph: ${items.length} entiteiten</div>`,
+        `<div class="v2-attributes-key">@graph: ${items.length} entiteiten · ${bagIdIndex.size} BAG-id geïndexeerd</div>`,
         `<div class="v2-attributes-key">eerste 3 als preview:</div>`,
         ...sample.map(s => `${escapeHTML(JSON.stringify(s, null, 2))}`),
       ];
       attrsPreview.innerHTML = lines.join('\n\n');
       attrsPreview.hidden = false;
+
+      // Toon de lookup-panel zodra .jsonld geladen is.
+      document.getElementById('lookup-panel').hidden = false;
     } catch (e) {
       attrsPreview.textContent = `FOUT: ${e.message}`;
       attrsPreview.hidden = false;
     }
   }
 
+  // BAG-id lookup — toon attributen voor één gebouw uit het geladen JSON-LD.
+  function lookupBagId(bagId) {
+    const result = document.getElementById('lookup-result');
+    if (!bagIdIndex || bagIdIndex.size === 0) {
+      result.className = 'v2-lookup-result error';
+      result.textContent = 'Laad eerst attributes.jsonld.';
+      result.hidden = false;
+      return;
+    }
+    const entity = bagIdIndex.get(String(bagId).trim());
+    if (!entity) {
+      result.className = 'v2-lookup-result error';
+      result.innerHTML = `BAG-id <code>${escapeHTML(bagId)}</code> niet gevonden in @graph (${bagIdIndex.size} entries beschikbaar).`;
+      result.hidden = false;
+      return;
+    }
+    const dl = [];
+    const fields = [
+      ['BAG-id', entity.bagId],
+      ['Bouwjaar', entity.bouwjaar],
+      ['Dak-type', entity.dakType],
+      ['Hoogte (nok)', entity.hoogteNok ? `${entity.hoogteNok} m NAP` : null],
+      ['Bestemming', entity.bestemming?.naam],
+      ['Hoofdgroep', entity.bestemming?.bestemmingshoofdgroep],
+      ['Artikel', entity.bestemming?.artikelnummer],
+      ['Plan', entity.bestemming?.gevondenIn?.naam],
+    ];
+    for (const [k, v] of fields) {
+      if (v != null && v !== '') dl.push(`<dt>${escapeHTML(k)}</dt><dd>${escapeHTML(String(v))}</dd>`);
+    }
+    const dubbel = entity.dubbelbestemming?.length
+      ? `<dt>Dubbelbestemming</dt><dd>${entity.dubbelbestemming.map(d => escapeHTML(d.naam || d.bestemmingshoofdgroep || '—')).join(', ')}</dd>`
+      : '';
+    result.className = 'v2-lookup-result';
+    result.innerHTML = `<h4>Pand ${escapeHTML(String(entity.bagId || bagId))}</h4><dl>${dl.join('')}${dubbel}</dl>`;
+    result.hidden = false;
+  }
+
+  document.getElementById('lookup-btn').addEventListener('click', () => {
+    lookupBagId(document.getElementById('lookup-input').value);
+  });
+  document.getElementById('lookup-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') lookupBagId(e.target.value);
+  });
+  document.getElementById('lookup-random-btn').addEventListener('click', () => {
+    if (!bagIdIndex || bagIdIndex.size === 0) return;
+    const ids = [...bagIdIndex.keys()];
+    const random = ids[Math.floor(Math.random() * ids.length)];
+    document.getElementById('lookup-input').value = random;
+    lookupBagId(random);
+  });
+
   function escapeHTML(s) {
     return s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   }
 
+  // Detecteer file-extensie en route naar juiste handler.
+  function routeFile(file) {
+    const name = file.name.toLowerCase();
+    if (name.endsWith('.glb') || name.endsWith('.gltf')) return loadGLB(file);
+    if (name.endsWith('.jsonld') || name.endsWith('.json')) return loadAttrs(file);
+    console.warn('viewer-2: onbekend bestandstype:', file.name);
+    alert(`Onbekend bestandstype: "${file.name}". Verwacht .glb, .gltf, .jsonld of .json.`);
+  }
+
+  // Window-level preventDefault — anders navigeert de browser naar de file.
+  // CRUCIAAL voor file-drop te laten werken in de stage of zone.
+  window.addEventListener('dragenter', e => e.preventDefault());
+  window.addEventListener('dragover', e => e.preventDefault());
+  window.addEventListener('drop', e => e.preventDefault());
+
+  // Stage-area = full-viewer drop-zone (auto-routes naar .glb of .jsonld).
+  // Timeout-based overlay-show: dragover firet continu tijdens drag, zodra het
+  // stopt (drop / cancel / leave-window) hide na 150ms. Voorkomt het bekende
+  // dragenter/dragleave counter-mismatch dat overlay laat freezen.
+  const stage = document.getElementById('stage');
+  const stageOverlay = document.getElementById('stage-overlay');
+  let overlayHideTimer = null;
+  function showStageOverlay() {
+    stageOverlay.hidden = false;
+    clearTimeout(overlayHideTimer);
+    overlayHideTimer = setTimeout(() => { stageOverlay.hidden = true; }, 150);
+  }
+  function hideStageOverlayNow() {
+    clearTimeout(overlayHideTimer);
+    stageOverlay.hidden = true;
+  }
+  window.addEventListener('dragover', e => {
+    if (e.dataTransfer?.types?.includes('Files')) showStageOverlay();
+  });
+  window.addEventListener('drop', e => hideStageOverlayNow());
+  // Cursor verlaat browser-window helemaal → relatedTarget == null
+  window.addEventListener('dragleave', e => {
+    if (!e.relatedTarget) hideStageOverlayNow();
+  });
+  stage.addEventListener('drop', e => {
+    e.preventDefault();
+    e.stopPropagation();
+    hideStageOverlayNow();
+    const files = e.dataTransfer?.files;
+    if (files && files.length) routeFile(files[0]);
+  });
+
+  // Sidebar drop-zones — div+input (geen label, vermijdt drag-conflict).
   function wireDrop(zone, input, handler) {
+    zone.addEventListener('click', () => input.click());
+    zone.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); }
+    });
+    zone.addEventListener('dragenter', e => { e.preventDefault(); zone.classList.add('dragover'); });
     zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('dragover'); });
-    zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+    zone.addEventListener('dragleave', e => {
+      if (!zone.contains(e.relatedTarget)) zone.classList.remove('dragover');
+    });
     zone.addEventListener('drop', e => {
       e.preventDefault();
+      e.stopPropagation();
       zone.classList.remove('dragover');
-      if (e.dataTransfer.files.length) handler(e.dataTransfer.files[0]);
+      const files = e.dataTransfer?.files;
+      if (files && files.length) handler(files[0]);
     });
     input.addEventListener('change', e => {
       if (e.target.files.length) handler(e.target.files[0]);
@@ -248,6 +464,8 @@
 
   wireDrop(dropZone, fileInput, loadGLB);
   wireDrop(dropZoneAttrs, fileInputAttrs, loadAttrs);
+
+  console.log('viewer-2 ready — drop .glb anywhere on the page or click the drop-zones');
 </script>
 
 </body>
