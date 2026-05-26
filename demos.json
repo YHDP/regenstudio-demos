@@ -102,6 +102,17 @@
       "preview": "assets/images/previews/footprint-manager.svg",
       "accentColor": "#008545",
       "path": "/footprint-manager/"
+    },
+    {
+      "id": "spatial-pipeline",
+      "name": "Spatial Pipeline",
+      "subtitle": "Engine eronder voor 3D BAG + IMRO — geometrie en attributen gescheiden",
+      "description": "Browser-only spatial pipeline that separates geometry (glTF, geometry-only with BAG-id per object) from attributes (JSON-LD linked-data, on-demand fetchable per ID) — so a VR/AR app can load larger areas without dragging full attribute payloads into the headset. Combines Dutch 3D BAG buildings with multiple IMRO zoning plans (IMRO2008 + IMRO2012, auto-detected) into one queryable linked-data layer with provenance per source plan. Drop optional context-layers (CSV / GeoJSON) for use-case-specific analyses. Unity-pickup-ready output. Sovereign: swappable cloud, no vendor lock-in. Fully client-side; no upload.",
+      "category": "Digital Society",
+      "tags": ["Spatial Data", "3D BAG", "IMRO", "Linked Data", "Open Data"],
+      "preview": "assets/images/previews/spatial-pipeline.svg",
+      "accentColor": "#2a6d52",
+      "path": "/spatial-pipeline/"
     }
   ]
 }
