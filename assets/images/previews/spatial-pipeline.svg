@@ -1,109 +1,144 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
   <rect width="800" height="500" fill="#FFFFFF"/>
 
-  <!-- Title bar -->
-  <g>
-    <rect x="60" y="40" width="680" height="60" rx="8" fill="#2a6d52" opacity="0.92"/>
-    <text x="80" y="68" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="600" fill="white">Spatial Pipeline</text>
-    <text x="80" y="88" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="white" opacity="0.85">Engine eronder — geometrie en attributen gescheiden</text>
-  </g>
+  <!-- ============================================================
+       VR HEADSET — tessellated, centered, brand emerald palette
+       Roughly x:240-560, y:170-330 (front shell + strap edges)
+       ============================================================ -->
 
-  <!-- Three input cards: CityJSON tile · IMRO plans · context-layer -->
-  <g transform="translate(60, 130)">
-    <!-- Card 1: 3D BAG tile -->
-    <rect x="0" y="0" width="180" height="120" rx="8" fill="white" stroke="#d8d6cf" stroke-width="1.5"/>
-    <text x="14" y="22" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#6b6f6c" letter-spacing="0.06em">① 3D-MODEL</text>
-    <text x="14" y="38" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2421">CityJSON 2.0</text>
-    <!-- Tessellated buildings inside card -->
-    <g transform="translate(20, 50)">
-      <polygon points="10,40 30,30 30,55 10,60" fill="#c89048" opacity="0.9"/>
-      <polygon points="30,30 50,32 50,55 30,55" fill="#b87a36" opacity="0.9"/>
-      <polygon points="30,30 40,18 60,20 50,32" fill="#d4a05c" opacity="0.95"/>
-      <polygon points="60,55 80,50 80,65 60,68" fill="#a87a52" opacity="0.85"/>
-      <polygon points="80,50 100,52 100,65 80,65" fill="#986a42" opacity="0.85"/>
-      <polygon points="80,50 90,40 110,42 100,52" fill="#b88a62" opacity="0.9"/>
-      <polygon points="110,55 130,50 130,65 110,68" fill="#7aaf60" opacity="0.85"/>
-      <polygon points="130,50 150,55 150,68 130,65" fill="#6a9f50" opacity="0.85"/>
+  <!-- Headset strap (back, faint) -->
+  <polygon points="195,250 240,210 240,290" fill="#368868" opacity="0.55"/>
+  <polygon points="605,250 560,210 560,290" fill="#368868" opacity="0.55"/>
+
+  <!-- Headset front shell — main body, tessellated -->
+  <!-- Top half (lighter) -->
+  <polygon points="240,210 400,170 560,210 560,250 400,235 240,250" fill="#368868"/>
+  <polygon points="240,210 400,170 320,210" fill="#46b186" opacity="0.92"/>
+  <polygon points="400,170 560,210 480,210" fill="#46b186" opacity="0.92"/>
+  <polygon points="320,210 400,170 480,210 400,235" fill="#3d9c75"/>
+  <polygon points="240,210 320,210 280,250 240,250" fill="#368868" opacity="0.95"/>
+  <polygon points="320,210 400,235 280,250" fill="#2f7a5d"/>
+  <polygon points="480,210 560,210 560,250 520,250" fill="#368868" opacity="0.95"/>
+  <polygon points="480,210 400,235 520,250" fill="#2f7a5d"/>
+
+  <!-- Bottom half (deeper) -->
+  <polygon points="240,250 400,235 560,250 540,310 260,310" fill="#2a6d52"/>
+  <polygon points="240,250 280,250 260,310" fill="#1f5440" opacity="0.95"/>
+  <polygon points="560,250 520,250 540,310" fill="#1f5440" opacity="0.95"/>
+  <polygon points="280,250 400,235 320,290" fill="#2a6d52"/>
+  <polygon points="400,235 520,250 480,290" fill="#2a6d52"/>
+  <polygon points="280,250 320,290 260,310" fill="#225a44"/>
+  <polygon points="520,250 480,290 540,310" fill="#225a44"/>
+  <polygon points="320,290 400,235 480,290" fill="#1f5440" opacity="0.85"/>
+  <polygon points="320,290 480,290 540,310 260,310" fill="#143828" opacity="0.55"/>
+
+  <!-- ============================================================
+       TWO LENSES — windows into the spatial data
+       Tessellated low-poly city/landscape visible inside each
+       ============================================================ -->
+
+  <!-- Left lens outer ring + inner -->
+  <ellipse cx="335" cy="245" rx="62" ry="44" fill="#143828"/>
+  <ellipse cx="335" cy="245" rx="56" ry="38" fill="#FFFFFF"/>
+  <!-- Building silhouettes inside the left lens (clipped by lens area visually) -->
+  <g>
+    <clipPath id="lensL"><ellipse cx="335" cy="245" rx="56" ry="38"/></clipPath>
+    <g clip-path="url(#lensL)">
+      <!-- Sky-tint (warm IMRO yellow translucent) -->
+      <rect x="279" y="207" width="112" height="40" fill="#E9B864" opacity="0.18"/>
+      <!-- Ground -->
+      <rect x="279" y="262" width="112" height="22" fill="#F5F0E3"/>
+      <!-- Tessellated buildings inside -->
+      <polygon points="290,262 290,240 308,232 308,262" fill="#2a6d52"/>
+      <polygon points="308,262 308,232 320,228 320,262" fill="#368868"/>
+      <polygon points="320,262 320,228 336,238 336,262" fill="#46b186"/>
+      <polygon points="336,262 336,238 352,224 352,262" fill="#2a6d52"/>
+      <polygon points="352,262 352,224 368,232 368,262" fill="#368868"/>
+      <polygon points="368,262 368,232 384,240 384,262" fill="#46b186"/>
+      <!-- Roof apexes -->
+      <polygon points="290,240 308,232 295,237" fill="#46b186" opacity="0.7"/>
+      <polygon points="336,238 352,224 344,232" fill="#46b186" opacity="0.7"/>
     </g>
   </g>
 
-  <g transform="translate(310, 130)">
-    <!-- Card 2: IMRO plans -->
-    <rect x="0" y="0" width="180" height="120" rx="8" fill="white" stroke="#d8d6cf" stroke-width="1.5"/>
-    <text x="14" y="22" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#6b6f6c" letter-spacing="0.06em">② BESTEMMINGSPLANNEN</text>
-    <text x="14" y="38" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2421">IMRO2008 + IMRO2012</text>
-    <!-- Plan polygons stacked -->
-    <g transform="translate(20, 48)">
-      <polygon points="0,30 80,20 90,55 10,65" fill="#e9b864" opacity="0.6"/>
-      <polygon points="80,20 140,28 130,60 90,55" fill="#8bbf6f" opacity="0.6"/>
-      <polygon points="10,55 90,52 95,68 5,72" fill="#9a9a9a" opacity="0.55"/>
-      <polygon points="90,52 130,55 125,68 95,68" fill="#6fa5d8" opacity="0.55"/>
-    </g>
-    <!-- Plan labels -->
-    <rect x="14" y="100" width="6" height="6" fill="#e9b864" opacity="0.85"/>
-    <text x="24" y="106" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#6b6f6c">wonen</text>
-    <rect x="60" y="100" width="6" height="6" fill="#8bbf6f" opacity="0.85"/>
-    <text x="70" y="106" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#6b6f6c">groen</text>
-    <rect x="105" y="100" width="6" height="6" fill="#9a9a9a" opacity="0.85"/>
-    <text x="115" y="106" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#6b6f6c">verkeer</text>
-  </g>
-
-  <g transform="translate(560, 130)">
-    <!-- Card 3: optional context-layer -->
-    <rect x="0" y="0" width="180" height="120" rx="8" fill="white" stroke="#d8d6cf" stroke-width="1.5" stroke-dasharray="4,3"/>
-    <text x="14" y="22" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#6b6f6c" letter-spacing="0.06em">③ CONTEXT-LAAG</text>
-    <text x="14" y="38" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#6b6f6c" font-style="italic">optioneel — CSV/GeoJSON</text>
-    <!-- Context features: dots + lines suggesting various layers -->
-    <g transform="translate(20, 50)">
-      <circle cx="20" cy="30" r="4" fill="#2a6d52" opacity="0.9"/>
-      <circle cx="60" cy="20" r="4" fill="#2a6d52" opacity="0.9"/>
-      <circle cx="105" cy="40" r="4" fill="#2a6d52" opacity="0.9"/>
-      <circle cx="135" cy="25" r="4" fill="#2a6d52" opacity="0.9"/>
-      <line x1="20" y1="30" x2="60" y2="20" stroke="#2a6d52" stroke-width="1.5" opacity="0.6"/>
-      <line x1="60" y1="20" x2="105" y2="40" stroke="#2a6d52" stroke-width="1.5" opacity="0.6"/>
-      <line x1="105" y1="40" x2="135" y2="25" stroke="#2a6d52" stroke-width="1.5" opacity="0.6"/>
-      <text x="0" y="65" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#6b6f6c">bv. utility-locaties, points-of-interest, lijnen…</text>
+  <!-- Right lens — mirrored, but shows linked-data nodes (JSON-LD glimpse) -->
+  <ellipse cx="465" cy="245" rx="62" ry="44" fill="#143828"/>
+  <ellipse cx="465" cy="245" rx="56" ry="38" fill="#FFFFFF"/>
+  <g>
+    <clipPath id="lensR"><ellipse cx="465" cy="245" rx="56" ry="38"/></clipPath>
+    <g clip-path="url(#lensR)">
+      <!-- Soft brand-mist background -->
+      <rect x="409" y="207" width="112" height="76" fill="#F0F7F3"/>
+      <!-- Linked-data graph -->
+      <g stroke="#2a6d52" stroke-width="1.5" fill="none" opacity="0.85">
+        <line x1="425" y1="230" x2="450" y2="218"/>
+        <line x1="425" y1="230" x2="450" y2="245"/>
+        <line x1="450" y1="218" x2="478" y2="225"/>
+        <line x1="450" y1="245" x2="478" y2="225"/>
+        <line x1="450" y1="245" x2="478" y2="260"/>
+        <line x1="478" y1="225" x2="500" y2="240"/>
+        <line x1="478" y1="260" x2="500" y2="240"/>
+        <line x1="450" y1="245" x2="440" y2="268"/>
+      </g>
+      <circle cx="425" cy="230" r="4" fill="#2a6d52"/>
+      <circle cx="450" cy="218" r="5" fill="#368868"/>
+      <circle cx="478" cy="225" r="4" fill="#2a6d52"/>
+      <circle cx="500" cy="240" r="5" fill="#46b186"/>
+      <circle cx="478" cy="260" r="4" fill="#2a6d52"/>
+      <circle cx="450" cy="245" r="6" fill="#46b186"/>
+      <circle cx="440" cy="268" r="3" fill="#368868"/>
     </g>
   </g>
 
-  <!-- Pipeline arrow merge -->
-  <g>
-    <path d="M 150 270 Q 400 285 400 300" fill="none" stroke="#2a6d52" stroke-width="2" stroke-dasharray="6,4" opacity="0.6"/>
-    <path d="M 400 270 L 400 300" fill="none" stroke="#2a6d52" stroke-width="2" opacity="0.7"/>
-    <path d="M 650 270 Q 400 285 400 300" fill="none" stroke="#2a6d52" stroke-width="2" stroke-dasharray="6,4" opacity="0.6"/>
-    <polygon points="394,300 400,310 406,300" fill="#2a6d52" opacity="0.85"/>
-  </g>
+  <!-- Nose bridge between lenses -->
+  <polygon points="397,250 403,250 400,272" fill="#1f5440"/>
 
-  <!-- Pipeline core box: in-browser join -->
-  <g>
-    <rect x="220" y="320" width="360" height="74" rx="8" fill="#d6ecdf" stroke="#2a6d52" stroke-width="1.5"/>
-    <text x="240" y="342" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#2a6d52" letter-spacing="0.06em">IN-BROWSER PIPELINE</text>
-    <text x="240" y="360" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1f2421">multi-source geometric join</text>
-    <text x="240" y="375" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#6b6f6c">primair = eerste-match-wint · overlays = alle matches</text>
-    <text x="240" y="389" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#6b6f6c">provenance per regel · 0 outbound requests</text>
-  </g>
+  <!-- ============================================================
+       DATA FLOW — small triangulated stream feeding the headset
+       From left side: tessellated buildings stream (geometry input)
+       ============================================================ -->
+  <g opacity="0.95">
+    <!-- Building polygons drifting into the headset from left -->
+    <polygon points="100,260 130,240 130,290" fill="#2a6d52"/>
+    <polygon points="130,240 160,250 160,290 130,290" fill="#1f5440"/>
+    <polygon points="100,260 130,240 160,250 130,255" fill="#368868"/>
 
-  <!-- Output arrow + outputs -->
-  <g>
-    <path d="M 400 394 L 400 415" fill="none" stroke="#2a6d52" stroke-width="2" opacity="0.7"/>
-    <polygon points="394,415 400,425 406,415" fill="#2a6d52" opacity="0.85"/>
-  </g>
+    <polygon points="150,232 175,218 175,258" fill="#368868"/>
+    <polygon points="175,218 200,228 200,258 175,258" fill="#2a6d52"/>
+    <polygon points="150,232 175,218 200,228 175,232" fill="#46b186"/>
 
-  <g transform="translate(220, 432)">
-    <rect x="0" y="0" width="170" height="48" rx="6" fill="white" stroke="#2a6d52" stroke-width="1.5"/>
-    <text x="14" y="20" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#1f2421">model.glb</text>
-    <text x="14" y="36" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#6b6f6c">geometrie + IDs (groot, naar bril)</text>
+    <polygon points="195,265 215,253 215,288" fill="#2a6d52" opacity="0.85"/>
+    <polygon points="215,253 230,258 230,288 215,288" fill="#1f5440" opacity="0.85"/>
   </g>
+  <!-- flow arrow into headset -->
+  <polygon points="222,250 240,245 240,255" fill="#2a6d52" opacity="0.8"/>
 
-  <g transform="translate(410, 432)">
-    <rect x="0" y="0" width="170" height="48" rx="6" fill="white" stroke="#2a6d52" stroke-width="1.5"/>
-    <text x="14" y="20" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#1f2421">attributes.jsonld</text>
-    <text x="14" y="36" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#6b6f6c">linked-data (klein, on-demand)</text>
+  <!-- ============================================================
+       DATA FLOW — right side: linked-data nodes flowing out
+       (engine eronder → app opkijkt → data naar boven)
+       ============================================================ -->
+  <g stroke="#2a6d52" stroke-width="1.6" fill="none" opacity="0.7">
+    <line x1="565" y1="248" x2="595" y2="232"/>
+    <line x1="595" y1="232" x2="630" y2="248"/>
+    <line x1="565" y1="248" x2="600" y2="265"/>
+    <line x1="600" y1="265" x2="635" y2="278"/>
+    <line x1="630" y1="248" x2="660" y2="232"/>
+    <line x1="630" y1="248" x2="665" y2="265"/>
+    <line x1="635" y1="278" x2="665" y2="265"/>
   </g>
+  <circle cx="595" cy="232" r="5" fill="#368868"/>
+  <circle cx="630" cy="248" r="6" fill="#2a6d52"/>
+  <circle cx="600" cy="265" r="4" fill="#46b186"/>
+  <circle cx="635" cy="278" r="5" fill="#368868"/>
+  <circle cx="660" cy="232" r="5" fill="#2a6d52"/>
+  <circle cx="665" cy="265" r="6" fill="#46b186"/>
+  <polygon points="558,250 575,245 575,255" fill="#2a6d52" opacity="0.6"/>
 
-  <!-- Decorative subtle triangles in corners (consistent with sibling demos) -->
-  <polygon points="50,420 70,408 64,440" fill="#2a6d52" opacity="0.1"/>
-  <polygon points="710,425 730,415 724,445" fill="#2a6d52" opacity="0.1"/>
-  <polygon points="40,260 56,250 50,278" fill="#2a6d52" opacity="0.1"/>
-  <polygon points="725,260 745,250 738,278" fill="#2a6d52" opacity="0.1"/>
+  <!-- ============================================================
+       BRAND TRIANGULATION ACCENTS (sparse, corners only)
+       ============================================================ -->
+  <polygon points="44,80 70,62 62,98" fill="#2a6d52" opacity="0.14"/>
+  <polygon points="736,80 762,62 754,98" fill="#FFA92D" opacity="0.16"/>
+  <polygon points="44,440 70,422 62,458" fill="#46b186" opacity="0.14"/>
+  <polygon points="736,440 762,422 754,458" fill="#2a6d52" opacity="0.12"/>
 </svg>
