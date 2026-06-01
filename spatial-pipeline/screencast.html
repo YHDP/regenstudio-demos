@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--
+  Spatial Pipeline · Screencast (5 min)
+  (c) 2024-2026 Regen Studio B.V. — PolyForm Noncommercial License 1.0.0
+-->
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Spatial Pipeline — Screencast (5 min)</title>
+<meta name="description" content="5-minuten walkthrough van de Spatial Pipeline demo voor de Provincie Zuid-Holland SiR Ronde 13 challenge.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta property="og:type" content="video.other">
+<meta property="og:url" content="https://demos.regenstudio.world/spatial-pipeline/screencast.html">
+<meta property="og:title" content="Spatial Pipeline — Screencast (5 min)">
+<meta property="og:description" content="5-min walkthrough van de Spatial Pipeline demo voor PZH SiR Ronde 13.">
+<meta property="og:image" content="https://demos.regenstudio.world/Images/og-demos-spatial-pipeline.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="nl_NL">
+
+<link rel="icon" type="image/png" href="../assets/images/favicon.png">
+
+<link rel="stylesheet" href="assets/fonts/koho.css">
+<style>
+  :root {
+    --emerald: #008545;
+    --emerald-deep: #006937;
+    --navy: #1F2421;
+    --muted: #6b6f6c;
+    --paper: #FBFAF6;
+    --rule: #D8D6CF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "SF Pro Text", "Inter", sans-serif;
+    background: var(--paper);
+    color: var(--navy);
+    line-height: 1.55;
+    padding: 32px 24px 48px;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .brand {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none; color: inherit;
+  }
+  .brand img { width: 28px; height: 28px; }
+  .brand .word {
+    font-family: 'KoHo', sans-serif; font-weight: 700; font-size: 15px;
+    letter-spacing: 0.04em;
+  }
+  .brand .word .light { font-weight: 200; }
+  .pill {
+    display: inline-block; padding: 5px 12px;
+    background: var(--emerald); color: #fff;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.16em; border-radius: 2px;
+  }
+  h1 {
+    font-family: Georgia, "Playfair Display", serif;
+    font-size: 28px; font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.15;
+  }
+  .subtitle {
+    font-family: Georgia, "Playfair Display", serif;
+    font-style: italic;
+    color: var(--emerald-deep);
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    background: #000;
+    border-radius: 4px;
+    box-shadow: 0 6px 28px rgba(0,0,0,0.12);
+    display: block;
+  }
+  .meta {
+    margin-top: 16px;
+    display: flex; gap: 24px; flex-wrap: wrap;
+    font-size: 13px; color: var(--muted);
+  }
+  .meta strong { color: var(--navy); }
+  .actions {
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    display: flex; gap: 12px; flex-wrap: wrap;
+  }
+  .actions a {
+    text-decoration: none;
+    padding: 10px 18px; border-radius: 4px;
+    font-size: 13px; font-weight: 600;
+    transition: background 0.12s;
+  }
+  .actions a.primary {
+    background: var(--emerald); color: #fff;
+  }
+  .actions a.primary:hover { background: var(--emerald-deep); }
+  .actions a.ghost {
+    background: transparent; border: 1px solid var(--rule); color: var(--muted);
+  }
+  .actions a.ghost:hover { color: var(--navy); background: rgba(0,0,0,0.02); }
+  .notice {
+    margin-top: 24px;
+    padding: 12px 14px;
+    background: rgba(0,133,69,0.06);
+    border-left: 3px solid var(--emerald);
+    font-size: 12.5px;
+    color: var(--navy);
+    line-height: 1.55;
+  }
+</style>
+</head>
+<body>
+
+<script>window.DEMO_GUARD = { demoId: 'spatial-pipeline' };</script>
+<script src="../assets/js/guard.js"></script>
+
+<div class="container">
+
+  <div class="header">
+    <a href="../" class="brand">
+      <img src="../assets/images/favicon.png" alt="Regen Studio">
+      <span class="word">REGEN<span class="light"> STUDIO</span></span>
+    </a>
+    <span class="pill">SiR RONDE 13 · 2A4</span>
+  </div>
+
+  <h1>Spatial Pipeline — Screencast</h1>
+  <p class="subtitle">5-minuten walkthrough van de werkende demo voor Provincie Zuid-Holland.</p>
+
+  <video controls preload="metadata" playsinline>
+    <source src="screencast.mp4" type="video/mp4">
+    Je browser ondersteunt deze video-tag niet — <a href="screencast.mp4">download dan rechtstreeks (16 MB)</a>.
+  </video>
+
+  <div class="meta">
+    <span>Duur: <strong>5:35</strong></span>
+    <span>Resolutie: <strong>1280×680</strong></span>
+    <span>Formaat: <strong>MP4 (H.264 + AAC)</strong></span>
+    <span>Grootte: <strong>16 MB</strong></span>
+  </div>
+
+  <div class="actions">
+    <a href="./" class="primary">→ Naar de werkende demo</a>
+    <a href="screencast.mp4" class="ghost" download>Video downloaden</a>
+    <a href="https://www.regenstudio.world" class="ghost" target="_blank" rel="noopener">regenstudio.world</a>
+  </div>
+
+  <div class="notice">
+    Deze screencast is gemaakt voor de SiR Intergov Ronde 13 challenge <em>"Visualiseer ruimtelijke plannen"</em> van Provincie Zuid-Holland. De demo zelf draait op <a href="./">demos.regenstudio.world/spatial-pipeline/</a> en is volledig browser-only; geen externe data-uploads. De getoonde 1146 BAG-gebouwen + IMRO-bestemmingsplannen zijn 100% publieke open-data (3DBAG, ruimtelijkeplannen.nl).
+  </div>
+
+</div>
+
+</body>
+</html>
