@@ -1723,7 +1723,32 @@ function planProvenance(plan) {
   };
 }
 
-function triggerDownload(blob, filename) {
+async function triggerDownload(blob, filename) {
+  // Modern path: native Save-As dialog via File System Access API (Chrome/Edge/Brave).
+  // User picks the location, gets a confirmation that the file landed where they wanted.
+  if ('showSaveFilePicker' in window && window.isSecureContext) {
+    try {
+      const ext = '.' + filename.split('.').pop();
+      const mime = blob.type || 'application/octet-stream';
+      const handle = await window.showSaveFilePicker({
+        suggestedName: filename,
+        types: [{
+          description: filename.endsWith('.glb')
+            ? 'glTF binary — geometrie (Unity-pickup-ready)'
+            : 'JSON-LD — attributen (linked-data)',
+          accept: { [mime]: [ext] }
+        }]
+      });
+      const writable = await handle.createWritable();
+      await writable.write(blob);
+      await writable.close();
+      return;
+    } catch (err) {
+      if (err.name === 'AbortError') return;  // user cancelled — no fallback
+      console.warn('showSaveFilePicker failed, falling back to legacy download:', err);
+    }
+  }
+  // Legacy fallback (Safari, Firefox, file://): silent download to default folder.
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url; a.download = filename;
