@@ -18,6 +18,15 @@
 <meta name="description" content="Dezelfde geëxporteerde glTF-bundel uit de Spatial Pipeline demo, geopend in een tweede engine (Google model-viewer) — bewijs van dataportabiliteit zonder vendor lock-in.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
+<script>
+  // Pin optionele decoder-locaties op lokale paden zodat model-viewer nooit
+  // terugvalt op zijn ingebakken Google/jsdelivr CDN-defaults (draco/ktx2/lottie).
+  // Die decoders zijn hier niet nodig — de pipeline exporteert ongecomprimeerde glTF.
+  self.ModelViewerElement = self.ModelViewerElement || {};
+  self.ModelViewerElement.dracoDecoderLocation = 'lib/decoders/draco/';
+  self.ModelViewerElement.ktx2TranscoderLocation = 'lib/decoders/basis/';
+  self.ModelViewerElement.lottieLoaderLocation = 'lib/decoders/lottie-loader.js';
+</script>
 <script type="module" src="lib/model-viewer.min.js"></script>
 <style>
   /* viewer-2 specifieke styling — minimaal, leunt op style.css. */

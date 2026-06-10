@@ -8,10 +8,11 @@
   <script>const _t=localStorage.getItem("bd-theme");if(_t)document.documentElement.setAttribute("data-theme",_t);</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AviSonar — Map</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/fonts/dm-serif-display.css">
+  <link rel="stylesheet" href="../assets/fonts/jetbrains-mono.css">
+  <link rel="stylesheet" href="../assets/fonts/source-sans-3.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
   <style>
     main { display: block; padding: 0; flex: 1; }
     #map { width: 100%; height: calc(100vh - 60px); }
@@ -55,7 +56,7 @@
     <div class="map-legend" id="legend"></div>
   </main>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="vendor/leaflet/leaflet.js"></script>
   <script src="i18n.js"></script>
   <script>
     const IUCN_MARKER_COLORS = {
