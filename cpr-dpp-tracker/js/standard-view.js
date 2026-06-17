@@ -377,9 +377,13 @@
       return;
     }
 
-    fetch('data/families-v2.json')
-      .then(function (r) { return r.json(); })
-      .then(function (data) {
+    Promise.all([
+      fetch('data/families-v2.json').then(function (r) { return r.json(); }),
+      fetch('data/system-timeline.json').then(function (r) { return r.json(); }).catch(function () { return null; })
+    ])
+      .then(function (results) {
+        var data = results[0];
+        var systemTimeline = results[1];
         var result = findFamilyAndStandard(data, params.family, params.std);
         var family = result.family;
         var std = result.standard;
@@ -397,11 +401,20 @@
         html += renderBreadcrumb(family, std);
         html += renderHeader(family, std);
         html += renderDppCard(std, family);
+        html += '<div id="stdFamilyTimeline"></div>';
         html += renderMetaGrid(std, family);
         html += renderContentSections(std.content);
         html += renderNotes(std);
 
         container.innerHTML = html;
+
+        // Render the per-family convergence timeline (System + family pipelines)
+        var stdFamilyTimelineEl = document.getElementById('stdFamilyTimeline');
+        if (window.renderFamilyTimeline && stdFamilyTimelineEl && systemTimeline) {
+          renderFamilyTimeline(stdFamilyTimelineEl, family, systemTimeline, {
+            title: 'Convergence Timeline — ' + (std.id || '') + ' (family ' + (family.letter || '') + ')'
+          });
+        }
 
         // Activate toggles
         attachToggleListeners(container);

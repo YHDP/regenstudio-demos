@@ -2,6 +2,16 @@
    Licensed under PolyForm Noncommercial 1.0.0 — see LICENSE */
 /* convergence.css — Time-aligned convergence chart + full-page view */
 
+/* Respect OS-level reduced-motion preference (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* ---------- Typography variables ---------- */
 :root {
   --font-display: 'DM Serif Display', Georgia, serif;
@@ -242,10 +252,14 @@
   border-radius: 8px;
   transition: background 0.15s;
 }
-.conv-chart__node:hover,
+.conv-chart__node:hover {
+  background: rgba(0,0,0,0.03);
+}
 .conv-chart__node:focus-visible {
   background: rgba(0,0,0,0.03);
-  outline: none;
+  outline: 2px solid var(--color-teal, #009BBB);
+  outline-offset: 2px;
+  border-radius: 8px;
 }
 .conv-chart__node.conv-chart__node--active-detail {
   background: rgba(0,155,187,0.06);
@@ -269,7 +283,7 @@
 .conv-chart__node--green .conv-chart__node-dot       { background: var(--cert-green); border-color: var(--cert-green); }
 .conv-chart__node--yellow-green .conv-chart__node-dot { background: var(--cert-yellow-green); border-color: var(--cert-yellow-green); }
 .conv-chart__node--amber .conv-chart__node-dot        { background: var(--cert-amber); border-color: var(--cert-amber); }
-.conv-chart__node--color-orange .conv-chart__node-dot       { background: var(--cert-orange); border-color: var(--cert-orange); }
+.conv-chart__node--orange .conv-chart__node-dot       { background: var(--cert-orange); border-color: var(--cert-orange); }
 .conv-chart__node--red-orange .conv-chart__node-dot   { background: var(--cert-red-orange); border-color: var(--cert-red-orange); }
 .conv-chart__node--red .conv-chart__node-dot          { background: var(--cert-red); border-color: var(--cert-red); }
 .conv-chart__node--gray .conv-chart__node-dot         { background: #fff; border-color: #C5CDD5; color: #C5CDD5; }
@@ -357,7 +371,7 @@
 .conv-chart__gantt--green       { background: var(--cert-green); }
 .conv-chart__gantt--yellow-green { background: var(--cert-yellow-green); }
 .conv-chart__gantt--amber       { background: var(--cert-amber); }
-.conv-chart__gantt--color-orange      { background: var(--cert-orange); }
+.conv-chart__gantt--orange      { background: var(--cert-orange); }
 .conv-chart__gantt--red-orange  { background: var(--cert-red-orange); }
 .conv-chart__gantt--red         { background: var(--cert-red); }
 .conv-chart__gantt--gray        { background: #C5CDD5; }
@@ -412,7 +426,7 @@
 .dpp-outlook__cert-dot--green       { background: var(--cert-green); }
 .dpp-outlook__cert-dot--yellow-green { background: var(--cert-yellow-green); }
 .dpp-outlook__cert-dot--amber       { background: var(--cert-amber); }
-.dpp-outlook__cert-dot--color-orange      { background: var(--cert-orange); }
+.dpp-outlook__cert-dot--orange      { background: var(--cert-orange); }
 .dpp-outlook__cert-dot--red-orange  { background: var(--cert-red-orange); }
 .dpp-outlook__cert-dot--red         { background: var(--cert-red); }
 .dpp-outlook__cert-dot--gray        { background: var(--cert-gray); }
@@ -562,7 +576,7 @@
 .node-detail__cert-dot--green       { background: var(--cert-green); }
 .node-detail__cert-dot--yellow-green { background: var(--cert-yellow-green); }
 .node-detail__cert-dot--amber       { background: var(--cert-amber); }
-.node-detail__cert-dot--color-orange      { background: var(--cert-orange); }
+.node-detail__cert-dot--orange      { background: var(--cert-orange); }
 .node-detail__cert-dot--red-orange  { background: var(--cert-red-orange); }
 .node-detail__cert-dot--red         { background: var(--cert-red); }
 .node-detail__cert-dot--gray        { background: var(--cert-gray); }
@@ -699,7 +713,7 @@
 .node-detail--green       { border-left: 3px solid var(--cert-green); }
 .node-detail--yellow-green { border-left: 3px solid var(--cert-yellow-green); }
 .node-detail--amber       { border-left: 3px solid var(--cert-amber); }
-.node-detail--color-orange      { border-left: 3px solid var(--cert-orange); }
+.node-detail--orange      { border-left: 3px solid var(--cert-orange); }
 .node-detail--red-orange  { border-left: 3px solid var(--cert-red-orange); }
 .node-detail--red         { border-left: 3px solid var(--cert-red); }
 .node-detail--gray        { border-left: 3px solid var(--cert-gray); }
@@ -1166,9 +1180,14 @@
     color: #8ca9bf;
   }
 
-  .conv-chart__node:hover,
+  .conv-chart__node:hover {
+    background: rgba(255,255,255,0.04);
+  }
   .conv-chart__node:focus-visible {
     background: rgba(255,255,255,0.04);
+    outline: 2px solid var(--color-teal, #009BBB);
+    outline-offset: 2px;
+    border-radius: 8px;
   }
   .conv-chart__node.conv-chart__node--active-detail {
     background: rgba(0,155,187,0.12);

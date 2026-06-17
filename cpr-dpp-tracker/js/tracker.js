@@ -120,6 +120,13 @@
       }
 
       populateHeroIcons();
+
+      // System Timeline dashboard (cross-cutting EU DPP infrastructure)
+      if (window.renderSystemDashboard && systemTimeline) {
+        var sysDashEl = document.getElementById('sysDashSection');
+        if (sysDashEl) renderSystemDashboard(sysDashEl, systemTimeline);
+      }
+
       if (metaEl) metaEl.textContent = families.length + ' product families \u00b7 Regulation (EU) 2024/3110';
 
       // Handle deep-link: #family=PCR or #compare=PCR,SMP
@@ -205,7 +212,8 @@
     var dppCert = (convergence && convergence.dpp_certainty) || 'gray';
     var cardCert = CARD_CERTAINTY_MAP[dppCert] || 'unknown';
 
-    var h = '<div class="cpr-card cpr-card--cert-' + cardCert + '" data-letter="' + esc(letter) + '" role="listitem">';
+    var ariaLabel = 'Open ' + name + (dppDate ? ', DPP estimate ' + dppDate : '') + ', ' + (CARD_CERT_LABELS[cardCert] || 'unknown') + ' confidence';
+    var h = '<div class="cpr-card cpr-card--cert-' + cardCert + '" data-letter="' + esc(letter) + '" role="listitem" tabindex="0" aria-label="' + esc(ariaLabel) + '">';
 
     // Top row: icon + name + family label
     h += '<div class="cpr-card__top">';
@@ -427,6 +435,12 @@
 
     // DPP Outlook box (above chart)
     renderDppOutlook(convDppOutlook, fam, systemTimeline);
+
+    // Horizontal convergence timeline (System + this family's pipelines on shared year axis)
+    var convFamilyTimelineEl = document.getElementById('convFamilyTimeline');
+    if (window.renderFamilyTimeline && convFamilyTimelineEl) {
+      renderFamilyTimeline(convFamilyTimelineEl, fam, systemTimeline);
+    }
 
     // Content sections (expandable narrative)
     renderContentSections(convContentSections, fam);
@@ -693,6 +707,17 @@
   grid.addEventListener('click', function (e) {
     var card = e.target.closest('.cpr-card');
     if (!card) return;
+    var letter = card.getAttribute('data-letter');
+    var fam = families.find(function (f) { return f.letter === letter; });
+    if (fam) openConvergenceView(fam);
+  });
+
+  // Keyboard parity for card grid (Enter/Space) — WCAG 2.1.1
+  grid.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    var card = e.target.closest('.cpr-card');
+    if (!card) return;
+    e.preventDefault();
     var letter = card.getAttribute('data-letter');
     var fam = families.find(function (f) { return f.letter === letter; });
     if (fam) openConvergenceView(fam);

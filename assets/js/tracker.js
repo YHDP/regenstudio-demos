@@ -14,6 +14,11 @@
 (function () {
   'use strict';
 
+  // ── Skip tracking on dev + staging environments ──
+  var h = window.location.hostname;
+  if (h === 'localhost' || h === '127.0.0.1' || h === '0.0.0.0' || h === '' ||
+      h === 'regenstudio.space' || h.indexOf('.regenstudio.space') !== -1) return;
+
   var ENDPOINT = 'https://uemspezaqxmkhenimwuf.supabase.co/functions/v1/private-track-report-event';
   var SITE = 'demos';
   var pageLoadTime = Date.now();

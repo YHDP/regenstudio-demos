@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <script>if(location.protocol==="http:")location.replace("https://"+location.host+location.pathname+location.search+location.hash);</script>
+  <script>if(location.protocol==="http:"&&location.hostname!=="localhost"&&location.hostname!=="127.0.0.1")location.replace("https://"+location.host+location.pathname+location.search+location.hash);</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Access — CPR DPP Tracker — Regen Studio</title>
   <meta name="description" content="Request access to the CPR DPP Tracker demo by Regen Studio.">
@@ -26,6 +26,8 @@
 </head>
 <body class="gate-page">
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <!-- Header -->
   <header class="site-header">
     <div class="header-inner">
@@ -44,7 +46,7 @@
   </header>
 
   <!-- Gate -->
-  <div class="gate-wrapper">
+  <div class="gate-wrapper" id="main-content">
     <div class="gate-card">
 
       <a href="../" class="gate-back">&larr; Back to Demos</a>
@@ -65,7 +67,7 @@
         <label for="gate-email">Email address</label>
         <div class="gate-input-group">
           <input type="email" id="gate-email" placeholder="you@example.com" autocomplete="email" required>
-          <button type="submit" class="gate-submit">Send Link</button>
+          <button type="submit" class="gate-submit" data-track="gate_email" data-section="gate">Send Link</button>
         </div>
       </form>
 

@@ -10,11 +10,15 @@ const SUPABASE_URL = 'https://uemspezaqxmkhenimwuf.supabase.co/functions/v1';
 
   const sessionKey = `demo_session_${config.demoId}`;
 
-  // --- 1. Check for ?token= in URL → show confirmation button ---
+  // --- 1. Check for #token= in URL → show confirmation button ---
   // Token is NOT validated on page load to prevent email security scanners
   // (Microsoft Safe Links, Proofpoint, etc.) from consuming the link.
-  const params = new URLSearchParams(window.location.search);
-  const token = params.get('token');
+  // Read from the URL fragment first (#token=…) — fragments are never sent to
+  // the server, so the token can't leak via access logs or Referer headers.
+  // Fall back to ?token= for links issued before the 2026-06-10 change.
+  const hashParams = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+  const queryParams = new URLSearchParams(window.location.search);
+  const token = hashParams.get('token') || queryParams.get('token');
 
   if (token) {
     showMessage('Click below to access the demo.', false);

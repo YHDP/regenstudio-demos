@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <script>if(location.protocol==="http:")location.replace("https://"+location.host+location.pathname+location.search+location.hash);</script>
+  <script>if(location.protocol==="http:"&&location.hostname!=="localhost"&&location.hostname!=="127.0.0.1")location.replace("https://"+location.host+location.pathname+location.search+location.hash);</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CPR DPP Tracker — Regen Studio</title>
   <meta name="description" content="Track Digital Product Passport requirements for construction products under the EU Construction Products Regulation.">
@@ -26,8 +26,8 @@
   <link rel="stylesheet" href="../assets/fonts/inter.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="../assets/fonts/dm-serif-display.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="../assets/fonts/jetbrains-mono.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="css/convergence.css">
-  <link rel="stylesheet" href="css/tracker.css">
+  <link rel="stylesheet" href="css/convergence.css?v=2026-04-29d">
+  <link rel="stylesheet" href="css/tracker.css?v=2026-04-29d">
   <link rel="stylesheet" href="css/standard-search.css">
 </head>
 <body>
@@ -44,11 +44,12 @@
       </a>
       <div class="tracker-nav__links">
         <div class="std-search std-search--nav">
-          <svg class="std-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <svg class="std-search__icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           <input class="std-search__input" type="text" placeholder="Search standards..." aria-label="Search standards">
           <div class="std-search__dropdown" style="display:none;"></div>
         </div>
         <a href="landing.html" class="tracker-nav__link">About</a>
+        <a href="dashboard.html" class="tracker-nav__link">Data integrity</a>
         <a href="https://www.regenstudio.world/blog.html" class="tracker-nav__link">Blog</a>
         <a href="reports.html" class="tracker-nav__cta">Get the Report</a>
       </div>
@@ -64,26 +65,26 @@
       <p class="tracker-hero__subtitle">Interactive timeline for all 37 product families — harmonised standards, EAD pipelines, and estimated Digital Product Passport obligation dates under the new Construction Products Regulation.</p>
       <div class="tracker-hero__features">
         <div class="tracker-hero__feature">
-          <span class="tracker-hero__feature-icon">
+          <span class="tracker-hero__feature-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
           </span>
           <span>37 Product Families</span>
         </div>
         <div class="tracker-hero__feature">
-          <span class="tracker-hero__feature-icon">
+          <span class="tracker-hero__feature-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
           </span>
           <span>70+ Standards</span>
         </div>
         <div class="tracker-hero__feature">
-          <span class="tracker-hero__feature-icon">
+          <span class="tracker-hero__feature-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </span>
           <span>Updated Monthly</span>
         </div>
       </div>
       <div class="std-search std-search--hero">
-        <svg class="std-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <svg class="std-search__icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         <input class="std-search__input" type="text" placeholder="Search by standard ID or name (e.g. EN 197-1, glued laminated timber)..." aria-label="Search standards">
         <div class="std-search__dropdown" style="display:none;"></div>
       </div>
@@ -103,6 +104,9 @@
       <a href="reports.html" class="btn tracker-landing__cta">Get the Full Report</a>
     </div>
   </section>
+
+  <!-- System Timeline dashboard (cross-cutting EU DPP infrastructure — all 37 families) -->
+  <section class="sys-dash-section" id="sysDashSection" aria-label="System timeline overview"></section>
 
   <!-- Filter bar -->
   <div id="filterBar"></div>
@@ -139,6 +143,7 @@
       </div>
     </div>
     <div id="convDppOutlook"></div>
+    <div id="convFamilyTimeline"></div>
     <div id="convChartWrap"></div>
     <div id="convExpansion"></div>
     <div id="convContentSections"></div>
@@ -182,14 +187,15 @@
   </footer>
 
   <script src="js/content-renderer.js"></script>
-  <script src="js/dpp-info.js"></script>
+  <script src="js/system-dashboard.js"></script>
+  <script src="js/family-timeline.js?v=2026-04-29d"></script>
   <script src="js/convergence-view.js"></script>
   <script src="js/node-detail.js"></script>
   <script src="js/node-expansion.js"></script>
-  <script src="js/filters.js"></script>
+  <script src="js/filters.js?v=2026-04-29d"></script>
   <script src="js/comparison.js"></script>
   <script src="js/source-layer.js"></script>
   <script src="js/standard-search.js"></script>
-  <script src="js/tracker.js"></script>
+  <script src="js/tracker.js?v=2026-04-29d"></script>
 </body>
 </html>

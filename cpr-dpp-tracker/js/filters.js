@@ -80,9 +80,9 @@
     html += '<div class="cpr-filters__overview">';
     ALL_PIPELINES.forEach(function (p) {
       if (pipeCounts[p] === 0) return;
-      html += '<button class="cpr-filters__pipe-btn cpr-filters__pipe-btn--active" data-pipe="' + p + '" title="' + esc(PIPELINE_LABELS[p] || p) + '">';
-      html += '<span class="cpr-filters__pipe-badge" style="background:' + (PIPELINE_COLORS[p] || '#94a3b8') + ';">' + p + '</span>';
-      html += '<span class="cpr-filters__pipe-count">' + pipeCounts[p] + '</span>';
+      html += '<button class="cpr-filters__pipe-btn cpr-filters__pipe-btn--active" type="button" data-pipe="' + p + '" aria-pressed="true" aria-label="Filter pipeline ' + esc(PIPELINE_LABELS[p] || p) + ' (' + pipeCounts[p] + ' families)" title="' + esc(PIPELINE_LABELS[p] || p) + '">';
+      html += '<span class="cpr-filters__pipe-badge" aria-hidden="true" style="background:' + (PIPELINE_COLORS[p] || '#94a3b8') + ';">' + p + '</span>';
+      html += '<span class="cpr-filters__pipe-count" aria-hidden="true">' + pipeCounts[p] + '</span>';
       html += '</button>';
     });
     html += '</div>';
@@ -95,8 +95,8 @@
     html += '<span class="cpr-filters__group-label">Certainty</span>';
     html += '<div class="cpr-filters__cert-dots">';
     ALL_CERTAINTIES.forEach(function (c) {
-      html += '<button class="cpr-filters__cert-btn cpr-filters__cert-btn--active" data-cert="' + c + '" title="' + esc(CERTAINTY_LABELS[c] || c) + '">';
-      html += '<span class="cpr-filters__cert-dot cpr-filters__cert-dot--' + c + '"></span>';
+      html += '<button class="cpr-filters__cert-btn cpr-filters__cert-btn--active" type="button" data-cert="' + c + '" aria-pressed="true" aria-label="Filter by ' + esc(CERTAINTY_LABELS[c] || c) + ' certainty" title="' + esc(CERTAINTY_LABELS[c] || c) + '">';
+      html += '<span class="cpr-filters__cert-dot cpr-filters__cert-dot--' + c + '" aria-hidden="true"></span>';
       html += '</button>';
     });
     html += '</div>';
@@ -137,6 +137,7 @@
         var p = pipeBtn.getAttribute('data-pipe');
         state.pipelines[p] = !state.pipelines[p];
         pipeBtn.classList.toggle('cpr-filters__pipe-btn--active', state.pipelines[p]);
+        pipeBtn.setAttribute('aria-pressed', state.pipelines[p] ? 'true' : 'false');
         writeHashState();
         onFilterChange(applyFilters(families), state);
         return;
@@ -148,6 +149,7 @@
         var c = certBtn.getAttribute('data-cert');
         state.certainties[c] = !state.certainties[c];
         certBtn.classList.toggle('cpr-filters__cert-btn--active', state.certainties[c]);
+        certBtn.setAttribute('aria-pressed', state.certainties[c] ? 'true' : 'false');
         writeHashState();
         onFilterChange(applyFilters(families), state);
         return;
@@ -324,11 +326,17 @@
   function syncUIToState(container) {
     ALL_PIPELINES.forEach(function (p) {
       var btn = container.querySelector('.cpr-filters__pipe-btn[data-pipe="' + p + '"]');
-      if (btn) btn.classList.toggle('cpr-filters__pipe-btn--active', state.pipelines[p]);
+      if (btn) {
+        btn.classList.toggle('cpr-filters__pipe-btn--active', state.pipelines[p]);
+        btn.setAttribute('aria-pressed', state.pipelines[p] ? 'true' : 'false');
+      }
     });
     ALL_CERTAINTIES.forEach(function (c) {
       var btn = container.querySelector('.cpr-filters__cert-btn[data-cert="' + c + '"]');
-      if (btn) btn.classList.toggle('cpr-filters__cert-btn--active', state.certainties[c]);
+      if (btn) {
+        btn.classList.toggle('cpr-filters__cert-btn--active', state.certainties[c]);
+        btn.setAttribute('aria-pressed', state.certainties[c] ? 'true' : 'false');
+      }
     });
     var sortSelect = container.querySelector('#filterSort');
     if (sortSelect) sortSelect.value = state.sort;
