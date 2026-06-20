@@ -1,0 +1,3651 @@
+<!doctype html>
+<!--
+  Copyright 2026 Regen Studio B.V.
+  Licensed under PolyForm Noncommercial 1.0.0 — see ../LICENSE
+  Wood Passport — proposta para Wood Labs · 2026-05-13 · PT-BR.
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wood Passport — proposta para Wood Labs · Regen Studio</title>
+<meta name="description" content="Slidedeck: arquitetura do Wood Passport, integração Wood Vision × Regen, roadmap 30 dias, modelo de parceria.">
+<link rel="stylesheet" href="../assets/fonts/inter.css">
+<link rel="stylesheet" href="../assets/fonts/playfair-display.css">
+<link rel="stylesheet" href="../assets/fonts/jetbrains-mono.css">
+<link rel="stylesheet" href="../assets/fonts/koho.css">
+<link rel="icon" type="image/svg+xml" href="regen-icon.svg">
+<script src="tree-generator.js"></script>
+<style>
+  :root {
+    --magenta: #93093F;
+    --red: #E71846;
+    --orange: #FFA92D;
+    --green: #65DD35;
+    --emerald: #008545;
+    --emerald-deep: #006937;
+    --emerald-tint: #d6f0e1;
+    --teal: #009BBB;
+    --teal-tint: #d4eef4;
+    --navy: #243644;
+    --navy-dark: #1B2833;
+    --slate: #5781A1;
+    --bark: #5b3f29;
+    --bark-light: #8a6645;
+    --bark-tint: #efe7df;
+    --pine: #d9b380;
+    --paper: #FFFFFF;
+    --paper-warm: #FAF8F4;
+    --paper-cream: #f8f1e1;
+    --rule: #E7E9EC;
+    --ink: #1a2530;
+    --ink-soft: #4b6f8d;
+    --ink-mute: #7a8b99;
+    --good: #008545;
+    --warn: #b8730d;
+  }
+  @page { size: 33.867cm 19.05cm; margin: 0; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--navy-dark);
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body { padding: 32px 0 80px; }
+  @media print { body { padding: 0; background: white; } }
+
+  /* ─── Slide frame ─── */
+  .slide {
+    width: 33.867cm;
+    height: 19.05cm;
+    margin: 0 auto 28px;
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 18px 60px rgba(0,0,0,.45);
+    page-break-after: always;
+    break-after: page;
+  }
+  .slide:last-child { page-break-after: auto; break-after: auto; }
+  @media print { .slide { margin: 0; box-shadow: none; } }
+
+  /* ─── Footer band (common) ─── */
+  .footer {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    height: 11mm; padding: 0 14mm;
+    background: var(--emerald-deep);
+    color: white;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 10pt; font-weight: 500; letter-spacing: .3px;
+    z-index: 5;
+  }
+  .footer .left, .footer .right { display: inline-flex; align-items: center; gap: 14px; }
+  .footer .num { font-family: 'JetBrains Mono', monospace; font-size: 9.5pt; opacity: .85; }
+  .footer .divider { width: 1px; height: 12px; background: rgba(255,255,255,.3); }
+  .footer .regen-lockup { gap: 8px; }
+  .footer .regen-lockup img { width: 18px; height: 18px; }
+  .footer .regen-lockup .regen-wordmark { font-size: 11pt; color: #fff; }
+  .footer .regen-lockup .regen-wordmark .l { color: rgba(255,255,255,.85); }
+
+  /* ─── Regen lockup (composed) ─── */
+  .regen-lockup {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; padding: 2px;
+  }
+  .regen-lockup img { width: 30px; height: 30px; display: block; }
+  .regen-wordmark {
+    font-family: 'KoHo', sans-serif; font-size: 18pt; line-height: 1;
+    letter-spacing: .03em; color: var(--ink);
+    display: inline-flex; align-items: baseline; gap: 5px;
+  }
+  .regen-wordmark .b { font-weight: 700; }
+  .regen-wordmark .l { font-weight: 200; }
+
+  /* ─── Section head ─── */
+  .head-block {
+    position: absolute; top: 14mm; left: 16mm; right: 16mm; z-index: 4;
+  }
+  .section-head {
+    display: flex; align-items: center; gap: 14px; padding-bottom: 4mm;
+  }
+  .section-num {
+    font-family: 'KoHo', sans-serif; font-weight: 700; font-size: 10pt;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--emerald-deep); background: var(--emerald-tint);
+    padding: 5px 11px; border-radius: 3px;
+  }
+  .section-title {
+    font-family: 'KoHo', sans-serif; font-weight: 700; font-size: 24pt;
+    letter-spacing: -.3px; color: var(--navy);
+  }
+  .head-rule { height: 2px; background: var(--emerald); margin-bottom: 4mm; }
+  .section-sub {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 14pt; color: var(--slate);
+  }
+
+  /* ─── Body container ─── */
+  .body { position: absolute; top: 42mm; left: 16mm; right: 16mm; bottom: 18mm; }
+
+  /* ─── COVER slide ─── */
+  .cover {
+    background: linear-gradient(135deg, #fbf3e0 0%, var(--paper-cream) 100%);
+    position: relative;
+  }
+  .cover::before {
+    content: ""; position: absolute; right: -60mm; bottom: -60mm;
+    width: 180mm; height: 180mm;
+    background: radial-gradient(circle, var(--emerald-tint) 0%, transparent 70%);
+    z-index: 1;
+  }
+  .cover::after {
+    content: ""; position: absolute; left: -40mm; top: -40mm;
+    width: 140mm; height: 140mm;
+    background: radial-gradient(circle, var(--bark-tint) 0%, transparent 70%);
+    z-index: 1;
+  }
+  .cover .corner-tri {
+    position: absolute; top: 0; right: 0; width: 110mm; height: 70mm;
+    z-index: 2;
+  }
+  .cover-logo-area {
+    position: absolute; top: 18mm; left: 18mm; z-index: 6;
+  }
+  .cover-logo-area .regen-wordmark { font-size: 22pt; }
+  .cover-logo-area .regen-lockup img { width: 42px; height: 42px; }
+  .cover-content {
+    position: absolute; top: 48mm; left: 18mm;
+    width: 148mm;            /* keep title + sub on the left half, clear of 52% tree zone */
+    z-index: 6;
+  }
+  .cover-eyebrow {
+    font-family: 'JetBrains Mono', monospace; font-size: 10pt;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--emerald-deep); margin-bottom: 10mm;
+  }
+  .cover-title {
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: 64pt; line-height: .98; letter-spacing: -1px;
+    color: var(--navy-dark); margin-bottom: 7mm;
+  }
+  .cover-title em { font-style: italic; color: var(--emerald-deep); font-weight: 400; }
+  .cover-sub {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 19pt; color: var(--bark); max-width: 100%; line-height: 1.3;
+  }
+  .cover-meta {
+    position: absolute; bottom: 20mm; left: 18mm;
+    width: 165mm;            /* keep meta on the left half, clear of tree */
+    z-index: 6;
+    font-family: 'JetBrains Mono', monospace; font-size: 10pt;
+    color: var(--ink-soft); letter-spacing: .5px;
+    border-left: 3px solid var(--emerald); padding-left: 14px;
+    line-height: 1.7;
+  }
+
+  /* ─── Big number layout ─── */
+  .big-num {
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: 84pt; line-height: 1; color: var(--emerald-deep);
+    letter-spacing: -2px;
+  }
+
+  /* ─── 3-column challenge slide ─── */
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8mm; height: 100%; }
+  .reg-card {
+    background: var(--paper-warm); border: 1px solid var(--rule);
+    border-radius: 8px; padding: 8mm 7mm;
+    display: flex; flex-direction: column;
+    border-top: 4px solid var(--emerald);
+  }
+  .reg-card.cpr { border-top-color: var(--navy); }
+  .reg-card.espr { border-top-color: var(--magenta); }
+  .reg-card .reg-tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 9.5pt;
+    color: var(--ink-mute); letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 3mm;
+  }
+  .reg-card .reg-name {
+    font-family: 'KoHo', sans-serif; font-size: 22pt; font-weight: 700;
+    color: var(--navy); margin-bottom: 2mm; line-height: 1.1;
+  }
+  .reg-card .reg-sub {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 12pt; color: var(--slate); margin-bottom: 5mm;
+  }
+  .reg-card .reg-list {
+    list-style: none; flex: 1; font-size: 11pt; color: var(--ink); line-height: 1.5;
+  }
+  .reg-card .reg-list li {
+    padding: 4px 0 4px 22px; position: relative;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .reg-card .reg-list li::before {
+    content: ""; position: absolute; left: 0; top: 12px;
+    width: 12px; height: 1.5px; background: var(--emerald);
+  }
+  .reg-card.cpr .reg-list li::before { background: var(--navy); }
+  .reg-card.espr .reg-list li::before { background: var(--magenta); }
+  .reg-card .reg-need {
+    margin-top: 5mm; padding: 4mm 5mm; background: var(--paper);
+    border-radius: 6px; border: 1px solid var(--rule);
+    font-size: 10.5pt; color: var(--ink-soft);
+  }
+  .reg-card .reg-need strong { color: var(--ink); }
+
+  /* ─── Insight slide ─── */
+  .insight-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 12mm; height: 100%; align-items: center; }
+
+  /* Insight slide: Brazil → Europe wood-flow map */
+  .insight-map-wrap { display: flex; flex-direction: column; gap: 4mm; height: 100%; }
+  .insight-map { flex: 1; width: 100%; display: block; }
+  .insight-callout {
+    background: var(--paper-warm); border-left: 4px solid var(--emerald);
+    border-radius: 8px; padding: 4mm 6mm;
+    font-size: 12pt; line-height: 1.5; color: var(--ink);
+  }
+  .insight-callout strong { color: var(--emerald-deep); }
+  .insight-callout em { font-family: 'Playfair Display', serif; font-style: italic; color: var(--bark); }
+  .insight-stat {
+    font-family: 'Playfair Display', serif; font-size: 96pt; line-height: 1;
+    color: var(--emerald-deep); letter-spacing: -3px;
+  }
+  .insight-stat .small { font-size: 36pt; color: var(--bark); }
+  .insight-text { font-size: 16pt; line-height: 1.45; color: var(--navy); }
+  .insight-text strong { color: var(--emerald-deep); }
+  .insight-text em { font-family: 'Playfair Display', serif; font-style: italic; color: var(--bark); }
+
+  /* ─── Architecture slide ─── */
+  .arch-svg { width: 100%; height: 100%; display: block; }
+
+  /* ─── Honesty table ─── */
+  table.coc {
+    width: 100%; border-collapse: collapse; font-size: 12pt;
+    background: var(--paper-warm); border-radius: 8px; overflow: hidden;
+  }
+  table.coc thead { background: var(--navy); }
+  table.coc th {
+    text-align: left; padding: 4.5mm 5mm;
+    color: white; font-weight: 600; font-size: 10pt;
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  table.coc td {
+    padding: 4mm 5mm; border-bottom: 1px solid var(--rule);
+    font-size: 11pt; color: var(--ink);
+  }
+  table.coc tr:last-child td { border-bottom: none; }
+  .badge {
+    display: inline-block; font-size: 9.5pt; font-family: 'JetBrains Mono', monospace;
+    padding: 3px 9px; border-radius: 999px; letter-spacing: .04em;
+  }
+  .badge.good { background: var(--emerald-tint); color: var(--emerald-deep); }
+  .badge.warn { background: #fff4e0; color: var(--warn); }
+  .badge.preserved { background: var(--emerald-tint); color: var(--emerald-deep); }
+  .check { color: var(--good); font-weight: 700; }
+  .cross { color: var(--red); font-weight: 700; }
+
+  /* ─── Worked example slide ─── */
+  .example-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 10mm; height: 100%; }
+  .plot-vis { background: linear-gradient(135deg, #f0f4f0 0%, #e8efea 100%); border-radius: 12px; padding: 5mm; }
+  .plot-vis svg { width: 100%; height: 100%; }
+  .paths { display: flex; flex-direction: column; gap: 5mm; }
+  .path {
+    background: var(--paper-warm); border: 1px solid var(--rule); border-radius: 10px;
+    padding: 5mm 6mm; border-left: 5px solid var(--navy);
+    display: grid; grid-template-columns: 1fr max-content; gap: 4mm; align-items: center;
+  }
+  .path.textile { border-left-color: var(--magenta); }
+  .path.furniture { border-left-color: var(--emerald); }
+  .path .p-flow {
+    font-family: 'JetBrains Mono', monospace; font-size: 10pt;
+    color: var(--ink-soft); margin-bottom: 1.5mm;
+  }
+  .path .p-name {
+    font-family: 'KoHo', sans-serif; font-size: 14pt; font-weight: 700; color: var(--navy);
+    margin-bottom: 1mm;
+  }
+  .path .p-note { font-size: 10pt; color: var(--ink-mute); }
+
+  /* ─── Combined stack slide ─── */
+  .stack-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6mm; height: 100%; align-items: stretch; }
+  .stack-col {
+    background: var(--paper-warm); border-radius: 10px; padding: 6mm;
+    display: flex; flex-direction: column; gap: 4mm;
+    border-top: 5px solid var(--orange);
+  }
+  .stack-col.regen { border-top-color: var(--emerald); }
+  .stack-col.combined { border-top-color: var(--magenta); }
+  .stack-col .col-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 9.5pt;
+    text-transform: uppercase; letter-spacing: 1.5px; color: var(--ink-mute);
+  }
+  .stack-col .col-title {
+    font-family: 'KoHo', sans-serif; font-size: 18pt; font-weight: 700;
+    color: var(--navy); line-height: 1.1;
+  }
+  .stack-col .col-sub {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 12pt; color: var(--slate); margin-bottom: 3mm;
+  }
+  .stack-col ul {
+    list-style: none; font-size: 10.5pt; line-height: 1.55; color: var(--ink);
+  }
+  .stack-col ul li {
+    padding: 3px 0 3px 18px; position: relative;
+  }
+  .stack-col ul li::before {
+    content: "▸"; position: absolute; left: 0; color: var(--bark); font-size: 11pt;
+  }
+  .stack-col .col-foot {
+    margin-top: auto; padding-top: 4mm;
+    border-top: 1px dashed var(--rule);
+    font-size: 9.5pt; font-family: 'JetBrains Mono', monospace;
+    color: var(--ink-mute); letter-spacing: .04em;
+  }
+
+  /* ─── Combo flowchart (slide 11 · A Combinação) ─── */
+  .combo-flow { display: flex; flex-direction: column; gap: 6mm; height: 100%; position: relative; }
+  .combo-row {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8mm; flex: 1;
+  }
+  .combo-card {
+    background: var(--paper-warm); border-radius: 12px; padding: 6mm 6mm 5mm;
+    display: flex; flex-direction: column; gap: 2.5mm;
+    border-top: 5px solid var(--ink-mute); position: relative; z-index: 2;
+    box-shadow: 0 2px 8px rgba(0,0,0,.04);
+  }
+  .combo-card.woodlabs { border-top-color: var(--emerald); }
+  .combo-card.regen   { border-top-color: var(--teal); }
+  .combo-card.ctf     { border-top-color: var(--magenta); }
+  .combo-card .cc-mark {
+    font-family: 'KoHo', sans-serif; font-size: 16pt; font-weight: 700;
+    color: var(--navy); line-height: 1.05;
+  }
+  .combo-card.woodlabs .cc-mark { color: var(--emerald-deep); }
+  .combo-card.regen .cc-mark    { color: var(--teal); }
+  .combo-card.ctf .cc-mark      { color: var(--magenta); }
+  .combo-card .cc-bullets {
+    list-style: none; font-size: 11pt; line-height: 1.5; color: var(--ink); margin: 1mm 0;
+  }
+  .combo-card .cc-bullets li { padding: 2px 0 2px 16px; position: relative; }
+  .combo-card .cc-bullets li::before {
+    content: "·"; position: absolute; left: 4px; top: 0;
+    color: var(--ink-mute); font-weight: 700;
+  }
+  .combo-card .cc-bullets li b {
+    font-family: 'KoHo', sans-serif; font-weight: 700; color: var(--navy); font-size: 11pt;
+  }
+  .combo-card .cc-tag {
+    margin-top: auto; padding-top: 3mm; border-top: 1px dashed var(--rule);
+    font-family: 'Playfair Display', serif; font-style: italic; font-size: 10pt;
+    color: var(--ink-soft);
+  }
+
+  .combo-bridge {
+    height: 12mm; position: relative; flex: 0 0 auto;
+  }
+  .combo-bridge::before,
+  .combo-bridge::after { content: ""; position: absolute; }
+  .combo-bridge::before {
+    /* horizontal junction line */
+    left: 16.66%; right: 16.66%; top: 50%;
+    height: 0; border-top: 2px dashed var(--bark);
+  }
+  .combo-bridge::after {
+    /* downward arrow stem to output */
+    left: 50%; top: 50%; bottom: 0;
+    border-left: 2px dashed var(--bark);
+    transform: translateX(-1px);
+  }
+  .combo-bridge .stub-l, .combo-bridge .stub-c, .combo-bridge .stub-r {
+    position: absolute; top: 0; bottom: 50%;
+    border-left: 2px dashed var(--bark); transform: translateX(-1px);
+  }
+  .combo-bridge .stub-l { left: 16.66%; }
+  .combo-bridge .stub-c { left: 50%; }
+  .combo-bridge .stub-r { left: 83.33%; }
+  .combo-bridge .arrowhead {
+    position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%);
+    width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent;
+    border-top: 9px solid var(--bark);
+  }
+
+  .combo-output {
+    background: linear-gradient(135deg, var(--orange) 0%, #b8730d 100%);
+    color: #fff; border-radius: 14px; padding: 6mm 8mm;
+    display: flex; align-items: center; justify-content: space-between;
+    box-shadow: 0 4px 16px rgba(255,169,45,.35);
+    align-self: center; min-width: 60%; max-width: 76%;
+  }
+  .combo-output .co-mark {
+    font-family: 'KoHo', sans-serif; font-size: 22pt; font-weight: 700; line-height: 1;
+  }
+  .combo-output .co-mark em { font-style: italic; color: #fdf8eb; }
+  .combo-output .co-sub {
+    font-family: 'Playfair Display', serif; font-style: italic; font-size: 12pt;
+    color: rgba(255,255,255,.92); margin-top: 1mm;
+  }
+  .combo-output .co-tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 9.5pt;
+    background: rgba(255,255,255,.20); padding: 4px 10px; border-radius: 6px;
+    letter-spacing: .04em;
+  }
+
+  /* ─── Violeta slide ─── */
+  .violeta-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 12mm; height: 100%; align-items: center; }
+  .phone-mockup {
+    background: linear-gradient(180deg, #2a2419 0%, #1a1610 100%);
+    border-radius: 28px; padding: 18px; box-shadow: 0 16px 40px rgba(0,0,0,.3);
+    height: 100%; max-height: 130mm; width: 80mm; margin: 0 auto;
+    display: flex; flex-direction: column;
+  }
+  .phone-screen {
+    background: var(--paper-cream); border-radius: 18px; flex: 1; padding: 8mm 6mm;
+    display: flex; flex-direction: column; gap: 4mm;
+    font-size: 9.5pt;
+    overflow: hidden;
+  }
+  .chat-header {
+    text-align: center; padding-bottom: 4mm; border-bottom: 1px solid var(--bark-tint);
+    margin-bottom: 2mm;
+  }
+  .chat-header .char-name {
+    font-family: 'Playfair Display', serif; font-weight: 700; font-size: 14pt;
+    color: var(--bark);
+  }
+  .chat-header .char-species {
+    font-family: 'Playfair Display', serif; font-style: italic; font-size: 10pt;
+    color: var(--ink-soft); margin-top: 1mm;
+  }
+  .msg {
+    padding: 3mm 4mm; border-radius: 12px; max-width: 88%;
+    font-size: 9.5pt; line-height: 1.4;
+  }
+  .msg.bot {
+    background: var(--bark-tint); color: var(--ink);
+    align-self: flex-start; border-bottom-left-radius: 3px;
+  }
+  .msg.user {
+    background: var(--emerald); color: white;
+    align-self: flex-end; border-bottom-right-radius: 3px;
+  }
+  .chat-input {
+    margin-top: auto; padding: 3mm; background: white; border-radius: 999px;
+    color: var(--ink-mute); font-size: 9pt; text-align: center;
+    border: 1px solid var(--bark-tint);
+  }
+  .violeta-text { display: flex; flex-direction: column; gap: 6mm; }
+  .violeta-text .vbig {
+    font-family: 'Playfair Display', serif; font-size: 28pt; font-weight: 700;
+    color: var(--magenta); line-height: 1.15; letter-spacing: -.5px;
+  }
+  .violeta-text .vbody {
+    font-size: 13pt; line-height: 1.55; color: var(--navy);
+  }
+  .violeta-text .vquote {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 14pt; color: var(--bark);
+    padding-left: 6mm; border-left: 3px solid var(--orange);
+  }
+
+  /* ─── Market slide ─── */
+  .market-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10mm; height: 100%; }
+  .market-side h3 {
+    font-family: 'KoHo', sans-serif; font-size: 18pt; font-weight: 700;
+    color: var(--navy); margin-bottom: 4mm;
+  }
+  .market-side p {
+    font-size: 12pt; line-height: 1.55; color: var(--ink-soft);
+  }
+  .market-stat {
+    margin: 6mm 0; padding: 5mm 6mm;
+    background: var(--bark-tint); border-radius: 10px;
+    border-left: 4px solid var(--bark);
+  }
+  .market-stat .ms-num {
+    font-family: 'Playfair Display', serif; font-size: 42pt; font-weight: 700;
+    color: var(--bark); line-height: 1; letter-spacing: -1px;
+  }
+  .market-stat .ms-lbl {
+    font-size: 11pt; color: var(--ink-soft); margin-top: 2mm;
+  }
+
+  /* ─── Roadmap slide ─── */
+  .timeline {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8mm; height: 100%;
+    align-content: stretch;
+  }
+  .tl-step {
+    background: var(--paper-warm); border-radius: 10px; padding: 7mm 6mm;
+    display: flex; flex-direction: column;
+    position: relative;
+  }
+  .tl-step::before {
+    content: ""; position: absolute; left: -5mm; top: 50%; width: 4mm; height: 4mm;
+    background: var(--emerald); border-radius: 50%;
+  }
+  .tl-step:first-child::before { display: none; }
+  .tl-num {
+    font-family: 'KoHo', sans-serif; font-size: 36pt; font-weight: 700;
+    color: var(--emerald); line-height: 1; margin-bottom: 3mm;
+  }
+  .tl-when {
+    font-family: 'JetBrains Mono', monospace; font-size: 9.5pt;
+    color: var(--ink-mute); letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 2mm;
+  }
+  .tl-title {
+    font-family: 'KoHo', sans-serif; font-size: 15pt; font-weight: 700;
+    color: var(--navy); line-height: 1.15; margin-bottom: 3mm;
+  }
+  .tl-body { font-size: 10.5pt; color: var(--ink-soft); line-height: 1.5; flex: 1; }
+  .tl-foot {
+    margin-top: auto; padding-top: 4mm; border-top: 1px dashed var(--rule);
+    font-size: 9.5pt; color: var(--ink-mute); font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* ─── Partnership slide ─── */
+  .partners-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6mm; height: 100%; align-items: stretch; }
+  .partner-card {
+    background: var(--paper-warm); border-radius: 12px; padding: 7mm 6mm;
+    display: flex; flex-direction: column; gap: 4mm;
+    text-align: center;
+    border: 2px solid;
+  }
+  .partner-card.regen { border-color: var(--emerald); }
+  .partner-card.wood { border-color: var(--bark); }
+  .partner-card.ctf { border-color: var(--teal); }
+  .partner-card .p-mark {
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: 28pt; line-height: 1;
+  }
+  .partner-card.regen .p-mark { color: var(--emerald-deep); }
+  .partner-card.wood  .p-mark { color: var(--bark); }
+  .partner-card.ctf   .p-mark { color: var(--teal); }
+  .partner-card .p-role {
+    font-family: 'KoHo', sans-serif; font-size: 14pt; font-weight: 700;
+    color: var(--navy);
+  }
+  .partner-card .p-brings {
+    flex: 1; font-size: 10.5pt; line-height: 1.55; color: var(--ink-soft);
+    text-align: left;
+  }
+  .partner-card .p-brings ul { list-style: none; }
+  .partner-card .p-brings li {
+    padding: 3px 0 3px 16px; position: relative;
+  }
+  .partner-card .p-brings li::before { content: "·"; position: absolute; left: 4px; font-weight: 700; }
+  .partner-card .p-tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 9pt;
+    color: var(--ink-mute); letter-spacing: 1px; text-transform: uppercase;
+    padding-top: 3mm; border-top: 1px dashed var(--rule);
+  }
+
+  /* ─── Next-steps slide ─── */
+  .ns-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; height: 100%; }
+  .ns-col h3 {
+    font-family: 'KoHo', sans-serif; font-size: 16pt; font-weight: 700;
+    color: var(--navy); padding-bottom: 3mm;
+    border-bottom: 2px solid var(--emerald); margin-bottom: 5mm;
+  }
+  .ns-col.b h3 { border-bottom-color: var(--bark); }
+  .ns-item {
+    padding: 4mm 0 4mm 9mm; border-bottom: 1px dashed var(--rule);
+    position: relative; font-size: 11pt; line-height: 1.5; color: var(--ink);
+  }
+  .ns-item::before {
+    content: "✓"; position: absolute; left: 0; top: 4mm;
+    width: 5mm; height: 5mm; background: var(--emerald); color: white;
+    border-radius: 50%; text-align: center; line-height: 5mm; font-size: 9pt; font-weight: 700;
+  }
+  .ns-col.b .ns-item::before {
+    background: var(--bark); content: "→";
+  }
+  .ns-item:last-child { border-bottom: none; }
+  .ns-item .who {
+    font-family: 'JetBrains Mono', monospace; font-size: 9pt;
+    color: var(--ink-mute); letter-spacing: .5px; text-transform: uppercase;
+  }
+
+  /* ─── Tree zone system — every slide can carry a fractal tree ─── */
+  /* z-index 8 sits above all slide content (head 4, body ~auto, footer 5)
+     and below the Stage-2 review widget (z 9000+), so the tree always reads. */
+  .tree-zone {
+    position: absolute; pointer-events: none; overflow: hidden;
+    z-index: 8;
+  }
+  .tree-zone svg { width: 100%; height: 100%; display: block; }
+  .tree-zone--corner-br  { right: 7mm;  bottom: 11mm; width: 28mm; height: 32mm; opacity: .72; }
+  .tree-zone--corner-tl  { left:  6mm;  top:    4mm;  width: 55mm;  height: 70mm; opacity: .32; }
+  .tree-zone--corner-bl  { left:  8mm;  bottom: 12mm; width: 75mm;  height: 90mm; opacity: .38; }
+  .tree-zone--sidebar-l  { left:  0;    top: 0; bottom: 11mm; width: 38mm;  opacity: .38; }
+  .tree-zone--sidebar-r  { right: 0;    top: 0; bottom: 11mm; width: 38mm;  opacity: .38; }
+  .tree-zone--bg         {
+    left: 0; right: 0; top: 0; bottom: 11mm;
+    width: auto; height: auto;
+    opacity: .12;
+  }
+  .tree-zone--cover-hero {
+    right: 0; top: 0; bottom: 0; width: 52%;
+    z-index: 2; opacity: 1;
+    display: flex; align-items: flex-end; justify-content: center;
+  }
+  .cover-tree-credit {
+    position: absolute; bottom: 22mm; right: 18mm; z-index: 6;
+    font-family: 'JetBrains Mono', monospace; font-size: 8.5pt;
+    color: var(--ink-mute); letter-spacing: .04em;
+    opacity: .75;
+  }
+  .accent-tris { position: absolute; top: 0; right: 0; width: 130mm; height: 130mm; opacity: .9; z-index: 2; pointer-events: none; }
+  .accent-tris svg { width: 100%; height: 100%; }
+
+  /* ─── Universo DPP slide ─── */
+  .dpp-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 2.5mm;
+    grid-auto-rows: 1fr;
+    height: 100%;
+  }
+  .dpp-card {
+    background: var(--paper-warm); border: 1px solid var(--rule);
+    border-radius: 10px; padding: 2.4mm 3mm;
+    display: flex; flex-direction: column; gap: 1.6mm;
+    border-top: 4px solid var(--ink-mute);
+    overflow: hidden;
+  }
+  .dpp-card.wood-heavy { border-top-color: var(--emerald); background: var(--emerald-tint); }
+  .dpp-card.wood-heavy .dpp-name { color: var(--emerald-deep); }
+  .dpp-card.wood-med { border-top-color: var(--bark-light); background: var(--bark-tint); }
+  .dpp-card.wood-med .dpp-name { color: var(--bark); }
+  .dpp-head { display: flex; align-items: center; gap: 7px; }
+  .dpp-flag { font-size: 12pt; line-height: 1; }
+  .dpp-flag.dim { color: var(--ink-mute); font-size: 10pt; }
+  .dpp-name { font-family: 'KoHo', sans-serif; font-size: 13pt; font-weight: 700; color: var(--navy); line-height: 1; }
+  .dpp-num { font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; color: var(--ink-mute); letter-spacing: .04em; margin-top: 2px; }
+  .dpp-when { font-family: 'Playfair Display', serif; font-style: italic; font-size: 8pt; color: var(--bark); padding: 1px 0; }
+  .dpp-desc {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 8.5pt; color: var(--ink); line-height: 1.3;
+    padding: 1.2mm 0 0.8mm; border-top: 1px dashed var(--rule);
+  }
+  .dpp-prods {
+    list-style: none; font-size: 7.8pt; color: var(--ink);
+    line-height: 1.3; margin-top: auto;
+  }
+  .dpp-prods li { padding: 2px 0 2px 14px; position: relative; }
+  .dpp-prods li::before {
+    content: "·"; position: absolute; left: 5px; top: 2px;
+    font-weight: 700; color: var(--ink-mute);
+  }
+  .dpp-prods li.wood { color: var(--emerald-deep); font-weight: 600; }
+  .dpp-prods li.wood::before {
+    content: "🌳"; font-size: 8pt; left: 0; top: 3px;
+  }
+  .dpp-prods li.dim { color: var(--ink-mute); font-style: italic; }
+
+  /* ─── CPR · 37 famílias zoom slide ─── */
+  .cpr-grid {
+    display: grid; grid-template-columns: 1fr 2.4fr; gap: 6mm; height: 100%;
+  }
+  .cpr-hero {
+    display: flex; flex-direction: column; gap: 3mm;
+    background: var(--emerald-tint); border: 1px solid var(--emerald);
+    border-top: 5px solid var(--emerald); border-radius: 10px;
+    padding: 4mm 5mm 5mm;
+    margin-bottom: 4mm;
+  }
+  .cpr-hero .cpr-hero-tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 8.5pt;
+    color: var(--ink-mute); letter-spacing: .04em; margin-top: 2px;
+  }
+  .cpr-hero .cpr-hero-when {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 9.5pt; color: var(--bark);
+  }
+  .cpr-hero .cpr-hero-body {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 10pt; color: var(--ink); line-height: 1.45;
+  }
+  .cpr-hero .cpr-hero-stat {
+    margin-top: auto; padding-top: 2.5mm;
+    border-top: 1px dashed var(--rule);
+  }
+  .cpr-hero .cpr-stat-num {
+    font-family: 'KoHo', sans-serif; font-weight: 700;
+    font-size: 26pt; line-height: 1; color: var(--emerald-deep);
+  }
+  .cpr-hero .cpr-stat-lbl {
+    font-size: 8.5pt; color: var(--ink-soft); margin-top: 2px; line-height: 1.35;
+  }
+  .fam-grid {
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 2mm;
+    align-content: start;
+  }
+  .fam-chip {
+    background: #fff; border: 1px solid var(--rule);
+    border-radius: 6px; padding: 5px 7px;
+    display: flex; flex-direction: column; gap: 1px;
+    min-height: 38px; position: relative;
+  }
+  .fam-chip.core {
+    background: var(--emerald); color: #fff; border-color: var(--emerald-deep);
+  }
+  .fam-chip.core::before {
+    content: "🌳"; position: absolute; right: 4px; top: 3px; font-size: 9pt;
+  }
+  .fam-chip.wood-opt {
+    background: var(--emerald-tint); border-color: var(--emerald);
+  }
+  .fam-chip.wood-opt::before {
+    content: "🌳"; position: absolute; right: 4px; top: 3px; font-size: 8pt; opacity: .85;
+  }
+  .fam-chip.wood-aux {
+    background: var(--bark-tint); border-color: var(--bark-light);
+  }
+  .fam-chip .fam-code {
+    font-family: 'KoHo', sans-serif; font-weight: 700; font-size: 10pt;
+    letter-spacing: .04em; color: var(--navy); line-height: 1;
+  }
+  .fam-chip.core .fam-code { color: #fff; }
+  .fam-chip .fam-name {
+    font-size: 7.5pt; line-height: 1.2; color: var(--ink-soft);
+  }
+  .fam-chip.core .fam-name { color: rgba(255,255,255,.92); }
+  .fam-legend {
+    display: flex; gap: 6mm; margin-top: 3mm; font-size: 9.5pt;
+    color: var(--ink-soft);
+  }
+  .fam-legend .leg-item { display: flex; align-items: center; gap: 6px; }
+  .fam-legend .leg-swatch {
+    width: 14px; height: 14px; border-radius: 3px; border: 1px solid var(--rule);
+  }
+
+  /* ─── CPR deep-dive slide ─── */
+  .deep-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3.5mm;
+  }
+  .deep-card {
+    background: var(--bark-tint); border: 1px solid var(--bark-light);
+    border-left: 4px solid var(--bark);
+    border-radius: 8px; padding: 3.5mm 5mm;
+  }
+  .deep-head {
+    display: flex; align-items: baseline; gap: 8px; margin-bottom: 2mm;
+  }
+  .deep-code {
+    font-family: 'KoHo', sans-serif; font-weight: 700; font-size: 13pt;
+    color: var(--bark); letter-spacing: .04em;
+  }
+  .deep-name {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 11pt; color: var(--ink-soft);
+  }
+  .deep-std {
+    font-family: 'JetBrains Mono', monospace; font-size: 8.5pt;
+    color: var(--emerald-deep); letter-spacing: .03em;
+    margin-bottom: 2mm;
+  }
+  .deep-find {
+    font-size: 9.5pt; line-height: 1.45; color: var(--ink);
+  }
+  .deep-find strong { color: var(--bark); }
+  .deep-find em { color: var(--emerald-deep); font-style: italic; }
+
+  /* ─── Data-requirement matrix slide ─── */
+  .req-matrix {
+    width: 100%; border-collapse: collapse;
+    font-family: 'Inter', sans-serif; margin-top: 2mm;
+  }
+  .req-matrix th {
+    background: var(--navy-dark); color: #fff;
+    font-family: 'KoHo', sans-serif; font-weight: 700;
+    font-size: 8.5pt; letter-spacing: 1.2px;
+    text-transform: uppercase; padding: 7px 5px; text-align: center;
+    vertical-align: middle;
+  }
+  .req-matrix th:first-child { text-align: left; padding-left: 12px; }
+  .req-matrix th .th-sub {
+    display: block; font-family: 'JetBrains Mono', monospace;
+    font-weight: 400; font-size: 7pt; letter-spacing: .04em;
+    opacity: .65; text-transform: none; margin-top: 1px;
+  }
+  .req-matrix td {
+    padding: 4.5px 8px; text-align: center;
+    border-bottom: 1px solid var(--rule);
+    font-size: 12pt; line-height: 1.1; vertical-align: middle;
+    color: var(--ink);
+  }
+  .req-matrix td:first-child {
+    padding-left: 12px; padding-right: 8px;
+    font-size: 9pt; line-height: 1.25; text-align: left;
+  }
+  .req-matrix td.dot-yes { color: var(--emerald-deep); font-weight: 700; }
+  .req-matrix td.dot-via { color: var(--emerald); font-weight: 700;
+    background: rgba(0,133,69,.07);
+    border-bottom: 1px dotted var(--emerald);
+  }
+  .req-matrix td.dot-no { color: #c8d0d8; }
+  .req-matrix .field-cat {
+    display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 7pt;
+    color: var(--ink-mute); letter-spacing: .06em;
+    text-transform: uppercase; margin-right: 6px; opacity: .8;
+  }
+  .req-matrix th.reg-col {
+    background: var(--navy-dark); color: #fff;
+    font-family: 'KoHo', sans-serif; font-size: 9pt; font-weight: 700;
+    letter-spacing: .04em; text-transform: none;
+    text-align: center; padding: 6px 4px;
+  }
+  .req-matrix th.reg-col .th-sub {
+    display: block; font-family: 'JetBrains Mono', monospace;
+    font-weight: 400; font-size: 6.8pt; letter-spacing: .04em;
+    opacity: .65; text-transform: none; margin-top: 1px;
+  }
+  .req-matrix tr:nth-child(even) td { background: #fafbfc; }
+  .req-matrix tr:hover td { background: var(--paper-warm); }
+  .req-matrix .reg-tag {
+    font-family: 'KoHo', sans-serif; font-weight: 700;
+    font-size: 8pt; letter-spacing: .05em;
+    padding: 2px 7px; border-radius: 4px;
+    display: inline-block; margin-right: 7px;
+    vertical-align: middle;
+  }
+  .req-matrix .reg-EUDR { background: var(--emerald-tint); color: var(--emerald-deep); }
+  .req-matrix .reg-CPR  { background: #e9eef3; color: var(--navy); }
+  .req-matrix .reg-ESPR { background: var(--magenta-tint); color: var(--magenta); }
+  .req-matrix .reg-PPWR { background: var(--teal-tint); color: var(--teal); }
+  .req-matrix .reg-TSR  { background: #fff4e0; color: var(--warn); }
+  .req-matrix .fam-label { font-weight: 500; color: var(--ink); }
+  .req-matrix .stat {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5pt; letter-spacing: .05em;
+    padding: 1px 6px; border-radius: 3px;
+    margin-left: 7px; vertical-align: middle;
+    text-transform: uppercase; font-weight: 600;
+  }
+  .req-matrix .stat-force   { background: rgba(0,133,69,.15);   color: var(--emerald-deep); }
+  .req-matrix .stat-phased  { background: rgba(255,169,45,.20); color: var(--warn); }
+  .req-matrix .stat-draft   { background: rgba(231,24,70,.12);  color: var(--magenta); }
+  .req-matrix .stat-expected{ background: rgba(120,135,150,.18);color: var(--ink-soft); }
+  .req-matrix .fam-sub {
+    display: block; font-size: 8.5pt; color: var(--ink-mute);
+    font-family: 'JetBrains Mono', monospace; letter-spacing: .02em;
+    margin-top: 2px; font-weight: 400;
+  }
+  .req-matrix .req-cell-3 { color: var(--emerald-deep); font-weight: 700; letter-spacing: 1px; }
+  .req-matrix .req-cell-2 { color: var(--bark); letter-spacing: 1px; }
+  .req-matrix .req-cell-1 { color: var(--ink-mute); letter-spacing: 1px; }
+  .req-matrix .req-cell-0 { color: #d8dde2; font-size: 11pt; }
+  .req-legend {
+    display: flex; gap: 6mm; flex-wrap: wrap;
+    margin-top: 4mm; padding: 3mm 5mm;
+    background: var(--paper-warm); border-radius: 8px;
+    font-size: 9.5pt; color: var(--ink-soft);
+  }
+  .req-legend-item { display: flex; align-items: center; gap: 6px; }
+  .req-legend-item .req-cell-3,
+  .req-legend-item .req-cell-2,
+  .req-legend-item .req-cell-1,
+  .req-legend-item .req-cell-0 { font-size: 13pt; line-height: 1; }
+  .req-foot {
+    margin-top: 3mm; font-size: 10pt; color: var(--ink-soft);
+    font-style: italic; font-family: 'Playfair Display', serif;
+    line-height: 1.5;
+  }
+  .req-foot code {
+    font-family: 'JetBrains Mono', monospace; font-size: 8.5pt;
+    color: var(--bark); background: rgba(91,63,41,.08);
+    padding: 1px 5px; border-radius: 3px; font-style: normal;
+  }
+
+  /* ─── EUDR dedicated slide ─── */
+  .eudr-layout {
+    display: grid; grid-template-columns: 1fr 1.7fr; gap: 5mm; height: 100%;
+    padding-bottom: 5mm;
+  }
+  .eudr-hero {
+    background: linear-gradient(160deg, var(--emerald) 0%, var(--emerald-deep) 100%);
+    color: #fff; border-radius: 14px;
+    padding: 3mm 4mm; display: flex; flex-direction: column; gap: 1.2mm;
+    margin-bottom: 0;
+  }
+  .eudr-flag { font-size: 18pt; line-height: 1; text-align: center; }
+  .eudr-name {
+    font-family: 'KoHo', sans-serif; font-weight: 700;
+    font-size: 22pt; line-height: 1; text-align: center; color: #fff;
+  }
+  .eudr-num {
+    font-family: 'JetBrains Mono', monospace; font-size: 8pt;
+    text-align: center; opacity: .82; letter-spacing: .04em;
+  }
+  .eudr-tag {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 10pt; text-align: center; opacity: .92;
+  }
+  .eudr-stats { margin-top: auto; display: flex; flex-direction: column; gap: 1.6mm; }
+  .eudr-stat {
+    background: rgba(255,255,255,.14); padding: 1.8mm 3mm; border-radius: 7px;
+  }
+  .eudr-stat-num {
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: 11.5pt; line-height: 1.05; color: #fff;
+  }
+  .eudr-stat-lbl { font-size: 7.8pt; opacity: .88; margin-top: 0.8mm; line-height: 1.3; }
+  .eudr-right { display: flex; flex-direction: column; gap: 2mm; }
+  .eudr-block {
+    background: var(--paper-warm); border: 1px solid var(--rule);
+    border-radius: 10px; padding: 2.2mm 3.5mm;
+  }
+  .eudr-block.accent {
+    background: var(--bark-tint); border-left: 4px solid var(--bark);
+    max-width: calc(100% - 36mm);
+  }
+  .eudr-block h3 {
+    font-family: 'KoHo', sans-serif; font-weight: 700; font-size: 9pt;
+    color: var(--navy); margin-bottom: 1mm;
+    display: flex; align-items: center; gap: 7px;
+  }
+  .eudr-block ul {
+    list-style: none; font-size: 7.8pt; line-height: 1.35; color: var(--ink);
+  }
+  .eudr-block ul li {
+    padding: 0.3px 0 0.3px 14px; position: relative;
+  }
+  .eudr-block ul li::before {
+    content: "·"; position: absolute; left: 4px;
+    font-weight: 700; color: var(--emerald);
+  }
+  .eudr-block p { font-size: 8pt; line-height: 1.35; color: var(--ink); }
+  .eudr-block p + p { margin-top: 1mm; }
+  .eudr-block p strong { color: var(--bark); }
+  .eudr-block p em { font-style: italic; color: var(--emerald-deep); }
+
+  /* ─── Prospects slide ─── */
+  .prospects-grid {
+    display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 5mm; height: 100%;
+  }
+  .prospect-col {
+    display: flex; flex-direction: column; gap: 2mm;
+    background: var(--paper-warm); border: 1px solid var(--rule);
+    border-radius: 10px; padding: 4mm;
+    overflow: hidden;
+  }
+  .prospect-col.tier-1 { border-top: 4px solid var(--emerald); }
+  .prospect-col.tier-2 { border-top: 4px solid var(--bark); }
+  .prospect-col.tier-3 { border-top: 4px solid var(--orange); }
+  .prospect-col h3 {
+    font-family: 'KoHo', sans-serif; font-size: 13pt; font-weight: 700;
+    color: var(--navy); margin: 0;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .prospect-col .tier-num {
+    font-family: 'JetBrains Mono', monospace; font-size: 9pt;
+    padding: 2px 7px; border-radius: 4px;
+    background: var(--paper); color: var(--ink-mute); letter-spacing: .04em;
+  }
+  .prospect-col .tier-sub {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 10pt; color: var(--ink-soft); line-height: 1.4;
+    margin-bottom: 1mm;
+  }
+  .prospect-item {
+    background: #fff; border: 1px solid var(--rule);
+    border-radius: 6px; padding: 2mm 3mm;
+    font-size: 9pt; line-height: 1.35;
+  }
+  .prospect-item .p-name {
+    font-family: 'KoHo', sans-serif; font-weight: 700; font-size: 10pt;
+    color: var(--navy);
+  }
+  .prospect-item .p-loc {
+    font-family: 'JetBrains Mono', monospace; font-size: 7.8pt;
+    color: var(--ink-mute); letter-spacing: .04em;
+  }
+  .prospect-item .p-note { color: var(--ink); font-size: 8.6pt; margin-top: 0.8mm; }
+  .prospect-item .p-flag {
+    display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 7.5pt;
+    background: var(--emerald-tint); color: var(--emerald-deep);
+    padding: 1px 6px; border-radius: 3px; margin-left: 5px; letter-spacing: .05em;
+    text-transform: uppercase; font-weight: 600;
+  }
+  .prospect-item .p-flag.warm { background: var(--bark-tint); color: var(--bark); }
+  .prospect-item .p-flag.cold { background: #f1f4f7; color: var(--ink-mute); }
+
+  /* ─── BR→EU trade slide ─── */
+  .trade-grid {
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 5mm; height: 100%;
+    padding-bottom: 4mm;
+  }
+  .trade-hero {
+    background: linear-gradient(160deg, var(--emerald) 0%, var(--emerald-deep) 100%);
+    color: #fff; border-radius: 14px;
+    padding: 4mm 5mm; display: flex; flex-direction: column; gap: 2.5mm;
+  }
+  .trade-hero .trade-tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 8.5pt;
+    letter-spacing: 1.4px; text-transform: uppercase; opacity: .8;
+  }
+  .trade-hero .trade-big {
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: 44pt; line-height: 1; letter-spacing: -1.2px;
+    color: #f0d790;
+  }
+  .trade-hero .trade-big-unit {
+    font-family: 'JetBrains Mono', monospace; font-size: 10pt;
+    letter-spacing: .04em; opacity: .9;
+  }
+  .trade-hero .trade-sub {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 11pt; line-height: 1.35; opacity: .92;
+  }
+  .trade-bar-wrap { margin-top: 1.5mm; }
+  .trade-bar {
+    display: flex; height: 7mm; border-radius: 5px; overflow: hidden;
+    background: rgba(255,255,255,.12);
+  }
+  .trade-bar .seg {
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'JetBrains Mono', monospace; font-size: 8.5pt;
+    color: #fff; font-weight: 700; padding: 0 6px;
+    border-right: 1px solid rgba(255,255,255,.18);
+  }
+  .trade-bar .seg:last-child { border-right: none; }
+  .trade-bar .seg-ppwr { background: #009BBB; flex: 67; }
+  .trade-bar .seg-cpr  { background: var(--bark); flex: 26; }
+  .trade-bar .seg-rest { background: var(--orange); flex: 7; }
+  .trade-legend {
+    display: flex; gap: 4mm; font-size: 9pt;
+    font-family: 'JetBrains Mono', monospace;
+    margin-top: 2mm; opacity: .9;
+  }
+  .trade-legend span { display: inline-flex; align-items: center; gap: 5px; }
+  .trade-legend .dot { width: 9px; height: 9px; border-radius: 2px; }
+
+  .trade-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 8pt; color: var(--ink);
+  }
+  .trade-table th {
+    text-align: left; padding: 2mm 2mm 1.2mm; color: var(--ink-mute);
+    font-family: 'KoHo', sans-serif; font-size: 7.5pt;
+    font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; border-bottom: 1.5px solid var(--rule);
+  }
+  .trade-table th.r { text-align: right; }
+  .trade-table td { padding: 1.3mm 2mm; border-bottom: 1px solid var(--rule); }
+  .trade-table td.r { text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 8pt; }
+  .trade-table td.src { font-size: 7pt; color: var(--ink-mute); line-height: 1.25; }
+  .trade-table td.src a { color: var(--emerald-deep); text-decoration: none; border-bottom: 1px dotted var(--emerald); }
+  .trade-table td.src a:hover { color: var(--emerald); border-bottom-style: solid; }
+  .trade-table .reg-tag {
+    display: inline-block; font-family: 'KoHo', sans-serif;
+    font-size: 8.5pt; font-weight: 700; letter-spacing: .04em;
+    padding: 2px 7px; border-radius: 4px; margin-right: 6px;
+  }
+  .trade-table .reg-tag.ppwr { background: var(--teal-tint); color: var(--teal); }
+  .trade-table .reg-tag.cpr  { background: #e9eef3; color: var(--navy); }
+  .trade-table .reg-tag.espr { background: var(--magenta-tint); color: var(--magenta); }
+  .trade-table .reg-tag.tsr  { background: #fff4e0; color: var(--warn); }
+  .trade-table tr.row-total td { font-weight: 700; background: var(--paper-warm); }
+  .trade-table .conf {
+    font-family: 'JetBrains Mono', monospace; font-size: 8pt;
+    color: var(--ink-mute); letter-spacing: .04em;
+  }
+  .trade-foot {
+    margin-top: 2mm; padding: 2.2mm 4mm;
+    background: var(--paper-warm); border-left: 4px solid var(--emerald);
+    border-radius: 6px;
+    font-size: 8.8pt; line-height: 1.4; color: var(--ink);
+  }
+  .trade-foot strong { color: var(--emerald-deep); }
+  .trade-foot em { font-family: 'Playfair Display', serif; color: var(--bark); }
+
+  /* ─── Onde a madeira entra slide ─── */
+  .wood-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5mm;
+  }
+  .wood-col {
+    background: var(--paper-warm); border: 1px solid var(--rule);
+    border-radius: 10px; padding: 5mm;
+    display: flex; flex-direction: column; gap: 3mm;
+    border-top: 5px solid var(--ink-mute);
+  }
+  .wood-col.direct { border-top-color: var(--emerald); background: var(--emerald-tint); }
+  .wood-col.indirect { border-top-color: var(--bark-light); background: var(--bark-tint); }
+  .wood-tier {
+    display: grid; grid-template-columns: max-content 1fr;
+    gap: 0 10px; align-items: center;
+    padding-bottom: 3mm; border-bottom: 1px dashed var(--rule);
+  }
+  .wood-tier-icon { grid-row: 1 / 3; font-size: 26pt; line-height: 1; }
+  .wood-tier-label {
+    font-family: 'KoHo', sans-serif; font-size: 13pt; font-weight: 700;
+    letter-spacing: 2px; color: var(--navy);
+  }
+  .wood-tier-sub {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 10pt; color: var(--slate);
+  }
+  .wood-fam { font-size: 10pt; line-height: 1.4; padding: 1mm 0; }
+  .wood-fam .fam-name { font-weight: 600; color: var(--navy); margin-bottom: 1px; }
+  .wood-fam .fam-note { color: var(--ink-soft); font-size: 9pt; }
+  .wood-summary {
+    margin-top: 4mm;
+    padding: 4mm 6mm;
+    background: var(--paper); border-radius: 8px;
+    border-left: 4px solid var(--emerald);
+    font-size: 11pt; line-height: 1.55; color: var(--ink);
+  }
+  .wood-summary strong { color: var(--emerald-deep); font-family: 'KoHo', sans-serif; font-size: 12pt; }
+  .wood-summary em { font-style: italic; color: var(--bark); }
+
+  /* ═══════════════════════════════════════════════════════════════════════
+     STAGE-2 REVIEW WIDGET — select-to-comment + drop-pin-anywhere
+     Same HTML prints clean for Stage-3 PDF via @media print.
+     ═══════════════════════════════════════════════════════════════════════ */
+  @media print {
+    #s2-sidebar, #s2-sel-btn, #s2-pin-hint, #s2-modal, .s2-pin, .s2-tag { display: none !important; }
+  }
+  @media screen {
+    body { position: relative; }   /* so doc-anchored pins scroll with content */
+    body.s2-open { padding-right: 360px; }
+    body.s2-pin-mode, body.s2-pin-mode * { cursor: crosshair !important; }
+    body.s2-pin-mode .slide { box-shadow: 0 0 0 3px var(--orange), 0 18px 60px rgba(0,0,0,.45); }
+    body.s2-pin-mode #s2-sidebar, body.s2-pin-mode #s2-sidebar *,
+    body.s2-pin-mode #s2-pin-hint, body.s2-pin-mode .s2-tag,
+    body.s2-pin-mode .s2-pin { cursor: pointer !important; }
+
+    .s2-tag {
+      position: fixed; top: 14px; left: 14px; z-index: 9998;
+      background: var(--orange); color: var(--navy-dark);
+      padding: 5px 14px; border-radius: 999px;
+      font-family: 'JetBrains Mono', monospace; font-size: 9pt; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      box-shadow: 0 4px 14px rgba(0,0,0,.18);
+    }
+
+    /* ─── Sidebar (always visible, collapsible) ─── */
+    #s2-sidebar {
+      position: fixed; top: 0; right: 0; bottom: 0;
+      width: 340px; z-index: 9000;
+      background: #fff;
+      box-shadow: -8px 0 28px rgba(36,54,68,.18);
+      border-left: 1px solid var(--rule);
+      display: flex; flex-direction: column;
+      font-family: 'Inter', sans-serif; color: var(--ink);
+      transition: transform .25s ease;
+    }
+    #s2-sidebar.s2-collapsed { transform: translateX(312px); }
+    body.s2-collapsed { padding-right: 28px; }
+
+    #s2-head {
+      background: var(--navy-dark); color: #fff;
+      padding: 14px 16px;
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      flex-shrink: 0;
+    }
+    #s2-head .s2-h-left { display: flex; align-items: center; gap: 10px; }
+    #s2-head img { width: 22px; height: 22px; filter: brightness(0) invert(1); }
+    #s2-head .s2-h-title {
+      font-family: 'KoHo', sans-serif; font-weight: 700; font-size: 13pt;
+      letter-spacing: .03em; line-height: 1;
+    }
+    #s2-head .s2-h-sub {
+      font-size: 9pt; opacity: .72;
+      font-family: 'JetBrains Mono', monospace; letter-spacing: .04em;
+      margin-top: 2px;
+    }
+    #s2-toggle {
+      background: rgba(255,255,255,.12); color: #fff;
+      border: none; width: 30px; height: 30px;
+      border-radius: 50%; cursor: pointer; font-size: 14pt;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #s2-toggle:hover { background: rgba(255,255,255,.2); }
+
+    /* Sidebar tabs */
+    .s2-tabs {
+      display: flex; border-bottom: 1px solid var(--rule);
+      background: #f7f8fa; flex-shrink: 0;
+    }
+    .s2-tab {
+      flex: 1; padding: 9px 12px; border: none;
+      background: transparent; cursor: pointer;
+      font-family: inherit; font-size: 10.5pt; font-weight: 500;
+      color: var(--ink-soft);
+      border-bottom: 2px solid transparent;
+      transition: color .15s, background .15s, border-color .15s;
+    }
+    .s2-tab:hover { color: var(--emerald-deep); }
+    .s2-tab.s2-tab-active {
+      color: var(--emerald-deep); background: #fff;
+      border-bottom-color: var(--emerald); font-weight: 600;
+    }
+    /* Seeds list */
+    #s2-seeds-list { flex: 1; overflow-y: auto; padding: 12px; }
+    .s2-seed-row {
+      background: var(--paper-warm); border: 1px solid var(--rule);
+      border-left: 3px solid var(--emerald);
+      border-radius: 8px; padding: 9px 12px;
+      margin-bottom: 8px;
+      transition: border-color .2s;
+    }
+    .s2-seed-row.s2-seed-unsaved { border-left-color: var(--orange); }
+    .s2-seed-row .s2-seed-label {
+      font-size: 10.5pt; font-weight: 600; color: var(--navy); margin-bottom: 3px;
+    }
+    .s2-seed-row .s2-seed-meta {
+      font-family: 'JetBrains Mono', monospace; font-size: 9.5pt;
+      color: var(--ink-soft); margin-bottom: 7px;
+    }
+    .s2-seed-row .s2-seed-meta b { color: var(--emerald-deep); }
+    .s2-seed-row .s2-seed-actions { display: flex; gap: 6px; }
+    .s2-seed-row .s2-seed-actions button {
+      flex: 1; padding: 5px 9px; border-radius: 6px;
+      border: 1px solid var(--rule); background: #fff; color: var(--ink);
+      cursor: pointer; font-family: inherit; font-size: 9.5pt; font-weight: 500;
+      transition: all .15s;
+    }
+    .s2-seed-row .s2-seed-actions button:hover {
+      background: var(--paper-warm); border-color: var(--emerald); color: var(--emerald-deep);
+    }
+    .s2-seed-row .s2-seed-actions .s2-lock-btn.s2-locked {
+      background: var(--emerald); color: #fff; border-color: var(--emerald);
+    }
+    #s2-seeds-foot {
+      border-top: 1px solid var(--rule);
+      padding: 12px 14px; display: flex; gap: 8px;
+      background: #fafbfc; flex-shrink: 0;
+    }
+    #s2-seeds-foot button {
+      padding: 10px 14px; border-radius: 8px; border: none;
+      cursor: pointer; font-family: inherit; font-size: 10.5pt; font-weight: 500;
+    }
+    #s2-seeds-copy { background: var(--emerald); color: #fff; flex: 1; font-weight: 600; }
+    #s2-seeds-copy:hover { background: var(--emerald-deep); }
+    #s2-seeds-copy.s2-copied { background: var(--bark); }
+    #s2-seeds-reset { background: transparent; color: var(--ink-soft); border: 1px solid var(--rule); }
+    #s2-seeds-reset:hover { background: var(--paper-warm); }
+    .s2-pane-hidden { display: none !important; }
+    #s2-actions {
+      padding: 12px 14px; border-bottom: 1px solid var(--rule);
+      display: flex; gap: 8px; flex-shrink: 0;
+    }
+    #s2-actions button {
+      flex: 1; padding: 9px 12px; border-radius: 8px;
+      border: 1px solid var(--rule); background: #fff; color: var(--ink);
+      cursor: pointer; font-family: inherit; font-size: 10.5pt; font-weight: 500;
+      transition: all .15s;
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+    #s2-actions button:hover { background: var(--paper-warm); border-color: var(--emerald); color: var(--emerald-deep); }
+    #s2-actions #s2-pin-btn.s2-active {
+      background: var(--orange); color: var(--navy-dark);
+      border-color: var(--orange); font-weight: 700;
+    }
+
+    #s2-list { flex: 1; overflow-y: auto; padding: 12px; }
+    #s2-empty {
+      padding: 30px 14px 24px; color: var(--ink-mute);
+      font-size: 11pt; text-align: center; line-height: 1.55;
+    }
+    #s2-empty .s2-empty-ico {
+      width: 52px; height: 52px; margin: 0 auto 14px;
+      border-radius: 50%; background: var(--emerald-tint);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24pt; color: var(--emerald-deep);
+    }
+    #s2-empty strong {
+      display: block; margin-top: 10px;
+      font-family: 'KoHo', sans-serif; color: var(--emerald-deep);
+    }
+    #s2-empty .s2-hint-row {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 14px; margin: 8px 0;
+      background: var(--paper-warm); border-radius: 8px;
+      font-size: 10.5pt; color: var(--ink); text-align: left;
+    }
+    #s2-empty .s2-hint-ico {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--emerald-tint); color: var(--emerald-deep);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13pt; flex-shrink: 0;
+    }
+
+    .s2-comment {
+      background: var(--paper-warm); border: 1px solid var(--rule);
+      border-radius: 10px; padding: 12px 14px;
+      margin-bottom: 10px; position: relative;
+      cursor: pointer; transition: border-color .15s, background .15s;
+    }
+    .s2-comment:hover { border-color: var(--emerald); background: #fff; }
+    .s2-comment.s2-flash { animation: s2-flash .8s ease; }
+    @keyframes s2-flash {
+      0%, 100% { background: var(--paper-warm); }
+      30% { background: var(--emerald-tint); }
+    }
+    .s2-c-head {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 6px;
+    }
+    .s2-c-tag {
+      font-family: 'JetBrains Mono', monospace; font-size: 8.5pt;
+      color: var(--emerald-deep); background: var(--emerald-tint);
+      padding: 2px 9px; border-radius: 999px;
+      letter-spacing: .04em;
+    }
+    .s2-c-tag.s2-c-pin {
+      color: var(--bark); background: #fff4e0;
+    }
+    .s2-c-num {
+      font-family: 'JetBrains Mono', monospace; font-size: 9pt;
+      color: var(--ink-mute); font-weight: 700;
+    }
+    .s2-c-del {
+      background: none; border: none; color: var(--ink-mute);
+      cursor: pointer; font-size: 13pt; width: 22px; height: 22px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    }
+    .s2-c-del:hover { background: #fee; color: var(--red); }
+    .s2-c-quote {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: 10.5pt; color: var(--bark); line-height: 1.4;
+      padding: 6px 10px; border-left: 2px solid var(--orange);
+      margin-bottom: 8px; background: #fff; border-radius: 0 4px 4px 0;
+    }
+    .s2-c-loc {
+      font-family: 'JetBrains Mono', monospace; font-size: 9.5pt;
+      color: var(--bark); margin-bottom: 8px;
+    }
+    .s2-c-text {
+      font-size: 11pt; color: var(--ink); line-height: 1.5;
+      white-space: pre-wrap;
+    }
+
+    #s2-foot {
+      border-top: 1px solid var(--rule);
+      padding: 12px 14px; display: flex; gap: 8px;
+      background: #fafbfc;
+    }
+    #s2-foot button {
+      padding: 10px 14px; border-radius: 8px; border: none;
+      cursor: pointer; font-family: inherit; font-size: 10.5pt; font-weight: 500;
+      transition: background .15s;
+    }
+    #s2-copy { background: var(--emerald); color: #fff; flex: 1; font-weight: 600; }
+    #s2-copy:hover { background: var(--emerald-deep); }
+    #s2-copy.s2-copied { background: var(--bark); }
+    #s2-clear { background: transparent; color: var(--ink-soft); border: 1px solid var(--rule); }
+    #s2-clear:hover { background: #fee; color: var(--red); border-color: var(--red); }
+
+    /* ─── Selection comment button (floats near selection) ─── */
+    #s2-sel-btn {
+      position: absolute; z-index: 9999;
+      background: var(--emerald); color: #fff;
+      border: none; border-radius: 999px;
+      padding: 8px 18px;
+      font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 600;
+      cursor: pointer; box-shadow: 0 6px 20px rgba(0,133,69,.45);
+      display: inline-flex; align-items: center; gap: 7px;
+      animation: s2-pop .15s ease;
+    }
+    @keyframes s2-pop {
+      from { opacity: 0; transform: scale(.85); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    #s2-sel-btn:hover { background: var(--emerald-deep); }
+
+    /* ─── Pin-mode hint banner ─── */
+    #s2-pin-hint {
+      position: fixed; top: 60px; left: 50%; transform: translateX(-50%);
+      z-index: 9800;
+      background: var(--orange); color: var(--navy-dark);
+      padding: 10px 22px; border-radius: 999px;
+      font-family: 'Inter', sans-serif; font-size: 12pt; font-weight: 600;
+      letter-spacing: .02em;
+      box-shadow: 0 8px 26px rgba(255,169,45,.5);
+      display: flex; align-items: center; gap: 12px;
+    }
+    #s2-pin-hint kbd {
+      background: rgba(0,0,0,.18); color: var(--navy-dark);
+      padding: 2px 7px; border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace; font-size: 10pt;
+    }
+
+    /* ─── Pin marker (map-pin shape — slide-anchored OR doc-anchored) ─── */
+    .s2-pin {
+      position: absolute; z-index: 100;
+      width: 32px; height: 32px;
+      background: var(--emerald); color: #fff;
+      border: 2.5px solid #fff;
+      border-radius: 50% 50% 50% 0;
+      transform: translate(-50%, -100%) rotate(-45deg);
+      transform-origin: bottom right;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(0,0,0,.35);
+      transition: transform .15s ease;
+    }
+    .s2-pin.s2-pin-free {
+      z-index: 9100;
+      background: var(--bark);   /* differentiate doc-anchored pins */
+    }
+    .s2-pin.s2-pin-free:hover { background: #3a2a1b; }
+    .s2-pin span {
+      transform: rotate(45deg);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11pt; font-weight: 700;
+      text-shadow: 0 1px 0 rgba(0,0,0,.3);
+    }
+    .s2-pin:hover {
+      background: var(--emerald-deep);
+      transform: translate(-50%, -100%) rotate(-45deg) scale(1.18);
+    }
+    .s2-pin.s2-flash {
+      animation: s2-pin-flash 1.2s ease;
+    }
+    @keyframes s2-pin-flash {
+      0%, 100% { box-shadow: 0 6px 14px rgba(0,0,0,.35); }
+      50% { box-shadow: 0 0 0 8px rgba(255,169,45,.5), 0 6px 14px rgba(0,0,0,.35); }
+    }
+
+    /* ─── Modal ─── */
+    #s2-modal {
+      border: none; border-radius: 14px; padding: 0;
+      width: 520px; max-width: 92vw;
+      box-shadow: 0 28px 80px rgba(0,0,0,.4);
+    }
+    #s2-modal::backdrop { background: rgba(27,40,51,.5); }
+    #s2-modal .s2-m-head {
+      padding: 14px 20px;
+      background: var(--navy-dark); color: #fff;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 14px;
+    }
+    #s2-modal .s2-m-head h3 {
+      font-family: 'KoHo', sans-serif; font-weight: 700; font-size: 13pt;
+      letter-spacing: .03em;
+      display: flex; align-items: center; gap: 8px;
+    }
+    #s2-modal .s2-m-type {
+      font-size: 10pt; padding: 3px 9px; border-radius: 999px;
+      font-family: 'JetBrains Mono', monospace; font-weight: 500;
+      background: rgba(255,255,255,.16); letter-spacing: .04em;
+    }
+    #s2-modal .s2-m-slide {
+      font-family: 'JetBrains Mono', monospace; font-size: 10pt;
+      color: var(--orange); letter-spacing: .04em;
+    }
+    #s2-modal .s2-m-body { padding: 16px 20px; }
+    #s2-modal .s2-m-quote {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: 11pt; color: var(--bark); line-height: 1.45;
+      padding: 10px 12px; border-left: 3px solid var(--orange);
+      background: var(--paper-warm); margin-bottom: 14px;
+      border-radius: 0 6px 6px 0;
+    }
+    #s2-modal .s2-m-loc {
+      font-family: 'JetBrains Mono', monospace; font-size: 10pt;
+      color: var(--bark); padding: 8px 12px;
+      background: #fff4e0; border-left: 3px solid var(--orange);
+      margin-bottom: 14px; border-radius: 0 6px 6px 0;
+    }
+    #s2-modal textarea {
+      width: 100%; min-height: 110px;
+      padding: 11px 13px;
+      border: 1px solid var(--rule); border-radius: 8px;
+      font-family: 'Inter', sans-serif; font-size: 11pt;
+      line-height: 1.55; resize: vertical; color: var(--ink);
+    }
+    #s2-modal textarea:focus { outline: 2px solid var(--emerald); border-color: var(--emerald); outline-offset: -2px; }
+    #s2-modal .s2-m-hint {
+      font-size: 9.5pt; color: var(--ink-mute); margin-top: 6px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    #s2-modal .s2-m-actions {
+      display: flex; gap: 8px; justify-content: flex-end;
+      padding: 12px 20px 18px;
+    }
+    #s2-modal .s2-m-actions button {
+      padding: 9px 18px; border-radius: 8px; border: none;
+      cursor: pointer; font-family: inherit; font-size: 11pt; font-weight: 500;
+    }
+    #s2-modal .s2-m-save { background: var(--emerald); color: #fff; }
+    #s2-modal .s2-m-save:hover { background: var(--emerald-deep); }
+    #s2-modal .s2-m-cancel { background: transparent; color: var(--ink-soft); }
+    #s2-modal .s2-m-cancel:hover { background: var(--paper-warm); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════ 1. COVER ═══════════════════════════════ -->
+<section class="slide cover" data-tree-zone="cover-hero" data-tree-seed="4242">
+
+  <div class="cover-logo-area">
+    <a class="regen-lockup">
+      <img src="regen-icon.svg" alt="" aria-hidden="true">
+      <span class="regen-wordmark"><span class="b">REGEN</span><span class="l">STUDIO</span></span>
+    </a>
+  </div>
+
+  <div class="cover-content">
+    <div class="cover-eyebrow">Proposta de colaboração · Maio 2026</div>
+    <h1 class="cover-title">Wood<em>Pass</em></h1>
+    <p class="cover-sub">
+      Um passaporte digital para a madeira brasileira que entra na Europa —
+      autorado uma vez na floresta, citado por toda a cadeia regulatória.
+    </p>
+  </div>
+
+  <div class="cover-meta">
+    Para Miguel Isoni Filho + Fernanda Onofre · Wood Labs<br>
+    Sobre a reunião de 13 de maio de 2026<br>
+    Documento de discussão · v0.1 · termos no último slide
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════ 7. O UNIVERSO DPP ═══════════════════════════════ -->
+<section class="slide">
+  <div class="head-block">
+    <div class="section-head">
+      <span class="section-num">07 · Universo</span>
+      <span class="section-title">O universo DPP.</span>
+    </div>
+    <div class="head-rule"></div>
+    <p class="section-sub">Oito regulações UE com mandato DPP · centenas de produtos · uma plataforma de identidade.</p>
+  </div>
+
+  <div class="body">
+    <div class="dpp-grid">
+      <div class="dpp-card wood-heavy">
+        <div class="dpp-head">
+          <span class="dpp-flag">🌳🌳</span>
+          <div>
+            <div class="dpp-name">CPR</div>
+            <div class="dpp-num">Reg 2024/3110</div>
+          </div>
+        </div>
+        <div class="dpp-when">DPP mid-2028 · 37 famílias</div>
+        <div class="dpp-desc">Recasting da CPR — sujeita produtos de construção ao DPP. <strong>Deep-dive no próximo slide →</strong></div>
+      </div>
+
+      <div class="dpp-card wood-heavy">
+        <div class="dpp-head">
+          <span class="dpp-flag">🌳🌳</span>
+          <div>
+            <div class="dpp-name">ESPR</div>
+            <div class="dpp-num">Reg 2024/1781</div>
+          </div>
+        </div>
+        <div class="dpp-when">WP1 2025–2030 · DA por produto</div>
+        <div class="dpp-desc">Quadro horizontal que manda requisitos de sustentabilidade + DPP por grupo de produto via delegated acts.</div>
+        <ul class="dpp-prods">
+          <li class="wood">Móveis (DA ~2028)</li>
+          <li class="wood">Têxteis MMC (DA ~2027)</li>
+          <li>Colchões · pneus</li>
+          <li>Ferro/aço · alumínio</li>
+        </ul>
+      </div>
+
+      <div class="dpp-card wood-med">
+        <div class="dpp-head">
+          <span class="dpp-flag">🌳</span>
+          <div>
+            <div class="dpp-name">PPWR</div>
+            <div class="dpp-num">Reg 2025/40</div>
+          </div>
+        </div>
+        <div class="dpp-when">label digital 2026 · cat. obrig. 2028</div>
+        <div class="dpp-desc">Reduzir peso de embalagem, mandar reciclabilidade graus A/B/C, harmonizar o label digital de sorting <em>(DPP Light)</em>.</div>
+        <ul class="dpp-prods">
+          <li class="wood">Papel + cartão (pulp de madeira)</li>
+          <li class="wood">Embalagem de madeira (paletes)</li>
+          <li>Plástico · vidro · metal · compósitos</li>
+        </ul>
+      </div>
+
+      <div class="dpp-card wood-med">
+        <div class="dpp-head">
+          <span class="dpp-flag">🌳</span>
+          <div>
+            <div class="dpp-name">TSR</div>
+            <div class="dpp-num">Reg 2025/2509</div>
+          </div>
+        </div>
+        <div class="dpp-when">DPP aplica 1 ago 2030</div>
+        <div class="dpp-desc">Segurança química + física dos brinquedos · DPP por unidade carregando substâncias preocupantes + conformidade CE.</div>
+        <ul class="dpp-prods">
+          <li class="wood">Brinquedos de madeira</li>
+          <li>Plástico · pelúcia · eletro · químicos</li>
+          <li class="dim">EN 71 ↔ TSR transição</li>
+        </ul>
+      </div>
+
+      <div class="dpp-card">
+        <div class="dpp-head">
+          <span class="dpp-flag dim">—</span>
+          <div>
+            <div class="dpp-name">Battery</div>
+            <div class="dpp-num">Reg 2023/1542</div>
+          </div>
+        </div>
+        <div class="dpp-when">DPP 18 fev 2027 · em produção</div>
+        <div class="dpp-desc">Primeiro DPP UE em produção — pegada CO₂, due-diligence cobalto/lítio/níquel, conteúdo reciclado, performance.</div>
+        <ul class="dpp-prods">
+          <li>EV (≥2 kWh) · industrial (&gt;2 kWh)</li>
+          <li>LMT (light means of transport)</li>
+          <li>Portátil · arranque/iluminação</li>
+          <li class="dim">celulose em separadores (marginal)</li>
+        </ul>
+      </div>
+
+      <div class="dpp-card">
+        <div class="dpp-head">
+          <span class="dpp-flag dim">—</span>
+          <div>
+            <div class="dpp-name">DSR</div>
+            <div class="dpp-num">Reg 2026/405</div>
+          </div>
+        </div>
+        <div class="dpp-when">DPP 2028+ (esperado) · sub-rampa</div>
+        <div class="dpp-desc">Detergentes + surfactantes · biodegradabilidade, DPP carregando UFI (Unique Formula Identifier) por mistura.</div>
+        <ul class="dpp-prods">
+          <li>Detergentes domésticos · industriais</li>
+          <li>Surfactantes (cadeia química)</li>
+          <li class="dim">CMC celulósico (marginal)</li>
+        </ul>
+      </div>
+
+      <div class="dpp-card">
+        <div class="dpp-head">
+          <span class="dpp-flag dim">—</span>
+          <div>
+            <div class="dpp-name">ELV</div>
+            <div class="dpp-num">em trílogo · 2025–26</div>
+          </div>
+        </div>
+        <div class="dpp-when">DPP ~2028 · veículos M1/N1</div>
+        <div class="dpp-desc">Veículos em fim de vida + autorized treatment facilities · herda 3R-type-approval da Diretiva 2005/64.</div>
+        <ul class="dpp-prods">
+          <li>Veículos M1/N1 (passageiros + leves)</li>
+          <li>ATFs · 3R-type approval</li>
+          <li class="dim">trim de madeira (marginal)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span class="left">
+      <a class="regen-lockup"><img src="regen-icon.svg" alt="" aria-hidden="true"><span class="regen-wordmark"><span class="b">REGEN</span><span class="l">STUDIO</span></span></a>
+      <span class="divider"></span><span>Wood Passport</span>
+    </span>
+    <span class="right"><span class="num">02 / 17</span></span>
+  </footer>
+</section>
+
+<!-- ═══════════════════════════════ 8. CPR · 37 FAMÍLIAS ═══════════════════════════════ -->
+<section class="slide">
+  <div class="head-block">
+    <div class="section-head">
+      <span class="section-num">08 · CPR detail</span>
+      <span class="section-title">CPR · 37 famílias de produtos de construção.</span>
+    </div>
+    <div class="head-rule"></div>
+    <p class="section-sub">37 famílias de produtos de construção · onde a madeira aparece mais do que num primeiro olhar.</p>
+  </div>
+
+  <div class="body">
+    <div class="cpr-grid">
+      <!-- Hero CPR card (same as in universe slide, expanded) -->
+      <div class="cpr-hero">
+        <div class="dpp-head">
+          <span class="dpp-flag">🌳🌳</span>
+          <div>
+            <div class="dpp-name">CPR</div>
+            <div class="cpr-hero-tag">Reg (UE) 2024/3110</div>
+          </div>
+        </div>
+        <div class="cpr-hero-when">recast 7 jan 2025 · aplica 8 jan 2026 · primeiras DPPs mid-2028</div>
+        <p class="cpr-hero-body">
+          37 famílias · Annex VII. Cada uma com hEN (harmonised standard) ou EAD. DPP por Art 75–80, primeira onda mid-2028.
+        </p>
+        <ul style="list-style:none;font-size:10pt;line-height:1.55;color:var(--ink);margin:2mm 0 4mm;padding:0;">
+          <li style="padding:2px 0 2px 16px;position:relative;"><span style="position:absolute;left:0;">📈</span> <b>WBP + STP</b> = ~74 % do fluxo CPR BR → UE (US$ 480 m sawn timber + US$ 235 m painéis · ver slide trade)</li>
+          <li style="padding:2px 0 2px 16px;position:relative;"><span style="position:absolute;left:0;">🎯</span> <b>WP1 priority</b> sob Art 75(1) DA · primeiras DPPs mid-2028 batem exatamente onde o BR já exporta</li>
+          <li style="padding:2px 0 2px 16px;position:relative;"><span style="position:absolute;left:0;">🌍</span> Plywood + sawn timber capturam o headline volume do CPR-scope hoje · panel + structural são WP1 alvo</li>
+        </ul>
+        <div class="cpr-hero-stat">
+          <div class="cpr-stat-num">24 / 37</div>
+          <div class="cpr-stat-lbl">famílias com toque de madeira · 2 CORE + 7 OPTION (cor verde) + 15 AUX (cor sépia). Apenas 13 famílias sem nexo conhecido.</div>
+        </div>
+      </div>
+
+      <!-- 37 family chips -->
+      <div>
+        <div class="fam-grid">
+          <div class="fam-chip"><div class="fam-code">CEM</div><div class="fam-name">Cement &amp; Limes</div></div>
+          <div class="fam-chip"><div class="fam-code">GLA</div><div class="fam-name">Flat Glass</div></div>
+          <div class="fam-chip wood-aux"><div class="fam-code">ADH</div><div class="fam-name">Adhesives</div></div>
+          <div class="fam-chip"><div class="fam-code">AGG</div><div class="fam-name">Aggregates</div></div>
+          <div class="fam-chip wood-aux"><div class="fam-code">CWP</div><div class="fam-name">Curtain Walling</div></div>
+          <div class="fam-chip wood-opt"><div class="fam-code">DWS</div><div class="fam-name">Doors, Windows &amp; Gates</div></div>
+          <div class="fam-chip"><div class="fam-code">FFF</div><div class="fam-name">Fire-Fighting Equip.</div></div>
+          <div class="fam-chip"><div class="fam-code">PCR</div><div class="fam-name">Precast Concrete</div></div>
+          <div class="fam-chip"><div class="fam-code">RPS</div><div class="fam-name">Reinforcing Steel</div></div>
+          <div class="fam-chip wood-aux"><div class="fam-code">SEA</div><div class="fam-name">Sealants</div></div>
+          <div class="fam-chip wood-aux"><div class="fam-code">SMP</div><div class="fam-name">Structural Metallic</div></div>
+          <div class="fam-chip wood-aux"><div class="fam-code">CHI</div><div class="fam-name">Chimneys</div></div>
+          <div class="fam-chip wood-opt"><div class="fam-code">FLO</div><div class="fam-name">Floorings (parquet)</div></div>
+          <div class="fam-chip wood-opt"><div class="fam-code">LAD</div><div class="fam-name">Ladders</div></div>
+          <div class="fam-chip wood-aux"><div class="fam-code">MAS</div><div class="fam-name">Masonry</div></div>
+          <div class="fam-chip wood-opt"><div class="fam-code">TIP</div><div class="fam-name">Thermal Insulation</div></div>
+          <div class="fam-chip"><div class="fam-code">CIF</div><div class="fam-name">Circulation Fixtures</div></div>
+          <div class="fam-chip wood-aux"><div class="fam-code">CMG</div><div class="fam-name">Concrete &amp; Mortar</div></div>
+          <div class="fam-chip"><div class="fam-code">FIX</div><div class="fam-name">Fixings</div></div>
+          <div class="fam-chip wood-aux"><div class="fam-code">FPP</div><div class="fam-name">Fire Protection</div></div>
+          <div class="fam-chip wood-aux"><div class="fam-code">GEO</div><div class="fam-name">Geotextiles</div></div>
+          <div class="fam-chip wood-aux"><div class="fam-code">GYP</div><div class="fam-name">Gypsum</div></div>
+          <div class="fam-chip wood-opt"><div class="fam-code">KAS</div><div class="fam-name">Building Kits</div></div>
+          <div class="fam-chip wood-aux"><div class="fam-code">MEM</div><div class="fam-name">Membranes</div></div>
+          <div class="fam-chip wood-aux"><div class="fam-code">RCP</div><div class="fam-name">Road Construction</div></div>
+          <div class="fam-chip wood-opt"><div class="fam-code">ROC</div><div class="fam-name">Roof Coverings</div></div>
+          <div class="fam-chip"><div class="fam-code">SBE</div><div class="fam-name">Structural Bearings</div></div>
+          <div class="fam-chip wood-aux"><div class="fam-code">SHA</div><div class="fam-name">Space Heating</div></div>
+          <div class="fam-chip core"><div class="fam-code">STP</div><div class="fam-name">Structural Timber</div></div>
+          <div class="fam-chip core"><div class="fam-code">WBP</div><div class="fam-name">Wood-Based Panels</div></div>
+          <div class="fam-chip wood-opt"><div class="fam-code">WCF</div><div class="fam-name">Wall/Ceiling Finishes</div></div>
+          <div class="fam-chip"><div class="fam-code">WWD</div><div class="fam-name">Waste Water</div></div>
+          <div class="fam-chip wood-aux"><div class="fam-code">CAB</div><div class="fam-name">Cables &amp; Wires</div></div>
+          <div class="fam-chip wood-aux"><div class="fam-code">PTA</div><div class="fam-name">Pipes &amp; Tanks</div></div>
+          <div class="fam-chip"><div class="fam-code">SAP</div><div class="fam-name">Sanitary</div></div>
+          <div class="fam-chip"><div class="fam-code">DPW</div><div class="fam-name">Decorative Paints</div></div>
+          <div class="fam-chip"><div class="fam-code">DWP</div><div class="fam-name">Drinking Water</div></div>
+        </div>
+        <div class="fam-legend">
+          <div class="leg-item"><span class="leg-swatch" style="background:var(--emerald);"></span> Madeira é o material</div>
+          <div class="leg-item"><span class="leg-swatch" style="background:var(--emerald-tint);"></span> Madeira como opção</div>
+          <div class="leg-item"><span class="leg-swatch" style="background:var(--bark-tint);"></span> Auxiliar (cola, isolamento, etc.)</div>
+          <div class="leg-item"><span class="leg-swatch" style="background:#fff;"></span> Não-madeira</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span class="left">
+      <a class="regen-lockup"><img src="regen-icon.svg" alt="" aria-hidden="true"><span class="regen-wordmark"><span class="b">REGEN</span><span class="l">STUDIO</span></span></a>
+      <span class="divider"></span><span>Wood Passport</span>
+    </span>
+    <span class="right"><span class="num">03 / 17</span></span>
+  </footer>
+</section>
+
+
+<!-- ═══════════════════════════════ NEW INSIGHT — network effect ═══════════════════════════════ -->
+<section class="slide">
+  <div class="head-block">
+    <div class="section-head">
+      <span class="section-num">03 · A Insight</span>
+      <span class="section-title">Autorar uma vez. Citar em qualquer DPP.</span>
+    </div>
+    <div class="head-rule"></div>
+    <p class="section-sub">Não é só CPR + ESPR-móveis + ESPR-têxtil. É <em>qualquer</em> cadeia de produto obrigada a DPP que use madeira como insumo. Rede, não trilho.</p>
+  </div>
+
+  <div class="body">
+    <div class="insight-map-wrap">
+      <svg class="insight-map" viewBox="0 0 1100 440" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="oceanG" cx=".5" cy=".5" r=".7">
+            <stop offset="0" stop-color="#eef5f8"/>
+            <stop offset="1" stop-color="#fdf8eb"/>
+          </radialGradient>
+          <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#008545"/></marker>
+          <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#FFA92D"/></marker>
+          <marker id="arrowMag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#93093F"/></marker>
+          <marker id="arrowTeal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#009BBB"/></marker>
+          <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#E71846"/></marker>
+          <marker id="arrowGreenLt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#65DD35"/></marker>
+          <clipPath id="mapClip"><rect x="0" y="0" width="1100" height="440"/></clipPath>
+        </defs>
+        <rect width="1100" height="440" fill="url(#oceanG)"/>
+
+        <g clip-path="url(#mapClip)">
+          <!-- Brazil — derived from CTF hero-map LAND.southAmMl (BR subset) · linear lon/lat → SVG projection -->
+          <path d="M73.3,263.2 L87.1,271.4 L110.0,279.6 L137.5,279.6 L155.8,269.3 L183.3,275.5 L201.7,283.7 L229.2,283.7 L275.0,283.7 L302.5,283.7 L320.8,292.0 L339.2,296.1 L357.5,300.2 L375.8,306.4 L394.2,308.4 L412.5,308.4 L430.8,312.5 L449.2,316.6 L458.3,324.9 L458.3,333.1 L453.8,341.3 L449.2,349.5 L435.4,357.8 L426.2,366.0 L421.7,374.2 L412.5,386.5 L385.0,390.7 L357.5,394.8 L339.2,407.1 L320.8,419.4 L128.3,419.4 L137.5,386.5 L119.2,361.9 L91.7,353.6 L64.2,329.0 L45.8,308.4 L45.8,296.1 L55.0,275.5 Z"
+                fill="#3a5a40" opacity=".88" stroke="#1f3525" stroke-width="0.6"/>
+          <text x="252" y="345" font-family="KoHo" font-size="28" font-weight="700" fill="#fdf8eb" text-anchor="middle" letter-spacing=".06em">BRASIL</text>
+          <text x="252" y="368" font-family="JetBrains Mono" font-size="10" fill="#fdf8eb" text-anchor="middle" opacity=".88">madeira amazônica</text>
+
+          <!-- Europe — LAND.europeMl, full mainland outline -->
+          <path d="M692.1,143.9 L698.5,136.9 L700.3,131.6 L692.1,126.7 L698.5,123.4 L693.9,119.3 L707.7,116.4 L728.8,118.0 L744.3,117.2 L762.7,117.6 L763.6,119.3 L785.6,120.5 L807.6,121.7 L807.6,118.4 L823.2,116.8 L836.0,118.8 L849.8,116.4 L861.7,114.7 L875.4,113.5 L891.9,109.0 L903.8,108.6 L905.7,110.6 L893.8,113.1 L903.8,116.8 L909.3,120.9 L905.7,123.0 L891.0,122.1 L887.3,126.2 L893.8,123.8 L902.9,126.7 L910.2,128.3 L916.7,129.1 L926.7,134.5 L923.1,137.8 L925.8,139.4 L930.4,135.3 L935.0,129.1 L948.8,129.9 L956.1,132.0 L962.5,133.2 L965.2,137.8 L980.8,141.9 L995.5,148.0 L999.2,141.0 L1003.8,138.6 L1017.5,131.6 L1035.8,127.5 L1050.5,126.7 L1045.0,117.2 L1040.4,113.1 L1054.2,104.9 L1072.5,106.1 L1090.8,104.4 L1118.3,109.8 L1090.8,102.8 L1067.9,97.5 L1035.8,86.4 L1026.7,74.0 L999.2,67.9 L980.8,62.5 L971.7,58.8 L944.2,67.9 L912.1,72.8 L893.8,72.0 L875.4,72.0 L869.0,66.6 L858.0,68.3 L866.2,61.7 L875.4,59.2 L893.8,65.8 L889.2,67.9 L907.5,66.6 L930.4,63.7 L953.3,58.4 L945.1,52.2 L962.5,49.3 L990.0,50.2 L1008.3,48.5 L1017.5,43.2 L1012.9,37.0 L1017.5,30.8 L1035.8,24.7 L1049.6,10.3 L1026.7,6.2 L999.2,4.1 L962.5,8.2 L925.8,12.3 L907.5,15.2 L880.0,20.6 L852.5,37.0 L829.6,41.1 L832.3,47.3 L845.2,57.6 L866.2,59.6 L858.0,63.7 L870.8,67.9 L857.1,72.0 L845.2,75.3 L825.0,78.1 L818.6,82.7 L811.2,84.3 L797.5,86.4 L788.3,88.4 L770.0,94.6 L760.8,96.6 L737.9,97.0 L735.2,99.5 L753.5,100.7 L768.2,105.7 L768.2,113.1 L762.7,117.2 L760.8,117.6 Z"
+                fill="#6b6b6b" opacity=".55" stroke="#3a3a3a" stroke-width="0.6"/>
+
+          <!-- Britain -->
+          <path d="M726.9,90.5 L739.8,89.2 L747.1,88.4 L756.2,87.6 L779.2,87.2 L791.1,85.5 L794.8,82.2 L790.2,79.0 L781.9,76.1 L770.0,72.0 L765.4,69.9 L760.8,66.6 L751.7,63.7 L756.2,59.6 L751.7,57.6 L742.5,55.5 L733.3,55.1 L728.8,59.6 L724.2,63.7 L728.8,65.8 L726.0,67.9 L737.9,72.0 L747.1,74.0 L749.8,76.9 L739.8,78.1 L730.6,82.2 L740.7,84.3 L731.5,83.5 L733.3,88.4 L726.9,90.5 Z"
+                fill="#6b6b6b" opacity=".5" stroke="#3a3a3a" stroke-width="0.5"/>
+
+          <!-- Country code labels — NL + BE hidden because importer hub cluster sits on top -->
+          <g font-family="JetBrains Mono" font-size="9" fill="#fdf8eb" text-anchor="middle" font-weight="700">
+            <text x="706" y="135">PT</text>
+            <text x="742" y="135">ES</text>
+            <text x="798" y="106">FR</text>
+            <text x="889" y="122">IT</text>
+            <text x="953" y="86">PL</text>
+            <text x="935" y="53">SE</text>
+          </g>
+        </g>
+
+        <!-- Origin pin on Brazil (Mil Madeiras / Itacoatiara) -->
+        <g transform="translate(244 309)">
+          <circle r="7" fill="#fff" stroke="#FFA92D" stroke-width="3"/>
+          <circle r="3" fill="#FFA92D"/>
+        </g>
+        <text x="251" y="324" font-family="JetBrains Mono" font-size="10" fill="#fdf8eb" opacity=".95">Itacoatiara</text>
+
+        <!-- Wood Pass token (anchored above Itacoatiara) -->
+        <g transform="translate(244 270)">
+          <rect x="-44" y="-14" width="88" height="22" rx="11" fill="#fdf8eb" stroke="#008545" stroke-width="1.6"/>
+          <text x="0" y="2" text-anchor="middle" font-family="KoHo" font-weight="700" font-size="10pt" fill="#008545">🌳 Wood Pass</text>
+        </g>
+
+        <!-- One thick "1 lote · 1 DDS" curve from BR origin to importer hub -->
+        <g class="batch-flow" fill="none">
+          <path d="M 260 305 Q 540 220 835 100" stroke="#FFA92D" stroke-width="4" stroke-linecap="round" marker-end="url(#arrowOrange)" opacity=".95"/>
+          <text x="540" y="215" font-family="KoHo" font-weight="700" font-size="12" fill="#b8730d" text-anchor="middle">1 lote · 1 DDS</text>
+        </g>
+
+        <!-- Importer hub — single rounded box for RTM/ANT/HAM corridor -->
+        <g class="hub-cluster">
+          <rect x="800" y="100" width="92" height="26" rx="13" fill="#5b3f29" stroke="#3a2110" stroke-width="1.5"/>
+          <text x="846" y="113" text-anchor="middle" font-family="KoHo" font-weight="700" font-size="10" fill="#fdf8eb">Importador UE</text>
+          <text x="846" y="123" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="7" fill="#fdf8eb" letter-spacing=".08em">RTM · ANT · HAM · DDS operator</text>
+        </g>
+
+        <!-- Flow curves from importer hub to each EU destination -->
+        <g class="flows" fill="none" stroke-width="1.6" stroke-dasharray="6,4">
+          <!-- CPR PT (south to Iberia) -->
+          <path d="M 815 126 Q 760 145 700 160" stroke="#008545" marker-end="url(#arrowGreen)"/>
+          <!-- ESPR-móveis FR (south to France) -->
+          <path d="M 830 126 Q 790 175 720 215" stroke="#FFA92D" marker-end="url(#arrowOrange)"/>
+          <!-- TSR brinquedos IT (south-east to Italy) -->
+          <path d="M 855 126 Q 870 165 880 200" stroke="#93093F" marker-end="url(#arrowMag)"/>
+          <!-- PPWR papel DE (east) -->
+          <path d="M 875 124 Q 875 200 875 245" stroke="#009BBB" marker-end="url(#arrowTeal)"/>
+          <!-- ESPR-têxtil SE (north) -->
+          <path d="M 855 100 Q 880 55 900 32" stroke="#65DD35" marker-end="url(#arrowGreenLt)"/>
+          <!-- PPWR paletes PL (north-east) -->
+          <path d="M 885 105 Q 940 80 1000 60" stroke="#E71846" marker-end="url(#arrowRed)"/>
+        </g>
+
+        <!-- Destination pills with regulation tags · positioned offset from each country -->
+        <g font-family="Inter" font-size="10.5" font-weight="600">
+          <!-- PT — south of Iberia -->
+          <g transform="translate(700 170)">
+            <rect x="-62" y="0" width="124" height="22" rx="11" fill="#fdf8eb" stroke="#008545" stroke-width="1.5"/>
+            <text x="0" y="15" text-anchor="middle" fill="#008545">CPR · painéis · PT</text>
+          </g>
+          <!-- FR — bottom of France -->
+          <g transform="translate(720 215)">
+            <rect x="-62" y="0" width="124" height="22" rx="11" fill="#fdf8eb" stroke="#FFA92D" stroke-width="1.5"/>
+            <text x="0" y="15" text-anchor="middle" fill="#b8730d">ESPR · móveis · FR</text>
+          </g>
+          <!-- IT — south Italy -->
+          <g transform="translate(880 200)">
+            <rect x="-66" y="0" width="132" height="22" rx="11" fill="#fdf8eb" stroke="#93093F" stroke-width="1.5"/>
+            <text x="0" y="15" text-anchor="middle" fill="#93093F">TSR · brinquedos · IT</text>
+          </g>
+          <!-- DE — east of Germany -->
+          <g transform="translate(875 245)">
+            <rect x="-62" y="0" width="124" height="22" rx="11" fill="#fdf8eb" stroke="#009BBB" stroke-width="1.5"/>
+            <text x="0" y="15" text-anchor="middle" fill="#009BBB">PPWR · papel · DE</text>
+          </g>
+          <!-- SE — above Scandinavia -->
+          <g transform="translate(900 10)">
+            <rect x="-66" y="0" width="132" height="22" rx="11" fill="#fdf8eb" stroke="#65DD35" stroke-width="1.5"/>
+            <text x="0" y="15" text-anchor="middle" fill="#3a5a40">ESPR · têxtil · SE</text>
+          </g>
+          <!-- PL — east of Poland -->
+          <g transform="translate(1000 60)">
+            <rect x="-66" y="0" width="132" height="22" rx="11" fill="#fdf8eb" stroke="#E71846" stroke-width="1.5"/>
+            <text x="0" y="15" text-anchor="middle" fill="#E71846">PPWR · paletes · PL</text>
+          </g>
+          <!-- Other 22 -->
+          <g transform="translate(980 380)">
+            <rect x="-62" y="0" width="124" height="22" rx="11" fill="#fdf8eb" stroke="#5b3f29" stroke-width="1.5" stroke-dasharray="3,3"/>
+            <text x="0" y="15" text-anchor="middle" fill="#5b3f29">…outras 22 UE</text>
+          </g>
+        </g>
+      </svg>
+
+      <div class="insight-callout">
+        <strong>Um único Wood Pass</strong> autorado em Itacoatiara — citado por <em>cada</em> DPP downstream, em <em>qualquer</em> Estado-Membro. CPR em Portugal, ESPR-móveis em França, TSR em Itália, PPWR em Alemanha, ESPR-têxtil em Suécia, paletes em Polónia. <strong>Rede, não trilho.</strong>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span class="left">
+      <a class="regen-lockup"><img src="regen-icon.svg" alt="" aria-hidden="true"><span class="regen-wordmark"><span class="b">REGEN</span><span class="l">STUDIO</span></span></a>
+      <span class="divider"></span><span>Wood Passport</span>
+    </span>
+    <span class="right"><span class="num">04 / 17</span></span>
+  </footer>
+</section>
+<!-- ═══════════════════════════════ 4. ARQUITETURA ═══════════════════════════════ -->
+<section class="slide">
+  <div class="head-block">
+    <div class="section-head">
+      <span class="section-num">03 · Arquitetura</span>
+      <span class="section-title">Três camadas, uma cadeia.</span>
+    </div>
+    <div class="head-rule"></div>
+    <p class="section-sub">Cada camada herda da camada acima — sem reautoria.</p>
+  </div>
+
+  <div class="body">
+    <svg class="arch-svg" viewBox="0 0 1100 460" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="t0g" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#008545"/><stop offset="1" stop-color="#5b8a3c"/>
+        </linearGradient>
+        <linearGradient id="t1g" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#5b3f29"/><stop offset="1" stop-color="#8a6645"/>
+        </linearGradient>
+        <marker id="ar1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a8b99"/></marker>
+        <marker id="arN" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#243644"/></marker>
+        <marker id="arM" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#93093F"/></marker>
+        <marker id="arE" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#008545"/></marker>
+      </defs>
+
+      <g>
+        <rect x="40" y="10" width="1020" height="100" rx="14" fill="url(#t0g)"/>
+        <text x="70" y="45" font-family="KoHo" font-size="22" font-weight="700" fill="#fff">Camada 0 — Lote de Colheita</text>
+        <text x="70" y="68" font-family="Inter" font-size="13" fill="#e8f5ee">EUDR · identidade preservada · 5 anos de retenção · polígono da parcela em GeoJSON</text>
+        <text x="70" y="88" font-family="JetBrains Mono" font-size="11" fill="#cce6d6">DDS no TRACES · espécie · país · data · volume · operador EORI · benchmark de risco</text>
+        <text x="1030" y="60" text-anchor="end" font-family="Inter" font-size="11" font-weight="600" fill="#fff">Reg 2023/1115</text>
+      </g>
+
+      <path d="M 550 120 L 550 150" stroke="#7a8b99" stroke-width="2" fill="none" marker-end="url(#ar1)"/>
+
+      <g>
+        <rect x="40" y="160" width="1020" height="120" rx="14" fill="url(#t1g)"/>
+        <text x="70" y="195" font-family="KoHo" font-size="22" font-weight="700" fill="#fff">Camada 1 — Lote de Saída da Serraria</text>
+        <text x="70" y="218" font-family="Inter" font-size="13" fill="#efe7df">Núcleo do Wood Passport · honestidade da CoC é campo de primeira classe</text>
+        <text x="70" y="240" font-family="JetBrains Mono" font-size="11" fill="#efe7df">coc_model · upstream_plot_set · identity_preserved · Wood Vision species_ref · cadeia-de-custódia</text>
+        <text x="70" y="258" font-family="JetBrains Mono" font-size="11" fill="#efe7df">embodied_gwp · biogenic_carbon · isotope/DNA refs (camada de verificação)</text>
+        <text x="1030" y="210" text-anchor="end" font-family="Inter" font-size="11" font-weight="600" fill="#fff">Autorado uma vez</text>
+      </g>
+
+      <path d="M 280 290 L 280 330" stroke="#243644" stroke-width="2" fill="none" marker-end="url(#arN)"/>
+      <path d="M 550 290 L 550 330" stroke="#93093F" stroke-width="2" fill="none" marker-end="url(#arM)"/>
+      <path d="M 820 290 L 820 330" stroke="#008545" stroke-width="2" fill="none" marker-end="url(#arE)"/>
+
+      <g>
+        <rect x="40" y="340" width="1020" height="100" rx="14" fill="#fff" stroke="#008545" stroke-width="2.5"/>
+        <text x="70" y="378" font-family="KoHo" font-size="22" font-weight="700" fill="#008545">Camada 3 — Acesso a contratos de fornecimento</text>
+        <text x="70" y="402" font-family="Inter" font-size="12.5" fill="#4b6f8d">Cadeias regulatórias ESG / DPP-mandated · CPR · ESPR · PPWR · TSR · futuras DAs</text>
+        <text x="70" y="425" font-family="Playfair Display" font-style="italic" font-size="12" fill="#5b3f29"><tspan font-weight="700" fill="#008545">Sem dados, sem pedido.</tspan> Quem oferece o passaporte hoje vende amanhã.</text>
+        <text x="1030" y="378" text-anchor="end" font-family="Inter" font-size="11" font-weight="600" fill="#008545">→ contrato</text>
+      </g>
+    </svg>
+  </div>
+
+  <footer class="footer">
+    <span class="left">
+      <a class="regen-lockup"><img src="regen-icon.svg" alt="" aria-hidden="true"><span class="regen-wordmark"><span class="b">REGEN</span><span class="l">STUDIO</span></span></a>
+      <span class="divider"></span><span>Wood Passport</span>
+    </span>
+    <span class="right"><span class="num">05 / 17</span></span>
+  </footer>
+</section>
+
+<!-- ═══════════════════════════════ 5. HONESTIDADE ═══════════════════════════════ -->
+<section class="slide">
+  <div class="head-block">
+    <div class="section-head">
+      <span class="section-num">04 · Honestidade</span>
+      <span class="section-title">A física do processamento importa.</span>
+    </div>
+    <div class="head-rule"></div>
+    <p class="section-sub">A EUDR exige identidade preservada. O digestor da celulose destrói essa identidade. O passaporte precisa declarar a diferença.</p>
+  </div>
+
+  <div class="body">
+    <table class="coc">
+      <thead>
+        <tr>
+          <th style="width:30%">Tipo de operação</th>
+          <th style="width:25%">Modelo de cadeia de custódia</th>
+          <th style="width:25%">Origem por parcela sobrevive?</th>
+          <th style="width:20%">Flag do passaporte</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Serraria — madeira maciça de alto valor</td>
+          <td>Segregação · transferência</td>
+          <td><span class="check">✓ Sim — toras separadas por espécie/grau</span></td>
+          <td><span class="badge preserved">identity_preserved : true</span></td>
+        </tr>
+        <tr>
+          <td>Serraria — resíduos / cavacos</td>
+          <td>Crédito (fator de conversão próprio)</td>
+          <td><span class="cross">✗ Misturados no fluxo de cavaco</span></td>
+          <td><span class="badge warn">statistical_only : true</span></td>
+        </tr>
+        <tr>
+          <td>Celulose kraft</td>
+          <td>Mass-balance · percentual</td>
+          <td><span class="cross">✗ Digestor de fluxo contínuo mistura tudo</span></td>
+          <td><span class="badge warn">statistical_only : true</span></td>
+        </tr>
+        <tr>
+          <td>Pasta solúvel (viscose / lyocell)</td>
+          <td>Mass-balance · percentual</td>
+          <td><span class="cross">✗ Mesma física de digestor</span></td>
+          <td><span class="badge warn">statistical_only : true</span></td>
+        </tr>
+        <tr>
+          <td>MDF / aglomerado / OSB</td>
+          <td>Mass-balance · percentual ou crédito</td>
+          <td><span class="cross">✗ Moinho de martelo homogeneíza</span></td>
+          <td><span class="badge warn">statistical_only : true</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:6mm;color:var(--ink-soft);font-size:12pt;max-width:80%;">
+      A EUDR resolve isso enumerando <em>todas</em> as parcelas que contribuíram para o lote — mesmo quando uma tábua específica não pode ser rastreada a uma só parcela. <strong>Identity-preservation continua sendo o padrão; mass-balance é permitida em condições restritas.</strong>
+    </p>
+  </div>
+
+  <footer class="footer">
+    <span class="left">
+      <a class="regen-lockup"><img src="regen-icon.svg" alt="" aria-hidden="true"><span class="regen-wordmark"><span class="b">REGEN</span><span class="l">STUDIO</span></span></a>
+      <span class="divider"></span><span>Wood Passport</span>
+    </span>
+    <span class="right"><span class="num">06 / 17</span></span>
+  </footer>
+</section>
+
+<!-- ═══════════════════════════════ 6. EXEMPLO ═══════════════════════════════ -->
+<section class="slide">
+  <div class="head-block">
+    <div class="section-head">
+      <span class="section-num">05 · Exemplo</span>
+      <span class="section-title">Uma parcela, três destinos.</span>
+    </div>
+    <div class="head-rule"></div>
+    <p class="section-sub">Mil Madeiras, Itacoatiara · <em>Dipteryx odorata</em> (Cumaru) · 18 ha.</p>
+  </div>
+
+  <div class="body">
+    <div class="example-grid">
+      <div class="plot-vis">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="hatchE" patternUnits="userSpaceOnUse" width="6" height="6">
+              <path d="M -1 7 L 7 -1" stroke="#5a8a6a" stroke-width=".4" opacity=".22"/>
+            </pattern>
+          </defs>
+          <rect width="300" height="300" fill="url(#hatchE)"/>
+          <!-- river -->
+          <path d="M 0 240 Q 100 220 160 235 T 300 230" stroke="#009BBB" stroke-width="6" fill="none" opacity=".4"/>
+          <text x="20" y="262" font-family="JetBrains Mono" font-size="9" fill="#009BBB">Rio Amazonas</text>
+          <!-- plot polygon -->
+          <polygon points="80,60 200,40 260,90 270,170 220,230 110,225 60,140" fill="#008545" fill-opacity=".25" stroke="#008545" stroke-width="2.5"/>
+          <g fill="#008545">
+            <circle cx="80" cy="60" r="3.5"/><circle cx="200" cy="40" r="3.5"/><circle cx="260" cy="90" r="3.5"/>
+            <circle cx="270" cy="170" r="3.5"/><circle cx="220" cy="230" r="3.5"/><circle cx="110" cy="225" r="3.5"/><circle cx="60" cy="140" r="3.5"/>
+          </g>
+          <!-- pin -->
+          <g transform="translate(165 135)">
+            <circle cx="0" cy="-2" r="8" fill="#5b3f29"/>
+            <circle cx="0" cy="-2" r="3" fill="#fff"/>
+            <path d="M 0 6 L -3 13 L 3 13 Z" fill="#5b3f29"/>
+          </g>
+          <g transform="translate(165 162)">
+            <rect x="-46" y="0" width="92" height="20" rx="10" fill="#fff" stroke="#008545" stroke-width="1.2"/>
+            <text x="0" y="13" text-anchor="middle" font-family="Inter" font-size="10" font-weight="600" fill="#233b2a">Itacoatiara · AM</text>
+          </g>
+          <text x="15" y="20" font-family="Inter" font-size="10" font-weight="600" fill="#1a2530">3°09′ S · 58°27′ W</text>
+        </svg>
+      </div>
+      <div class="paths">
+        <div class="path">
+          <div>
+            <div class="p-flow">Tábua maciça → CLT → CPR</div>
+            <div class="p-name">Deck para clima europeu</div>
+            <div class="p-note">Cumaru de alta densidade (1,10 g/cm³) substitui Black Forest em condições de chuva.</div>
+          </div>
+          <span class="badge preserved">identity_preserved</span>
+        </div>
+        <div class="path textile">
+          <div>
+            <div class="p-flow">Cavaco → pasta solúvel → ESPR têxtil</div>
+            <div class="p-name">Lyocell brasileiro</div>
+            <div class="p-note">Lote DP-V112 contém 8,4 % de Cumaru. Mass-balance honesta, no-AEF atestado.</div>
+          </div>
+          <span class="badge warn">statistical_only</span>
+        </div>
+        <div class="path furniture">
+          <div>
+            <div class="p-flow">Serragem → MDF → ESPR móveis</div>
+            <div class="p-name">Painel mobiliário</div>
+            <div class="p-note">2,3 % de contribuição. E1, 22 % conteúdo pós-consumo. Listagem honesta.</div>
+          </div>
+          <span class="badge warn">statistical_only</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span class="left">
+      <a class="regen-lockup"><img src="regen-icon.svg" alt="" aria-hidden="true"><span class="regen-wordmark"><span class="b">REGEN</span><span class="l">STUDIO</span></span></a>
+      <span class="divider"></span><span>Wood Passport</span>
+    </span>
+    <span class="right"><span class="num">07 / 17</span></span>
+  </footer>
+</section>
+
+<!-- ═══════════════════════════════ 10. EUDR — a montante ═══════════════════════════════ -->
+<section class="slide">
+  <div class="head-block">
+    <div class="section-head">
+      <span class="section-num">10 · EUDR</span>
+      <span class="section-title">EUDR · a regulação a montante.</span>
+    </div>
+    <div class="head-rule"></div>
+    <p class="section-sub">Reg (UE) 2023/1115 · não é DPP — mas é o que ancora cada Wood Pass na floresta.</p>
+  </div>
+
+  <div class="body">
+    <div class="eudr-layout">
+      <div class="eudr-hero">
+        <div class="eudr-flag">🌳🌳🌳</div>
+        <div class="eudr-name">EUDR</div>
+        <div class="eudr-num">Reg (UE) 2023/1115</div>
+        <p class="eudr-tag">Regulamento Desflorestação</p>
+        <div class="eudr-stats">
+          <div class="eudr-stat">
+            <div class="eudr-stat-num">7 commodities</div>
+            <div class="eudr-stat-lbl">Annex I · madeira · cacau · café · óleo de palma · soja · bovino · borracha</div>
+          </div>
+          <div class="eudr-stat">
+            <div class="eudr-stat-num">31-12-2020</div>
+            <div class="eudr-stat-lbl">data-limite · floresta intacta antes desta data</div>
+          </div>
+          <div class="eudr-stat">
+            <div class="eudr-stat-num">Dez 2026</div>
+            <div class="eudr-stat-lbl">large operators aplicam · SMEs 30 jun 2027 · adiado de 30 dez 2025</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="eudr-right">
+        <div class="eudr-block">
+          <h3>📋 O que cada DDS exige</h3>
+          <ul>
+            <li>Polígono GeoJSON (≥ 4 ha) ou ponto (&lt; 4 ha) · ≥ 6 casas decimais</li>
+            <li>Nome botânico (Latim) + nome comum · país de origem</li>
+            <li>Data ou período de corte · volume · CN code</li>
+            <li>Operador EORI · cadeia de suppliers</li>
+            <li>Declaração: sem desflorestação pós 31-12-2020</li>
+            <li>Verificação por autoridades competentes contra Sentinel-2 (Copernicus) — não é campo do operador</li>
+            <li>Registro no TRACES NT · ref. number + verification number</li>
+          </ul>
+        </div>
+
+        <div class="eudr-block">
+          <h3>🔗 Como se ancora no Wood Pass</h3>
+          <ul>
+            <li>Lote Tier 0 (colheita) <em>é</em> a DDS · mesmos campos por design</li>
+            <li>Sawmill Tier 1 cita uma ou mais DDS por reference number</li>
+            <li>CPR / ESPR DPP herdam origem por reference · sem re-coletar</li>
+            <li>Verification number do TRACES = chave de auditoria</li>
+            <li>Identity-preservation é o padrão · mass-balance permitida em condições restritas</li>
+            <li>Country benchmark (low / standard / high risk) define DD mode</li>
+          </ul>
+        </div>
+
+        <div class="eudr-block accent">
+          <h3>⚖️ Por que não é DPP — mas pesa mais</h3>
+          <p>EUDR não pede passaporte de produto. Pede <strong>diligência devida</strong> sobre o produto. Mas como toda DPP de wood-based (CPR · ESPR-móveis · ESPR-têxteis · PPWR · TSR) precisa de origem rastreável, EUDR é a <em>fonte de gravidade</em> que dá forma à camada upstream — e que o Wood Pass internaliza.</p>
+          <p style="margin-top:2.5mm;">Nenhuma regulação DPP da UE diz explicitamente que "<em>conteúdo de madeira deve estar em conformidade com EUDR</em>" — não precisa. <strong>EUDR (Reg 2023/1115) aplica-se de forma independente e a montante</strong> a toda madeira colocada no mercado UE. <strong>Art 4(2)</strong> proíbe colocar madeira em escopo no mercado sem DDS, qualquer que seja o produto downstream. A ligação é <em>operacional, não legal-textual</em>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span class="left">
+      <a class="regen-lockup"><img src="regen-icon.svg" alt="" aria-hidden="true"><span class="regen-wordmark"><span class="b">REGEN</span><span class="l">STUDIO</span></span></a>
+      <span class="divider"></span><span>Wood Passport</span>
+    </span>
+    <span class="right"><span class="num">08 / 17</span></span>
+  </footer>
+</section>
+
+<!-- ═══════════════════════════════ 11. CENÁRIO · MINISTÉRIO PT ═══════════════════════════════ -->
+<section class="slide">
+  <div class="head-block">
+    <div class="section-head">
+      <span class="section-num">07 · Cenário PT</span>
+      <span class="section-title">Portugal como hub regulatório.</span>
+    </div>
+    <div class="head-rule"></div>
+    <p class="section-sub">Apex Brasil → Ministério da Agricultura · porta de entrada para Wood Pass na Europa.</p>
+  </div>
+
+  <div class="body">
+    <div class="market-grid">
+      <div class="market-side">
+        <h3>O que Portugal já tem</h3>
+        <ul style="list-style:none;font-size:12pt;line-height:1.7;color:var(--ink);margin:6mm 0;">
+          <li style="padding:3px 0 3px 24px;position:relative;"><span style="position:absolute;left:0;">🌳</span> Maior produtor mundial de cortiça — 50 % do mercado global</li>
+          <li style="padding:3px 0 3px 24px;position:relative;"><span style="position:absolute;left:0;">📊</span> Gigantes de celulose: The Navigator Company, Altri, CELBI</li>
+          <li style="padding:3px 0 3px 24px;position:relative;"><span style="position:absolute;left:0;">🌲</span> Floresta de pinheiro-bravo com gestão FSC/PEFC ampla</li>
+          <li style="padding:3px 0 3px 24px;position:relative;"><span style="position:absolute;left:0;">⚖️</span> Apex Brasil acelera Wood Labs em PT como entidade UE</li>
+          <li style="padding:3px 0 3px 24px;position:relative;"><span style="position:absolute;left:0;">🇪🇺</span> Track-record regulatório UE (RGPD → EUDR / ESPR / CPR)</li>
+        </ul>
+        <div class="market-stat">
+          <div class="ms-num">~33 %</div>
+          <div class="ms-lbl">da pasta de celulose BR (HS 47) já flui via corredor UE. PT é porta-de-entrada natural por idioma + Apex + Min. Agricultura.</div>
+        </div>
+      </div>
+      <div class="market-side">
+        <h3>O que Wood Labs traz</h3>
+        <ul style="list-style:none;font-size:12pt;line-height:1.7;color:var(--ink);margin:6mm 0;">
+          <li style="padding:3px 0 3px 24px;position:relative;"><span style="position:absolute;left:0;">📋</span> Wood Passport versão PT, autorada em Portugal</li>
+          <li style="padding:3px 0 3px 24px;position:relative;"><span style="position:absolute;left:0;">🇧🇷</span> Case Mil Madeiras × Wood Pass — origem BR + conformidade UE</li>
+          <li style="padding:3px 0 3px 24px;position:relative;"><span style="position:absolute;left:0;">🛡️</span> Soberania técnica: tooling DPP-wood ancorado em PT</li>
+          <li style="padding:3px 0 3px 24px;position:relative;"><span style="position:absolute;left:0;">🤝</span> Bridge Brasil-UE via tooling neutro · Apex em ambos lados</li>
+          <li style="padding:3px 0 3px 24px;position:relative;"><span style="position:absolute;left:0;">📣</span> Visibilidade institucional · case-study reproduzível</li>
+        </ul>
+        <div class="market-stat" style="border-left-color:var(--emerald);background:var(--emerald-tint);">
+          <div class="ms-num" style="color:var(--emerald-deep);font-size:24pt;">O pedido</div>
+          <div class="ms-lbl">Endosso do Wood Passport como case-study PT-BR para EUDR / CPR / ESPR · menção em fóruns UE.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span class="left">
+      <a class="regen-lockup"><img src="regen-icon.svg" alt="" aria-hidden="true"><span class="regen-wordmark"><span class="b">REGEN</span><span class="l">STUDIO</span></span></a>
+      <span class="divider"></span><span>Wood Passport</span>
+    </span>
+    <span class="right"><span class="num">09 / 17</span></span>
+  </footer>
+</section>
+
+<!-- ═══════════════════════════════ 8. CENÁRIO · CHINA ═══════════════════════════════ -->
+<section class="slide">
+  <div class="head-block">
+    <div class="section-head">
+      <span class="section-num">08 · Cenário CN</span>
+      <span class="section-title">China · procedência é status.</span>
+    </div>
+    <div class="head-rule"></div>
+    <p class="section-sub">Fernando × Ministério da Igualdade Racial · maior importador mundial de madeira tropical · mercado premium emergente.</p>
+  </div>
+
+  <div class="body">
+    <div class="market-grid">
+      <div class="market-side">
+        <h3>O que a China procura</h3>
+        <ul style="list-style:none;font-size:12pt;line-height:1.7;color:var(--ink);margin:6mm 0;">
+          <li style="padding:3px 0 3px 24px;position:relative;"><span style="position:absolute;left:0;">🇨🇳</span> Maior importador mundial de madeira tropical · BR ~30 % supplier</li>
+          <li style="padding:3px 0 3px 24px;position:relative;"><span style="position:absolute;left:0;">🏛️</span> Marcenaria de luxo em Pequim/Shanghai exige procedência</li>
+          <li style="padding:3px 0 3px 24px;position:relative;"><span style="position:absolute;left:0;">⚖️</span> CTLVS (China Timber Legality Verification Scheme) em rampa</li>
+          <li style="padding:3px 0 3px 24px;position:relative;"><span style="position:absolute;left:0;">🌐</span> BRICS+ rumando a quadros de traceability comuns</li>
+          <li style="padding:3px 0 3px 24px;position:relative;"><span style="position:absolute;left:0;">🌱</span> ESG corporativo em alta nas SOEs chinesas</li>
+        </ul>
+        <div class="market-stat">
+          <div class="ms-num">US$ 40+ bn</div>
+          <div class="ms-lbl">madeira tropical/ano importada pela China · gap de procedência é dor real no segmento premium.</div>
+        </div>
+      </div>
+      <div class="market-side">
+        <h3>O que Wood Labs traz</h3>
+        <ul style="list-style:none;font-size:12pt;line-height:1.7;color:var(--ink);margin:6mm 0;">
+          <li style="padding:3px 0 3px 24px;position:relative;"><span style="position:absolute;left:0;">🎫</span> Wood Pass · token verificável de procedência BRICS-grade</li>
+          <li style="padding:3px 0 3px 24px;position:relative;"><span style="position:absolute;left:0;">🚢</span> Piloto Mil Madeiras × comprador chinês premium</li>
+          <li style="padding:3px 0 3px 24px;position:relative;"><span style="position:absolute;left:0;">🌐</span> Versão 中文 · Violeta multilíngue (mandarim Q4 2026)</li>
+          <li style="padding:3px 0 3px 24px;position:relative;"><span style="position:absolute;left:0;">🌳</span> Origem comunitária via Min. Igualdade Racial (quilombola + Indigenous)</li>
+          <li style="padding:3px 0 3px 24px;position:relative;"><span style="position:absolute;left:0;">🤝</span> Complementar a CITES + CTLVS · não substitui, traduz</li>
+        </ul>
+        <div class="market-stat" style="border-left-color:var(--emerald);background:var(--emerald-tint);">
+          <div class="ms-num" style="color:var(--emerald-deep);font-size:24pt;">O pedido</div>
+          <div class="ms-lbl">Apoio a um piloto Wood Pass China · 1 lote Mil Madeiras → comprador premium em Shenzhen ou Shanghai.</div>
+        </div>
+        <p style="margin-top:4mm;font-family:'Playfair Display',serif;font-style:italic;font-size:11pt;line-height:1.5;color:var(--bark);">
+          <strong style="color:var(--emerald-deep);font-family:'KoHo',sans-serif;font-style:normal;">Estratégia China:</strong> queremos um Wood Pass <em>alinhado</em> com a perspectiva chinesa — não exportar a regulação UE, mas dialogar com o status-procedência local.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span class="left">
+      <a class="regen-lockup"><img src="regen-icon.svg" alt="" aria-hidden="true"><span class="regen-wordmark"><span class="b">REGEN</span><span class="l">STUDIO</span></span></a>
+      <span class="divider"></span><span>Wood Passport</span>
+    </span>
+    <span class="right"><span class="num">10 / 17</span></span>
+  </footer>
+</section>
+
+<!-- ═══════════════════════════════ 9. WOOD LABS × REGEN STACK ═══════════════════════════════ -->
+<section class="slide">
+  <div class="head-block">
+    <div class="section-head">
+      <span class="section-num">06 · A Combinação</span>
+      <span class="section-title">Wood Labs × Regen Studio.</span>
+    </div>
+    <div class="head-rule"></div>
+    <p class="section-sub">Três marcas, três competências distintas — uma convergência. O Wood Pass nasce do encontro.</p>
+  </div>
+
+  <div class="body">
+    <div class="combo-flow">
+      <div class="combo-row">
+        <div class="combo-card woodlabs">
+          <div class="cc-mark">Wood Labs</div>
+          <ul class="cc-bullets">
+            <li><b>WoodVision</b> — reconhecimento de espécie por visão computacional</li>
+            <li><b>WoodChat</b> — engajamento do consumidor</li>
+          </ul>
+          <div class="cc-tag">General Product Lead · Brazil &amp; Portugal</div>
+        </div>
+
+        <div class="combo-card regen">
+          <div class="cc-mark">Regen Studio</div>
+          <ul class="cc-bullets">
+            <li><b>Digital Product Passport</b> · design + arquitetura</li>
+            <li><b>Regulatory expertise</b> · EUDR · CPR · ESPR · TSR · PPWR</li>
+          </ul>
+          <div class="cc-tag">Technology Design Lead · Netherlands &amp; Brazil</div>
+        </div>
+
+        <div class="combo-card ctf">
+          <div class="cc-mark">CircularTech Forum</div>
+          <ul class="cc-bullets">
+            <li><b>DPP Community</b> · EU Platform</li>
+            <li>Host da maior community DPP da Europa (2026)</li>
+          </ul>
+          <div class="cc-tag">EU DPP Community · Germany &amp; Europe</div>
+        </div>
+      </div>
+
+      <div class="combo-bridge">
+        <span class="stub-l"></span>
+        <span class="stub-c"></span>
+        <span class="stub-r"></span>
+        <span class="arrowhead"></span>
+      </div>
+
+      <div class="combo-output">
+        <div>
+          <div class="co-mark">Wood<em>Pass</em></div>
+          <div class="co-sub">Produto vertical · BR → UE · profundidade de madeira</div>
+        </div>
+        <span class="co-tag">consórcio formal</span>
+      </div>
+
+      <p style="margin-top:4mm;font-size:11pt;color:var(--ink-soft);text-align:center;line-height:1.5;">
+        Modo de operação: <strong>provider parceiro com consórcio formal</strong> · sem investimento financeiro cruzado por enquanto · captação R&amp;D em paralelo (BR + EU) · re-discussão do modelo quando primeiros revenues chegarem.
+      </p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span class="left">
+      <a class="regen-lockup"><img src="regen-icon.svg" alt="" aria-hidden="true"><span class="regen-wordmark"><span class="b">REGEN</span><span class="l">STUDIO</span></span></a>
+      <span class="divider"></span><span>Wood Passport</span>
+    </span>
+    <span class="right"><span class="num">11 / 17</span></span>
+  </footer>
+</section>
+
+<!-- ═══════════════════════════════ 8. VIOLETA CHAT ═══════════════════════════════ -->
+<section class="slide">
+  <div class="head-block">
+    <div class="section-head">
+      <span class="section-num">07 · Diferenciação</span>
+      <span class="section-title">Conversar com a madeira.</span>
+    </div>
+    <div class="head-rule"></div>
+    <p class="section-sub">QR no produto → chat com personagem da espécie · powered by Violeta (Wood Labs).</p>
+  </div>
+
+  <div class="body">
+    <div class="violeta-grid">
+      <div class="phone-mockup">
+        <div class="phone-screen">
+          <div class="chat-header">
+            <div class="char-name">Violeta · Cumaru</div>
+            <div class="char-species">Dipteryx odorata</div>
+          </div>
+          <div class="msg bot">Oi! Sou o Cumaru deste deck. Vivi 60 anos em Itacoatiara antes de virar piso. Posso te contar minha história?</div>
+          <div class="msg user">Vc é resistente à chuva?</div>
+          <div class="msg bot">Muito. Minha densidade é 1,10 g/cm³ — quase o dobro do pinho europeu. Por isso uso na Holanda e Alemanha para decks e pontes.</div>
+          <div class="msg user">E o CO₂?</div>
+          <div class="msg bot">Guardo +1.230 kg CO₂ por m³. Líquido, descontando transporte: −1.140 kg.</div>
+          <div class="chat-input">Pergunte algo a Violeta…</div>
+        </div>
+      </div>
+      <div class="violeta-text">
+        <h3 class="vbig">Ninguém tem mais paciência para listas de dados.</h3>
+        <p class="vbody">
+          O passaporte tradicional descarrega uma planilha. O consumidor não lê.
+          O importador europeu mostra ao cliente final um QR — e quer que a conversa flua.
+        </p>
+        <p class="vquote">
+          “Cada espécie botânica que a gente trabalhou remete a um nome popular. Roxinho, roxão, violeta, maçaranduba, cumaru, pau-roxo. Se a inserção de um personagem… converse com aquela espécie botânica.”
+          <span style="display:block;margin-top:3mm;font-style:normal;font-size:10.5pt;color:var(--ink-mute);font-family:'JetBrains Mono',monospace;">— Miguel · reunião 13 mai 2026</span>
+        </p>
+        <p class="vbody">
+          Translation automático cobre o multilíngue. <strong>O chat sobre o passaporte vai ser o padrão</strong> — não o diferencial. Quem chegar primeiro define o tom.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span class="left">
+      <a class="regen-lockup"><img src="regen-icon.svg" alt="" aria-hidden="true"><span class="regen-wordmark"><span class="b">REGEN</span><span class="l">STUDIO</span></span></a>
+      <span class="divider"></span><span>Wood Passport</span>
+    </span>
+    <span class="right"><span class="num">12 / 17</span></span>
+  </footer>
+</section>
+
+<!-- ═══════════════════════════════ 9. MERCADO ═══════════════════════════════ -->
+<section class="slide">
+  <div class="head-block">
+    <div class="section-head">
+      <span class="section-num">08 · Mercado</span>
+      <span class="section-title">Adoção precoce antes do mandato.</span>
+    </div>
+    <div class="head-rule"></div>
+    <p class="section-sub">As baterias já têm DPP obrigatório. A madeira ainda não — mas qualquer DPP que use madeira como insumo já exige dados de nível-DPP a montante. Quem fornecer ganha o pedido. Quem não, perde para o concorrente que consegue.</p>
+  </div>
+
+  <div class="body" style="padding-top:5mm;">
+    <div class="market-grid">
+      <div class="market-side">
+        <h3>O mercado triple-A já está pedindo.</h3>
+        <p>
+          Importadores europeus do norte (Roterdão, Hamburgo, Antuérpia) precisam mostrar
+          aos clientes finais — high-end construção, mobiliário premium, marcas com pressão
+          ESG — que sabem de onde vem cada metro cúbico.
+        </p>
+        <div class="market-stat">
+          <div class="ms-num">70 %</div>
+          <div class="ms-lbl">da madeira BR documentada vira <em>torra</em> (madeira serrada). Os outros 30 % são celulose, papel, líquido.</div>
+        </div>
+        <p>
+          <strong>O EUDR aplica a partir de dez 2026</strong> — operadores grandes. SMEs em jun 2027. Mas a regulação não é o gatilho de venda; <em>é o reconhecimento de mercado</em>. Quem oferece o passaporte hoje fideliza o importador antes do prazo.
+        </p>
+      </div>
+      <div class="market-side">
+        <h3>Madeira brasileira não sofre o que a alemã sofre.</h3>
+        <p>
+          A Black Forest está morrendo. Bostrico, seca, calor. A produção europeia de madeira para construção
+          está sob pressão. Madeira brasileira de alta densidade — <em>cumaru, maçaranduba, ipê</em> — substitui
+          em decks, pontes, cabanas, ambientes muito chuvosos. Aguenta as mudanças climáticas.
+        </p>
+        <div class="market-stat" style="border-left-color:var(--emerald);background:var(--emerald-tint);">
+          <div class="ms-num" style="color:var(--emerald-deep);">200–300</div>
+          <div class="ms-lbl">espécies por hectare na Amazônia. Em Portugal ou Alemanha, menos de 30. Diversidade biológica = repertório de mercado.</div>
+        </div>
+        <p>
+          A Mil Madeiras (Precious Wood, suíça-brasileira) já é FSC-auditada e exporta para a Europa.
+          <strong>É o caso de sucesso natural para Round 1.</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span class="left">
+      <a class="regen-lockup"><img src="regen-icon.svg" alt="" aria-hidden="true"><span class="regen-wordmark"><span class="b">REGEN</span><span class="l">STUDIO</span></span></a>
+      <span class="divider"></span><span>Wood Passport</span>
+    </span>
+    <span class="right"><span class="num">13 / 17</span></span>
+  </footer>
+</section>
+
+<!-- ═══════════════════════════════ XX. BR→EU TRADE COVERAGE ═══════════════════════════════ -->
+<section class="slide" data-tree-zone="corner-br">
+  <div class="head-block">
+    <div class="section-head">
+      <span class="section-num">XX · Brasil ↔ UE</span>
+      <span class="section-title">O fluxo BR → UE · mapeado por regime DPP.</span>
+    </div>
+    <div class="head-rule"></div>
+    <p class="section-sub">2024 · ~US$ 3.6 bn de produtos florestais BR para a UE-27 · ~99 % atravessam um regime DPP que o Wood Pass cobre.</p>
+  </div>
+
+  <div class="body">
+    <div class="trade-grid">
+      <!-- LEFT: hero stat + segment bar -->
+      <div class="trade-hero">
+        <div class="trade-tag">BR → UE-27 · produtos florestais</div>
+        <div class="trade-big">US$ 3.6 bn</div>
+        <div class="trade-big-unit">2024 · IBÁ balança comercial (+45 % YoY)</div>
+        <p class="trade-sub">
+          Pulp + papel domina · CPR é o segundo pilar · móveis + embalagem + brinquedos completam a cesta. Wood Pass cobre cada uma destas peças.
+        </p>
+
+        <div class="trade-bar-wrap">
+          <div class="trade-bar">
+            <div class="seg seg-ppwr">67 %</div>
+            <div class="seg seg-cpr">26 %</div>
+            <div class="seg seg-rest">7 %</div>
+          </div>
+          <div class="trade-legend">
+            <span><span class="dot" style="background:#009BBB;"></span> PPWR + ESPR-MMC (pulp/papel)</span>
+            <span><span class="dot" style="background:var(--bark);"></span> CPR (HS 44)</span>
+            <span><span class="dot" style="background:var(--orange);"></span> Outros (ESPR-móveis · PPWR-paletes · TSR)</span>
+          </div>
+        </div>
+
+        <div style="margin-top:auto;padding:3mm 4mm;background:rgba(255,255,255,.14);border-radius:7px;">
+          <div style="font-family:'KoHo',sans-serif;font-weight:700;font-size:11pt;margin-bottom:2mm;">Lanes verticalmente integradas (pilotos)</div>
+          <ul style="list-style:none;font-size:9.5pt;line-height:1.55;">
+            <li>· <b>LD Celulose</b> × Lenzing AT — MMCF dissolving pulp (cativa)</li>
+            <li>· <b>Veracel</b> × Stora Enso SE/FI — BEKP kraft pulp (50 % JV)</li>
+            <li>· <b>Cenibra</b> × Nippon Paper — ~40 % EU historicamente</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RIGHT: per-regime breakdown table -->
+      <div style="display:flex;flex-direction:column;">
+        <table class="trade-table">
+          <thead>
+            <tr>
+              <th>Regime · produto</th>
+              <th class="r">BR → UE (USD)</th>
+              <th class="r">% do fluxo</th>
+              <th>Fonte</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="reg-tag ppwr">PPWR</span>papel · kraft pulp + papel</td>
+              <td class="r">~2.3 bn</td>
+              <td class="r">67 %</td>
+              <td class="src"><a href="https://iba.org/comunicacao/sala-de-imprensa/balanca-comercial-do-setor-de-arvores-cultivadas-sobe-235-em-2024-e-atinge-recorde-de-us-157-bilhoes/" target="_blank" rel="noopener">IBÁ 2024</a> · <a href="https://news.mongabay.com/2024/12/brazil-paper-and-pulp-industry-invests-in-blockchain-to-comply-with-eudr/" target="_blank" rel="noopener">Mongabay</a></td>
+            </tr>
+            <tr>
+              <td><span class="reg-tag espr">ESPR</span>têxtil · MMC dissolving pulp <span class="conf">*</span></td>
+              <td class="r">~0.7 – 1.0 bn</td>
+              <td class="r">20–28 %</td>
+              <td class="src"><a href="https://www.bracell.com/en/news/bracell-expands-production-of-dissolving-pulp-in-the-state/" target="_blank" rel="noopener">Bracell</a> · <a href="https://www.valmet.com/insights/articles/pulp/ld-celuloses-new-mill-meets-the-needs-for-sustainable-dissolving-pulp/" target="_blank" rel="noopener">Valmet LD</a></td>
+            </tr>
+            <tr>
+              <td><span class="reg-tag cpr">CPR</span>STP estrutural · sawn timber</td>
+              <td class="r">~480 m</td>
+              <td class="r">13 %</td>
+              <td class="src"><a href="https://www.timber.exchange/news/details/in-depth/brazil-wood-export-rise-in-orctober" target="_blank" rel="noopener">Timber Exchange</a> · <a href="https://trendeconomy.com/data/h2/Brazil/44" target="_blank" rel="noopener">Trendeconomy HS 44</a></td>
+            </tr>
+            <tr>
+              <td><span class="reg-tag cpr">CPR</span>WBP painéis · plywood + MDF</td>
+              <td class="r">~235 m</td>
+              <td class="r">7 %</td>
+              <td class="src"><a href="https://trendeconomy.com/data/h2/Brazil/4412" target="_blank" rel="noopener">Trendeconomy HS 4412</a> · <a href="https://trendeconomy.com/data/h2/Brazil/4411" target="_blank" rel="noopener">HS 4411</a></td>
+            </tr>
+            <tr>
+              <td><span class="reg-tag cpr">CPR</span>FLO + WCF · pavimento + revestimentos</td>
+              <td class="r">~100 – 130 m</td>
+              <td class="r">3 %</td>
+              <td class="src"><a href="https://trendeconomy.com/data/h2/Brazil/4409" target="_blank" rel="noopener">Trendeconomy HS 4409</a></td>
+            </tr>
+            <tr>
+              <td><span class="reg-tag cpr">CPR</span>SHA · wood pellets (Itália 81 %)</td>
+              <td class="r">~60 m</td>
+              <td class="r">2 %</td>
+              <td class="src"><a href="https://www.indexbox.io/store/brazil-wood-pellets-market-analysis-forecast-size-trends-and-insights/" target="_blank" rel="noopener">IndexBox</a> · USDA FAS 2024</td>
+            </tr>
+            <tr>
+              <td><span class="reg-tag cpr">CPR</span>DWS + KAS · doors/windows + prefab</td>
+              <td class="r">~30 – 40 m</td>
+              <td class="r">1 %</td>
+              <td class="src"><a href="https://iba.org/comunicacao/sala-de-imprensa/balanca-comercial-do-setor-de-arvores-cultivadas-sobe-235-em-2024-e-atinge-recorde-de-us-157-bilhoes/" target="_blank" rel="noopener">IBÁ 2024</a> (derivado)</td>
+            </tr>
+            <tr>
+              <td><span class="reg-tag espr">ESPR</span>móveis · São Bento do Sul cluster</td>
+              <td class="r">~60 – 90 m</td>
+              <td class="r">2 %</td>
+              <td class="src"><a href="https://abimovel.com/en/furniture-and-mattress-exports-increase-by-3-8-in-2024-but-trade-balance-tightens/" target="_blank" rel="noopener">ABIMÓVEL 2024</a> · <a href="https://trendeconomy.com/data/h2/Brazil/9403" target="_blank" rel="noopener">HS 9403</a></td>
+            </tr>
+            <tr>
+              <td><span class="reg-tag ppwr">PPWR</span>embalagem · paletes + crates</td>
+              <td class="r">~18 m</td>
+              <td class="r">~0.5 %</td>
+              <td class="src"><a href="https://trendeconomy.com/data/h2/Brazil/4415" target="_blank" rel="noopener">Trendeconomy HS 4415</a></td>
+            </tr>
+            <tr>
+              <td><span class="reg-tag tsr">TSR</span>brinquedos de madeira</td>
+              <td class="r">&lt;1 m</td>
+              <td class="r">&lt;0.05 %</td>
+              <td class="src"><a href="https://wits.worldbank.org/trade/comtrade/en/country/BRA/year/2023/tradeflow/Exports/partner/ALL/product/9503" target="_blank" rel="noopener">WITS HS 9503</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="trade-foot">
+          <strong>~99 %</strong> do fluxo BR → UE de produtos florestais atravessa um dos regimes DPP que o Wood Pass cobre. <em>O upstream EUDR sobrepõe a 100 % — todo HS 44 está em Annex I.</em>
+          <br><br>
+          <span class="conf">* Sobreposição com PPWR pulp — mesmo material BR alimenta paper-packaging e MMC-textile</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span class="left">
+      <a class="regen-lockup"><img src="regen-icon.svg" alt="" aria-hidden="true"><span class="regen-wordmark"><span class="b">REGEN</span><span class="l">STUDIO</span></span></a>
+      <span class="divider"></span><span>Wood Passport · trade</span>
+    </span>
+    <span class="right"><span class="num">14 / 17</span></span>
+  </footer>
+</section>
+
+<!-- ═══════════════════════════════ XX. PROSPECTS / WOOD PASS LEADS ═══════════════════════════════ -->
+<section class="slide" data-tree-zone="corner-br">
+  <div class="head-block">
+    <div class="section-head">
+      <span class="section-num">XX · Prospects</span>
+      <span class="section-title">Onde começar — clientes potenciais Wood Pass.</span>
+    </div>
+    <div class="head-rule"></div>
+    <p class="section-sub">Derivado da análise BR → UE · três tiers por leverage e fricção de entrada. Lista completa em <code style="font-family:'JetBrains Mono',monospace;font-size:9pt;background:var(--paper-warm);padding:1px 5px;border-radius:3px;">AI-Operations/leads/wood-pass-prospects-2026-05-13.md</code>.</p>
+  </div>
+
+  <div class="body">
+    <div class="prospects-grid">
+      <!-- Tier 1 — Vertically integrated lanes -->
+      <div class="prospect-col tier-1">
+        <h3><span class="tier-num">Tier 1</span> Lanes integradas</h3>
+        <div class="tier-sub">JVs BR × buyer UE — dados já fluem; menor fricção; iniciar pelo Wood Pass como camada DPP.</div>
+        <div class="prospect-item">
+          <div class="p-name">LD Celulose <span class="p-flag">via Lenzing</span></div>
+          <div class="p-loc">Indianópolis · MG · JV Lenzing AG 51% / Dexco 49%</div>
+          <div class="p-note">500 kt/yr dissolving pulp · destino cativo TENCEL/Lyocell AT. ESPR-têxtil DA 2027.</div>
+        </div>
+        <div class="prospect-item">
+          <div class="p-name">Veracel <span class="p-flag">via Stora Enso</span></div>
+          <div class="p-loc">Eunápolis · BA · JV Suzano 50 / Stora Enso 50</div>
+          <div class="p-note">1.1 Mt/yr BEKP kraft pulp → Stora Enso EU mills. PPWR-papel direto.</div>
+        </div>
+        <div class="prospect-item">
+          <div class="p-name">Cenibra</div>
+          <div class="p-loc">Belo Oriente · MG · Nippon Paper parent</div>
+          <div class="p-note">1.2 Mt/yr BEKP · ~40% UE historicamente. PPWR-papel.</div>
+        </div>
+      </div>
+
+      <!-- Tier 2 — Major BR exporters -->
+      <div class="prospect-col tier-2">
+        <h3><span class="tier-num">Tier 2</span> Majors BR</h3>
+        <div class="tier-sub">Players com volume EU significativo · maioria já investe em traceability EUDR; Wood Pass = próxima camada.</div>
+        <div class="prospect-item" style="background:rgba(0,133,69,.08);border-left:3px solid var(--emerald);padding-left:8px;">
+          <div class="p-name">Suzano <span class="p-flag" style="background:var(--emerald);color:#fff;">🟢 Lead ativo</span></div>
+          <div class="p-loc">Salvador BA / Ribas do Rio Pardo MS</div>
+          <div class="p-note">13.5 Mt/yr pulp · ~25-30% UE. Blockchain-EUDR em curso (Mongabay Dez 2024).</div>
+          <div class="p-note" style="color:var(--emerald-deep);font-style:italic;margin-top:2px;">Contato Kater · via festa do Reino no consulado, abr 2026.</div>
+        </div>
+        <div class="prospect-item">
+          <div class="p-name">Klabin <span class="p-flag warm">EUDR-active</span></div>
+          <div class="p-loc">Curitiba · PR</div>
+          <div class="p-note">~5 Mt/yr · Eukaliner packaging board direto para corrugators UE.</div>
+        </div>
+        <div class="prospect-item">
+          <div class="p-name">Bracell</div>
+          <div class="p-loc">Lençóis Paulista SP + Camaçari BA</div>
+          <div class="p-note">2.5 Mt/yr DP capacity (swing kraft) · #2 destino UE.</div>
+        </div>
+        <div class="prospect-item">
+          <div class="p-name">Eldorado Brasil</div>
+          <div class="p-loc">Três Lagoas · MS</div>
+          <div class="p-note">1.8 Mt/yr · China-pesado mas UE crescendo.</div>
+        </div>
+        <div class="prospect-item">
+          <div class="p-name">Dexco (ex-Duratex)</div>
+          <div class="p-loc">São Paulo · SP</div>
+          <div class="p-note">MDF/MDP majors + parent JV LD Celulose. CPR-WBP + ESPR-móveis.</div>
+        </div>
+      </div>
+
+      <!-- Tier 3 — Sector + cluster targets -->
+      <div class="prospect-col tier-3">
+        <h3><span class="tier-num">Tier 3</span> Setoriais</h3>
+        <div class="tier-sub">Showcase + voucher-fit · clusters com Wood Pass como diferencial competitivo pré-mandato.</div>
+        <div class="prospect-item" style="background:rgba(0,133,69,.08);border-left:3px solid var(--emerald);padding-left:8px;">
+          <div class="p-name">Mil Madeiras Preciosas <span class="p-flag" style="background:var(--emerald);color:#fff;">🟢 Lead ativo</span></div>
+          <div class="p-loc">Itacoatiara · AM · Precious Wood (CH)</div>
+          <div class="p-note">FSC desde 1997 · piloto Wood Labs · case-study BR Amazon ↔ UE.</div>
+          <div class="p-note" style="color:var(--emerald-deep);font-style:italic;margin-top:2px;">Round 1 piloto Wood Labs · canal direto via Miguel + Fernanda.</div>
+        </div>
+        <div class="prospect-item">
+          <div class="p-name">São Bento do Sul cluster</div>
+          <div class="p-loc">SC · ABIMÓVEL</div>
+          <div class="p-note">Mais EU-facing cluster BR · Pinus elliottii · ESPR-móveis DA 2028.</div>
+        </div>
+        <div class="prospect-item">
+          <div class="p-name">Berneck · Floraplac · Sudati</div>
+          <div class="p-loc">PR · plywood majors</div>
+          <div class="p-note">Pine plywood BR → BE/DE/IT (31% EU+UK do HS 4412). CPR-WBP.</div>
+        </div>
+        <div class="prospect-item">
+          <div class="p-name">Movelsul / Bento Gonçalves</div>
+          <div class="p-loc">RS · Todeschini · Dell Anno · Florense · SCA</div>
+          <div class="p-note">MDF/MDP urban contemporary · ESPR-móveis canal.</div>
+        </div>
+        <div class="prospect-item">
+          <div class="p-name">Pellet exporters · Italy lane</div>
+          <div class="p-loc">RS / SC / PR · 369 kt/yr → Italia 81%</div>
+          <div class="p-note">CPR-SHA appliance-side · ENplus / ISO 17225-2 já implementado.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span class="left">
+      <a class="regen-lockup"><img src="regen-icon.svg" alt="" aria-hidden="true"><span class="regen-wordmark"><span class="b">REGEN</span><span class="l">STUDIO</span></span></a>
+      <span class="divider"></span><span>Wood Passport · prospects</span>
+    </span>
+    <span class="right"><span class="num">15 / 17</span></span>
+  </footer>
+</section>
+
+<!-- ═══════════════════════════════ 12. NEXT STEPS ═══════════════════════════════ -->
+<section class="slide">
+  <div class="head-block">
+    <div class="section-head">
+      <span class="section-num">11 · Próximos passos</span>
+      <span class="section-title">Já decidido. Já em andamento.</span>
+    </div>
+    <div class="head-rule"></div>
+    <p class="section-sub">O que sai desta reunião como compromisso. O que continua aberto.</p>
+  </div>
+
+  <div class="body">
+    <div class="ns-grid">
+      <div class="ns-col">
+        <h3>Compromissos firmados</h3>
+        <div class="ns-item">
+          Regen envia os dois protótipos (arquitetura EN + consumidor PT) para Miguel + Fernanda.
+          <div class="who">Owner: Yvo · 14 mai</div>
+        </div>
+        <div class="ns-item">
+          Wood Labs leva o protótipo a Mil Madeiras na próxima semana — Round 1.
+          <div class="who">Owner: Miguel + Fernanda · sem 20 mai</div>
+        </div>
+        <div class="ns-item">
+          Wood Labs puxa lista de espécies que Mil Madeiras exporta para EU + portos de chegada + importadores.
+          <div class="who">Owner: Miguel · até 27 mai</div>
+        </div>
+        <div class="ns-item">
+          Yvo loop Eliana (CTF) na conversa de parceria — Master Agreement formal exige.
+          <div class="who">Owner: Yvo · até 16 mai</div>
+        </div>
+        <div class="ns-item">
+          Regen rever primeiro draft de projeto R&amp;D de Wood Labs.
+          <div class="who">Owner: Yvo · após Wood Labs enviar</div>
+        </div>
+      </div>
+      <div class="ns-col b">
+        <h3>Em discussão / pesquisar</h3>
+        <div class="ns-item">
+          Modelo de monetização: madeireira doa dados · importador paga? Ou todos pagam pouco? Testar nos 3 rounds.
+          <div class="who">Owner: shared</div>
+        </div>
+        <div class="ns-item">
+          Integração Violeta (chat IA) no passaporte — quem entrega o front, quem entrega o back?
+          <div class="who">Owner: Miguel · após Round 1</div>
+        </div>
+        <div class="ns-item">
+          Wood do projeto Zuid-Holland (Roterdão) — Wood Labs busca madeira BR com DOF + dados completos.
+          <div class="who">Owner: Miguel + Fernanda</div>
+        </div>
+        <div class="ns-item">
+          Consórcio formal — estrutura legal entre Regen BV (NL) + Wood Labs/UdLab (BR+PT) + CTF GmbH (DE).
+          <div class="who">Owner: shared · após Round 2</div>
+        </div>
+        <div class="ns-item">
+          Re-abertura conversa sócio: depois dos primeiros revenues. <em>“Comeu o fruto e falar it's sweet — keep going.”</em>
+          <div class="who">Owner: shared · pós-Round 3</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span class="left">
+      <a class="regen-lockup"><img src="regen-icon.svg" alt="" aria-hidden="true"><span class="regen-wordmark"><span class="b">REGEN</span><span class="l">STUDIO</span></span></a>
+      <span class="divider"></span><span>Wood Passport · obrigado.</span>
+    </span>
+    <span class="right"><span class="num">16 / 17</span></span>
+  </footer>
+</section>
+
+<!-- ═══════════════════════════════ 17. LICENÇA &amp; TERMOS ═══════════════════════════════ -->
+<section class="slide">
+  <div class="head-block">
+    <div class="section-head">
+      <span class="section-num">12 · Licença</span>
+      <span class="section-title">Termos de uso &amp; colaboração.</span>
+    </div>
+    <div class="head-rule"></div>
+    <p class="section-sub">Compartilhado em confiança com Wood Labs · espírito colaborativo, IP claramente reservada para já.</p>
+  </div>
+
+  <div class="body">
+    <div class="market-grid">
+      <div class="market-side">
+        <h3>Vocês podem</h3>
+        <ul style="list-style:none;font-size:12pt;line-height:1.7;color:var(--ink);margin:6mm 0;">
+          <li style="padding:5px 0 5px 28px;position:relative;"><span style="position:absolute;left:0;color:var(--emerald);font-weight:700;font-size:14pt;">✓</span> Revisar internamente em Wood Labs</li>
+          <li style="padding:5px 0 5px 28px;position:relative;"><span style="position:absolute;left:0;color:var(--emerald);font-weight:700;font-size:14pt;">✓</span> Apresentar a Mil Madeiras, Ministério da Agricultura PT, e parceiros na China</li>
+          <li style="padding:5px 0 5px 28px;position:relative;"><span style="position:absolute;left:0;color:var(--emerald);font-weight:700;font-size:14pt;">✓</span> Adaptar para materiais internos de pitch — com atribuição à Regen Studio</li>
+          <li style="padding:5px 0 5px 28px;position:relative;"><span style="position:absolute;left:0;color:var(--emerald);font-weight:700;font-size:14pt;">✓</span> Pedir alterações ou novas seções via Stage-2 feedback</li>
+        </ul>
+        <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:13pt;color:var(--emerald-deep);margin-top:6mm;line-height:1.5;">
+          Use livremente — só não publique nem comercialize sozinho ainda.
+        </p>
+      </div>
+      <div class="market-side">
+        <h3>O que fica reservado</h3>
+        <ul style="list-style:none;font-size:12pt;line-height:1.7;color:var(--ink);margin:6mm 0;">
+          <li style="padding:5px 0 5px 28px;position:relative;"><span style="position:absolute;left:0;color:var(--bark);font-weight:700;font-size:14pt;">·</span> Redistribuição pública (web, imprensa, social)</li>
+          <li style="padding:5px 0 5px 28px;position:relative;"><span style="position:absolute;left:0;color:var(--bark);font-weight:700;font-size:14pt;">·</span> Uso comercial fora do engajamento conjunto</li>
+          <li style="padding:5px 0 5px 28px;position:relative;"><span style="position:absolute;left:0;color:var(--bark);font-weight:700;font-size:14pt;">·</span> Criação de IP derivado (produtos, frameworks)</li>
+          <li style="padding:5px 0 5px 28px;position:relative;"><span style="position:absolute;left:0;color:var(--bark);font-weight:700;font-size:14pt;">·</span> Sublicenciamento ou transferência a terceiros</li>
+        </ul>
+        <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:13pt;color:var(--bark);margin-top:6mm;line-height:1.5;">
+          Para qualquer desses passos abrimos espaço num <strong>collaboration agreement</strong> formal.
+        </p>
+      </div>
+    </div>
+
+    <div style="margin-top:7mm;padding:14px 20px;background:var(--paper-warm);border-radius:10px;border-left:4px solid var(--emerald);font-family:'JetBrains Mono',monospace;font-size:10pt;color:var(--ink-soft);line-height:1.65;">
+      © 2026 <b style="color:var(--navy-dark);">Regen Studio B.V.</b> · Wood Passport v0.1 · compartilhado em confiança com <b style="color:var(--bark);">Wood Labs</b>.<br>
+      Código: <b>PolyForm Noncommercial 1.0.0</b> · Conteúdo: © Regen Studio, sob os termos acima · não para redistribuição pública.
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span class="left">
+      <a class="regen-lockup"><img src="regen-icon.svg" alt="" aria-hidden="true"><span class="regen-wordmark"><span class="b">REGEN</span><span class="l">STUDIO</span></span></a>
+      <span class="divider"></span><span>Wood Passport · termos</span>
+    </span>
+    <span class="right"><span class="num">17 / 17</span></span>
+  </footer>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     STAGE-2 REVIEW WIDGET — select-to-comment + drop-pin-anywhere
+     ═══════════════════════════════════════════════════════════════════════ -->
+<span class="s2-tag">Stage 2 · Review</span>
+
+<aside id="s2-sidebar" aria-label="Comentários — Stage 2 review">
+  <header id="s2-head">
+    <div class="s2-h-left">
+      <img src="regen-icon.svg" alt="" aria-hidden="true">
+      <div>
+        <div class="s2-h-title">Revisão</div>
+        <div class="s2-h-sub">Stage 2 · select OR pin</div>
+      </div>
+    </div>
+    <button id="s2-toggle" title="Esconder painel" aria-label="Esconder/mostrar painel">›</button>
+  </header>
+
+  <div class="s2-tabs">
+    <button class="s2-tab s2-tab-active" data-pane="comments">💬 Comentários</button>
+    <button class="s2-tab" data-pane="seeds">🌳 Seeds</button>
+  </div>
+
+  <div id="s2-actions" data-pane="comments">
+    <button id="s2-pin-btn" title="Modo pin: clique em qualquer lugar do deck para deixar um comentário ancorado">
+      📍 Largar pin
+    </button>
+  </div>
+
+  <div id="s2-list" data-pane="comments">
+    <div id="s2-empty">
+      <div class="s2-empty-ico">💬</div>
+      Sem comentários ainda.
+      <strong>0 comentários</strong>
+      <div class="s2-hint-row">
+        <div class="s2-hint-ico">✎</div>
+        <div><b>Selecione</b> qualquer texto → aparece <em>“💬 Comentar”</em></div>
+      </div>
+      <div class="s2-hint-row">
+        <div class="s2-hint-ico">📍</div>
+        <div><b>Ou clique</b> em <em>Largar pin</em> → depois clique onde quiser</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="s2-seeds-list" data-pane="seeds" class="s2-pane-hidden"></div>
+
+  <footer id="s2-foot" data-pane="comments">
+    <button id="s2-copy" title="Copiar feedback markdown para clipboard">📋 Copiar feedback</button>
+    <button id="s2-clear" title="Apagar todos">🗑</button>
+  </footer>
+
+  <footer id="s2-seeds-foot" data-pane="seeds" class="s2-pane-hidden">
+    <button id="s2-seeds-copy" title="Copiar seed-locks markdown">📋 Copiar seeds</button>
+    <button id="s2-seeds-reset" title="Re-derivar seeds default">🔄</button>
+  </footer>
+</aside>
+
+<button id="s2-sel-btn" hidden>💬 Comentar</button>
+
+<div id="s2-pin-hint" hidden>📍 Clique em qualquer lugar do deck · <kbd>Esc</kbd> para cancelar</div>
+
+<dialog id="s2-modal" aria-label="Novo comentário">
+  <div class="s2-m-head">
+    <h3>
+      Novo comentário
+      <span class="s2-m-type" id="s2-m-type">—</span>
+    </h3>
+    <span class="s2-m-slide" id="s2-m-slide">—</span>
+  </div>
+  <div class="s2-m-body">
+    <div class="s2-m-quote" id="s2-m-quote" hidden></div>
+    <div class="s2-m-loc" id="s2-m-loc" hidden></div>
+    <textarea id="s2-m-text" placeholder="O que mudar, o que reforçar, o que perguntar a Miguel + Fernanda…" autofocus></textarea>
+    <div class="s2-m-hint">⌘+Enter para salvar · Esc para cancelar</div>
+  </div>
+  <div class="s2-m-actions">
+    <button class="s2-m-cancel" id="s2-m-cancel">Cancelar</button>
+    <button class="s2-m-save" id="s2-m-save">Salvar comentário</button>
+  </div>
+</dialog>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════════
+   Tree init — walks every .slide, ensures a .tree-zone child, renders a
+   fractal-triangle tree from a per-slide seed.
+   ═══════════════════════════════════════════════════════════════════════ */
+(function initSlideTrees() {
+  if (!window.WoodTree) {
+    console.warn('[wood-pass] WoodTree generator not loaded — trees skipped.');
+    return;
+  }
+
+  // Per-zone SVG viewBox + tree base/length/depth defaults.
+  // Interior corner trees: same shape as cover (depth 7, length 100, leafScale 1.0)
+  // — same viewBox + algorithm, only the display zone is tiny (~25% of cover scale).
+  const ZONES = {
+    /* corner zones: baseY = 700 so the trunk base hits the bottom of the viewBox
+       (= top of the footer band, since CSS sets bottom: 11mm = footer height). */
+    'corner-br':  { vb: '0 0 600 700', baseX: 300, baseY: 700, length: 100, depth: 7, leafScale: 1.0 },
+    'corner-bl':  { vb: '0 0 600 700', baseX: 300, baseY: 700, length: 100, depth: 7, leafScale: 1.0 },
+    'corner-tl':  { vb: '0 0 600 700', baseX: 300, baseY: 700, length: 100, depth: 7, leafScale: 1.0 },
+    'sidebar-l':  { vb: '0 0 100 360', baseX:  50, baseY: 350, length: 80, depth: 7, leafScale: 1.0 },
+    'sidebar-r':  { vb: '0 0 100 360', baseX:  50, baseY: 350, length: 80, depth: 7, leafScale: 1.0 },
+    'bg':         { vb: '0 0 600 320', baseX: 300, baseY: 315, length: 95, depth: 6, leafScale: 1.0 },
+    'cover-hero': { vb: '0 0 600 700', baseX: 300, baseY: 680, length: 145, depth: 7, leafScale: 1.0 }
+  };
+
+  const slides = document.querySelectorAll('.slide');
+
+  /* Same tree size on every interior slide. Cover keeps its hero config. */
+  function paramsForSlide(i, cfg, zoneName) {
+    return {
+      depth: cfg.depth,
+      length: cfg.length,
+      leafScale: cfg.leafScale != null ? cfg.leafScale : 1.0
+    };
+  }
+
+  slides.forEach(function (slide, i) {
+    const zoneName = slide.dataset.treeZone || 'corner-br';
+    if (zoneName === 'none') return;
+    const cfg = ZONES[zoneName];
+    if (!cfg) return;
+
+    // Resolve seed: explicit attr wins; else derive from slide index.
+    let seed = parseInt(slide.dataset.treeSeed, 10);
+    if (isNaN(seed) || seed <= 0) seed = WoodTree.deriveDefaultSeed(i);
+    slide.dataset.treeSeed = String(seed); // persist resolved seed in DOM
+
+    // Ensure a .tree-zone wrapper exists with the right class + svg.
+    let zone = slide.querySelector(':scope > .tree-zone');
+    if (!zone) {
+      zone = document.createElement('div');
+      zone.className = 'tree-zone tree-zone--' + zoneName;
+      zone.setAttribute('aria-hidden', 'true');
+      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.setAttribute('viewBox', cfg.vb);
+      svg.setAttribute('preserveAspectRatio', 'xMidYMax meet');
+      zone.appendChild(svg);
+      slide.insertBefore(zone, slide.firstChild);
+    } else {
+      // ensure class matches current zone
+      zone.className = 'tree-zone tree-zone--' + zoneName;
+    }
+
+    const svg = zone.querySelector('svg');
+
+    // Cover slide carries a faint ground line — preserve across rerolls.
+    if (zoneName === 'cover-hero' && !svg.querySelector('[data-tree-keep]')) {
+      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', '60');
+      line.setAttribute('y1', '680');
+      line.setAttribute('x2', '540');
+      line.setAttribute('y2', '680');
+      line.setAttribute('stroke', '#5b3f29');
+      line.setAttribute('stroke-width', '1');
+      line.setAttribute('opacity', '.25');
+      line.setAttribute('data-tree-keep', 'true');
+      svg.appendChild(line);
+    }
+
+    const p = paramsForSlide(i, cfg, zoneName);
+
+    // Remember config + growth params for reroll lookups.
+    zone._treeCfg = cfg;
+    zone._growthParams = p;
+    zone._slideIndex = i;
+    zone._zoneName = zoneName;
+
+    WoodTree.generate(svg, {
+      seed: seed,
+      baseX: cfg.baseX,
+      baseY: cfg.baseY,
+      initialLength: p.length,
+      maxDepth: p.depth,
+      leafScale: p.leafScale
+    });
+  });
+
+  // Expose helper for the Stage-2 Seeds tab to reroll a single slide.
+  window.WoodPassSlides = {
+    rerollSlide: function (slideIdx, newSeed) {
+      const slide = slides[slideIdx];
+      if (!slide) return;
+      const zone = slide.querySelector(':scope > .tree-zone');
+      if (!zone || !zone._treeCfg) return;
+      const svg = zone.querySelector('svg');
+      const p = zone._growthParams || { length: zone._treeCfg.length, depth: zone._treeCfg.depth, leafScale: 1.0 };
+      WoodTree.reroll(svg, newSeed, {
+        baseX: zone._treeCfg.baseX,
+        baseY: zone._treeCfg.baseY,
+        initialLength: p.length,
+        maxDepth: p.depth,
+        leafScale: p.leafScale
+      });
+      slide.dataset.treeSeed = String(newSeed);
+    },
+    slideCount: slides.length
+  };
+})();
+</script>
+
+<script>
+(function () {
+  // ─── Stage-2 widget: select-to-comment + drop-pin-anywhere ───
+
+  // Auto-renumber slide footers + section-num pills (so reordering / inserting
+  // slides doesn't desync the static labels).
+  (function autoNumber() {
+    const slides = document.querySelectorAll('.slide');
+    const total = String(slides.length).padStart(2, '0');
+    slides.forEach((s, i) => {
+      const numEl = s.querySelector('.footer .num');
+      if (numEl) numEl.textContent = String(i + 1).padStart(2, '0') + ' / ' + total;
+
+      // Renumber section-num pill (cover has none; first content slide = '01')
+      if (i > 0) {
+        const secNum = s.querySelector('.section-num');
+        if (secNum) {
+          const text = secNum.textContent.trim();
+          const dotIdx = text.indexOf('·');
+          if (dotIdx > 0) {
+            secNum.textContent = String(i).padStart(2, '0') + ' ' + text.slice(dotIdx);
+          }
+        }
+      }
+    });
+  })();
+
+  const STORAGE = 's2-deck-comments-v3';
+  let comments = [];   // {id, type:'selection'|'pin', slide, slideIdx, quote?, x?, y?, text, ts}
+  let nextId = 1;
+  let pinMode = false;
+  let pending = null;
+  let lastSelText = '';
+  let lastSelSlide = '';
+  let lastSelSlideIdx = -1;
+
+  const sidebar = document.getElementById('s2-sidebar');
+  const list = document.getElementById('s2-list');
+  const selBtn = document.getElementById('s2-sel-btn');
+  const modal = document.getElementById('s2-modal');
+  const mType = document.getElementById('s2-m-type');
+  const mSlide = document.getElementById('s2-m-slide');
+  const mQuote = document.getElementById('s2-m-quote');
+  const mLoc = document.getElementById('s2-m-loc');
+  const mText = document.getElementById('s2-m-text');
+  const pinBtn = document.getElementById('s2-pin-btn');
+  const pinHint = document.getElementById('s2-pin-hint');
+
+  document.body.classList.add('s2-open');
+
+  // ─── Persistence ───
+  try {
+    const raw = localStorage.getItem(STORAGE);
+    if (raw) {
+      comments = JSON.parse(raw);
+      nextId = Math.max(0, ...comments.map(c => c.id)) + 1;
+    }
+  } catch (e) {}
+
+  function save() {
+    try { localStorage.setItem(STORAGE, JSON.stringify(comments)); } catch (e) {}
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  // ─── Slide helpers ───
+  function getSlideForNode(node) {
+    let cur = node && node.nodeType === 3 ? node.parentNode : node;
+    while (cur && cur !== document.body) {
+      if (cur.classList && cur.classList.contains('slide')) return cur;
+      cur = cur.parentNode;
+    }
+    return null;
+  }
+  function getSlideLabel(slide) {
+    if (!slide) return '—';
+    const all = [...document.querySelectorAll('.slide')];
+    const i = all.indexOf(slide);
+    const total = String(all.length).padStart(2, '0');
+    const n = String(i + 1).padStart(2, '0');
+    if (slide.classList.contains('cover')) return n + ' / ' + total + ' · capa';
+    const ne = slide.querySelector('.footer .num');
+    return ne ? ne.textContent.trim() : (n + ' / ' + total);
+  }
+  function getSlideIdx(slide) {
+    return [...document.querySelectorAll('.slide')].indexOf(slide);
+  }
+  function findSlideByIdx(idx) {
+    return document.querySelectorAll('.slide')[idx] || null;
+  }
+
+  // ─── Make slides position-relative for pin anchoring ───
+  document.querySelectorAll('.slide').forEach(s => {
+    if (getComputedStyle(s).position === 'static') s.style.position = 'relative';
+  });
+
+  // ─── Selection-based comment ───
+  let selDebounce = null;
+  function checkSelection() {
+    if (modal.open || pinMode) { selBtn.hidden = true; return; }
+    const sel = window.getSelection();
+    if (!sel || sel.rangeCount === 0) { selBtn.hidden = true; return; }
+    const text = sel.toString().trim();
+    if (text.length < 4) { selBtn.hidden = true; return; }
+    const range = sel.getRangeAt(0);
+    const anchor = range.commonAncestorContainer;
+    const anchorEl = anchor.nodeType === 1 ? anchor : anchor.parentElement;
+    if (!anchorEl || anchorEl.closest('#s2-sidebar, #s2-sel-btn, #s2-modal, #s2-pin-hint, .s2-pin, .s2-tag')) {
+      selBtn.hidden = true; return;
+    }
+    const slide = getSlideForNode(anchorEl);
+    if (!slide) { selBtn.hidden = true; return; }
+    const rects = range.getClientRects();
+    if (!rects.length) { selBtn.hidden = true; return; }
+    const last = rects[rects.length - 1];
+    selBtn.style.top = (window.scrollY + last.bottom + 8) + 'px';
+    selBtn.style.left = (window.scrollX + last.right - 90) + 'px';
+    selBtn.hidden = false;
+    lastSelText = text;
+    lastSelSlide = getSlideLabel(slide);
+    lastSelSlideIdx = getSlideIdx(slide);
+  }
+  document.addEventListener('selectionchange', () => {
+    clearTimeout(selDebounce);
+    selDebounce = setTimeout(checkSelection, 120);
+  });
+  document.addEventListener('mousedown', e => {
+    if (e.target.closest && e.target.closest('#s2-sel-btn')) return;
+    setTimeout(() => {
+      const sel = window.getSelection();
+      if (!sel || !sel.toString().trim()) selBtn.hidden = true;
+    }, 0);
+  });
+
+  // Prevent the button click from collapsing the selection
+  selBtn.addEventListener('mousedown', e => { e.preventDefault(); });
+  selBtn.addEventListener('click', () => {
+    openModal({
+      type: 'selection',
+      slide: lastSelSlide,
+      slideIdx: lastSelSlideIdx,
+      quote: lastSelText
+    });
+    selBtn.hidden = true;
+  });
+
+  // ─── Pin-mode ───
+  pinBtn.addEventListener('click', () => togglePinMode());
+  function togglePinMode(force) {
+    pinMode = (typeof force === 'boolean') ? force : !pinMode;
+    document.body.classList.toggle('s2-pin-mode', pinMode);
+    pinHint.hidden = !pinMode;
+    pinBtn.classList.toggle('s2-active', pinMode);
+    pinBtn.textContent = pinMode ? '✕ Cancelar pin' : '📍 Largar pin';
+    if (pinMode) selBtn.hidden = true;
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      if (pinMode) togglePinMode(false);
+      if (modal.open) modal.close();
+    }
+  });
+
+  document.addEventListener('click', e => {
+    if (!pinMode) return;
+    if (e.target.closest && e.target.closest('#s2-sidebar, #s2-pin-hint, #s2-modal, .s2-tag, .s2-pin, #s2-sel-btn')) return;
+    e.preventDefault();
+    e.stopPropagation();
+    const slide = e.target.closest ? e.target.closest('.slide') : null;
+    let anchor;
+    if (slide) {
+      const rect = slide.getBoundingClientRect();
+      const xPct = ((e.clientX - rect.left) / rect.width) * 100;
+      const yPct = ((e.clientY - rect.top) / rect.height) * 100;
+      anchor = {
+        type: 'pin',
+        slide: getSlideLabel(slide),
+        slideIdx: getSlideIdx(slide),
+        xPct: xPct, yPct: yPct
+      };
+    } else {
+      // Click outside any slide — anchor to document coordinates
+      anchor = {
+        type: 'pin',
+        slide: 'Geral · fora de slide',
+        slideIdx: -1,
+        docX: e.pageX, docY: e.pageY
+      };
+    }
+    openModal(anchor);
+    togglePinMode(false);
+  }, true);
+
+  // ─── Modal flow ───
+  function openModal(anchor) {
+    pending = anchor;
+    if (anchor.type === 'selection') {
+      mType.textContent = 'seleção';
+      mQuote.textContent = anchor.quote.length > 240 ? anchor.quote.slice(0, 240) + '…' : anchor.quote;
+      mQuote.hidden = false;
+      mLoc.hidden = true;
+    } else {
+      mType.textContent = 'pin';
+      if (typeof anchor.xPct === 'number') {
+        mLoc.textContent = '📍 Slide: ' + anchor.xPct.toFixed(1) + '% × ' + anchor.yPct.toFixed(1) + '%';
+      } else {
+        mLoc.textContent = '📍 Página: ' + Math.round(anchor.docX) + 'px × ' + Math.round(anchor.docY) + 'px (fora de slide)';
+      }
+      mLoc.hidden = false;
+      mQuote.hidden = true;
+    }
+    mSlide.textContent = anchor.slide;
+    mText.value = '';
+    modal.showModal();
+    setTimeout(() => mText.focus(), 60);
+  }
+  document.getElementById('s2-m-cancel').addEventListener('click', () => modal.close());
+  document.getElementById('s2-m-save').addEventListener('click', saveComment);
+  mText.addEventListener('keydown', e => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') { e.preventDefault(); saveComment(); }
+  });
+
+  function saveComment() {
+    const t = mText.value.trim();
+    if (!t || !pending) return;
+    const c = Object.assign({ id: nextId++, text: t, ts: Date.now() }, pending);
+    comments.push(c);
+    save();
+    render();
+    renderPins(c.id);
+    modal.close();
+    window.getSelection().removeAllRanges();
+    pending = null;
+  }
+
+  // ─── Render comments list ───
+  function render() {
+    if (comments.length === 0) {
+      list.innerHTML = '<div id="s2-empty">' +
+        '<div class="s2-empty-ico">💬</div>' +
+        'Sem comentários ainda.' +
+        '<strong>0 comentários</strong>' +
+        '<div class="s2-hint-row"><div class="s2-hint-ico">✎</div><div><b>Selecione</b> qualquer texto → aparece <em>“💬 Comentar”</em></div></div>' +
+        '<div class="s2-hint-row"><div class="s2-hint-ico">📍</div><div><b>Ou clique</b> em <em>Largar pin</em> → depois clique onde quiser</div></div>' +
+        '</div>';
+      return;
+    }
+    list.innerHTML = '';
+    const sorted = [...comments].sort((a, b) => a.slideIdx - b.slideIdx || a.id - b.id);
+    sorted.forEach((c, i) => {
+      const el = document.createElement('div');
+      el.className = 's2-comment';
+      el.dataset.id = c.id;
+      const tagCls = c.type === 'pin' ? 's2-c-tag s2-c-pin' : 's2-c-tag';
+      const tagIcon = c.type === 'pin' ? '📍' : '💬';
+      let body = '';
+      if (c.type === 'selection') {
+        body = '<div class="s2-c-quote">' + escapeHtml(c.quote) + '</div>';
+      } else if (typeof c.xPct === 'number') {
+        body = '<div class="s2-c-loc">📍 ' + c.xPct.toFixed(0) + '%, ' + c.yPct.toFixed(0) + '% (slide)</div>';
+      } else {
+        body = '<div class="s2-c-loc">📍 ' + Math.round(c.docX) + ', ' + Math.round(c.docY) + ' (página)</div>';
+      }
+      el.innerHTML =
+        '<div class="s2-c-head">' +
+          '<span class="' + tagCls + '">' + tagIcon + ' ' + escapeHtml(c.slide) + '</span>' +
+          '<span class="s2-c-num">#' + (i + 1) + '</span>' +
+          '<button class="s2-c-del" data-id="' + c.id + '" aria-label="Remover comentário">×</button>' +
+        '</div>' +
+        body +
+        '<div class="s2-c-text">' + escapeHtml(c.text) + '</div>';
+      list.appendChild(el);
+    });
+    list.querySelectorAll('.s2-c-del').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        e.preventDefault();
+        const id = parseInt(e.currentTarget.dataset.id, 10);
+        if (isNaN(id)) return;
+        // Explicitly nuke the pin element first so it cannot linger
+        document.querySelectorAll('.s2-pin[data-id="' + id + '"]').forEach(p => p.remove());
+        comments = comments.filter(c => c.id !== id);
+        save();
+        render();
+        renderPins();
+      });
+    });
+    list.querySelectorAll('.s2-comment').forEach(el => {
+      el.addEventListener('click', () => {
+        const id = parseInt(el.dataset.id, 10);
+        const c = comments.find(x => x.id === id);
+        if (!c) return;
+        const slide = findSlideByIdx(c.slideIdx);
+        if (slide) slide.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (c.type === 'pin') {
+          const pin = document.querySelector('.s2-pin[data-id="' + id + '"]');
+          if (pin) {
+            pin.classList.remove('s2-flash');
+            void pin.offsetWidth;
+            pin.classList.add('s2-flash');
+          }
+        }
+      });
+    });
+  }
+
+  // ─── Render pin markers on slides ───
+  function renderPins(flashId) {
+    document.querySelectorAll('.s2-pin').forEach(p => p.remove());
+    let pinNum = 0;
+    comments.forEach(c => {
+      if (c.type !== 'pin') return;
+      pinNum++;
+      const pin = document.createElement('div');
+      pin.className = 's2-pin';
+      pin.dataset.id = c.id;
+      pin.title = c.text;
+      pin.innerHTML = '<span>' + pinNum + '</span>';
+
+      if (typeof c.xPct === 'number' && c.slideIdx >= 0) {
+        // Slide-anchored
+        const slide = findSlideByIdx(c.slideIdx);
+        if (slide) {
+          pin.style.left = c.xPct + '%';
+          pin.style.top = c.yPct + '%';
+          slide.appendChild(pin);
+        } else {
+          // slide missing → fall back to doc-anchored if we have it
+          if (typeof c.docX === 'number') {
+            pin.classList.add('s2-pin-free');
+            pin.style.left = c.docX + 'px';
+            pin.style.top = c.docY + 'px';
+            document.body.appendChild(pin);
+          }
+        }
+      } else if (typeof c.docX === 'number') {
+        // Doc-anchored (clicked outside any slide)
+        pin.classList.add('s2-pin-free');
+        pin.style.left = c.docX + 'px';
+        pin.style.top = c.docY + 'px';
+        document.body.appendChild(pin);
+      } else if (typeof c.x === 'number') {
+        // Backward-compat: old data had {x, y} % on slides
+        const slide = findSlideByIdx(c.slideIdx);
+        if (slide) {
+          pin.style.left = c.x + '%';
+          pin.style.top = c.y + '%';
+          slide.appendChild(pin);
+        }
+      }
+
+      pin.addEventListener('click', e => {
+        e.stopPropagation();
+        const target = list.querySelector('.s2-comment[data-id="' + c.id + '"]');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          target.classList.remove('s2-flash');
+          void target.offsetWidth;
+          target.classList.add('s2-flash');
+        }
+      });
+      if (flashId && c.id === flashId) {
+        setTimeout(() => { pin.classList.add('s2-flash'); }, 50);
+      }
+    });
+  }
+
+  // ─── Sidebar toggle ───
+  document.getElementById('s2-toggle').addEventListener('click', () => {
+    const collapsed = sidebar.classList.toggle('s2-collapsed');
+    document.body.classList.toggle('s2-collapsed', collapsed);
+    document.body.classList.toggle('s2-open', !collapsed);
+    document.getElementById('s2-toggle').textContent = collapsed ? '‹' : '›';
+  });
+
+  // ─── Copy markdown ───
+  document.getElementById('s2-copy').addEventListener('click', async () => {
+    const btn = document.getElementById('s2-copy');
+    if (comments.length === 0) {
+      btn.textContent = '— nada a copiar —';
+      setTimeout(() => btn.textContent = '📋 Copiar feedback', 1500);
+      return;
+    }
+    const today = new Date().toISOString().slice(0, 10);
+    const sorted = [...comments].sort((a, b) => a.slideIdx - b.slideIdx || a.id - b.id);
+    const md = '# Wood Passport deck — feedback (Stage 2)\n\n' +
+      '_' + today + ' · ' + comments.length + ' comentário' + (comments.length === 1 ? '' : 's') + '_\n\n---\n\n' +
+      sorted.map((c, i) => {
+        let block = '## #' + (i + 1) + ' · ' + c.slide + (c.type === 'pin' ? ' (pin)' : ' (seleção)') + '\n\n';
+        if (c.type === 'selection') {
+          block += '> ' + c.quote.split('\n').join('\n> ') + '\n\n';
+        } else if (typeof c.xPct === 'number') {
+          block += '**Pin @ slide ' + c.xPct.toFixed(1) + '%, ' + c.yPct.toFixed(1) + '%**\n\n';
+        } else {
+          block += '**Pin @ página ' + Math.round(c.docX) + 'px, ' + Math.round(c.docY) + 'px (fora de slide)**\n\n';
+        }
+        block += c.text + '\n';
+        return block;
+      }).join('\n---\n\n');
+    try {
+      await navigator.clipboard.writeText(md);
+      btn.textContent = '✓ Copiado!';
+      btn.classList.add('s2-copied');
+      setTimeout(() => { btn.textContent = '📋 Copiar feedback'; btn.classList.remove('s2-copied'); }, 2200);
+    } catch (e) {
+      const ta = document.createElement('textarea');
+      ta.value = md; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); btn.textContent = '✓ Copiado!'; }
+      catch (e2) { alert('Não consegui copiar. Markdown:\n\n' + md); }
+      document.body.removeChild(ta);
+      setTimeout(() => btn.textContent = '📋 Copiar feedback', 2200);
+    }
+  });
+
+  // ─── Clear ───
+  document.getElementById('s2-clear').addEventListener('click', () => {
+    if (comments.length === 0) return;
+    if (!confirm('Apagar todos os ' + comments.length + ' comentário' + (comments.length === 1 ? '' : 's') + '?')) return;
+    comments = [];
+    save(); render(); renderPins();
+  });
+
+  // Migrate old key (quick-edit pattern leftovers) — silently strip
+  try {
+    Object.keys(localStorage).forEach(k => {
+      if (k.startsWith('s2::wood-passport-deck::') || k === 's2-comments-wood-passport-deck-v1') {
+        localStorage.removeItem(k);
+      }
+    });
+  } catch (e) {}
+
+  render();
+  renderPins();
+
+  // ─── Seeds tab — reroll / lock / copy-markdown for fractal trees ───
+  const seedsList = document.getElementById('s2-seeds-list');
+  const seedsCopyBtn = document.getElementById('s2-seeds-copy');
+  const seedsResetBtn = document.getElementById('s2-seeds-reset');
+  const tabs = document.querySelectorAll('.s2-tab');
+  const SEED_STORAGE = 'wp-tree-seeds-v1';
+  let seedState = {};
+  try { const raw = localStorage.getItem(SEED_STORAGE); if (raw) seedState = JSON.parse(raw); } catch (e) {}
+  function saveSeedState() {
+    try { localStorage.setItem(SEED_STORAGE, JSON.stringify(seedState)); } catch (e) {}
+  }
+  function seedSlideLabel(idx) {
+    const s = document.querySelectorAll('.slide')[idx];
+    if (!s) return 'Slide ' + (idx + 1);
+    if (s.classList.contains('cover')) return 'Cover';
+    const t = s.querySelector('.section-title');
+    if (t) return (t.textContent || '').trim().slice(0, 36);
+    return 'Slide ' + (idx + 1);
+  }
+  function renderSeeds() {
+    if (!seedsList) return;
+    const allSlides = document.querySelectorAll('.slide');
+    seedsList.innerHTML = '';
+    allSlides.forEach((slide, i) => {
+      const seed = parseInt(slide.dataset.treeSeed, 10) || (window.WoodTree && WoodTree.deriveDefaultSeed(i)) || 0;
+      const isLocked = !!(seedState[i] && seedState[i].locked);
+      const isUnsaved = !!(seedState[i] && !seedState[i].locked);
+      const row = document.createElement('div');
+      row.className = 's2-seed-row' + (isUnsaved ? ' s2-seed-unsaved' : '');
+      row.dataset.idx = String(i);
+      const num = String(i + 1).padStart(2, '0');
+      row.innerHTML =
+        '<div class="s2-seed-label">' + num + ' · ' + escapeHtml(seedSlideLabel(i)) + '</div>' +
+        '<div class="s2-seed-meta">seed: <b>' + seed + '</b>' +
+          (isUnsaved ? ' · não salvo' : (isLocked ? ' · locked' : '')) + '</div>' +
+        '<div class="s2-seed-actions">' +
+          '<button class="s2-reroll-btn" data-idx="' + i + '">🎲 Reroll</button>' +
+          '<button class="s2-lock-btn' + (isLocked ? ' s2-locked' : '') + '" data-idx="' + i + '">' +
+            (isLocked ? '🔒 Locked' : '🔒 Lock') + '</button>' +
+        '</div>';
+      seedsList.appendChild(row);
+    });
+    seedsList.querySelectorAll('.s2-reroll-btn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const idx = parseInt(e.currentTarget.dataset.idx, 10);
+        const newSeed = Math.floor(Math.random() * 999983) + 1;
+        if (window.WoodPassSlides) WoodPassSlides.rerollSlide(idx, newSeed);
+        seedState[idx] = { seed: newSeed, locked: false };
+        saveSeedState(); renderSeeds();
+      });
+    });
+    seedsList.querySelectorAll('.s2-lock-btn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const idx = parseInt(e.currentTarget.dataset.idx, 10);
+        const slide = document.querySelectorAll('.slide')[idx];
+        const seed = parseInt(slide.dataset.treeSeed, 10) || 0;
+        const prevLocked = !!(seedState[idx] && seedState[idx].locked);
+        seedState[idx] = { seed: seed, locked: !prevLocked };
+        saveSeedState(); renderSeeds();
+      });
+    });
+  }
+  // Tab switching
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.pane;
+      tabs.forEach(t => t.classList.toggle('s2-tab-active', t === tab));
+      document.querySelectorAll('[data-pane]').forEach(el => {
+        if (el.tagName === 'BUTTON' && el.classList.contains('s2-tab')) return; // skip tab buttons themselves
+        el.classList.toggle('s2-pane-hidden', el.dataset.pane !== target);
+      });
+      if (target === 'seeds') renderSeeds();
+    });
+  });
+  // Copy seeds markdown
+  if (seedsCopyBtn) seedsCopyBtn.addEventListener('click', async () => {
+    const allSlides = document.querySelectorAll('.slide');
+    const today = new Date().toISOString().slice(0, 10);
+    const lines = [
+      '# Tree seed locks — Wood Passport deck',
+      '_' + today + ' · ' + allSlides.length + ' slides_',
+      '',
+      '---',
+      ''
+    ];
+    allSlides.forEach((slide, i) => {
+      const seed = parseInt(slide.dataset.treeSeed, 10) || 0;
+      const tag = (seedState[i] && seedState[i].locked) ? '✓ locked' : '☐ unsaved';
+      lines.push('- slide ' + String(i+1).padStart(2,'0') + ' · ' + seedSlideLabel(i) + ': seed=`' + seed + '` (' + tag + ')');
+    });
+    const md = lines.join('\n') + '\n';
+    try {
+      await navigator.clipboard.writeText(md);
+      seedsCopyBtn.textContent = '✓ Copiado!';
+      seedsCopyBtn.classList.add('s2-copied');
+      setTimeout(() => { seedsCopyBtn.textContent = '📋 Copiar seeds'; seedsCopyBtn.classList.remove('s2-copied'); }, 2000);
+    } catch (e) {}
+  });
+  // Reset all
+  if (seedsResetBtn) seedsResetBtn.addEventListener('click', () => {
+    const allSlides = document.querySelectorAll('.slide');
+    if (!confirm('Resetar todas as seeds aos valores default (derivados do índice)?')) return;
+    allSlides.forEach((slide, i) => {
+      const def = (window.WoodTree && WoodTree.deriveDefaultSeed(i)) || (i+1);
+      if (window.WoodPassSlides) WoodPassSlides.rerollSlide(i, def);
+      delete seedState[i];
+    });
+    saveSeedState(); renderSeeds();
+  });
+})();
+</script>
+
+</body>
+</html>

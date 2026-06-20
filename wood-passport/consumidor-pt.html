@@ -1,0 +1,1133 @@
+<!doctype html>
+<!--
+  Copyright 2026 Regen Studio B.V.
+  Licensed under PolyForm Noncommercial 1.0.0 — see ../LICENSE
+  Wood Passport — consumer-facing view (PT-BR) · Mil Madeiras / Cumaru example.
+  Synthetic data, prototype only.
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<meta name="theme-color" content="#3a5a40">
+<title>Deck Cumaru — Lote MM-S2891 · Mil Madeiras Preciosas</title>
+<meta name="description" content="O passaporte digital deste cumaru. De onde veio, como cresceu, quem o transformou.">
+<meta property="og:title" content="Deck Cumaru — Lote MM-S2891 · Mil Madeiras">
+<meta property="og:description" content="Passaporte digital de produto · Cumaru de Itacoatiara, Amazonas · Mil Madeiras Preciosas · FSC 100%">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../assets/fonts/inter.css">
+<link rel="stylesheet" href="../assets/fonts/playfair-display.css">
+<link rel="stylesheet" href="../assets/fonts/jetbrains-mono.css">
+<link rel="stylesheet" href="../assets/fonts/koho.css">
+<link rel="icon" type="image/svg+xml" href="regen-icon.svg">
+<style>
+  :root {
+    --paper: #f8f1e1;
+    --paper-soft: #f3e8d0;
+    --cream: #fdf8eb;
+    --ink: #2a2419;
+    --ink-soft: #5b4f3d;
+    --ink-mute: #8a7c66;
+    --forest: #3a5a40;
+    --forest-deep: #233b2a;
+    --forest-light: #6b8e23;
+    --bark: #5b3f29;
+    --bark-light: #8a6645;
+    --cumaru: #8a4f28;
+    --cumaru-deep: #5a3010;
+    --amber: #d4a247;
+    --magenta: #93093F;
+    --violeta: #6b3a8a;
+    --violeta-tint: #efe5f5;
+    --line: #e6d9bc;
+    --line-soft: #efe5cd;
+    --good: #3a5a40;
+    --shadow-sm: 0 1px 2px rgba(60,40,20,.06), 0 2px 6px rgba(60,40,20,.04);
+    --shadow-md: 0 4px 14px rgba(60,40,20,.08), 0 2px 4px rgba(60,40,20,.05);
+    --shadow-lg: 0 18px 50px rgba(60,40,20,.12);
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: #ede2c8;
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background-image:
+      radial-gradient(800px 400px at 100% 0%,  #d6c79e 0%, transparent 70%),
+      radial-gradient(700px 600px at 0% 100%, #d4b988 0%, transparent 60%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 520px;
+    margin: 0 auto;
+    background: var(--paper);
+    min-height: 100vh;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* ─── Top strip ─── */
+  .top {
+    padding: 20px 28px 12px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    font-size: 12px;
+    color: var(--ink-soft);
+    font-family: var(--mono);
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+  .top .producer {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--forest-deep);
+    text-transform: none;
+    letter-spacing: -.01em;
+  }
+
+  /* ─── Hero ─── */
+  .hero {
+    padding: 36px 28px 32px;
+    text-align: center;
+    background: linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 16px;
+  }
+  .eyebrow::before, .eyebrow::after {
+    content: "·";
+    margin: 0 8px;
+    color: var(--ink-mute);
+  }
+  .product-name {
+    font-family: var(--serif);
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--forest-deep);
+    margin-bottom: 4px;
+    letter-spacing: -.015em;
+  }
+  .product-line {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .product-meta {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-mute);
+    letter-spacing: .04em;
+    margin-bottom: 28px;
+  }
+
+  /* ─── Plank illustration ─── */
+  .plank {
+    margin: 0 auto 28px;
+    max-width: 380px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  .plank svg { display: block; width: 100%; height: auto; }
+
+  /* ─── Authenticated badge ─── */
+  .auth {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    background: var(--forest);
+    color: var(--cream);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -.01em;
+    box-shadow: var(--shadow-sm);
+  }
+  .auth svg { width: 16px; height: 16px; }
+  .auth .auth-small {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    opacity: .8;
+    letter-spacing: .04em;
+  }
+
+  /* ─── Story block ─── */
+  .story {
+    padding: 36px 28px;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .story p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.45;
+    color: var(--forest-deep);
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .story p::first-letter {
+    font-size: 1.6em;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--cumaru);
+    margin-right: 2px;
+  }
+
+  /* ─── Section base ─── */
+  section.chapter {
+    padding: 40px 28px;
+    border-bottom: 1px solid var(--line);
+  }
+  section.chapter:last-of-type { border-bottom: none; }
+
+  .ch-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .ch-title {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--forest-deep);
+    line-height: 1.15;
+    margin-bottom: 18px;
+    letter-spacing: -.01em;
+  }
+  .ch-text {
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin-bottom: 18px;
+  }
+  .ch-text strong { color: var(--ink); }
+
+  /* ─── Map block ─── */
+  .map-card {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: var(--shadow-sm);
+  }
+  .map-card svg { display: block; width: 100%; height: auto; border-radius: 10px; }
+  .map-coords {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 6px 16px;
+    font-size: 13px;
+  }
+  .map-coords dt { font-family: var(--mono); font-size: 11px; color: var(--ink-mute); text-transform: uppercase; letter-spacing: .04em; padding-top: 2px; }
+  .map-coords dd { color: var(--ink); font-weight: 500; }
+
+  /* ─── Tree block ─── */
+  .tree-card {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 20px;
+    align-items: center;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin: 20px 0;
+    box-shadow: var(--shadow-sm);
+  }
+  .tree-svg svg { width: 90px; height: auto; display: block; }
+  .tree-common { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--forest-deep); }
+  .tree-latin { font-style: italic; color: var(--forest); font-size: 14px; margin-bottom: 8px; }
+  .tree-note { font-size: 13px; color: var(--ink-soft); }
+
+  /* ─── Date card ─── */
+  .date-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 16px 22px;
+    margin: 16px 0;
+  }
+  .date-stamp {
+    width: 56px; height: 56px;
+    border-radius: 12px;
+    background: var(--bark);
+    color: var(--cream);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .date-stamp .d { font-family: var(--serif); font-size: 20px; font-weight: 700; line-height: 1; }
+  .date-stamp .m { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-top: 2px; }
+  .date-info .big { font-weight: 600; font-size: 15px; color: var(--ink); margin-bottom: 2px; }
+  .date-info .sml { font-size: 13px; color: var(--ink-soft); }
+
+  /* ─── Check list ─── */
+  ul.checks {
+    list-style: none;
+    margin: 14px 0 18px;
+  }
+  ul.checks li {
+    padding: 8px 0 8px 32px;
+    position: relative;
+    font-size: 14.5px;
+    color: var(--ink);
+    border-bottom: 1px dashed var(--line);
+  }
+  ul.checks li:last-child { border-bottom: none; }
+  ul.checks li::before {
+    content: "✓";
+    position: absolute;
+    left: 0; top: 6px;
+    width: 24px; height: 24px;
+    background: var(--forest);
+    color: var(--cream);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .regulation-note {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--ink-mute);
+    letter-spacing: .03em;
+    padding-top: 10px;
+  }
+
+  /* ─── Certificates ─── */
+  .certs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 20px 0 16px;
+  }
+  .cert {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 16px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+  }
+  .cert .logo {
+    width: 64px; height: 64px;
+    margin: 0 auto 10px;
+  }
+  .cert .logo svg { width: 100%; height: 100%; }
+  .cert .label {
+    font-family: var(--serif); font-size: 16px; font-weight: 700;
+    color: var(--forest-deep); margin-bottom: 4px;
+  }
+  .cert .code {
+    font-family: var(--mono); font-size: 10.5px;
+    color: var(--ink-mute); letter-spacing: .05em;
+  }
+
+  /* ─── Carbon billboard ─── */
+  .carbon {
+    margin: 24px 0;
+    background: linear-gradient(160deg, var(--forest) 0%, var(--forest-deep) 100%);
+    color: var(--cream);
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  .carbon::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(255,255,255,.08), transparent 50%);
+    pointer-events: none;
+  }
+  .carbon .big-num {
+    font-family: var(--serif);
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -.03em;
+    color: #f0d790;
+    margin: 8px 0 4px;
+  }
+  .carbon .big-unit {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: .08em;
+    opacity: .85;
+    margin-bottom: 18px;
+  }
+  .carbon .explain {
+    font-size: 14.5px;
+    line-height: 1.55;
+    opacity: .92;
+    max-width: 360px;
+    margin: 0 auto 20px;
+  }
+  .carbon .breakdown {
+    border-top: 1px solid rgba(255,255,255,.18);
+    padding-top: 16px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+    text-align: left;
+    font-size: 12.5px;
+    opacity: .92;
+  }
+  .carbon .breakdown dt { font-family: var(--mono); font-size: 10.5px; opacity: .7; text-transform: uppercase; letter-spacing: .06em; }
+  .carbon .breakdown dd { font-weight: 600; font-size: 14px; }
+
+  /* ─── Violeta chat preview ─── */
+  .violeta-block {
+    margin: 24px 0;
+    background: linear-gradient(150deg, #f7eaf5 0%, #f3e0d8 100%);
+    border: 1px solid var(--violeta-tint);
+    border-radius: 20px;
+    padding: 28px 22px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+  }
+  .violeta-block .v-tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--violeta);
+    background: var(--violeta-tint);
+    padding: 5px 11px;
+    border-radius: 999px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .violeta-block .v-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--cumaru-deep);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .violeta-block .v-bubble {
+    background: var(--cream);
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin: 0 auto 18px;
+    max-width: 360px;
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+  }
+  .violeta-block .v-bubble .v-who {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--violeta);
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    margin-bottom: 4px;
+  }
+  .violeta-block .v-bubble p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .violeta-block .v-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--violeta);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14.5px;
+    box-shadow: var(--shadow-sm);
+  }
+  .violeta-block .v-cta svg { width: 18px; height: 18px; }
+  .violeta-block .v-foot {
+    margin-top: 14px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--ink-mute);
+    letter-spacing: .04em;
+  }
+
+  /* ─── Verify box ─── */
+  .verify {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 24px 22px;
+    margin: 20px 0;
+    box-shadow: var(--shadow-sm);
+  }
+  .verify dl {
+    display: grid; grid-template-columns: max-content 1fr; gap: 8px 16px;
+    font-size: 13px; margin-bottom: 18px;
+  }
+  .verify dt { font-family: var(--mono); font-size: 11px; color: var(--ink-mute); text-transform: uppercase; letter-spacing: .04em; padding-top: 2px; }
+  .verify dd { color: var(--ink); font-weight: 500; font-family: var(--mono); font-size: 12px; }
+  .verify .btn {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    width: 100%;
+    padding: 14px 16px;
+    text-align: center;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14.5px;
+    transition: background .2s;
+    box-shadow: var(--shadow-sm);
+  }
+  .verify .btn.primary { background: var(--forest); color: var(--cream); }
+  .verify .btn.primary:hover { background: var(--forest-deep); }
+  .verify .btn.secondary {
+    background: var(--cream); color: var(--cumaru-deep);
+    border: 2px solid var(--cumaru);
+    margin-top: 10px;
+  }
+  .verify .btn.secondary:hover { background: var(--paper-soft); }
+  .verify .btn::after {
+    content: "→"; display: inline-block; transition: transform .2s;
+  }
+  .verify .btn:hover::after { transform: translateX(4px); }
+  .verify .micro {
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-mute);
+    margin-top: 14px;
+  }
+
+  /* ─── Producer signature ─── */
+  .signature {
+    padding: 48px 28px;
+    text-align: center;
+    background: linear-gradient(180deg, var(--paper) 0%, var(--paper-soft) 100%);
+    border-top: 2px solid var(--cumaru);
+  }
+  .sig-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .sig-name {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--forest-deep);
+    line-height: 1.1;
+    margin-bottom: 6px;
+    letter-spacing: -.01em;
+  }
+  .sig-tag {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+  }
+  .sig-facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 360px;
+    margin: 0 auto 24px;
+  }
+  .sig-fact {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 8px;
+  }
+  .sig-fact .num {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--forest);
+    line-height: 1;
+  }
+  .sig-fact .lbl {
+    font-size: 11px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+  .sig-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: .04em;
+    padding-top: 18px;
+    border-top: 1px dashed var(--line);
+    margin-top: 6px;
+    line-height: 1.7;
+  }
+
+  .powered {
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    text-align: center;
+    padding: 26px 28px 30px;
+    background: var(--paper-soft);
+  }
+  .powered .label {
+    font-family: var(--mono); font-size: 10.5px; color: var(--ink-mute);
+    letter-spacing: .14em; text-transform: uppercase;
+  }
+  .powered .meta {
+    font-family: var(--mono); font-size: 10.5px; color: var(--ink-mute);
+    letter-spacing: .04em;
+  }
+  .powered .partners {
+    font-family: var(--mono); font-size: 10.5px; color: var(--ink-mute);
+    letter-spacing: .04em;
+  }
+  .powered .partners b { color: var(--forest-deep); }
+  /* ─── Regen Studio lockup (composed: icon + HTML KoHo wordmark) ─── */
+  .regen-lockup {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; padding: 4px;
+  }
+  .regen-lockup img { width: 28px; height: 28px; display: block; }
+  .regen-wordmark {
+    font-family: 'KoHo', system-ui, sans-serif;
+    font-size: 17px; line-height: 1; letter-spacing: .03em;
+    color: var(--forest-deep);
+    display: inline-flex; align-items: baseline; gap: 4px;
+  }
+  .regen-wordmark .b { font-weight: 700; }
+  .regen-wordmark .l { font-weight: 200; }
+
+  /* ─── small util ─── */
+  .center { text-align: center; }
+  @media (max-width: 380px) {
+    .product-name { font-size: 28px; }
+    .ch-title { font-size: 24px; }
+    .carbon .big-num { font-size: 52px; }
+    section.chapter { padding: 32px 22px; }
+    .top { padding: 16px 22px 10px; }
+    .hero { padding: 28px 22px 26px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ─── Top strip ─── -->
+  <div class="top">
+    <span>Passaporte da Madeira</span>
+    <span class="producer">Mil Madeiras Preciosas</span>
+  </div>
+
+  <!-- ─── Round 1 demo banner ─── -->
+  <div style="background:linear-gradient(90deg, rgba(58,90,64,.08), rgba(212,162,71,.10), rgba(58,90,64,.08));border-bottom:1px solid var(--line);padding:8px 28px;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--forest-deep);display:flex;justify-content:space-between;align-items:center;gap:8px;">
+    <span><strong style="color:var(--forest);">Round 1</strong> · protótipo de discussão</span>
+    <span style="opacity:.7;">Itacoatiara · semana de 20 mai 2026</span>
+  </div>
+
+  <!-- ─── Hero ─── -->
+  <header class="hero">
+    <div class="eyebrow">Lote MM-S2891</div>
+
+    <div class="plank">
+      <svg viewBox="0 0 380 140" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="cumaruG" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0"  stop-color="#b07848"/>
+            <stop offset=".5" stop-color="#8a4f28"/>
+            <stop offset="1"  stop-color="#5a3010"/>
+          </linearGradient>
+          <linearGradient id="edgeG2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#5a3010"/>
+            <stop offset="1" stop-color="#2e1a08"/>
+          </linearGradient>
+          <radialGradient id="vignette2" cx=".5" cy=".5" r=".8">
+            <stop offset=".6" stop-color="rgba(0,0,0,0)"/>
+            <stop offset="1"  stop-color="rgba(30,15,5,.18)"/>
+          </radialGradient>
+        </defs>
+        <rect x="0" y="0" width="380" height="140" fill="url(#cumaruG)"/>
+        <rect x="0" y="0" width="380" height="3" fill="#c69468" opacity=".55"/>
+        <rect x="0" y="135" width="380" height="5" fill="url(#edgeG2)" opacity=".5"/>
+        <!-- tight, dense grain typical of cumaru -->
+        <g stroke="#3a2008" stroke-width=".55" fill="none" opacity=".55">
+          <path d="M 0 18 Q 90 14 180 20 T 380 16"/>
+          <path d="M 0 30 Q 110 26 200 32 T 380 28"/>
+          <path d="M 0 44 Q 80 40 170 46 T 380 42"/>
+          <path d="M 0 58 Q 100 54 200 60 T 380 56"/>
+          <path d="M 0 70 Q 90 66 180 72 T 380 68"/>
+          <path d="M 0 82 Q 110 78 210 84 T 380 80"/>
+          <path d="M 0 96 Q 80 92 180 98 T 380 94"/>
+          <path d="M 0 110 Q 100 106 200 112 T 380 108"/>
+          <path d="M 0 124 Q 90 120 180 126 T 380 122"/>
+        </g>
+        <g stroke="#1c0a02" stroke-width=".35" fill="none" opacity=".35">
+          <path d="M 0 24 Q 90 18 180 26 T 380 20"/>
+          <path d="M 0 52 Q 110 46 200 54 T 380 48"/>
+          <path d="M 0 88 Q 100 82 200 92 T 380 84"/>
+          <path d="M 0 118 Q 90 114 180 120 T 380 116"/>
+        </g>
+        <!-- small dark knot -->
+        <g transform="translate(110 60)">
+          <ellipse cx="0" cy="0" rx="11" ry="6" fill="#3a2008" opacity=".7"/>
+          <ellipse cx="0" cy="0" rx="6"  ry="3" fill="#1c0a02"/>
+        </g>
+        <!-- subtle vignette -->
+        <rect x="0" y="0" width="380" height="140" fill="url(#vignette2)"/>
+      </svg>
+    </div>
+
+    <h1 class="product-name">Deck Cumaru</h1>
+    <div class="product-line">Linha Itacoatiara · 21 mm × 145 mm</div>
+    <div class="product-meta">REF MM-S2891 · classe estrutural D60 · densidade 1,10 g/cm³</div>
+
+    <div class="auth">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M7 12.5 L10.5 16 L17 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Autenticado<br><span class="auth-small">Sistema TRACES · União Europeia · WoodVision (espécie)</span></span>
+    </div>
+  </header>
+
+  <!-- ─── Intro story ─── -->
+  <div class="story">
+    <p>Esta madeira viveu cerca de 60 anos na floresta de manejo da Mil Madeiras em Itacoatiara, na Amazônia. Foi colhida sob plano de manejo aprovado pelo IBAMA, identificada por <strong>WoodVision</strong>, e transformada em deck na serraria. Esta é a sua história — e o passaporte que viaja com ela.</p>
+  </div>
+
+  <!-- ─── Chapter 1: De onde vem ─── -->
+  <section class="chapter">
+    <div class="ch-num">Capítulo 01</div>
+    <h2 class="ch-title">De onde vem</h2>
+    <p class="ch-text">
+      A área de manejo florestal sustentável fica em <strong>Itacoatiara, no estado do Amazonas</strong>,
+      a 270 km a leste de Manaus, na margem norte do rio Amazonas. Esta unidade de produção
+      anual tem <strong>1.080 hectares</strong>, distribuída em parcelas com inventário 100 % digital
+      e georreferenciado. O polígono completo está registrado nas autoridades europeias.
+    </p>
+
+    <div class="map-card">
+      <svg viewBox="0 0 360 260" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="hatch3" patternUnits="userSpaceOnUse" width="6" height="6">
+            <path d="M -1 7 L 7 -1" stroke="#6b8e23" stroke-width=".4" opacity=".28"/>
+          </pattern>
+          <linearGradient id="terrain3" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#d6e7c8"/>
+            <stop offset="1" stop-color="#bcd4a6"/>
+          </linearGradient>
+        </defs>
+        <rect width="360" height="260" fill="url(#terrain3)"/>
+        <rect width="360" height="260" fill="url(#hatch3)"/>
+
+        <!-- Amazon river (big, dominant) -->
+        <path d="M 0 200 Q 80 175 160 195 T 360 185" stroke="#009BBB" stroke-width="14" fill="none" opacity=".55" stroke-linecap="round"/>
+        <path d="M 0 200 Q 80 175 160 195 T 360 185" stroke="#5cc8e0" stroke-width="6" fill="none" opacity=".6" stroke-linecap="round"/>
+        <text x="20" y="232" font-family="JetBrains Mono" font-size="10" font-weight="600" fill="#0078a0">Rio Amazonas</text>
+
+        <!-- secondary river tributary -->
+        <path d="M 180 0 Q 160 50 175 90 Q 180 130 175 175" stroke="#009BBB" stroke-width="4" fill="none" opacity=".4" stroke-linecap="round"/>
+
+        <!-- plot polygon (concession block) -->
+        <polygon points="100,75 215,55 270,90 285,150 230,200 130,205 80,140"
+                 fill="#3a5a40" fill-opacity=".28"
+                 stroke="#3a5a40" stroke-width="2.5"/>
+
+        <!-- vertex markers -->
+        <g fill="#3a5a40">
+          <circle cx="100" cy="75" r="4"/>
+          <circle cx="215" cy="55" r="4"/>
+          <circle cx="270" cy="90" r="4"/>
+          <circle cx="285" cy="150" r="4"/>
+          <circle cx="230" cy="200" r="4"/>
+          <circle cx="130" cy="205" r="4"/>
+          <circle cx="80" cy="140" r="4"/>
+        </g>
+
+        <!-- center pin -->
+        <g transform="translate(185 130)">
+          <circle cx="0" cy="-2" r="9" fill="#5b3f29"/>
+          <circle cx="0" cy="-2" r="3.5" fill="#fdf8eb"/>
+          <path d="M 0 7 L -4 14 L 4 14 Z" fill="#5b3f29"/>
+        </g>
+
+        <!-- place label -->
+        <g transform="translate(185 162)">
+          <rect x="-66" y="0" width="132" height="22" rx="11" fill="#fdf8eb" stroke="#3a5a40" stroke-width="1.2"/>
+          <text x="0" y="14" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#233b2a">Itacoatiara · AM</text>
+        </g>
+
+        <!-- scale bar -->
+        <g transform="translate(20 245)">
+          <line x1="0" y1="0" x2="50" y2="0" stroke="#5b3f29" stroke-width="1.5"/>
+          <line x1="0" y1="-3" x2="0" y2="3" stroke="#5b3f29" stroke-width="1.5"/>
+          <line x1="50" y1="-3" x2="50" y2="3" stroke="#5b3f29" stroke-width="1.5"/>
+          <text x="54" y="3" font-family="JetBrains Mono" font-size="9" fill="#5b3f29">500 m</text>
+        </g>
+
+        <!-- compass -->
+        <g transform="translate(330 30)">
+          <text x="0" y="0" text-anchor="middle" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#3a5a40">N</text>
+          <path d="M 0 4 L -4 12 L 0 8 L 4 12 Z" fill="#3a5a40"/>
+        </g>
+
+        <!-- small ico: rainforest dots -->
+        <g fill="#3a5a40" opacity=".45">
+          <circle cx="50" cy="35" r="3"/><circle cx="65" cy="55" r="2.5"/><circle cx="40" cy="65" r="2"/>
+          <circle cx="320" cy="60" r="3"/><circle cx="335" cy="80" r="2.5"/><circle cx="310" cy="100" r="2"/>
+        </g>
+      </svg>
+
+      <dl class="map-coords">
+        <dt>Local</dt>      <dd>Itacoatiara · Amazonas · Brasil</dd>
+        <dt>Coordenadas</dt><dd>3°09′ S · 58°27′ O</dd>
+        <dt>Altitude</dt>   <dd>40 m · planície amazônica</dd>
+        <dt>Concessão</dt>  <dd>UPA 18,0 ha · 7 vértices geo</dd>
+        <dt>Bacia</dt>      <dd>Rio Amazonas · margem norte</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ─── Chapter 2: A árvore ─── -->
+  <section class="chapter">
+    <div class="ch-num">Capítulo 02</div>
+    <h2 class="ch-title">A árvore</h2>
+    <p class="ch-text">
+      Espécie de altíssima densidade, nativa da floresta amazônica brasileira e da Guiana.
+      Árvore de copa alta com sementes que fornecem a famosa <em>fava-tonka</em>. Madeira
+      extremamente resistente — usada na Europa para decks, pontes, marinas e construção pesada.
+      Cada hectare amazônico tem entre <strong>200 e 300 espécies diferentes</strong>:
+      identificar a sua exige treino — ou visão computacional.
+    </p>
+
+    <div class="tree-card">
+      <div class="tree-svg">
+        <svg viewBox="0 0 90 160" xmlns="http://www.w3.org/2000/svg">
+          <!-- emergent canopy tree typical of amazon (cumaru reaches 30-40m) -->
+          <rect x="41" y="80" width="8" height="75" fill="#5b3f29" rx="1.5"/>
+          <!-- branches splaying -->
+          <path d="M 45 90 Q 30 80 22 60" stroke="#5b3f29" stroke-width="2" fill="none"/>
+          <path d="M 45 90 Q 60 80 68 60" stroke="#5b3f29" stroke-width="2" fill="none"/>
+          <!-- canopy - broad emergent crown -->
+          <ellipse cx="45" cy="56" rx="42" ry="20" fill="#3a5a40"/>
+          <ellipse cx="30" cy="48" rx="22" ry="16" fill="#446a48"/>
+          <ellipse cx="60" cy="48" rx="22" ry="16" fill="#446a48"/>
+          <ellipse cx="45" cy="38" rx="28" ry="14" fill="#3a5a40"/>
+          <ellipse cx="45" cy="28" rx="18" ry="10" fill="#446a48"/>
+          <!-- yellow flowers (cumaru flowers are yellow-white) -->
+          <g fill="#d4a247" opacity=".7">
+            <circle cx="22" cy="45" r="1.5"/>
+            <circle cx="55" cy="40" r="1.5"/>
+            <circle cx="70" cy="50" r="1.5"/>
+            <circle cx="32" cy="35" r="1.5"/>
+            <circle cx="50" cy="28" r="1.5"/>
+          </g>
+          <!-- ground -->
+          <ellipse cx="45" cy="155" rx="32" ry="3" fill="#8a7c66" opacity=".5"/>
+        </svg>
+      </div>
+      <div>
+        <div class="tree-common">Cumaru</div>
+        <div class="tree-latin">Dipteryx odorata (Aubl.) Willd.</div>
+        <div class="tree-note">Idade estimada: 60 anos · Altura no corte: 32 m · DAP: 65 cm · Densidade: 1,10 g/cm³</div>
+      </div>
+    </div>
+
+    <div class="date-card">
+      <div class="date-stamp">
+        <span class="d">04</span>
+        <span class="m">Fev</span>
+      </div>
+      <div class="date-info">
+        <div class="big">Colhida em 04 de fevereiro de 2026</div>
+        <div class="sml">Estação seca amazônica — pista de arraste firme, menor impacto sobre o solo, conforme protocolo de manejo de baixo impacto.</div>
+      </div>
+    </div>
+
+    <div style="background:var(--violeta-tint);border-radius:12px;padding:14px 18px;margin-top:14px;border-left:4px solid var(--violeta);">
+      <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--violeta);margin-bottom:4px;">Identificação WoodVision</div>
+      <div style="font-size:14px;color:var(--ink);line-height:1.5;">
+        Espécie confirmada por visão computacional pré-transporte — acuracidade 98,4 % sobre catálogo treinado de 47 espécies da concessão Mil Madeiras.
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Chapter 3: Sem desflorestação ─── -->
+  <section class="chapter">
+    <div class="ch-num">Capítulo 03</div>
+    <h2 class="ch-title">Sem desmatamento</h2>
+    <p class="ch-text">
+      Esta madeira vem de uma <strong>concessão florestal de manejo sustentável</strong> com plano aprovado
+      pelo IBAMA. A floresta segue em pé — o manejo retira em média <strong>menos de uma árvore por hectare</strong>
+      por ciclo, deixando regenerar por 25 a 30 anos antes de voltar.
+    </p>
+
+    <ul class="checks">
+      <li>Floresta em pé · sem conversão de uso do solo</li>
+      <li>Imagens satélite Sentinel-2 confirmam cobertura intacta pré e pós 31-dez-2020</li>
+      <li>DOF (Documento de Origem Florestal) emitido pelo IBAMA por carga</li>
+      <li>Plano de Manejo Florestal Sustentável (PMFS) ativo desde 1997</li>
+      <li>Operador registrado: Mil Madeiras Preciosas Ltda · CNPJ 84.453.821/0001-87</li>
+    </ul>
+
+    <div class="regulation-note">
+      Em conformidade com o <strong>Regulamento (UE) 2023/1115</strong> — EUDR. Brasil é classificado como
+      país de risco padrão (Impl. Reg. 2025/1093). Diligência devida completa aplicada.
+    </div>
+  </section>
+
+  <!-- ─── Chapter 4: Certificada ─── -->
+  <section class="chapter">
+    <div class="ch-num">Capítulo 04</div>
+    <h2 class="ch-title">Floresta certificada</h2>
+    <p class="ch-text">
+      A Mil Madeiras é <strong>certificada FSC® desde 1997</strong> — uma das primeiras concessões
+      de manejo amazônico a obter o selo. Auditoria anual independente por entidade
+      acreditada. A concessão também é reconhecida pela <strong>SEMA-AM</strong> e operada
+      sob diretrizes do <strong>Serviço Florestal Brasileiro</strong>.
+    </p>
+
+    <div class="certs">
+      <div class="cert">
+        <div class="logo">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <rect width="64" height="64" rx="10" fill="#3a5a40"/>
+            <g transform="translate(20 14)">
+              <path d="M 6 30 L 6 16 L 0 16 L 12 0 L 24 16 L 18 16 L 18 30 Z" fill="#fdf8eb"/>
+              <path d="M 14 22 L 17 25 L 24 17" stroke="#fdf8eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </g>
+            <text x="32" y="56" text-anchor="middle" font-family="Inter" font-size="9" font-weight="700" fill="#fdf8eb" letter-spacing=".08em">FSC®</text>
+          </svg>
+        </div>
+        <div class="label">FSC® 100%</div>
+        <div class="code">FSC-C001498</div>
+      </div>
+      <div class="cert">
+        <div class="logo">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <rect width="64" height="64" rx="10" fill="#5b3f29"/>
+            <g transform="translate(12 12)">
+              <path d="M 20 0 L 38 0 L 38 40 L 2 40 L 2 0 Z M 2 8 L 38 8 M 2 16 L 38 16 M 2 24 L 38 24 M 2 32 L 38 32" stroke="#fdf8eb" stroke-width="1.5" fill="none"/>
+              <text x="20" y="26" text-anchor="middle" font-family="Inter" font-size="8" font-weight="700" fill="#fdf8eb">DOF</text>
+            </g>
+            <text x="32" y="58" text-anchor="middle" font-family="Inter" font-size="8" font-weight="700" fill="#fdf8eb" letter-spacing=".08em">IBAMA</text>
+          </svg>
+        </div>
+        <div class="label">DOF / IBAMA</div>
+        <div class="code">DOF-2026-471829</div>
+      </div>
+    </div>
+
+    <p class="ch-text" style="margin-top:8px;">
+      Plano de manejo revisto a cada 5 anos · auditorias anuais · regeneração natural assistida · monitoramento de fauna por ARUs (gravadores acústicos passivos) em parcelas permanentes.
+    </p>
+  </section>
+
+  <!-- ─── Chapter 5: Carbono ─── -->
+  <section class="chapter">
+    <div class="ch-num">Capítulo 05</div>
+    <h2 class="ch-title">Carbono guardado nesta madeira</h2>
+
+    <div class="carbon">
+      <div class="big-num">−1.140</div>
+      <div class="big-unit">KG CO₂ POR M³ · BALANÇO LÍQUIDO</div>
+      <p class="explain">
+        O cumaru cresce devagar e denso. Cada metro cúbico carrega muito mais carbono do que uma madeira clara. Esse carbono fica preso enquanto o deck servir — décadas, se for bem instalado.
+      </p>
+      <dl class="breakdown">
+        <div>
+          <dt>Carbono guardado</dt>
+          <dd>+1.230 kg CO₂ / m³</dd>
+        </div>
+        <div>
+          <dt>Transporte + corte</dt>
+          <dd>−90 kg CO₂eq / m³</dd>
+        </div>
+      </dl>
+    </div>
+
+    <p class="ch-text" style="font-size:13.5px;color:var(--ink-mute);">
+      Método: EN 15804+A2 (módulos A1–A3) · inclui transporte fluvial Itacoatiara→Manaus, transporte marítimo Manaus→Roterdão, secagem ao ar livre + estufa, e corte. Cumaru densidade média 1,10 g/cm³, conteúdo de carbono 50 % da matéria seca.
+    </p>
+  </section>
+
+  <!-- ─── Chapter 6: Sem químicos ─── -->
+  <section class="chapter">
+    <div class="ch-num">Capítulo 06</div>
+    <h2 class="ch-title">Sem químicos</h2>
+    <p class="ch-text">
+      O cumaru não precisa de tratamento químico. Sua densidade e óleos naturais o tornam
+      <strong>naturalmente resistente</strong> a fungos, cupins e ao apodrecimento — classe de durabilidade
+      I (EN 350), a melhor possível.
+    </p>
+
+    <ul class="checks">
+      <li>Sem CCA, sem creosoto, sem fungicidas</li>
+      <li>Sem preservantes hidrossolúveis (boro, cobre)</li>
+      <li>Secagem ao ar livre + finalização em estufa até 14 % de umidade</li>
+      <li>Resistência natural ao fogo: classe D-s2,d0 (Euroclasse EN 13501)</li>
+      <li>Acabamento opcional: óleo natural de linhaça ou tungue (vendido à parte)</li>
+    </ul>
+  </section>
+
+  <!-- ─── Chapter 7: Como cuidar ─── -->
+  <section class="chapter">
+    <div class="ch-num">Capítulo 07</div>
+    <h2 class="ch-title">Como cuidar</h2>
+    <p class="ch-text">
+      O cumaru é uma madeira que envelhece com graça — passa de marrom-amarelado a um cinza-prateado
+      após 6–12 meses de sol e chuva. Você pode aceitar a pátina ou manter o tom original com óleo anual.
+    </p>
+    <ul class="checks">
+      <li>Lave com escova macia e água a cada 3–6 meses</li>
+      <li>Aplique óleo natural (linhaça ou tungue) 1×/ano se quiser manter cor original</li>
+      <li>Não use lixívia, soda cáustica ou produtos clorados</li>
+      <li>Garanta drenagem por baixo do deck — distância mínima 3 cm do solo</li>
+      <li>Fixadores em aço inox A4 (não galvanizado) — o cumaru é levemente ácido</li>
+    </ul>
+    <p class="ch-text" style="font-style:italic;font-family:var(--serif);color:var(--forest);">
+      Bem instalado, um deck cumaru pode durar mais de 50 anos ao tempo, sem tratamento químico.
+    </p>
+  </section>
+
+  <!-- ─── Chapter 8: Violeta chat ─── -->
+  <section class="chapter">
+    <div class="ch-num">Capítulo 08</div>
+    <h2 class="ch-title">Converse com este cumaru</h2>
+    <p class="ch-text">
+      Cada espécie tem sua história. O cumaru tem 60 anos, atravessou estações secas e cheias do
+      Amazonas, sobreviveu como árvore-mãe antes de ser colhido. Pergunte o que quiser — a Violeta
+      sabe.
+    </p>
+
+    <div class="violeta-block">
+      <span class="v-tag">WoodChat · Violeta</span>
+      <div class="v-title">Sou o Cumaru deste deck.</div>
+      <div class="v-bubble">
+        <div class="v-who">Cumaru · MM-S2891</div>
+        <p>“Vivi 60 anos em Itacoatiara antes de virar este deck. Minha densidade é quase o dobro do pinho europeu. Pergunte sobre minha terra, minha floresta ou meu carbono — eu lembro.”</p>
+      </div>
+      <a class="v-cta" href="https://woodlabs.com.br/woodchat/MM-S2891" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M21 11.5C21 16 17 19.5 12 19.5C10.7 19.5 9.5 19.3 8.4 18.9L3 20L4.5 15.5C3.6 14.3 3 12.9 3 11.5C3 7 7 3.5 12 3.5C17 3.5 21 7 21 11.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        </svg>
+        Conversar com a Violeta
+      </a>
+      <div class="v-foot"><strong>WoodChat</strong> by Wood Labs · personagem por espécie · multilíngue · QR no produto</div>
+    </div>
+  </section>
+
+  <!-- ─── Chapter 9: Fim de vida ─── -->
+  <section class="chapter">
+    <div class="ch-num">Capítulo 09</div>
+    <h2 class="ch-title">Quando deixar de servir</h2>
+    <p class="ch-text">
+      Esta madeira é <strong>100 % biodegradável</strong>. Não tem químicos. Quando, daqui a 30, 50 ou 80 anos,
+      este deck deixar de servir, pode:
+    </p>
+    <ul class="checks">
+      <li>Ser reaproveitado como ripa, banco ou móvel rústico (cumaru é fácil de retrabalhar)</li>
+      <li>Ser compostado — sem químicos, sem contaminação do solo</li>
+      <li>Ser usado como biomassa para aquecimento ou churrasco (poder calorífico alto)</li>
+      <li>Voltar à terra sem deixar rastro</li>
+    </ul>
+  </section>
+
+  <!-- ─── Chapter 10: Verificar ─── -->
+  <section class="chapter">
+    <div class="ch-num">Capítulo 10</div>
+    <h2 class="ch-title">Verificar autenticidade</h2>
+    <p class="ch-text">
+      Este passaporte está registrado em <strong>dois sistemas independentes</strong>: o TRACES (sistema oficial
+      da União Europeia para diligência devida da EUDR) e o WoodVision (verificação botânica
+      pré-transporte por visão computacional da Wood Labs).
+    </p>
+
+    <div class="verify">
+      <dl>
+        <dt>Lote serraria</dt>     <dd>MM-S2891</dd>
+        <dt>Ref. TRACES UE</dt>    <dd>TR-BR-026-C19F47</dd>
+        <dt>Verificação</dt>       <dd>VN-091428</dd>
+        <dt>DOF IBAMA</dt>         <dd>DOF-2026-471829</dd>
+        <dt>WoodVision ID</dt>       <dd>UDV-2026-02-MM-2891</dd>
+        <dt>Identificador GS1</dt> <dd style="word-break:break-all;">id.gs1.org/01/07896500012345/21/MM-S2891</dd>
+      </dl>
+      <a href="https://environment.ec.europa.eu/topics/forests/deforestation/regulation-deforestation-free-products_en" target="_blank" rel="noopener" class="btn primary">Verificar em TRACES UE</a>
+      <a href="https://woodlabs.com.br/udvision/verify/UDV-2026-02-MM-2891" target="_blank" rel="noopener" class="btn secondary">Ver classificação WoodVision</a>
+      <p class="micro">Sistemas oficiais · Comissão Europeia · Wood Labs (Brasil)</p>
+    </div>
+  </section>
+
+  <!-- ─── Producer signature ─── -->
+  <footer class="signature">
+    <div class="sig-eyebrow">Produzido por</div>
+    <div class="sig-name">Mil Madeiras Preciosas</div>
+    <div class="sig-tag">Itacoatiara · Amazonas · Brasil — desde 1997</div>
+
+    <div class="sig-facts">
+      <div class="sig-fact">
+        <div class="num">87.000 ha</div>
+        <div class="lbl">concessão</div>
+      </div>
+      <div class="sig-fact">
+        <div class="num">~150</div>
+        <div class="lbl">famílias</div>
+      </div>
+      <div class="sig-fact">
+        <div class="num">47</div>
+        <div class="lbl">espécies</div>
+      </div>
+    </div>
+
+    <div class="sig-meta">
+      Rua Manuel Urbano, s/n · Itacoatiara · AM 69100-000 · Brasil<br>
+      Grupo Precious Wood (CH) · FSC desde 1997 · DOF IBAMA<br>
+      Identificação botânica por <strong>Wood Labs · WoodVision</strong>
+    </div>
+  </footer>
+
+  <div class="powered">
+    <span class="label">Passaporte digital por</span>
+    <a class="regen-lockup" href="https://regenstudio.world" target="_blank" rel="noopener">
+      <img src="regen-icon.svg" alt="" aria-hidden="true">
+      <span class="regen-wordmark"><span class="b">REGEN</span><span class="l">STUDIO</span></span>
+    </a>
+    <span class="partners">em parceria com <b>Wood Labs</b> (Brasil/Portugal)</span>
+    <span class="meta">v0.3 · Round 1 protótipo · dados sintéticos · 2026-05-13</span>
+  </div>
+
+</div>
+
+</body>
+</html>
