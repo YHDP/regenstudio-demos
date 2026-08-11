@@ -16,16 +16,26 @@
 # Node (if ever used for local tooling)
 node_modules/
 
-# Supabase local
+# Supabase (all infrastructure — source of truth is Proton Drive
+# 1-infrastructure/supabase-migrations/demos/). Matches regenstudio-website.
+# Migrations were tracked in this PUBLIC repo until 2026-08-11; they publish a
+# complete table/column map of project uemspezaqxmkhenimwuf, which combined with
+# the anon key in battery-questionnaire/js/leads.js hands anyone a probe target.
+# No secrets were ever committed under supabase/ (history scanned 2026-08-11).
 .supabase/
-
-# Supabase CLI cache
-supabase/.temp/
-
-# Edge function source (private — source of truth on Proton Drive)
-supabase/functions/
+supabase/
 
 # Claude workspace doc + internal collaboration notes (local-only).
 CLAUDE.md
 MEMORY.md
 docs/collaboration/
+
+# Internal strategic audits — never publish (soul.md § Security)
+cpr-dpp-tracker/audit/
+
+# Claude Code local config
+.claude/
+
+# Python bytecode
+__pycache__/
+*.pyc
