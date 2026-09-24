@@ -246,36 +246,51 @@ const App = {
     }
 
     // Gate email shortcut — skip deep dive, go straight to results
-    const gateEmailForm = document.getElementById('gate-email-form');
-    if (gateEmailForm) {
-      gateEmailForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const name = document.getElementById('gate-email-name').value;
-        const email = document.getElementById('gate-email-address').value;
-        const submitBtn = gateEmailForm.querySelector('button[type="submit"]');
+    this.bindLeadForm('gate-email-form', 'gate-email');
+  },
 
-        if (!email) return;
+  /**
+   * Wire one of the two unlock forms (ids: `${prefix}-name`, `${prefix}-address`,
+   * `${prefix}-privacy`). On success the full results unlock; on failure the
+   * visitor sees why and can try again.
+   */
+  bindLeadForm(formId, prefix) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+    LeadCapture.protect(form);
 
-        if (submitBtn) {
-          submitBtn.disabled = true;
-          submitBtn.textContent = 'Generating report...';
-        }
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = document.getElementById(`${prefix}-name`).value;
+      const email = document.getElementById(`${prefix}-address`).value;
+      const privacyAccepted = document.getElementById(`${prefix}-privacy`).checked;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const idleLabel = submitBtn ? submitBtn.textContent : '';
+      if (!email) return;
 
-        let pdfBase64 = null;
-        try {
-          pdfBase64 = await PDFReport.generate(this.engine, { download: false, returnBase64: true });
-        } catch (err) {
-          console.warn('PDF generation for email failed:', err);
-        }
+      const oldError = form.parentNode.querySelector('.email-error');
+      if (oldError) oldError.remove();
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Unlocking...';
+      }
 
-        if (submitBtn) submitBtn.textContent = 'Sending report...';
-
-        await LeadCapture.saveLead({ name, email, engine: this.engine, pdfBase64 });
-
+      try {
+        await LeadCapture.saveLead({ form, name, email, privacyAccepted, engine: this.engine });
         this.emailUnlocked = true;
         this.showResults();
-      });
-    }
+      } catch (msg) {
+        const errorEl = document.createElement('p');
+        errorEl.className = 'email-error';
+        errorEl.setAttribute('role', 'alert');
+        errorEl.textContent = typeof msg === 'string' ? msg : 'Something went wrong. Please try again.';
+        form.insertAdjacentElement('afterend', errorEl);
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = idleLabel;
+        }
+      }
+    });
   },
 
   startDeepDive() {
@@ -297,43 +312,8 @@ const App = {
       this.bindPDFDownload();
     } else {
       container.innerHTML = Results.renderPreview(this.engine);
-      this.bindEmailForm();
+      this.bindLeadForm('email-form', 'email');
     }
-  },
-
-  bindEmailForm() {
-    const form = document.getElementById('email-form');
-    if (!form) return;
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const name = document.getElementById('email-name').value;
-      const email = document.getElementById('email-address').value;
-      const submitBtn = form.querySelector('button[type="submit"]');
-
-      if (!email) return;
-
-      // Disable button while generating + saving
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Generating report...';
-      }
-
-      // Generate PDF as base64 (no download yet — user can download from results page)
-      let pdfBase64 = null;
-      try {
-        pdfBase64 = await PDFReport.generate(this.engine, { download: false, returnBase64: true });
-      } catch (err) {
-        console.warn('PDF generation for email failed:', err);
-      }
-
-      if (submitBtn) submitBtn.textContent = 'Sending report...';
-
-      await LeadCapture.saveLead({ name, email, engine: this.engine, pdfBase64 });
-
-      this.emailUnlocked = true;
-      this.showResults();
-    });
   },
 
   bindResultsTabs() {

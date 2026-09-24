@@ -20,11 +20,9 @@ const PDFReport = {
    * @param {QuestionnaireEngine} engine
    * @param {Object} options
    * @param {boolean} options.download - If true, triggers browser download (default: true)
-   * @param {boolean} options.returnBase64 - If true, returns base64 string (default: false)
-   * @returns {string|undefined} base64 string if returnBase64 is true
    */
   async generate(engine, options = {}) {
-    const { download = true, returnBase64 = false } = options;
+    const { download = true } = options;
     if (!window.jspdf) {
       alert('PDF library is still loading. Please try again in a moment.');
       return;
@@ -592,10 +590,6 @@ const PDFReport = {
       // ── Output ────────────────────────────────────────────
       if (download) {
         doc.save('demo-battery-passport-compliance-report-by-regen-studio.pdf');
-      }
-      if (returnBase64) {
-        // Return raw base64 (no data URI prefix) for email attachment
-        return doc.output('datauristring').split(',')[1];
       }
     } catch (err) {
       console.error('PDF generation failed:', err);

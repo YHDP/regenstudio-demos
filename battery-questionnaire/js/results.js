@@ -96,11 +96,12 @@ const Results = {
         <div class="gate-email-shortcut">
           <div class="gate-email-divider"><span>or</span></div>
           <h3>Get your report now</h3>
-          <p>Don\u2019t have time for the full assessment? Enter your email and we\u2019ll send you a compliance report based on what we know so far.</p>
+          <p>Don\u2019t have time for the full assessment? Enter your email to unlock a compliance report based on what we know so far, with a PDF to download.</p>
           <form id="gate-email-form" class="email-form">
             <input type="text" id="gate-email-name" placeholder="Name (optional)" class="email-input" />
             <input type="email" id="gate-email-address" placeholder="Email address *" required class="email-input" />
-            <button type="submit" class="btn btn-secondary btn-lg">Send Me the Report</button>
+            <label class="email-consent"><input type="checkbox" id="gate-email-privacy" required /> I have read the <a href="../privacy.html" target="_blank" rel="noopener">privacy policy</a> *</label>
+            <button type="submit" class="btn btn-secondary btn-lg">Get My Report</button>
           </form>
           <p class="email-disclaimer">We respect your privacy. Your data is stored in the EU and not shared with third parties.</p>
         </div>
@@ -219,11 +220,12 @@ const Results = {
           <div class="email-gate-content">
             <div class="email-gate-badge">Free</div>
             <h3>Unlock your full compliance report</h3>
-            <p>Enter your email to receive the <strong>complete regulatory analysis</strong> with all ${matched.length} requirements, detailed timelines, and a <strong>downloadable PDF report</strong> sent directly to your inbox.</p>
+            <p>Enter your email to receive the <strong>complete regulatory analysis</strong> with all ${matched.length} requirements, detailed timelines, and a <strong>downloadable PDF report</strong>.</p>
             <form id="email-form" class="email-form">
               <input type="text" id="email-name" placeholder="Name (optional)" class="email-input" />
               <input type="email" id="email-address" placeholder="Email address *" required class="email-input" />
-              <button type="submit" class="btn btn-primary btn-lg">Unlock Full Report &amp; Send PDF</button>
+              <label class="email-consent"><input type="checkbox" id="email-privacy" required /> I have read the <a href="../privacy.html" target="_blank" rel="noopener">privacy policy</a> *</label>
+              <button type="submit" class="btn btn-primary btn-lg">Unlock Full Report</button>
             </form>
             <p class="email-disclaimer">We respect your privacy. Your data is stored in the EU and not shared with third parties.</p>
           </div>

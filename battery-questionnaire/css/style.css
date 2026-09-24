@@ -618,6 +618,31 @@ body {
   border-color: var(--color-emerald);
 }
 
+.email-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--color-navy);
+  text-align: left;
+}
+
+.email-consent input {
+  margin-top: 2px;
+  accent-color: var(--color-emerald);
+}
+
+.email-consent a {
+  color: var(--color-emerald-hover);
+}
+
+.email-error {
+  font-size: 13px;
+  color: #D51641;
+  margin: 10px auto 0;
+  max-width: 400px;
+}
+
 .email-disclaimer {
   font-size: 12px !important;
   color: var(--color-navy-lighter) !important;
